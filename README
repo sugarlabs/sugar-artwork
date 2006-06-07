@@ -1,0 +1,6 @@
+redhat-artwork contains the "required" artwork for the default Red Hat
+look and feel. Extra bonus art can be found in the redhat-wallpapers
+and redhat-extra-themes packages.
+
+NOTE WHEN BUILDING: Due to a bug in intltool, you need to build the tree
+with a non-UTF-8 locale.

@@ -1,0 +1,191 @@
+<theme name="Bluecurve">
+  <source size="24" gridsize="48">
+    <image file="Bluecurve-24-1.png" use="0"/>
+    <image file="Bluecurve-24-2.png" use="1"/>
+    <image file="Bluecurve-24-3.png" use="2"/>
+    <image file="Bluecurve-24-4.png" use="3"/>
+    <image file="Bluecurve-24-5.png" use="4"/>
+    <image file="Bluecurve-24-6.png" use="5"/>
+    <image file="Bluecurve-24-7.png" use="6"/>
+    <image file="Bluecurve-24-8.png" use="7"/>
+    <image file="Bluecurve-24-9.png" use="8"/>
+    <image file="Bluecurve-24-10.png" use="9"/>
+    <image file="Bluecurve-24-11.png" use="10"/>
+    <image file="Bluecurve-24-12.png" use="11"/>
+    <image file="Bluecurve-24-hotspot.png" use="hotspot"/>
+  </source>
+  <source size="36" gridsize="72">
+    <image file="Bluecurve-36-1.png" use="0"/>
+    <image file="Bluecurve-36-hotspot.png" use="hotspot"/>
+  </source>
+  <source size="48" gridsize="96">
+    <image file="Bluecurve-48-1.png" use="0"/>
+    <image file="Bluecurve-48-hotspot.png" use="hotspot"/>
+  </source>
+  <layout>
+    <row>
+      <cursor name="X_cursor"/>
+      <cursor name="arrow"/>
+      <cursor name="based_arrow_down"/>
+      <cursor name="based_arrow_up"/>
+      <cursor name="boat"/>
+      <cursor name="bogosity"/>
+      <cursor name="bottom_left_corner"/>
+      <cursor name="bottom_right_corner"/>
+    </row><row>
+      <cursor name="bottom_side"/>
+      <cursor name="bottom_tee"/>
+      <cursor name="box_spiral"/>
+      <cursor name="center_ptr"/>
+      <cursor name="circle"/>
+      <cursor name="clock"/>
+      <cursor name="coffee_mug"/>
+      <cursor name="cross"/>
+    </row><row>
+      <cursor name="cross_reverse"/>
+      <cursor name="crosshair"/>
+      <cursor name="diamond_cross"/>
+      <cursor name="dot"/>
+      <cursor name="dotbox"/>
+      <cursor name="double_arrow"/>
+      <cursor name="draft_large"/>
+      <cursor name="draft_small"/>
+    </row><row>
+      <cursor name="draped_box"/>
+      <cursor name="exchange"/>
+      <cursor name="fleur"/>
+      <cursor name="gobbler"/>
+      <cursor name="gumby"/>
+      <cursor name="hand1"/>
+      <cursor name="hand2"/>
+      <cursor name="heart"/>
+    </row><row>
+      <cursor name="icon"/>
+      <cursor name="iron_cross"/>
+      <cursor name="left_ptr"/>
+      <cursor name="left_side"/>
+      <cursor name="left_tee"/>
+      <cursor name="leftbutton"/>
+      <cursor name="ll_angle"/>
+      <cursor name="lr_angle"/>
+    </row><row>
+      <cursor name="man"/>
+      <cursor name="middlebutton"/>
+      <cursor name="mouse"/>
+      <cursor name="pencil"/>
+      <cursor name="pirate"/>
+      <cursor name="plus"/>
+      <cursor name="question_arrow"/>
+      <cursor name="right_ptr"/>
+    </row><row>
+      <cursor name="right_side"/>
+      <cursor name="right_tee"/>
+      <cursor name="rightbutton"/>
+      <cursor name="rtl_logo"/>
+      <cursor name="sailboat"/>
+      <cursor name="sb_down_arrow"/>
+      <cursor name="sb_h_double_arrow"/>
+      <cursor name="sb_left_arrow"/>
+    </row><row>
+      <cursor name="sb_right_arrow"/>
+      <cursor name="sb_up_arrow"/>
+      <cursor name="sb_v_double_arrow"/>
+      <cursor name="shuttle"/>
+      <cursor name="sizing"/>
+      <cursor name="spider"/>
+      <cursor name="spraycan"/>
+      <cursor name="star"/>
+    </row><row>
+      <cursor name="target"/>
+      <cursor name="tcross"/>
+      <cursor name="top_left_arrow"/>
+      <cursor name="top_left_corner"/>
+      <cursor name="top_right_corner"/>
+      <cursor name="top_side"/>
+      <cursor name="top_tee"/>
+      <cursor name="trek"/>
+    </row><row>
+      <cursor name="ul_angle"/>
+      <cursor name="umbrella"/>
+      <cursor name="ur_angle"/>
+      <cursor name="_watch-old_">
+      </cursor>
+      <cursor name="xterm"/>
+      <cursor name="left_ptr_watch">
+        <frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+	<frame delay="60"/>
+        <frame delay="60"/>
+      </cursor>
+    </row>
+    <row>
+      <cursor name="color-picker"/>
+      <cursor name="dnd-move"/>
+      <cursor name="dnd-copy"/>
+      <cursor name="dnd-ask"/>
+      <cursor name="dnd-link"/>
+      <cursor name="dnd-none"/>
+    </row>
+  </layout>
+<!-- 
+  The number of cursors in the WhiteGlass theme distributed with XFree86
+  are reduced using the following aliases:
+
+  <alias name="arrow" target="right_ptr"/>
+  <alias name="cross_reverse" target="cross"/>
+  <alias name="crosshair" target="cross"/>
+  <alias name="draft_large" target="right_ptr"/>
+  <alias name="draft_small" target="right_ptr"/>
+  <alias name="plus" target="cross"/>
+  <alias name="tcross" target="cross"/>
+  <alias name="top_left_arrow" target="top_left_arrow"/>
+ -->
+
+<!--
+  Aliases can also be used to provide cursors to be used in place
+  of particular legacy cursor shapes; whenever libXcursor is
+  asked to create a bitmap cursor, it creates a hash value
+  from the cursor shape, and tries using that as a cursor
+  name. Setting the environment variable XCURSOR_DISCOVER will
+  log this process, which is useful for finding out the hash values.
+
+  The following maps the mozilla pointer-while-waiting cursor to 
+  left_ptr_watch.
+-->
+  
+  <!-- moz_spinning (left_ptr with watch) -->
+  <alias name="08e8e1c95fe2fc01f976f1e063a24ccd" target="left_ptr_watch"/>
+  
+  <!-- moz_question_arrow (left_ptr with question) -->
+  <alias name="5c6cd98b3f3ebcb1f9c7f1c204630408" target="question_arrow"/>
+ 
+<!-- 
+   More mozilla hash values that could be aliased:
+
+     moz_alias 0876e1c15ff2fc01f906f1c363074c0f (left_ptr with small arrow) 
+     moz_copy 08ffe1cb5fe6fc01f906f1c063814ccf (left_ptr with plus)
+     moz_hand_grabbing 208530c400c041818281048008011002 (closed hand)
+     moz_hand_grab 5aca4d189052212118709018842178c0 (open hand)
+     moz_menu 08ffe1e65f80fcfdf9fff11263e74c48 (left_ptr with menu) */
+     moz_question_arrow 5c6cd98b3f3ebcb1f9c7f1c204630408 (left_ptr with ?)
+
+  GTK+ toolkit cursors:
+-->
+
+     <alias name="1081e37283d90000800003c07f3ef6bf" target="dnd_copy"/>
+     <alias name="9081237383d90e509aa00f00170e968f" target="dnd_move"/>
+     <alias name="3085a0e285430894940527032f8b26df" target="dnd_link"/>
+     <alias name="1001208387f90000800003000700f6ff" target="dnd_none"/>
+
+     <alias name="90b3018312820b127e5a0b7c8034a301" target="color-picker"/>
+
+     <alias name="watch" target="left_ptr_watch"/>
+</theme>

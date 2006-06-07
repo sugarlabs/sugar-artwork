@@ -1,0 +1,186 @@
+Introduction
+============
+
+cursorthemegen is a utility for generating libXcursor
+cursor themes.
+
+The inputs to cursorthemegen are conceptually:
+ 
+ A) A set of multi-layer images, one for each
+    size.
+ B) A XML theme description file
+
+Each image contains all the cursors arranged in
+a grid; the layers are:
+ 
+ - A layer with a dot for the hotspot of each cursor
+ - The main image or first animation frame for multi-frame
+   animated cursors
+ - The second animation frame for multi-frame animated cursors
+ - ...
+
+In practice, since loading of multilayer images is not
+supported by standard image libraries, each layer is
+input as a separate image file.
+
+The cursor theme file contains information about the
+source images to read, the location of each named
+cursor within the grid, and a set of aliases from
+names to other names.
+
+
+Invocation
+==========
+
+cursorthemegen takes two arguments:
+
+ cursorthemegen THEMEFILE OUTPUTDIR
+
+cursorthemegen reads in THEMEFILE, compiles a cursor
+theme from it, creates the OUTPUTDIR directory  and 
+writes  the result in it. The OUTPUTDIR directory must 
+not already exist.
+
+
+Theme file format
+=================
+
+The tags in the Theme file format are:
+
+<theme>: The toplevel element. There must be 
+  exactly one of these.
+
+  Attributes:
+    name: The name of the theme. Required.
+
+  Child elements:
+    <alias>, <layout>, <source>
+
+<alias>: The alias element defines an alias of 
+  one cursor name to another cursor.
+
+  Attributes: 
+   name: The name of the alias. Required.
+   target: The name cursor (or alias) to which the
+      alias points. Required.
+
+  Child elements: 
+    None
+
+<source>: Defines a multilayer source
+
+ Attributes:
+    size: The nominal size of the cursors in the
+      this source. This is used when selecting a 
+      cursor. Required.
+
+    gridsize: The size of the grid used for this
+      source. Defaults to the same as 'size'.
+      Optional.
+
+ Child elements:
+    <image>
+
+<image>: One layer in a multilayer source
+
+  Attributes:
+    file: The filename to get the image from. Required.
+    use: Either an integer indicating what animation
+     frame this is (0, 1, ...) or "hotspot" to
+     indicate that this frame contains hotspots. Required.
+
+  Child elements:
+    None
+
+<layout>: Defines the layout of cursors within the grid.
+  
+  Attributes:
+    None
+ 
+  Child elements:
+    <row>
+
+<row>: Defines one row of cursors within the grid
+
+  Attributes:
+    None
+ 
+  Child elements:
+    <cursor>
+
+<cursor>: Defines a single cursor. If there are no
+  child <frame> elements, it is assumed to be a non-animated
+  cursor with a single frame in it. Otherwise, one
+  or more frames is specified with child <frame> elements.
+
+  Attributes:
+    name: The name of the cursor. Required.
+ 
+  Child elements:
+    <frame>
+
+<frame>: Defines one frame of a multiframe cursor.
+  
+  Attributes:
+    delay: The delay before the next frame is shown in 
+    milliseconds. Optional. (If you don't specify the delays 
+    for a multiframe animation, the result is undefined.)
+
+  Child elements:
+    None
+
+Note that cursorthemegen doesn't actually use a full
+XML parser, but the XML-subset GMarkup parser from
+GLib, so some less common XML constructs may not work.
+
+
+Makefile example
+================
+
+Makefile rules for generating and installing a theme
+look like:
+
+bluecurve_images =				\
+	Bluecurve-1-24.png			\
+	Bluecurve-2-24.png			\
+	Bluecurve-hotspot-24.png
+
+Bluecurve.stamp: $(bluecurve_images) Bluecurve.cursortheme
+	rm -rf Bluecurve && \
+	$(THEMEGEN) Bluecurve.cursortheme Bluecurve && \
+	touch Bluecurve.stamp
+
+install:
+	rm -rf $(datadir)/icons/Bluecurve/cursors
+	mkdir -p $(datadir)/icons/Bluecurve/cursors
+	for i in `cd Bluecurve && echo *` ; do \
+	  if test -L Bluecurve/$$i ; then \
+	    cp -d Bluecurve/$$i $(datadir)/icons/Bluecurve/cursors/$$i ; \
+	  else \
+	    install -m 0644 Bluecurve/$$i $(datadir)/icons/Bluecurve/cursors/$$i ; \
+          fi ; \
+	done
+
+
+License
+=======
+
+Copyright © 2003 Red Hat, Inc.
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation, and that the name of Red Hat not be used in advertising or
+publicity pertaining to distribution of the software without specific,
+written prior permission.  Red Hat makes no representations about the
+suitability of this software for any purpose.  It is provided "as is"
+without express or implied warranty.
+
+RED HAT DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL RED HAT
+BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+

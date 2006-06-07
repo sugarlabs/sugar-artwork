@@ -1,0 +1,31 @@
+AC_INIT(art)
+
+AM_CONFIG_HEADER(config.h)
+
+AM_INIT_AUTOMAKE(olpc-artwork, 0.3)
+
+# Honor aclocal flags
+ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
+
+AM_MAINTAINER_MODE
+
+AM_DISABLE_STATIC
+	
+AC_PROG_CC
+AC_HEADER_STDC
+
+PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0,,
+	          AC_MSG_ERROR([GTK+-2.0 is required to compile redhat-artwork]))
+
+GDK_PIXBUF2_CFLAGS=`$PKG_CONFIG --cflags gdk-pixbuf-2.0`
+GDK_PIXBUF2_LIBS=`$PKG_CONFIG --libs gdk-pixbuf-2.0`
+AC_SUBST(GDK_PIXBUF2_CFLAGS)
+AC_SUBST(GDK_PIXBUF2_LIBS)
+	
+AC_OUTPUT([
+Makefile
+art/Makefile
+art/cursor/Makefile
+art/cursor/cursorthemegen/Makefile
+art/cursor/Bluecurve/Makefile
+])
