@@ -61,6 +61,8 @@ $AUTOMAKE -a $am_opt
 
 autoconf || echo "autoconf failed - version 2.5x is probably required"
 
+intltoolize --force --copy --automake
+
 cd $ORIGDIR
 
 $srcdir/configure --enable-maintainer-mode "$@"

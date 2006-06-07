@@ -1,1 +1,1 @@
-SUBDIRS = cursor
+SUBDIRS = cursor icon-theme
