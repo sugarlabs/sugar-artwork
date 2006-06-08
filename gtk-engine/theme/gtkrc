@@ -1,0 +1,10 @@
+style "olpc-window"
+{
+    engine "olpc"
+    {
+	window-top-color = "#a9e351"
+	window-bottom-color = "#f7fcef"
+    }
+}
+
+class "GtkWindow" style "olpc-window"

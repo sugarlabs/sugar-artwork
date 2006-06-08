@@ -1,3 +1,5 @@
-SUBDIRS = art
+SUBDIRS = art gtk-engine po
 
-EXTRA_DIST = gtkrc2-default
+intltool_extra = intltool-extract.in intltool-merge.in intltool-update.in
+
+EXTRA_DIST = $(intltool_extra) gtkrc2-default

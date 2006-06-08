@@ -57,11 +57,14 @@ $ACLOCAL $ACLOCAL_FLAGS
 # optionally feature autoheader
 (autoheader --version)  < /dev/null > /dev/null 2>&1 && autoheader
 
+glib-gettextize --force --copy
+
+intltoolize --force --copy --automake
+
 $AUTOMAKE -a $am_opt
 
 autoconf || echo "autoconf failed - version 2.5x is probably required"
-
-intltoolize --force --copy --automake
+libtoolize -f
 
 cd $ORIGDIR
 
