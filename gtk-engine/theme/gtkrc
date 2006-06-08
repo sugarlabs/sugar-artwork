@@ -1,10 +1,37 @@
-style "olpc-window"
+style "olpc-default"
+{
+  engine "olpc" 
+  {
+  }
+}
+
+style "olpc-window" = "olpc-default"
 {
     engine "olpc"
     {
-	window-top-color = "#a9e351"
-	window-bottom-color = "#f7fcef"
+		window-top-color = "#a9e351"
+		window-bottom-color = "#f7fcef"
     }
 }
 
+style "olpc-button" = "olpc-default"
+{
+	fg[NORMAL] = "#FFFFFF"
+
+    engine "olpc"
+    {
+		window-top-color = "#adf03e"
+		window-bottom-color = "#9ad637"
+    }
+}
+
+style "olpc-button-label" = "olpc-default"
+{
+	fg[NORMAL] = "#FFFFFF"
+}
+
+class "GtkWidget" style "olpc-default"
 class "GtkWindow" style "olpc-window"
+class "GtkButton" style "olpc-button"
+
+widget_class "*.GtkButton.GtkLabel" style "olpc-button-label"
