@@ -28,18 +28,18 @@
 
 extern GType olpc_type_rc_style;
 
-#define OLPC_TYPE_RC_STYLE		olpc_type_rc_style
-#define OLPC_RC_STYLE(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), OLPC_TYPE_RC_STYLE, OlpcRcStyle))
-#define OLPC_RC_STYLE_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST ((klass), OLPC_TYPE_RC_STYLE, OlpcRcStyleClass))
-#define OLPC_IS_RC_STYLE(obj)		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), OLPC_TYPE_RC_STYLE))
+#define OLPC_TYPE_RC_STYLE				olpc_type_rc_style
+#define OLPC_RC_STYLE(obj)				(G_TYPE_CHECK_INSTANCE_CAST ((obj), OLPC_TYPE_RC_STYLE, OlpcRcStyle))
+#define OLPC_RC_STYLE_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST ((klass), OLPC_TYPE_RC_STYLE, OlpcRcStyleClass))
+#define OLPC_IS_RC_STYLE(obj)			(G_TYPE_CHECK_INSTANCE_TYPE ((obj), OLPC_TYPE_RC_STYLE))
 #define OLPC_IS_RC_STYLE_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE ((klass), OLPC_TYPE_RC_STYLE))
 #define OLPC_RC_STYLE_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS ((obj), OLPC_TYPE_RC_STYLE, OlpcRcStyleClass))
 
 typedef struct _OlpcRcStyle {
     GtkRcStyle parent_instance;
 
-    GdkColor window_top_color;
-    GdkColor window_bottom_color;
+    GdkColor top_color;
+    GdkColor bottom_color;
 } OlpcRcStyle;
 
 typedef struct _OlpcRcStyleClass {

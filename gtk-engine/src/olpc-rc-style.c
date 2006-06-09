@@ -25,14 +25,14 @@
 #include <gtk/gtk.h>
 #include <string.h>
 
-static void	olpc_rc_style_init		(OlpcRcStyle *style);
+static void	olpc_rc_style_init			(OlpcRcStyle *style);
 static void	olpc_rc_style_class_init	(OlpcRcStyleClass *klass);
 static void	olpc_rc_style_finalize		(GObject *object);
 
 enum
 {
-    TOKEN_WINDOW_TOP_COLOR = G_TOKEN_LAST + 1,
-    TOKEN_WINDOW_BOTTOM_COLOR
+    TOKEN_TOP_COLOR = G_TOKEN_LAST + 1,
+    TOKEN_BOTTOM_COLOR
 };
 
 static struct
@@ -42,8 +42,8 @@ static struct
 }
 theme_symbols[] =
 {
-    { "window-top-color",	TOKEN_WINDOW_TOP_COLOR },
-    { "window-bottom-color",	TOKEN_WINDOW_BOTTOM_COLOR }
+    { "top-color",	TOKEN_TOP_COLOR },
+    { "bottom-color",	TOKEN_BOTTOM_COLOR }
 };
 
 static GtkRcStyleClass *parent_class;
@@ -78,59 +78,58 @@ olpc_rc_style_create_style (GtkRcStyle *style)
 }
 
 static GTokenType
-olpc_rc_style_parse_window_top_color (OlpcRcStyle	*rc_style,
-				      GtkSettings	*settings,
-				      GScanner		*scanner)
+olpc_rc_style_parse_top_color (OlpcRcStyle	*rc_style,
+				               GtkSettings	*settings,
+				               GScanner		*scanner)
 {
     GTokenType token;
 
     token = g_scanner_get_next_token (scanner);
-    if (token != TOKEN_WINDOW_TOP_COLOR)
-	return TOKEN_WINDOW_TOP_COLOR;
+    if (token != TOKEN_TOP_COLOR)
+	return TOKEN_TOP_COLOR;
 
     token = g_scanner_get_next_token (scanner);
     if (token != G_TOKEN_EQUAL_SIGN)
 	return G_TOKEN_EQUAL_SIGN;
 
     token = gtk_rc_parse_color (scanner,
-				&rc_style->window_top_color);
+				&rc_style->top_color);
     if (token != G_TOKEN_NONE)
 	return token;
 
-    rc_style->window_top_color.pixel = TRUE;
+    rc_style->top_color.pixel = TRUE;
 
     return G_TOKEN_NONE;
 }
 
 static GTokenType
-olpc_rc_style_parse_window_bottom_color (OlpcRcStyle	*rc_style,
-					 GtkSettings	*settings,
-					 GScanner	*scanner)
+olpc_rc_style_parse_bottom_color (OlpcRcStyle	*rc_style,
+					 			  GtkSettings	*settings,
+					 			  GScanner		*scanner)
 {
     GTokenType token;
 
     token = g_scanner_get_next_token (scanner);
-    if (token != TOKEN_WINDOW_BOTTOM_COLOR)
-	return TOKEN_WINDOW_BOTTOM_COLOR;
+    if (token != TOKEN_BOTTOM_COLOR)
+	return TOKEN_BOTTOM_COLOR;
 
     token = g_scanner_get_next_token (scanner);
     if (token != G_TOKEN_EQUAL_SIGN)
 	return G_TOKEN_EQUAL_SIGN;
 
-    token = gtk_rc_parse_color (scanner,
-				&rc_style->window_bottom_color);
+    token = gtk_rc_parse_color (scanner, &rc_style->bottom_color);
     if (token != G_TOKEN_NONE)
 	return token;
 
-    rc_style->window_bottom_color.pixel = TRUE;
+    rc_style->bottom_color.pixel = TRUE;
 
     return G_TOKEN_NONE;
 }
 
 static GTokenType
 olpc_rc_style_parse (GtkRcStyle  *rc_style,
-			 GtkSettings *settings,
-			 GScanner    *scanner)
+			 		 GtkSettings *settings,
+			 		 GScanner    *scanner)
 {
   static GQuark scope_id = 0;
   OlpcRcStyle *olpc_style = OLPC_RC_STYLE (rc_style);
@@ -166,11 +165,11 @@ olpc_rc_style_parse (GtkRcStyle  *rc_style,
 
       switch (token)
       {
-      case TOKEN_WINDOW_TOP_COLOR:
-	  expected = olpc_rc_style_parse_window_top_color (olpc_style, settings, scanner);
+      case TOKEN_TOP_COLOR:
+	  expected = olpc_rc_style_parse_top_color (olpc_style, settings, scanner);
 	  break;
-      case TOKEN_WINDOW_BOTTOM_COLOR:
-	  expected = olpc_rc_style_parse_window_bottom_color (olpc_style, settings, scanner);
+      case TOKEN_BOTTOM_COLOR:
+	  expected = olpc_rc_style_parse_bottom_color (olpc_style, settings, scanner);
 	  break;
       default:
 	  g_scanner_get_next_token (scanner);
@@ -191,19 +190,18 @@ olpc_rc_style_parse (GtkRcStyle  *rc_style,
 }
 
 static void
-olpc_rc_style_merge (GtkRcStyle *dest,
-		     GtkRcStyle *src)
+olpc_rc_style_merge (GtkRcStyle *dest, GtkRcStyle *src)
 {
     if (OLPC_IS_RC_STYLE (src)) {
 
 	OlpcRcStyle *olpc_dest = OLPC_RC_STYLE (dest);
 	OlpcRcStyle *olpc_src = OLPC_RC_STYLE (src);
 
-	if (olpc_src->window_top_color.pixel)
-	    olpc_dest->window_top_color = olpc_src->window_top_color;
+	if (olpc_src->top_color.pixel)
+	    olpc_dest->top_color = olpc_src->top_color;
 
-	if (olpc_src->window_bottom_color.pixel)
-	    olpc_dest->window_bottom_color = olpc_src->window_bottom_color;
+	if (olpc_src->bottom_color.pixel)
+	    olpc_dest->bottom_color = olpc_src->bottom_color;
     }
 
     parent_class->merge (dest, src);

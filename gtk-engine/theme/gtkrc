@@ -1,5 +1,8 @@
 style "olpc-default"
 {
+  bg[NORMAL] = "#adf03e"
+  bg[ACTIVE] = "#e8f0dc"
+  
   engine "olpc" 
   {
   }
@@ -9,8 +12,8 @@ style "olpc-window" = "olpc-default"
 {
     engine "olpc"
     {
-		window-top-color = "#a9e351"
-		window-bottom-color = "#f7fcef"
+		top-color = "#a9e351"
+		bottom-color = "#f7fcef"
     }
 }
 
@@ -20,8 +23,8 @@ style "olpc-button" = "olpc-default"
 
     engine "olpc"
     {
-		window-top-color = "#adf03e"
-		window-bottom-color = "#9ad637"
+		top-color = "#adf03e"
+		bottom-color = "#9ad637"
     }
 }
 
@@ -30,8 +33,26 @@ style "olpc-button-label" = "olpc-default"
 	fg[NORMAL] = "#FFFFFF"
 }
 
+style "olpc-toolbar" = "olpc-default"
+{
+	bg[NORMAL] = "#f1fae3"
+}
+
+style "olpc-entry" = "olpc-default"
+{
+	fg[NORMAL] = "#adf03e"
+}
+
+style "olpc-scrolled-window" = "olpc-default"
+{
+	fg[NORMAL] = "#bfc1c0"
+}
+
 class "GtkWidget" style "olpc-default"
 class "GtkWindow" style "olpc-window"
 class "GtkButton" style "olpc-button"
+class "GtkToolbar" style "olpc-toolbar"
+class "GtkEntry" style "olpc-entry"
+class "GtkScrolledWindow" style "olpc-scrolled-window"
 
 widget_class "*.GtkButton.GtkLabel" style "olpc-button-label"
