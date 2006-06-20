@@ -495,7 +495,7 @@ olpc_draw_flat_box (GtkStyle        *style,
 					int              width,
 					int              height)
 {
-    if (FALSE && widget && GTK_IS_WINDOW (widget)) {
+    if (widget && GTK_IS_WINDOW (widget)) {
 		draw_window_background(style, widget, window, area);
     } else {
 		olpc_style_parent_class->draw_flat_box (style, window,
