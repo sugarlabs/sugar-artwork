@@ -74,6 +74,45 @@ olpc_rounded_rectangle (cairo_t *cr,
 		cairo_line_to (cr, x, y);
 }
 
+static void
+olpc_rounded_rectangle_corner (cairo_t *cr,
+                        double x, double y, double w, double h,
+                        double radius, int corner)
+{
+	switch (corner) {
+	case CORNER_TOPLEFT:
+		cairo_arc (cr, x+radius, y+radius, radius, M_PI, M_PI * 1.5);
+		cairo_line_to (cr, x+radius, y);
+		cairo_line_to (cr, x, y);
+		cairo_line_to (cr, x, y+radius);
+		cairo_close_path (cr);
+		break;
+	case CORNER_TOPRIGHT:
+		cairo_arc (cr, x+w-radius, y+radius, radius, M_PI * 1.5, M_PI * 2);
+		cairo_line_to (cr, x+w, y+radius);
+		cairo_line_to (cr, x+w, y);
+		cairo_line_to (cr, x+w-radius, y);
+		cairo_close_path (cr);
+		break;
+	case CORNER_BOTTOMRIGHT:
+		cairo_arc (cr, x+w-radius, y+h-radius, radius, 0, M_PI * 0.5);
+		cairo_line_to (cr, x+w-radius, y+h);
+		cairo_line_to (cr, x+w, y+h);
+		cairo_line_to (cr, x+w, y+h-radius);
+		cairo_close_path (cr);
+		break;
+	case CORNER_BOTTOMLEFT:
+		cairo_arc (cr, x+radius, y+h-radius, radius, M_PI * 0.5, M_PI);
+		cairo_line_to (cr, x, y+h-radius);
+		cairo_line_to (cr, x, y+h);
+		cairo_line_to (cr, x+radius, y+h);
+		cairo_close_path (cr);
+		break;
+	default:
+		break;
+	}
+}
+
 /************************************************************************/
 
 static void
@@ -157,13 +196,33 @@ draw_entry (GtkStyle     *style,
 	cr = gdk_cairo_create(window);
 	cairo_translate(cr, x, y);
 
+	cairo_save(cr);
+	cairo_reset_clip(cr);
+	cairo_rectangle(cr, x, y, width, height);
+	cairo_clip(cr);
+
+	set_cairo_color(cr, style->fg[state]);
 	olpc_rounded_rectangle(cr, 0, 0, width, height,
 						   5.0, CORNER_TOPLEFT | CORNER_TOPRIGHT |
 						   CORNER_BOTTOMLEFT | CORNER_BOTTOMRIGHT);
 	cairo_set_line_width (cr, 1);
-	set_cairo_color(cr, style->fg[state]);
 	cairo_stroke(cr);
-	
+
+	olpc_rounded_rectangle_corner (cr, 0, 0, width, height,
+							5.0, CORNER_TOPLEFT);
+	cairo_fill (cr);
+	olpc_rounded_rectangle_corner (cr, 0, 0, width, height,
+							5.0, CORNER_TOPRIGHT);
+	cairo_fill (cr);
+	olpc_rounded_rectangle_corner (cr, 0, 0, width, height,
+							5.0, CORNER_BOTTOMRIGHT);
+	cairo_fill (cr);
+	olpc_rounded_rectangle_corner (cr, 0, 0, width, height,
+							5.0, CORNER_BOTTOMLEFT);
+	cairo_fill (cr);
+
+	cairo_restore(cr);
+
 	cairo_destroy(cr);
 }
 
@@ -436,7 +495,7 @@ olpc_draw_flat_box (GtkStyle        *style,
 					int              width,
 					int              height)
 {
-    if (FALSE && widget && GTK_IS_WINDOW (widget)) {
+    if (widget && GTK_IS_WINDOW (widget)) {
 		draw_window_background(style, widget, window, area);
     } else {
 		olpc_style_parent_class->draw_flat_box (style, window,
