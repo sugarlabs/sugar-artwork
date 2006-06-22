@@ -8,6 +8,7 @@ enginedir = $(libdir)/gtk-2.0/$(GTK_VERSION)/engines
 engine_LTLIBRARIES = libolpc.la
 
 libolpc_la_SOURCES =		\
+	olpc.h			\
 	olpc.c			\
 	olpc-rc-style.c		\
 	olpc-rc-style.h		\
