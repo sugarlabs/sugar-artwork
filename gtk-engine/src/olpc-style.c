@@ -588,7 +588,9 @@ olpc_draw_arrow (GtkStyle        *style,
 					int              width,
 					int              height)
 {
-	if ((strcmp (detail, "vscrollbar") == 0) || (strcmp (detail, "hscrollbar") == 0)) {
+	if ((strcmp (detail, "vscrollbar") == 0) ||
+	    (strcmp (detail, "hscrollbar") == 0) ||
+	    (strcmp (detail, "arrow") == 0))  {
 		cairo_t *cr;
 		double ax = 0, ay = 0, bx = 0, by = 0, cx = 0, cy = 0;
 
