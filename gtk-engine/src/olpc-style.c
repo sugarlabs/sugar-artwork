@@ -186,6 +186,32 @@ draw_button (GtkStyle     *style,
 }
 
 static void
+draw_scrolled_window (GtkStyle     *style,
+			GtkStateType  state,
+			GtkWidget    *widget,
+			GdkWindow    *window,
+			GdkRectangle *area,
+			int           x,
+			int			  y,
+			int           width,
+			int           height)
+{
+	cairo_t *cr;
+	
+	cr = gdk_cairo_create(window);
+	cairo_translate(cr, x, y);
+
+	set_cairo_color(cr, style->fg[state]);
+	olpc_rounded_rectangle(cr, 0, 0, width, height,
+			       5.0, CORNER_TOPLEFT | CORNER_TOPRIGHT |
+			       CORNER_BOTTOMLEFT | CORNER_BOTTOMRIGHT);
+	cairo_set_line_width (cr, 1);
+	cairo_stroke(cr);
+
+	cairo_destroy(cr);
+}
+
+static void
 draw_entry (GtkStyle     *style,
 			GtkStateType  state,
 			GtkWidget    *widget,
@@ -207,7 +233,6 @@ draw_entry (GtkStyle     *style,
 	cairo_rectangle(cr, x, y, width, height);
 	cairo_clip(cr);
 
-	/* Shade the box slightly */
 	cairo_set_source_rgba (cr, 0.0, 0.0, 0.0, 0.10);
 	cairo_arc (cr, x+radius+1, y+height-radius, radius, M_PI * 0.5, M_PI);
 	cairo_arc (cr, x+radius+1, y+radius+1, radius, M_PI, M_PI * 1.5);
@@ -221,7 +246,6 @@ draw_entry (GtkStyle     *style,
 	cairo_set_line_width (cr, 1);
 	cairo_stroke(cr);
 
-	/* Fill in each corner */
 	olpc_rounded_rectangle_corner (cr, 0, 0, width, height,
 							5.0, CORNER_TOPLEFT);
 	cairo_fill (cr);
@@ -317,10 +341,12 @@ olpc_draw_shadow (GtkStyle        *style,
 			      int              width,
 			      int              height)
 {
-    if (strcmp(detail, "entry") == 0 ||
-    	strcmp(detail, "scrolled_window") == 0) {
-		draw_entry(style, state_type, widget, window, area,
-				   x, y, width, height);
+    if (strcmp(detail, "entry") == 0) {
+	draw_entry(style, state_type, widget, window, area,
+		  x, y, width, height);
+    } else if (strcmp(detail, "scrolled_window") == 0) {
+	draw_scrolled_window(style, state_type, widget, window, area,
+		             x, y, width, height);
     } else if (strcmp(detail, "toolbar") == 0) {
     } else {
 		olpc_style_parent_class->draw_shadow (style, window,
@@ -341,7 +367,6 @@ draw_trough (GtkStyle        *style,
 			 int              width,
 			 int              height)
 {
-    OlpcRcStyle *rc_style = OLPC_RC_STYLE (style->rc_style);
 	cairo_t *cr;
 	cairo_pattern_t *pattern;
 	GdkColor left, right, border;
@@ -389,7 +414,6 @@ draw_slider (GtkStyle        *style,
 			 int              width,
 			 int              height)
 {
-    OlpcRcStyle *rc_style = OLPC_RC_STYLE (style->rc_style);
 	cairo_t *cr;
 	cairo_pattern_t *pattern;
 	GdkColor left, right, border;
@@ -478,7 +502,6 @@ draw_stepper (GtkStyle        *style,
 			 int              width,
 			 int              height)
 {
-    OlpcRcStyle *rc_style = OLPC_RC_STYLE (style->rc_style);
 	cairo_t *cr;
 	cairo_pattern_t *pattern;
 	GdkColor left, right, border;
@@ -644,10 +667,11 @@ olpc_draw_arrow (GtkStyle        *style,
 
 		cairo_destroy(cr);
     } else {
-		olpc_style_parent_class->draw_flat_box (style, window,
-							    state_type, shadow_type,
-							    area, widget, detail,
-							    x, y, width, height);
+		olpc_style_parent_class->draw_arrow (style, window,
+						     state_type, shadow_type,
+						     area, widget, detail,
+						     arrow_type, fill,
+						     x, y, width, height);
     }
 }
 
