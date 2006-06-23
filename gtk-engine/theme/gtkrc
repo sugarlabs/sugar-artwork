@@ -12,19 +12,28 @@ style "olpc-window" = "olpc-default"
 {
     engine "olpc"
     {
-		top-color = "#a9e351"
-		bottom-color = "#f7fcef"
+        top-color[NORMAL] = "#a9e351"
+        bottom-color[NORMAL] = "#f7fcef"
     }
 }
 
 style "olpc-button" = "olpc-default"
 {
-	fg[NORMAL] = "#FFFFFF"
+    fg[NORMAL] = "#FFFFFF"
+    fg[PRELIGHT] = "#FFFFFF"
+    fg[ACTIVE] = "#FFFFFF"
+    fg[INSENSITIVE] = "#adf03e"
 
     engine "olpc"
     {
-		top-color = "#adf03e"
-		bottom-color = "#9ad637"
+	top-color[NORMAL] = "#adf03e"
+	bottom-color[NORMAL] = "#9ad637"
+	top-color[PRELIGHT] = "#cdff5e"
+	bottom-color[PRELIGHT] = "#baf657"
+	top-color[ACTIVE] = "#6db00e"
+	bottom-color[ACTIVE] = "#7ab617"
+	top-color[INSENSITIVE] = "#edff7e"
+	bottom-color[INSENSITIVE] = "#9ad637"
     }
 }
 

@@ -38,8 +38,8 @@ extern GType olpc_type_rc_style;
 typedef struct _OlpcRcStyle {
     GtkRcStyle parent_instance;
 
-    GdkColor top_color;
-    GdkColor bottom_color;
+    GdkColor top_color[5];
+    GdkColor bottom_color[5];
 } OlpcRcStyle;
 
 typedef struct _OlpcRcStyleClass {

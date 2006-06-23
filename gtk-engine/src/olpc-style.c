@@ -170,10 +170,10 @@ draw_button (GtkStyle     *style,
 						   5.0, CORNER_TOPLEFT | CORNER_TOPRIGHT |
 						   CORNER_BOTTOMLEFT | CORNER_BOTTOMRIGHT);
 	
-	pattern = create_linear_pattern(&rc_style->top_color, 0.0,
-									&rc_style->bottom_color, 1.0,
-									0,
-									height);
+	pattern = create_linear_pattern(&rc_style->top_color[state], 0.0,
+					&rc_style->bottom_color[state], 1.0,
+					0,
+					height);
 	cairo_set_source (cr, pattern);
 	cairo_pattern_destroy (pattern);
 	cairo_fill_preserve(cr);
@@ -250,6 +250,7 @@ draw_window_background (GtkStyle     *style,
     cairo_t *cr;
     GdkColor top_color;
     GdkColor bottom_color;
+    GtkStateType state = GTK_STATE_NORMAL;
 
     /* GtkWindow paints out of realize() to allow the
      * theme to set the window background pixmap
@@ -257,15 +258,15 @@ draw_window_background (GtkStyle     *style,
     if (!GTK_WIDGET_MAPPED (widget))
 	return;
 
-    if (!rc_style->top_color.pixel)
+    if (!rc_style->top_color[state].pixel)
 	top_color = style->bg[widget->state];
     else
-      top_color = rc_style->top_color;
+      top_color = rc_style->top_color[state];
 
-    if (!rc_style->bottom_color.pixel)
+    if (!rc_style->bottom_color[state].pixel)
 	bottom_color = style->bg[widget->state];
     else
-	bottom_color = rc_style->bottom_color;
+	bottom_color = rc_style->bottom_color[state];
 
 	cr = gdk_cairo_create (window);
 
@@ -532,7 +533,7 @@ olpc_draw_box (GtkStyle        *style,
     if ((strcmp(detail, "button") == 0 ||
     	 strcmp(detail, "buttondefault") == 0)) {
     	 draw_button(style, state_type, widget, window,
-    	 			 area, x, y, width, height);
+    	 	     area, x, y, width, height);
     } else if ((strcmp (detail, "trough") == 0) && widget && (GTK_IS_VSCROLLBAR (widget) || GTK_IS_HSCROLLBAR (widget))) {
     	draw_trough(style, state_type, widget, window, area,
     	 		x, y, width, height);
