@@ -4,71 +4,17 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-ORIGDIR=`pwd`
-cd $srcdir
+PKG_NAME="artwork"
 
-PROJECT=olpc-artwork
-TEST_TYPE=-d
-FILE=art
-
-DIE=0
-
-(autoconf --version) < /dev/null > /dev/null 2>&1 || {
-	echo
-	echo "You must have autoconf installed to compile $PROJECT."
-	echo "Download the appropriate package for your distribution,"
-	echo "or get the source tarball at ftp://ftp.gnu.org/pub/gnu/"
-	DIE=1
+(test -f $srcdir/README) || {
+    echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
+    echo " top-level $PKG_NAME directory"
+    exit 1
 }
 
-AUTOMAKE=automake-1.9
-ACLOCAL=aclocal-1.9
-
-($AUTOMAKE --version) < /dev/null > /dev/null 2>&1 || {
-        AUTOMAKE=automake
-        ACLOCAL=aclocal
+which gnome-autogen.sh || {
+    echo "You need to install gnome-common from the GNOME CVS"
+    exit 1
 }
 
-($AUTOMAKE --version) < /dev/null > /dev/null 2>&1 || {
-	echo
-	echo "You must have automake installed to compile $PROJECT."
-	echo "Get ftp://ftp.cygnus.com/pub/home/tromey/automake-1.2d.tar.gz"
-	echo "(or a newer version if it is available)"
-	DIE=1
-}
-
-if test "$DIE" -eq 1; then
-	exit 1
-fi
-
-test $TEST_TYPE $FILE || {
-	echo "You must run this script in the top-level $PROJECT directory"
-	exit 1
-}
-
-if test -z "$*"; then
-	echo "I am going to run ./configure with no arguments - if you wish "
-        echo "to pass any to it, please specify them on the $0 command line."
-fi
-
-echo $ACLOCAL $ACLOCAL_FLAGS
-$ACLOCAL $ACLOCAL_FLAGS
-
-# optionally feature autoheader
-(autoheader --version)  < /dev/null > /dev/null 2>&1 && autoheader
-
-glib-gettextize --force --copy
-
-intltoolize --force --copy --automake
-
-$AUTOMAKE -a $am_opt
-
-autoconf || echo "autoconf failed - version 2.5x is probably required"
-libtoolize -f
-
-cd $ORIGDIR
-
-$srcdir/configure --enable-maintainer-mode "$@"
-
-echo 
-echo "Now type 'make' to compile $PROJECT."
+REQUIRED_AUTOMAKE_VERSION=1.9 USE_GNOME2_MACROS=1 . gnome-autogen.sh
