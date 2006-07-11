@@ -32,6 +32,8 @@
 #include "olpc-style.h"
 #include "olpc-rc-style.h"
 
+#define DETAIL(x) ((detail) && (!strcmp(x, detail)))
+
 static GtkStyleClass *olpc_style_parent_class;
 
 enum {
@@ -341,19 +343,19 @@ olpc_draw_shadow (GtkStyle        *style,
 			      int              width,
 			      int              height)
 {
-    if (strcmp(detail, "entry") == 0) {
-	draw_entry(style, state_type, widget, window, area,
-		  x, y, width, height);
-    } else if (strcmp(detail, "scrolled_window") == 0) {
-	draw_scrolled_window(style, state_type, widget, window, area,
-		             x, y, width, height);
-    } else if (strcmp(detail, "toolbar") == 0) {
-    } else {
-		olpc_style_parent_class->draw_shadow (style, window,
-							    state_type, shadow_type,
-							    area, widget, detail,
-							    x, y, width, height);
-    }
+  if (DETAIL("entry")) {
+    draw_entry (style, state_type, widget, window, area,
+		x, y, width, height);
+  } else if (DETAIL ("scrolled_window")) {
+    draw_scrolled_window(style, state_type, widget, window, area,
+			 x, y, width, height);
+  } else if (DETAIL ("toolbar")) {
+  } else {
+    olpc_style_parent_class->draw_shadow (style, window,
+					  state_type, shadow_type,
+					  area, widget, detail,
+					  x, y, width, height);
+  }
 }
 
 static void
@@ -553,25 +555,26 @@ olpc_draw_box (GtkStyle        *style,
 			   int              width,
 			   int              height)
 {
-    if ((strcmp(detail, "button") == 0 ||
-    	 strcmp(detail, "buttondefault") == 0)) {
-    	 draw_button(style, state_type, widget, window,
-    	 	     area, x, y, width, height);
-    } else if ((strcmp (detail, "trough") == 0) && widget && (GTK_IS_VSCROLLBAR (widget) || GTK_IS_HSCROLLBAR (widget))) {
-    	draw_trough(style, state_type, widget, window, area,
-    	 		x, y, width, height);
-	} else if ((strcmp (detail, "slider") == 0)) {
-		draw_slider(style, state_type, widget, window, area,
-				x, y, width, height);
-	} else if ((strcmp (detail, "vscrollbar") == 0) || (strcmp (detail, "hscrollbar") == 0)) {
-		draw_stepper(style, state_type, widget, window, area,
-				x, y, width, height);
-	} else {
-		olpc_style_parent_class->draw_box (style, window,
-							    state_type, shadow_type,
-							    area, widget, detail,
-							    x, y, width, height);
-    }
+  if (DETAIL ("button") ||
+      DETAIL ("buttondefault")) {
+    draw_button(style, state_type, widget, window,
+		area, x, y, width, height);
+  } else if (DETAIL ("trough") && widget && (GTK_IS_VSCROLLBAR (widget) || GTK_IS_HSCROLLBAR (widget))) {
+    draw_trough(style, state_type, widget, window, area,
+		x, y, width, height);
+  } else if (DETAIL ("slider")) {
+    draw_slider(style, state_type, widget, window, area,
+		x, y, width, height);
+  } else if (DETAIL ("vscrollbar") ||
+	     DETAIL ("hscrollbar")) {
+    draw_stepper(style, state_type, widget, window, area,
+		 x, y, width, height);
+  } else {
+    olpc_style_parent_class->draw_box (style, window,
+				       state_type, shadow_type,
+				       area, widget, detail,
+				       x, y, width, height);
+  }
 }
 
 static void
@@ -612,9 +615,9 @@ olpc_draw_arrow (GtkStyle        *style,
 					int              width,
 					int              height)
 {
-	if ((strcmp (detail, "vscrollbar") == 0) ||
-	    (strcmp (detail, "hscrollbar") == 0) ||
-	    (strcmp (detail, "arrow") == 0))  {
+  if (DETAIL ("vscrollbar") ||
+      DETAIL ("hscrollbar") ||
+      DETAIL ("arrow"))  {
 		cairo_t *cr;
 		double ax = 0, ay = 0, bx = 0, by = 0, cx = 0, cy = 0;
 
