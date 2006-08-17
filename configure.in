@@ -51,6 +51,8 @@ art/icon-theme/24x24/Makefile
 art/icon-theme/32x32/Makefile
 art/icon-theme/48x48/Makefile
 art/icon-theme/scalable/Makefile
+art/icon-theme/scalable/activities/Makefile
+art/icon-theme/scalable/stock/Makefile
 gtk-engine/Makefile
 gtk-engine/src/Makefile
 gtk-engine/theme/Makefile
