@@ -3,6 +3,6 @@ category=stock
 icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)
 
 icon_DATA =		\
-	buddy.svg
+	stock-buddy.svg
 
 EXTRA_DIST = $(icon_DATA)

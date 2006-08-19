@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+		viewBox="0 0 144 200"
+		xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<style type="text/css">
+			.fill-color {fill: white;}
+		</style>
+	</defs>
+	<g id="X" stroke-linecap="round">
+		<symbol id="xlines">
+			<path d="M27,173L118,82" /><path d="M118,173L27,82" />
+		</symbol>
+		<use xlink:href="#xlines" stroke="blue" stroke-width="37"/>
+		<use xlink:href="#xlines" stroke="white" stroke-width="19" />
+	</g>
+	<circle id="O" cx="72.5" cy="43.5" r="28.5" class="fill-color" stroke="blue" stroke-width="9" />
+</svg>
