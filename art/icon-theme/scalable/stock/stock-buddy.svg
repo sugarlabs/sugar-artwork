@@ -1,20 +1,59 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-		viewBox="0 0 200 200"
-		xmlns:xlink="http://www.w3.org/1999/xlink">
-	<defs>
-		<style type="text/css">
-			.fill-color {fill: white;}
-		</style>
-	</defs>
-	<g id="X" stroke-linecap="round">
-		<symbol id="xlines">
-			<path d="M27,173L118,82" /><path d="M118,173L27,82" />
-		</symbol>
-		<use xlink:href="#xlines" stroke="blue" stroke-width="37"/>
-		<use xlink:href="#xlines" stroke="white" stroke-width="19" />
-	</g>
-	<circle id="O" cx="72.5" cy="43.5" r="28.5" class="fill-color" stroke="blue" stroke-width="9" />
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="48"
+   height="48"
+   viewBox="0 0 200 200"
+   id="svg2">
+  <defs>
+    <style type="text/css">
+      .shape-and-fill {fill: green; stroke: red}
+      .fill {fill: green; stroke: green;}
+      .shape {fill: red; stroke: red;}
+    </style>
+  </defs>
+  <g
+     transform="matrix(1.104972,0,0,1.104972,19.8869,-11.60214)"
+     style="stroke-linecap:round"
+     id="X">
+    <symbol
+       id="xlines">
+      <path
+         d="M 27,173 L 118,82"
+         id="path10" />
+      <path
+         d="M 118,173 L 27,82"
+         id="path12" />
+    </symbol>
+    <use
+       class="shape"
+       style="stroke-width:37"
+       id="use14"
+       x="0"
+       y="0"
+       width="200"
+       height="200"
+       xlink:href="#xlines" />
+    <use
+       class="fill"
+       style="stroke-width:19"
+       id="use16"
+       x="0"
+       y="0"
+       width="200"
+       height="200"
+       xlink:href="#xlines" />
+  </g>
+  <circle
+     cx="72.5"
+     cy="43.5"
+     r="28.5"
+     transform="matrix(1.104972,0,0,1.104972,19.8869,-11.60214)"
+     style="stroke-width:9"
+     class="shape-and-fill"
+     id="O" />
 </svg>
