@@ -27,3 +27,7 @@ po/stamp-it
 art/cursor/Bluecurve/Bluecurve
 art/cursor/cursorthemegen/cursorthemegen
 art/icon-theme/index.theme
+.deps
+.libs
+po/.intltool-merge-cache
+stamp-h1
