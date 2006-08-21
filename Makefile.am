@@ -1,4 +1,4 @@
-SUBDIRS = art gtk-engine po
+SUBDIRS = art gtk-engine po matchbox
 
 intltool_extra = intltool-extract.in intltool-merge.in intltool-update.in
 
@@ -7,3 +7,8 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/gtkrc2-default $(DESTDIR)$(sysconfdir)/gtk-2.0/gtkrc
 
 EXTRA_DIST = $(intltool_extra) gtkrc2-default
+
+DISTCLEANFILES =                \
+        intltool-extract        \
+        intltool-merge          \
+        intltool-update

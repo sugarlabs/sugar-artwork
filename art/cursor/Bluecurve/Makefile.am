@@ -1,4 +1,5 @@
 THEMEGEN = $(top_builddir)/art/cursor/cursorthemegen/cursorthemegen
+THEME_DIR = $(top_builddir)/art/cursor/Bluecurve/theme
 
 all-local: Bluecurve.stamp
 
@@ -22,23 +23,22 @@ bluecurve_images =				\
 	Bluecurve-48-1.png
 
 Bluecurve.stamp: $(bluecurve_images) $(THEMEGEN) Bluecurve.cursortheme
-	rm -rf Bluecurve &&					\
-	BDIR=`pwd` && cd $(srcdir) &&				\
-	$$BDIR/$(THEMEGEN) Bluecurve.cursortheme $$BDIR/Bluecurve &&	\
+	rm -rf Bluecurve &&                                     	\
+	BDIR=`pwd` && cd $(srcdir) &&                           	\
+	$$BDIR/$(THEMEGEN) Bluecurve.cursortheme $$BDIR/theme &&    	\
 	cd $$BDIR && touch Bluecurve.stamp
 
-clean:
-	rm -rf Bluecurve
+clean-local:
+	rm -rf $(THEME_DIR)
+	rm -rf $(top_builddir)/art/cursor/Bluecurve/Bluecurve.stamp
 
 install-data-local:
-	rm -rf $(datadir)/icons/Bluecurve/cursors
-	mkdir -p $(datadir)/icons/Bluecurve/cursors
-	for i in `cd Bluecurve && echo *` ; do						\
-	  if test -L Bluecurve/$$i ; then						\
-	    cp -d Bluecurve/$$i $(datadir)/icons/Bluecurve/cursors/$$i ;		\
-	  else										\
-	    install -m 0644 Bluecurve/$$i $(datadir)/icons/Bluecurve/cursors/$$i ;	\
-          fi ;										\
+	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/Bluecurve/cursors/
+	for i in `cd Bluecurve && echo *` ; do							\
+	  $(INSTALL) $(THEME_DIR)/$$i $(DESTDIR)$(datadir)/icons/Bluecurve/cursors/$$i ;	\
 	done
+
+uninstall-local:
+	rm -rf $(DESTDIR)$(datadir)/icons/Bluecurve/cursors
 
 EXTRA_DIST=$(bluecurve_images) Bluecurve.cursortheme
