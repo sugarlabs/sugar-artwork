@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="48"
+   height="48"
+   viewBox="0 0 40.938 42.182"
+   id="Layer_1"
+   xml:space="preserve">
+
+<defs id="defs22" />
+<defs>
+  <style type="text/css">
+    .shape-and-fill {fill: green; stroke: red}
+    .fill {fill: green; stroke: green;}
+    .shape {fill: red; stroke: red;}
+  </style>
+</defs>
+
+<rect
+   class="shape-and-fill"
+   width="39.072762"
+   height="38.761837"
+   x="0.93261969"
+   y="2.487391"
+   style="stroke-width:2"
+   id="rect1957" />
+<line
+   x1="39.918858"
+   y1="14.291332"
+   x2="1.1254045"
+   y2="14.291332"
+   id="line11"
+   class="shape"
+   style="fill:none;stroke-width:3.2842412" />
+<line
+   x1="39.917545"
+   y1="29.019558"
+   x2="1.1240945"
+   y2="29.019558"
+   id="line5504"
+   class="shape"
+   style="fill:none;stroke-width:3.2842412" />
+<line
+   x1="28.708481"
+   y1="2.4625502"
+   x2="28.708481"
+   y2="41.274067"
+   id="line5507"
+   class="shape"
+   style="fill:none;stroke-width:3.2842412" />
+<line
+   x1="12.44468"
+   y1="2.4538493"
+   x2="12.44468"
+   y2="41.265366"
+   id="line19"
+   class="shape"
+   style="fill:none;stroke-width:3.2842412" />
+</svg>
