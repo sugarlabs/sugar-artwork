@@ -14,10 +14,10 @@
    id="svg1872"
    sodipodi:version="0.32"
    inkscape:version="0.44"
-   sodipodi:docname="stock-zoom-home.svg"
+   sodipodi:docname="stock-share.svg"
    sodipodi:docbase="/home/marco/sugar-jhbuild/source/artwork/art/icon-theme/scalable/stock">
   <metadata
-     id="metadata69">
+     id="metadata42">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -42,9 +42,9 @@
      inkscape:zoom="8.4791667"
      inkscape:cx="24"
      inkscape:cy="23.941032"
-     inkscape:window-x="105"
+     inkscape:window-x="55"
      inkscape:window-y="49"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="svg1872" />
   <defs
      id="defs1874" />
   <g
@@ -55,14 +55,14 @@
        style="opacity:0.66976743;fill:#8a8c90;fill-opacity:1;stroke:black;stroke-width:3;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4550" />
     <text
-       x="4.9303126"
-       y="45.866508"
+       x="4.7315407"
+       y="46.846149"
        transform="scale(1.186648,0.84271)"
        style="font-size:50.32819366px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
        id="text4552"
        xml:space="preserve"><tspan
-         x="4.9303126"
-         y="45.866508"
-         id="tspan4554">2</tspan></text>
+         x="4.7315407"
+         y="46.846149"
+         id="tspan4554">S</tspan></text>
   </g>
 </svg>
