@@ -547,7 +547,7 @@ cursor_theme_write (CursorTheme *theme,
 {
   char *curdir;
   
-  if (mkdir (output_dir, 0755) < 0)
+  if (mkdir (output_dir, 0755) < 0 && errno != EEXIST)
     {
       g_printerr ("Error creating output directory '%s'\n: %s",
 		  output_dir, g_strerror (errno));
