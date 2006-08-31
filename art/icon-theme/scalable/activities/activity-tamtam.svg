@@ -65,17 +65,18 @@
 <path
    class="shape"
    d="M 14.861816,13.84517 C 14.861816,13.84517 20.699944,17.503081 20.699944,21.83893 C 20.699944,26.174781 14.861816,29.772041 14.861816,29.772041"
-   style="fill:none;stroke:red;stroke-width:3.51516676;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;fill-rule:nonzero"
+   style="stroke-width:3.51516676;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;fill-rule:nonzero;fill:none"
    id="path9" />
 
 
 <path
    id="path1879"
-   style="fill:none;stroke:red;stroke-width:3.93218541;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+   style="stroke-width:3.93218541;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
    d="M 20.33971,6.7911077 C 20.33971,6.7911077 29.746016,13.355974 29.746016,21.137543 C 29.746016,28.919111 20.33971,35.375129 20.33971,35.375129"
    class="shape" /><path
    sodipodi:type="arc"
-   style="fill:red;fill-rule:evenodd;stroke:red;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+   class="shape"
+   style="fill-rule:evenodd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
    id="path1883"
    sodipodi:cx="8.1356878"
    sodipodi:cy="22.490158"
