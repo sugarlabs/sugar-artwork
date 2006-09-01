@@ -26,6 +26,7 @@ po/POTFILES
 po/stamp-it
 art/cursor/Bluecurve/Bluecurve
 art/cursor/cursorthemegen/cursorthemegen
+art/cursor/Bluecurve/theme
 art/icon-theme/index.theme
 .deps
 .libs
