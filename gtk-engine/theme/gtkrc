@@ -31,7 +31,7 @@ style "default"
   text[INSENSITIVE] = "#747474"
 
   #font_name = "Sans 10"
-  engine "thinice"
+  engine "olpc"
   {
     # Do you want the scrollbar handles rectangular or a bit shaped?
     rect_scrollbar = FALSE
