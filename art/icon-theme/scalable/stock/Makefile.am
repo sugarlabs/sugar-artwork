@@ -7,6 +7,7 @@ icon_DATA =				\
 	stock-chat.svg			\
 	stock-invite.svg		\
 	stock-missing.svg		\
+	stock-make-friend.svg		\
 	stock-share.svg			\
 	stock-zoom-activity.svg		\
 	stock-zoom-friends.svg		\
