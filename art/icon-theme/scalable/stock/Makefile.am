@@ -5,6 +5,7 @@ icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)
 icon_DATA =				\
 	stock-buddy.svg			\
 	stock-chat.svg			\
+	stock-close-activity.svg	\
 	stock-invite.svg		\
 	stock-missing.svg		\
 	stock-make-friend.svg		\
