@@ -56,6 +56,5 @@ art/icon-theme/scalable/stock/Makefile
 gtk-engine/Makefile
 gtk-engine/src/Makefile
 gtk-engine/theme/Makefile
-matchbox/Makefile
 po/Makefile.in
 ])
