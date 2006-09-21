@@ -352,7 +352,7 @@ olpc_rc_style_parse (GtkRcStyle *rc_style,
 
       if (token != G_TOKEN_NONE)
 	{
-	  g_free(theme_data);
+//	  g_free(theme_data);
 	  return token;
 	}
       token = g_scanner_peek_next_token(scanner);
