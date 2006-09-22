@@ -2,22 +2,7 @@
 _Name=OLPC
 _Comment=Default OLPC Theme
 
-Directories=24x24/stock,32x32/stock,48x48/stock,scalable/stock,scalable/activities
-
-[24x24/stock]
-Size=24
-Context=Stock
-Type=Fixed
-
-[32x32/stock]
-Size=32
-Context=Stock
-Type=Fixed
-
-[48x48/stock]
-Size=48
-Context=Stock
-Type=Fixed
+Directories=scalable/stock,scalable/activities
 
 [scalable/stock]
 Size=48

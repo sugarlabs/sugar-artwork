@@ -1,4 +1,4 @@
-SUBDIRS = 24x24 32x32 48x48 scalable
+SUBDIRS = scalable
 
 THEME_IN_FILES = index.theme.in
 
