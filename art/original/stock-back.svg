@@ -6,7 +6,8 @@
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
 	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
-<circle cx="37.5" cy="37.5" r="22.53"/>
-<path fill="#FFFFFF" d="M42.253,37.5c0,2.621-2.128,4.75-4.756,4.75c-2.621,0-4.749-2.129-4.749-4.75c0-2.624,2.128-4.75,4.749-4.75
-	C40.125,32.75,42.253,34.876,42.253,37.5z"/>
+<path fill="none" stroke="#000000" stroke-width="3.5" d="M37.502,60.001c-12.427,0-22.501-10.076-22.501-22.499
+	c0-12.427,10.074-22.503,22.501-22.503s22.497,10.076,22.497,22.503C59.999,49.925,49.929,60.001,37.502,60.001z"/>
+<polyline fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" points="40.479,46.733 31.943,38.194 
+	40.479,29.66 "/>
 </svg>
