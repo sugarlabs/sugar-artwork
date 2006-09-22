@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY fill_color "#FFFFFF">
+	<!ENTITY stroke_color "#000000">
+]>
 <svg
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.0"
-   width="48"
-   height="48"
-   viewBox="0 0 40.938 42.182"
+   width="75"
+   height="75"
+   viewBox="-13.5 -13.5 67.938 69.182"
    id="Layer_1"
    xml:space="preserve"><defs
    id="defs22" />
 <defs>
   <style type="text/css">
-    .shape-and-fill {fill: green; stroke: red}
-    .fill {fill: green; stroke: green;}
-    .shape {fill: red; stroke: red;}
+    .shape-and-fill {fill: &fill_color; ; stroke: &stroke_color; }
+    .fill {fill: &fill_color; ; stroke: &stroke_color; ;}
+    .shape {fill: &fill_color; ; stroke: &stroke_color; ;}
   </style>
 </defs>
 <g

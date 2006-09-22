@@ -47,9 +47,6 @@ art/cursor/Makefile
 art/cursor/cursorthemegen/Makefile
 art/cursor/Bluecurve/Makefile
 art/icon-theme/Makefile
-art/icon-theme/24x24/Makefile
-art/icon-theme/32x32/Makefile
-art/icon-theme/48x48/Makefile
 art/icon-theme/scalable/Makefile
 art/icon-theme/scalable/activities/Makefile
 art/icon-theme/scalable/stock/Makefile
