@@ -6,6 +6,7 @@
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
 	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
+
 <circle cx="37.5" cy="37.5" r="22.525"/>
 <circle fill="#FFFFFF" cx="46.249" cy="43.215" r="4.751"/>
 <path fill="#FFFFFF" d="M33.502,43.215c0,2.623-2.129,4.752-4.753,4.752c-2.621,0-4.75-2.129-4.75-4.752s2.128-4.75,4.75-4.75

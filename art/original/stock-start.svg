@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
+	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
+
+<path fill="none" stroke="#000000" stroke-width="3.5" d="M37.5,15.997c11.877,0,21.5,9.629,21.5,21.5
+	c0,11.874-9.623,21.506-21.5,21.506c-11.873,0-21.5-9.633-21.5-21.506C16,25.626,25.626,15.997,37.5,15.997z"/>
+<path fill="none" stroke="#000000" stroke-width="3.5" d="M37.5,25.779c6.473,0,11.719,5.25,11.719,11.72
+	c0,6.472-5.246,11.722-11.719,11.722c-6.473,0-11.719-5.25-11.719-11.722C25.781,31.029,31.027,25.779,37.5,25.779z"/>
+<line fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" x1="37.5" y1="45.336" x2="37.5" y2="67.791"/>
+<polyline fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="44.182,53.258 
+	37.5,45.336 30.82,53.258 "/>
+</svg>

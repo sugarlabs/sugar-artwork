@@ -7,8 +7,9 @@
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
 	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
 
-<path fill="#000100" d="M14.93,37.503c0-12.466,10.107-22.571,22.568-22.571c12.466,0,22.572,10.105,22.572,22.571
-	c0,12.463-10.106,22.564-22.572,22.564C25.037,60.067,14.93,49.967,14.93,37.503z"/>
-<rect x="22.826" y="24.91" fill="#FFFFFF" stroke="#000000" stroke-width="3" width="22.138" height="17.971"/>
-<rect x="30.036" y="32.119" fill="#FFFFFF" stroke="#000000" stroke-width="3" width="22.138" height="17.971"/>
+<polyline fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="57.968,21.781 
+	17.03,21.781 17.03,53.219 57.968,53.219 57.968,21.781 "/>
+<line fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" x1="37.5" y1="37.5" x2="37.5" y2="7.56"/>
+<polyline fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="46.408,26.938 
+	37.5,37.5 28.591,26.938 "/>
 </svg>

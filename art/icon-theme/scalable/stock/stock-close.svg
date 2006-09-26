@@ -3,12 +3,13 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY stroke_color "#FFFFFF">
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
 	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
 
-<path fill="#000100" d="M14.93,37.503c0-12.466,10.107-22.571,22.568-22.571c12.466,0,22.572,10.105,22.572,22.571
-	c0,12.463-10.106,22.564-22.572,22.564C25.037,60.067,14.93,49.967,14.93,37.503z"/>
-<rect x="22.826" y="24.91" fill="#FFFFFF" stroke="#000000" stroke-width="3" width="22.138" height="17.971"/>
-<rect x="30.036" y="32.119" fill="#FFFFFF" stroke="#000000" stroke-width="3" width="22.138" height="17.971"/>
+<path fill="none" stroke="&stroke_color;" stroke-width="3.5" d="M37.5,16.19c11.769,0,21.306,9.543,21.306,21.308
+	c0,11.768-9.537,21.313-21.306,21.313c-11.769,0-21.308-9.545-21.308-21.313C16.193,25.733,25.732,16.19,37.5,16.19z"/>
+<line fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" x1="29.792" y1="45.008" x2="45.006" y2="29.794"/>
+<line fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" x1="29.792" y1="29.796" x2="45.006" y2="45.008"/>
 </svg>
