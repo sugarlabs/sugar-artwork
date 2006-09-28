@@ -1,61 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 	<!ENTITY fill_color "#FFFFFF">
 	<!ENTITY stroke_color "#000000">
 ]>
-<svg
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   version="1.0"
-   width="75"
-   height="75"
-   viewBox="-13.5 -13.5 67.938 69.182"
-   id="Layer_1"
-   xml:space="preserve"><defs
-   id="defs22" />
-<defs>
-  <style type="text/css">
-    .shape-and-fill {fill: &fill_color; ; stroke: &stroke_color; }
-    .fill {fill: &fill_color; ; stroke: &stroke_color; ;}
-    .shape {fill: &fill_color; ; stroke: &stroke_color; ;}
-  </style>
-</defs>
-<g
-   transform="matrix(1.642121,0,0,1.642121,-15.36003,-15.16578)"
-   id="g3">
-	<circle
-   class="shape-and-fill"
-   cx="21.792"
-   cy="22.104"
-   r="11.817"
-   style="stroke-width:2"
-   id="circle5" />
-</g>
-<path
-   class="shape"
-   d="M 18.48079,1.730001 C 18.48079,1.730001 10.841645,9.9159723 10.841645,21.208836 C 10.841645,32.500057 18.48079,40.539879 18.48079,40.539879"
-   style="fill:none;stroke-width:3.2842412"
-   id="path7" />
-<path
-   class="shape"
-   d="M 22.334847,1.730001 C 22.334847,1.730001 29.840981,10.643432 29.840981,21.208836 C 29.840981,31.77424 22.334847,40.539879 22.334847,40.539879"
-   style="fill:none;stroke-width:3.2842412"
-   id="path9" />
-<line
-   x1="39.815216"
-   y1="21.131657"
-   x2="1.0217632"
-   y2="21.131657"
-   id="line11"
-   class="shape"
-   style="stroke-width:3.2842412" />
-<line
-   x1="20.425058"
-   y1="1.7283604"
-   x2="20.425058"
-   y2="40.539879"
-   id="line19"
-   class="shape"
-   style="stroke-width:3.2842412" />
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="76" height="76" viewBox="0 0 76 76"
+	 overflow="visible" enable-background="new 0 0 76 76" xml:space="preserve">
+
+<circle fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" cx="38" cy="38" r="19.903"/>
+<path fill="none" stroke="&stroke_color;" stroke-width="3.5" d="M38.001,18.098c0,0-11.205,8.394-11.205,19.976
+	c0,11.583,11.205,19.829,11.205,19.829"/>
+<path fill="none" stroke="&stroke_color;" stroke-width="3.5" d="M38.001,18.098c0,0,11.066,9.141,11.066,19.976
+	c0,10.839-11.066,19.829-11.066,19.829"/>
+<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="38.001" y1="18.098" x2="38.001" y2="57.902"/>
+<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="38.001" y1="18.098" x2="38.001" y2="57.902"/>
+<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="38.001" y1="18.098" x2="38.001" y2="57.902"/>
+<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="18.097" y1="38" x2="57.903" y2="38"/>
 </svg>
