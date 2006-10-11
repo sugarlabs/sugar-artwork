@@ -142,6 +142,23 @@ olpc_style_draw_shadow(GtkStyle     *style,
       break;
     }
 
+  if (CHECK_DETAIL (detail, "entry"))
+    {
+      cr = ge_gdk_drawable_to_cairo (window, area);
+
+      ge_cairo_set_color(cr, &olpc_style->color_cube.bg[state_type]);
+      cairo_rectangle(cr, x, y, width, height);
+      cairo_fill(cr);
+
+      ge_cairo_set_color(cr, &olpc_style->color_cube.base[state_type]);
+      ge_cairo_rounded_rectangle (cr, x, y, width, height, 12, CR_CORNER_ALL);
+      cairo_fill(cr);
+
+      cairo_destroy(cr);
+
+      return;
+    }
+
   cr = ge_gdk_drawable_to_cairo (window, area);
   
   switch (shadow_type)

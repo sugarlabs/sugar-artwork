@@ -30,12 +30,12 @@ style "default"
   bg[PRELIGHT]      = "#000000"
   bg[SELECTED]      = "#414141"
   bg[INSENSITIVE]   = "#D3D3DD"
-  base[NORMAL]      = "#E5E5F7"
+  base[NORMAL]      = "#646464"
   base[ACTIVE]      = "#808080"
   base[PRELIGHT]    = "#E5E5F7"
   base[SELECTED]    = "#336699"
   base[INSENSITIVE] = "#E5E5F7"
-  text[NORMAL]      = "#000000"
+  text[NORMAL]      = "#FFFFFF"
   text[ACTIVE]      = "#FFFFFF"
   text[PRELIGHT]    = "#000000"
   text[SELECTED]    = "#FFFFFF"
@@ -82,9 +82,16 @@ style "menu-item" {
   text[PRELIGHT] = "#FFFFFF"
 }
 
+style "entry" = "default"
+{
+  xthickness = 12
+  ythickness = 3
+}
+
 class "GtkWidget" style "default"
 widget "gtk-tooltips*" style "tooltips"
 class "GtkProgressBar" style "progress-bar"
+class "GtkEntry"  style "entry"
 class "*MenuItem*" style "menu-item"
 widget_class "*MenuItem*" style "menu-item"
 widget_class "*.GtkAccelMenuItem.*" style "menu-item"
