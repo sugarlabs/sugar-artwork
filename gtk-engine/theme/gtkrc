@@ -1,24 +1,15 @@
 # Edit these colors and fonts however you like.
 style "default"
 {
-  GtkOptionMenu::indicator_spacing = { 3, 2, 1, 1 }
-  GtkRange::slider_width = 11
-  GtkRange::stepper_size = 11
-  GtkScrollbar::min_slider_length = 14
-  GtkCheckButton::indicator_size = 10
-  GtkCheckMenuItem::indicator_size = 10
-  GtkButton::default_border = { 0, 0, 0, 0 }
-  GtkButton::default_outsideborder = { 0, 0, 0, 0 }
+  engine "olpc"
+  {
+  }
+}
 
-  # These are to make the toolbar button completely flat.
-  # Maybe they should be moved in specific style
-  GtkButton::inner_border = { 0, 0, 0, 0 }
-  GtkButton::focus_line_width = 0
-  GtkButton::focus_padding = 0
+style "chrome-default" = "default"
+{
   GtkToolbar::internal_padding = 0
   GtkToolbar::shadow_type = 0
-  xthickness = 0
-  ythickness = 0
 
   fg[NORMAL]        = "#000000"
   fg[ACTIVE]        = "#000000"
@@ -40,63 +31,26 @@ style "default"
   text[PRELIGHT]    = "#000000"
   text[SELECTED]    = "#FFFFFF"
   text[INSENSITIVE] = "#747474"
-
-  #font_name = "Sans 10"
-  engine "olpc"
-  {
-    # Do you want the scrollbar handles rectangular or a bit shaped?
-    rect_scrollbar = FALSE
-
-    # The following variables are semi-generic, can be applied to
-    # different widget classes etc..
-
-    # Mark type 1 is used on scrollbar handles, handleboxes etc
-    # Can be: NOTHING, SLASH, INVSLASH, DOT, INVDOT
-    mark_type1 = SLASH
-
-    # Mark type 2 is used on scrollbar buttons
-    # Can be: NOTHING, SLASH, INVSLASH, DOT, INVDOT, ARROW
-    mark_type2 = ARROW
-
-    # How to draw paned stuff
-    # Can be: NONE, SOME (currently 5), FULL
-    paned_dots = SOME
-  }
 }
 
-style "tooltips" {
-  bg[NORMAL] = "#EEE1B3"
-  fg[NORMAL] = "#000000"
+style "chrome-button" = "chrome-default"
+{
+  GtkButton::default_border = { 0, 0, 0, 0 }
+  GtkButton::default_outsideborder = { 0, 0, 0, 0 }
+  GtkButton::inner_border = { 0, 0, 0, 0 }
+  GtkButton::focus_line_width = 0
+  GtkButton::focus_padding = 0
+  xthickness = 0
+  ythickness = 0
 }
 
-style "progress-bar" {
-  bg[PRELIGHT] = "#336699"
-  fg[PRELIGHT] = "#FFFFFF"
-  bg[NORMAL]   = "#C1C1CC"
-}
-
-style "menu-item" {
-  bg[PRELIGHT]   = "#336699"
-  fg[PRELIGHT]   = "#FFFFFF"
-  base[PRELIGHT] = "#336699"
-  text[PRELIGHT] = "#FFFFFF"
-}
-
-style "entry" = "default"
+style "chrome-entry" = "chrome-default"
 {
   xthickness = 12
   ythickness = 3
 }
 
 class "GtkWidget" style "default"
-widget "gtk-tooltips*" style "tooltips"
-class "GtkProgressBar" style "progress-bar"
-class "GtkEntry"  style "entry"
-class "*MenuItem*" style "menu-item"
-widget_class "*MenuItem*" style "menu-item"
-widget_class "*.GtkAccelMenuItem.*" style "menu-item"
-widget_class "*.GtkRadioMenuItem.*" style "menu-item"
-widget_class "*.GtkCheckMenuItem.*" style "menu-item"
-widget_class "*.GtkImageMenuItem.*" style "menu-item"
-widget_class "*.GtkSeparatorMenuItem.*" style "menu-item"
-widget_class "*.GtkRadioMenuItem.*" style "menu-item"
+class "GtkToolbar" style "chrome-default"
+widget_class "*.GtkToolbar.*.GtkButton" style "chrome-button"
+widget_class "*.GtkToolbar.*.GtkEntry" style "chrome-entry"
