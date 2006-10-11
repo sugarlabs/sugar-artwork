@@ -8,16 +8,27 @@ style "default"
   GtkCheckButton::indicator_size = 10
   GtkCheckMenuItem::indicator_size = 10
   GtkButton::default_border = { 0, 0, 0, 0 }
+  GtkButton::default_outsideborder = { 0, 0, 0, 0 }
+
+  # These are to make the toolbar button completely flat.
+  # Maybe they should be moved in specific style
+  GtkButton::inner_border = { 0, 0, 0, 0 }
+  GtkButton::focus_line_width = 0
+  GtkButton::focus_padding = 0
+  GtkToolbar::internal_padding = 0
+  GtkToolbar::shadow_type = 0
+  xthickness = 0
+  ythickness = 0
 
   fg[NORMAL]        = "#000000"
   fg[ACTIVE]        = "#000000"
   fg[PRELIGHT]      = "#000000"
   fg[SELECTED]      = "#FFFFFF"
   fg[INSENSITIVE]   = "#747474"
-  bg[NORMAL]        = "#D3D3DD"
-  bg[ACTIVE]        = "#C1C1CC"
-  bg[PRELIGHT]      = "#E5E5F7"
-  bg[SELECTED]      = "#336699"
+  bg[NORMAL]        = "#414141"
+  bg[ACTIVE]        = "#000000"
+  bg[PRELIGHT]      = "#000000"
+  bg[SELECTED]      = "#414141"
   bg[INSENSITIVE]   = "#D3D3DD"
   base[NORMAL]      = "#E5E5F7"
   base[ACTIVE]      = "#808080"

@@ -536,7 +536,7 @@ olpc_style_draw_box(GtkStyle * style,
 {
 	OlpcStyle *olpc_style = OLPC_STYLE (style);
 	cairo_t *canvas;
-	gboolean draw_border = TRUE;
+	gboolean draw_border = FALSE;
 
 	/***********************************************/
 	/* GTK Sanity Checks                           */

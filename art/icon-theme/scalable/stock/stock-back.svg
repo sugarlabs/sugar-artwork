@@ -3,11 +3,13 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+        <!ENTITY fill_color "#000000">
+        <!ENTITY stroke_color "#FFFFFF">
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
 	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
-<path fill="none" stroke="#000000" stroke-width="3.5" d="M37.502,60.001c-12.427,0-22.501-10.076-22.501-22.499
+<path fill="none" stroke="&stroke_color;" stroke-width="3.5" d="M37.502,60.001c-12.427,0-22.501-10.076-22.501-22.499
 	c0-12.427,10.074-22.503,22.501-22.503s22.497,10.076,22.497,22.503C59.999,49.925,49.929,60.001,37.502,60.001z"/>
-<polyline fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" points="40.479,46.733 31.943,38.194 
+<polyline fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" points="40.479,46.733 31.943,38.194 
 	40.479,29.66 "/>
 </svg>
