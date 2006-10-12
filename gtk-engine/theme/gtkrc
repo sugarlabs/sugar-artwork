@@ -56,11 +56,11 @@ style "chrome-entry" = "chrome-default"
 
 style "scrollbar" = "chrome-default"
 {
-  GtkRange::slider_width = 6
+  GtkRange::slider_width = 4
   GtkRange::stepper_size = 1
-  GtkRange::trough-border = 2
+  GtkRange::trough-border = 3
 
-  bg[ACTIVE]        = "#FFFFFF"
+  bg[ACTIVE]        = "#E6E6E6"
   bg[NORMAL]        = "#414141"
   bg[PRELIGHT]      = "#414141"
 }
