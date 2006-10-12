@@ -50,6 +50,7 @@ style "chrome-entry" = "chrome-default"
 {
   xthickness = 12
   ythickness = 3
+  font_name = 'Sans 14'
 }
 
 style "scrollbar" = "chrome-default"
