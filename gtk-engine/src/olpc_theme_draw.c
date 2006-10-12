@@ -553,7 +553,7 @@ olpc_style_draw_box(GtkStyle * style,
 {
 	OlpcStyle *olpc_style = OLPC_STYLE (style);
 	cairo_t *canvas;
-	gboolean draw_border = FALSE;
+	gboolean draw_border = TRUE;
 
 	/***********************************************/
 	/* GTK Sanity Checks                           */
@@ -566,6 +566,8 @@ olpc_style_draw_box(GtkStyle * style,
 	/* GTK Special Cases - Ignored Widgets         */
 	/***********************************************/
 	if ((CHECK_DETAIL(detail, "optionmenutab")) ||
+		(CHECK_DETAIL (detail, "vscrollbar")) ||
+		(CHECK_DETAIL (detail, "hscrollbar")) ||
 		(CHECK_DETAIL (detail, "slider")) ||
 		(CHECK_DETAIL (detail, "buttondefault")) ||
 		(CHECK_DETAIL (detail, "bar") && 
@@ -590,6 +592,10 @@ olpc_style_draw_box(GtkStyle * style,
 	else if (CHECK_DETAIL (detail, "handlebox_bin"))
 	{
 		draw_border=FALSE;
+	}
+	else if (CHECK_DETAIL (detail, "trough"))
+	{
+		draw_border = FALSE;
 	}
 
 
@@ -1073,7 +1079,7 @@ olpc_style_draw_slider(GtkStyle * style,
 	OlpcStyle *olpc_style = OLPC_STYLE (style);
 
   GdkPoint pointsh[7];
-  gint i, rect = FALSE, midlines = MARKS_SLASH;
+  gint midlines = MARKS_SLASH;
   gint modx, mody;
   cairo_t *cr;
 
@@ -1093,80 +1099,22 @@ olpc_style_draw_slider(GtkStyle * style,
       printf("Midlines = %d\n", midlines);
 #endif
 
-      if (OLPC_RC_STYLE (style->rc_style)->scrollbar_type == SCROLL_RECT)
-        {
-          rect = TRUE;
-        }
-
-      /* too small, use rect & no midlines */
-      if ((width <= SMALLEST_HANDLE) && (height <= SMALLEST_HANDLE))
-        {
-          midlines = MARKS_NOTHING;
-          rect = TRUE;
-        }
-
-      if (rect)
-        {
-          pointsh[0].x = x;             pointsh[0].y = y;
-          pointsh[1].x = x + width - 1; pointsh[1].y = y;
-          pointsh[2].x = x + width - 1; pointsh[2].y = y + height - 1;
-          pointsh[3].x = x;             pointsh[3].y = y + height - 1;
-          pointsh[4].x = x;             pointsh[4].y = y;
-        } 
-      else
-        {
-          int chopoff;
-
-          if (orientation == GTK_ORIENTATION_HORIZONTAL) {
-            chopoff = max(0, min(6, width-SMALLEST_HANDLE));
-          } else {
-            chopoff = max(0, min(6, height-SMALLEST_HANDLE));
-          }
-
-          pointsh[0].x = x;                  pointsh[0].y = y+height-1;
-          pointsh[1].x = x;                  pointsh[1].y = y+chopoff;
-          pointsh[2].x = x+chopoff;          pointsh[2].y = y;
-          pointsh[3].x = x+width-1;          pointsh[3].y = y;
-          pointsh[4].x = x+width-1;          pointsh[4].y = y+height-1-chopoff;
-          pointsh[5].x = x+width-1-chopoff;  pointsh[5].y = y+height-1;
-          pointsh[6].x = x;                  pointsh[6].y = y+height-1;
-        }
+      pointsh[0].x = x;             pointsh[0].y = y;
+      pointsh[1].x = x + width - 1; pointsh[1].y = y;
+      pointsh[2].x = x + width - 1; pointsh[2].y = y + height - 1;
+      pointsh[3].x = x;             pointsh[3].y = y + height - 1;
+      pointsh[4].x = x;             pointsh[4].y = y;
 
       cr = ge_gdk_drawable_to_cairo (window, area);
 
-      if (rect)
-        {
-           ge_cairo_set_color(cr, &olpc_style->color_cube.bg[state_type]);
+      ge_cairo_set_color(cr, &olpc_style->color_cube.bg[state_type]);
 
-           cairo_rectangle(cr, x, y, width, height);
+      ge_cairo_rounded_rectangle(cr, x, y, width, height, 2, CR_CORNER_ALL);
 
-           cairo_fill(cr);
+      cairo_fill(cr);
 
-           olpc_style_draw_shadow(style, window, state_type, shadow_type, area,
-                            widget, detail, x, y, width, height);
-        }
-      else
-        {
-          /* Fill the polygon */
-          ge_cairo_polygon(cr, &olpc_style->color_cube.bg[state_type],
-                           pointsh, 6);
-
-          /* Draw the light border */
-          for (i=0;i<3;i++)
-            {
-              ge_cairo_line(cr, &olpc_style->color_cube.light[state_type],
-                            pointsh[i].x,pointsh[i].y,
-                            pointsh[i+1].x,pointsh[i+1].y);
-            }
-          /* Draw the dark border */
-          for (i=3;i<6;i++)
-            {
-              ge_cairo_line(cr, &olpc_style->color_cube.dark[state_type],
-                            pointsh[i].x,pointsh[i].y,
-                            pointsh[i+1].x,pointsh[i+1].y);
-            }
-
-        }
+      //olpc_style_draw_shadow(style, window, state_type, shadow_type, area,
+      //                      widget, detail, x, y, width, height);
 
       if (orientation == GTK_ORIENTATION_HORIZONTAL)
         { modx = 4; mody = 0; }

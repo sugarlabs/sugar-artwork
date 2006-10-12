@@ -3,6 +3,8 @@ style "default"
 {
   engine "olpc"
   {
+    mark_type1 = NOTHING
+    mark_type2 = NOTHING
   }
 }
 
@@ -50,7 +52,19 @@ style "chrome-entry" = "chrome-default"
   ythickness = 3
 }
 
+style "scrollbar" = "chrome-default"
+{
+  GtkRange::slider_width = 6
+  GtkRange::stepper_size = 1
+  GtkRange::trough-border = 2
+
+  bg[ACTIVE]        = "#FFFFFF"
+  bg[NORMAL]        = "#414141"
+  bg[PRELIGHT]      = "#414141"
+}
+
 class "GtkWidget" style "default"
 class "GtkToolbar" style "chrome-default"
+class "GtkScrollbar" style "scrollbar"
 widget_class "*.GtkToolbar.*.GtkButton" style "chrome-button"
 widget_class "*.GtkToolbar.*.GtkEntry" style "chrome-entry"
