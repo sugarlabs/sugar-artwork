@@ -1,15 +1,6 @@
 # Edit these colors and fonts however you like.
 style "default"
 {
-  engine "olpc"
-  {
-    mark_type1 = NOTHING
-    mark_type2 = NOTHING
-  }
-}
-
-style "chrome-default" = "default"
-{
   GtkToolbar::internal_padding = 0
   GtkToolbar::shadow_type = 0
 
@@ -33,9 +24,15 @@ style "chrome-default" = "default"
   text[PRELIGHT]    = "#000000"
   text[SELECTED]    = "#FFFFFF"
   text[INSENSITIVE] = "#747474"
+
+  engine "olpc"
+  {
+    mark_type1 = NOTHING
+    mark_type2 = NOTHING
+  }
 }
 
-style "chrome-button" = "chrome-default"
+style "button" = "default"
 {
   GtkButton::default_border = { 0, 0, 0, 0 }
   GtkButton::default_outsideborder = { 0, 0, 0, 0 }
@@ -46,7 +43,7 @@ style "chrome-button" = "chrome-default"
   ythickness = 0
 }
 
-style "chrome-entry" = "chrome-default"
+style "entry" = "default"
 {
   GtkWidget::cursor_color = "#FFFFFF"
   xthickness = 12
@@ -54,7 +51,7 @@ style "chrome-entry" = "chrome-default"
   font_name = 'Sans 14'
 }
 
-style "scrollbar" = "chrome-default"
+style "scrollbar" = "default"
 {
   GtkRange::slider_width = 4
   GtkRange::stepper_size = 1
@@ -66,7 +63,22 @@ style "scrollbar" = "chrome-default"
 }
 
 class "GtkWidget" style "default"
-class "GtkToolbar" style "chrome-default"
 class "GtkScrollbar" style "scrollbar"
-widget_class "*.GtkToolbar.*.GtkButton" style "chrome-button"
-widget_class "*.GtkToolbar.*.<GtkEntry>" style "chrome-entry"
+class "GtkButton" style "button"
+class "GtkEntry" style "entry"
+
+# Mozilla
+
+style "mozilla" = "mozilla-default"
+{
+  base[NORMAL] = "#FFFFFF"
+  text[NORMAL] = "#000000"
+}
+
+style "mozilla-button" = "mozilla-default"
+{
+  bg[NORMAL] = "#D3D3DD"
+}
+
+class "GtkInvisible" style "mozilla"
+class "GtkButton" style "mozilla-button"
