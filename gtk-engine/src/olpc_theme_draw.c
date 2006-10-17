@@ -1109,7 +1109,7 @@ olpc_style_draw_slider(GtkStyle * style,
 
       ge_cairo_set_color(cr, &olpc_style->color_cube.bg[state_type]);
 
-      ge_cairo_rounded_rectangle(cr, x, y, width, height, 2, CR_CORNER_ALL);
+      ge_cairo_rounded_rectangle(cr, x + 3, y + 3, width - 6, height - 6, 2, CR_CORNER_ALL);
 
       cairo_fill(cr);
 

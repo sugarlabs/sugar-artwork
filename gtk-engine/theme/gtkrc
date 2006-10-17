@@ -35,9 +35,9 @@ style "default"
 
 style "scrollbar" = "default"
 {
-  GtkRange::slider_width = 4
+  GtkRange::slider_width = 12
   GtkRange::stepper_size = 1
-  GtkRange::trough-border = 3
+  GtkRange::trough-border = 0
 
   bg[ACTIVE]        = "#E6E6E6"
   bg[NORMAL]        = "#414141"
