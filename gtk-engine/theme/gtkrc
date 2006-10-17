@@ -1,9 +1,51 @@
-# Edit these colors and fonts however you like.
 style "default"
 {
-  GtkToolbar::internal_padding = 0
-  GtkToolbar::shadow_type = 0
+  GtkOptionMenu::indicator_spacing = { 3, 2, 1, 1 }
+  GtkCheckButton::indicator_size = 10
+  GtkCheckMenuItem::indicator_size = 10
+  GtkButton::default_border = { 0, 0, 0, 0 }
 
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#FFFFFF"
+  fg[INSENSITIVE]   = "#747474"
+  bg[NORMAL]        = "#D3D3DD"
+  bg[ACTIVE]        = "#C1C1CC"
+  bg[PRELIGHT]      = "#E5E5F7"
+  bg[SELECTED]      = "#336699"
+  bg[INSENSITIVE]   = "#D3D3DD"
+  base[NORMAL]      = "#E5E5F7"
+  base[ACTIVE]      = "#808080"
+  base[PRELIGHT]    = "#E5E5F7"
+  base[SELECTED]    = "#336699"
+  base[INSENSITIVE] = "#E5E5F7"
+  text[NORMAL]      = "#000000"
+  text[ACTIVE]      = "#FFFFFF"
+  text[PRELIGHT]    = "#000000"
+  text[SELECTED]    = "#FFFFFF"
+  text[INSENSITIVE] = "#747474"
+
+  engine "olpc"
+  {
+    mark_type1 = NOTHING
+    mark_type2 = NOTHING
+  }
+}
+
+style "scrollbar" = "default"
+{
+  GtkRange::slider_width = 4
+  GtkRange::stepper_size = 1
+  GtkRange::trough-border = 3
+
+  bg[ACTIVE]        = "#E6E6E6"
+  bg[NORMAL]        = "#414141"
+  bg[PRELIGHT]      = "#414141"
+}
+
+style "dark-default" = "default"
+{
   fg[NORMAL]        = "#FFFFFF"
   fg[ACTIVE]        = "#FFFFFF"
   fg[PRELIGHT]      = "#FFFFFF"
@@ -24,15 +66,15 @@ style "default"
   text[PRELIGHT]    = "#000000"
   text[SELECTED]    = "#FFFFFF"
   text[INSENSITIVE] = "#747474"
-
-  engine "olpc"
-  {
-    mark_type1 = NOTHING
-    mark_type2 = NOTHING
-  }
 }
 
-style "button" = "default"
+style "toolbar" = "dark-default"
+{
+  GtkToolbar::internal_padding = 0
+  GtkToolbar::shadow_type = 0
+}
+
+style "toolbar-button" = "dark-default"
 {
   GtkButton::default_border = { 0, 0, 0, 0 }
   GtkButton::default_outsideborder = { 0, 0, 0, 0 }
@@ -43,7 +85,7 @@ style "button" = "default"
   ythickness = 0
 }
 
-style "entry" = "default"
+style "toolbar-entry" = "dark-default"
 {
   GtkWidget::cursor_color = "#FFFFFF"
   xthickness = 12
@@ -51,18 +93,10 @@ style "entry" = "default"
   font_name = 'Sans 14'
 }
 
-style "scrollbar" = "default"
-{
-  GtkRange::slider_width = 4
-  GtkRange::stepper_size = 1
-  GtkRange::trough-border = 3
-
-  bg[ACTIVE]        = "#E6E6E6"
-  bg[NORMAL]        = "#414141"
-  bg[PRELIGHT]      = "#414141"
-}
-
 class "GtkWidget" style "default"
 class "GtkScrollbar" style "scrollbar"
-class "GtkButton" style "button"
-class "GtkEntry" style "entry"
+class "GtkToolbar" style "toolbar"
+class "GtkSocket" style "dark-default"
+
+widget_class "*.GtkToolbar.*.<GtkButton>" style "toolbar-button"
+widget_class "*.GtkToolbar.*.<GtkEntry>" style "toolbar-entry"
