@@ -4,11 +4,11 @@ style "default"
   GtkToolbar::internal_padding = 0
   GtkToolbar::shadow_type = 0
 
-  fg[NORMAL]        = "#000000"
-  fg[ACTIVE]        = "#000000"
-  fg[PRELIGHT]      = "#000000"
+  fg[NORMAL]        = "#FFFFFF"
+  fg[ACTIVE]        = "#FFFFFF"
+  fg[PRELIGHT]      = "#FFFFFF"
   fg[SELECTED]      = "#FFFFFF"
-  fg[INSENSITIVE]   = "#747474"
+  fg[INSENSITIVE]   = "#FFFFFF"
   bg[NORMAL]        = "#414141"
   bg[ACTIVE]        = "#000000"
   bg[PRELIGHT]      = "#000000"
@@ -66,19 +66,3 @@ class "GtkWidget" style "default"
 class "GtkScrollbar" style "scrollbar"
 class "GtkButton" style "button"
 class "GtkEntry" style "entry"
-
-# Mozilla
-
-style "mozilla" = "mozilla-default"
-{
-  base[NORMAL] = "#FFFFFF"
-  text[NORMAL] = "#000000"
-}
-
-style "mozilla-button" = "mozilla-default"
-{
-  bg[NORMAL] = "#D3D3DD"
-}
-
-class "GtkInvisible" style "mozilla"
-class "GtkButton" style "mozilla-button"
