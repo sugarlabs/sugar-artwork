@@ -2,7 +2,7 @@ AC_INIT(art)
 
 AM_CONFIG_HEADER(config.h)
 
-AM_INIT_AUTOMAKE(olpc-artwork, 0.16)
+AM_INIT_AUTOMAKE(olpc-artwork, 0.17)
 
 # Honor aclocal flags
 ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
