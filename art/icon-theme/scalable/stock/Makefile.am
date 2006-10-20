@@ -7,6 +7,7 @@ icon_DATA =				\
 	stock-back.svg			\
 	stock-buddy.svg			\
 	stock-chat.svg			\
+	stock-continue.svg		\
 	stock-close.svg			\
 	stock-forward.svg		\
 	stock-invite.svg		\
