@@ -1,4 +1,4 @@
-SUBDIRS = scalable
+SUBDIRS = 16x16 scalable
 
 THEME_IN_FILES = index.theme.in
 
