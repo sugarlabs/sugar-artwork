@@ -17,6 +17,13 @@ icon_DATA =				\
 	stock-zoom-activity.svg		\
 	stock-zoom-friends.svg		\
 	stock-zoom-home.svg		\
-	stock-zoom-mesh.svg
+	stock-zoom-mesh.svg		\
+	stock-net-wired.svg \
+	stock-net-wireless-00.svg \
+	stock-net-wireless-01-20.svg \
+	stock-net-wireless-21-40.svg \
+	stock-net-wireless-41-60.svg \
+	stock-net-wireless-61-80.svg \
+	stock-net-wireless-81-100.svg
 
 EXTRA_DIST = $(icon_DATA)
