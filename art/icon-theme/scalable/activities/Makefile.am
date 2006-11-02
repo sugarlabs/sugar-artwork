@@ -8,6 +8,7 @@ icon_DATA =			\
 	activity-memorygame.svg	\
 	activity-sketch.svg 	\
 	activity-tamtam.svg	\
-	activity-terminal.svg
+	activity-terminal.svg	\
+	activity-xbook.svg
 
 EXTRA_DIST = $(icon_DATA)
