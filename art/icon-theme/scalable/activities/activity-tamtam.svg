@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY fill_color "#FFFFFF">
+	<!ENTITY stroke_color "#000000">
+]>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://web.resource.org/cc/"
@@ -8,79 +12,146 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.0"
    width="75"
    height="75"
-   viewBox="-13.5 -13.5 67.938 69.182"
-   id="Layer_1"
-   xml:space="preserve"
+   id="svg1906"
    sodipodi:version="0.32"
-   inkscape:version="0.44"
-   sodipodi:docname="activity-tamtam.svg"
-   sodipodi:docbase="/home/sean/Projects"><metadata
-   id="metadata15"><rdf:RDF><cc:Work
-       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
-   inkscape:window-height="840"
-   inkscape:window-width="917"
-   inkscape:pageshadow="2"
-   inkscape:pageopacity="0.0"
-   guidetolerance="10.0"
-   gridtolerance="10.0"
-   objecttolerance="10.0"
-   borderopacity="1.0"
-   bordercolor="#666666"
-   pagecolor="#ffffff"
-   id="base"
-   inkscape:zoom="8.4791667"
-   inkscape:cx="24"
-   inkscape:cy="18.133047"
-   inkscape:window-x="140"
-   inkscape:window-y="29"
-   inkscape:current-layer="Layer_1"
-   showguides="false" /><defs
-   id="defs22" />
-<defs
-   id="defs4">
-  <style
-   type="text/css"
-   id="style6">
-    .shape-and-fill {fill: green; stroke: red}
-    .fill {fill: green; stroke: green;}
-    .shape {fill: red; stroke: red;}
-  </style>
-</defs>
-<g
-   transform="matrix(1.642121,0,0,1.642121,-15.36003,-15.16578)"
-   id="g3">
-	<circle
-   class="shape-and-fill"
-   cx="21.792"
-   cy="22.104"
-   r="11.817"
-   style="stroke-width:2"
-   id="circle5" />
+   inkscape:version="0.44.1"
+   version="1.0"
+   sodipodi:docbase="/home/james/cvs/tamtam"
+   sodipodi:docname="activity-tamtam.svg">
+  <defs
+     id="defs1908" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.5"
+     inkscape:cx="32"
+     inkscape:cy="36.998878"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     width="75px"
+     height="75px"
+     inkscape:window-width="907"
+     inkscape:window-height="648"
+     inkscape:window-x="104"
+     inkscape:window-y="72" />
+  <metadata
+     id="metadata1911">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <g
+       id="g4196"
+       transform="translate(-268.0434,-354.9699)">
+	<g
+   id="rect2404">
+		<path
+   d="M 288.879,383.214 L 323.079,383.214 C 323.824,383.214 324.428,383.818 324.428,384.563 L 324.428,388.66 C 324.428,389.405 323.824,390.009 323.079,390.009 L 288.879,390.009 C 288.134,390.009 287.53,389.405 287.53,388.66 L 287.53,384.563 C 287.53,383.817 288.134,383.214 288.879,383.214 z "
+   id="path6"
+   style="fill:&fill_color;;stroke:&stroke_color;;stroke-width:3.5" />
+
+	</g>
+
+	<g
+   id="rect2410">
+		<rect
+   x="290.03601"
+   y="390.44101"
+   width="31.888"
+   height="16.782"
+   id="rect9"
+   style="fill:&fill_color;;stroke:&stroke_color;;stroke-width:3.5" />
+
+	</g>
+
+	<g
+   id="rect2412">
+		<path
+   d="M 288.879,407.655 L 323.079,407.655 C 323.824,407.655 324.428,408.259 324.428,409.004 L 324.428,413.101 C 324.428,413.847 323.824,414.452 323.079,414.452 L 288.879,414.452 C 288.134,414.452 287.53,413.848 287.53,413.101 L 287.53,409.004 C 287.53,408.26 288.134,407.655 288.879,407.655 z "
+   id="path12"
+   style="fill:&fill_color;;stroke:&stroke_color;;stroke-width:3.5" />
+
+	</g>
+
+	<g
+   id="path4188">
+		<path
+   d="M 291.294,390.441 L 295.49,407.223"
+   id="path15"
+   style="fill:none;stroke:&stroke_color;;stroke-width:2" />
+
+	</g>
+
+	<g
+   id="path4190">
+		<path
+   d="M 295.49,407.222 L 299.686,390.44 L 303.882,407.222"
+   id="path18"
+   style="fill:none;stroke:&stroke_color;;stroke-width:2" />
+
+	</g>
+
+	<g
+   id="path4192">
+		<path
+   d="M 303.881,407.222 L 308.077,390.44 L 312.272,407.222 L 316.468,390.44"
+   id="path21"
+   style="fill:none;stroke:&stroke_color;;stroke-width:2" />
+
+	</g>
+
+	<g
+   id="path4194">
+		<path
+   d="M 320.664,407.222 L 316.469,390.44"
+   id="path24"
+   style="fill:none;stroke:&stroke_color;;stroke-width:2" />
+
+	</g>
+
 </g>
+    <g
+       id="g32"
+       transform="translate(-268.0434,-358.3431)">
+	
+		<line
+   x1="312.01099"
+   y1="381.72699"
+   x2="326.10599"
+   y2="374.798"
+   id="line34"
+   style="fill:none;stroke:&stroke_color;;stroke-width:2;stroke-linecap:round" />
 
-<path
-   class="shape"
-   d="M 14.861816,13.84517 C 14.861816,13.84517 20.699944,17.503081 20.699944,21.83893 C 20.699944,26.174781 14.861816,29.772041 14.861816,29.772041"
-   style="stroke-width:3.51516676;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;fill-rule:nonzero;fill:none"
-   id="path9" />
+</g>
+    <g
+       id="g36"
+       transform="translate(-268.0434,-358.3431)">
+	
+		<line
+   x1="285.40701"
+   y1="371.202"
+   x2="299.47101"
+   y2="378.19601"
+   id="line38"
+   style="fill:none;stroke:&stroke_color;;stroke-width:2;stroke-linecap:round" />
 
-
-<path
-   id="path1879"
-   style="stroke-width:3.93218541;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;fill:none"
-   d="M 20.33971,6.7911077 C 20.33971,6.7911077 29.746016,13.355974 29.746016,21.137543 C 29.746016,28.919111 20.33971,35.375129 20.33971,35.375129"
-   class="shape" /><path
-   sodipodi:type="arc"
-   class="shape"
-   style="fill-rule:evenodd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-   id="path1883"
-   sodipodi:cx="8.1356878"
-   sodipodi:cy="22.490158"
-   sodipodi:rx="5.1302433"
-   sodipodi:ry="5.1820641"
-   d="M 13.265931 22.490158 A 5.1302433 5.1820641 0 1 1  3.0054445,22.490158 A 5.1302433 5.1820641 0 1 1  13.265931 22.490158 z"
-   transform="matrix(0.650987,0,0,0.634477,3.046747,7.287903)" /></svg>
+</g>
+  </g>
+</svg>
