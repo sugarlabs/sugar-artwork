@@ -15,13 +15,13 @@
    id="Layer_1"
    xml:space="preserve"
    sodipodi:version="0.32"
-   inkscape:version="0.44.1"
-   sodipodi:docname="penguintv_olpc_icon4.svg"
-   sodipodi:docbase="/home/owen/penguintv/share"><metadata
+   inkscape:version="0.44"
+   sodipodi:docname="activity-penguintv.svg"
+   sodipodi:docbase="/home/owen/src/penguintv/svn/penguintv/trunk/activity"><metadata
    id="metadata2909"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
-   inkscape:cy="24.112808"
+   inkscape:cy="23.968851"
    inkscape:cx="60.622397"
    inkscape:zoom="3.4732669"
    inkscape:window-height="628"
@@ -55,7 +55,7 @@
 
 <path
    class="shape-and-fill"
-   style="stroke-width:3.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   style="stroke-width:3.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill:none"
    d="M 15.697442,1.437061 C 13.754027,1.437061 9.72324,2.516737 9.075434,5.82774 C 8.268017,9.954534 8.499608,12.305791 7.995759,13.67338 C 7.491911,15.040968 2.957275,20.727257 2.453427,24.686066 C 1.949578,28.644875 2.453427,39.081735 6.340257,39.657562 C 10.227088,40.233389 20.519991,43.616371 23.111212,39.873497 C 25.702432,36.130623 27.789804,29.436637 26.854085,25.909698 C 25.918367,22.382759 21.167796,16.408557 20.448013,13.961293 C 19.728229,11.514029 22.515641,8.573807 20.735926,5.323892 C 19.080424,2.300801 17.298961,1.581018 15.697442,1.437061 z "
    id="path2943"
    nodetypes="cssssssssc" /><path
