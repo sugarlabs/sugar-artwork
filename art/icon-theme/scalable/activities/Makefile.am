@@ -3,6 +3,7 @@ category=activities
 icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)
 
 icon_DATA =			\
+	activity-abiword.svg	\
 	activity-web.svg	\
 	activity-chat.svg	\
 	activity-memorygame.svg	\

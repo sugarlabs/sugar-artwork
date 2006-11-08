@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY fill_color "#133c6d">
+	<!ENTITY stroke_color "#d7e4f6">
+]> 
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="48pt"
+   height="48pt"
+   id="svg985"
+   sodipodi:version="0.32"
+   inkscape:version="0.44"
+   sodipodi:docname="activity-abiword.svg"
+   sodipodi:docbase="/home/jirwin/abiword.activity1/images">
+  <metadata
+     id="metadata1926">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1924" />
+  <sodipodi:namedview
+     inkscape:window-height="579"
+     inkscape:window-width="849"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="6.3"
+     inkscape:cx="30"
+     inkscape:cy="30"
+     inkscape:window-x="252"
+     inkscape:window-y="66"
+     inkscape:current-layer="svg985" />
+<g
+     style="display:inline"
+     id="layer2" />
+  <g
+     style="display:none"
+     id="layer1">
+    <image
+       xlink:href="/home/ryan/srctrees/abihead/AbiSource_TM_Artwork/abidistfiles/swoosh_a/logo.trans.1000.png"
+       x="-7.7499809"
+       y="-5.1469817"
+       width="73.645844"
+       height="69.668968"
+       style="opacity:0.59999988"
+       id="image1838" />
+  </g>
+  <path
+     d="M 58.971257,57.149635 C 60.66006,53.584609 45.888643,6.2655772 32.044838,1.5758944 C 19.959673,-1.3528385 -4.9783556,50.784337 2.2799383,57.858928 C 11.532759,62.381018 37.80849,46.934915 47.995524,40.952824 C 34.462082,43.225557 11.095651,54.43071 10.066911,51.968518 C 6.1766714,50.33619 25.306644,11.618989 31.954912,13.208891 C 37.759905,12.530895 59.148618,57.131844 58.971257,57.149635 z "
+     id="path16480"
+     fill="&fill_color;"
+     stroke="&stroke_color;"
+     stroke-width="2.5"
+     />
+</svg>
