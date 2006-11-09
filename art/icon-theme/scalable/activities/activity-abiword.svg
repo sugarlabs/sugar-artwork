@@ -2,10 +2,10 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
-	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+   	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 	<!ENTITY fill_color "#133c6d">
 	<!ENTITY stroke_color "#d7e4f6">
-]> 
+]>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://web.resource.org/cc/"
@@ -16,13 +16,13 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
-   width="48pt"
-   height="48pt"
+   width="75"
+   height="75"
    id="svg985"
    sodipodi:version="0.32"
    inkscape:version="0.44"
-   sodipodi:docname="activity-abiword.svg"
-   sodipodi:docbase="/home/jirwin/abiword.activity1/images">
+   sodipodi:docname="activity-abiword1.svg"
+   sodipodi:docbase="/home/jirwin">
   <metadata
      id="metadata1926">
     <rdf:RDF>
@@ -37,8 +37,8 @@
   <defs
      id="defs1924" />
   <sodipodi:namedview
-     inkscape:window-height="579"
-     inkscape:window-width="849"
+     inkscape:window-height="1024"
+     inkscape:window-width="1280"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      guidetolerance="10.0"
@@ -50,11 +50,13 @@
      id="base"
      inkscape:zoom="6.3"
      inkscape:cx="30"
-     inkscape:cy="30"
-     inkscape:window-x="252"
-     inkscape:window-y="66"
-     inkscape:current-layer="svg985" />
-<g
+     inkscape:cy="34.613249"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:current-layer="svg985"
+     width="75px"
+     height="75px" />
+  <g
      style="display:inline"
      id="layer2" />
   <g
@@ -68,9 +70,9 @@
        height="69.668968"
        style="opacity:0.59999988"
        id="image1838" />
-  </g>
+       </g>
   <path
-     d="M 58.971257,57.149635 C 60.66006,53.584609 45.888643,6.2655772 32.044838,1.5758944 C 19.959673,-1.3528385 -4.9783556,50.784337 2.2799383,57.858928 C 11.532759,62.381018 37.80849,46.934915 47.995524,40.952824 C 34.462082,43.225557 11.095651,54.43071 10.066911,51.968518 C 6.1766714,50.33619 25.306644,11.618989 31.954912,13.208891 C 37.759905,12.530895 59.148618,57.131844 58.971257,57.149635 z "
+     d="M 60.485958,59.989887 C 61.878343,57.00408 49.699604,17.373087 38.285663,13.445349 C 28.321686,10.992455 7.760778,54.658776 13.745097,60.58394 C 21.373863,64.371315 43.03768,51.434778 51.436686,46.424612 C 40.278632,48.328089 21.013476,57.712713 20.1653,55.65056 C 16.957875,54.28344 32.730156,21.856717 38.211521,23.188303 C 42.997622,22.620463 60.632189,59.974987 60.485958,59.989887 z "
      id="path16480"
      fill="&fill_color;"
      stroke="&stroke_color;"
