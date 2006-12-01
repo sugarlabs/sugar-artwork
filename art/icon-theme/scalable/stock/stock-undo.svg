@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+        <!ENTITY ns_svg "http://www.w3.org/2000/svg">
+        <!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+        <!ENTITY fill_color "#ffffff">
+]>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="75"
+   height="75"
+   id="svg11300">
+  <defs
+     id="defs3" />
+  <g
+     id="layer1">
+    <path
+       d="M 15.681481,60.031392 C 76.049102,61.457511 66.508354,24.688973 35.107276,24.909291 L 35.107276,14.788907 L 9.9977457,30.534542 L 35.107276,47.04762 C 35.107276,47.04762 35.107276,36.610987 35.107276,36.610987 C 56.317503,35.978455 62.522941,59.746609 15.681481,60.031392 z "
+       style="opacity:1;color:black;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000012;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:block;overflow:visible"
+       fill="&fill_color;"
+       id="path1432" />
+  </g>
+</svg>
