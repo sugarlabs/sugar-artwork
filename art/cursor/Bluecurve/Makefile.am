@@ -34,7 +34,7 @@ clean-local:
 
 install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/Bluecurve/cursors/
-	for i in `cd Bluecurve && echo *` ; do							\
+	for i in `cd $(THEME_DIR) && echo *` ; do						\
 	  $(INSTALL) $(THEME_DIR)/$$i $(DESTDIR)$(datadir)/icons/Bluecurve/cursors/$$i ;	\
 	done
 
