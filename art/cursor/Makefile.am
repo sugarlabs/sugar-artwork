@@ -1,1 +1,1 @@
-SUBDIRS = cursorthemegen Bluecurve
+SUBDIRS = cursorthemegen olpc

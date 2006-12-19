@@ -45,7 +45,7 @@ Makefile
 art/Makefile
 art/cursor/Makefile
 art/cursor/cursorthemegen/Makefile
-art/cursor/Bluecurve/Makefile
+art/cursor/olpc/Makefile
 art/icon-theme/Makefile
 art/icon-theme/16x16/Makefile
 art/icon-theme/16x16/stock/Makefile
