@@ -14,6 +14,8 @@ olpc_images =			\
 	olpc-7.png		\
 	olpc-8.png              \
 	olpc-9.png              \
+	olpc-10.png             \
+	olpc-11.png             \
 	olpc-hotspots.png
 
 olpc.stamp: $(olpc_images) $(THEMEGEN) olpc.cursortheme
