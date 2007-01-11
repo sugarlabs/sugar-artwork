@@ -1,119 +1,76 @@
-<theme name="Bluecurve">
-  <source size="48" gridsize="96">
-    <image file="olpc-48-1.png" use="0"/>
-    <image file="olpc-48-hotspot.png" use="hotspot"/>
-  </source>
-  <layout>
-    <row>
-      <cursor name="X_cursor"/>
-      <cursor name="arrow"/>
-      <cursor name="based_arrow_down"/>
-      <cursor name="based_arrow_up"/>
-      <cursor name="boat"/>
-      <cursor name="bogosity"/>
-      <cursor name="bottom_left_corner"/>
-      <cursor name="bottom_right_corner"/>
-    </row><row>
-      <cursor name="bottom_side"/>
-      <cursor name="bottom_tee"/>
-      <cursor name="box_spiral"/>
-      <cursor name="center_ptr"/>
-      <cursor name="circle"/>
-      <cursor name="clock"/>
-      <cursor name="coffee_mug"/>
-      <cursor name="cross"/>
-    </row><row>
-      <cursor name="cross_reverse"/>
-      <cursor name="crosshair"/>
-      <cursor name="diamond_cross"/>
-      <cursor name="dot"/>
-      <cursor name="dotbox"/>
-      <cursor name="double_arrow"/>
-      <cursor name="draft_large"/>
-      <cursor name="draft_small"/>
-    </row><row>
-      <cursor name="draped_box"/>
-      <cursor name="exchange"/>
-      <cursor name="fleur"/>
-      <cursor name="gobbler"/>
-      <cursor name="gumby"/>
-      <cursor name="hand1"/>
-      <cursor name="hand2"/>
-      <cursor name="heart"/>
-    </row><row>
-      <cursor name="icon"/>
-      <cursor name="iron_cross"/>
-      <cursor name="left_ptr"/>
-      <cursor name="left_side"/>
-      <cursor name="left_tee"/>
-      <cursor name="leftbutton"/>
-      <cursor name="ll_angle"/>
-      <cursor name="lr_angle"/>
-    </row><row>
-      <cursor name="man"/>
-      <cursor name="middlebutton"/>
-      <cursor name="mouse"/>
-      <cursor name="pencil"/>
-      <cursor name="pirate"/>
-      <cursor name="plus"/>
-      <cursor name="question_arrow"/>
-      <cursor name="right_ptr"/>
-    </row><row>
-      <cursor name="right_side"/>
-      <cursor name="right_tee"/>
-      <cursor name="rightbutton"/>
-      <cursor name="rtl_logo"/>
-      <cursor name="sailboat"/>
-      <cursor name="sb_down_arrow"/>
-      <cursor name="sb_h_double_arrow"/>
-      <cursor name="sb_left_arrow"/>
-    </row><row>
-      <cursor name="sb_right_arrow"/>
-      <cursor name="sb_up_arrow"/>
-      <cursor name="sb_v_double_arrow"/>
-      <cursor name="shuttle"/>
-      <cursor name="sizing"/>
-      <cursor name="spider"/>
-      <cursor name="spraycan"/>
-      <cursor name="star"/>
-    </row><row>
-      <cursor name="target"/>
-      <cursor name="tcross"/>
-      <cursor name="top_left_arrow"/>
-      <cursor name="top_left_corner"/>
-      <cursor name="top_right_corner"/>
-      <cursor name="top_side"/>
-      <cursor name="top_tee"/>
-      <cursor name="trek"/>
-    </row><row>
-      <cursor name="ul_angle"/>
-      <cursor name="umbrella"/>
-      <cursor name="ur_angle"/>
-      <cursor name="_watch-old_">
-      </cursor>
-      <cursor name="xterm"/>
-      <cursor name="left_ptr_watch">
-        <frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-	<frame delay="60"/>
-        <frame delay="60"/>
-      </cursor>
-    </row>
-    <row>
-      <cursor name="color-picker"/>
-      <cursor name="dnd-move"/>
-      <cursor name="dnd-copy"/>
-      <cursor name="dnd-ask"/>
-      <cursor name="dnd-link"/>
-      <cursor name="dnd-none"/>
-    </row>
-  </layout>
+<theme name="OLPC">	
+	<source size="48" gridsize="48">
+		<image file="olpc-0.png" use="0"/>
+		<image file="olpc-1.png" use="1"/>
+		<image file="olpc-2.png" use="2"/>
+		<image file="olpc-3.png" use="3"/>
+		<image file="olpc-4.png" use="4"/>
+		<image file="olpc-5.png" use="5"/>
+		<image file="olpc-6.png" use="6"/>
+		<image file="olpc-7.png" use="7"/>
+		<image file="olpc-8.png" use="8"/>
+		<image file="olpc-9.png" use="9"/>
+		<image file="olpc-10.png" use="10"/>
+		<image file="olpc-11.png" use="11"/>
+		
+		<image file="olpc-hotspots.png" use="hotspot"/>
+	</source>
+	
+	<alias name="top_left_arrow" target="left_ptr"/>
+	
+	<alias name="top_right_arrow" target="right_ptr"/>
+	<alias name="arrow" target="right_ptr"/>
+	<alias name="draft_small" target="right_ptr"/>
+	<alias name="draft_large" target="right_ptr"/>
+	
+	<alias name="close" target="pirate"/>
+	<alias name="destroy" target="pirate"/>
+	
+	<alias name="right_side" target="left_side"/>
+	<alias name="bottom_side" target="top_side"/>
+	<alias name="double_arrow" target="top_side"/>
+	<alias name="top_right_corner" target="bottom_left_corner"/>
+	<alias name="top_left_corner" target="bottom_right_corner"/>
+	
+	<layout>
+		<row>
+			<cursor name="left_ptr"/>
+			<cursor name="center_ptr"/>
+			<cursor name="right_ptr"/>
+			<cursor name="exchange"/>
+			<cursor name="plus"/>
+			<cursor name="minus"/>
+		</row><row>
+			<cursor name="question_arrow"/>
+			<cursor name="link"/>
+			<cursor name="unavailable"/>
+			<cursor name="pirate"/>
+			<cursor name="left_ptr_watch"/>
+			<cursor name="left_ptr_modify"/>
+		</row><row>
+			<cursor name="busy"/>
+			<cursor name="circle"/>
+			<cursor name="hand1"/>
+			<cursor name="hand2"/>
+			<cursor name="hand_open"/>
+			<cursor name="hand_closed"/>
+		</row><row>
+			<cursor name="sb_left_arrow"/>
+			<cursor name="sb_right_arrow"/>
+			<cursor name="sb_up_arrow"/>
+			<cursor name="sb_down_arrow"/>
+			<cursor name="sb_v_double_arrow"/>
+			<cursor name="sb_h_double_arrow"/>
+		</row><row>
+			<cursor name="bottom_right_corner"/>
+			<cursor name="bottom_left_corner"/>
+			<cursor name="top_side"/>
+			<cursor name="right_side"/>
+			<cursor name="fleur"/>
+			<cursor name="xterm"/>		
+		</row><row>
+			<cursor name="crosshair"/>
+			<cursor name="pencil"/>
+		</row>
+	</layout>
 </theme>

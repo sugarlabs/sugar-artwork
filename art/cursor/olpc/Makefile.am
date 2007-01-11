@@ -4,8 +4,17 @@ THEME_DIR = $(top_builddir)/art/cursor/olpc/theme
 all-local: olpc.stamp
 
 olpc_images =			\
-	olpc-48-hotspot.png	\
-	olpc-48-1.png
+	olpc-0.png		\
+	olpc-1.png		\
+	olpc-2.png		\
+	olpc-3.png		\
+	olpc-4.png		\
+	olpc-5.png		\
+	olpc-6.png		\
+	olpc-7.png		\
+	olpc-8.png              \
+	olpc-9.png              \
+	olpc-hotspots.png
 
 olpc.stamp: $(olpc_images) $(THEMEGEN) olpc.cursortheme
 	rm -rf olpc &&     	                                \
