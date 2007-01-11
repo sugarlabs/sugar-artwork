@@ -11,6 +11,7 @@ icon_DATA =				\
 	stock-close.svg			\
 	stock-forward.svg		\
 	stock-invite.svg		\
+	stock-keep.svg		    \
 	stock-missing.svg		\
 	stock-remove.svg		\
 	stock-share-mesh.svg		\
