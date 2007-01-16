@@ -45,10 +45,36 @@
 			<cursor name="link"/>
 			<cursor name="unavailable"/>
 			<cursor name="pirate"/>
-			<cursor name="left_ptr_watch"/>
+			<cursor name="left_ptr_watch">
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+			        <frame delay="60"/>
+			</cursor>
 			<cursor name="left_ptr_modify"/>
 		</row><row>
-			<cursor name="busy"/>
+			<cursor name="busy">
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+			        <frame delay="60"/>
+			</cursor>
 			<cursor name="circle"/>
 			<cursor name="hand1"/>
 			<cursor name="hand2"/>
@@ -73,4 +99,44 @@
 			<cursor name="pencil"/>
 		</row>
 	</layout>
+
+<!--
+  Aliases can also be used to provide cursors to be used in place
+  of particular legacy cursor shapes; whenever libXcursor is
+  asked to create a bitmap cursor, it creates a hash value
+  from the cursor shape, and tries using that as a cursor
+  name. Setting the environment variable XCURSOR_DISCOVER will
+  log this process, which is useful for finding out the hash values.
+
+  The following maps the mozilla pointer-while-waiting cursor to 
+  left_ptr_watch.
+-->
+  
+  <!-- moz_spinning (left_ptr with watch) -->
+  <alias name="08e8e1c95fe2fc01f976f1e063a24ccd" target="left_ptr_watch"/>
+  
+  <!-- moz_question_arrow (left_ptr with question) -->
+  <alias name="5c6cd98b3f3ebcb1f9c7f1c204630408" target="question_arrow"/>
+ 
+<!-- 
+   More mozilla hash values that could be aliased:
+
+     moz_alias 0876e1c15ff2fc01f906f1c363074c0f (left_ptr with small arrow) 
+     moz_copy 08ffe1cb5fe6fc01f906f1c063814ccf (left_ptr with plus)
+     moz_hand_grabbing 208530c400c041818281048008011002 (closed hand)
+     moz_hand_grab 5aca4d189052212118709018842178c0 (open hand)
+     moz_menu 08ffe1e65f80fcfdf9fff11263e74c48 (left_ptr with menu) */
+     moz_question_arrow 5c6cd98b3f3ebcb1f9c7f1c204630408 (left_ptr with ?)
+
+  GTK+ toolkit cursors:
+-->
+
+     <alias name="1081e37283d90000800003c07f3ef6bf" target="dnd_copy"/>
+     <alias name="9081237383d90e509aa00f00170e968f" target="dnd_move"/>
+     <alias name="3085a0e285430894940527032f8b26df" target="dnd_link"/>
+     <alias name="1001208387f90000800003000700f6ff" target="dnd_none"/>
+
+     <alias name="90b3018312820b127e5a0b7c8034a301" target="color-picker"/>
+
+     <alias name="watch" target="left_ptr_watch"/>
 </theme>
