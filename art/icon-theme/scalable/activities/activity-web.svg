@@ -4,18 +4,20 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 	<!ENTITY fill_color "#FFFFFF">
-	<!ENTITY stroke_color "#000000">
+	<!ENTITY stroke_color "&stroke_color;">
 ]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="76" height="76" viewBox="0 0 76 76"
-	 overflow="visible" enable-background="new 0 0 76 76" xml:space="preserve">
-
-<circle fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" cx="38" cy="38" r="19.903"/>
-<path fill="none" stroke="&stroke_color;" stroke-width="3.5" d="M38.001,18.098c0,0-11.205,8.394-11.205,19.976
-	c0,11.583,11.205,19.829,11.205,19.829"/>
-<path fill="none" stroke="&stroke_color;" stroke-width="3.5" d="M38.001,18.098c0,0,11.066,9.141,11.066,19.976
-	c0,10.839-11.066,19.829-11.066,19.829"/>
-<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="38.001" y1="18.098" x2="38.001" y2="57.902"/>
-<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="38.001" y1="18.098" x2="38.001" y2="57.902"/>
-<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="38.001" y1="18.098" x2="38.001" y2="57.902"/>
-<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="18.097" y1="38" x2="57.903" y2="38"/>
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="43.307" height="43.305"
+	 viewBox="0 0 43.307 43.305" overflow="visible" enable-background="new 0 0 43.307 43.305" xml:space="preserve">
+<circle id="Globe" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" cx="21.652" cy="21.653" r="19.903"/>
+<g id="Lines">
+	<path fill="none" stroke="&stroke_color;" stroke-width="3.5" d="M21.653,1.751c0,0-11.205,8.394-11.205,19.976
+		c0,11.583,11.205,19.828,11.205,19.828"/>
+	<path fill="none" stroke="&stroke_color;" stroke-width="3.5" d="M21.653,1.751c0,0,11.064,9.141,11.064,19.976
+		c0,10.839-11.064,19.828-11.064,19.828"/>
+	<line fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" x1="21.653" y1="1.751" x2="21.653" y2="41.555"/>
+	<line fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" x1="21.653" y1="1.751" x2="21.653" y2="41.555"/>
+	<line fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" x1="21.653" y1="1.751" x2="21.653" y2="41.555"/>
+	<line fill="none" stroke="&stroke_color;" stroke-width="3.5" x1="1.75" y1="21.653" x2="41.555" y2="21.653"/>
+</g>
 </svg>
+

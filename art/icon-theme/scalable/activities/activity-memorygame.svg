@@ -3,18 +3,19 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
-        <!ENTITY fill_color "#FFFFFF">
-        <!ENTITY stroke_color "#000000">
+	<!ENTITY fill_color "#FFFFFF">
+	<!ENTITY stroke_color "&stroke_color;">
 ]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
-	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
-<rect x="17.416" y="17.833" fill="&stroke_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
-<rect x="32.75" y="17.833" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
-<rect x="47.5" y="17.833" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
-<rect x="17.416" y="32.75" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
-<rect x="32.75" y="32.75" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
-<rect x="47.5" y="32.75" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
-<rect x="17.416" y="47.625" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
-<rect x="32.75" y="47.625" fill="&stroke_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
-<rect x="47.5" y="47.625" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="43.584" height="43.292"
+	 viewBox="0 0 43.584 43.292" overflow="visible" enable-background="new 0 0 43.584 43.292" xml:space="preserve">
+<rect x="1.75" y="1.75" fill="#FFFFFF" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<rect x="17.084" y="1.75" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<rect x="31.834" y="1.75" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<rect x="1.75" y="16.667" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<rect x="17.084" y="16.667" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<rect x="31.834" y="16.667" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<rect x="1.75" y="31.542" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<rect x="17.084" y="31.542" fill="#FFFFFF" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
+<rect x="31.834" y="31.542" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="10" height="10"/>
 </svg>
+
