@@ -6,8 +6,8 @@
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="46.115" height="46.121"
 	 viewBox="0 0 46.115 46.121" overflow="visible" enable-background="new 0 0 46.115 46.121" xml:space="preserve">
-<path fill="none" stroke="#000000" stroke-width="3.5" d="M23.059,1.75c11.77,0,21.307,9.543,21.307,21.309
+<path fill="none" stroke="#FFFFFF" stroke-width="3.5" d="M23.059,1.75c11.77,0,21.307,9.543,21.307,21.309
 	c0,11.768-9.537,21.312-21.307,21.312S1.75,34.826,1.75,23.059C1.751,11.293,11.29,1.75,23.059,1.75z"/>
-<line fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" x1="15.351" y1="30.568" x2="30.564" y2="15.354"/>
-<line fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" x1="15.351" y1="15.356" x2="30.564" y2="30.568"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" x1="15.351" y1="30.568" x2="30.564" y2="15.354"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" x1="15.351" y1="15.356" x2="30.564" y2="30.568"/>
 </svg>

@@ -6,6 +6,6 @@
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="46.119" height="46.121"
 	 viewBox="0 0 46.119 46.121" overflow="visible" enable-background="new 0 0 46.119 46.121" xml:space="preserve">
-<circle fill="none" stroke="#000000" stroke-width="3.5" cx="23.06" cy="23.061" r="21.311"/>
-<line fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" x1="12.163" y1="23.063" x2="33.676" y2="23.062"/>
+<circle fill="none" stroke="#FFFFFF" stroke-width="3.5" cx="23.06" cy="23.061" r="21.311"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" x1="12.163" y1="23.063" x2="33.676" y2="23.062"/>
 </svg>
