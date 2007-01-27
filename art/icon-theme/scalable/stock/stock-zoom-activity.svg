@@ -4,9 +4,8 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
-	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
-
-<circle cx="37.5" cy="37.5" r="22.476"/>
-<rect x="25.707" y="28.065" fill="#FFFFFF" width="23.586" height="18.869"/>
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="44.953" height="44.953"
+	 viewBox="0 0 44.953 44.953" overflow="visible" enable-background="new 0 0 44.953 44.953" xml:space="preserve">
+<circle cx="22.477" cy="22.477" r="22.477"/>
+<rect x="10.684" y="13.041" fill="#FFFFFF" width="23.586" height="18.869"/>
 </svg>

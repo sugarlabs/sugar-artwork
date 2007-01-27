@@ -4,10 +4,10 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
-	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
-<path fill="#000100" d="M14.93,37.503c0-12.466,10.107-22.571,22.568-22.571c12.466,0,22.572,10.105,22.572,22.571
-	c0,12.463-10.106,22.564-22.572,22.564C25.037,60.067,14.93,49.967,14.93,37.503z"/>
-<rect x="22.826" y="24.91" fill="#FFFFFF" stroke="#000000" stroke-width="3" width="22.138" height="17.971"/>
-<rect x="30.036" y="32.119" fill="#FFFFFF" stroke="#000000" stroke-width="3" width="22.138" height="17.971"/>
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="45.141" height="45.135"
+	 viewBox="0 0 45.141 45.135" overflow="visible" enable-background="new 0 0 45.141 45.135" xml:space="preserve">
+<path fill="#000100" d="M0,22.571C0,10.105,10.107,0,22.568,0c12.466,0,22.572,10.105,22.572,22.571
+	c0,12.463-10.106,22.563-22.572,22.563C10.107,45.135,0,35.035,0,22.571z"/>
+<rect x="7.896" y="9.979" fill="#FFFFFF" stroke="#000000" stroke-width="3" width="22.138" height="17.971"/>
+<rect x="15.106" y="17.188" fill="#FFFFFF" stroke="#000000" stroke-width="3" width="22.138" height="17.971"/>
 </svg>

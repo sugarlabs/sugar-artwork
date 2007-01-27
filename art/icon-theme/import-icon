@@ -26,18 +26,29 @@ f = open(source, 'r')
 data = f.read()
 f.close()
 
+stroke = None
+fill = None
+
 match = re.search('stroke=\"\#(\w+)\"', data)
-stroke = match.group(1)
+if match:
+    stroke = match.group(1)
 
 for match in re.findall('[fill|stroke]=\"\#(\w+)\"', data):
     if match != stroke:
         fill = match
 
-entities = '\t<!ENTITY fill_color "#FFFFFF">\n' \
-           '\t<!ENTITY stroke_color "#000000">\n]>'
-data = re.sub('\]\>', entities, data)
+if fill:
+    data = re.sub('\#' + fill, '&fill_color;', data)
+if stroke:
+    data = re.sub('\#' + stroke, '&stroke_color;', data)
 
-data = re.sub('\#' + fill, '&fill_color;', data)
-data = re.sub('\#' + stroke, '&stroke_color;', data)
+entities = ''
+if stroke:
+    entities += '\t<!ENTITY stroke_color "#' + stroke + '">\n'
+if fill:
+    entities += '\t<!ENTITY fill_color "#' + fill + '">\n'
+entities += ']>'
+
+data = re.sub('\]\>', entities, data)
 
 print data
