@@ -1,1 +1,1 @@
-SUBDIRS = activities stock
+SUBDIRS = stock
