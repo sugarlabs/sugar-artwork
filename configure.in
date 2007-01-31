@@ -2,7 +2,7 @@ AC_INIT(art)
 
 AM_CONFIG_HEADER(config.h)
 
-AM_INIT_AUTOMAKE(olpc-artwork, 0.31)
+AM_INIT_AUTOMAKE(olpc-artwork, 0.32)
 
 # Honor aclocal flags
 ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
@@ -51,7 +51,6 @@ art/icon-theme/16x16/Makefile
 art/icon-theme/16x16/stock/Makefile
 art/icon-theme/16x16/stock/emoticons/Makefile
 art/icon-theme/scalable/Makefile
-art/icon-theme/scalable/activities/Makefile
 art/icon-theme/scalable/stock/Makefile
 gtk-engine/Makefile
 gtk-engine/src/Makefile
