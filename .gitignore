@@ -31,3 +31,4 @@ art/icon-theme/index.theme
 .libs
 po/.intltool-merge-cache
 stamp-h1
+*~

@@ -3,10 +3,12 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY stroke_color "#000000">
+	<!ENTITY fill_color "#AAAAAA">
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="46.119" height="46.121"
 	 viewBox="0 0 46.119 46.121" overflow="visible" enable-background="new 0 0 46.119 46.121" xml:space="preserve">
-<circle fill="none" stroke="#FFFFFF" stroke-width="3.5" cx="23.06" cy="23.061" r="21.311"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" x1="22.918" y1="33.82" x2="22.918" y2="12.305"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" x1="12.163" y1="23.063" x2="33.676" y2="23.062"/>
+<circle fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" cx="23.06" cy="23.061" r="21.311"/>
+<line fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" x1="22.918" y1="33.82" x2="22.918" y2="12.305"/>
+<line fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" x1="12.163" y1="23.063" x2="33.676" y2="23.062"/>
 </svg>

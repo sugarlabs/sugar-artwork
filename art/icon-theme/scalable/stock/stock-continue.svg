@@ -3,14 +3,16 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY stroke_color "#000000">
+	<!ENTITY fill_color "#AAAAAA">
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="46.115" height="46.121"
 	 viewBox="0 0 46.115 46.121" overflow="visible" enable-background="new 0 0 46.115 46.121" xml:space="preserve">
-<path fill="none" stroke="#FFFFFF" stroke-width="3.5" d="M23.059,1.75c11.77,0,21.307,9.543,21.307,21.309
+<path fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" d="M23.059,1.75c11.77,0,21.307,9.543,21.307,21.309
 	c0,11.768-9.537,21.312-21.307,21.312S1.75,34.826,1.75,23.059C1.751,11.293,11.29,1.75,23.059,1.75z"/>
-<path fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" d="M20.959,33.612
+<path fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" d="M20.959,33.612
 	c-4.879-0.975-8.555-5.282-8.555-10.446c0-5.885,4.77-10.656,10.653-10.656c5.885,0,10.655,4.771,10.655,10.656
 	c0,5.074-3.551,9.322-8.305,10.394"/>
-<polyline fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="18.395,27.196 
+<polyline fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="18.395,27.196 
 	20.959,33.612 14.204,35.057 "/>
 </svg>
