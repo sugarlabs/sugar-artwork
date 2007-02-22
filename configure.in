@@ -50,6 +50,7 @@ art/icon-theme/16x16/stock/Makefile
 art/icon-theme/16x16/stock/emoticons/Makefile
 art/icon-theme/scalable/Makefile
 art/icon-theme/scalable/stock/Makefile
+art/icon-theme/scalable/object/Makefile
 matchbox/Makefile
 po/Makefile.in
 ])

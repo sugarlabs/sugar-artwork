@@ -2,7 +2,7 @@
 _Name=OLPC
 _Comment=Default OLPC Theme
 
-Directories=16x16/stock/emoticons,scalable/stock
+Directories=16x16/stock/emoticons,scalable/stock,scalable/object
 
 [16x16/stock/emoticons]
 Size=16
@@ -16,7 +16,7 @@ MaxSize=256
 Context=Stock
 Type=Scalable
 
-[scalable/activities]
+[scalable/object]
 Size=75
 MinSize=32
 MaxSize=256

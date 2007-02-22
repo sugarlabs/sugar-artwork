@@ -1,1 +1,1 @@
-SUBDIRS = stock
+SUBDIRS = stock object
