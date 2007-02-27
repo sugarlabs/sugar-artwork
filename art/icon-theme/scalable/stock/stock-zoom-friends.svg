@@ -3,13 +3,15 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY stroke_color "#000000">
+	<!ENTITY fill_color "#FFFFFF">
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="45.051" height="45.051"
 	 viewBox="0 0 45.051 45.051" overflow="visible" enable-background="new 0 0 45.051 45.051" xml:space="preserve">
-<circle cx="22.525" cy="22.525" r="22.525"/>
-<circle fill="#FFFFFF" cx="31.274" cy="28.24" r="4.751"/>
-<path fill="#FFFFFF" d="M18.527,28.24c0,2.623-2.129,4.752-4.753,4.752c-2.621,0-4.75-2.129-4.75-4.752s2.128-4.75,4.75-4.75
+<circle fill="&stroke_color;" cx="22.525" cy="22.525" r="22.525"/>
+<circle fill="&fill_color;" cx="31.274" cy="28.24" r="4.751"/>
+<path fill="&fill_color;" d="M18.527,28.24c0,2.623-2.129,4.752-4.753,4.752c-2.621,0-4.75-2.129-4.75-4.752s2.128-4.75,4.75-4.75
 	C16.398,23.49,18.527,25.617,18.527,28.24z"/>
-<path fill="#FFFFFF" d="M27.277,12.893c0,2.625-2.127,4.752-4.752,4.752c-2.623,0-4.75-2.127-4.75-4.752
+<path fill="&fill_color;" d="M27.277,12.893c0,2.625-2.127,4.752-4.752,4.752c-2.623,0-4.75-2.127-4.75-4.752
 	c0-2.621,2.127-4.747,4.75-4.747C25.15,8.146,27.277,10.271,27.277,12.893z"/>
 </svg>
