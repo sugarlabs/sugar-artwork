@@ -1,6 +1,6 @@
 VERSION=0.33
 DATE=`date +%Y%m%d`
-RELEASE=2.1
+RELEASE=2.2
 TARBALL=olpc-artwork-$VERSION-$RELEASE.${DATE}git.tar.gz
 
 rm olpc-artwork-$VERSION.tar.gz

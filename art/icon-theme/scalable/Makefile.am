@@ -1,1 +1,1 @@
-SUBDIRS = stock object
+SUBDIRS = control object stock

@@ -33,6 +33,7 @@ icon_DATA =				\
 	stock-bold.svg			\
 	stock-underline.svg		\
 	stock-italic.svg		\
+	stock-star.svg			\
 	stock-justify-left.svg		\
 	stock-justify-center.svg	\
 	stock-justify-right.svg	
