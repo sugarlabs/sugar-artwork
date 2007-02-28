@@ -3,9 +3,10 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY stroke_color "#4CC92D">
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="45.623" height="46.892"
 	 viewBox="0 0 45.623 46.892" overflow="visible" enable-background="new 0 0 45.623 46.892" xml:space="preserve">
-<polygon fill="none" stroke="#4CC92D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="1.75,45.142 
+<polygon fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="1.75,45.142 
 	22.813,1.75 43.873,45.142 "/>
 </svg>

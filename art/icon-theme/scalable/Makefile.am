@@ -1,1 +1,1 @@
-SUBDIRS = control object stock
+SUBDIRS = control device object stock

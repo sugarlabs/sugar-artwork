@@ -51,4 +51,6 @@ entities += ']>'
 
 data = re.sub('\]\>', entities, data)
 
-print data
+f = open(source, 'w')
+f.write(data)
+f.close()

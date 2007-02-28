@@ -1,5 +1,5 @@
 iconsize=scalable
-category=object
+category=device
 icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)
 
 icon_DATA =					\
