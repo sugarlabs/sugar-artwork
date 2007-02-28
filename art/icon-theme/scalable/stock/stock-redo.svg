@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
         <!ENTITY ns_svg "http://www.w3.org/2000/svg">
         <!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
-        <!ENTITY fill_color "#ffffff">
+        <!ENTITY stroke_color "#ffffff">
 ]>
 <svg
    xmlns:svg="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@
     <path
        d="M 54.224688,60.031392 C -6.1429332,61.457511 3.3978149,24.688973 34.798893,24.909291 L 34.798893,14.788907 L 59.908423,30.534542 L 34.798893,47.04762 C 34.798893,47.04762 34.798893,36.610987 34.798893,36.610987 C 13.588666,35.978455 7.3832281,59.746609 54.224688,60.031392 z "
        style="opacity:1;color:black;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000012;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:block;overflow:visible"
-       fill="&fill_color;"
+       fill="&stroke_color;"
        id="path1432" />
   </g>
 </svg>

@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
-	<!ENTITY fill_color "#ffffff">
+	<!ENTITY stroke_color "#ffffff">
 ]>
 
 <svg
@@ -23,7 +23,7 @@
        transform="scale(0.976726,1.023829)"
        style="font-size:60.2914238px;font-style:normal;font-weight:bold;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
        id="text8188"
-       fill="&fill_color;"
+       fill="&stroke_color;"
        xml:space="preserve"><tspan
          x="15.063035"
          y="58.603577"
