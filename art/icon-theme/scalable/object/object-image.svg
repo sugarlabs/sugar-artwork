@@ -6,8 +6,8 @@
         <!ENTITY fill_color "#FFFFFF">
         <!ENTITY stroke_color "#000000">
 ]>
-<svg  version="1.1" id="Sketch" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="75" height="75" viewBox="0 0 75 75"
-	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
+<svg  version="1.1" id="Sketch" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="52" height="52" viewBox="8 6 58 56"
+	 overflow="visible" xml:space="preserve">
 
 <path fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" d="M61.256,48.453c-1.22-9.197-9.483-19.292-24.009-24.424
 	c-8.104-2.862-18.316-1.41-22.38,7.176c-4.39,9.272,3.688,20.409,14.949,20.315c7.494-0.061,15.002,2.828,19.49,5.639
