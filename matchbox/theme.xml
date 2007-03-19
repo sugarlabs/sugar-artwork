@@ -54,10 +54,10 @@
   <layer x="1" y="1" w="100%-2"  h="1" 
    type="plain" color="borderlight" />
 
-  <layer x="1" y="2" w="100%-2"  h="13" 
+  <layer x="1" y="2" w="100%-2"  h="19" 
    type="gradient-vert" startcol="grad1" endcol="grad2"/>
 
-  <layer x="1" y="15" w="100%-2"  h="4" 
+  <layer x="1" y="21" w="100%-2"  h="4" 
    type="gradient-vert" startcol="grad2" endcol="grad3"/>
 
   <layer x="1" y="1" w="1"  h="100%-1" 
@@ -75,7 +75,7 @@
   <layer x="5" y="3" w="100%-60" h="20" 
    type="label" color="black" justify="left" font="titlefont" />
 
-  <button x="-20" y="0" w="16" h="20" action="close" >
+  <button x="-20" y="3" w="16" h="20" action="close" >
    <active pixmap="closebutton" blend="-150"/>
    <inactive pixmap="closebutton" />
   </button>
