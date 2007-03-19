@@ -18,11 +18,11 @@
 
 <color id="shadowcol"   def="#11111166" />
 
-<font id="titlefont" def="Sans bold 16px" />
+<font id="titlefont" def="Bitstream Vera Sans bold 20px" />
 
 <pixmap id="closebutton" filename="closebutton.xpm" />  
 
-<frame id="main" height="20">
+<frame id="main" height="26">
 
   <layer x="0" y="0" w="100%"  h="100%" 
    type="plain" color="borderdark" />
@@ -46,7 +46,7 @@
 
 </frame>
 
-<frame id="dialog" height="20" >
+<frame id="dialog" height="26" >
 
   <layer x="0" y="0" w="100%"  h="100%" 
    type="plain" color="borderdark" />
