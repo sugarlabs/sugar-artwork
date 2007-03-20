@@ -18,11 +18,11 @@
 
 <color id="shadowcol"   def="#11111166" />
 
-<font id="titlefont" def="Bitstream Vera Sans bold 20px" />
+<font id="titlefont" def="Bitstream Vera Sans bold 7" />
 
 <pixmap id="closebutton" filename="closebutton.xpm" />  
 
-<frame id="main" height="26">
+<frame id="main" height="28">
 
   <layer x="0" y="0" w="100%"  h="100%" 
    type="plain" color="borderdark" />
@@ -46,7 +46,7 @@
 
 </frame>
 
-<frame id="dialog" height="26" >
+<frame id="dialog" height="28" >
 
   <layer x="0" y="0" w="100%"  h="100%" 
    type="plain" color="borderdark" />
@@ -54,10 +54,10 @@
   <layer x="1" y="1" w="100%-2"  h="1" 
    type="plain" color="borderlight" />
 
-  <layer x="1" y="2" w="100%-2"  h="19" 
+  <layer x="1" y="2" w="100%-2"  h="22" 
    type="gradient-vert" startcol="grad1" endcol="grad2"/>
 
-  <layer x="1" y="21" w="100%-2"  h="4" 
+  <layer x="1" y="24" w="100%-2"  h="4" 
    type="gradient-vert" startcol="grad2" endcol="grad3"/>
 
   <layer x="1" y="1" w="1"  h="100%-1" 
@@ -72,10 +72,10 @@
   <layer x="100%-3" y="19" w="1"  h="1" 
    type="plain" color="grad3" />
 
-  <layer x="5" y="3" w="100%-60" h="20" 
+  <layer x="5" y="3" w="100%-60" h="25" 
    type="label" color="black" justify="left" font="titlefont" />
 
-  <button x="-20" y="3" w="16" h="20" action="close" >
+  <button x="-20" y="6" w="16" h="28" action="close" >
    <active pixmap="closebutton" blend="-150"/>
    <inactive pixmap="closebutton" />
   </button>
