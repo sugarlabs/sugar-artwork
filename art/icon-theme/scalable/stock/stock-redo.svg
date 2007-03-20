@@ -1,25 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-        <!ENTITY ns_svg "http://www.w3.org/2000/svg">
-        <!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
-        <!ENTITY stroke_color "#ffffff">
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY stroke_color "#000000">
 ]>
-<svg
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   version="1.0"
-   width="75"
-   height="75"
-   id="svg11300">
-  <defs
-     id="defs3" />
-  <g
-     id="layer1">
-    <path
-       d="M 54.224688,60.031392 C -6.1429332,61.457511 3.3978149,24.688973 34.798893,24.909291 L 34.798893,14.788907 L 59.908423,30.534542 L 34.798893,47.04762 C 34.798893,47.04762 34.798893,36.610987 34.798893,36.610987 C 13.588666,35.978455 7.3832281,59.746609 54.224688,60.031392 z "
-       style="opacity:1;color:black;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000012;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:block;overflow:visible"
-       fill="&stroke_color;"
-       id="path1432" />
-  </g>
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="33.721" height="31.222"
+	 viewBox="0 0 33.721 31.222" overflow="visible" enable-background="new 0 0 33.721 31.222" xml:space="preserve">
+<polyline fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="22.816,17.195 
+	31.971,9.473 22.816,1.75 "/>
+<path fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" d="M31.971,9.473H11.75c-5.5,0-10,4.5-10,10l0,0
+	c0,5.5,4.5,10,10,10h18.221"/>
 </svg>

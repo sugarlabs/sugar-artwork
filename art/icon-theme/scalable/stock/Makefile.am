@@ -11,7 +11,8 @@ icon_DATA =				\
 	stock-close.svg			\
 	stock-forward.svg		\
 	stock-invite.svg		\
-	stock-keep.svg		    \
+	stock-insert-image.svg		\
+	stock-keep.svg		    	\
 	stock-missing.svg		\
 	stock-remove.svg		\
 	stock-share-mesh.svg		\
@@ -30,6 +31,7 @@ icon_DATA =				\
 	stock-star.svg			\
 	stock-justify-left.svg		\
 	stock-justify-center.svg	\
-	stock-justify-right.svg	
+	stock-justify-right.svg		\
+	stock-justify-fill.svg	
 
 EXTRA_DIST = $(icon_DATA)
