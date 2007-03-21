@@ -3,6 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY stroke_color "#000000">
 ]>
 <svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="18.838" height="31.328"
 	 viewBox="0 0 18.838 31.328" overflow="visible" enable-background="new 0 0 18.838 31.328" xml:space="preserve">
@@ -10,7 +11,7 @@
 	<g>
 		<path d="M9.062,27.72h2.895c1.1,0,1.892,0.571,1.892,1.804s-0.792,1.805-1.892,1.805H1.892C0.791,31.328,0,30.756,0,29.523
 			s0.791-1.804,1.892-1.804h3.226l4.71-24.112H6.881c-1.1,0-1.893-0.572-1.893-1.804S5.781,0,6.881,0h10.064
-			c1.101,0,1.893,0.572,1.893,1.804s-0.792,1.804-1.893,1.804h-3.173L9.062,27.72z"/>
+			c1.101,0,1.893,0.572,1.893,1.804s-0.792,1.804-1.893,1.804h-3.173L9.062,27.72z" stroke="&stroke_color;" fill="&stroke_color;"/>
 	</g>
 </g>
 </svg>
