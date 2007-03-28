@@ -10,6 +10,7 @@ icon_DATA =					\
 	device-battery-080.svg			\
 	device-battery-100.svg			\
 	device-battery.svg			\
+	device-network-mesh.svg			\
 	device-network-wireless-000.svg		\
 	device-network-wireless-020.svg		\
 	device-network-wireless-040.svg		\
