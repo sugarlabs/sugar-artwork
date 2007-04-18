@@ -5,23 +5,15 @@ INCLUDES = \
 	$(ENGINE_CFLAGS) $(WARN_CFLAGS)
 
 enginedir = $(libdir)/gtk-2.0/$(GTK_VERSION)/engines
-engine_LTLIBRARIES = libolpc.la
+engine_LTLIBRARIES = libsugar.la
 
-libolpc_la_SOURCES =		\
-	cairo-support.c		\
-	cairo-support.h		\
-	general-support.h	\
-	ge-support.h		\
-	olpc_main.c		\
-	olpc_misc.c		\
-	olpc_misc.h		\
-	olpc_rc_style.c		\
-	olpc_rc_style.h		\
-	olpc_style.h		\
-	olpc_theme_draw.c	\
-	widget-information.c	\
-	widget-information.h
+libsugar_la_SOURCES =		\
+	sugar.c			\
+	sugar-rc-style.c	\
+	sugar-rc-style.h	\
+	sugar-style.h		\
+	sugar-style.c
 
-libolpc_la_LDFLAGS =				\
+libsugar_la_LDFLAGS =				\
 	-avoid-version -no-undefined -module	\
 	$(ENGINE_LIBS)
