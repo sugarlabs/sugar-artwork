@@ -23,7 +23,7 @@
 static void sugar_rc_style_class_init (SugarRcStyleClass *klass);
 static void sugar_rc_style_init       (SugarRcStyle      *style);
 
-GType clearlooks_type_rc_style = 0;
+GType sugar_type_rc_style = 0;
 
 void
 sugar_rc_style_register_type (GTypeModule *module)
@@ -41,7 +41,7 @@ sugar_rc_style_register_type (GTypeModule *module)
         (GInstanceInitFunc)sugar_rc_style_init,
         NULL
     };
-  
+
     sugar_type_rc_style = g_type_module_register_type (module,
         						                       GTK_TYPE_RC_STYLE,
     	    					                       "SugarRcStyle",
