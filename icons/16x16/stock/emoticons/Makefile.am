@@ -1,7 +1,7 @@
 iconsize=16x16
 category=stock
 subtype=emoticons
-icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)/$(subtype)
+icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)/$(subtype)
 
 icon_DATA =\
 	stock_smiley-1.png \

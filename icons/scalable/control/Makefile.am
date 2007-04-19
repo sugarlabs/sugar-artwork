@@ -1,6 +1,6 @@
 iconsize=scalable
 category=control
-icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)
+icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
 	control-popup-arrow.svg

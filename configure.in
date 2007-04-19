@@ -1,4 +1,4 @@
-AC_INIT(art)
+AC_INIT(icons)
 
 AM_CONFIG_HEADER(config.h)
 
@@ -42,20 +42,19 @@ AM_GLIB_GNU_GETTEXT
 	
 AC_OUTPUT([
 Makefile
-art/Makefile
-art/cursor/Makefile
-art/cursor/cursorthemegen/Makefile
-art/cursor/olpc/Makefile
-art/icon-theme/Makefile
-art/icon-theme/16x16/Makefile
-art/icon-theme/16x16/stock/Makefile
-art/icon-theme/16x16/stock/emoticons/Makefile
-art/icon-theme/scalable/Makefile
-art/icon-theme/scalable/actions/Makefile
-art/icon-theme/scalable/control/Makefile
-art/icon-theme/scalable/device/Makefile
-art/icon-theme/scalable/stock/Makefile
-art/icon-theme/scalable/object/Makefile
+cursor/Makefile
+cursor/cursorthemegen/Makefile
+cursor/sugar/Makefile
+icons/Makefile
+icons/16x16/Makefile
+icons/16x16/stock/Makefile
+icons/16x16/stock/emoticons/Makefile
+icons/scalable/Makefile
+icons/scalable/actions/Makefile
+icons/scalable/control/Makefile
+icons/scalable/device/Makefile
+icons/scalable/stock/Makefile
+icons/scalable/object/Makefile
 gtk/Makefile
 gtk/engine/Makefile
 gtk/theme/Makefile

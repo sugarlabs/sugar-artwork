@@ -1,6 +1,6 @@
 iconsize=scalable
 category=object
-icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)
+icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
 	object-image.svg		\

@@ -1,6 +1,6 @@
 iconsize=scalable
 category=stock
-icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)
+icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
 	stock-add.svg			\

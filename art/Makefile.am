@@ -1,1 +1,0 @@
-SUBDIRS = cursor icon-theme

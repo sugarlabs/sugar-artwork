@@ -1,4 +1,4 @@
-SUBDIRS = art gtk matchbox po
+SUBDIRS = icons gtk matchbox po
 
 intltool_extra = intltool-extract.in intltool-merge.in intltool-update.in
 

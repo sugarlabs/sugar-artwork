@@ -1,6 +1,6 @@
 iconsize=scalable
 category=device
-icondir = $(datadir)/icons/olpc/$(iconsize)/$(category)
+icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =					\
 	device-battery-000.svg			\
