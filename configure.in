@@ -58,6 +58,8 @@ icons/scalable/object/Makefile
 gtk/Makefile
 gtk/engine/Makefile
 gtk/theme/Makefile
+gtk/theme/sugar/Makefile
+gtk/theme/sugar-xo/Makefile
 matchbox/Makefile
 po/Makefile.in
 ])
