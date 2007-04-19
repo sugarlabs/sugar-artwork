@@ -1,10 +1,16 @@
 style "default"
 {
-    bg[NORMAL] = "#262626"
+    bg[NORMAL] = "#BFBFBF"
 
     engine "sugar"
     {
     }
 }
 
+style "toolbar"
+{
+    bg[NORMAL] = "#262626"
+}
+
 class "GtkWidget" style "default"
+class "GtkToolbar" style "toolbar"

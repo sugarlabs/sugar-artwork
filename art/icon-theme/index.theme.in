@@ -3,12 +3,19 @@ _Name=OLPC
 _Comment=Default OLPC Theme
 Inherits=gnome
 
-Directories=16x16/stock/emoticons,scalable/stock,scalable/object,scalable/device,scalable/control
+Directories=16x16/stock/emoticons,scalable/stock,scalable/object,scalable/device,scalable/control,scalable/actions
 
 [16x16/stock/emoticons]
 Size=16
 Context=Stock
 Type=Fixed
+
+[scalable/actions]
+Size=55
+MinSize=32
+MaxSize=256
+Context=Actions
+Type=Scalable
 
 [scalable/stock]
 Size=50
@@ -21,19 +28,19 @@ Type=Scalable
 Size=50
 MinSize=32
 MaxSize=256
-Context=Stock
+Context=Object
 Type=Scalable
 
 [scalable/device]
 Size=50
 MinSize=32
 MaxSize=256
-Context=Stock
+Context=Device
 Type=Scalable
 
 [scalable/control]
 Size=50
 MinSize=32
 MaxSize=256
-Context=Stock
+Context=Control
 Type=Scalable
