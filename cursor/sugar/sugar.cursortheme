@@ -1,19 +1,19 @@
 <theme name="OLPC">	
 	<source size="48" gridsize="48">
-		<image file="olpc-0.png" use="0"/>
-		<image file="olpc-1.png" use="1"/>
-		<image file="olpc-2.png" use="2"/>
-		<image file="olpc-3.png" use="3"/>
-		<image file="olpc-4.png" use="4"/>
-		<image file="olpc-5.png" use="5"/>
-		<image file="olpc-6.png" use="6"/>
-		<image file="olpc-7.png" use="7"/>
-		<image file="olpc-8.png" use="8"/>
-		<image file="olpc-9.png" use="9"/>
-		<image file="olpc-10.png" use="10"/>
-		<image file="olpc-11.png" use="11"/>
+		<image file="sugar-0.png" use="0"/>
+		<image file="sugar-1.png" use="1"/>
+		<image file="sugar-2.png" use="2"/>
+		<image file="sugar-3.png" use="3"/>
+		<image file="sugar-4.png" use="4"/>
+		<image file="sugar-5.png" use="5"/>
+		<image file="sugar-6.png" use="6"/>
+		<image file="sugar-7.png" use="7"/>
+		<image file="sugar-8.png" use="8"/>
+		<image file="sugar-9.png" use="9"/>
+		<image file="sugar-10.png" use="10"/>
+		<image file="sugar-11.png" use="11"/>
 		
-		<image file="olpc-hotspots.png" use="hotspot"/>
+		<image file="sugar-hotspots.png" use="hotspot"/>
 	</source>
 	
 	<alias name="top_left_arrow" target="left_ptr"/>

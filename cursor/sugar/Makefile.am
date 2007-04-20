@@ -1,5 +1,5 @@
-THEMEGEN = $(top_builddir)/art/cursor/cursorthemegen/cursorthemegen
-THEME_DIR = $(top_builddir)/art/cursor/sugar/theme
+THEMEGEN = $(top_builddir)/cursor/cursorthemegen/cursorthemegen
+THEME_DIR = $(top_builddir)/cursor/sugar/theme
 
 all-local: sugar.stamp
 
