@@ -3,7 +3,6 @@ style "default"
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
     bg[NORMAL] = "#BFBFBF"
-    bg[PRELIGHT] = "#000000"
 
     engine "sugar"
     {
@@ -12,13 +11,21 @@ style "default"
 
 style "toolbox"
 {
+    xthickness = 0
+    ythickness = 0
+
     bg[NORMAL] = "#4D4D4D"
-    bg[ACTIVE] = "#000000"
     fg[NORMAL] = "#FFFFFF"
     
     GtkButton::inner-border = { 10, 10, 10, 10 }
 }
 
+style "toolitem"
+{
+    bg[PRELIGHT] = "#000000"
+}
+
 class "GtkWidget" style "default"
 widget_class "*.SugarToolbox.*" style "toolbox"
+widget_class "*.<GtkToolItem>.*" style "toolitem"
 
