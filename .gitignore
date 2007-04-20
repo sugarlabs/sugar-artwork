@@ -24,9 +24,9 @@ mkinstalldirs
 Makefile.in.in
 po/POTFILES
 po/stamp-it
-art/cursor/cursorthemegen/cursorthemegen
-art/cursor/olpc/theme
-art/icon-theme/index.theme
+cursor/cursorthemegen/cursorthemegen
+cursor/sugar/theme
+icons/index.theme
 .deps
 .libs
 po/.intltool-merge-cache

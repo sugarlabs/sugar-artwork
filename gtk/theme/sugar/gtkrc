@@ -1,16 +1,24 @@
 style "default"
 {
+    GtkToolbar::shadow-type = GTK_SHADOW_NONE
+
     bg[NORMAL] = "#BFBFBF"
+    bg[PRELIGHT] = "#000000"
 
     engine "sugar"
     {
     }
 }
 
-style "toolbar"
+style "toolbox"
 {
-    bg[NORMAL] = "#262626"
+    bg[NORMAL] = "#4D4D4D"
+    bg[ACTIVE] = "#000000"
+    fg[NORMAL] = "#FFFFFF"
+    
+    GtkButton::inner-border = { 10, 10, 10, 10 }
 }
 
 class "GtkWidget" style "default"
-class "GtkToolbar" style "toolbar"
+widget_class "*.SugarToolbox.*" style "toolbox"
+
