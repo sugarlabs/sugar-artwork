@@ -2,8 +2,16 @@ iconsize=scalable
 category=actions
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
-icon_DATA =				\
-	text-format-bold.svg		\
+icon_DATA =						\
+	edit-redo.svg				\
+	edit-undo.svg				\
+	format-justify-center.svg	\
+	format-justify-fill.svg		\
+	format-justify-left.svg		\
+	format-justify-right.svg	\
+	format-text-bold.svg		\
+	format-text-italic.svg		\
+	format-text-underline.svg	\
+	go-previous.svg				\
+	insert-image.svg			\
 	window-close.svg
-
-EXTRA_DIST = $(icon_DATA)

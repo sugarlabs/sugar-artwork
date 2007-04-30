@@ -3,10 +3,10 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
-	<!ENTITY stroke_color "#FFFFFF">
+	<!ENTITY stroke_color "#000000">
 ]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="31.32" height="31.32" viewBox="-4 0 31.32 31.32"
-	 overflow="visible" enable-background="new 0 0 31.32 31.328" xml:space="preserve">
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="31.328" height="31.328" viewBox="-8 0 31.328 31.328"
+	 overflow="visible" enable-background="new 0 0 23.32 31.328" xml:space="preserve">
 <g>
 	<path d="M0,3.564C0,1.276,1.717,0,3.564,0h8.404c5.412,0,8.8,3.344,8.8,8.184c0,3.213-2.244,5.104-3.74,5.984
 		c3.828,0.748,6.292,3.783,6.292,7.699c0,4.973-3.212,9.461-10.912,9.461H3.564C1.717,31.328,0,30.052,0,27.764V3.564z

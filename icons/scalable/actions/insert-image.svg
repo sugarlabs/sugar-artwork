@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+	<!ENTITY stroke_color "#000000">
+]>
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="39.053" height="39.053" viewBox="-1.5 0 39.053 39.053"
+	 overflow="visible" enable-background="new 0 0 37.7 39.053" xml:space="preserve">
+<polyline fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="35.95,12.104 
+	1.75,12.104 1.75,37.303 35.95,37.303 35.95,12.104 "/>
+<line fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" x1="18.851" y1="27.703" x2="18.851" y2="1.75"/>
+<polyline fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="26.573,18.549 
+	18.851,27.703 11.128,18.549 "/>
+</svg>
