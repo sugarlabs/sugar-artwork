@@ -1,31 +1,42 @@
 style "default"
 {
-    GtkToolbar::shadow-type = GTK_SHADOW_NONE
+    bg[NORMAL] = "#C0C0C0"
 
-    bg[NORMAL] = "#BFBFBF"
-
-    engine "sugar"
-    {
-    }
+    engine "sugar" { }
 }
 
-style "toolbox"
+style "notebook" = "default"
 {
+    GtkNotebook::tab-overlap = -2
+    
     xthickness = 0
     ythickness = 0
-
-    bg[NORMAL] = "#4D4D4D"
-    fg[NORMAL] = "#FFFFFF"
-    
-    GtkButton::inner-border = { 10, 10, 10, 10 }
 }
 
-style "toolitem"
+style "toolbox-notebook" = "toolbox"
 {
-    bg[PRELIGHT] = "#000000"
+    bg[ACTIVE] = "#808080"
+}
+
+style "toolbox" = "default"
+{
+    GtkToolbar::shadow-type = GTK_SHADOW_NONE
+
+    bg[NORMAL] = "#262626"
+    fg[NORMAL] = "#FFFFFF"
+    fg[ACTIVE] = "#FFFFFF"
+}
+
+style "panel" = "default"
+{
+    bg[NORMAL] = "#C0C0C0"
+    fg[NORMAL] = "#000000"
 }
 
 class "GtkWidget" style "default"
-widget_class "*.SugarToolbox.*" style "toolbox"
-widget_class "*.<GtkToolItem>.*" style "toolitem"
+class "GtkNotebook" style "notebook"
 
+widget_class "*.SugarToolbox.*" style "toolbox"
+widget "*.sugar-toolbox-notebook" style "toolbox-notebook"
+
+widget_class "*.SugarPanel.*" style "panel"
