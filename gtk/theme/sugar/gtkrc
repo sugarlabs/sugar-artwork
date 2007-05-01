@@ -25,6 +25,8 @@ style "toolbox" = "default"
     bg[NORMAL] = "#262626"
     fg[NORMAL] = "#FFFFFF"
     fg[ACTIVE] = "#FFFFFF"
+
+    GtkButton::inner-border = { 6, 6, 6, 6 }
 }
 
 style "panel" = "default"
