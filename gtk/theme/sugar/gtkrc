@@ -18,6 +18,11 @@ style "toolbox-notebook" = "toolbox"
     bg[ACTIVE] = "#808080"
 }
 
+style "toolitem" = "toolbox"
+{
+    bg[PRELIGHT] = "#000000"
+}
+
 style "toolbox" = "default"
 {
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
@@ -39,6 +44,7 @@ class "GtkWidget" style "default"
 class "GtkNotebook" style "notebook"
 
 widget_class "*.SugarToolbox.*" style "toolbox"
+widget_class "*.<GtkToolItem>.*" style "toolitem"
 widget "*.sugar-toolbox-notebook" style "toolbox-notebook"
 
 widget_class "*.SugarPanel.*" style "panel"

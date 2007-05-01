@@ -22,6 +22,16 @@
 #include "sugar-style.h"
 #include "sugar-rc-style.h"
 
+typedef enum
+{
+    CORNER_NONE        = 0,
+    CORNER_TOPLEFT     = 1,
+    CORNER_TOPRIGHT    = 2,
+    CORNER_BOTTOMLEFT  = 4,
+	CORNER_BOTTOMRIGHT = 8,
+	CORNER_ALL         = 15
+} SugarCorners;
+
 static void sugar_style_init       (SugarStyle      *style);
 static void sugar_style_class_init (SugarStyleClass *klass);
 
@@ -52,8 +62,99 @@ sugar_style_register_type (GTypeModule *module)
 }
 
 static void
+sugar_rounded_rectangle (cairo_t *cr, double x, double y, double w, double h,
+                         double radius, SugarCorners corners)
+{
+    g_return_if_fail(cr != NULL);
+
+    if (corners & CORNER_TOPLEFT)
+        cairo_move_to(cr, x + radius, y);
+    else
+        cairo_move_to(cr, x, y);
+	
+    if (corners & CORNER_TOPRIGHT)
+        cairo_arc(cr, x + w - radius, y + radius, radius, G_PI * 1.5, G_PI * 2);
+    else
+        cairo_line_to(cr, x + w, y);
+	
+    if (corners & CORNER_BOTTOMRIGHT)
+        cairo_arc (cr, x + w - radius, y + h - radius, radius, 0, G_PI * 0.5);
+    else
+        cairo_line_to (cr, x + w, y + h);
+	
+    if (corners & CORNER_BOTTOMLEFT)
+        cairo_arc (cr, x + radius, y + h - radius, radius, G_PI * 0.5, G_PI);
+	else
+		cairo_line_to (cr, x, y+h);
+	
+	if (corners & CORNER_TOPLEFT)
+        cairo_arc (cr, x + radius, y + radius, radius, G_PI, G_PI * 1.5);
+	else
+        cairo_line_to (cr, x, y);
+}
+
+static void
 sugar_style_init (SugarStyle *style)
 {
+}
+
+static void
+sugar_style_draw_focus(GtkStyle        *style,
+                       GdkWindow       *window,
+                       GtkStateType     state_type,
+                       GdkRectangle    *area,
+                       GtkWidget       *widget,
+                       const char      *detail,
+                       int              x,
+                       int              y,
+                       int              width,
+                       int              height)
+{
+    cairo_t *cr;
+
+    cr = gdk_cairo_create (window);
+
+    if (strcmp(detail, "button") == 0) {
+        gdk_cairo_set_source_color(cr, &style->fg[state_type]);
+        sugar_rounded_rectangle(cr, x, y, width, height, 5, CORNER_ALL);        
+        cairo_stroke(cr);
+    } else {
+        parent_class->draw_focus(style, window, state_type,
+		                         area, widget, detail,
+		                         x, y, width, height);
+    }
+    
+    cairo_destroy(cr);
+}
+
+static void
+sugar_style_draw_box(GtkStyle        *style,
+                     GdkWindow       *window,
+                     GtkStateType     state_type,
+                     GtkShadowType    shadow_type,
+                     GdkRectangle    *area,
+                     GtkWidget       *widget,
+                     const char      *detail,
+                     int              x,
+                     int              y,
+                     int              width,
+                     int              height)
+{
+    cairo_t *cr;
+
+    cr = gdk_cairo_create (window);
+
+    if (strcmp(detail, "button") == 0 && state_type != GTK_STATE_PRELIGHT) {
+        gdk_cairo_set_source_color(cr, &style->bg[state_type]);
+        sugar_rounded_rectangle(cr, x, y, width, height, 5, CORNER_ALL);
+        cairo_fill(cr);
+    } else {
+        parent_class->draw_box(style, window, state_type,
+		                       shadow_type, area, widget, detail,
+		                       x, y, width, height);
+    }
+    
+    cairo_destroy(cr);
 }
 
 static void
@@ -95,6 +196,8 @@ sugar_style_class_init (SugarStyleClass *klass)
     parent_class = g_type_class_peek_parent(klass);
     
     style_class->draw_extension = sugar_style_draw_extension;
+    style_class->draw_box = sugar_style_draw_box;
+    style_class->draw_focus = sugar_style_draw_focus;
 }
 
 
