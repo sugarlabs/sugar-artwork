@@ -4,11 +4,9 @@ icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
 	stock-add.svg			\
-	stock-back.svg			\
 	stock-buddy.svg			\
 	stock-chat.svg			\
 	stock-continue.svg		\
-	stock-forward.svg		\
 	stock-invite.svg		\
 	stock-insert-image.svg		\
 	stock-keep.svg		    	\
@@ -27,10 +25,6 @@ icon_DATA =				\
 	stock-bold.svg			\
 	stock-underline.svg		\
 	stock-italic.svg		\
-	stock-star.svg			\
-	stock-justify-left.svg		\
-	stock-justify-center.svg	\
-	stock-justify-right.svg		\
-	stock-justify-fill.svg	
+	stock-star.svg
 
 EXTRA_DIST = $(icon_DATA)
