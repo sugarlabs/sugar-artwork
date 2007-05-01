@@ -5,6 +5,11 @@ style "default"
     engine "sugar" { }
 }
 
+style "frame" = "default"
+{
+    bg[NORMAL] = "#404040"
+}
+
 style "notebook" = "default"
 {
     GtkNotebook::tab-overlap = -2
@@ -27,7 +32,7 @@ style "toolbox" = "default"
 {
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
-    bg[NORMAL] = "#262626"
+    bg[NORMAL] = "#404040"
     fg[NORMAL] = "#FFFFFF"
     fg[ACTIVE] = "#FFFFFF"
 
@@ -43,8 +48,10 @@ style "panel" = "default"
 class "GtkWidget" style "default"
 class "GtkNotebook" style "notebook"
 
-widget_class "*<SugarToolbox>*<GtkToolbar>" style "toolbox"
+widget_class "*<SugarToolbox>*" style "toolbox"
 widget_class "*<GtkToolItem>*" style "toolitem"
 widget_class "*<SugarToolbox>*<GtkNotebook>" style "toolbox-notebook"
 
 widget_class "*<SugarPanel>" style "panel"
+
+widget_class "*<SugarFrameWindow>*" style "frame"
