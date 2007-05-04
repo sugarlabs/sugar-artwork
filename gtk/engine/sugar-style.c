@@ -114,7 +114,7 @@ sugar_style_draw_focus(GtkStyle        *style,
 
     cr = gdk_cairo_create (window);
 
-    if (strcmp(detail, "button") == 0) {
+    if (detail && strcmp(detail, "button") == 0) {
         gdk_cairo_set_source_color(cr, &style->fg[state_type]);
         sugar_rounded_rectangle(cr, x, y, width, height, 5, CORNER_ALL);        
         cairo_stroke(cr);
@@ -144,7 +144,7 @@ sugar_style_draw_box(GtkStyle        *style,
 
     cr = gdk_cairo_create (window);
 
-    if (strcmp(detail, "button") == 0 && state_type != GTK_STATE_PRELIGHT) {
+    if (detail && strcmp(detail, "button") == 0 && state_type != GTK_STATE_PRELIGHT) {
         gdk_cairo_set_source_color(cr, &style->bg[state_type]);
         sugar_rounded_rectangle(cr, x, y, width, height, 5, CORNER_ALL);
         cairo_fill(cr);
@@ -175,7 +175,7 @@ sugar_style_draw_extension(GtkStyle        *style,
 
     cr = gdk_cairo_create (window);
 
-    if (strcmp(detail, "tab") == 0) {
+    if (detail && strcmp(detail, "tab") == 0) {
         gdk_cairo_set_source_color(cr, &style->bg[state_type]);
         cairo_rectangle(cr, x, y, width, height);
         cairo_fill(cr);
