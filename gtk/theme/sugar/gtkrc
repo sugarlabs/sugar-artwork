@@ -192,7 +192,14 @@ style "checkbutton"
     GtkWidget::focus-padding = 3
 }
 
+style "progressbar"
+{
+    xthickness = 0
+    ythickness = 0
 
+    # Make the bar visible (only until the engine implements it!)
+    bg[PRELIGHT] = "#ffffff"
+}
 
 class "GtkWidget"      style "default"
 class "GtkWindow"      style "window"
@@ -204,6 +211,7 @@ class "GtkScrollbar"   style "scrollbar"
 class "GtkHScale"      style "hscale"
 class "GtkVScale"      style "vscale"
 class "GtkCheckButton" style "checkbutton"
+class "GtkProgressBar" style "progressbar"
 
 widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 widget_class "*<GtkCombo>*" style "comboboxentry"
