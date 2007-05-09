@@ -12,7 +12,11 @@ libsugar_la_SOURCES =		\
 	sugar-rc-style.c	\
 	sugar-rc-style.h	\
 	sugar-style.h		\
-	sugar-style.c
+	sugar-style.c		\
+	sugar-info.h		\
+	sugar-info.c		\
+	sugar-drawing.h		\
+	sugar-drawing.c
 
 libsugar_la_LDFLAGS =				\
 	-avoid-version -no-undefined -module	\

@@ -30,13 +30,15 @@ static GtkRcStyleClass *parent_class;
 static gchar symbols[] =
     "hint\0"
     "line_width\0"
-    "thick_line_width\0";
+    "thick_line_width\0"
+    "max_radius\0";
 
 typedef enum {
     TOKEN_INVALID = G_TOKEN_LAST,
     TOKEN_HINT,
     TOKEN_LINE_WIDTH,
     TOKEN_THICK_LINE_WIDTH,
+    TOKEN_MAX_RADIUS,
     TOKEN_LAST,
 } SugarTokens;
 
@@ -69,6 +71,7 @@ sugar_rc_style_init (SugarRcStyle *rc_style)
     /* Initilize the RC style. */
     rc_style->line_width = 3;
     rc_style->thick_line_width = 4;
+    rc_style->max_radius = 5;
     rc_style->hint = NULL;
 }
 
@@ -150,6 +153,10 @@ sugar_rc_style_parse (GtkRcStyle   *rc_style,
                 token = sugar_rc_parse_float(scanner, &sugar_rc_style->thick_line_width);
                 sugar_rc_style->flags |= OPTION_THICK_LINE_WIDTH;
                 break;
+            case TOKEN_MAX_RADIUS:
+                token = sugar_rc_parse_float(scanner, &sugar_rc_style->max_radius);
+                sugar_rc_style->flags |= OPTION_MAX_RADIUS;
+                break;
             case TOKEN_HINT:
                 token = sugar_rc_parse_string(scanner, &sugar_rc_style->hint);
                 sugar_rc_style->flags |= OPTION_HINT;
@@ -177,6 +184,7 @@ sugar_rc_style_merge (GtkRcStyle *dest,
 {
     SugarRcStyle *sugar_dest;
     SugarRcStyle *sugar_src;
+    SugarRcStyleOptions flags;
 
     parent_class->merge (dest, src);
 
@@ -186,15 +194,21 @@ sugar_rc_style_merge (GtkRcStyle *dest,
     sugar_dest = SUGAR_RC_STYLE (dest);
     sugar_src = SUGAR_RC_STYLE (src);
 
+    flags = (~sugar_dest->flags) & sugar_src->flags;
+
     /* Merge all variables */
-    if (sugar_src->flags & OPTION_LINE_WIDTH)
+    if (flags & OPTION_LINE_WIDTH)
         sugar_dest->line_width = sugar_src->line_width;
-    if (sugar_src->flags & OPTION_THICK_LINE_WIDTH)
+    if (flags & OPTION_THICK_LINE_WIDTH)
         sugar_dest->thick_line_width = sugar_src->thick_line_width;
-    if (sugar_src->flags & OPTION_HINT) {
+    if (flags & OPTION_MAX_RADIUS)
+        sugar_dest->max_radius = sugar_src->max_radius;
+    if (flags & OPTION_HINT) {
         g_free (sugar_dest->hint);
         sugar_dest->hint = g_strdup (sugar_src->hint);
     }
+
+    sugar_dest->flags |= flags;
 }
 
 
@@ -205,8 +219,9 @@ sugar_rc_style_create_style (GtkRcStyle *rc_style)
 }
 
 static void
-sugar_rc_style_finalize (SugarRcStyle *rc_style)
+sugar_rc_style_finalize (GObject *object)
 {
+    SugarRcStyle *rc_style = SUGAR_RC_STYLE(object);
     g_free (rc_style->hint);
 }
 
@@ -220,5 +235,5 @@ sugar_rc_style_class_init (SugarRcStyleClass *klass)
     rc_style_class->parse = sugar_rc_style_parse;
     rc_style_class->merge = sugar_rc_style_merge;
 
-    G_OBJECT_CLASS (rc_style_class)->finalize = sugar_rc_style_finalize;
+    G_OBJECT_CLASS (rc_style_class)->finalize = sugar_rc_style_finalize;
 }
