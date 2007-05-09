@@ -24,6 +24,14 @@ typedef struct _SugarRcStyleClass SugarRcStyleClass;
 
 G_GNUC_INTERNAL extern GType sugar_type_rc_style;
 
+/* Bit field for the engine options. */
+typedef enum {
+	OPTION_LINE_WIDTH = 1 << 0,
+	OPTION_THICK_LINE_WIDTH = 1 << 1,
+	OPTION_HINT = 1 << 2
+} SugarRcStyleOptions;
+
+
 #define SUGAR_TYPE_RC_STYLE              sugar_type_rc_style
 #define SUGAR_RC_STYLE(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), SUGAR_TYPE_RC_STYLE, SugarRcStyle))
 #define SUGAR_RC_STYLE_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), SUGAR_TYPE_RC_STYLE, SugarRcStyleClass))
@@ -33,6 +41,12 @@ G_GNUC_INTERNAL extern GType sugar_type_rc_style;
 
 struct _SugarRcStyle {
     GtkRcStyle parent_instance;
+
+    SugarRcStyleOptions flags;
+
+    gchar *hint;
+    gdouble line_width;
+    gdouble thick_line_width;
 };
 
 struct _SugarRcStyleClass {

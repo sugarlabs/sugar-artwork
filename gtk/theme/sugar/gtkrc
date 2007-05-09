@@ -34,7 +34,7 @@ style "default"
         # 6 pixel for the XO version, and 3 for the "normal" one
         line_width = 3.0
         # 9-10 pixel for the XO version, and 4 for the "normal" one
-        arrow_width = 4.0
+        thick_line_width = 4.0
     }
 }
 
