@@ -91,14 +91,14 @@ style "scale"
 # hints for the trough sizing hacks
 style "hscale" = "scale"
 {
-    engine "olpc" {
+    engine "sugar" {
         hint = "hscale"
     }
 }
 
 style "vscale" = "scale"
 {
-    engine "olpc" {
+    engine "sugar" {
         hint = "vscale"
     }
 }
