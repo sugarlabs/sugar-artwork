@@ -2,15 +2,67 @@ style "default"
 {
     bg[NORMAL] = "#C0C0C0"
 
+    # A lot of these will probably need to be changed, but this has to
+    # be done when the exact sizes are known
+    GtkWidget::interior-focus = 0
+    GtkWidget::focus-line-width = 0
+    GtkWidget::focus-padding = 0
+    GtkRange::activate-slider = 1
+    GtkButton::inner-border = {6, 6, 6, 6}
+
+    # Need to play around with this.
+    GtkButton::default-border = { 3, 3, 3, 3 }
+    GtkButton::default-outside-border = { 3, 3, 3, 3 }
+
+    GtkScrolledWindow::scrollbar-spacing = 0
+
+    GtkCheckMenuItem::indicator-size = 16
+
+    GtkExpander::expander-size = 16
+    GtkExpander::expander-spacing = 2
+
+    GtkTreeView::expander-size = 16
+
     engine "sugar" { }
 }
 
-style "frame" = "default"
+
+style "scrollbar"
+{
+    GtkRange::slider-width = 10
+    GtkRange::trough-border = 1
+    GtkRange::stepper-spacing = 0
+    GtkScrollbar::min-slider-length = 30
+    GtkScrollbar::has-forward-stepper = 0
+    GtkScrollbar::has-backward-stepper = 0
+    GtkScrollbar::has-secondary-forward-stepper = 0
+    GtkScrollbar::has-secondary-backward-stepper = 0
+
+    # Hack for mozilla as it does not obey the above style properties ...
+    # Really, mozilla should be fixed ...
+    GtkRange::stepper-size = 1
+}
+
+style "scale"
+{
+    #GtkWidget::focus-line-width = 0
+
+    # "square" slider (really round of course)
+    GtkRange::slider-width = 16
+    GtkScale::slider-length = 16
+    GtkRange::trough-border = 0
+    GtkRange::stepper-spacing = 0
+    GtkRange::trough-side-details = 1
+}
+
+
+
+style "frame"
 {
     bg[NORMAL] = "#404040"
 }
 
-style "notebook" = "default"
+style "notebook"
 {
     GtkNotebook::tab-overlap = -2
     
@@ -18,17 +70,17 @@ style "notebook" = "default"
     ythickness = 0
 }
 
-style "toolbox-notebook" = "toolbox"
+style "toolbox-notebook"
 {
     bg[ACTIVE] = "#808080"
 }
 
-style "toolitem" = "toolbox"
+style "toolitem"
 {
     bg[PRELIGHT] = "#000000"
 }
 
-style "toolbox" = "default"
+style "toolbox"
 {
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
@@ -39,14 +91,40 @@ style "toolbox" = "default"
     GtkButton::inner-border = { 6, 6, 6, 6 }
 }
 
-style "panel" = "default"
+style "panel"
 {
     bg[NORMAL] = "#C0C0C0"
     fg[NORMAL] = "#000000"
 }
 
-class "GtkWidget" style "default"
-class "GtkNotebook" style "notebook"
+style "entry"
+{
+    # small inner border and a large x/ythickness for entries
+    # to reduce the number of hacks needed :-)
+    xthickness = 7
+    ythickness = 7
+
+    GtkEntry::inner-border = { 0, 0, 0, 0 }
+}
+
+style "checkbutton"
+{
+	fg[ACTIVE]        = "#ffffff"
+
+	# I won't get the exact sizing, but this should be pretty close
+	GtkCheckButton::indicator-size = 13
+	GtkCheckButton::indicator-spacing = 3
+	GtkWidget::focus-padding = 3
+}
+
+
+
+class "GtkWidget"      style "default"
+class "GtkNotebook"    style "notebook"
+class "GtkEntry"       style "entry"
+class "GtkScrollbar"   style "scrollbar"
+class "GtkScale"       style "scale"
+class "GtkCheckButton" style "checkbutton"
 
 widget_class "*<SugarToolbox>*" style "toolbox"
 widget_class "*<GtkToolItem>*" style "toolitem"
