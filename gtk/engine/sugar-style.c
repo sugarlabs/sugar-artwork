@@ -151,6 +151,8 @@ sugar_style_draw_focus (GtkStyle       *style,
 			range_info.info = info;
 			sugar_fill_range_info (&range_info, TRUE);
 			info = range_info.info;
+
+			info.state = GTK_STATE_NORMAL;
 		}
 
 		sugar_draw_exterior_focus (cr, &info);
