@@ -32,11 +32,11 @@ style "default"
 
     GtkScrolledWindow::scrollbar-spacing = 0
 
-    GtkCheckMenuItem::indicator-size = 16 # how to calculate this? and is it OK like this?
-    GtkExpander::expander-size = 16       # same as indicator-size
+    GtkCheckMenuItem::indicator-size = 20 # how to calculate this? and is it OK like this?
+    GtkExpander::expander-size = 20       # same as indicator-size
     GtkExpander::expander-spacing = 2     # XXX
 
-    GtkTreeView::expander-size = 16       # same as indicator-size
+    GtkTreeView::expander-size = 20       # same as indicator-size
 
     engine "sugar" {
         # Is this correct? Should we make sure it is pixel aligned?
@@ -57,7 +57,7 @@ style "window"
 
 style "scrollbar"
 {
-    GtkRange::slider-width = 16    # ?
+    GtkRange::slider-width = 10    # ?
     GtkRange::trough-border = 3    # line_width
     GtkRange::stepper-spacing = 0
     GtkScrollbar::min-slider-length = 30    # ?
@@ -81,8 +81,8 @@ style "scale"
 
     # "square" slider (really round of course)
     # Same as indicator-size?
-    GtkRange::slider-width = 16
-    GtkScale::slider-length = 16
+    GtkRange::slider-width = 20
+    GtkScale::slider-length = 20
     GtkRange::trough-border = 0
     GtkRange::stepper-spacing = 0
     GtkRange::trough-side-details = 1
