@@ -1,38 +1,50 @@
+# This gtkrc makes the assumption that:
+#  2.25pt = 3px
+#  3.5pt  = 4px
+# This is the theme for a normal laptop, and not for the XO
+
 style "default"
 {
     bg[NORMAL] = "#C0C0C0"
+    
+    xthickness = 3   # line_width
+    ythickness = 3
 
     # A lot of these will probably need to be changed, but this has to
     # be done when the exact sizes are known
     GtkWidget::interior-focus = 0
     GtkWidget::focus-line-width = 0
-    GtkWidget::focus-padding = 0
+    GtkWidget::focus-padding = 2  # Some overlap with the button
     GtkRange::activate-slider = 1
-    GtkButton::inner-border = {6, 6, 6, 6}
+    GtkButton::inner-border = { 6, 6, 6, 6 }           # ??
 
-    # Need to play around with this.
-    GtkButton::default-border = { 3, 3, 3, 3 }
-    GtkButton::default-outside-border = { 3, 3, 3, 3 }
+    GtkButton::default-border = { 1, 1, 1, 1 }         # line_width - focus-line-width
+    GtkButton::default-outside-border = { 2, 2, 2, 2 } # focus-line-width
 
     GtkScrolledWindow::scrollbar-spacing = 0
 
-    GtkCheckMenuItem::indicator-size = 16
+    GtkCheckMenuItem::indicator-size = 16 # how to calculate this? and is it OK like this?
+    GtkExpander::expander-size = 16       # same as indicator-size
+    GtkExpander::expander-spacing = 2     # XXX
 
-    GtkExpander::expander-size = 16
-    GtkExpander::expander-spacing = 2
+    GtkTreeView::expander-size = 16       # same as indicator-size
 
-    GtkTreeView::expander-size = 16
-
-    engine "sugar" { }
+    engine "sugar" {
+        # Is this correct? Should we make sure it is pixel aligned?
+        # 6 pixel for the XO version, and 3 for the "normal" one
+        line_width = 3.0
+        # 9-10 pixel for the XO version, and 4 for the "normal" one
+        arrow_width = 4.0
+    }
 }
 
 
 style "scrollbar"
 {
-    GtkRange::slider-width = 10
-    GtkRange::trough-border = 1
+    GtkRange::slider-width = 16    # ?
+    GtkRange::trough-border = 3    # line_width
     GtkRange::stepper-spacing = 0
-    GtkScrollbar::min-slider-length = 30
+    GtkScrollbar::min-slider-length = 30    # ?
     GtkScrollbar::has-forward-stepper = 0
     GtkScrollbar::has-backward-stepper = 0
     GtkScrollbar::has-secondary-forward-stepper = 0
@@ -45,9 +57,10 @@ style "scrollbar"
 
 style "scale"
 {
-    #GtkWidget::focus-line-width = 0
+    GtkWidget::focus-padding = 0
 
     # "square" slider (really round of course)
+    # Same as indicator-size?
     GtkRange::slider-width = 16
     GtkScale::slider-length = 16
     GtkRange::trough-border = 0
@@ -101,6 +114,9 @@ style "entry"
 {
     # small inner border and a large x/ythickness for entries
     # to reduce the number of hacks needed :-)
+    # This size needs to be choosen so the round corner work with the height
+    # Something like (height / 2.0 - line_width) / sqrt(2), where height
+    # is font height + x/ythickness
     xthickness = 7
     ythickness = 7
 
