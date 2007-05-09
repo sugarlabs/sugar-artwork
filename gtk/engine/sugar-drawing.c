@@ -102,8 +102,7 @@ sugar_draw_exterior_focus (cairo_t *cr, SugarInfo *info)
     gdouble line_width = info->rc_style->line_width;
     GdkRectangle *pos = &info->pos;
 
-    /* what color? */
-    gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_NORMAL]);
+    gdk_cairo_set_source_color (cr, &info->style->fg[info->state]);
     sugar_rounded_inner_stroke (cr, pos->x, pos->y, pos->width, pos->height, line_width, info->max_radius, info->corners);
 }
 
