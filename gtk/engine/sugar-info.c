@@ -96,7 +96,7 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
         range_info->orientation = info->pos.width >= info->pos.height ? GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
     }
 
-    border_size = info->rc_style->thick_line_width + info->rc_style->line_width;
+    border_size = 2*info->rc_style->line_width;
 
     /* The scale trough is drawn larger than it should be. Subtract from its width/height. */
     if (trough && (HINT ("vscale") || HINT ("hscale"))) {
