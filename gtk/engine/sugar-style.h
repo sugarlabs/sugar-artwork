@@ -17,6 +17,9 @@
  * Boston, MA 02111-1307, USA.
  */
 
+#ifndef __SUGAR_STYLE_H
+#define __SUGAR_STYLE_H
+
 #include <gtk/gtkstyle.h>
 
 typedef struct _SugarStyle SugarStyle;
@@ -42,3 +45,5 @@ struct _SugarStyleClass
 };
 
 G_GNUC_INTERNAL void sugar_style_register_type (GTypeModule *module);
+
+#endif /* __SUGAR_STYLE_H */

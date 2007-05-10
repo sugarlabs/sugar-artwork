@@ -17,12 +17,25 @@
  * Boston, MA 02111-1307, USA.
  */
 
+
+#ifndef __SUGAR_RC_STYLE_H
+#define __SUGAR_RC_STYLE_H
+
 #include <gtk/gtkrc.h>
 
 typedef struct _SugarRcStyle SugarRcStyle;
 typedef struct _SugarRcStyleClass SugarRcStyleClass;
 
 G_GNUC_INTERNAL extern GType sugar_type_rc_style;
+
+/* Bit field for the engine options. */
+typedef enum {
+	OPTION_LINE_WIDTH       = 1 << 0,
+	OPTION_THICK_LINE_WIDTH = 1 << 1,
+	OPTION_MAX_RADIUS       = 1 << 2,
+	OPTION_HINT             = 1 << 3
+} SugarRcStyleOptions;
+
 
 #define SUGAR_TYPE_RC_STYLE              sugar_type_rc_style
 #define SUGAR_RC_STYLE(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), SUGAR_TYPE_RC_STYLE, SugarRcStyle))
@@ -33,6 +46,13 @@ G_GNUC_INTERNAL extern GType sugar_type_rc_style;
 
 struct _SugarRcStyle {
     GtkRcStyle parent_instance;
+
+    SugarRcStyleOptions flags;
+
+    gchar *hint;
+    gdouble line_width;
+    gdouble thick_line_width;
+    gdouble max_radius;
 };
 
 struct _SugarRcStyleClass {
@@ -40,3 +60,5 @@ struct _SugarRcStyleClass {
 };
 
 G_GNUC_INTERNAL void sugar_rc_style_register_type (GTypeModule *module);
+
+#endif /* __SUGAR_RC_STYLE_H */
