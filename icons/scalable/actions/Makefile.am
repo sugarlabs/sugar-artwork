@@ -18,3 +18,5 @@ icon_DATA =				\
 	stop.svg			\
 	view-refresh.svg		\
 	window-close.svg
+
+EXTRA_DIST = $(icon_DATA)
