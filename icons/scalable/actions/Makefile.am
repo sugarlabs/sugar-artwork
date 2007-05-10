@@ -14,9 +14,14 @@ icon_DATA =				\
 	format-text-underline.svg	\
 	go-next.svg			\
 	go-previous.svg			\
+	insert-col.svg                  \
 	insert-image.svg		\
+	insert-row.svg                  \
+       	remove-row.svg                  \
+	remove-col.svg			\
 	stop.svg			\
 	view-refresh.svg		\
 	window-close.svg
+
 
 EXTRA_DIST = $(icon_DATA)

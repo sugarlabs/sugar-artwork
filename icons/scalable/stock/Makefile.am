@@ -15,6 +15,8 @@ icon_DATA =				\
 	stock-share-mesh.svg		\
 	stock-zoom-activity.svg		\
 	stock-zoom-friends.svg		\
+	stock-zoom-in.svg		\
+	stock-zoom-out.svg		\
 	stock-zoom-home.svg		\
 	stock-zoom-mesh.svg		\
 	stock-net-wired.svg 		\
