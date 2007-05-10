@@ -35,11 +35,13 @@ typedef enum
 } SugarCorners;
 
 typedef enum {
-    SIDE_TOP,
-    SIDE_BOTTOM,
-    SIDE_LEFT,
-    SIDE_RIGHT
-} SugarSide;
+    EDGE_NONE      = 0,
+    EDGE_TOP       = 1 << 0,
+    EDGE_BOTTOM    = 1 << 1,
+    EDGE_LEFT      = 1 << 2,
+    EDGE_RIGHT     = 1 << 3,
+    EDGE_ALL       = 0xf
+} SugarEdges;
 
 typedef struct {
     GtkWidget *widget;
@@ -52,6 +54,7 @@ typedef struct {
     SugarCorners corners;
     const gchar *detail;
     gdouble max_radius;
+    SugarEdges  cont_edges;
 } SugarInfo;
 
 
@@ -65,6 +68,6 @@ typedef struct {
 G_GNUC_INTERNAL void sugar_info_get_style_property (SugarInfo *info, const gchar *property, gpointer dest);
 G_GNUC_INTERNAL void sugar_fill_generic_info (SugarInfo *info, GtkStyle *style, GtkStateType state_type, GtkShadowType shadow_type, GtkWidget *widget, const gchar *detail, gint x, gint y, gint width, gint height);
 G_GNUC_INTERNAL void sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough);
-G_GNUC_INTERNAL void sugar_info_remove_corners (SugarInfo *info, SugarSide side);
+G_GNUC_INTERNAL void sugar_remove_corners (SugarCorners *corners, SugarEdges edge);
 
 #endif /* __SUGAR_INFO_H */

@@ -49,29 +49,17 @@ sugar_info_get_style_property (SugarInfo   *info,
 }
 
 void
-sugar_info_remove_corners (SugarInfo *info,
-                           SugarSide  side)
+sugar_remove_corners (SugarCorners *corners,
+                      SugarEdges    edges)
 {
-    switch (side) {
-        case SIDE_TOP:
-            info->corners &= ~(CORNER_TOPRIGHT | CORNER_TOPLEFT);
-            break;
-        case SIDE_BOTTOM:
-            info->corners &= ~(CORNER_BOTTOMRIGHT | CORNER_BOTTOMLEFT);
-            break;
-        case SIDE_LEFT:
-            if (info->ltr)
-                info->corners &= ~(CORNER_TOPLEFT | CORNER_BOTTOMLEFT);
-            else
-                info->corners &= ~(CORNER_TOPRIGHT | CORNER_BOTTOMRIGHT);
-            break;
-        case SIDE_RIGHT:
-            if (info->ltr)
-                info->corners &= ~(CORNER_TOPRIGHT | CORNER_BOTTOMRIGHT);
-            else
-                info->corners &= ~(CORNER_TOPLEFT | CORNER_BOTTOMLEFT);
-            break;
-    }
+    if (edges & EDGE_TOP)
+        *corners &= ~(CORNER_TOPRIGHT | CORNER_TOPLEFT);
+    if (edges & EDGE_BOTTOM)
+        *corners &= ~(CORNER_BOTTOMRIGHT | CORNER_BOTTOMLEFT);
+    if (edges & EDGE_LEFT)
+        *corners &= ~(CORNER_TOPLEFT | CORNER_BOTTOMLEFT);
+    if (edges & EDGE_RIGHT)
+        *corners &= ~(CORNER_TOPRIGHT | CORNER_BOTTOMRIGHT);
 }
 
 void
@@ -143,6 +131,7 @@ sugar_fill_generic_info (SugarInfo     *info,
     info->pos.height = height;
     /* copy the radius setting so we can modify it for eg. the focus */
     info->max_radius = info->rc_style->max_radius;
+    info->cont_edges = EDGE_NONE;
 
     info->ltr = sugar_widget_is_ltr (widget);
 }

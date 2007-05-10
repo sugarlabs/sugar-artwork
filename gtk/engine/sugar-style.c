@@ -19,7 +19,7 @@
  */
 
 #include <string.h>
-#include <gdk/gdkdrawable.h>
+#include <gtk/gtk.h>
 
 #include "sugar-style.h"
 #include "sugar-rc-style.h"
@@ -111,14 +111,14 @@ sugar_style_draw_focus (GtkStyle       *style,
 
 		if (HINT ("comboboxentry")) {
 			if (DETAIL ("button")) {
-				sugar_info_remove_corners (&info, SIDE_LEFT);
+				sugar_remove_corners (&info.corners, info.ltr ? EDGE_LEFT : EDGE_RIGHT);
 			} else {
-				sugar_info_remove_corners (&info, SIDE_RIGHT);
+				sugar_remove_corners (&info.corners, info.ltr ? EDGE_RIGHT : EDGE_LEFT);
 			}
 		}
 		if (DETAIL ("entry") && HINT ("spinbutton")) {
 			/* We need to fake the focus on the button separately. */
-			sugar_info_remove_corners (&info, SIDE_RIGHT);
+			sugar_remove_corners (&info.corners, info.ltr ? EDGE_RIGHT : EDGE_LEFT);
 			info.pos.width += info.rc_style->thick_line_width;
 			if (!info.ltr)
 				info.pos.x -= info.rc_style->thick_line_width;
@@ -222,7 +222,8 @@ sugar_style_draw_box (GtkStyle       *style,
 		sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
 
 		if (HINT ("comboboxentry")) {
-			sugar_info_remove_corners (&info, SIDE_LEFT);
+		    info.cont_edges = info.ltr ? EDGE_LEFT : EDGE_RIGHT;
+			sugar_remove_corners (&info.corners, info.cont_edges);
 		}
 
 		if (DETAIL ("buttondefault"))
@@ -237,18 +238,22 @@ sugar_style_draw_box (GtkStyle       *style,
         /* Fill the background with bg_color. */
         sugar_fill_background (cr, &info);
 
-        sugar_info_remove_corners (&info, SIDE_LEFT);
+        info.cont_edges = info.ltr ? EDGE_LEFT : EDGE_RIGHT;
+        sugar_remove_corners (&info.corners, info.cont_edges);
 
 		sugar_draw_button (cr, &info);
 	} else if (DETAIL ("spinbutton_up") || DETAIL ("spinbutton_down")) {
 		SugarInfo info;
 		sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
 
-		if (DETAIL ("spinbutton_up"))
-			info.corners = info.ltr ? CORNER_TOPRIGHT : CORNER_TOPRIGHT;
-		else
-			info.corners = info.ltr ? CORNER_BOTTOMRIGHT : CORNER_BOTTOMRIGHT;
+        info.cont_edges = info.ltr ? EDGE_LEFT : EDGE_RIGHT;
 
+		if (DETAIL ("spinbutton_up"))
+			info.cont_edges |= EDGE_BOTTOM;
+		else
+			info.cont_edges |= EDGE_TOP;
+
+        sugar_remove_corners (&info.corners, info.cont_edges);
 		sugar_draw_button (cr, &info);
 
 		/* Spinbutton focus hack. */
@@ -324,7 +329,8 @@ sugar_style_draw_shadow (GtkStyle       *style,
 
 		/* Corner detection. */
 		if (HINT ("comboboxentry") || HINT("spinbutton")) {
-			sugar_info_remove_corners (&info, SIDE_RIGHT);
+		    info.cont_edges = info.ltr ? EDGE_RIGHT : EDGE_LEFT;
+			sugar_remove_corners (&info.corners, info.cont_edges);
 
 			/* Remove the padding on one side. */
 			width += info.rc_style->thick_line_width;
@@ -387,6 +393,32 @@ sugar_style_draw_extension(GtkStyle        *style,
 }
 
 static void
+sugar_style_draw_layout(GtkStyle        *style,
+                        GdkWindow       *window,
+                        GtkStateType     state_type,
+                        gboolean         use_text,
+                        GdkRectangle    *area,
+                        GtkWidget       *widget,
+                        const char      *detail,
+                        int              x,
+                        int              y,
+                        PangoLayout     *layout)
+{
+    GdkGC *gc;
+
+    /* We don't want embossed text. */
+    gc = use_text ? style->text_gc[state_type] : style->fg_gc[state_type];
+
+    if (area)
+        gdk_gc_set_clip_rectangle (gc, area);
+
+    gdk_draw_layout (window, gc, x, y, layout);
+
+    if (area)
+        gdk_gc_set_clip_rectangle (gc, NULL);
+}
+
+static void
 sugar_style_class_init (SugarStyleClass *klass)
 {
     GtkStyleClass *style_class = GTK_STYLE_CLASS(klass);
@@ -399,6 +431,7 @@ sugar_style_class_init (SugarStyleClass *klass)
     style_class->draw_shadow = sugar_style_draw_shadow;
     style_class->draw_focus = sugar_style_draw_focus;
     style_class->draw_slider = sugar_style_draw_slider;
+    style_class->draw_layout = sugar_style_draw_layout;
 }
 
 

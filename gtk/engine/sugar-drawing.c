@@ -20,14 +20,20 @@
 #include "sugar-drawing.h"
 
 static void
-sugar_rounded_rectangle (cairo_t     *cr,
-                         gdouble      x,
-                         gdouble      y,
-                         gdouble      width,
-                         gdouble      height,
-                         gdouble      radius,
-                         SugarCorners corners)
+sugar_rounded_rectangle (cairo_t      *cr,
+                         GdkRectangle *pos,
+                         gdouble       padding,
+                         gdouble       radius,
+                         SugarCorners  corners)
 {
+    gfloat x, y, width, height;
+    
+    x = pos->x + padding;
+    y = pos->y + padding;
+    width  = pos->width  - 2*padding;
+    height = pos->height - 2*padding;
+    radius = MAX (0, radius - padding);
+    
     /* Make sure the radius is sane. */
     if ((corners & (CORNER_TOPRIGHT | CORNER_TOPLEFT)) && (corners & (CORNER_BOTTOMRIGHT | CORNER_BOTTOMLEFT)))
         radius = MIN (radius, height / 2.0);
@@ -75,19 +81,55 @@ sugar_rounded_rectangle (cairo_t     *cr,
 
 /* Helper function to stroke a box so that the outside of the stroke is on the given path. */
 static void
-sugar_rounded_inner_stroke (cairo_t     *cr,
-                            gdouble      x,
-                            gdouble      y,
-                            gdouble      width,
-                            gdouble      height,
+sugar_rounded_inner_stroke (cairo_t      *cr,
+                            GdkRectangle *pos,
                             gdouble      outline_width,
                             gdouble      radius,
-                            SugarCorners corners)
+                            SugarCorners corners,
+                            SugarEdges   cont_edges)
 {
+    GdkRectangle real_pos = *pos;
+
+    cairo_save (cr);
+
     cairo_set_line_width (cr, outline_width);
-    sugar_rounded_rectangle (cr, x + outline_width / 2.0, y + outline_width / 2.0, width - outline_width, height - outline_width, MAX (0, radius - outline_width), corners);
+
+    sugar_remove_corners (&corners, cont_edges);
+
+    gdk_cairo_rectangle (cr, pos);
+    cairo_clip (cr);
+
+    if (cont_edges & EDGE_TOP) {
+        real_pos.y -= outline_width;
+        real_pos.height += outline_width;
+    }
+    if (cont_edges & EDGE_BOTTOM) {
+        real_pos.height += outline_width;
+    }
+    if (cont_edges & EDGE_LEFT) {
+        real_pos.x -= outline_width;
+        real_pos.width += outline_width;
+    }
+    if (cont_edges & EDGE_RIGHT) {
+        real_pos.width += outline_width;
+    }
+
+    sugar_rounded_rectangle (cr, &real_pos, outline_width / 2.0, radius, corners);
     cairo_stroke (cr);
+
+    cairo_restore (cr);
 }
+
+static void
+sugar_draw_insensitive_outline (cairo_t *cr, SugarInfo *info)
+{
+    if (info->state == GTK_STATE_INSENSITIVE) {
+        gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_INSENSITIVE]);
+        sugar_rounded_inner_stroke (cr, &info->pos, info->rc_style->line_width, info->max_radius, info->corners, info->cont_edges);
+    }
+}
+
+
 
 void
 sugar_fill_background (cairo_t *cr, SugarInfo *info)
@@ -101,8 +143,6 @@ sugar_fill_background (cairo_t *cr, SugarInfo *info)
     cairo_paint (cr);
 }
 
-
-
 void
 sugar_draw_exterior_focus (cairo_t *cr, SugarInfo *info)
 {
@@ -114,7 +154,7 @@ sugar_draw_exterior_focus (cairo_t *cr, SugarInfo *info)
     gtk_style_lookup_color (info->style, "focus_line", &line_color);
 
     gdk_cairo_set_source_color (cr, &line_color);
-    sugar_rounded_inner_stroke (cr, pos->x, pos->y, pos->width, pos->height, line_width, info->max_radius, info->corners);
+    sugar_rounded_inner_stroke (cr, pos, line_width, info->max_radius, info->corners, info->cont_edges);
 }
 
 void
@@ -127,19 +167,19 @@ sugar_draw_scale_trough (cairo_t *cr, SugarRangeInfo *range_info)
         gdouble outline_width = info->rc_style->line_width;
         /* XXX: Needs testing. */
         gdk_cairo_set_source_color (cr, &info->style->bg[info->state]);
-        sugar_rounded_inner_stroke (cr, pos->x, pos->y, pos->width, pos->height, outline_width, info->max_radius, info->corners);
+        sugar_rounded_inner_stroke (cr, pos, outline_width, info->max_radius, info->corners, info->cont_edges);
         return;
     }
 
     gdk_cairo_set_source_color (cr, &info->style->bg[info->state]);
-    sugar_rounded_rectangle (cr, pos->x, pos->y, pos->width, pos->height, info->max_radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, 0, info->max_radius, info->corners);
     cairo_fill (cr);
 
     if (range_info->trough_fill) {
         gdouble outline_width = info->rc_style->line_width;
         /* Draw the fill for the trough. */
         gdk_cairo_set_source_color (cr, &info->style->bg[GTK_STATE_ACTIVE]);
-        sugar_rounded_rectangle (cr, pos->x + outline_width, pos->y + outline_width, pos->width - 2*outline_width, pos->height - 2*outline_width, MAX (0, info->max_radius - outline_width), info->corners);
+        sugar_rounded_rectangle (cr, pos, outline_width, info->max_radius, info->corners);
         cairo_fill (cr);
     }
 }
@@ -168,7 +208,7 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
     /* from outside to inside */
     /* XXX: There are some artifacts. To fix this the fill should be drawn first -- slightly larger. */
     gdk_cairo_set_source_color (cr, outline);
-    sugar_rounded_inner_stroke (cr, pos.x, pos.y, pos.width, pos.height, line_width, max_radius, info->corners);
+    sugar_rounded_inner_stroke (cr, &pos, line_width, max_radius, info->corners, EDGE_NONE);
 
     max_radius -= line_width;
     pos.x += line_width;
@@ -177,7 +217,7 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
     pos.height -= 2*line_width;
 
     gdk_cairo_set_source_color (cr, line);
-    sugar_rounded_inner_stroke (cr, pos.x, pos.y, pos.width, pos.height, line_width, max_radius, info->corners);
+    sugar_rounded_inner_stroke (cr, &pos, line_width, max_radius, info->corners, EDGE_NONE);
     
     max_radius -= line_width;
     pos.x += line_width;
@@ -186,7 +226,7 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
     pos.height -= 2*line_width;
 
     gdk_cairo_set_source_color (cr, outline);
-    sugar_rounded_inner_stroke (cr, pos.x, pos.y, pos.width, pos.height, line_width, max_radius, info->corners);
+    sugar_rounded_inner_stroke (cr, &pos, line_width, max_radius, info->corners, EDGE_NONE);
 
     max_radius -= line_width;
     pos.x += line_width;
@@ -196,7 +236,7 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
 
     if (fill) {
         gdk_cairo_set_source_color (cr, fill);
-        sugar_rounded_rectangle (cr, pos.x, pos.y, pos.width, pos.height, max_radius, info->corners);
+        sugar_rounded_rectangle (cr, &pos, 0, max_radius, info->corners);
         cairo_fill (cr);
     }
 }
@@ -220,7 +260,7 @@ sugar_draw_scrollbar_slider (cairo_t       *cr,
         state = info->state;
     
     gdk_cairo_set_source_color (cr, &info->style->bg[state]);
-    sugar_rounded_rectangle (cr, pos->x, pos->y, pos->width, pos->height, info->max_radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, 0, info->max_radius, info->corners);
     cairo_fill (cr);
 }
 
@@ -230,9 +270,10 @@ sugar_draw_entry (cairo_t *cr, SugarInfo *info)
     GdkRectangle *pos = &info->pos;
 
     gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
-    sugar_rounded_rectangle (cr, pos->x, pos->y, pos->width, pos->height,
-                             info->max_radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, 0, info->max_radius, info->corners);
     cairo_fill (cr);
+
+    sugar_draw_insensitive_outline (cr, info);
 }
 
 void
@@ -245,8 +286,10 @@ sugar_draw_button (cairo_t *cr, SugarInfo *info)
 
     radius = info->max_radius;
 
-    sugar_rounded_rectangle (cr, pos->x, pos->y, pos->width, pos->height, radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, 0, radius, info->corners);
     cairo_fill (cr);
+
+    sugar_draw_insensitive_outline (cr, info);
 }
 
 void
@@ -261,7 +304,7 @@ sugar_draw_button_default (cairo_t *cr, SugarInfo *info)
     /* This is broken! */
     radius = info->max_radius + info->rc_style->line_width + line_width;
 
-    sugar_rounded_inner_stroke (cr, pos->x, pos->y, pos->width, pos->height, line_width, info->max_radius, info->corners);
+    sugar_rounded_inner_stroke (cr, pos, line_width, info->max_radius, info->corners, info->cont_edges);
 }
 
 
