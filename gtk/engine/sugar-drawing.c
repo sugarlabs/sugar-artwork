@@ -89,10 +89,17 @@ sugar_rounded_inner_stroke (cairo_t     *cr,
     cairo_stroke (cr);
 }
 
+void
+sugar_fill_background (cairo_t *cr, SugarInfo *info)
+{
+    GdkColor bg_color = info->style->bg[GTK_STATE_NORMAL];
 
+    /* try to lookup the symbolic color bg_color */
+    gtk_style_lookup_color (info->style, "bg_color", &bg_color);
 
-
-
+    gdk_cairo_set_source_color (cr, &bg_color);
+    cairo_paint (cr);
+}
 
 
 
@@ -101,8 +108,12 @@ sugar_draw_exterior_focus (cairo_t *cr, SugarInfo *info)
 {
     gdouble line_width = info->rc_style->line_width;
     GdkRectangle *pos = &info->pos;
+    /* Fallback to fg[NORMAL] */
+    GdkColor line_color = info->style->fg[GTK_STATE_NORMAL];
 
-    gdk_cairo_set_source_color (cr, &info->style->fg[info->state]);
+    gtk_style_lookup_color (info->style, "focus_line", &line_color);
+
+    gdk_cairo_set_source_color (cr, &line_color);
     sugar_rounded_inner_stroke (cr, pos->x, pos->y, pos->width, pos->height, line_width, info->max_radius, info->corners);
 }
 
@@ -217,10 +228,6 @@ void
 sugar_draw_entry (cairo_t *cr, SugarInfo *info)
 {
     GdkRectangle *pos = &info->pos;
-
-    gdk_cairo_set_source_color (cr, &info->style->bg[GTK_STATE_NORMAL]);
-    gdk_cairo_rectangle (cr, pos);
-    cairo_fill (cr);
 
     gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
     sugar_rounded_rectangle (cr, pos->x, pos->y, pos->width, pos->height,

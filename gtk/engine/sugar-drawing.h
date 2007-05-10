@@ -21,6 +21,8 @@
 #include <cairo.h>
 #include "sugar-info.h"
 
+G_GNUC_INTERNAL void sugar_fill_background (cairo_t *cr, SugarInfo *info);
+
 G_GNUC_INTERNAL void sugar_draw_exterior_focus (cairo_t *cr, SugarInfo *info);
 G_GNUC_INTERNAL void sugar_draw_scale_trough (cairo_t *cr, SugarRangeInfo *range_info);
 G_GNUC_INTERNAL void sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info);

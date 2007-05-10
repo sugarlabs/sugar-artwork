@@ -5,16 +5,31 @@
 
 style "default"
 {
+    # Will be overriden in some widgets
+    color["focus_line"] = "#FFFFFF"
+
     bg[NORMAL] = "#808080"
     bg[PRELIGHT] = "#808080"
     bg[ACTIVE] = "#ffffff"
     bg[SELECTED] = "#e7e7e7"
 
-    fg[NORMAL]        = "#ffffff"
+    fg[NORMAL]        = "#000000"
     fg[ACTIVE]        = "#000000"
     fg[SELECTED]      = "#ffffff"
     fg[PRELIGHT]      = "#ffffff"
-    fg[INSENSITIVE]   = "#909090"
+
+    text[NORMAL] = "#000000" # "#7f7f7f" 1. need to patch GTK+ to use ACTIVE when focused, 2. what color should this really be?
+    text[ACTIVE] = "#000000"
+    text[SELECTED] = "#000000"
+    text[PRELIGHT] = "#000000"
+
+    base[NORMAL] = "#E6E6E6"
+    base[ACTIVE] = "#ffffff"
+    base[SELECTED] = "#a6a6a6"
+    base[PRELIGHT] = "#ffffff"
+
+    fg[INSENSITIVE] = "#808080"
+    text[INSENSITIVE] = "#808080"
 
     xthickness = 3   # line_width
     ythickness = 3
@@ -49,11 +64,20 @@ style "default"
     }
 }
 
-style "window"
+style "window-content"
 {
-    bg[NORMAL] = "#C0C0C0"
+    color["bg_color"] = "#C0C0C0"
+
+    bg[INSENSITIVE] = @bg_color
+    base[INSENSITIVE] = @bg_color
 }
 
+style "window"
+{
+    color["bg_color"] = "#C0C0C0"
+
+    bg[NORMAL] = @bg_color
+}
 
 style "scrollbar"
 {
@@ -138,11 +162,13 @@ style "toolbox-notebook"
 
 style "toolitem"
 {
+    color["focus_line"] = "#000000"
+
     bg[PRELIGHT] = "#000000"
 
     fg[PRELIGHT] = "#ffffff"
     fg[NORMAL]   = "#000000"
-    
+
     engine "sugar" {
         max_radius = 5.0
     }
@@ -167,8 +193,6 @@ style "panel"
 
 style "entry"
 {
-    # XXX: This is kinda wrong ... and does not work for the spinbutton
-    bg[NORMAL] = "#C0C0C0"
     # small inner border and a large x/ythickness for entries
     # to reduce the number of hacks needed :-)
     # This size needs to be choosen so the round corner work with the height
@@ -182,9 +206,15 @@ style "entry"
     GtkWidget::focus-line-width = 0
 }
 
+style "button"
+{
+    fg[NORMAL]        = "#ffffff"
+}
+
 style "checkbutton"
 {
-    fg[ACTIVE]        = "#ffffff"
+    fg[NORMAL]        = "#000000"
+    fg[ACTIVE]        = "#000000"
 
     # I won't get the exact sizing, but this should be pretty close
     GtkCheckButton::indicator-size = 13
@@ -210,14 +240,16 @@ class "GtkSpinButton"  style "spinbutton"
 class "GtkScrollbar"   style "scrollbar"
 class "GtkHScale"      style "hscale"
 class "GtkVScale"      style "vscale"
-class "GtkCheckButton" style "checkbutton"
 class "GtkProgressBar" style "progressbar"
 
+widget_class "<GtkWindow>.*"      style "window-content"
 widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 widget_class "*<GtkCombo>*" style "comboboxentry"
 widget_class "*<SugarToolbox>*" style "toolbox"
 widget_class "*<GtkToolItem>*" style "toolitem"
 widget_class "*<SugarToolbox>*<GtkNotebook>" style "toolbox-notebook"
+widget_class "*<GtkButton>*" style "button"
+widget_class "*<GtkCheckButton>*" style "checkbutton"
 
 widget_class "*<SugarPanel>" style "panel"
 

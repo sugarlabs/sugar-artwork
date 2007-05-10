@@ -132,16 +132,16 @@ sugar_style_draw_focus (GtkStyle       *style,
 			/* duplicated from draw_box */
 			if (DETAIL ("spinbutton_up")) {
 				info.corners = info.ltr ? CORNER_TOPRIGHT : CORNER_TOPRIGHT;
-				info.pos.height += info.rc_style->thick_line_width;
+				info.pos.height += info.rc_style->line_width;
 			} else {
 				info.corners = info.ltr ? CORNER_BOTTOMRIGHT : CORNER_BOTTOMRIGHT;
-				info.pos.y -= info.rc_style->thick_line_width;
-				info.pos.height += info.rc_style->thick_line_width;
+				info.pos.y -= info.rc_style->line_width;
+				info.pos.height += info.rc_style->line_width;
 			}
 
-			info.pos.width += info.rc_style->thick_line_width;
+			info.pos.width += info.rc_style->line_width;
 			if (info.ltr)
-				info.pos.x -= info.rc_style->thick_line_width;
+				info.pos.x -= info.rc_style->line_width;
 		}
 		if (DETAIL ("trough")) {
 			/* Must be scale?!? */
@@ -151,8 +151,6 @@ sugar_style_draw_focus (GtkStyle       *style,
 			range_info.info = info;
 			sugar_fill_range_info (&range_info, TRUE);
 			info = range_info.info;
-
-			info.state = GTK_STATE_NORMAL;
 		}
 
 		sugar_draw_exterior_focus (cr, &info);
@@ -233,7 +231,15 @@ sugar_style_draw_box (GtkStyle       *style,
 			sugar_draw_button (cr, &info);
 
 	} else if (DETAIL ("spinbutton")) {
-		/* empty */
+		SugarInfo info;
+		sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+
+        /* Fill the background with bg_color. */
+        sugar_fill_background (cr, &info);
+
+        sugar_info_remove_corners (&info, SIDE_LEFT);
+
+		sugar_draw_button (cr, &info);
 	} else if (DETAIL ("spinbutton_up") || DETAIL ("spinbutton_down")) {
 		SugarInfo info;
 		sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
@@ -245,7 +251,7 @@ sugar_style_draw_box (GtkStyle       *style,
 
 		sugar_draw_button (cr, &info);
 
-		/* XXX: Spinbutton focus hack. */
+		/* Spinbutton focus hack. */
 		if (widget && GTK_WIDGET_HAS_FOCUS (widget)) {
 			/* Draw a focus for the spinbutton */
 			sugar_style_draw_focus (style, window, GTK_STATE_NORMAL, area, widget, detail, x, y, width, height);
@@ -337,6 +343,8 @@ sugar_style_draw_shadow (GtkStyle       *style,
 			info.state = GTK_STATE_INSENSITIVE;
 		}
 
+        /* Fill the background with bg_color. */
+        sugar_fill_background (cr, &info);
 		sugar_draw_entry (cr, &info);
 	} else {
 		parent_class->draw_shadow (style, window, state_type, shadow_type, area, widget, detail, x, y, width, height);
