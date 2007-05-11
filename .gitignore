@@ -32,3 +32,5 @@ icons/index.theme
 po/.intltool-merge-cache
 stamp-h1
 *~
+gtk/theme/sugar.gtkrc
+gtk/theme/sugar-xo.gtkrc
