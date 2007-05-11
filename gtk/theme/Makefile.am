@@ -6,6 +6,10 @@ sugar-xo.gtkrc: gtkrc.em
 	$(srcdir)/em.py -p $$ -D theme=\'sugar-xo\' $(srcdir)/gtkrc.em > \
 		$(top_builddir)/gtk/theme/sugar-xo.gtkrc
 
+clean:
+	$(RM) sugar.gtkrc
+	$(RM) sugar-xo.gtkrc
+
 GTKRC_FILES =		\
 	sugar.gtkrc	\
 	sugar-xo.gtkrc
@@ -16,7 +20,7 @@ install-data-local: $(GTKRC_FILES)
 		$(DESTDIR)$(datadir)/themes/sugar/gtk-2.0/gtkrc
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/themes/sugar-xo/gtk-2.0
 	$(INSTALL) $(top_builddir)/gtk/theme/sugar-xo.gtkrc \
-		$(DESTDIR)$(datadir)/themes/sugar/gtk-2.0
+		$(DESTDIR)$(datadir)/themes/sugar-xo/gtk-2.0/gtkrc
 
 uninstall-local:
 	rm -rf $(DESTDIR)$(datadir)/themes/sugar/gtk-2.0

@@ -118,7 +118,10 @@ sugar_style_draw_focus (GtkStyle       *style,
 		}
 		if (DETAIL ("entry") && HINT ("spinbutton")) {
 			/* We need to fake the focus on the button separately. */
-			sugar_remove_corners (&info.corners, info.ltr ? EDGE_RIGHT : EDGE_LEFT);
+			info.cont_edges |= info.ltr ? EDGE_RIGHT : EDGE_LEFT;
+
+            sugar_remove_corners (&info.corners, info.cont_edges);
+
 			info.pos.width += info.rc_style->thick_line_width;
 			if (!info.ltr)
 				info.pos.x -= info.rc_style->thick_line_width;
@@ -130,18 +133,14 @@ sugar_style_draw_focus (GtkStyle       *style,
 			cairo_clip (cr);
 
 			/* duplicated from draw_box */
-			if (DETAIL ("spinbutton_up")) {
-				info.corners = info.ltr ? CORNER_TOPRIGHT : CORNER_TOPRIGHT;
-				info.pos.height += info.rc_style->line_width;
-			} else {
-				info.corners = info.ltr ? CORNER_BOTTOMRIGHT : CORNER_BOTTOMRIGHT;
-				info.pos.y -= info.rc_style->line_width;
-				info.pos.height += info.rc_style->line_width;
-			}
+    		if (DETAIL ("spinbutton_up"))
+                info.cont_edges |= EDGE_BOTTOM;
+            else
+            	info.cont_edges |= EDGE_TOP;
 
-			info.pos.width += info.rc_style->line_width;
-			if (info.ltr)
-				info.pos.x -= info.rc_style->line_width;
+  			info.cont_edges |= info.ltr ? EDGE_LEFT : EDGE_RIGHT;
+
+            sugar_remove_corners (&info.corners, info.cont_edges);
 		}
 		if (DETAIL ("trough")) {
 			/* Must be scale?!? */
