@@ -190,6 +190,7 @@ style "toolbox-content"
     color["bg_color"] = "#404040"
     
     fg[NORMAL] = "#FFFFFF"
+    fg[ACTIVE] = "#FFFFFF"
     bg[INSENSITIVE] = @bg_color
 }
 
@@ -269,7 +270,8 @@ widget_class "*<SugarToolbox>*<GtkNotebook>" style "toolbox"
 widget_class "*<SugarToolbox>*<GtkToolbar>" style "toolbox"
 widget_class "*<SugarToolbox>*" style "toolbox-content"
 widget_class "*<GtkToolButton>*" style "toolbutton"
-widget_class "*<GtkToolItem><GtkComboBox>*" style "toolbutton"
+widget_class "*<GtkToolItem>*<GtkComboBox>*" style "toolbutton"
+widget_class "*<GtkToolItem>*<GtkButton>*" style "toolbutton"
 
 widget_class "*<GtkButton>*" style "button"
 widget_class "*<GtkCheckButton>*" style "checkbutton"
