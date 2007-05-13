@@ -38,6 +38,11 @@ style "default"
     GtkWidget::interior-focus = 0
     GtkWidget::focus-line-width = 1   # This does not do anything really
     GtkWidget::focus-padding = 0
+
+    GtkWidget::wide-separators = 1
+    GtkWidget::separator-height = 3 #line_width
+    GtkWidget::separator-width = 3
+
     GtkRange::activate-slider = 1
     GtkButton::inner-border = { 6, 6, 6, 6 }           # ??
 
@@ -177,6 +182,7 @@ style "toolbox"
 {
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
+    color["bg_color"] = "#404040"
     bg[NORMAL] = "#404040"
     fg[NORMAL] = "#FFFFFF"
     fg[ACTIVE] = "#FFFFFF"

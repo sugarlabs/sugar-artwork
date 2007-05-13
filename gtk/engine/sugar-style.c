@@ -87,6 +87,70 @@ sugar_cairo_create (GdkWindow *window, GdkRectangle *area)
 	return cr;
 }
 
+
+static void
+sugar_style_draw_hline(GtkStyle       *style,
+                       GdkWindow      *window,
+                       GtkStateType    state_type,
+                       GdkRectangle   *area,
+                       GtkWidget      *widget,
+                       const gchar    *detail,
+                       gint            x1,
+                       gint            x2,
+                       gint            y)
+{
+    cairo_t *cr;
+    gint width;
+    gint height;
+
+    cr = sugar_cairo_create (window, area);
+
+    gdk_cairo_set_source_color (cr, &style->bg[state_type]);
+
+    g_assert (x1 < x2);
+
+    width = x2 - x1; /* + 1  ?? */
+    height = SUGAR_RC_STYLE (style->rc_style)->line_width;
+    y -= height / 2;
+
+    cairo_rectangle (cr, x1, y, width, height);
+    cairo_fill (cr);
+
+    cairo_destroy (cr);
+}
+
+static void
+sugar_style_draw_vline(GtkStyle       *style,
+                       GdkWindow      *window,
+                       GtkStateType    state_type,
+                       GdkRectangle   *area,
+                       GtkWidget      *widget,
+                       const gchar    *detail,
+                       gint            y1,
+                       gint            y2,
+                       gint            x)
+{
+    cairo_t *cr;
+    gint width;
+    gint height;
+
+    cr = sugar_cairo_create (window, area);
+
+    gdk_cairo_set_source_color (cr, &style->bg[state_type]);
+
+    g_assert (y1 < y2);
+
+    height = y2 - y1; /* + 1  ?? */
+    width = SUGAR_RC_STYLE (style->rc_style)->line_width;
+    x -= width / 2;
+
+    cairo_rectangle (cr, x, y1, width, height);
+    cairo_fill (cr);
+
+    cairo_destroy (cr);
+}
+
+
 static void
 sugar_style_draw_focus (GtkStyle       *style,
                        GdkWindow      *window,
@@ -115,8 +179,7 @@ sugar_style_draw_focus (GtkStyle       *style,
 			} else {
 				sugar_remove_corners (&info.corners, info.ltr ? EDGE_RIGHT : EDGE_LEFT);
 			}
-		}
-		if (DETAIL ("entry") && HINT ("spinbutton")) {
+		} else if (DETAIL ("entry") && HINT ("spinbutton")) {
 			/* We need to fake the focus on the button separately. */
 			info.cont_edges |= info.ltr ? EDGE_RIGHT : EDGE_LEFT;
 
@@ -125,8 +188,7 @@ sugar_style_draw_focus (GtkStyle       *style,
 			info.pos.width += info.rc_style->thick_line_width;
 			if (!info.ltr)
 				info.pos.x -= info.rc_style->thick_line_width;
-		}
-		if (DETAIL ("spinbutton_up") || DETAIL ("spinbutton_down")) {
+		} else if (DETAIL ("spinbutton_up") || DETAIL ("spinbutton_down")) {
 			/* spinbutton button focus hack -- this gets called from draw_box */
 
 			gdk_cairo_rectangle (cr, &info.pos);
@@ -141,8 +203,7 @@ sugar_style_draw_focus (GtkStyle       *style,
   			info.cont_edges |= info.ltr ? EDGE_LEFT : EDGE_RIGHT;
 
             sugar_remove_corners (&info.corners, info.cont_edges);
-		}
-		if (DETAIL ("trough")) {
+		} else if (DETAIL ("trough")) {
 			/* Must be scale?!? */
 			SugarRangeInfo range_info;
 
@@ -273,6 +334,11 @@ sugar_style_draw_box (GtkStyle       *style,
 			/* just paint a flat box ... */
 			gtk_paint_flat_box (style, window, GTK_STATE_NORMAL, shadow_type, area, widget, detail, x, y, width, height);
 		}
+	} else if (DETAIL ("hseparator") || DETAIL ("vseparator")) {
+		    /* just fill the separator with bg[state] */
+            gdk_cairo_set_source_color (cr, &style->bg[state_type]);
+            cairo_rectangle (cr, x, y, width, height);
+            cairo_fill (cr);
 	} else {
 		parent_class->draw_box (style, window, state_type, shadow_type, area, widget, detail, x, y, width, height);
 	}
@@ -424,6 +490,8 @@ sugar_style_class_init (SugarStyleClass *klass)
     
     parent_class = g_type_class_peek_parent(klass);
 
+    style_class->draw_hline = sugar_style_draw_hline;
+    style_class->draw_vline = sugar_style_draw_vline;
     style_class->draw_extension = sugar_style_draw_extension;
     style_class->draw_box = sugar_style_draw_box;
     style_class->draw_flat_box = sugar_style_draw_flat_box;
