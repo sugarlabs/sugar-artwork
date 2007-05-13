@@ -34,7 +34,7 @@ sugar_widget_is_ltr (GtkWidget *widget)
     if (direction == GTK_TEXT_DIR_NONE)
         direction = gtk_widget_get_default_direction ();
 
-    return direction;
+    return (direction == GTK_TEXT_DIR_LTR);
 }
 
 
