@@ -30,10 +30,10 @@ G_GNUC_INTERNAL extern GType sugar_type_rc_style;
 
 /* Bit field for the engine options. */
 typedef enum {
-	OPTION_LINE_WIDTH       = 1 << 0,
-	OPTION_THICK_LINE_WIDTH = 1 << 1,
-	OPTION_MAX_RADIUS       = 1 << 2,
-	OPTION_HINT             = 1 << 3
+    OPTION_LINE_WIDTH       = 1 << 0,
+    OPTION_THICK_LINE_WIDTH = 1 << 1,
+    OPTION_MAX_RADIUS       = 1 << 2,
+    OPTION_HINT             = 1 << 3
 } SugarRcStyleOptions;
 
 
