@@ -159,35 +159,49 @@ style "notebook"
     ythickness = 0
 }
 
-style "toolbox-notebook"
-{
-    bg[ACTIVE] = "#808080"
-}
-
-style "toolitem"
+style "toolbutton"
 {
     color["focus_line"] = "#000000"
 
+    # This makes the normal background of comboboxes invisible
+    bg[NORMAL] = "#404040"
     bg[PRELIGHT] = "#000000"
 
+    fg[NORMAL] = "#FFFFFF"
+    fg[ACTIVE] = "#FFFFFF"
     fg[PRELIGHT] = "#ffffff"
-    fg[NORMAL]   = "#000000"
+
+    # Work around GTK+ bug #382646
+    text[NORMAL] = "#FFFFFF"
+    text[ACTIVE] = "#FFFFFF"
+    text[PRELIGHT] = "#ffffff"
+
+    GtkButton::inner-border = { 6, 6, 6, 6 }
 
     engine "sugar" {
         max_radius = 5.0
     }
 }
 
-style "toolbox"
+style "toolbox-content"
 {
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
     color["bg_color"] = "#404040"
-    bg[NORMAL] = "#404040"
+    
+    fg[NORMAL] = "#FFFFFF"
+    bg[INSENSITIVE] = @bg_color
+}
+
+style "toolbox"
+{
+    color["bg_color"] = "#404040"
+
     fg[NORMAL] = "#FFFFFF"
     fg[ACTIVE] = "#FFFFFF"
 
-    GtkButton::inner-border = { 6, 6, 6, 6 }
+    bg[ACTIVE] = "#808080"
+    bg[NORMAL] = "#404040"
 }
 
 style "panel"
@@ -250,9 +264,13 @@ class "GtkProgressBar" style "progressbar"
 widget_class "<GtkWindow>.*"      style "window-content"
 widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 widget_class "*<GtkCombo>*" style "comboboxentry"
-widget_class "*<SugarToolbox>*" style "toolbox"
-widget_class "*<GtkToolItem>*" style "toolitem"
-widget_class "*<SugarToolbox>*<GtkNotebook>" style "toolbox-notebook"
+widget_class "*<SugarToolbox>" style "toolbox"
+widget_class "*<SugarToolbox>*<GtkNotebook>" style "toolbox"
+widget_class "*<SugarToolbox>*<GtkToolbar>" style "toolbox"
+widget_class "*<SugarToolbox>*" style "toolbox-content"
+widget_class "*<GtkToolButton>*" style "toolbutton"
+widget_class "*<GtkToolItem><GtkComboBox>*" style "toolbutton"
+
 widget_class "*<GtkButton>*" style "button"
 widget_class "*<GtkCheckButton>*" style "checkbutton"
 
