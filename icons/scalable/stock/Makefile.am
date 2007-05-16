@@ -3,6 +3,7 @@ category=stock
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
+	stock-accept.svg		\
 	stock-add.svg			\
 	stock-buddy.svg			\
 	stock-chat.svg			\
