@@ -307,5 +307,51 @@ sugar_draw_button_default (cairo_t *cr, SugarInfo *info)
     sugar_rounded_inner_stroke (cr, pos, line_width, info->max_radius, info->corners, info->cont_edges);
 }
 
+void
+sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
+{
+    SugarInfo *info = &arrow_info->info;
+    GdkRectangle *pos = &info->pos;
+    gdouble line_width = info->rc_style->thick_line_width;
+    gdouble run_length;
+
+    cairo_save (cr);
+
+    /* Center, so that rotation, etc. is easier. */
+    cairo_translate (cr, pos->x + pos->width / 2.0, pos->y + pos->height / 2.0);
+
+    switch (arrow_info->dir) {
+        case GTK_ARROW_DOWN:
+            run_length = MIN ((pos->width - line_width) / 2.0, pos->height - line_width);
+            break;
+        case GTK_ARROW_UP:
+            cairo_rotate (cr, G_PI);
+            run_length = MIN ((pos->width - line_width) / 2.0, pos->height - line_width);
+            break;
+        case GTK_ARROW_LEFT:
+            cairo_rotate (cr, G_PI_2);
+            run_length = MIN (pos->width - line_width, (pos->height - line_width) / 2.0);
+            break;
+        case GTK_ARROW_RIGHT:
+            cairo_rotate (cr, -G_PI_2);
+            run_length = MIN (pos->width, pos->height / 2.0);
+            break;
+        default:
+            g_assert_not_reached ();
+    }
+
+    cairo_set_line_width (cr, line_width);
+    cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
+    cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
+    gdk_cairo_set_source_color (cr, &info->style->fg[info->state]);
+
+    cairo_move_to (cr, -run_length, -run_length / 2.0);
+    cairo_line_to (cr, 0, run_length / 2.0);
+    cairo_line_to (cr, run_length, -run_length / 2.0);
+
+    cairo_stroke (cr);
+
+    cairo_restore (cr);
+}
 
 

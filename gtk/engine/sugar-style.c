@@ -424,7 +424,40 @@ sugar_style_draw_shadow (GtkStyle       *style,
     cairo_destroy (cr);    
 }
 
+static void
+sugar_style_draw_arrow (GtkStyle       *style,
+                        GdkWindow      *window,
+                        GtkStateType    state_type,
+                        GtkShadowType   shadow_type,
+                        GdkRectangle   *area,
+                        GtkWidget      *widget,
+                        const gchar    *detail,
+                        GtkArrowType    arrow_type,
+                        gboolean        fill,
+                        gint            x,
+                        gint            y,
+                        gint            width,
+                        gint            height)
+{
+    SugarArrowInfo arrow_info;
+    SugarInfo *info = &arrow_info.info;
+    cairo_t *cr;
 
+    if (arrow_type == GTK_ARROW_NONE)
+        return;
+
+    SANITIZE_SIZE
+    
+    cr = sugar_cairo_create (window, area);
+
+    sugar_fill_generic_info (info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+
+    arrow_info.dir = arrow_type;
+
+    sugar_draw_arrow (cr, &arrow_info);
+
+    cairo_destroy (cr);
+}
 
 static void
 sugar_style_draw_extension(GtkStyle        *style,
@@ -498,6 +531,7 @@ sugar_style_class_init (SugarStyleClass *klass)
     style_class->draw_shadow = sugar_style_draw_shadow;
     style_class->draw_focus = sugar_style_draw_focus;
     style_class->draw_slider = sugar_style_draw_slider;
+    style_class->draw_arrow = sugar_style_draw_arrow;
     style_class->draw_layout = sugar_style_draw_layout;
 }
 

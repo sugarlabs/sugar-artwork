@@ -133,6 +133,7 @@ style "vscale" = "scale"
 
 style "spinbutton"
 {
+    fg[NORMAL]        = "#ffffff"
     engine "sugar" {
         hint = "spinbutton"
     }
