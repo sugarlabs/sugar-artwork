@@ -183,26 +183,18 @@ style "toolbutton"
     }
 }
 
-style "toolbox-content"
+style "toolbox"
 {
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
     color["bg_color"] = "#404040"
-    
-    fg[NORMAL] = "#FFFFFF"
-    fg[ACTIVE] = "#FFFFFF"
-    bg[INSENSITIVE] = @bg_color
-}
-
-style "toolbox"
-{
-    color["bg_color"] = "#404040"
-
-    fg[NORMAL] = "#FFFFFF"
-    fg[ACTIVE] = "#FFFFFF"
 
     bg[ACTIVE] = "#808080"
-    bg[NORMAL] = "#404040"
+    bg[NORMAL] = @bg_color
+    bg[INSENSITIVE] = @bg_color
+
+    fg[NORMAL] = "#FFFFFF"
+    fg[ACTIVE] = "#FFFFFF"
 }
 
 style "panel"
@@ -265,10 +257,7 @@ class "GtkProgressBar" style "progressbar"
 widget_class "<GtkWindow>.*"      style "window-content"
 widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 widget_class "*<GtkCombo>*" style "comboboxentry"
-widget_class "*<SugarToolbox>" style "toolbox"
-widget_class "*<SugarToolbox>*<GtkNotebook>" style "toolbox"
-widget_class "*<SugarToolbox>*<GtkToolbar>" style "toolbox"
-widget_class "*<SugarToolbox>*" style "toolbox-content"
+widget_class "*<SugarToolbox>*" style "toolbox"
 widget_class "*<GtkToolButton>*" style "toolbutton"
 widget_class "*<GtkToolItem>*<GtkComboBox>*" style "toolbutton"
 widget_class "*<GtkToolItem>*<GtkButton>*" style "toolbutton"
