@@ -176,8 +176,6 @@ style "toolbutton"
     text[ACTIVE] = "#FFFFFF"
     text[PRELIGHT] = "#ffffff"
 
-    GtkButton::inner-border = { 6, 6, 6, 6 }
-
     engine "sugar" {
         max_radius = 5.0
     }
