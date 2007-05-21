@@ -36,6 +36,8 @@ gtk/theme/sugar.gtkrc
 gtk/theme/sugar-xo.gtkrc
 compile
 test/engines
+test/symbols
+test/valgrind-logs
 test/torturetest
 test/torture_*
 test/exported_*

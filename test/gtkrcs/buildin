@@ -1,0 +1,7 @@
+
+style "default"
+{
+	engine "" {}
+}
+
+class "GtkWidget" style "default"

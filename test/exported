@@ -1,0 +1,25 @@
+#! /bin/sh
+
+ALLOWED_SYMBOLS="\(g_module_check_init\|theme_create_rc_style\|theme_exit\|theme_init\)"
+
+# exit with status 77 if nm does not exist
+which nm >/dev/null || exit 77
+
+ENGINE="`basename $0 | cut -d '_' -f 2`"
+ENGINE_FILE="engines/lib$ENGINE.so"
+
+nm -gD --defined-only $ENGINE_FILE | cut -d ' ' -f 2,3 | cut -d ' ' -f 2 | grep -v '^_' | grep -v "$ALLOWED_SYMBOLS" >symbols/$ENGINE
+
+if [ -s symbols/$ENGINE ]; then
+	exit 1;
+else
+	if [ -f symbols/$ENGINE ]; then
+		# No point in keeping an empty file around
+		rm symbols/$ENGINE
+	else
+		# Something wen't wrong, there is no file?!?
+		# This should never happen ...
+		exit 1
+	fi
+fi	
+
