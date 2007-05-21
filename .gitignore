@@ -34,3 +34,8 @@ stamp-h1
 *~
 gtk/theme/sugar.gtkrc
 gtk/theme/sugar-xo.gtkrc
+compile
+test/engines
+test/torturetest
+test/torture_*
+test/exported_*
