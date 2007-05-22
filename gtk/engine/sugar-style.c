@@ -339,6 +339,20 @@ sugar_style_draw_box (GtkStyle       *style,
             gdk_cairo_set_source_color (cr, &style->bg[state_type]);
             cairo_rectangle (cr, x, y, width, height);
             cairo_fill (cr);
+    } else if (DETAIL ("menu")) {
+        gdouble line_width = SUGAR_RC_STYLE (style->rc_style)->line_width;
+        GdkColor background = { 0, 0, 0, 0 };
+        gtk_style_lookup_color (style, "bg_color", &background);
+
+        gdk_cairo_set_source_color (cr, &background);
+        cairo_rectangle (cr, x, y, width, height);
+        cairo_fill (cr);
+
+        gdk_cairo_set_source_color (cr, &style->bg[GTK_STATE_NORMAL]);
+        cairo_set_line_width (cr, line_width);
+        cairo_rectangle (cr, x + line_width / 2, y + line_width / 2,
+                         width - line_width, height - line_width);
+        cairo_stroke (cr);
     } else {
         parent_class->draw_box (style, window, state_type, shadow_type, area, widget, detail, x, y, width, height);
     }
