@@ -39,7 +39,7 @@ if [ "$FAILED" != "0" ]; then
 		echo "WARNING: The other tests will be run, but in case of failure SKIP instead of FAIL."
 		echo "WARNING: This way 'make check' will not fail even with a broken GTK+."
 		echo "WARNING:"
-		echo "WARNING: Currently it may also mean that there is just no X server to run the test on."
+		echo "WARNING: It may also mean that there is just no X server to run the test on."
 		echo
 		touch torture_buildin-failed
 		exit 77

@@ -1,6 +1,7 @@
 
 style "default"
 {
+	GtkWidget::interior-focus = 0
 	engine "sugar" { }
 }
 

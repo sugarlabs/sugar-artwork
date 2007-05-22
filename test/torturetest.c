@@ -539,7 +539,7 @@ get_attached_style (GtkStyle *fallback, GdkWindow *window, const gchar *path, GT
     
     style = gtk_rc_get_style_by_paths (settings, path, path, type);
     if (!style)
-        style = fallback;
+        style = g_object_ref (fallback);
     else
         g_object_ref (style);
 
@@ -556,6 +556,18 @@ create_teststyles ()
 
     GTK_TYPE_COMBO_BOX_ENTRY; /* Initilize the combobox entry type (not really neccessary as GTK+ will fall back to string matching) */
     styles[STYLE_COMBOBOXENTRY] = get_attached_style (window->style, window->window, "GtkWindow.GtkComboBoxEntry.GtkButton", GTK_TYPE_BUTTON);
+}
+
+static void
+destroy_teststyles ()
+{
+    gint i;
+    
+    for (i = 0; i < STYLE_COUNT; i++) {
+        gtk_style_detach (styles[i]);
+        g_object_unref (styles[i]);
+        styles[i] = NULL;
+    }
 }
 
 int
@@ -591,10 +603,12 @@ main (int argc, char **argv)
     
     for (i = 0; i < G_N_ELEMENTS (tests); i++)
         run_test (i);
+
+    destroy_teststyles ();
     
     /* remove the rc file again. This should cause an unload of the engine
      * and destruction of all engine objects. */
-        gtk_rc_set_default_files (new_default_files);
+    gtk_rc_set_default_files (new_default_files);
     gtk_rc_reparse_all_for_settings (settings, TRUE);
     
     while (gdk_events_pending ())
