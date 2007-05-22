@@ -223,6 +223,8 @@ sugar_rc_style_finalize (GObject *object)
 {
     SugarRcStyle *rc_style = SUGAR_RC_STYLE(object);
     g_free (rc_style->hint);
+
+    G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void
