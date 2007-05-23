@@ -242,6 +242,28 @@ style "progressbar"
     bg[PRELIGHT] = "#ffffff"
 }
 
+style "menu"
+{
+    color["bg_color"] = "#000000"
+    bg[NORMAL] = "#808080"
+    #GtkMenu::horizontal-padding = 0
+    #GtkMenu::vertical-padding   = 0
+
+    xthickness = 0
+    #ythickness = 0
+}
+
+style "menuitem"
+{
+    bg[PRELIGHT] = "#808080"
+
+    text[NORMAL] = "#FFFFFF"
+    text[PRELIGHT] = "#FFFFFF"
+
+    #GtkMenuItem::horizontal-padding = 0
+    xthickness = 0
+}
+
 class "GtkWidget"      style "default"
 class "GtkWindow"      style "window"
 class "GtkEventBox"    style "window"
@@ -260,6 +282,8 @@ widget_class "*<SugarToolbox>*" style "toolbox"
 widget_class "*<GtkToolButton>*" style "toolbutton"
 widget_class "*<GtkToolItem>*<GtkComboBox>*" style "toolbutton"
 widget_class "*<GtkToolItem>*<GtkButton>*" style "toolbutton"
+widget_class "*<GtkMenu>*" style "menu"
+widget_class "*<GtkMenuItem>*" style "menuitem"
 
 widget_class "*<GtkButton>*" style "button"
 widget_class "*<GtkCheckButton>*" style "checkbutton"
