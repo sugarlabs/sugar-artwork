@@ -505,6 +505,31 @@ sugar_style_draw_extension(GtkStyle        *style,
 }
 
 static void
+sugar_style_draw_option(GtkStyle        *style,
+                        GdkWindow       *window,
+                        GtkStateType     state_type,
+                        GtkShadowType    shadow_type,
+                        GdkRectangle    *area,
+                        GtkWidget       *widget,
+                        const char      *detail,
+                        int              x,
+                        int              y,
+                        int              width,
+                        int              height)
+{
+    SugarInfo info;
+    cairo_t *cr;
+
+    cr = sugar_cairo_create (window, area);
+
+    sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+
+    sugar_draw_radio_button (cr, &info);
+
+    cairo_destroy (cr);    
+}
+
+static void
 sugar_style_draw_layout(GtkStyle        *style,
                         GdkWindow       *window,
                         GtkStateType     state_type,
@@ -546,6 +571,7 @@ sugar_style_class_init (SugarStyleClass *klass)
     style_class->draw_focus = sugar_style_draw_focus;
     style_class->draw_slider = sugar_style_draw_slider;
     style_class->draw_arrow = sugar_style_draw_arrow;
+    style_class->draw_option = sugar_style_draw_option;
     style_class->draw_layout = sugar_style_draw_layout;
 }
 

@@ -354,4 +354,56 @@ sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
     cairo_restore (cr);
 }
 
+void
+sugar_draw_radio_button (cairo_t *cr, SugarInfo *info)
+{
+    GdkRectangle *pos = &info->pos;
+    gdouble radius = MIN (pos->width, pos->height) / 2.0;
+    gdouble line_width = info->rc_style->line_width;
+    gdouble outer_stroke_radius;
+
+    cairo_save (cr);
+
+    cairo_translate (cr, pos->x + radius, pos->y + radius);
+
+    outer_stroke_radius = radius - line_width / 2.0;
+
+    /* Fill the background first (if the state is not insensitive) */
+    if (info->state != GTK_STATE_INSENSITIVE) {
+        gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
+        cairo_arc (cr, 0, 0, outer_stroke_radius, 0, 2*G_PI);
+        cairo_fill (cr);
+    }
+
+    /* Draw the outline (always with fg[INSENSITIVE]) */
+    gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_INSENSITIVE]);
+    cairo_arc (cr, 0, 0, outer_stroke_radius, 0, 2*G_PI);
+    cairo_set_line_width (cr, line_width);
+    cairo_stroke (cr);
+
+    /* Draw the bullet, if shadow is IN */
+    if (info->shadow == GTK_SHADOW_IN) {
+        if (info->state == GTK_STATE_INSENSITIVE)
+            gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_INSENSITIVE]);
+        else
+            gdk_cairo_set_source_color (cr, &info->style->text[info->state]);
+
+        /* Just used a factor of 2.64 here ... */
+        cairo_arc (cr, 0, 0, (radius - line_width) * 9/24.0, 0, 2*G_PI);
+        cairo_fill (cr);
+    } else if (info->shadow == GTK_SHADOW_ETCHED_IN) {
+        /* Sorry, not implemented :-) */
+        cairo_set_source_rgb (cr, 1.0, 0.0, 0.0);
+        cairo_arc (cr, 0, 0, radius, 0, 2*G_PI);
+        cairo_fill (cr);
+    }
+
+    cairo_restore (cr);
+}
+
+void
+sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
+{
+    /* missing for now */
+}
 
