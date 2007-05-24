@@ -86,10 +86,13 @@ sugar_rc_parse_float (GScanner *scanner, gdouble *dest)
         return G_TOKEN_EQUAL_SIGN;
 
     token = g_scanner_get_next_token(scanner);
-    if (token != G_TOKEN_FLOAT)
+    if (token == G_TOKEN_FLOAT)
+        *dest = scanner->value.v_float;
+    else if (token == G_TOKEN_INT)
+        *dest = scanner->value.v_int;
+    else
         return G_TOKEN_FLOAT;
 
-    *dest = scanner->value.v_float;
     return G_TOKEN_NONE;
 }
 
