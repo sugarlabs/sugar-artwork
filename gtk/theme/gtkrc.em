@@ -245,6 +245,7 @@ style "checkbutton"
     base[PRELIGHT]    = "#ffffff"
     base[ACTIVE]      = "#E6E6E6"
 
+    text[PRELIGHT]    = "#5d5d5d"
     text[NORMAL]      = "#5d5d5d"
     text[ACTIVE]      = "#5d5d5d"
 
