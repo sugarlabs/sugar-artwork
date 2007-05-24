@@ -268,7 +268,20 @@ style "progressbar"
 style "menu"
 {
     color["bg_color"] = "#000000"
+
+    fg[NORMAL]   = "#ffffff"
+    fg[PRELIGHT] = "#ffffff"
     bg[NORMAL] = "#808080"
+    
+    # The following colors are for the check and radio menu items
+    base[NORMAL]      = "#ffffff"
+    base[PRELIGHT]    = "#ffffff"
+    base[ACTIVE]      = "#E6E6E6"
+
+    text[PRELIGHT]    = "#5d5d5d"
+    text[NORMAL]      = "#5d5d5d"
+    text[ACTIVE]      = "#5d5d5d"
+    
     #GtkMenu::horizontal-padding = 0
     #GtkMenu::vertical-padding   = 0
 
