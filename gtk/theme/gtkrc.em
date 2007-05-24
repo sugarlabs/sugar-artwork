@@ -1,7 +1,21 @@
-# This gtkrc makes the assumption that:
-#  2.25pt = 3px
-#  3.5pt  = 4px
+${
+import math
 
+# Should we set the line width in the engine to 2.25, and draw non pixel aligned lines?
+# Are these already the correct sizes for the XO?
+
+# These sizes need to be sanity checked ...
+
+line_width = 2        # 2.25
+thick_line_width = 4  # 3.5
+subcell_size = 15
+bullet_size = 9
+}
+${
+radio_size = math.floor(subcell_size + bullet_size + line_width)
+scale_slider_width = math.floor(2 * subcell_size + line_width)
+
+}
 style "default"
 {
     # Will be overriden in some widgets
@@ -30,8 +44,8 @@ style "default"
     fg[INSENSITIVE] = "#808080"
     text[INSENSITIVE] = "#808080"
 
-    xthickness = 3   # line_width
-    ythickness = 3
+    xthickness = $line_width
+    ythickness = $line_width
 
     # A lot of these will probably need to be changed, but this has to
     # be done when the exact sizes are known
@@ -40,8 +54,8 @@ style "default"
     GtkWidget::focus-padding = 0
 
     GtkWidget::wide-separators = 1
-    GtkWidget::separator-height = 3 #line_width
-    GtkWidget::separator-width = 3
+    GtkWidget::separator-height = $line_width
+    GtkWidget::separator-width = $line_width
 
     GtkRange::activate-slider = 1
     GtkButton::inner-border = { 6, 6, 6, 6 }           # ??
@@ -51,18 +65,18 @@ style "default"
 
     GtkScrolledWindow::scrollbar-spacing = 0
 
-    GtkCheckMenuItem::indicator-size = 20 # how to calculate this? and is it OK like this?
-    GtkExpander::expander-size = 20       # same as indicator-size
+    GtkCheckMenuItem::indicator-size = $radio_size
+    GtkExpander::expander-size = 24
     GtkExpander::expander-spacing = 2     # XXX
 
-    GtkTreeView::expander-size = 20       # same as indicator-size
+    GtkTreeView::expander-size = 24
 
     engine "sugar" {
         # Is this correct? Should we make sure it is pixel aligned?
         # 6 pixel for the XO version, and 3 for the "normal" one
-        line_width = 3.0
+        line_width = $line_width
         # 9-10 pixel for the XO version, and 4 for the "normal" one
-        thick_line_width = 4.0
+        thick_line_width = $thick_line_width
 
         max_radius = 20.0
     }
@@ -109,8 +123,8 @@ style "scale"
 
     # "square" slider (really round of course)
     # Same as indicator-size?
-    GtkRange::slider-width = 20
-    GtkScale::slider-length = 20
+    GtkRange::slider-width = $scale_slider_width
+    GtkScale::slider-length = $scale_slider_width
     GtkRange::trough-border = 0
     GtkRange::stepper-spacing = 0
     GtkRange::trough-side-details = 1
@@ -226,9 +240,16 @@ style "checkbutton"
 {
     fg[NORMAL]        = "#000000"
     fg[ACTIVE]        = "#000000"
+    
+    base[NORMAL]      = "#ffffff"
+    base[PRELIGHT]    = "#ffffff"
+    base[ACTIVE]      = "#E6E6E6"
+
+    text[NORMAL]      = "#5d5d5d"
+    text[ACTIVE]      = "#5d5d5d"
 
     # I won't get the exact sizing, but this should be pretty close
-    GtkCheckButton::indicator-size = 13
+    GtkCheckButton::indicator-size = $radio_size
     GtkCheckButton::indicator-spacing = 3
     GtkWidget::focus-padding = 3
 }
