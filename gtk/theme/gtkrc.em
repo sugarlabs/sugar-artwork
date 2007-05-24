@@ -239,6 +239,7 @@ style "button"
 style "checkbutton"
 {
     fg[NORMAL]        = "#000000"
+    fg[PRELIGHT]      = "#000000"
     fg[ACTIVE]        = "#000000"
     
     base[NORMAL]      = "#ffffff"

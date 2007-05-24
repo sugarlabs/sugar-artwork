@@ -377,6 +377,9 @@ sugar_style_draw_flat_box (GtkStyle       *style,
         if (widget && GTK_WIDGET_HAS_FOCUS (widget)) {
             state_type = GTK_STATE_ACTIVE;
         }
+    } else if (DETAIL ("radiobutton") || DETAIL ("checkbutton")) {
+        /* No background drawing for radio and check buttons. */
+        return;
     }
 
     parent_class->draw_flat_box (style, window, state_type, shadow_type, area, widget, detail, x, y, width, height);
