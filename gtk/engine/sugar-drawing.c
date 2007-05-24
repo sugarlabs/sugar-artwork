@@ -180,7 +180,13 @@ sugar_draw_scale_trough (cairo_t *cr, SugarRangeInfo *range_info)
         gdouble outline_width = info->rc_style->line_width;
         /* Draw the fill for the trough. */
         gdk_cairo_set_source_color (cr, &info->style->bg[GTK_STATE_ACTIVE]);
-        sugar_rounded_rectangle (cr, pos, outline_width, info->max_radius, info->corners);
+
+        /* Prevent drawing glitches on focused scales. */
+        if (!range_info->focused)
+            sugar_rounded_rectangle (cr, pos, outline_width, info->max_radius, info->corners);
+        else
+            sugar_rounded_rectangle (cr, pos, outline_width - info->rc_style->line_width / 2.0, info->max_radius, info->corners);
+
         cairo_fill (cr);
     }
 }
@@ -222,7 +228,7 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
 
     gdk_cairo_set_source_color (cr, line);
     sugar_rounded_rectangle (cr, pos, line_width, max_radius, info->corners);
-    sugar_rounded_rectangle (cr, pos, round((MIN(pos->width, pos->height) - line_width) / 4.0 - line_width / 2.0), max_radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, floor((MIN(pos->width, pos->height) - line_width) / 4.0 - line_width / 2.0), max_radius, info->corners);
     
     cairo_fill (cr);
 }
