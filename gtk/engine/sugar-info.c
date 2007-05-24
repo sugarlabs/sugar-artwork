@@ -67,6 +67,7 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 {
     SugarInfo *info = &range_info->info;
     gdouble border_size;
+    gdouble line_width = info->rc_style->line_width;
 
     if (info->widget) {
         range_info->focused = GTK_WIDGET_HAS_FOCUS (info->widget);
@@ -84,18 +85,24 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
         range_info->orientation = info->pos.width >= info->pos.height ? GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
     }
 
-    border_size = 2*info->rc_style->line_width;
+    border_size = 2*line_width;
 
     /* The scale trough is drawn larger than it should be. Subtract from its width/height. */
     if (trough && (HINT ("vscale") || HINT ("hscale"))) {
+        gint width;
+
         switch (range_info->orientation) {
             case GTK_ORIENTATION_VERTICAL:
-                info->pos.x += border_size;
-                info->pos.width -= 2 * border_size;
+                width = (info->pos.width - line_width) / 2.0 + line_width;
+
+                info->pos.x += (info->pos.width - width) / 2;
+                info->pos.width = width;
                 break;
             case GTK_ORIENTATION_HORIZONTAL:
-                info->pos.y += border_size;
-                info->pos.height -= 2 * border_size;
+                width = (info->pos.height - line_width) / 2.0 + line_width;
+
+                info->pos.y += (info->pos.height - width) / 2;
+                info->pos.height = width;
                 break;
         }
 
