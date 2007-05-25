@@ -17,6 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
+#include <math.h>
 #include <gtk/gtk.h>
 #include "sugar-info.h"
 
@@ -93,13 +94,13 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 
         switch (range_info->orientation) {
             case GTK_ORIENTATION_VERTICAL:
-                width = (info->pos.width - line_width) / 2.0 + line_width;
+                width = floor((info->pos.width - line_width) / 2.0 + line_width);
 
                 info->pos.x += (info->pos.width - width) / 2;
                 info->pos.width = width;
                 break;
             case GTK_ORIENTATION_HORIZONTAL:
-                width = (info->pos.height - line_width) / 2.0 + line_width;
+                width = floor((info->pos.height - line_width) / 2.0 + line_width);
 
                 info->pos.y += (info->pos.height - width) / 2;
                 info->pos.height = width;

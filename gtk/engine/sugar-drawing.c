@@ -214,7 +214,7 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
     /* Draw the center fill first. */
     if (fill) {
         gdk_cairo_set_source_color (cr, fill);
-        sugar_rounded_rectangle (cr, pos, (MIN(pos->width, pos->height) - line_width)/4.0, max_radius, info->corners);
+        sugar_rounded_rectangle (cr, pos, floor(line_width/2.0 + (MIN(pos->width, pos->height) - line_width)/4.0), max_radius, info->corners);
         cairo_fill (cr);
     }
 
@@ -222,13 +222,13 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
     cairo_set_fill_rule (cr, CAIRO_FILL_RULE_EVEN_ODD);
     gdk_cairo_set_source_color (cr, outline);
     sugar_rounded_rectangle (cr, pos, 0, max_radius, info->corners);
-    sugar_rounded_rectangle (cr, pos, line_width / 2.0 + (MIN(pos->width, pos->height) - line_width) / 4.0 , max_radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, floor(line_width + (MIN(pos->width, pos->height) - line_width) / 4.0), max_radius, info->corners);
     
     cairo_fill (cr);
 
     gdk_cairo_set_source_color (cr, line);
     sugar_rounded_rectangle (cr, pos, line_width, max_radius, info->corners);
-    sugar_rounded_rectangle (cr, pos, floor((MIN(pos->width, pos->height) - line_width) / 4.0 - line_width / 2.0), max_radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, floor((MIN(pos->width, pos->height) - line_width) / 4.0), max_radius, info->corners);
     
     cairo_fill (cr);
 }
