@@ -396,15 +396,18 @@ sugar_draw_radio_button (cairo_t *cr, SugarInfo *info)
 void
 sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
 {
-    
+    GdkRectangle *pos = &info->pos;
+    gdouble line_width = info->rc_style->line_width;
+
     /* Fill the background */
     gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
-    gdk_cairo_rectangle (cr, &info->pos);
+    gdk_cairo_rectangle (cr, pos);
     cairo_fill (cr);
     
-    cairo_set_line_width (cr, info->rc_style->line_width);
+    cairo_set_line_width (cr, line_width);
     gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_INSENSITIVE]);
-    gdk_cairo_rectangle (cr, &info->pos);
+    cairo_rectangle (cr, pos->x + line_width / 2.0, pos->y + line_width / 2.0,
+                         pos->width - line_width, pos->height - line_width);
     cairo_stroke (cr);
 
     if (info->shadow == GTK_SHADOW_IN) {
@@ -412,13 +415,13 @@ sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
         gdouble width, height;
         gdouble thick_line_width = info->rc_style->thick_line_width;
 
-        width = info->pos.width - thick_line_width * 2.0;
-        height = info->pos.height - thick_line_width * 2.0;
+        width = info->pos.width - (line_width + thick_line_width) * 2.0;
+        height = info->pos.height - (line_width + thick_line_width) * 2.0;
 
         cairo_save (cr);
         gdk_cairo_set_source_color (cr, &info->style->text[info->state]);
 
-        cairo_translate (cr, info->pos.x + thick_line_width, info->pos.y + thick_line_width);
+        cairo_translate (cr, info->pos.x + line_width + thick_line_width, info->pos.y + line_width + thick_line_width);
         cairo_set_line_width (cr, info->rc_style->thick_line_width);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
