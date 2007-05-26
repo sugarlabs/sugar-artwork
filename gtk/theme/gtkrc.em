@@ -13,7 +13,7 @@ def my_ceil(num):
 
 # These sizes need to be sanity checked ...
 if theme == "sugar-xo":
-    line_width = 2          # 2.25
+    line_width = 2.25       # 2.25
     thick_line_width = 3.5  # 3.5
     subcell_size = 15
     bullet_size = 9

@@ -191,16 +191,13 @@ sugar_style_draw_focus (GtkStyle       *style,
         } else if (DETAIL ("spinbutton_up") || DETAIL ("spinbutton_down")) {
             /* spinbutton button focus hack -- this gets called from draw_box */
 
-            gdk_cairo_rectangle (cr, &info.pos);
-            cairo_clip (cr);
-
             /* duplicated from draw_box */
             if (DETAIL ("spinbutton_up"))
                 info.cont_edges |= EDGE_BOTTOM;
             else
                 info.cont_edges |= EDGE_TOP;
 
-              info.cont_edges |= info.ltr ? EDGE_LEFT : EDGE_RIGHT;
+            info.cont_edges |= info.ltr ? EDGE_LEFT : EDGE_RIGHT;
 
             sugar_remove_corners (&info.corners, info.cont_edges);
         } else if (DETAIL ("trough")) {

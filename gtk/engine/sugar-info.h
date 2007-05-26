@@ -44,13 +44,20 @@ typedef enum {
 } SugarEdges;
 
 typedef struct {
+    gdouble x;
+    gdouble y;
+    gdouble width;
+    gdouble height;
+} SugarRectangle;
+
+typedef struct {
     GtkWidget *widget;
     GtkStyle *style;
     SugarRcStyle *rc_style;
     GtkStateType  state;
     GtkShadowType shadow;
     gboolean  ltr;
-    GdkRectangle pos;
+    SugarRectangle pos;
     SugarCorners corners;
     const gchar *detail;
     gdouble max_radius;

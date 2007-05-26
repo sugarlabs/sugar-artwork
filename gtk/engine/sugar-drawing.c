@@ -17,17 +17,23 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include <math.h>
 #include "sugar-drawing.h"
 
 static void
+sugar_cairo_rectangle (cairo_t        *cr,
+                       SugarRectangle *rect)
+{
+    cairo_rectangle (cr, rect->x, rect->y, rect->width, rect->height);
+}
+
+static void
 sugar_rounded_rectangle (cairo_t      *cr,
-                         GdkRectangle *pos,
+                         SugarRectangle *pos,
                          gdouble       padding,
                          gdouble       radius,
                          SugarCorners  corners)
 {
-    gfloat x, y, width, height;
+    gdouble x, y, width, height;
     
     x = pos->x + padding;
     y = pos->y + padding;
@@ -83,13 +89,13 @@ sugar_rounded_rectangle (cairo_t      *cr,
 /* Helper function to stroke a box so that the outside of the stroke is on the given path. */
 static void
 sugar_rounded_inner_stroke (cairo_t      *cr,
-                            GdkRectangle *pos,
+                            SugarRectangle *pos,
                             gdouble      outline_width,
                             gdouble      radius,
                             SugarCorners corners,
                             SugarEdges   cont_edges)
 {
-    GdkRectangle real_pos = *pos;
+    SugarRectangle real_pos = *pos;
 
     cairo_save (cr);
 
@@ -97,7 +103,7 @@ sugar_rounded_inner_stroke (cairo_t      *cr,
 
     sugar_remove_corners (&corners, cont_edges);
 
-    gdk_cairo_rectangle (cr, pos);
+    sugar_cairo_rectangle (cr, pos);
     cairo_clip (cr);
 
     if (cont_edges & EDGE_TOP) {
@@ -148,7 +154,7 @@ void
 sugar_draw_exterior_focus (cairo_t *cr, SugarInfo *info)
 {
     gdouble line_width = info->rc_style->line_width;
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
     /* Fallback to fg[NORMAL] */
     GdkColor line_color = info->style->fg[GTK_STATE_NORMAL];
 
@@ -162,7 +168,7 @@ void
 sugar_draw_scale_trough (cairo_t *cr, SugarRangeInfo *range_info)
 {
     SugarInfo *info = &range_info->info;
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
 
     if (info->state == GTK_STATE_INSENSITIVE) {
         gdouble outline_width = info->rc_style->line_width;
@@ -195,7 +201,7 @@ void
 sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
 {
     SugarInfo *info = &range_info->info;
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
     GdkColor *fill, *outline, *line;
     gdouble max_radius = info->max_radius;
     gdouble line_width = info->rc_style->line_width;
@@ -213,7 +219,7 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
     /* Draw the center fill first. */
     if (fill) {
         gdk_cairo_set_source_color (cr, fill);
-        sugar_rounded_rectangle (cr, pos, floor(line_width/2.0 + (MIN(pos->width, pos->height) - line_width)/4.0), max_radius, info->corners);
+        sugar_rounded_rectangle (cr, pos, line_width/2.0 + (MIN(pos->width, pos->height) - line_width)/4.0, max_radius, info->corners);
         cairo_fill (cr);
     }
 
@@ -221,13 +227,13 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
     cairo_set_fill_rule (cr, CAIRO_FILL_RULE_EVEN_ODD);
     gdk_cairo_set_source_color (cr, outline);
     sugar_rounded_rectangle (cr, pos, 0, max_radius, info->corners);
-    sugar_rounded_rectangle (cr, pos, floor(line_width + (MIN(pos->width, pos->height) - line_width) / 4.0), max_radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, line_width + (MIN(pos->width, pos->height) - line_width) / 4.0, max_radius, info->corners);
     
     cairo_fill (cr);
 
     gdk_cairo_set_source_color (cr, line);
     sugar_rounded_rectangle (cr, pos, line_width, max_radius, info->corners);
-    sugar_rounded_rectangle (cr, pos, floor((MIN(pos->width, pos->height) - line_width) / 4.0), max_radius, info->corners);
+    sugar_rounded_rectangle (cr, pos, (MIN(pos->width, pos->height) - line_width) / 4.0, max_radius, info->corners);
     
     cairo_fill (cr);
 }
@@ -237,7 +243,7 @@ sugar_draw_scrollbar_slider (cairo_t       *cr,
                              SugarRangeInfo *range_info)
 {
     SugarInfo *info = &range_info->info;
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
     GtkStateType state;
 
     /* This color selection completely bogus. */
@@ -258,7 +264,7 @@ sugar_draw_scrollbar_slider (cairo_t       *cr,
 void
 sugar_draw_entry (cairo_t *cr, SugarInfo *info)
 {
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
 
     gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
     sugar_rounded_rectangle (cr, pos, 0, info->max_radius, info->corners);
@@ -270,7 +276,7 @@ sugar_draw_entry (cairo_t *cr, SugarInfo *info)
 void
 sugar_draw_button (cairo_t *cr, SugarInfo *info)
 {
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
     guint radius;
 
     gdk_cairo_set_source_color (cr, &info->style->bg[info->state]);
@@ -286,7 +292,7 @@ sugar_draw_button (cairo_t *cr, SugarInfo *info)
 void
 sugar_draw_button_default (cairo_t *cr, SugarInfo *info)
 {
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
     gdouble line_width = info->rc_style->line_width;
     guint radius;
 
@@ -302,7 +308,7 @@ void
 sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
 {
     SugarInfo *info = &arrow_info->info;
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
     gdouble line_width = info->rc_style->thick_line_width;
     gdouble run_length;
 
@@ -348,7 +354,7 @@ sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
 void
 sugar_draw_radio_button (cairo_t *cr, SugarInfo *info)
 {
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
     gdouble radius = MIN (pos->width, pos->height) / 2.0;
     gdouble line_width = info->rc_style->line_width;
     gdouble outer_stroke_radius;
@@ -395,12 +401,12 @@ sugar_draw_radio_button (cairo_t *cr, SugarInfo *info)
 void
 sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
 {
-    GdkRectangle *pos = &info->pos;
+    SugarRectangle *pos = &info->pos;
     gdouble line_width = info->rc_style->line_width;
 
     /* Fill the background */
     gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
-    gdk_cairo_rectangle (cr, pos);
+    sugar_cairo_rectangle (cr, pos);
     cairo_fill (cr);
     
     cairo_set_line_width (cr, line_width);
@@ -434,7 +440,7 @@ sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
         cairo_restore (cr);
     } else if (info->shadow == GTK_SHADOW_ETCHED_IN) {
         cairo_set_source_rgb (cr, 1.0, 0.0, 0.0);
-        gdk_cairo_rectangle (cr, &info->pos);
+        sugar_cairo_rectangle (cr, &info->pos);
         cairo_fill (cr);
     }
 }
