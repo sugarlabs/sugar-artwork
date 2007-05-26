@@ -100,8 +100,8 @@ sugar_style_draw_hline(GtkStyle       *style,
                        gint            y)
 {
     cairo_t *cr;
-    gint width;
-    gint height;
+    gdouble width;
+    gdouble height;
 
     cr = sugar_cairo_create (window, area);
 
@@ -109,9 +109,8 @@ sugar_style_draw_hline(GtkStyle       *style,
 
     g_assert (x1 < x2);
 
-    width = x2 - x1; /* + 1  ?? */
+    width = x2 - x1 + 1;
     height = SUGAR_RC_STYLE (style->rc_style)->line_width;
-    y -= height / 2;
 
     cairo_rectangle (cr, x1, y, width, height);
     cairo_fill (cr);
@@ -131,8 +130,8 @@ sugar_style_draw_vline(GtkStyle       *style,
                        gint            x)
 {
     cairo_t *cr;
-    gint width;
-    gint height;
+    gdouble width;
+    gdouble height;
 
     cr = sugar_cairo_create (window, area);
 
@@ -140,9 +139,8 @@ sugar_style_draw_vline(GtkStyle       *style,
 
     g_assert (y1 < y2);
 
-    height = y2 - y1; /* + 1  ?? */
+    height = y2 - y1 + 1;
     width = SUGAR_RC_STYLE (style->rc_style)->line_width;
-    x -= width / 2;
 
     cairo_rectangle (cr, x, y1, width, height);
     cairo_fill (cr);
