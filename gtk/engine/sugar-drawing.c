@@ -204,8 +204,7 @@ sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info)
 
     if (info->state == GTK_STATE_INSENSITIVE) {
         fill = NULL;
-    } else if ((info->state == GTK_STATE_ACTIVE) ||
-               (range_info->focused && info->state == GTK_STATE_NORMAL)) {
+    } else if ((info->state == GTK_STATE_ACTIVE) || range_info->focused) {
         line = &info->style->fg[GTK_STATE_PRELIGHT];
     } else {
         line = &info->style->bg[GTK_STATE_SELECTED];
