@@ -1,19 +1,32 @@
 ${
 import math
 
+def my_floor(num):
+    return int(math.floor(num))
+
+def my_ceil(num):
+    return int(math.ceil(num))
+
+
 # Should we set the line width in the engine to 2.25, and draw non pixel aligned lines?
 # Are these already the correct sizes for the XO?
 
 # These sizes need to be sanity checked ...
+if theme == "sugar-xo":
+    line_width = 2          # 2.25
+    thick_line_width = 3.5  # 3.5
+    subcell_size = 15
+    bullet_size = 9
+else:
+    line_width = 1
+    thick_line_width = 2
+    subcell_size = 7
+    bullet_size = 4
 
-line_width = 2        # 2.25
-thick_line_width = 4  # 3.5
-subcell_size = 15
-bullet_size = 9
-}
-${
-radio_size = math.floor(subcell_size + bullet_size + line_width)
-scale_slider_width = math.floor(2 * subcell_size + line_width)
+
+radio_size = my_floor(subcell_size + bullet_size + line_width)
+scale_slider_width = my_floor(2 * subcell_size + line_width)
+thickness = my_ceil(line_width)
 
 }
 style "default"
@@ -44,8 +57,8 @@ style "default"
     fg[INSENSITIVE] = "#808080"
     text[INSENSITIVE] = "#808080"
 
-    xthickness = $line_width
-    ythickness = $line_width
+    xthickness = $thickness
+    ythickness = $thickness
 
     # A lot of these will probably need to be changed, but this has to
     # be done when the exact sizes are known
@@ -54,8 +67,8 @@ style "default"
     GtkWidget::focus-padding = 0
 
     GtkWidget::wide-separators = 1
-    GtkWidget::separator-height = $line_width
-    GtkWidget::separator-width = $line_width
+    GtkWidget::separator-height = $thickness
+    GtkWidget::separator-width = $thickness
 
     GtkRange::activate-slider = 1
     GtkButton::inner-border = { 6, 6, 6, 6 }           # ??
@@ -65,11 +78,12 @@ style "default"
 
     GtkScrolledWindow::scrollbar-spacing = 0
 
-    GtkCheckMenuItem::indicator-size = $radio_size
     GtkExpander::expander-size = 24
     GtkExpander::expander-spacing = 2     # XXX
 
     GtkTreeView::expander-size = 24
+    
+    GtkArrow::arrow-size = 1.0
 
     engine "sugar" {
         # Is this correct? Should we make sure it is pixel aligned?
@@ -291,14 +305,24 @@ style "menu"
 
 style "menuitem"
 {
+    GtkCheckMenuItem::indicator-size = $radio_size
+
     bg[PRELIGHT] = "#808080"
 
+    # For check/radio menu items
     text[NORMAL] = "#FFFFFF"
     text[PRELIGHT] = "#FFFFFF"
 
     #GtkMenuItem::horizontal-padding = 0
+    #xthickness = 0
+}
+
+style "separatormenuitem"
+{
+    GtkMenuItem::horizontal-padding = 0
     xthickness = 0
 }
+
 
 class "GtkWidget"      style "default"
 class "GtkWindow"      style "window"
@@ -320,6 +344,7 @@ widget_class "*<GtkToolItem>*<GtkComboBox>*" style "toolbutton"
 widget_class "*<GtkToolItem>*<GtkButton>*" style "toolbutton"
 widget_class "*<GtkMenu>*" style "menu"
 widget_class "*<GtkMenuItem>*" style "menuitem"
+widget_class "*<GtkSeparatorMenuItem>*" style "menuitem"
 
 widget_class "*<GtkButton>*" style "button"
 widget_class "*<GtkCheckButton>*" style "checkbutton"
