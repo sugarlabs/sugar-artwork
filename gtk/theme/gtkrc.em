@@ -66,7 +66,7 @@ style "default"
     GtkWidget::focus-line-width = 1   # This does not do anything really
     GtkWidget::focus-padding = 0
 
-    GtkWidget::wide-separators = 1
+    GtkWidget::wide-separators = 0
     GtkWidget::separator-height = $thickness
     GtkWidget::separator-width = $thickness
 
