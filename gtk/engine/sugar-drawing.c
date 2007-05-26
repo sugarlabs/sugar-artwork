@@ -57,12 +57,11 @@ sugar_rounded_rectangle (cairo_t      *cr,
         return;
     }
 
-    /* cairo_move_to (cr, x + radius, y); */
     if (corners & CORNER_TOPRIGHT) {
-        cairo_line_to (cr, x + width - radius, y);
+        cairo_move_to (cr, x + width - radius, y);
         cairo_arc (cr, x + width - radius, y + radius, radius, -G_PI_2, 0);
     } else {
-        cairo_line_to (cr, x + width, y);
+        cairo_move_to (cr, x + width, y);
     }
     if (corners & CORNER_BOTTOMRIGHT) {
         cairo_line_to (cr, x + width, y + height - radius);
