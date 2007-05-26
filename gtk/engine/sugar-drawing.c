@@ -106,6 +106,21 @@ sugar_rounded_inner_stroke (cairo_t      *cr,
     sugar_cairo_rectangle (cr, pos);
     cairo_clip (cr);
 
+    /* This is not great, duplicated from above, because otherwise the radius may be too large. */
+    radius = MAX (0, radius - outline_width / 2.0);
+    
+    /* Make sure the radius is sane. */
+    if ((corners & (CORNER_TOPRIGHT | CORNER_TOPLEFT)) && (corners & (CORNER_BOTTOMRIGHT | CORNER_BOTTOMLEFT)))
+        radius = MIN (radius, pos->height / 2.0);
+    else
+        radius = MIN (radius, pos->height);
+    
+    if ((corners & (CORNER_TOPRIGHT | CORNER_BOTTOMRIGHT)) && (corners & (CORNER_TOPLEFT | CORNER_BOTTOMLEFT)))
+        radius = MIN (radius, pos->width / 2.0);
+    else
+        radius = MIN (radius, pos->width);
+
+
     if (cont_edges & EDGE_TOP) {
         real_pos.y -= outline_width;
         real_pos.height += outline_width;
