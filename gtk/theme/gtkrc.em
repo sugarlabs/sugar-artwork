@@ -17,11 +17,11 @@ if theme == "sugar-xo":
     thick_line_width = 3.5  # 3.5
     subcell_size = 15
     bullet_size = 9
-else:
-    line_width = 1
-    thick_line_width = 2
+else: # About 50% smaller
+    line_width = 1.125
+    thick_line_width = 1.75
     subcell_size = 7
-    bullet_size = 4
+    bullet_size = 5
 
 
 radio_size = my_floor(subcell_size + bullet_size + line_width)
@@ -296,11 +296,11 @@ style "menu"
     text[NORMAL]      = "#5d5d5d"
     text[ACTIVE]      = "#5d5d5d"
     
-    #GtkMenu::horizontal-padding = 0
-    #GtkMenu::vertical-padding   = 0
+    GtkMenu::horizontal-padding = 0
+    GtkMenu::vertical-padding   = 0
 
     xthickness = 0
-    #ythickness = 0
+    ythickness = 0
 }
 
 style "menuitem"
@@ -313,8 +313,9 @@ style "menuitem"
     text[NORMAL] = "#FFFFFF"
     text[PRELIGHT] = "#FFFFFF"
 
-    #GtkMenuItem::horizontal-padding = 0
-    #xthickness = 0
+    GtkMenuItem::horizontal-padding = $line_width
+    xthickness = $(my_ceil(line_width * 2))
+    ythickness = $thickness
 }
 
 style "separatormenuitem"
