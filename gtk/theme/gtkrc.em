@@ -65,6 +65,8 @@ style "default"
     GtkWidget::interior-focus = 0
     GtkWidget::focus-line-width = 1   # This does not do anything really
     GtkWidget::focus-padding = 0
+    # 0.05 works good for both the sugar and sugar-xo themes
+    GtkWidget::cursor-aspect-ratio = 0.05
 
     GtkWidget::wide-separators = 0
     GtkWidget::separator-height = $thickness
