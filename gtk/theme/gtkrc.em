@@ -17,7 +17,7 @@ if theme == "sugar-xo":
     line_width = 2.25       # 2.25
     thick_line_width = 3.5  # 3.5
     subcell_size = 15
-    bullet_size = 9
+    bullet_size = 9.5
     font_height = 24
 else: # About 50% smaller
     xo = False

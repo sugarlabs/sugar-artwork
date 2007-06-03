@@ -400,7 +400,7 @@ sugar_draw_radio_button (cairo_t *cr, SugarInfo *info)
             gdk_cairo_set_source_color (cr, &info->style->text[info->state]);
 
         /* Just used a factor of 2.64 here ... */
-        cairo_arc (cr, 0, 0, (radius - line_width) * 9/24.0, 0, 2*G_PI);
+        cairo_arc (cr, 0, 0, (radius - line_width) * 9.0/22.0, 0, 2*G_PI);
         cairo_fill (cr);
     } else if (info->shadow == GTK_SHADOW_ETCHED_IN) {
         /* Sorry, not implemented :-) */
@@ -434,13 +434,13 @@ sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
         gdouble width, height;
         gdouble thick_line_width = info->rc_style->thick_line_width;
 
-        width = info->pos.width - (line_width + thick_line_width) * 2.0;
-        height = info->pos.height - (line_width + thick_line_width) * 2.0;
+        width = info->pos.width - line_width * 2.0 - thick_line_width * 2.15;
+        height = info->pos.height - line_width * 2.0 - thick_line_width * 2.15;
 
         cairo_save (cr);
         gdk_cairo_set_source_color (cr, &info->style->text[info->state]);
 
-        cairo_translate (cr, info->pos.x + line_width + thick_line_width, info->pos.y + line_width + thick_line_width);
+        cairo_translate (cr, info->pos.x + line_width + thick_line_width * 1.1, info->pos.y + line_width + thick_line_width*1.1);
         cairo_set_line_width (cr, info->rc_style->thick_line_width);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
