@@ -115,8 +115,8 @@ style "window"
 
 style "scrollbar"
 {
-    GtkRange::slider-width = 10    # ?
-    GtkRange::trough-border = 3    # line_width
+    GtkRange::slider-width = 16    # ?
+    GtkRange::trough-border = 0
     GtkRange::stepper-spacing = 0
     GtkScrollbar::min-slider-length = 30    # ?
     GtkScrollbar::has-forward-stepper = 0
@@ -130,6 +130,7 @@ style "scrollbar"
 
     engine "sugar" {
         hint = "scrollbar"
+        scrollbar_border = 3
     }
 }
 

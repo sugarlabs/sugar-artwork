@@ -31,7 +31,8 @@ static gchar symbols[] =
     "hint\0"
     "line_width\0"
     "thick_line_width\0"
-    "max_radius\0";
+    "max_radius\0"
+    "scrollbar_border\0";
 
 typedef enum {
     TOKEN_INVALID = G_TOKEN_LAST,
@@ -39,6 +40,7 @@ typedef enum {
     TOKEN_LINE_WIDTH,
     TOKEN_THICK_LINE_WIDTH,
     TOKEN_MAX_RADIUS,
+    TOKEN_SCROLLBAR_BORDER,
     TOKEN_LAST,
 } SugarTokens;
 
@@ -72,6 +74,7 @@ sugar_rc_style_init (SugarRcStyle *rc_style)
     rc_style->line_width = 3;
     rc_style->thick_line_width = 4;
     rc_style->max_radius = 5;
+    rc_style->scrollbar_border = 5;
     rc_style->hint = NULL;
 }
 
@@ -160,6 +163,10 @@ sugar_rc_style_parse (GtkRcStyle   *rc_style,
                 token = sugar_rc_parse_float(scanner, &sugar_rc_style->max_radius);
                 sugar_rc_style->flags |= OPTION_MAX_RADIUS;
                 break;
+            case TOKEN_SCROLLBAR_BORDER:
+                token = sugar_rc_parse_float(scanner, &sugar_rc_style->scrollbar_border);
+                sugar_rc_style->flags |= OPTION_SCROLLBAR_BORDER;
+                break;
             case TOKEN_HINT:
                 token = sugar_rc_parse_string(scanner, &sugar_rc_style->hint);
                 sugar_rc_style->flags |= OPTION_HINT;
@@ -206,6 +213,8 @@ sugar_rc_style_merge (GtkRcStyle *dest,
         sugar_dest->thick_line_width = sugar_src->thick_line_width;
     if (flags & OPTION_MAX_RADIUS)
         sugar_dest->max_radius = sugar_src->max_radius;
+    if (flags & OPTION_SCROLLBAR_BORDER)
+        sugar_dest->scrollbar_border = sugar_src->scrollbar_border;
     if (flags & OPTION_HINT) {
         g_free (sugar_dest->hint);
         sugar_dest->hint = g_strdup (sugar_src->hint);

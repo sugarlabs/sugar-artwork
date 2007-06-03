@@ -33,7 +33,8 @@ typedef enum {
     OPTION_LINE_WIDTH       = 1 << 0,
     OPTION_THICK_LINE_WIDTH = 1 << 1,
     OPTION_MAX_RADIUS       = 1 << 2,
-    OPTION_HINT             = 1 << 3
+    OPTION_SCROLLBAR_BORDER = 1 << 3,
+    OPTION_HINT             = 1 << 4
 } SugarRcStyleOptions;
 
 
@@ -53,6 +54,7 @@ struct _SugarRcStyle {
     gdouble line_width;
     gdouble thick_line_width;
     gdouble max_radius;
+    gdouble scrollbar_border;
 };
 
 struct _SugarRcStyleClass {
