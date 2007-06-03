@@ -171,6 +171,12 @@ style "spinbutton"
 
 style "comboboxentry"
 {
+    # Copied from the "default" style. Part of the workaround for bug #382646.
+    text[NORMAL] = "#000000"
+    text[ACTIVE] = "#000000"
+    text[SELECTED] = "#000000"
+    text[PRELIGHT] = "#000000"
+
     engine "sugar" {
         hint = "comboboxentry"
     }
@@ -194,18 +200,13 @@ style "toolbutton"
 {
     color["focus_line"] = "#000000"
 
-    # This makes the normal background of comboboxes invisible
-    bg[NORMAL] = "#404040"
+    #bg[NORMAL] = "#404040"
     bg[PRELIGHT] = "#000000"
+    bg[ACTIVE] = "#808080"
 
     fg[NORMAL] = "#FFFFFF"
     fg[ACTIVE] = "#FFFFFF"
     fg[PRELIGHT] = "#ffffff"
-
-    # Work around GTK+ bug #382646
-    text[NORMAL] = "#FFFFFF"
-    text[ACTIVE] = "#FFFFFF"
-    text[PRELIGHT] = "#ffffff"
 
     engine "sugar" {
         max_radius = 5.0
@@ -214,17 +215,23 @@ style "toolbutton"
 
 style "toolbox"
 {
+    color["bg_color"] = "#404040"
+
+    fg[NORMAL] = "#FFFFFF"
+    fg[ACTIVE] = "#FFFFFF"
+
+    bg[NORMAL] = @bg_color
+}
+
+style "toolbox-content"
+{
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
     color["bg_color"] = "#404040"
 
-    bg[ACTIVE] = "#808080"
-    bg[NORMAL] = @bg_color
     bg[INSENSITIVE] = @bg_color
-
-    fg[NORMAL] = "#FFFFFF"
-    fg[ACTIVE] = "#FFFFFF"
 }
+
 
 style "panel"
 {
@@ -250,6 +257,14 @@ style "entry"
 style "button"
 {
     fg[NORMAL]        = "#ffffff"
+}
+
+style "combobox"
+{
+    # Work around GTK+ bug #382646
+    text[NORMAL]      = "#FFFFFF"
+    text[ACTIVE]      = "#FFFFFF"
+    text[PRELIGHT]    = "#ffffff"
 }
 
 style "checkbutton"
@@ -338,20 +353,23 @@ class "GtkHScale"      style "hscale"
 class "GtkVScale"      style "vscale"
 class "GtkProgressBar" style "progressbar"
 
-widget_class "<GtkWindow>.*"      style "window-content"
-widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
-widget_class "*<GtkCombo>*" style "comboboxentry"
-widget_class "*<SugarToolbox>*" style "toolbox"
-widget_class "*<GtkToolButton>*" style "toolbutton"
-widget_class "*<GtkToolItem>*<GtkComboBox>*" style "toolbutton"
-widget_class "*<GtkToolItem>*<GtkButton>*" style "toolbutton"
-widget_class "*<GtkMenu>*" style "menu"
-widget_class "*<GtkMenuItem>*" style "menuitem"
-widget_class "*<GtkSeparatorMenuItem>*" style "menuitem"
+widget_class "<GtkWindow>.*"                style "window-content"
 
-widget_class "*<GtkButton>*" style "button"
-widget_class "*<GtkCheckButton>*" style "checkbutton"
+widget_class "*<SugarToolbox>*"             style "toolbox"
+widget_class "*<SugarToolbox>.GtkNotebook"  style "toolbox"
+widget_class "*<SugarToolbox>*"             style "toolbox-content"
+widget_class "*<GtkToolButton>*"            style "toolbutton"
 
-widget_class "*<SugarPanel>" style "panel"
+widget_class "*<GtkMenu>*"                style "menu"
+widget_class "*<GtkMenuItem>*"            style "menuitem"
+widget_class "*<GtkSeparatorMenuItem>*"   style "menuitem"
 
-widget_class "*<SugarFrameWindow>*" style "frame"
+widget_class "*<GtkComboBox>*"         style "combobox"
+widget_class "*<GtkComboBoxEntry>*"    style "comboboxentry"
+widget_class "*<GtkCombo>*"            style "comboboxentry"
+widget_class "*<GtkButton>*"           style "button"
+widget_class "*<GtkCheckButton>*"      style "checkbutton"
+
+widget_class "*<SugarPanel>"           style "panel"
+
+widget_class "*<SugarFrameWindow>*"    style "frame"
