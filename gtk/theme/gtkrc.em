@@ -13,15 +13,19 @@ def my_ceil(num):
 
 # These sizes need to be sanity checked ...
 if theme == "sugar-xo":
+    xo = True
     line_width = 2.25       # 2.25
     thick_line_width = 3.5  # 3.5
     subcell_size = 15
-    bullet_size = 9
+    bullet_size = 9.5
+    font_height = 24
 else: # About 50% smaller
+    xo = False
     line_width = 1.125
     thick_line_width = 1.75
     subcell_size = 7
     bullet_size = 5
+    font_height = 12
 
 
 radio_size = my_floor(subcell_size + bullet_size + line_width)
@@ -94,7 +98,7 @@ style "default"
         # 9-10 pixel for the XO version, and 4 for the "normal" one
         thick_line_width = $thick_line_width
 
-        max_radius = 20.0
+        max_radius = $( xo ? 25 : 15)
     }
 }
 
@@ -172,6 +176,12 @@ style "spinbutton"
 
 style "comboboxentry"
 {
+    # Copied from the "default" style. Part of the workaround for bug #382646.
+    text[NORMAL] = "#000000"
+    text[ACTIVE] = "#000000"
+    text[SELECTED] = "#000000"
+    text[PRELIGHT] = "#000000"
+
     engine "sugar" {
         hint = "comboboxentry"
     }
@@ -195,18 +205,13 @@ style "toolbutton"
 {
     color["focus_line"] = "#000000"
 
-    # This makes the normal background of comboboxes invisible
-    bg[NORMAL] = "#404040"
+    #bg[NORMAL] = "#404040"
     bg[PRELIGHT] = "#000000"
+    bg[ACTIVE] = "#808080"
 
     fg[NORMAL] = "#FFFFFF"
     fg[ACTIVE] = "#FFFFFF"
     fg[PRELIGHT] = "#ffffff"
-
-    # Work around GTK+ bug #382646
-    text[NORMAL] = "#FFFFFF"
-    text[ACTIVE] = "#FFFFFF"
-    text[PRELIGHT] = "#ffffff"
 
     engine "sugar" {
         max_radius = 5.0
@@ -215,17 +220,23 @@ style "toolbutton"
 
 style "toolbox"
 {
+    color["bg_color"] = "#404040"
+
+    fg[NORMAL] = "#FFFFFF"
+    fg[ACTIVE] = "#FFFFFF"
+
+    bg[NORMAL] = @bg_color
+}
+
+style "toolbox-content"
+{
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
     color["bg_color"] = "#404040"
 
-    bg[ACTIVE] = "#808080"
-    bg[NORMAL] = @bg_color
     bg[INSENSITIVE] = @bg_color
-
-    fg[NORMAL] = "#FFFFFF"
-    fg[ACTIVE] = "#FFFFFF"
 }
+
 
 style "panel"
 {
@@ -237,13 +248,12 @@ style "entry"
 {
     # small inner border and a large x/ythickness for entries
     # to reduce the number of hacks needed :-)
-    # This size needs to be choosen so the round corner work with the height
-    # Something like (height / 2.0 - line_width) / sqrt(2), where height
-    # is font height + x/ythickness
-    xthickness = 7
-    ythickness = 7
+    xthickness = $(thickness*3)
+    ythickness = $(thickness*3)
 
-    GtkEntry::inner-border = { 0, 0, 0, 0 }
+    # This tries to get a height of exactly 45 pixel for the entry.
+    GtkEntry::inner-border = { $(subcell_size - thickness*3), $(subcell_size - thickness*3),
+                               $(my_floor((3*subcell_size - font_height - thickness*3*2)/2)), $(my_ceil((3*subcell_size - font_height - thickness*3*2)/2)) }
 
     GtkWidget::focus-line-width = 0
 }
@@ -251,6 +261,14 @@ style "entry"
 style "button"
 {
     fg[NORMAL]        = "#ffffff"
+}
+
+style "combobox"
+{
+    # Work around GTK+ bug #382646
+    text[NORMAL]      = "#FFFFFF"
+    text[ACTIVE]      = "#FFFFFF"
+    text[PRELIGHT]    = "#ffffff"
 }
 
 style "checkbutton"
@@ -339,20 +357,23 @@ class "GtkHScale"      style "hscale"
 class "GtkVScale"      style "vscale"
 class "GtkProgressBar" style "progressbar"
 
-widget_class "<GtkWindow>.*"      style "window-content"
-widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
-widget_class "*<GtkCombo>*" style "comboboxentry"
-widget_class "*<SugarToolbox>*" style "toolbox"
-widget_class "*<GtkToolButton>*" style "toolbutton"
-widget_class "*<GtkToolItem>*<GtkComboBox>*" style "toolbutton"
-widget_class "*<GtkToolItem>*<GtkButton>*" style "toolbutton"
-widget_class "*<GtkMenu>*" style "menu"
-widget_class "*<GtkMenuItem>*" style "menuitem"
-widget_class "*<GtkSeparatorMenuItem>*" style "menuitem"
+widget_class "<GtkWindow>.*"                style "window-content"
 
-widget_class "*<GtkButton>*" style "button"
-widget_class "*<GtkCheckButton>*" style "checkbutton"
+widget_class "*<SugarToolbox>*"             style "toolbox"
+widget_class "*<SugarToolbox>.GtkNotebook"  style "toolbox"
+widget_class "*<SugarToolbox>*"             style "toolbox-content"
+widget_class "*<GtkToolButton>*"            style "toolbutton"
 
-widget_class "*<SugarPanel>" style "panel"
+widget_class "*<GtkMenu>*"                style "menu"
+widget_class "*<GtkMenuItem>*"            style "menuitem"
+widget_class "*<GtkSeparatorMenuItem>*"   style "menuitem"
 
-widget_class "*<SugarFrameWindow>*" style "frame"
+widget_class "*<GtkComboBox>*"         style "combobox"
+widget_class "*<GtkComboBoxEntry>*"    style "comboboxentry"
+widget_class "*<GtkCombo>*"            style "comboboxentry"
+widget_class "*<GtkButton>*"           style "button"
+widget_class "*<GtkCheckButton>*"      style "checkbutton"
+
+widget_class "*<SugarPanel>"           style "panel"
+
+widget_class "*<SugarFrameWindow>*"    style "frame"

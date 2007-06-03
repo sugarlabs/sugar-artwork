@@ -18,6 +18,7 @@
  */
 
 #include <gtk/gtk.h>
+#include <math.h>
 #include "sugar-info.h"
 
 #define HINT(str) (info->rc_style->hint && g_str_equal (info->rc_style->hint, str))
@@ -97,12 +98,18 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 
                 info->pos.x += (info->pos.width - width) / 2;
                 info->pos.width = width;
+
+                info->pos.y += floor(width/2.0);
+                info->pos.height -= 2*floor(width/2.0);
                 break;
             case GTK_ORIENTATION_HORIZONTAL:
                 width = (info->pos.height - line_width) / 2.0 + line_width;
 
                 info->pos.y += (info->pos.height - width) / 2;
                 info->pos.height = width;
+
+                info->pos.x += floor(width/2.0);
+                info->pos.width -= 2*floor(width/2.0);
                 break;
         }
 
