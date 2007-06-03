@@ -434,13 +434,13 @@ sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
         gdouble width, height;
         gdouble thick_line_width = info->rc_style->thick_line_width;
 
-        width = info->pos.width - line_width * 2.0 - thick_line_width * 2.15;
-        height = info->pos.height - line_width * 2.0 - thick_line_width * 2.15;
+        width = info->pos.width - line_width * 2.0 - thick_line_width * 2.3;
+        height = info->pos.height - line_width * 2.0 - thick_line_width * 2.3;
 
         cairo_save (cr);
         gdk_cairo_set_source_color (cr, &info->style->text[info->state]);
 
-        cairo_translate (cr, info->pos.x + line_width + thick_line_width * 1.1, info->pos.y + line_width + thick_line_width*1.1);
+        cairo_translate (cr, (double)info->pos.x + line_width + thick_line_width * 1.25, (double)info->pos.y + line_width + thick_line_width*1.15);
         cairo_set_line_width (cr, info->rc_style->thick_line_width);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
