@@ -2,6 +2,8 @@ AC_INIT([olpc-artwork],[0.33],[],[olpc-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
+AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip])
+
 AM_DISABLE_STATIC
 	
 AC_PROG_CC
