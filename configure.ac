@@ -2,11 +2,6 @@ AC_INIT([olpc-artwork],[0.33],[],[olpc-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
-# Honor aclocal flags
-ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
-
-AM_MAINTAINER_MODE
-
 AM_DISABLE_STATIC
 	
 AC_PROG_CC
@@ -26,18 +21,6 @@ PKG_CHECK_MODULES(ENGINE, gtk+-2.0 >= 2.0 gobject-2.0 >= 2.0 cairo >= 0.1.1)
 
 GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
 AC_SUBST(GTK_VERSION)
-
-dnl ===========================================================================
-dnl Use lots of warning flags with GCC
-
-WARN_CFLAGS=""
-if test "x$GCC" = "xyes"; then
-	WARN_CFLAGS="-Wall -Wpointer-arith -Wstrict-prototypes \
-	-Wmissing-prototypes -Wmissing-declarations \
-	-Wnested-externs -fno-strict-aliasing"
-fi
-AC_SUBST(WARN_CFLAGS)
-dnl ===========================================================================
 
 AM_GLIB_GNU_GETTEXT
 	
