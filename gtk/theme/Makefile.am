@@ -26,5 +26,5 @@ uninstall-local:
 	rm -rf $(DESTDIR)$(datadir)/themes/sugar/gtk-2.0
 	rm -rf $(DESTDIR)$(datadir)/themes/sugar-xo/gtk-2.0
 
-EXTRA_DIST = $(sugar_DATA) em.py gtkrc.em
+EXTRA_DIST = em.py gtkrc.em
 CLEANFILES = $(GTKRC_FILES)
