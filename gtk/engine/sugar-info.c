@@ -88,9 +88,11 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 
     border_size = 2*line_width;
 
-    /* The scale trough is drawn larger than it should be. Subtract from its width/height. */
+    /* The scale trough is drawn larger than it should be. Subtract from its width/height.
+     * Also set the corners accordingly, and in the future we may want do some other things. */
     if (trough && (HINT ("vscale") || HINT ("hscale"))) {
         gdouble width;
+        gboolean inverted = FALSE;
 
         switch (range_info->orientation) {
             case GTK_ORIENTATION_VERTICAL:
@@ -101,6 +103,21 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 
                 info->pos.y += floor(width/2.0);
                 info->pos.height -= 2*floor(width/2.0);
+
+                if (DETAIL ("trough-lower") || DETAIL ("trough-upper")) {
+                    /* If there is no real scale, assume that it is not inverted. */
+                    if (info->widget && GTK_IS_RANGE (info->widget) && gtk_range_get_inverted (info->widget))
+                        inverted = TRUE;
+                    
+                    if (DETAIL ("trough-upper"))
+                        inverted ^= TRUE;  
+                    
+                    if (inverted)
+                        sugar_remove_corners (&info->corners, EDGE_TOP);
+                    else
+                        sugar_remove_corners (&info->corners, EDGE_BOTTOM);
+                }
+
                 break;
             case GTK_ORIENTATION_HORIZONTAL:
                 width = (info->pos.height - line_width) / 2.0 + line_width;
@@ -110,6 +127,21 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 
                 info->pos.x += floor(width/2.0);
                 info->pos.width -= 2*floor(width/2.0);
+
+                if (DETAIL ("trough-lower") || DETAIL ("trough-upper")) {
+                    /* If there is no real scale, assume that it is not inverted. */
+                    if (info->widget && GTK_IS_RANGE (info->widget) && gtk_range_get_inverted (info->widget))
+                        inverted = TRUE;
+                    
+                    if (DETAIL ("trough-upper"))
+                        inverted ^= TRUE;  
+                    
+                    if (inverted)
+                        sugar_remove_corners (&info->corners, EDGE_LEFT);
+                    else
+                        sugar_remove_corners (&info->corners, EDGE_RIGHT);
+                }
+
                 break;
         }
 
