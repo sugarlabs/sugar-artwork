@@ -573,9 +573,27 @@ sugar_style_draw_layout(GtkStyle        *style,
                         PangoLayout     *layout)
 {
     GdkGC *gc;
+    GtkStateType sugar_state = state_type;
+    GtkWidget *btn = NULL;
+
+    /* XXX: This is ugly, better patch GTK+ somehow. */
+    if (widget)
+        btn = widget->parent;
+    
+    if (btn && !GTK_IS_BUTTON (btn)) {
+        if (btn->parent && GTK_IS_BUTTON (btn->parent))
+            btn = btn->parent;
+        else
+            btn = NULL;
+    }
+    if (btn) {
+        /* Access private information ... */
+        sugar_state = GTK_BUTTON (btn)->depressed ? GTK_STATE_ACTIVE : GTK_STATE_NORMAL;
+    }
+    
 
     /* We don't want embossed text. */
-    gc = use_text ? style->text_gc[state_type] : style->fg_gc[state_type];
+    gc = use_text ? style->text_gc[sugar_state] : style->fg_gc[sugar_state];
 
     if (area)
         gdk_gc_set_clip_rectangle (gc, area);

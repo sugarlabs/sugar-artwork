@@ -148,4 +148,16 @@ sugar_fill_generic_info (SugarInfo     *info,
     info->cont_edges = EDGE_NONE;
 
     info->ltr = sugar_widget_is_ltr (widget);
+
+    /* Ignore the prelight state in some cases. */
+    if (info->state == GTK_STATE_PRELIGHT) {
+        if (DETAIL ("button") || DETAIL ("buttondefault") ||
+            DETAIL ("spinbutton_down") || DETAIL ("spinbutton_up")) {
+
+            if (info->shadow == GTK_SHADOW_IN)
+                info->state = GTK_STATE_ACTIVE;
+            else
+                info->state = GTK_STATE_NORMAL;
+        }
+    }
 }
