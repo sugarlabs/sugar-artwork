@@ -91,6 +91,8 @@ style "default"
     
     GtkArrow::arrow-size = 1.0
 
+    GtkToolbar::shadow-type = GTK_SHADOW_NONE
+
     engine "sugar" {
         # Is this correct? Should we make sure it is pixel aligned?
         # 6 pixel for the XO version, and 3 for the "normal" one
@@ -230,16 +232,6 @@ style "toolbox"
     bg[NORMAL] = @bg_color
 }
 
-style "toolbox-content"
-{
-    GtkToolbar::shadow-type = GTK_SHADOW_NONE
-
-    color["bg_color"] = "#404040"
-
-    bg[INSENSITIVE] = @bg_color
-}
-
-
 style "panel"
 {
     bg[NORMAL] = "#C0C0C0"
@@ -363,7 +355,6 @@ widget_class "<GtkWindow>.*"                style "window-content"
 
 widget_class "*<SugarToolbox>*"             style "toolbox"
 widget_class "*<SugarToolbox>.GtkNotebook"  style "toolbox"
-widget_class "*<SugarToolbox>*"             style "toolbox-content"
 widget_class "*<GtkToolButton>*"            style "toolbutton"
 
 widget_class "*<GtkMenu>*"                style "menu"
