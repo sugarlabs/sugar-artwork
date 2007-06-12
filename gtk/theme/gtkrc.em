@@ -254,7 +254,9 @@ style "entry"
 
 style "button"
 {
-    fg[NORMAL]        = "#ffffff"
+    fg[NORMAL]  = "#ffffff"
+
+    bg[NORMAL] = "#808080"
 }
 
 style "combobox"
