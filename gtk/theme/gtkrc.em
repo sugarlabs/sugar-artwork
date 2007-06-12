@@ -354,7 +354,6 @@ class "GtkProgressBar" style "progressbar"
 widget_class "<GtkWindow>.*"                style "window-content"
 
 widget_class "*<SugarToolbox>*"             style "toolbox"
-widget_class "*<SugarToolbox>.GtkNotebook"  style "toolbox"
 widget_class "*<GtkToolButton>*"            style "toolbutton"
 
 widget_class "*<GtkMenu>*"                style "menu"
