@@ -199,6 +199,8 @@ style "notebook"
     
     xthickness = 0
     ythickness = 0
+
+    bg[ACTIVE] = "#808080"
 }
 
 style "toolbutton"
