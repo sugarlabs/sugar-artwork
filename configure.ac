@@ -1,4 +1,4 @@
-AC_INIT([olpc-artwork],[0.33],[],[olpc-artwork])
+AC_INIT([sugar-artwork],[0.33],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
