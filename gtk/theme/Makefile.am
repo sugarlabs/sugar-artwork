@@ -16,10 +16,10 @@ GTKRC_FILES =		\
 
 install-data-local: $(GTKRC_FILES)
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/themes/sugar/gtk-2.0
-	$(INSTALL) $(top_builddir)/gtk/theme/sugar.gtkrc \
+	$(INSTALL_DATA) $(top_builddir)/gtk/theme/sugar.gtkrc \
 		$(DESTDIR)$(datadir)/themes/sugar/gtk-2.0/gtkrc
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/themes/sugar-xo/gtk-2.0
-	$(INSTALL) $(top_builddir)/gtk/theme/sugar-xo.gtkrc \
+	$(INSTALL_DATA) $(top_builddir)/gtk/theme/sugar-xo.gtkrc \
 		$(DESTDIR)$(datadir)/themes/sugar-xo/gtk-2.0/gtkrc
 
 uninstall-local:
