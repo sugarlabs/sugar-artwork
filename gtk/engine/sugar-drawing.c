@@ -380,7 +380,7 @@ sugar_draw_radio_button (cairo_t *cr, SugarInfo *info)
     outer_stroke_radius = radius - line_width / 2.0;
 
     /* Fill the background first (if the state is not insensitive) */
-    if (info->state != GTK_STATE_INSENSITIVE) {
+    if (info->state == GTK_STATE_ACTIVE || info->shadow != GTK_SHADOW_OUT) {
         gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
         cairo_arc (cr, 0, 0, outer_stroke_radius, 0, 2*G_PI);
         cairo_fill (cr);
@@ -419,9 +419,11 @@ sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
     gdouble line_width = info->rc_style->line_width;
 
     /* Fill the background */
-    gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
-    sugar_cairo_rectangle (cr, pos);
-    cairo_fill (cr);
+    if (info->state == GTK_STATE_ACTIVE || info->shadow != GTK_SHADOW_OUT) {
+        gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
+        sugar_cairo_rectangle (cr, pos);
+        cairo_fill (cr);
+    }
     
     cairo_set_line_width (cr, line_width);
     gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_INSENSITIVE]);
