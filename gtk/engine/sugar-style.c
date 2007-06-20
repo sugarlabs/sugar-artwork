@@ -338,10 +338,8 @@ sugar_style_draw_box (GtkStyle       *style,
             cairo_fill (cr);
     } else if (DETAIL ("menu")) {
         gdouble line_width = SUGAR_RC_STYLE (style->rc_style)->line_width;
-        GdkColor background = { 0, 0, 0, 0 };
-        gtk_style_lookup_color (style, "bg_color", &background);
 
-        gdk_cairo_set_source_color (cr, &background);
+        gdk_cairo_set_source_color (cr, &style->bg[GTK_STATE_INSENSITIVE]);
         cairo_rectangle (cr, x, y, width, height);
         cairo_fill (cr);
 

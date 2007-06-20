@@ -155,11 +155,9 @@ sugar_draw_insensitive_outline (cairo_t *cr, SugarInfo *info)
 void
 sugar_fill_background (cairo_t *cr, SugarInfo *info)
 {
-    GdkColor bg_color = info->style->bg[GTK_STATE_NORMAL];
+    GdkColor bg_color = info->style->bg[GTK_STATE_INSENSITIVE];
 
-    /* try to lookup the symbolic color bg_color */
-    gtk_style_lookup_color (info->style, "bg_color", &bg_color);
-
+    /* bg[INSENSITIVE] (and base[INSENSITIVE]) should be set to the window background. */
     gdk_cairo_set_source_color (cr, &bg_color);
     cairo_paint (cr);
 }

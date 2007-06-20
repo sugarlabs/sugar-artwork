@@ -32,34 +32,46 @@ radio_size = my_floor(subcell_size + bullet_size + line_width)
 scale_slider_width = my_floor(2 * subcell_size + line_width)
 thickness = my_ceil(line_width)
 
+
+# Colors:
+
+black = '"#000000"'
+toolbar_grey = '"#404040"'
+button_grey = '"#808080"'
+selection_grey = '"#A6A6A6"'
+panel_grey = '"#C0C0C0"'
+text_field_grey = '"#E5E5E5"'
+white = '"#FFFFFF"'
+
+
 }
 style "default"
 {
     # Will be overriden in some widgets
-    color["focus_line"] = "#FFFFFF"
+    color["focus_line"] = $white
 
-    bg[NORMAL] = "#808080"
-    bg[PRELIGHT] = "#808080"
-    bg[ACTIVE] = "#ffffff"
-    bg[SELECTED] = "#e7e7e7"
+    bg[NORMAL] = $button_grey
+    bg[PRELIGHT] = $button_grey
+    bg[ACTIVE] = $white
+    bg[SELECTED] = $text_field_grey
 
-    fg[NORMAL]        = "#000000"
-    fg[ACTIVE]        = "#000000"
-    fg[SELECTED]      = "#ffffff"
-    fg[PRELIGHT]      = "#ffffff"
+    fg[NORMAL]        = $black
+    fg[ACTIVE]        = $black
+    fg[SELECTED]      = $white
+    fg[PRELIGHT]      = $white
 
-    text[NORMAL] = "#000000" # "#7f7f7f" 1. need to patch GTK+ to use ACTIVE when focused, 2. what color should this really be?
-    text[ACTIVE] = "#000000"
-    text[SELECTED] = "#000000"
-    text[PRELIGHT] = "#000000"
+    text[NORMAL] = $black # button_grey? 1. need to patch GTK+ to use ACTIVE when focused, 2. what color should this really be?
+    text[ACTIVE] = $black
+    text[SELECTED] = $black
+    text[PRELIGHT] = $black
 
-    base[NORMAL] = "#E6E6E6"
-    base[ACTIVE] = "#ffffff"
-    base[SELECTED] = "#a6a6a6"
-    base[PRELIGHT] = "#ffffff"
+    base[NORMAL] = $text_field_grey
+    base[ACTIVE] = $white
+    base[SELECTED] = $selection_grey
+    base[PRELIGHT] = $white
 
-    fg[INSENSITIVE] = "#808080"
-    text[INSENSITIVE] = "#808080"
+    fg[INSENSITIVE] = $button_grey
+    text[INSENSITIVE] = $button_grey
 
     xthickness = $thickness
     ythickness = $thickness
@@ -106,17 +118,13 @@ style "default"
 
 style "window-content"
 {
-    color["bg_color"] = "#C0C0C0"
-
-    bg[INSENSITIVE] = @bg_color
-    base[INSENSITIVE] = @bg_color
+    bg[INSENSITIVE] = $panel_grey
+    base[INSENSITIVE] = $panel_grey
 }
 
 style "window"
 {
-    color["bg_color"] = "#C0C0C0"
-
-    bg[NORMAL] = @bg_color
+    bg[NORMAL] = $panel_grey
 }
 
 style "scrollbar"
@@ -170,7 +178,7 @@ style "vscale" = "scale"
 
 style "spinbutton"
 {
-    fg[NORMAL]        = "#ffffff"
+    fg[NORMAL]        = $white
     engine "sugar" {
         hint = "spinbutton"
     }
@@ -179,10 +187,10 @@ style "spinbutton"
 style "comboboxentry"
 {
     # Copied from the "default" style. Part of the workaround for bug #382646.
-    text[NORMAL] = "#000000"
-    text[ACTIVE] = "#000000"
-    text[SELECTED] = "#000000"
-    text[PRELIGHT] = "#000000"
+    text[NORMAL] = $black
+    text[ACTIVE] = $black
+    text[SELECTED] = $black
+    text[PRELIGHT] = $black
 
     engine "sugar" {
         hint = "comboboxentry"
@@ -192,7 +200,7 @@ style "comboboxentry"
 
 style "frame"
 {
-    bg[NORMAL] = "#404040"
+    bg[NORMAL] = $toolbar_grey
 }
 
 style "notebook"
@@ -202,20 +210,19 @@ style "notebook"
     xthickness = 0
     ythickness = 0
 
-    bg[ACTIVE] = "#808080"
+    bg[ACTIVE] = $button_grey
 }
 
 style "toolbutton"
 {
-    color["focus_line"] = "#000000"
+    color["focus_line"] = $black
 
-    #bg[NORMAL] = "#404040"
-    bg[PRELIGHT] = "#000000"
-    bg[ACTIVE] = "#808080"
+    bg[PRELIGHT] = $black
+    bg[ACTIVE] = $button_grey
 
-    fg[NORMAL] = "#FFFFFF"
-    fg[ACTIVE] = "#FFFFFF"
-    fg[PRELIGHT] = "#ffffff"
+    fg[NORMAL] = $white
+    fg[ACTIVE] = $white
+    fg[PRELIGHT] = $white
 
     engine "sugar" {
         max_radius = 5.0
@@ -224,18 +231,18 @@ style "toolbutton"
 
 style "toolbox"
 {
-    color["bg_color"] = "#404040"
+    fg[NORMAL] = $white
+    fg[ACTIVE] = $white
 
-    fg[NORMAL] = "#FFFFFF"
-    fg[ACTIVE] = "#FFFFFF"
-
-    bg[NORMAL] = @bg_color
+    bg[NORMAL] = $toolbar_grey
+    bg[INSENSITIVE] = $toolbar_grey
+    base[INSENSITIVE] = $toolbar_grey
 }
 
 style "panel"
 {
-    bg[NORMAL] = "#C0C0C0"
-    fg[NORMAL] = "#000000"
+    bg[NORMAL] = $panel_grey
+    fg[NORMAL] = $black
 }
 
 style "entry"
@@ -254,32 +261,32 @@ style "entry"
 
 style "button"
 {
-    fg[NORMAL]  = "#ffffff"
+    fg[NORMAL]  = $white
 
-    bg[NORMAL] = "#808080"
+    bg[NORMAL] = $button_grey
 }
 
 style "combobox"
 {
     # Work around GTK+ bug #382646
-    text[NORMAL]      = "#FFFFFF"
-    text[ACTIVE]      = "#FFFFFF"
-    text[PRELIGHT]    = "#ffffff"
+    text[NORMAL]      = $white
+    text[ACTIVE]      = $white
+    text[PRELIGHT]    = $white
 }
 
 style "checkbutton"
 {
-    fg[NORMAL]        = "#000000"
-    fg[PRELIGHT]      = "#000000"
-    fg[ACTIVE]        = "#000000"
+    fg[NORMAL]        = $black
+    fg[PRELIGHT]      = $black
+    fg[ACTIVE]        = $black
     
-    base[NORMAL]      = "#ffffff"
-    base[PRELIGHT]    = "#ffffff"
-    base[ACTIVE]      = "#E6E6E6"
+    base[NORMAL]      = $white
+    base[PRELIGHT]    = $white
+    base[ACTIVE]      = $text_field_grey
 
-    text[PRELIGHT]    = "#5d5d5d"
-    text[NORMAL]      = "#5d5d5d"
-    text[ACTIVE]      = "#5d5d5d"
+    text[PRELIGHT]    = $toolbar_grey
+    text[NORMAL]      = $toolbar_grey
+    text[ACTIVE]      = $toolbar_grey
 
     # I won't get the exact sizing, but this should be pretty close
     GtkCheckButton::indicator-size = $radio_size
@@ -293,25 +300,28 @@ style "progressbar"
     ythickness = 0
 
     # Make the bar visible (only until the engine implements it!)
-    bg[PRELIGHT] = "#ffffff"
+    bg[PRELIGHT] = $white
 }
 
 style "menu"
 {
-    color["bg_color"] = "#000000"
+    color["bg_color"] = $black
 
-    fg[NORMAL]   = "#ffffff"
-    fg[PRELIGHT] = "#ffffff"
-    bg[NORMAL] = "#808080"
+    fg[NORMAL]   = $white
+    fg[PRELIGHT] = $white
+    bg[NORMAL] = $button_grey
+
+    bg[INSENSITIVE] = $black
+    base[INSENSITIVE] = $black
     
     # The following colors are for the check and radio menu items
-    base[NORMAL]      = "#ffffff"
-    base[PRELIGHT]    = "#ffffff"
-    base[ACTIVE]      = "#E6E6E6"
+    base[NORMAL]      = $white
+    base[PRELIGHT]    = $white
+    base[ACTIVE]      = $text_field_grey
 
-    text[PRELIGHT]    = "#5d5d5d"
-    text[NORMAL]      = "#5d5d5d"
-    text[ACTIVE]      = "#5d5d5d"
+    text[PRELIGHT]    = $toolbar_grey
+    text[NORMAL]      = $toolbar_grey
+    text[ACTIVE]      = $toolbar_grey
     
     GtkMenu::horizontal-padding = 0
     GtkMenu::vertical-padding   = 0
@@ -324,11 +334,11 @@ style "menuitem"
 {
     GtkCheckMenuItem::indicator-size = $radio_size
 
-    bg[PRELIGHT] = "#808080"
+    bg[PRELIGHT] = $button_grey
 
     # For check/radio menu items
-    text[NORMAL] = "#FFFFFF"
-    text[PRELIGHT] = "#FFFFFF"
+    text[NORMAL] = $white
+    text[PRELIGHT] = $white
 
     GtkMenuItem::horizontal-padding = $line_width
     xthickness = $(my_ceil(line_width * 2))
