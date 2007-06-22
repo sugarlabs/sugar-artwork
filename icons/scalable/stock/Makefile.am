@@ -22,7 +22,6 @@ icon_DATA =				\
 	stock-zoom-mesh.svg		\
 	stock-net-wired.svg 		\
 	stock-open.svg			\
-	stock-save.svg			\
 	stock-undo.svg			\
 	stock-redo.svg			\
 	stock-bold.svg			\
