@@ -303,6 +303,16 @@ style "progressbar"
     bg[PRELIGHT] = $white
 }
 
+style "palette"
+{
+    bg[NORMAL] = $black
+}
+
+style "palette-child"
+{
+    fg[NORMAL] = $white
+}
+
 style "menu"
 {
     color["bg_color"] = $black
@@ -368,7 +378,7 @@ widget_class "<GtkWindow>.*"                style "window-content"
 widget_class "*<SugarToolbox>*"             style "toolbox"
 widget_class "*<GtkToolButton>*"            style "toolbutton"
 
-widget_class "*<GtkMenu>*"                style "menu"
+widget_class "*<GtkMenuShell>*"           style "menu"
 widget_class "*<GtkMenuItem>*"            style "menuitem"
 widget_class "*<GtkSeparatorMenuItem>*"   style "menuitem"
 
@@ -381,3 +391,6 @@ widget_class "*<GtkCheckButton>*"      style "checkbutton"
 widget_class "*<SugarPanel>"           style "panel"
 
 widget_class "*<SugarFrameWindow>*"    style "frame"
+
+widget_class "*<SugarPalette>"         style "palette"
+widget_class "*<SugarPalette>*"        style "palette-child"
