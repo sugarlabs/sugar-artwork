@@ -584,7 +584,7 @@ sugar_style_draw_layout(GtkStyle        *style,
         else
             btn = NULL;
     }
-    if (btn) {
+    if (state_type != GTK_STATE_INSENSITIVE && btn) {
         /* Access private information ... */
         sugar_state = GTK_BUTTON (btn)->depressed ? GTK_STATE_ACTIVE : GTK_STATE_NORMAL;
     }

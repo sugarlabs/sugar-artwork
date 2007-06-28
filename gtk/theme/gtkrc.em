@@ -380,7 +380,7 @@ widget_class "*<GtkToolButton>*"            style "toolbutton"
 
 widget_class "*<GtkMenuShell>*"           style "menu"
 widget_class "*<GtkMenuItem>*"            style "menuitem"
-widget_class "*<GtkSeparatorMenuItem>*"   style "menuitem"
+widget_class "*<GtkSeparatorMenuItem>*"   style "separatormenuitem"
 
 widget_class "*<GtkComboBox>*"         style "combobox"
 widget_class "*<GtkComboBoxEntry>*"    style "comboboxentry"
