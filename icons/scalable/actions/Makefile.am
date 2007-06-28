@@ -4,6 +4,7 @@ icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
 	document-save.svg		\
+	edit-copy.svg			\
 	edit-redo.svg			\
 	edit-undo.svg			\
 	format-justify-center.svg	\

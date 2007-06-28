@@ -17,6 +17,8 @@ icon_DATA =					\
 	device-network-wireless-060.svg		\
 	device-network-wireless-080.svg		\
 	device-network-wireless-100.svg		\
-	device-network-wireless.svg
+	device-network-wireless.svg		\
+	media-flash-sd-mmc.svg			\
+	media-flash-usb.svg
 
 EXTRA_DIST = $(icon_DATA)
