@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+
+	<!ENTITY stroke_color "#00FF00">
+ 	<!ENTITY fill_color "#0000FF">
+
+]>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px"
+	 height="55px" viewBox="0 0 55 55" enable-background="new 0 0 55 55" xml:space="preserve">
+
+	<polygon fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" points="36.101,3.056 8.944,3.056 8.944,18.898 11.035,18.898 
+		11.035,28.473 8.944,28.473 8.944,51.334 46.081,51.334 46.081,21.715 44.353,21.715 44.353,19.016 46.081,19.016 46.081,13.037 
+					"/>
+	<path fill="&stroke_color;" d="M39.779,28.43c0,3.3-2.7,6-6,6h-13c-3.299,0-6-2.7-6-6v-13.07c0-3.3,2.7-6,6-6h13c3.3,0,6,2.7,6,6V28.43z
+		"/>
+</svg>

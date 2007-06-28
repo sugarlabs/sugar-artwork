@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+
+	<!ENTITY stroke_color "#00FF00">
+ 	<!ENTITY fill_color "#0000FF">
+
+]>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px"
+	 height="55px" viewBox="0 0 55 55" enable-background="new 0 0 55 55" xml:space="preserve">
+
+	<path fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" d="M42.302,15.153H15.043v0.001c-0.005,0-0.009-0.001-0.013-0.001
+		c-6.642,0-12.024,5.384-12.024,12.025c0,6.639,5.383,12.023,12.024,12.023h0.013h27.259V15.153z"/>
+	<rect x="42.866" y="20.161" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="9.14" height="14.182"/>
+</svg>
