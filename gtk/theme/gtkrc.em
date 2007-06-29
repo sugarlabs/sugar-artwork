@@ -109,17 +109,15 @@ style "default"
     GtkProgressBar::min-vertical-bar-width = $subcell_size
 
     engine "sugar" {
-        # Is this correct? Should we make sure it is pixel aligned?
-        # 6 pixel for the XO version, and 3 for the "normal" one
         line_width = $line_width
-        # 9-10 pixel for the XO version, and 4 for the "normal" one
         thick_line_width = $thick_line_width
 
-        max_radius = $( xo ? 25 : 15)
+        # Not sure about this one, but it is not that important
+        max_radius = $( 2*subcell_size )
     }
 }
 
-style "window-content"
+style "window-child"
 {
     bg[INSENSITIVE] = $panel_grey
     base[INSENSITIVE] = $panel_grey
@@ -151,7 +149,7 @@ style "scrollbar"
 
     engine "sugar" {
         hint = "scrollbar"
-        scrollbar_border = 3
+        scrollbar_border = $thickness
     }
 }
 
@@ -185,7 +183,11 @@ style "vscale" = "scale"
 
 style "spinbutton"
 {
-    fg[NORMAL]        = $white
+    bg[NORMAL]  = $button_grey
+    bg[ACTIVE]  = $white
+    fg[NORMAL]  = $white
+    fg[ACTIVE]  = $black
+
     engine "sugar" {
         hint = "spinbutton"
     }
@@ -260,8 +262,8 @@ style "entry"
     ythickness = $(thickness*3)
 
     # This tries to get a height of exactly 45 pixel for the entry.
-    GtkEntry::inner-border = { $(subcell_size - thickness*3), $(subcell_size - thickness*3),
-                               $(my_floor((3*subcell_size - font_height - thickness*3*2)/2)), $(my_ceil((3*subcell_size - font_height - thickness*3*2)/2)) }
+    GtkEntry::inner-border = { $(max(subcell_size - thickness*3, 0)), $(max(subcell_size - thickness*3, 0)),
+                               $(max(my_floor((3*subcell_size - font_height - thickness*3*2)/2),0)), $(max(my_ceil((3*subcell_size - font_height - thickness*3*2)/2), 0)) }
 
     GtkWidget::focus-line-width = 0
 }
@@ -369,37 +371,71 @@ style "separatormenuitem"
     xthickness = 0
 }
 
+####################################################################
+# Default style, setting some generic options and style properties
+####################################################################
+class "GtkWidget" style "default"
 
-class "GtkWidget"      style "default"
-class "GtkWindow"      style "window"
-class "GtkEventBox"    style "window"
-class "GtkNotebook"    style "notebook"
-class "GtkEntry"       style "entry"
-class "GtkSpinButton"  style "spinbutton"
-class "GtkScrollbar"   style "scrollbar"
-class "GtkHScale"      style "hscale"
-class "GtkVScale"      style "vscale"
-class "GtkProgressBar" style "progressbar"
 
-widget_class "<GtkWindow>.*"                style "window-content"
+####################################################################
+# Styles that apply the different background (and foreground) colors
+####################################################################
 
-widget_class "*<SugarToolbox>*"             style "toolbox"
-widget_class "*<GtkToolButton>*"            style "toolbutton"
+# This one should probably be the default (ie. no window-child style)
+widget_class "<GtkWindow>"               style "window"
+widget_class "<GtkWindow>*"              style "window-child"
+widget_class "<GtkWindow>*<GtkEventBox>" style "window"
 
-widget_class "*<GtkMenuShell>*"           style "menu"
+# SugarToolbox
+#widget_class "*<SugarToolbox>" style "toolbox"
+#widget_class "*<SugarToolbox>*" style "toolbox-child"
+#widget_class "*<SugarToolbox>*<GtkEventBox>" style "toolbox"
+widget_class "*<SugarToolbox>*"        style "toolbox"
+
+# SugarPalette
+widget_class "*<SugarPalette>"         style "palette"
+widget_class "*<SugarPalette>*"        style "palette-child"
+
+# SugarFrameWindow
+widget_class "*<SugarFrameWindow>*"    style "frame"
+
+# SugarPanel
+widget_class "*<SugarPanel>*"          style "panel"
+
+
+####################################################################
+# Normal widget styles, using the above things
+####################################################################
+# The following only uses widget_class matches to get the priority
+# right. An alternative would be to lower the priority of the
+# background matches (which need widget_class) to eg. "application"
+
+# Toolbar
+widget_class "*<GtkToolButton>*"          style "toolbutton"
+
+# Menu
+widget_class "*<GtkMenuShell>*"           style "menu"               # Why is this menu shell?
 widget_class "*<GtkMenuItem>*"            style "menuitem"
 widget_class "*<GtkSeparatorMenuItem>*"   style "separatormenuitem"
 
+# Buttons and Combos
 widget_class "*<GtkComboBox>*"         style "combobox"
 widget_class "*<GtkComboBoxEntry>*"    style "comboboxentry"
 widget_class "*<GtkCombo>*"            style "comboboxentry"
 widget_class "*<GtkButton>*"           style "button"
 widget_class "*<GtkCheckButton>*"      style "checkbutton"
 
-widget_class "*<SugarPanel>"           style "panel"
+# Entries
+widget_class "*<GtkEntry>"       style "entry"
+widget_class "*<GtkSpinButton>"  style "spinbutton"
 
-widget_class "*<SugarFrameWindow>*"    style "frame"
 
-widget_class "*<SugarPalette>"         style "palette"
-widget_class "*<SugarPalette>*"        style "palette-child"
+# Misc widgets
+widget_class "*<GtkNotebook>"    style "notebook"
+widget_class "*<GtkScrollbar>"   style "scrollbar"
+widget_class "*<GtkHScale>"      style "hscale"
+widget_class "*<GtkVScale>"      style "vscale"
+widget_class "*<GtkProgressBar>" style "progressbar"
+
+
 
