@@ -184,8 +184,7 @@ sugar_draw_scale_trough (cairo_t *cr, SugarRangeInfo *range_info)
 
     if (info->state == GTK_STATE_INSENSITIVE) {
         gdouble outline_width = info->rc_style->line_width;
-        /* XXX: Needs testing. */
-        gdk_cairo_set_source_color (cr, &info->style->bg[info->state]);
+        gdk_cairo_set_source_color (cr, &info->style->fg[info->state]);
         sugar_rounded_inner_stroke (cr, pos, outline_width, info->max_radius, info->corners, info->cont_edges);
         return;
     }
