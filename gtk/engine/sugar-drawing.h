@@ -19,6 +19,7 @@
 
 #include <glib.h>
 #include <cairo.h>
+#include <gtk/gtk.h>
 #include "sugar-info.h"
 
 G_GNUC_INTERNAL void sugar_fill_background (cairo_t *cr, SugarInfo *info);
@@ -33,3 +34,6 @@ G_GNUC_INTERNAL void sugar_draw_button_default (cairo_t *cr, SugarInfo *info);
 G_GNUC_INTERNAL void sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info);
 G_GNUC_INTERNAL void sugar_draw_radio_button (cairo_t *cr, SugarInfo *info);
 G_GNUC_INTERNAL void sugar_draw_check_button (cairo_t *cr, SugarInfo *info);
+G_GNUC_INTERNAL void sugar_draw_progressbar_trough (cairo_t *cr, SugarInfo *info);
+G_GNUC_INTERNAL void sugar_draw_progressbar_bar (cairo_t *cr, SugarInfo *info, GtkProgressBarOrientation orientation);
+

@@ -327,10 +327,33 @@ sugar_style_draw_box (GtkStyle       *style,
             sugar_fill_range_info (&range_info, TRUE);
 
             sugar_draw_scale_trough (cr, &range_info);
-        } else {
-            /* just paint a flat box ... */
-            gtk_paint_flat_box (style, window, GTK_STATE_NORMAL, shadow_type, area, widget, detail, x, y, width, height);
+        } else { /* Progress bar trough */
+            SugarInfo info;
+            sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+            
+            if (widget && !GTK_WIDGET_IS_SENSITIVE (widget))
+                info.state = GTK_STATE_INSENSITIVE;
+            
+            /* Needed because the trough and bar are cached in a buffer inside GtkProgress. */
+            sugar_fill_background (cr, &info);
+            sugar_draw_progressbar_trough (cr, &info);
         }
+    } else if (DETAIL ("bar")) {
+            SugarInfo info;
+            GtkProgressBarOrientation orientation;
+
+            sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+            
+            if (widget && !GTK_WIDGET_IS_SENSITIVE (widget))
+                info.state = GTK_STATE_INSENSITIVE;
+            
+            if (widget && GTK_IS_PROGRESS_BAR (widget)) {
+                orientation = gtk_progress_bar_get_orientation (GTK_PROGRESS_BAR (widget));
+            } else {
+                orientation = info.ltr ? GTK_PROGRESS_LEFT_TO_RIGHT : GTK_PROGRESS_RIGHT_TO_LEFT;
+            }
+            
+            sugar_draw_progressbar_bar (cr, &info, orientation);
     } else if (DETAIL ("hseparator") || DETAIL ("vseparator")) {
             /* just fill the separator with bg[state] */
             gdk_cairo_set_source_color (cr, &style->bg[state_type]);

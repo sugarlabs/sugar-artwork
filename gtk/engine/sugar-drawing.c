@@ -459,3 +459,48 @@ sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
     }
 }
 
+
+void
+sugar_draw_progressbar_trough (cairo_t *cr, SugarInfo *info)
+{
+    if (info->state == GTK_STATE_INSENSITIVE) {
+        gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_INSENSITIVE]);
+        sugar_rounded_inner_stroke (cr, &info->pos, info->rc_style->line_width, info->max_radius, info->corners, info->cont_edges);
+    } else {
+        gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_INSENSITIVE]);
+        sugar_rounded_rectangle (cr, &info->pos, 0, info->max_radius, info->corners);
+        cairo_fill (cr);
+    }
+}
+
+void
+sugar_draw_progressbar_bar (cairo_t *cr, SugarInfo *info, GtkProgressBarOrientation orientation)
+{
+    /* Invisible bar for insensitive progress bars. */
+    if (info->state != GTK_STATE_INSENSITIVE) {
+        SugarRectangle pos = info->pos;
+
+        /* Clip from both sides to get the correct region. */
+        if (orientation == GTK_PROGRESS_LEFT_TO_RIGHT || orientation == GTK_PROGRESS_RIGHT_TO_LEFT) {
+            pos.width += 2*info->max_radius;
+            sugar_rounded_rectangle (cr, &pos, 0, info->max_radius, info->corners);
+            cairo_clip(cr);
+
+            pos.x -= 2*info->max_radius;
+            sugar_rounded_rectangle (cr, &pos, 0, info->max_radius, info->corners);
+            cairo_clip(cr);
+        } else {
+            pos.height += 2*info->max_radius;
+            sugar_rounded_rectangle (cr, &pos, 0, info->max_radius, info->corners);
+            cairo_clip(cr);
+
+            pos.y -= 2*info->max_radius;
+            sugar_rounded_rectangle (cr, &pos, 0, info->max_radius, info->corners);
+            cairo_clip(cr);
+        }
+
+        gdk_cairo_set_source_color (cr, &info->style->base[info->state]);
+        cairo_paint(cr);
+    }
+}
+

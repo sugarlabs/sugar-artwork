@@ -105,6 +105,9 @@ style "default"
 
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
 
+    GtkProgressBar::min-horizontal-bar-height = $subcell_size
+    GtkProgressBar::min-vertical-bar-width = $subcell_size
+
     engine "sugar" {
         # Is this correct? Should we make sure it is pixel aligned?
         # 6 pixel for the XO version, and 3 for the "normal" one
@@ -298,9 +301,6 @@ style "progressbar"
 {
     xthickness = 0
     ythickness = 0
-
-    # Make the bar visible (only until the engine implements it!)
-    bg[PRELIGHT] = $white
 }
 
 style "palette"
