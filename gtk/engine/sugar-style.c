@@ -73,6 +73,31 @@ sugar_style_init (SugarStyle *style)
 {
 }
 
+static void
+sugar_style_init_from_rc (GtkStyle *style, GtkRcStyle *rc_style)
+{
+    SugarRcStyle *sugar_rc_style = SUGAR_RC_STYLE (rc_style);
+    SugarStyle *sugar_style = SUGAR_STYLE (style);
+    GtkStateType state;
+
+    parent_class->init_from_rc(GTK_STYLE (style), GTK_RC_STYLE (rc_style));
+
+    /* Copy the label fg color. */
+    if (sugar_rc_style->flags & OPTION_LABEL_FG_COLOR) {
+        /* Now copy colors around if wanted. If any color has been set. */
+        for (state = 0; state < 5; state++) {
+            if (sugar_rc_style->apply_label_color.bg & (1 << state))
+                style->bg[state] = sugar_rc_style->label_fg_color;
+            if (sugar_rc_style->apply_label_color.fg & (1 << state))
+                style->fg[state] = sugar_rc_style->label_fg_color;
+            if (sugar_rc_style->apply_label_color.base & (1 << state))
+                style->base[state] = sugar_rc_style->label_fg_color;
+            if (sugar_rc_style->apply_label_color.text & (1 << state))
+                style->text[state] = sugar_rc_style->label_fg_color;
+        }
+    }
+}
+
 static cairo_t*
 sugar_cairo_create (GdkWindow *window, GdkRectangle *area)
 {
@@ -631,6 +656,8 @@ sugar_style_class_init (SugarStyleClass *klass)
     GtkStyleClass *style_class = GTK_STYLE_CLASS(klass);
     
     parent_class = g_type_class_peek_parent(klass);
+
+    style_class->init_from_rc = sugar_style_init_from_rc;
 
     style_class->draw_hline = sugar_style_draw_hline;
     style_class->draw_vline = sugar_style_draw_vline;

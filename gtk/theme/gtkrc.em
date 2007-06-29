@@ -123,6 +123,10 @@ style "window-content"
 {
     bg[INSENSITIVE] = $panel_grey
     base[INSENSITIVE] = $panel_grey
+    
+    engine "sugar" {
+        label_fg_color = $black
+    }
 }
 
 style "window"
@@ -279,10 +283,6 @@ style "combobox"
 
 style "checkbutton"
 {
-    fg[NORMAL]        = $black
-    fg[PRELIGHT]      = $black
-    fg[ACTIVE]        = $black
-    
     base[NORMAL]      = $white
     base[PRELIGHT]    = $white
     base[ACTIVE]      = $text_field_grey
@@ -295,6 +295,14 @@ style "checkbutton"
     GtkCheckButton::indicator-size = $radio_size
     GtkCheckButton::indicator-spacing = 3
     GtkWidget::focus-padding = 3
+
+    engine "sugar" {
+        # Reset the colors to the normal color again
+        # as they were overriden by the button style
+        fg[NORMAL]        = label_fg_color
+        fg[PRELIGHT]      = label_fg_color
+        fg[ACTIVE]        = label_fg_color
+    }
 }
 
 style "progressbar"
@@ -394,3 +402,4 @@ widget_class "*<SugarFrameWindow>*"    style "frame"
 
 widget_class "*<SugarPalette>"         style "palette"
 widget_class "*<SugarPalette>*"        style "palette-child"
+

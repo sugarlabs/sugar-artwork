@@ -34,8 +34,16 @@ typedef enum {
     OPTION_THICK_LINE_WIDTH = 1 << 1,
     OPTION_MAX_RADIUS       = 1 << 2,
     OPTION_SCROLLBAR_BORDER = 1 << 3,
-    OPTION_HINT             = 1 << 4
+    OPTION_HINT             = 1 << 4,
+    OPTION_LABEL_FG_COLOR   = 1 << 5
 } SugarRcStyleOptions;
+
+typedef struct {
+    guint8 fg;
+    guint8 bg;
+    guint8 base;
+    guint8 text;
+} SugarColorBitfield;
 
 
 #define SUGAR_TYPE_RC_STYLE              sugar_type_rc_style
@@ -55,6 +63,12 @@ struct _SugarRcStyle {
     gdouble thick_line_width;
     gdouble max_radius;
     gdouble scrollbar_border;
+
+    /* The purpose of this color is to be able to apply a color from
+     * a different style at merge time. This cannot be done with symbolic
+     * colors. */
+    GdkColor label_fg_color;
+    SugarColorBitfield apply_label_color;
 };
 
 struct _SugarRcStyleClass {

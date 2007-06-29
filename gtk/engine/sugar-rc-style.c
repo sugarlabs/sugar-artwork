@@ -32,7 +32,12 @@ static gchar symbols[] =
     "line_width\0"
     "thick_line_width\0"
     "max_radius\0"
-    "scrollbar_border\0";
+    "scrollbar_border\0"
+    "label_fg_color\0"
+    "bg\0"
+    "fg\0"
+    "base\0"
+    "text\0";
 
 typedef enum {
     TOKEN_INVALID = G_TOKEN_LAST,
@@ -41,6 +46,11 @@ typedef enum {
     TOKEN_THICK_LINE_WIDTH,
     TOKEN_MAX_RADIUS,
     TOKEN_SCROLLBAR_BORDER,
+    TOKEN_LABEL_FG_COLOR,
+    TOKEN_BG,
+    TOKEN_FG,
+    TOKEN_BASE,
+    TOKEN_TEXT,
     TOKEN_LAST,
 } SugarTokens;
 
@@ -76,6 +86,10 @@ sugar_rc_style_init (SugarRcStyle *rc_style)
     rc_style->max_radius = 5;
     rc_style->scrollbar_border = 5;
     rc_style->hint = NULL;
+    rc_style->apply_label_color.bg = 0;
+    rc_style->apply_label_color.fg = 0;
+    rc_style->apply_label_color.base = 0;
+    rc_style->apply_label_color.text = 0;
 }
 
 
@@ -113,6 +127,66 @@ sugar_rc_parse_string (GScanner *scanner, gchar **dest)
         return G_TOKEN_STRING;
 
     *dest = g_strdup(scanner->value.v_string);
+    return G_TOKEN_NONE;
+}
+
+static guint
+sugar_rc_parse_color (GScanner *scanner, GdkColor *color)
+{
+    GTokenType token;
+
+    token = g_scanner_get_next_token(scanner);
+    if (token != G_TOKEN_EQUAL_SIGN)
+        return G_TOKEN_EQUAL_SIGN;
+
+    token = gtk_rc_parse_color(scanner, color);
+
+    return token;
+}
+
+static guint
+sugar_rc_parse_color_assignment (GScanner *scanner, SugarRcStyle *rc_style)
+{
+    GTokenType type;
+    GTokenType token;
+    GtkStateType state;
+    guint8 *bitfield;
+
+    type = g_scanner_cur_token(scanner);
+    
+    token = gtk_rc_parse_state (scanner, &state);
+
+    /* In theory this is not perfect, because color may be invalid.
+     * Can't happen here though. */
+    if (token != G_TOKEN_NONE)
+        return token;
+
+    token = g_scanner_get_next_token(scanner);
+    if (token != G_TOKEN_EQUAL_SIGN)
+        return G_TOKEN_EQUAL_SIGN;
+
+    token = g_scanner_get_next_token(scanner);
+    if (token != TOKEN_LABEL_FG_COLOR)
+        return TOKEN_LABEL_FG_COLOR;
+
+    switch (type) {
+        case TOKEN_BG:
+            bitfield = &rc_style->apply_label_color.bg;
+        break;
+        case TOKEN_FG:
+            bitfield = &rc_style->apply_label_color.fg;
+        break;
+        case TOKEN_BASE:
+            bitfield = &rc_style->apply_label_color.base;
+        break;
+        case TOKEN_TEXT:
+            bitfield = &rc_style->apply_label_color.text;
+        break;
+        default:
+            return G_TOKEN_IDENTIFIER;
+    }
+    *bitfield |= 1 << state;
+    
     return G_TOKEN_NONE;
 }
 
@@ -171,6 +245,17 @@ sugar_rc_style_parse (GtkRcStyle   *rc_style,
                 token = sugar_rc_parse_string(scanner, &sugar_rc_style->hint);
                 sugar_rc_style->flags |= OPTION_HINT;
                 break;
+            case TOKEN_LABEL_FG_COLOR:
+                token = sugar_rc_parse_color(scanner, &sugar_rc_style->label_fg_color);
+                sugar_rc_style->flags |= OPTION_LABEL_FG_COLOR;
+                break;
+
+            case TOKEN_FG:
+            case TOKEN_BG:
+            case TOKEN_BASE:
+            case TOKEN_TEXT:
+                token = sugar_rc_parse_color_assignment(scanner, sugar_rc_style);
+                break;
             default:
                 token = G_TOKEN_RIGHT_CURLY;
                 break;
@@ -195,6 +280,7 @@ sugar_rc_style_merge (GtkRcStyle *dest,
     SugarRcStyle *sugar_dest;
     SugarRcStyle *sugar_src;
     SugarRcStyleOptions flags;
+    GtkStateType state;
 
     parent_class->merge (dest, src);
 
@@ -215,12 +301,18 @@ sugar_rc_style_merge (GtkRcStyle *dest,
         sugar_dest->max_radius = sugar_src->max_radius;
     if (flags & OPTION_SCROLLBAR_BORDER)
         sugar_dest->scrollbar_border = sugar_src->scrollbar_border;
+    if (flags & OPTION_LABEL_FG_COLOR)
+        sugar_dest->label_fg_color = sugar_src->label_fg_color;
     if (flags & OPTION_HINT) {
         g_free (sugar_dest->hint);
         sugar_dest->hint = g_strdup (sugar_src->hint);
     }
 
     sugar_dest->flags |= flags;
+    sugar_dest->apply_label_color.bg |= sugar_src->apply_label_color.bg;
+    sugar_dest->apply_label_color.fg |= sugar_src->apply_label_color.fg;
+    sugar_dest->apply_label_color.base |= sugar_src->apply_label_color.base;
+    sugar_dest->apply_label_color.text |= sugar_src->apply_label_color.text;
 }
 
 
