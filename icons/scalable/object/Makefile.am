@@ -3,6 +3,7 @@ category=object
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
+	object-generic.svg		\
 	object-image.svg		\
 	object-link.svg			\
 	object-squeak-project.svg	\
