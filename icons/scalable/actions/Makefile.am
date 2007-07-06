@@ -16,6 +16,7 @@ icon_DATA =				\
 	format-text-underline.svg	\
 	go-next.svg			\
 	go-previous.svg			\
+	go-previous-mini.svg		\
 	insert-col.svg                  \
 	insert-image.svg		\
 	insert-row.svg                  \
