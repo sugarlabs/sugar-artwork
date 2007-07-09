@@ -14,6 +14,8 @@ icon_DATA =				\
 	format-text-bold.svg		\
 	format-text-italic.svg		\
 	format-text-underline.svg	\
+	go-left.svg			\
+	go-right.svg			\
 	go-next.svg			\
 	go-previous.svg			\
 	go-previous-mini.svg		\
