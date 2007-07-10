@@ -3,6 +3,7 @@ category=actions
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
+	activity-stop.svg		\
 	document-save.svg		\
 	edit-copy.svg			\
 	edit-redo.svg			\
@@ -25,8 +26,6 @@ icon_DATA =				\
        	remove-row.svg                  \
 	remove-col.svg			\
 	stop.svg			\
-	view-refresh.svg		\
-	window-close.svg
-
+	view-refresh.svg
 
 EXTRA_DIST = $(icon_DATA)
