@@ -117,20 +117,85 @@ style "default"
     }
 }
 
+
+#############################################################
+# Styles that set default background/foreground colors
+#
+#  We almost always need two styles because of the X windows.
+#  For example bg[NORMAL] of a window (or eventbox) needs to
+#  be set to be the correct window color so that X fills the
+#  window correctly from the beginning, and it does not
+#  flash in the wrong color.
+#############################################################
+
+style "window"
+{
+    bg[NORMAL] = $panel_grey
+}
+
 style "window-child"
 {
     bg[INSENSITIVE] = $panel_grey
     base[INSENSITIVE] = $panel_grey
+
+    fg[NORMAL] = $black
     
     engine "sugar" {
         label_fg_color = $black
     }
 }
 
-style "window"
+style "palette"
 {
-    bg[NORMAL] = $panel_grey
+    bg[NORMAL] = $black
 }
+
+style "palette-child"
+{
+    fg[NORMAL] = $white
+}
+
+
+style "groupbox-panel"
+{
+    bg[NORMAL] = $selection_grey
+}
+
+style "groupbox-panel-child"
+{
+    bg[INSENSITIVE] = $selection_grey
+    base[INSENSITIVE] = $selection_grey
+    
+    fg[NORMAL] = $white
+    
+    engine "sugar" {
+        label_fg_color = $white
+    }
+}
+
+style "groupbox-palette"
+{
+    bg[NORMAL] = $toolbar_grey
+}
+
+style "groupbox-palette-child"
+{
+    bg[INSENSITIVE] = $toolbar_grey
+    base[INSENSITIVE] = $toolbar_grey
+    
+    fg[NORMAL] = $white
+    
+    engine "sugar" {
+        label_fg_color = $white
+    }
+}
+
+
+
+#########################################################
+#########################################################
+
+
 
 style "scrollbar"
 {
@@ -313,16 +378,6 @@ style "progressbar"
     ythickness = 0
 }
 
-style "palette"
-{
-    bg[NORMAL] = $black
-}
-
-style "palette-child"
-{
-    fg[NORMAL] = $white
-}
-
 style "menu"
 {
     color["bg_color"] = $black
@@ -383,8 +438,8 @@ class "GtkWidget" style "default"
 
 # This one should probably be the default (ie. no window-child style)
 widget_class "<GtkWindow>"               style "window"
-widget_class "<GtkWindow>*"              style "window-child"
 widget_class "<GtkWindow>*<GtkEventBox>" style "window"
+widget_class "<GtkWindow>*"              style "window-child"
 
 # SugarToolbox
 #widget_class "*<SugarToolbox>" style "toolbox"
@@ -401,6 +456,16 @@ widget_class "*<SugarFrameWindow>*"    style "frame"
 
 # SugarPanel
 widget_class "*<SugarPanel>*"          style "panel"
+
+
+# GroupBoxes (don't set bg[NORMAL] on the widget itself)
+widget_class "<GtkWindow>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-panel"
+widget_class "<GtkWindow>*<SugarGroupBox>*"   style "groupbox-panel-child"
+
+widget_class "*<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
+widget_class "*<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
+
+
 
 
 ####################################################################
