@@ -144,11 +144,21 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 
                 break;
         }
-
+        
         range_info->trough_fill = DETAIL ("trough-lower");
 
         /* I don't like the ACTIVE state there ... */
         info->state = info->state == GTK_STATE_ACTIVE ? GTK_STATE_NORMAL : GTK_STATE_INSENSITIVE;
+    }
+
+    if (!trough && (HINT ("vscrollbar") || HINT ("hscrollbar"))) {
+        if (HINT ("hscrollbar")) {
+            info->pos.y += info->rc_style->scrollbar_border;
+            info->pos.height -= 2 * info->rc_style->scrollbar_border;
+        } else {
+            info->pos.x += info->rc_style->scrollbar_border;
+            info->pos.width -= 2 * info->rc_style->scrollbar_border;
+        }
     }
 }
 

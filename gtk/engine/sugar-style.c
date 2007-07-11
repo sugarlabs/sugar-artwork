@@ -266,11 +266,12 @@ sugar_style_draw_slider (GtkStyle       *style,
         sugar_fill_range_info (&range_info, FALSE);
 
         sugar_draw_scale_slider (cr, &range_info);
-    } else if (HINT ("scrollbar")) {
+    } else if (HINT ("hscrollbar") || HINT ("vscrollbar")) {
         SugarRangeInfo range_info;
-	gdouble border = SUGAR_RC_STYLE (style->rc_style)->scrollbar_border;
+
         sugar_fill_generic_info (&range_info.info, style, state_type, shadow_type, widget, detail,
-                                 x + border, y, width - border * 2, height);
+                                 x, y, width, height);
+
         sugar_fill_range_info (&range_info, FALSE);
 
         sugar_draw_scrollbar_slider (cr, &range_info);
@@ -352,6 +353,15 @@ sugar_style_draw_box (GtkStyle       *style,
             sugar_fill_range_info (&range_info, TRUE);
 
             sugar_draw_scale_trough (cr, &range_info);
+        } else if (HINT ("hscrollbar") || HINT ("vscrollbar")) {
+            SugarRangeInfo range_info;
+
+            sugar_fill_generic_info (&range_info.info, style, state_type, shadow_type, widget, detail,
+                                     x, y, width, height);
+
+            sugar_fill_range_info (&range_info, TRUE);
+
+            sugar_draw_scrollbar_trough (cr, &range_info);
         } else { /* Progress bar trough */
             SugarInfo info;
             sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);

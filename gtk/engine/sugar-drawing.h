@@ -28,6 +28,7 @@ G_GNUC_INTERNAL void sugar_draw_exterior_focus (cairo_t *cr, SugarInfo *info);
 G_GNUC_INTERNAL void sugar_draw_scale_trough (cairo_t *cr, SugarRangeInfo *range_info);
 G_GNUC_INTERNAL void sugar_draw_scale_slider (cairo_t *cr, SugarRangeInfo *range_info);
 G_GNUC_INTERNAL void sugar_draw_scrollbar_slider (cairo_t *cr, SugarRangeInfo *range_info);
+G_GNUC_INTERNAL void sugar_draw_scrollbar_trough (cairo_t *cr, SugarRangeInfo *range_info);
 G_GNUC_INTERNAL void sugar_draw_entry (cairo_t *cr, SugarInfo *info);
 G_GNUC_INTERNAL void sugar_draw_button (cairo_t *cr, SugarInfo *info);
 G_GNUC_INTERNAL void sugar_draw_button_default (cairo_t *cr, SugarInfo *info);

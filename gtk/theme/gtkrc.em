@@ -196,12 +196,11 @@ style "groupbox-palette-child"
 #########################################################
 
 
-
 style "scrollbar"
 {
-    GtkRange::slider-width = 16    # ?
-    GtkRange::trough-border = 0
-    GtkRange::stepper-spacing = 0
+    GtkScrollbar::slider-width = 16    # ?
+    GtkScrollbar::trough-border = 0
+    GtkScrollbar::stepper-spacing = 0
     GtkScrollbar::min-slider-length = 30    # ?
     GtkScrollbar::has-forward-stepper = 0
     GtkScrollbar::has-backward-stepper = 0
@@ -210,10 +209,25 @@ style "scrollbar"
 
     # Hack for mozilla as it does not obey the above style properties ...
     # Really, mozilla should be fixed ...
-    GtkRange::stepper-size = 1
+    GtkScrollbar::stepper-size = 1
+}
 
+# hints for the trough padding hacks
+# We cannot go trough GTK+, as we don't want a padding on all sides, but only one
+# If we wanted padding on all sides, trough-border would work great.
+style "hscrollbar" = "scrollbar"
+{
     engine "sugar" {
-        hint = "scrollbar"
+        hint = "hscrollbar"
+        # Rounded, not floating point value. maybe change this?
+        scrollbar_border = $thickness
+    }
+}
+
+style "vscrollbar" = "scrollbar"
+{
+    engine "sugar" {
+        hint = "vscrollbar"
         scrollbar_border = $thickness
     }
 }
@@ -497,7 +511,8 @@ widget_class "*<GtkSpinButton>"  style "spinbutton"
 
 # Misc widgets
 widget_class "*<GtkNotebook>"    style "notebook"
-widget_class "*<GtkScrollbar>"   style "scrollbar"
+widget_class "*<GtkHScrollbar>"  style "hscrollbar"
+widget_class "*<GtkVScrollbar>"  style "vscrollbar"
 widget_class "*<GtkHScale>"      style "hscale"
 widget_class "*<GtkVScale>"      style "vscale"
 widget_class "*<GtkProgressBar>" style "progressbar"

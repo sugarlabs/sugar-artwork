@@ -273,6 +273,16 @@ sugar_draw_scrollbar_slider (cairo_t       *cr,
 }
 
 void
+sugar_draw_scrollbar_trough (cairo_t       *cr,
+                             SugarRangeInfo *range_info)
+{
+    /* Always draw with button grey. */
+    gdk_cairo_set_source_color (cr, &range_info->info.style->bg[GTK_STATE_NORMAL]);
+    sugar_cairo_rectangle (cr, &range_info->info.pos);
+    cairo_fill (cr);
+}
+
+void
 sugar_draw_entry (cairo_t *cr, SugarInfo *info)
 {
     SugarRectangle *pos = &info->pos;
