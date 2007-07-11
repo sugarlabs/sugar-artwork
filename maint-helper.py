@@ -20,6 +20,7 @@ import os
 import sys
 import re
 import datetime
+import subprocess
 
 source_exts = [ '.py', '.c', '.h', '.cpp' ]
 
@@ -50,14 +51,73 @@ maint-helper.py check-licenses       - check licenses in the source'
 def cmd_build_snapshot():
     [ name, version ] = get_name_and_version()
 
+    print 'Update git...'
+
+    retcode = subprocess.call(['git', 'pull'])
+    if retcode:
+        print 'ERROR - cannot pull from git'
+
     cmd = 'git-show-ref --hash=10 refs/heads/master'
     alphatag = os.popen(cmd).readline().strip()
 
     tarball = '%s-%s-git%s.tar.bz2' % (name, version, alphatag)
 
+    print 'Build %s...' % tarball
+
     os.spawnlp(os.P_WAIT, 'make', 'make', 'distcheck')
 
     os.rename('%s-%s.tar.bz2' % (name, version), tarball)
+
+    print 'Update NEWS.sugar...'
+
+    if os.environ.has_key('SUGAR_NEWS'):
+        sugar_news_path = os.environ['SUGAR_NEWS']
+        if os.path.isfile(sugar_news_path):
+            f = open(sugar_news_path, 'r')
+            sugar_news = f.read()
+            f.close()
+        else:
+            sugar_news = ''
+
+        [ name, version ] = get_name_and_version()
+        sugar_news += '%s - %s - %s\n\n' % (name, version, alphatag)
+
+        f = open('NEWS', 'r')
+        for line in f.readlines():
+            if len(line.strip()) > 0:
+                sugar_news += line
+            else:
+                break
+        f.close()
+
+        f = open(sugar_news_path, 'w')
+        f.write(sugar_news)
+        f.close()
+
+    print 'Update NEWS...'
+
+    f = open('NEWS', 'r')
+    news = f.read()
+    f.close()
+
+    news = 'Snapshot %s\n\n' % alphatag + news
+
+    f = open('NEWS', 'w')
+    f.write(news)
+    f.close()
+
+    print 'Committing to git...'
+
+    changelog = 'Snapshot %s.' % alphatag
+    retcode = subprocess.call(['git', 'commit', '-a', '-m % s' % changelog])
+    if retcode:
+        print 'ERROR - cannot commit to git'
+
+    retcode = subprocess.call(['git', 'push'])
+    if retcode:
+        print 'ERROR - cannot push to git'
+
+    print 'Done.'
 
 def check_licenses(path, license, missing):
     matchers = { 'LGPL' : 'GNU Lesser General Public',
