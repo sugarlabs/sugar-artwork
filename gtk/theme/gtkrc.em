@@ -460,6 +460,7 @@ widget_class "<GtkWindow>*"              style "window-child"
 #widget_class "*<SugarToolbox>*" style "toolbox-child"
 #widget_class "*<SugarToolbox>*<GtkEventBox>" style "toolbox"
 widget_class "*<SugarToolbox>*"        style "toolbox"
+widget_class "*<GtkToolbar>*"          style "toolbox"
 
 # SugarPalette
 widget_class "*<SugarPalette>"         style "palette"
