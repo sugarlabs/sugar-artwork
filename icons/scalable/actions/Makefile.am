@@ -31,12 +31,8 @@ icon_DATA =				\
 	go-next.svg			\
 	go-previous.svg			\
 	go-previous-mini.svg		\
-	insert-col.svg                  \
 	insert-image.svg		\
-	insert-row.svg                  \
 	insert-table.svg		\
-	remove-row.svg                  \
-	remove-col.svg			\
 	row-insert.svg			\
 	row-remove.svg			\
 	stop.svg			\
