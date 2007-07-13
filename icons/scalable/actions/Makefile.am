@@ -12,6 +12,7 @@ icon_DATA =				\
 	column-remove.svg		\
 	document-save.svg		\
 	edit-copy.svg			\
+	edit-paste.svg			\
 	edit-redo.svg			\
 	edit-undo.svg			\
 	format-columns-double.svg	\

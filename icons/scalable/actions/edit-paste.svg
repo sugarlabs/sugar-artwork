@@ -4,21 +4,17 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px"
 	 height="55px" viewBox="0 0 55 55" enable-background="new 0 0 55 55" xml:space="preserve">
 
-<g id="Copy" >
+<g id="Paste" >
 	<g display="inline">
-		<polygon fill="#B1B4B6" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			14.721,30.32 14.721,47.924 35.444,47.924 35.444,20.938 24.108,20.938 		"/>
-		<polyline fill="none" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			14.721,30.32 24.108,30.32 24.108,20.938 		"/>
-		<polygon fill="#041EAF" points="21.727,18.311 21.727,35.914 42.449,35.914 42.449,8.928 31.113,8.928 		"/>
+		<polygon fill="#041EAF" points="10.386,18.559 10.386,36.159 31.11,36.159 31.11,9.173 19.773,9.173 		"/>
 		<polygon fill="none" stroke="#00B700" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			21.727,18.311 21.727,35.914 42.449,35.914 42.449,8.928 31.113,8.928 		"/>
+			10.386,18.559 10.386,36.159 31.11,36.159 31.11,9.173 19.773,9.173 		"/>
 		<polyline fill="none" stroke="#00B700" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			21.727,18.311 31.113,18.311 31.113,8.928 		"/>
+			10.386,18.559 19.773,18.559 19.773,9.173 		"/>
 		
-			<line fill="none" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" x1="15.713" y1="6" x2="15.713" y2="18.164"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" x1="39.745" y1="47.248" x2="39.745" y2="35.084"/>
 		<polyline fill="none" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			10.583,12.083 15.713,6 20.843,12.083 		"/>
+			44.875,41.164 39.745,47.248 34.615,41.164 		"/>
 	</g>
 </g>
 
