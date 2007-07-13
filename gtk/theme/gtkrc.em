@@ -443,6 +443,28 @@ style "separatormenuitem"
 
 style "default-engine"
 {
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#FFFFFF"
+  fg[INSENSITIVE]   = "#747474"
+  bg[NORMAL]        = "#D3D3DD"
+  bg[ACTIVE]        = "#C1C1CC"
+  bg[PRELIGHT]      = "#E5E5F7"
+  bg[SELECTED]      = "#336699"
+  bg[INSENSITIVE]   = "#D3D3DD"
+  base[NORMAL]      = "#E5E5F7"
+  base[ACTIVE]      = "#808080"
+  base[PRELIGHT]    = "#E5E5F7"
+  base[SELECTED]    = "#336699"
+  base[INSENSITIVE] = "#E5E5F7"
+  text[NORMAL]      = "#000000"
+  text[ACTIVE]      = "#FFFFFF"
+  text[PRELIGHT]    = "#000000"
+  text[SELECTED]    = "#FFFFFF"
+  text[INSENSITIVE] = "#747474"
+
+
     engine "" {}
 }
 
