@@ -1,16 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
-	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
-	<!ENTITY stroke_color "#000000">
-]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="38.621" height="38.621" viewBox="-5 0 38.621 38.621"
-	 overflow="visible" enable-background="new 0 0 33.5 38.621" xml:space="preserve">
-<g>
-	<path d="M4.606,2.068C4.606,0.792,5.354,0,6.543,0C7.73,0,8.479,0.792,8.479,2.068V20.68c0,4.928,3.344,7.832,8.271,7.832
-		c4.929,0,8.272-2.904,8.272-7.832V2.068C25.022,0.792,25.771,0,26.959,0c1.188,0,1.936,0.792,1.936,2.068v17.116
-		c0,10.56-6.775,12.672-12.145,12.672c-5.367,0-12.144-2.112-12.144-12.672V2.068z" stroke="&stroke_color;" fill="&stroke_color;"/>
-</g>
-<line fill="none" stroke="&stroke_color;" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" x1="1.75" y1="36.871" x2="31.75" y2="36.871"/>
-</svg>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 55 54.696" height="54.696px" version="1.1" viewBox="0 0 55 54.696" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="format-text-underline">
+	
+		<text display="inline" fill="#FFFFFF" font-family="'BitstreamVeraSans-Roman'" font-size="40" text-decoration=" underline" transform="matrix(1 0 0 1 12.7363 41.5903)">U</text>
+</g></svg>
