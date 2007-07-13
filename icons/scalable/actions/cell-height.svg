@@ -1,0 +1,10 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 55 54.696" height="54.696px" version="1.1" viewBox="0 0 55 54.696" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="cell-height">
+	<g display="inline">
+		<rect fill="#808284" height="30" stroke="#FFFFFF" stroke-width="2.25" width="30" x="15.937" y="8.642"/>
+		<g>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2.25" x1="11.937" x2="4.875" y1="38.659" y2="38.659"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2.25" x1="4.875" x2="11.937" y1="8.208" y2="8.208"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2.25" x1="8.249" x2="8.249" y1="38.403" y2="7.824"/>
+		</g>
+	</g>
+</g></svg>

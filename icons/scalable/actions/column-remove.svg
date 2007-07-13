@@ -1,0 +1,13 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 55 54.696" height="54.696px" version="1.1" viewBox="0 0 55 54.696" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="column-remove">
+	<g display="inline">
+		<rect fill="#808284" height="36" stroke="#FFFFFF" stroke-width="2.25" width="8.004" x="31.871" y="15.848"/>
+		
+			<rect fill="none" height="36" stroke="#FFFFFF" stroke-dasharray="1,2" stroke-width="2.25" width="7.992" x="23.879" y="15.848"/>
+		<rect fill="#808284" height="36" stroke="#FFFFFF" stroke-width="2.25" width="8.004" x="15.875" y="15.848"/>
+		<g>
+			
+				<line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" x1="27.645" x2="39.808" y1="7.52" y2="7.52"/>
+			<polyline fill="none" points="     33.728,12.649 27.645,7.52 33.728,2.389    " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+		</g>
+	</g>
+</g></svg>
