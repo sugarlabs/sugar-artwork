@@ -440,6 +440,12 @@ style "separatormenuitem"
     xthickness = 0
 }
 
+
+style "default-engine"
+{
+    engine "" {}
+}
+
 ####################################################################
 # Default style, setting some generic options and style properties
 ####################################################################
@@ -520,3 +526,6 @@ widget_class "*<GtkProgressBar>" style "progressbar"
 
 
 
+# Use the default engine for mozilla stuff (just please no on
+# else put a GtkFixed into a GtkWindow)
+widget_class "GtkWindow.GtkFixed.*"  style "default-engine"
