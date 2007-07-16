@@ -468,6 +468,12 @@ style "default-engine"
     engine "" {}
 }
 
+style "mozilla-colors"
+{
+	base[NORMAL] = "#FFFFFF"
+	text[NORMAL] = "#000000"
+}
+
 ####################################################################
 # Default style, setting some generic options and style properties
 ####################################################################
@@ -551,3 +557,6 @@ widget_class "*<GtkProgressBar>" style "progressbar"
 # Use the default engine for mozilla stuff (just please no on
 # else put a GtkFixed into a GtkWindow)
 widget_class "GtkWindow.GtkFixed.*"  style "default-engine"
+
+# Mozilla gets the default colors from a GtkInvisible widget for whatever reason.
+widget_class "GtkInvisible"          style "mozilla-colors"
