@@ -34,9 +34,9 @@ icon_DATA =				\
 	go-previous-mini.svg		\
 	insert-image.svg		\
 	insert-table.svg		\
+	media-playback-stop.svg		\
 	row-insert.svg			\
 	row-remove.svg			\
-	stop.svg			\
 	view-refresh.svg		\
 	zoom-best-fit.svg		\
 	zoom-in.svg			\

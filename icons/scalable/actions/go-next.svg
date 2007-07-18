@@ -1,13 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
-	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
-]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="55" height="55" viewBox="-4.25 -4.25 55 55"
-	 overflow="visible" xml:space="preserve">
-<path fill="none" stroke="#FFFFFF" stroke-width="3.5" d="M23.252,44.754c-11.875,0-21.502-9.629-21.502-21.5
-	c0-11.875,9.627-21.504,21.502-21.504S44.75,11.379,44.75,23.254C44.75,35.125,35.127,44.754,23.252,44.754z"/>
-<polyline fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" points="20.328,32.075 28.484,23.915 
-	20.328,15.76 "/>
-</svg>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="go-next">
+	<g display="inline">
+		<path d="M27.623,50c12.428,0,22.502-10.076,22.502-22.502C50.125,15.076,40.051,5,27.623,5H5v45H27.623z" fill="#FFFFFF"/>
+		<g>
+			<polygon fill="#4C4D4F" points="20.75,16.706 35.858,27.133 20.75,37.555    "/>
+		</g>
+	</g>
+</g></svg>
