@@ -440,40 +440,6 @@ style "separatormenuitem"
     xthickness = 0
 }
 
-
-style "default-engine"
-{
-  fg[NORMAL]        = "#000000"
-  fg[ACTIVE]        = "#000000"
-  fg[PRELIGHT]      = "#000000"
-  fg[SELECTED]      = "#FFFFFF"
-  fg[INSENSITIVE]   = "#747474"
-  bg[NORMAL]        = "#D3D3DD"
-  bg[ACTIVE]        = "#C1C1CC"
-  bg[PRELIGHT]      = "#E5E5F7"
-  bg[SELECTED]      = "#336699"
-  bg[INSENSITIVE]   = "#D3D3DD"
-  base[NORMAL]      = "#E5E5F7"
-  base[ACTIVE]      = "#808080"
-  base[PRELIGHT]    = "#E5E5F7"
-  base[SELECTED]    = "#336699"
-  base[INSENSITIVE] = "#E5E5F7"
-  text[NORMAL]      = "#000000"
-  text[ACTIVE]      = "#FFFFFF"
-  text[PRELIGHT]    = "#000000"
-  text[SELECTED]    = "#FFFFFF"
-  text[INSENSITIVE] = "#747474"
-
-
-    engine "" {}
-}
-
-style "mozilla-colors"
-{
-	base[NORMAL] = "#FFFFFF"
-	text[NORMAL] = "#000000"
-}
-
 ####################################################################
 # Default style, setting some generic options and style properties
 ####################################################################
@@ -552,11 +518,3 @@ widget_class "*<GtkHScale>"      style "hscale"
 widget_class "*<GtkVScale>"      style "vscale"
 widget_class "*<GtkProgressBar>" style "progressbar"
 
-
-
-# Use the default engine for mozilla stuff (just please no on
-# else put a GtkFixed into a GtkWindow)
-widget_class "GtkWindow.GtkFixed.*"  style "default-engine"
-
-# Mozilla gets the default colors from a GtkInvisible widget for whatever reason.
-widget_class "GtkInvisible"          style "mozilla-colors"
