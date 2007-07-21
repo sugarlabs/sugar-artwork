@@ -1,3 +1,5 @@
+Snapshot b4d5062514
+
 * #2247 When the progressbar is empty use a stroke not a fill. (marco)
 * #2274 Fix the background color of scales on the toolbar. (marco)
 
