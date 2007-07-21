@@ -364,14 +364,18 @@ sugar_style_draw_box (GtkStyle       *style,
             sugar_draw_scrollbar_trough (cr, &range_info);
         } else { /* Progress bar trough */
             SugarInfo info;
+            gboolean fill;
+
             sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
             
             if (widget && !GTK_WIDGET_IS_SENSITIVE (widget))
                 info.state = GTK_STATE_INSENSITIVE;
+
+            fill = (gtk_progress_bar_get_fraction (GTK_PROGRESS_BAR (widget)) != 0.0);
             
             /* Needed because the trough and bar are cached in a buffer inside GtkProgress. */
             sugar_fill_background (cr, &info);
-            sugar_draw_progressbar_trough (cr, &info);
+            sugar_draw_progressbar_trough (cr, &info, fill);
         }
     } else if (DETAIL ("bar")) {
             SugarInfo info;

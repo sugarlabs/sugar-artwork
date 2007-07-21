@@ -470,9 +470,9 @@ sugar_draw_check_button (cairo_t *cr, SugarInfo *info)
 
 
 void
-sugar_draw_progressbar_trough (cairo_t *cr, SugarInfo *info)
+sugar_draw_progressbar_trough (cairo_t *cr, SugarInfo *info, gboolean fill)
 {
-    if (info->state == GTK_STATE_INSENSITIVE) {
+    if (info->state == GTK_STATE_INSENSITIVE || !fill) {
         gdk_cairo_set_source_color (cr, &info->style->fg[GTK_STATE_INSENSITIVE]);
         sugar_rounded_inner_stroke (cr, &info->pos, info->rc_style->line_width, info->max_radius, info->corners, info->cont_edges);
     } else {
