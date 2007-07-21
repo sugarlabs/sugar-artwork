@@ -236,6 +236,8 @@ style "scale"
 {
     GtkWidget::focus-line-width = 0
 
+    bg[NORMAL] = "#808080"
+
     # "square" slider (really round of course)
     # Same as indicator-size?
     GtkRange::slider-width = $scale_slider_width
