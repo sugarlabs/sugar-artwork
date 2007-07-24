@@ -38,8 +38,12 @@ icon_DATA =				\
 	row-insert.svg			\
 	row-remove.svg			\
 	view-refresh.svg		\
+	zoom-activity.svg 		\
 	zoom-best-fit.svg		\
+	zoom-friends.svg		\
+	zoom-home.svg			\
 	zoom-in.svg			\
+	zoom-mesh.svg			\
 	zoom-out.svg
 
 EXTRA_DIST = $(icon_DATA)
