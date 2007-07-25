@@ -40,11 +40,15 @@ icon_DATA =				\
 	system-search.svg		\
 	view-refresh.svg		\
 	zoom-activity.svg 		\
+	zoom-activity-mini.svg		\
 	zoom-best-fit.svg		\
 	zoom-friends.svg		\
 	zoom-home.svg			\
+	zoom-home-mini.svg		\
+	zoom-groups-mini.svg		\
 	zoom-in.svg			\
 	zoom-mesh.svg			\
+	zoom-neighborhood-mini.svg	\
 	zoom-out.svg
 
 EXTRA_DIST = $(icon_DATA)
