@@ -1,7 +1,6 @@
 [Icon Theme]
 _Name=OLPC
 _Comment=Default OLPC Theme
-Inherits=gnome
 
 Directories=16x16/stock/emoticons,scalable/stock,scalable/object,scalable/device,scalable/control,scalable/actions
 
