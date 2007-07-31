@@ -4,8 +4,8 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="51.562" height="24.435"
-	 viewBox="0 0 51.562 24.435" overflow="visible" enable-background="new 0 0 51.562 24.435" xml:space="preserve">
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="51.562" height="51.562"
+	 viewBox="0 -13.6 51.562 51.562" overflow="visible" enable-background="new 0 0 51.562 24.435" xml:space="preserve">
 <rect x="1.222" y="1.222" fill="#0000A0" width="40" height="21.991"/>
 <polygon fill="none" stroke="#4CC92D" stroke-width="2.4441" stroke-linecap="round" stroke-linejoin="round" points="1.222,23.213 
 	44.189,23.213 44.189,18.485 50.34,18.485 50.34,5.948 44.189,5.948 44.189,1.222 1.222,1.222 "/>

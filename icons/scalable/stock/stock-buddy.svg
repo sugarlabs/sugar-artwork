@@ -6,8 +6,8 @@
 	<!ENTITY stroke_color "#020202">
 	<!ENTITY fill_color "#B2B2B2">
 ]>
-<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="37.855" height="53.047"
-	 viewBox="0 0 37.855 53.047" overflow="visible" enable-background="new 0 0 37.855 53.047" xml:space="preserve">
+<svg  version="1.1" id="Icon" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="53.047" height="53.047"
+	 viewBox="-7.6 0 53.047 53.047" overflow="visible" enable-background="new 0 0 37.855 53.047" xml:space="preserve">
 <path fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" d="M24.787,34.124l10.1,10.1c0.752,0.75,1.217,1.785,1.217,2.932
 	c0,2.287-1.855,4.143-4.146,4.143c-1.145,0-2.178-0.463-2.932-1.211l-10.1-10.102l-10.1,10.1c-0.75,0.75-1.787,1.211-2.933,1.211
 	c-2.285,0-4.142-1.854-4.142-4.141c0-1.146,0.465-2.184,1.212-2.934l10.103-10.1L2.963,24.02c-0.747-0.749-1.212-1.785-1.212-2.93
