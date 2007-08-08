@@ -190,6 +190,37 @@ style "groupbox-palette-child"
     }
 }
 
+style "menu"
+{
+    color["bg_color"] = $black
+
+    fg[NORMAL]   = $white
+    fg[PRELIGHT] = $white
+    bg[NORMAL] = $button_grey
+
+    bg[INSENSITIVE] = $black
+    base[INSENSITIVE] = $black
+    
+    # The following colors are for the check and radio menu items
+    base[NORMAL]      = $white
+    base[PRELIGHT]    = $white
+    base[ACTIVE]      = $text_field_grey
+
+    text[PRELIGHT]    = $toolbar_grey
+    text[NORMAL]      = $toolbar_grey
+    text[ACTIVE]      = $toolbar_grey
+    
+    GtkMenu::horizontal-padding = 0
+    GtkMenu::vertical-padding   = 0
+
+    xthickness = 0
+    ythickness = 0
+    
+    engine "sugar" {
+        label_fg_color = $white
+    }
+}
+
 
 
 #########################################################
@@ -390,33 +421,6 @@ style "checkbutton"
 
 style "progressbar"
 {
-    xthickness = 0
-    ythickness = 0
-}
-
-style "menu"
-{
-    color["bg_color"] = $black
-
-    fg[NORMAL]   = $white
-    fg[PRELIGHT] = $white
-    bg[NORMAL] = $button_grey
-
-    bg[INSENSITIVE] = $black
-    base[INSENSITIVE] = $black
-    
-    # The following colors are for the check and radio menu items
-    base[NORMAL]      = $white
-    base[PRELIGHT]    = $white
-    base[ACTIVE]      = $text_field_grey
-
-    text[PRELIGHT]    = $toolbar_grey
-    text[NORMAL]      = $toolbar_grey
-    text[ACTIVE]      = $toolbar_grey
-    
-    GtkMenu::horizontal-padding = 0
-    GtkMenu::vertical-padding   = 0
-
     xthickness = 0
     ythickness = 0
 }
