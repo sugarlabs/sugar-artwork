@@ -200,6 +200,11 @@ style "menu-child"
 
     fg[NORMAL]   = $white
     fg[PRELIGHT] = $white
+    
+    # Work around bug #382646
+    text[NORMAL]   = $white
+    text[PRELIGHT] = $white
+
     bg[NORMAL] = $button_grey
 
     bg[INSENSITIVE] = $black
@@ -421,7 +426,18 @@ style "menuitem"
 
     bg[PRELIGHT] = $button_grey
 
-    # The following colors are for the check and radio menu items
+    text[PRELIGHT]    = $white
+    text[NORMAL]      = $white
+    text[ACTIVE]      = $white
+
+    GtkMenuItem::horizontal-padding = $line_width
+    xthickness = $(my_ceil(line_width * 2))
+    ythickness = $thickness
+}
+
+style "checkmenuitem"
+{
+    # This style is only there because of bug #382646 ...
     base[NORMAL]      = $white
     base[PRELIGHT]    = $white
     base[ACTIVE]      = $text_field_grey
@@ -429,11 +445,6 @@ style "menuitem"
     text[PRELIGHT]    = $toolbar_grey
     text[NORMAL]      = $toolbar_grey
     text[ACTIVE]      = $toolbar_grey
-    
-
-    GtkMenuItem::horizontal-padding = $line_width
-    xthickness = $(my_ceil(line_width * 2))
-    ythickness = $thickness
 }
 
 style "separatormenuitem"
@@ -499,6 +510,7 @@ widget_class "*<GtkToolButton>*"          style "toolbutton"
 widget_class "*<GtkMenuShell>"            style "menu"               # Why is this menu shell?
 widget_class "*<GtkMenuShell>.*"          style "menu-child"         # Why is this menu shell?
 widget_class "*<GtkMenuItem>*"            style "menuitem"
+widget_class "*<GtkCheckMenuItem>"        style "checkmenuitem"
 widget_class "*<GtkSeparatorMenuItem>*"   style "separatormenuitem"
 
 # Buttons and Combos
