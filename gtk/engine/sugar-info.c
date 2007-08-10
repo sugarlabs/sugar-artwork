@@ -106,7 +106,7 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 
                 if (DETAIL ("trough-lower") || DETAIL ("trough-upper")) {
                     /* If there is no real scale, assume that it is not inverted. */
-                    if (info->widget && GTK_IS_RANGE (info->widget) && gtk_range_get_inverted (info->widget))
+                    if (info->widget && GTK_IS_RANGE (info->widget) && gtk_range_get_inverted (GTK_RANGE (info->widget)))
                         inverted = TRUE;
                     
                     if (DETAIL ("trough-upper"))
@@ -130,7 +130,7 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 
                 if (DETAIL ("trough-lower") || DETAIL ("trough-upper")) {
                     /* If there is no real scale, assume that it is not inverted. */
-                    if (info->widget && GTK_IS_RANGE (info->widget) && gtk_range_get_inverted (info->widget))
+                    if (info->widget && GTK_IS_RANGE (info->widget) && gtk_range_get_inverted (GTK_RANGE (info->widget)))
                         inverted = TRUE;
                     
                     if (DETAIL ("trough-upper"))
@@ -191,6 +191,14 @@ sugar_fill_generic_info (SugarInfo     *info,
 
     info->ltr = sugar_widget_is_ltr (widget);
 
+    /* nasty little special cases ... */
+    if (!DETAIL ("palette-invoker")) {
+        info->pos.x += info->rc_style->fake_padding;
+        info->pos.y += info->rc_style->fake_padding;
+        info->pos.width -= 2*info->rc_style->fake_padding;
+        info->pos.height -= 2*info->rc_style->fake_padding;
+    }
+
     /* Ignore the prelight state in some cases. */
     if (info->state == GTK_STATE_PRELIGHT) {
         if (DETAIL ("button") || DETAIL ("buttondefault") ||
@@ -203,3 +211,43 @@ sugar_fill_generic_info (SugarInfo     *info,
         }
     }
 }
+
+void
+sugar_clip_gap (cairo_t *cr,
+                SugarInfo *info,
+                SugarGapInfo *gap,
+                gdouble padding,
+                gdouble size)
+{
+    SugarRectangle *pos = &info->pos;
+
+    /* Don't clip anything, if there is no gap. */
+    if (gap == NULL)
+        return;
+
+    /* Nothing clipped away. */
+    if (2*padding >= gap->size)
+        return;
+
+    /* The whole area, then subtract the correct region. */
+    cairo_rectangle (cr, pos->x, pos->y, pos->width, pos->height);
+    cairo_set_fill_rule (cr, CAIRO_FILL_RULE_EVEN_ODD);
+
+    /* This assumes that there is enough space for size ... */
+    switch (gap->side) {
+        case GTK_POS_TOP:
+            cairo_rectangle (cr, pos->x + gap->start + padding, pos->y, gap->size - 2*padding, size);
+            break;
+        case GTK_POS_BOTTOM:
+            cairo_rectangle (cr, pos->x + gap->start + padding, pos->y + pos->height - size, gap->size - 2*padding, size);
+            break;
+        case GTK_POS_LEFT:
+            cairo_rectangle (cr, pos->x, pos->y + gap->start + padding, size, gap->size - 2*padding);
+            break;
+        case GTK_POS_RIGHT:
+            cairo_rectangle (cr, pos->x + pos->width - size, pos->y + gap->start + padding, size, gap->size - 2*padding);
+            break;
+    }
+    cairo_clip (cr);
+}
+

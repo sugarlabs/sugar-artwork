@@ -19,6 +19,7 @@ if theme == "sugar-xo":
     subcell_size = 15
     bullet_size = 9.5
     font_height = 24
+    default_padding = 6
 else: # About 50% smaller
     xo = False
     line_width = 1.125
@@ -26,6 +27,7 @@ else: # About 50% smaller
     subcell_size = 7
     bullet_size = 5
     font_height = 12
+    default_padding = 3
 
 
 radio_size = my_floor(subcell_size + bullet_size + line_width)
@@ -145,17 +147,6 @@ style "window-child"
     }
 }
 
-style "palette"
-{
-    bg[NORMAL] = $black
-}
-
-style "palette-child"
-{
-    fg[NORMAL] = $white
-}
-
-
 style "groupbox-panel"
 {
     bg[NORMAL] = $selection_grey
@@ -192,6 +183,19 @@ style "groupbox-palette-child"
 
 style "menu"
 {
+    bg[NORMAL] = $black
+    bg[ACTIVE] = $button_grey
+
+    GtkMenu::horizontal-padding = 0
+    GtkMenu::vertical-padding   = 0
+
+    xthickness = 0
+    ythickness = 0
+}
+
+# Can this all be moved in the menuitem style?
+style "menu-child"
+{
     color["bg_color"] = $black
 
     fg[NORMAL]   = $white
@@ -200,21 +204,6 @@ style "menu"
 
     bg[INSENSITIVE] = $black
     base[INSENSITIVE] = $black
-    
-    # The following colors are for the check and radio menu items
-    base[NORMAL]      = $white
-    base[PRELIGHT]    = $white
-    base[ACTIVE]      = $text_field_grey
-
-    text[PRELIGHT]    = $toolbar_grey
-    text[NORMAL]      = $toolbar_grey
-    text[ACTIVE]      = $toolbar_grey
-    
-    GtkMenu::horizontal-padding = 0
-    GtkMenu::vertical-padding   = 0
-
-    xthickness = 0
-    ythickness = 0
     
     engine "sugar" {
         label_fg_color = $white
@@ -347,6 +336,7 @@ style "toolbutton"
 
     engine "sugar" {
         max_radius = 5.0
+	fake_padding = $default_padding
     }
 }
 
@@ -431,9 +421,15 @@ style "menuitem"
 
     bg[PRELIGHT] = $button_grey
 
-    # For check/radio menu items
-    text[NORMAL] = $white
-    text[PRELIGHT] = $white
+    # The following colors are for the check and radio menu items
+    base[NORMAL]      = $white
+    base[PRELIGHT]    = $white
+    base[ACTIVE]      = $text_field_grey
+
+    text[PRELIGHT]    = $toolbar_grey
+    text[NORMAL]      = $toolbar_grey
+    text[ACTIVE]      = $toolbar_grey
+    
 
     GtkMenuItem::horizontal-padding = $line_width
     xthickness = $(my_ceil(line_width * 2))
@@ -469,8 +465,8 @@ widget_class "*<SugarToolbox>*"        style "toolbox"
 widget_class "*<GtkToolbar>*"          style "toolbox"
 
 # SugarPalette
-widget_class "*<SugarPalette>"         style "palette"
-widget_class "*<SugarPalette>*"        style "palette-child"
+widget_class "<SugarPalette>"          style "menu"
+widget_class "<SugarPalette>.*"        style "menu-child"
 
 # SugarFrameWindow
 widget_class "*<SugarFrameWindow>*"    style "frame"
@@ -483,8 +479,8 @@ widget_class "*<SugarPanel>*"          style "panel"
 widget_class "<GtkWindow>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-panel"
 widget_class "<GtkWindow>*<SugarGroupBox>*"   style "groupbox-panel-child"
 
-widget_class "*<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
-widget_class "*<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
+widget_class "<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
+widget_class "<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
 
 
 
@@ -500,7 +496,8 @@ widget_class "*<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
 widget_class "*<GtkToolButton>*"          style "toolbutton"
 
 # Menu
-widget_class "*<GtkMenuShell>*"           style "menu"               # Why is this menu shell?
+widget_class "*<GtkMenuShell>"            style "menu"               # Why is this menu shell?
+widget_class "*<GtkMenuShell>.*"          style "menu-child"         # Why is this menu shell?
 widget_class "*<GtkMenuItem>*"            style "menuitem"
 widget_class "*<GtkSeparatorMenuItem>*"   style "separatormenuitem"
 

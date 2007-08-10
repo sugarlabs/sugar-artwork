@@ -398,21 +398,71 @@ sugar_style_draw_box (GtkStyle       *style,
             gdk_cairo_set_source_color (cr, &style->bg[state_type]);
             cairo_rectangle (cr, x, y, width, height);
             cairo_fill (cr);
-    } else if (DETAIL ("menu")) {
-        gdouble line_width = SUGAR_RC_STYLE (style->rc_style)->line_width;
+    } else if (DETAIL ("menu") || DETAIL ("palette")) {
+        SugarInfo info;
 
-        gdk_cairo_set_source_color (cr, &style->bg[GTK_STATE_INSENSITIVE]);
-        cairo_rectangle (cr, x, y, width, height);
-        cairo_fill (cr);
+        sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+        sugar_draw_menu (cr, &info, NULL);
+    } else if (DETAIL ("palette-invoker")) {
+        SugarInfo info;
 
-        gdk_cairo_set_source_color (cr, &style->bg[GTK_STATE_NORMAL]);
-        cairo_set_line_width (cr, line_width);
-        cairo_rectangle (cr, x + line_width / 2, y + line_width / 2,
-                         width - line_width, height - line_width);
-        cairo_stroke (cr);
+        sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+
+        sugar_draw_palette_invoker (cr, &info, NULL);
     } else {
         parent_class->draw_box (style, window, state_type, shadow_type, area, widget, detail, x, y, width, height);
     }
+    cairo_destroy (cr);
+}
+
+static void
+sugar_style_draw_box_gap (GtkStyle       *style,
+                          GdkWindow      *window,
+                          GtkStateType    state_type,
+                          GtkShadowType   shadow_type,
+                          GdkRectangle   *area,
+                          GtkWidget      *widget,
+                          const gchar    *detail,
+                          gint            x,
+                          gint            y,
+                          gint            width,
+                          gint            height,
+                          GtkPositionType gap_side,
+                          gint            gap_x,
+                          gint            gap_width)
+{
+    cairo_t *cr;
+
+    SANITIZE_SIZE
+    
+    cr = sugar_cairo_create (window, area);
+
+    if (DETAIL ("palette-invoker")) {
+        SugarInfo info;
+        SugarGapInfo gap;
+
+        sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+        
+        gap.side = gap_side;
+        gap.start = gap_x;
+        gap.size = gap_width;
+
+        sugar_draw_palette_invoker (cr, &info, &gap);
+    } else if (DETAIL ("palette")) {
+        SugarInfo info;
+        SugarGapInfo gap;
+
+        sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+        
+        gap.side = gap_side;
+        gap.start = gap_x;
+        gap.size = gap_width;
+
+        sugar_draw_menu (cr, &info, &gap);
+    } else {
+        parent_class->draw_box_gap (style, window, state_type, shadow_type, area, widget, detail, x, y, width, height, gap_side, gap_x, gap_width);
+    }
+
     cairo_destroy (cr);
 }
 
@@ -680,6 +730,7 @@ sugar_style_class_init (SugarStyleClass *klass)
     style_class->draw_vline = sugar_style_draw_vline;
     style_class->draw_extension = sugar_style_draw_extension;
     style_class->draw_box = sugar_style_draw_box;
+    style_class->draw_box_gap = sugar_style_draw_box_gap;
     style_class->draw_flat_box = sugar_style_draw_flat_box;
     style_class->draw_shadow = sugar_style_draw_shadow;
     style_class->draw_focus = sugar_style_draw_focus;

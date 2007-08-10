@@ -21,6 +21,7 @@
 #define __SUGAR_INFO_H
 
 #include <gtk/gtkwidget.h>
+#include <cairo.h>
 #include "sugar-style.h"
 #include "sugar-rc-style.h"
 
@@ -49,6 +50,12 @@ typedef struct {
     gdouble width;
     gdouble height;
 } SugarRectangle;
+
+typedef struct {
+    GtkPositionType side;
+    gdouble start;
+    gdouble size;
+} SugarGapInfo;
 
 typedef struct {
     GtkWidget *widget;
@@ -81,5 +88,6 @@ G_GNUC_INTERNAL void sugar_info_get_style_property (SugarInfo *info, const gchar
 G_GNUC_INTERNAL void sugar_fill_generic_info (SugarInfo *info, GtkStyle *style, GtkStateType state_type, GtkShadowType shadow_type, GtkWidget *widget, const gchar *detail, gint x, gint y, gint width, gint height);
 G_GNUC_INTERNAL void sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough);
 G_GNUC_INTERNAL void sugar_remove_corners (SugarCorners *corners, SugarEdges edge);
+G_GNUC_INTERNAL void sugar_clip_gap (cairo_t *cr, SugarInfo *info, SugarGapInfo *gap, gdouble padding, gdouble size);
 
 #endif /* __SUGAR_INFO_H */

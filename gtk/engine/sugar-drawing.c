@@ -513,3 +513,60 @@ sugar_draw_progressbar_bar (cairo_t *cr, SugarInfo *info, GtkProgressBarOrientat
     }
 }
 
+
+void
+sugar_draw_menu (cairo_t *cr,
+                 SugarInfo *info,
+                 SugarGapInfo *gap)
+{
+    SugarRectangle *pos = &info->pos;
+    gdouble line_width = info->rc_style->line_width;
+
+    gdk_cairo_set_source_color (cr, &info->style->bg[GTK_STATE_NORMAL]);
+    sugar_cairo_rectangle (cr, pos);
+    
+    cairo_fill (cr);
+
+    /* Draw the border, clipped if the gap is set (ie. for a palette) */
+    cairo_save (cr);
+
+    /* Add 1.0 to prevent visual artifacts, no idea why this happens. */
+    sugar_clip_gap (cr, info, gap, line_width, line_width + 1.0);
+    gdk_cairo_set_source_color (cr, &info->style->bg[GTK_STATE_ACTIVE]);
+    cairo_set_line_width (cr, line_width);
+
+    sugar_rounded_inner_stroke (cr, pos, line_width, 0, info->corners, info->cont_edges);
+
+    cairo_restore (cr);
+}
+
+void
+sugar_draw_palette_invoker (cairo_t *cr,
+                            SugarInfo *info,
+                            SugarGapInfo *gap)
+{
+    SugarRectangle *pos = &info->pos;
+    gdouble line_width = info->rc_style->line_width;
+
+    gdk_cairo_set_source_color (cr, &info->style->bg[GTK_STATE_PRELIGHT]);
+    sugar_cairo_rectangle (cr, pos);
+    
+    cairo_fill (cr);
+
+    if (info->shadow != GTK_SHADOW_NONE) {
+        /* Draw an outline if there is a shadow. */
+        cairo_save (cr);
+
+        /* Add 1.0 to prevent visual artifacts, no idea why this happens. */
+        sugar_clip_gap (cr, info, gap, line_width, line_width + 1.0);
+        /* WHAT COLOR TO USE HERE? */
+        gdk_cairo_set_source_color (cr, &info->style->bg[GTK_STATE_ACTIVE]);
+        cairo_set_line_width (cr, line_width);
+
+        sugar_rounded_inner_stroke (cr, pos, line_width, 0, info->corners, info->cont_edges);
+
+        cairo_restore (cr);
+    }
+}
+
+
