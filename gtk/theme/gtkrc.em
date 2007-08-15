@@ -334,6 +334,7 @@ style "toolbutton"
 
     bg[PRELIGHT] = $black
     bg[ACTIVE] = $button_grey
+    bg[NORMAL] = $black
 
     fg[NORMAL] = $white
     fg[ACTIVE] = $white
@@ -503,9 +504,6 @@ widget_class "<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
 # right. An alternative would be to lower the priority of the
 # background matches (which need widget_class) to eg. "application"
 
-# Toolbar
-widget_class "*<GtkToolButton>*"          style "toolbutton"
-
 # Menu
 widget_class "*<GtkMenuShell>"            style "menu"               # Why is this menu shell?
 widget_class "*<GtkMenuShell>.*"          style "menu-child"         # Why is this menu shell?
@@ -533,3 +531,5 @@ widget_class "*<GtkHScale>"      style "hscale"
 widget_class "*<GtkVScale>"      style "vscale"
 widget_class "*<GtkProgressBar>" style "progressbar"
 
+# Toolbar
+widget_class "*<GtkToolButton>*"          style "toolbutton"
