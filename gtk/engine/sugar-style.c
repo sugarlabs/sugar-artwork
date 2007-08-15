@@ -309,6 +309,10 @@ sugar_style_draw_box (GtkStyle       *style,
             sugar_remove_corners (&info.corners, info.cont_edges);
         }
 
+        if (GTK_IS_TOOL_BUTTON(widget->parent) && state_type == GTK_STATE_PRELIGHT) {
+            info.corners = 0;
+        }
+
         if (DETAIL ("buttondefault"))
             sugar_draw_button_default (cr, &info);
         else
