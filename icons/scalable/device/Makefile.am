@@ -2,24 +2,27 @@ iconsize=scalable
 category=device
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
-icon_DATA =					\
-	device-battery-000.svg			\
-	device-battery-020.svg			\
-	device-battery-040.svg			\
-	device-battery-060.svg			\
-	device-battery-080.svg			\
-	device-battery-100.svg			\
-	device-battery.svg			\
-	device-network-mesh.svg			\
-	device-network-wireless-000.svg		\
-	device-network-wireless-020.svg		\
-	device-network-wireless-040.svg		\
-	device-network-wireless-060.svg		\
-	device-network-wireless-080.svg		\
-	device-network-wireless-100.svg		\
-	device-network-wireless.svg		\
-	media-flash-sd-mmc.svg			\
-	media-flash-usb.svg			\
-	network-wired.svg
+icon_DATA =				\
+	battery-000.svg			\
+	battery-010.svg			\
+	battery-020.svg			\
+	battery-030.svg			\
+	battery-040.svg			\
+	battery-050.svg			\
+	battery-060.svg			\
+	battery-070.svg			\
+	battery-080.svg			\
+	battery-090.svg			\
+	battery-100.svg			\
+	network-mesh.svg		\
+	network-wired.svg		\
+	network-wireless-000.svg	\
+	network-wireless-020.svg	\
+	network-wireless-040.svg	\
+	network-wireless-060.svg	\
+	network-wireless-080.svg	\
+	network-wireless-100.svg	\
+	media-flash-sd-mmc.svg		\
+	media-flash-usb.svg
 
 EXTRA_DIST = $(icon_DATA)
