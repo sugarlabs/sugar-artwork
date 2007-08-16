@@ -1,1 +1,1 @@
-SUBDIRS = actions control device object stock
+SUBDIRS = actions control device object status

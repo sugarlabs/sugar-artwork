@@ -7,6 +7,7 @@ icon_DATA =				\
 	object-image.svg		\
 	object-link.svg			\
 	object-squeak-project.svg	\
-	object-text.svg
+	object-text.svg			\
+	xo.svg
 
 EXTRA_DIST = $(icon_DATA)

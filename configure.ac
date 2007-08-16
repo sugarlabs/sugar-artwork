@@ -39,7 +39,7 @@ icons/scalable/Makefile
 icons/scalable/actions/Makefile
 icons/scalable/control/Makefile
 icons/scalable/device/Makefile
-icons/scalable/stock/Makefile
+icons/scalable/status/Makefile
 icons/scalable/object/Makefile
 gtk/Makefile
 gtk/engine/Makefile
