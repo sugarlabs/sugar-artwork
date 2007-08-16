@@ -2,12 +2,11 @@ iconsize=scalable
 category=object
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
-icon_DATA =				\
-	object-generic.svg		\
-	object-image.svg		\
-	object-link.svg			\
-	object-squeak-project.svg	\
-	object-text.svg			\
+icon_DATA =			\
+	unknown-object.svg	\
+	image.svg		\
+	squeak-project.svg	\
+	text.svg		\
 	xo.svg
 
 EXTRA_DIST = $(icon_DATA)
