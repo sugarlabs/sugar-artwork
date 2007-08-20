@@ -42,6 +42,5 @@ gtk/Makefile
 gtk/engine/Makefile
 gtk/theme/Makefile
 matchbox/Makefile
-test/Makefile
 po/Makefile.in
 ])
