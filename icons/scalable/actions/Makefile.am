@@ -40,6 +40,7 @@ icon_DATA =				\
 	media-playback-stop.svg		\
 	row-insert.svg			\
 	row-remove.svg			\
+	stop.svg			\
 	system-search.svg		\
 	view-refresh.svg		\
 	zoom-activity.svg 		\

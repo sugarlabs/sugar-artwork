@@ -32,9 +32,6 @@ cursor/Makefile
 cursor/cursorthemegen/Makefile
 cursor/sugar/Makefile
 icons/Makefile
-icons/16x16/Makefile
-icons/16x16/stock/Makefile
-icons/16x16/stock/emoticons/Makefile
 icons/scalable/Makefile
 icons/scalable/actions/Makefile
 icons/scalable/control/Makefile

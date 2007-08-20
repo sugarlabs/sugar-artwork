@@ -2,12 +2,7 @@
 _Name=OLPC
 _Comment=Default OLPC Theme
 
-Directories=16x16/stock/emoticons,scalable/stock,scalable/object,scalable/device,scalable/control,scalable/actions
-
-[16x16/stock/emoticons]
-Size=16
-Context=Stock
-Type=Fixed
+Directories=scalable/stock,scalable/object,scalable/device,scalable/control,scalable/actions
 
 [scalable/actions]
 Size=55
