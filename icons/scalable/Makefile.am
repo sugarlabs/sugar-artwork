@@ -1,1 +1,1 @@
-SUBDIRS = actions control device object status
+SUBDIRS = actions control device mimetypes status

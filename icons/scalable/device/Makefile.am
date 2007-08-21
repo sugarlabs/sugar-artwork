@@ -14,6 +14,7 @@ icon_DATA =				\
 	battery-080.svg			\
 	battery-090.svg			\
 	battery-100.svg			\
+	computer-xo.svg			\
 	network-mesh.svg		\
 	network-wired.svg		\
 	network-wireless-000.svg	\
