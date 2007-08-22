@@ -19,7 +19,7 @@ if theme == "sugar-xo":
     subcell_size = 15
     bullet_size = 9.5
     font_height = 24
-    default_padding = 6
+    default_padding = 7
 else: # About 50% smaller
     xo = False
     line_width = 1.125
