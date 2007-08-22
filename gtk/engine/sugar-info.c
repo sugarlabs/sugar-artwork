@@ -192,7 +192,7 @@ sugar_fill_generic_info (SugarInfo     *info,
     info->ltr = sugar_widget_is_ltr (widget);
 
     /* nasty little special cases ... */
-    if (!DETAIL ("palette-invoker")) {
+    if (!DETAIL ("palette-invoker") && !DETAIL ("toolbutton-prelight")) {
         info->pos.x += info->rc_style->fake_padding;
         info->pos.y += info->rc_style->fake_padding;
         info->pos.width -= 2*info->rc_style->fake_padding;
@@ -204,10 +204,21 @@ sugar_fill_generic_info (SugarInfo     *info,
         if (DETAIL ("button") || DETAIL ("buttondefault") ||
             DETAIL ("spinbutton_down") || DETAIL ("spinbutton_up")) {
 
-            if (info->shadow == GTK_SHADOW_IN)
+            if (info->shadow == GTK_SHADOW_IN) {
                 info->state = GTK_STATE_ACTIVE;
-            else
+            } else {
                 info->state = GTK_STATE_NORMAL;
+
+                /* Set the shadow to NONE if the normal state is invisible. */
+                if (widget && GTK_IS_BUTTON (widget)) {
+                    GtkReliefStyle relief;
+
+                    relief = gtk_button_get_relief (GTK_BUTTON (widget));
+
+                    if (relief == GTK_RELIEF_NONE)
+                        info->shadow = GTK_SHADOW_NONE;
+                }
+            }
         }
     }
 }

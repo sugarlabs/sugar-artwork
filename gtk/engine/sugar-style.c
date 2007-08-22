@@ -304,13 +304,16 @@ sugar_style_draw_box (GtkStyle       *style,
         SugarInfo info;
         sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
 
+        /* Ignore shadow of NONE (happens for prelighted toolbuttons.
+         * The prelight is handeled separately. */
+        if (info.shadow == GTK_SHADOW_NONE) {
+            cairo_destroy (cr);
+            return;
+        }
+
         if (HINT ("comboboxentry")) {
             info.cont_edges = info.ltr ? EDGE_LEFT : EDGE_RIGHT;
             sugar_remove_corners (&info.corners, info.cont_edges);
-        }
-
-        if (widget && GTK_IS_TOOL_BUTTON(widget->parent) && state_type == GTK_STATE_PRELIGHT) {
-            info.corners = 0;
         }
 
         if (DETAIL ("buttondefault"))
@@ -407,7 +410,7 @@ sugar_style_draw_box (GtkStyle       *style,
 
         sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
         sugar_draw_menu (cr, &info, NULL);
-    } else if (DETAIL ("palette-invoker")) {
+    } else if (DETAIL ("palette-invoker") || DETAIL ("toolbutton-prelight")) {
         SugarInfo info;
 
         sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
