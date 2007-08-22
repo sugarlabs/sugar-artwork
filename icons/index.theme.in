@@ -2,20 +2,13 @@
 _Name=OLPC
 _Comment=Default OLPC Theme
 
-Directories=scalable/stock,scalable/mimetypes,scalable/device,scalable/control,scalable/actions
+Directories=scalable/mimetypes,scalable/device,scalable/control,scalable/actions,scalable/status
 
 [scalable/actions]
 Size=55
 MinSize=32
 MaxSize=256
 Context=Actions
-Type=Scalable
-
-[scalable/stock]
-Size=50
-MinSize=32
-MaxSize=256
-Context=Stock
 Type=Scalable
 
 [scalable/mimetypes]
@@ -38,3 +31,11 @@ MinSize=32
 MaxSize=256
 Context=Control
 Type=Scalable
+
+[scalable/status]
+Size=50
+MinSize=32
+MaxSize=256
+Context=Status
+Type=Scalable
+
