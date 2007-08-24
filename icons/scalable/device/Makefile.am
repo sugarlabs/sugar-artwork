@@ -3,6 +3,10 @@ category=device
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
+	badge-busy.svg			\
+	badge-locked.svg		\
+	badge-outofrange.svg		\
+	badge-star.svg			\
 	battery-000.svg			\
 	battery-010.svg			\
 	battery-020.svg			\
