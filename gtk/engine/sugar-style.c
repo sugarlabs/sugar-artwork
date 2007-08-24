@@ -558,7 +558,8 @@ sugar_style_draw_shadow (GtkStyle       *style,
 
         gdk_cairo_set_source_color (cr, &style->bg[state_type]);
         cairo_set_line_width (cr, line_width);
-        cairo_rectangle (cr, x + line_width / 2.0, y + line_width / 2.9, width - line_width, height - line_width);
+        cairo_rectangle (cr, x + line_width / 2.0, y + line_width / 2.0, width - line_width, height - line_width);
+        cairo_stroke (cr);
     }
     
     cairo_destroy (cr);    
