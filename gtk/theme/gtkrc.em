@@ -226,7 +226,7 @@ style "scrollbar"
     GtkScrollbar::slider-width = $subcell_size
     GtkScrollbar::trough-border = 0
     GtkScrollbar::stepper-spacing = 0
-    GtkScrollbar::min-slider-length = ${3*subcell_size}
+    GtkScrollbar::min-slider-length = $(3*subcell_size)
     GtkScrollbar::has-forward-stepper = 0
     GtkScrollbar::has-backward-stepper = 0
     GtkScrollbar::has-secondary-forward-stepper = 0
