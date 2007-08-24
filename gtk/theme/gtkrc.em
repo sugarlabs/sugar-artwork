@@ -14,7 +14,7 @@ def my_ceil(num):
 # These sizes need to be sanity checked ...
 if theme == "sugar-xo":
     xo = True
-    line_width = 2.25       # 2.25
+    line_width = 2.0        # 2.25px, rounded down
     thick_line_width = 3.5  # 3.5
     subcell_size = 15
     bullet_size = 9.5
@@ -22,7 +22,7 @@ if theme == "sugar-xo":
     default_padding = 7
 else: # About 50% smaller
     xo = False
-    line_width = 1.125
+    line_width = 1.0
     thick_line_width = 1.75
     subcell_size = 7
     bullet_size = 5
@@ -223,10 +223,10 @@ style "menu-child"
 
 style "scrollbar"
 {
-    GtkScrollbar::slider-width = 16    # ?
+    GtkScrollbar::slider-width = $subcell_size
     GtkScrollbar::trough-border = 0
     GtkScrollbar::stepper-spacing = 0
-    GtkScrollbar::min-slider-length = 30    # ?
+    GtkScrollbar::min-slider-length = $(3*subcell_size)
     GtkScrollbar::has-forward-stepper = 0
     GtkScrollbar::has-backward-stepper = 0
     GtkScrollbar::has-secondary-forward-stepper = 0
@@ -364,14 +364,16 @@ style "panel"
 
 style "entry"
 {
+    ${ entry_thickness = my_ceil(0.3 * (subcell_size*3.0/2.0 - thickness) + thickness) }
+
     # small inner border and a large x/ythickness for entries
     # to reduce the number of hacks needed :-)
-    xthickness = $(thickness*3)
-    ythickness = $(thickness*3)
+    xthickness = $entry_thickness
+    ythickness = $entry_thickness
 
     # This tries to get a height of exactly 45 pixel for the entry.
-    GtkEntry::inner-border = { $(max(subcell_size - thickness*3, 0)), $(max(subcell_size - thickness*3, 0)),
-                               $(max(my_floor((3*subcell_size - font_height - thickness*3*2)/2),0)), $(max(my_ceil((3*subcell_size - font_height - thickness*3*2)/2), 0)) }
+    GtkEntry::inner-border = { $(max(subcell_size - entry_thickness, 0)), $(max(subcell_size - entry_thickness, 0)),
+                               $(max(my_floor((3*subcell_size - font_height - entry_thickness*2)/2),0)), $(max(my_ceil((3*subcell_size - font_height - entry_thickness*2)/2), 0)) }
 
     GtkWidget::focus-line-width = 0
 }
