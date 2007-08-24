@@ -221,6 +221,14 @@ style "menu-child"
 #########################################################
 
 
+style "textview"
+{
+    # We always use white here
+    text[NORMAL]      = $black
+    
+    GtkTextView::interior-focus = 1
+}
+
 style "scrollbar"
 {
     GtkScrollbar::slider-width = $subcell_size
@@ -523,6 +531,7 @@ widget_class "*<GtkCheckButton>*"      style "checkbutton"
 # Entries
 widget_class "*<GtkEntry>"       style "entry"
 widget_class "*<GtkSpinButton>"  style "spinbutton"
+widget_class "*<GtkTextView>"    style "textview"
 
 
 # Misc widgets
