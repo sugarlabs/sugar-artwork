@@ -252,7 +252,6 @@ style "hscrollbar" = "scrollbar"
 {
     engine "sugar" {
         hint = "hscrollbar"
-        # Rounded, not floating point value. maybe change this?
         scrollbar_border = $thickness
     }
 }
@@ -262,6 +261,32 @@ style "vscrollbar" = "scrollbar"
     engine "sugar" {
         hint = "vscrollbar"
         scrollbar_border = $thickness
+    }
+}
+
+style "hscrollbar-scrolled-window"
+{
+    GtkScrollbar::slider-width = $(subcell_size - thickness)
+    GtkScrollbar::stepper-spacing = $thickness
+    GtkScrollbar::has-forward-stepper = 1
+    GtkScrollbar::has-backward-stepper = 1
+    GtkScrollbar::stepper-size = 0
+
+    engine "sugar" {
+        hint = "hscrollbar-scrolled-window"
+    }
+}
+
+style "vscrollbar-scrolled-window"
+{
+    GtkScrollbar::slider-width = $(subcell_size - thickness)
+    GtkScrollbar::stepper-spacing = $thickness
+    GtkScrollbar::has-forward-stepper = 1
+    GtkScrollbar::has-backward-stepper = 1
+    GtkScrollbar::stepper-size = 0
+
+    engine "sugar" {
+        hint = "vscrollbar-scrolled-window"
     }
 }
 
@@ -541,6 +566,10 @@ widget_class "*<GtkVScrollbar>"  style "vscrollbar"
 widget_class "*<GtkHScale>"      style "hscale"
 widget_class "*<GtkVScale>"      style "vscale"
 widget_class "*<GtkProgressBar>" style "progressbar"
+
+# Scrolled window scrollbars
+widget_class "*<GtkScrolledWindow>.<GtkVScrollbar>" style "vscrollbar-scrolled-window"
+widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-window"
 
 # Toolbar
 widget_class "*<GtkToolButton>*"          style "toolbutton"
