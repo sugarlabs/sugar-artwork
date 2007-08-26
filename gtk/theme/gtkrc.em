@@ -224,7 +224,7 @@ style "menu-child"
 style "textview"
 {
     # We always use white here
-    text[NORMAL]      = $black
+    base[NORMAL]      = $white
     
     GtkTextView::interior-focus = 1
 }
