@@ -189,8 +189,8 @@ style "menu"
     GtkMenu::horizontal-padding = 0
     GtkMenu::vertical-padding   = 0
 
-    xthickness = 0
-    ythickness = 0
+    xthickness = $thickness
+    ythickness = $thickness
 }
 
 # Can this all be moved in the menuitem style?
