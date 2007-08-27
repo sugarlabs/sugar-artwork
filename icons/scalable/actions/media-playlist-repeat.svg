@@ -1,0 +1,9 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-playlist-repeat">
+	<g display="inline">
+		<polyline fill="none" points="    30.782,26.488 22.97,19.898 30.782,13.309   " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.9867"/>
+		<path d="M22.97,19.898h15    c4.693,0,8.533,3.841,8.533,8.534s-3.84,8.533-8.533,8.533h-15" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2.9867"/>
+		<g>
+			<path d="M22.97,37.031h-6.467     c-4.693,0-8.533-3.841-8.533-8.534s3.84-8.533,8.533-8.533h0.549" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2.9867"/>
+		</g>
+	</g>
+</g></svg>
