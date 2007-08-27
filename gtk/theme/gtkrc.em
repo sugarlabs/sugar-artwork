@@ -106,6 +106,7 @@ style "default"
     GtkArrow::arrow-size = 1.0
 
     GtkToolbar::shadow-type = GTK_SHADOW_NONE
+    GtkToolbar::space-size = $(2*subcell_size)
 
     GtkProgressBar::min-horizontal-bar-height = $subcell_size
     GtkProgressBar::min-vertical-bar-width = $subcell_size
@@ -375,8 +376,15 @@ style "toolbutton"
 
     engine "sugar" {
         max_radius = 5.0
-	fake_padding = $default_padding
+        fake_padding = $default_padding
     }
+}
+
+style "separatortoolbutton"
+{
+    # We are lucky ... GTK+ already draws the separators with the correct height.
+    # If it did not, we would need a workaround in the engine.
+    bg[NORMAL] = $button_grey
 }
 
 style "toolbox"
@@ -573,3 +581,5 @@ widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-w
 
 # Toolbar
 widget_class "*<GtkToolButton>*"          style "toolbutton"
+widget_class "*<GtkSeparatorToolItem>*"   style "separatortoolbutton"
+
