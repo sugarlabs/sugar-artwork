@@ -35,8 +35,9 @@ typedef enum {
     OPTION_MAX_RADIUS       = 1 << 2,
     OPTION_SCROLLBAR_BORDER = 1 << 3,
     OPTION_FAKE_PADDING     = 1 << 4,
-    OPTION_HINT             = 1 << 5,
-    OPTION_LABEL_FG_COLOR   = 1 << 6
+    OPTION_SUBCELL_SIZE     = 1 << 5,
+    OPTION_HINT             = 1 << 6,
+    OPTION_LABEL_FG_COLOR   = 1 << 7
 } SugarRcStyleOptions;
 
 typedef struct {
@@ -65,6 +66,7 @@ struct _SugarRcStyle {
     gdouble max_radius;
     gdouble scrollbar_border;
     gdouble fake_padding;
+    gdouble subcell_size;
 
     /* The purpose of this color is to be able to apply a color from
      * a different style at merge time. This cannot be done with symbolic

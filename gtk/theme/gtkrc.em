@@ -114,6 +114,7 @@ style "default"
     engine "sugar" {
         line_width = $line_width
         thick_line_width = $thick_line_width
+        subcell_size = $subcell_size
 
         # Not sure about this one, but it is not that important
         max_radius = $( 2*subcell_size )
@@ -364,8 +365,6 @@ style "notebook"
 
 style "toolbutton"
 {
-    color["focus_line"] = $black
-
     bg[PRELIGHT] = $black
     bg[ACTIVE] = $button_grey
     bg[NORMAL] = $black
@@ -382,8 +381,7 @@ style "toolbutton"
 
 style "separatortoolbutton"
 {
-    # We are lucky ... GTK+ already draws the separators with the correct height.
-    # If it did not, we would need a workaround in the engine.
+    # The sizing is handled in the engine.
     bg[NORMAL] = $button_grey
 }
 

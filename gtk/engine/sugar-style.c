@@ -137,6 +137,18 @@ sugar_style_draw_hline(GtkStyle       *style,
     width = x2 - x1 + 1;
     height = SUGAR_RC_STYLE (style->rc_style)->line_width;
 
+    /* Probably never used. Just in case someone wants a vertical toolbar. */
+    if (DETAIL ("toolbar")) {
+        /* First of all, reverse engineer the real size. Only works if no
+         * rounding was done, but luckily this is not the case for anything
+         * we should ever see here. */
+        gint subcell_size = SUGAR_RC_STYLE (style->rc_style)->subcell_size;
+        gint toolbar_width = (width - 1) * 10 / 6;
+        
+        x1 = x1 - (toolbar_width - width) / 2 + subcell_size;
+        width = toolbar_width - 2*subcell_size;
+    }
+
     cairo_rectangle (cr, x1, y, width, height);
     cairo_fill (cr);
 
@@ -166,6 +178,17 @@ sugar_style_draw_vline(GtkStyle       *style,
 
     height = y2 - y1 + 1;
     width = SUGAR_RC_STYLE (style->rc_style)->line_width;
+
+    if (DETAIL ("toolbar")) {
+        /* First of all, reverse engineer the real size. Only works if no
+         * rounding was done, but luckily this is not the case for anything
+         * we should ever see here. */
+        gint subcell_size = SUGAR_RC_STYLE (style->rc_style)->subcell_size;
+        gint toolbar_height = (height - 1) * 10 / 6;
+        
+        y1 = y1 - (toolbar_height - height) / 2 + subcell_size;
+        height = toolbar_height - 2*subcell_size;
+    }
 
     cairo_rectangle (cr, x, y1, width, height);
     cairo_fill (cr);

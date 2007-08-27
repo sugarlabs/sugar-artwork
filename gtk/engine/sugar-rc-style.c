@@ -34,6 +34,7 @@ static gchar symbols[] =
     "max_radius\0"
     "scrollbar_border\0"
     "fake_padding\0"
+    "subcell_size\0"
     "label_fg_color\0"
     "bg\0"
     "fg\0"
@@ -48,6 +49,7 @@ typedef enum {
     TOKEN_MAX_RADIUS,
     TOKEN_SCROLLBAR_BORDER,
     TOKEN_FAKE_PADDING,
+    TOKEN_SUBCELL_SIZE,
     TOKEN_LABEL_FG_COLOR,
     TOKEN_BG,
     TOKEN_FG,
@@ -88,6 +90,7 @@ sugar_rc_style_init (SugarRcStyle *rc_style)
     rc_style->max_radius = 5;
     rc_style->scrollbar_border = 5;
     rc_style->fake_padding = 0;
+    rc_style->subcell_size = 15;
     rc_style->hint = NULL;
     rc_style->apply_label_color.bg = 0;
     rc_style->apply_label_color.fg = 0;
@@ -248,6 +251,10 @@ sugar_rc_style_parse (GtkRcStyle   *rc_style,
                 token = sugar_rc_parse_float(scanner, &sugar_rc_style->fake_padding);
                 sugar_rc_style->flags |= OPTION_FAKE_PADDING;
                 break;
+            case TOKEN_SUBCELL_SIZE:
+                token = sugar_rc_parse_float(scanner, &sugar_rc_style->subcell_size);
+                sugar_rc_style->flags |= OPTION_SUBCELL_SIZE;
+                break;
             case TOKEN_HINT:
                 token = sugar_rc_parse_string(scanner, &sugar_rc_style->hint);
                 sugar_rc_style->flags |= OPTION_HINT;
@@ -310,6 +317,8 @@ sugar_rc_style_merge (GtkRcStyle *dest,
         sugar_dest->scrollbar_border = sugar_src->scrollbar_border;
     if (flags & OPTION_FAKE_PADDING)
         sugar_dest->fake_padding = sugar_src->fake_padding;
+    if (flags & OPTION_SUBCELL_SIZE)
+        sugar_dest->subcell_size = sugar_src->subcell_size;
     if (flags & OPTION_LABEL_FG_COLOR)
         sugar_dest->label_fg_color = sugar_src->label_fg_color;
     if (flags & OPTION_HINT) {
