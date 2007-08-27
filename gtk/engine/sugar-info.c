@@ -159,6 +159,24 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
             info->pos.x += info->rc_style->scrollbar_border;
             info->pos.width -= 2 * info->rc_style->scrollbar_border;
         }
+    } else if (!trough && (HINT ("vscrollbar-scrolled-window") ||
+                           HINT ("hscrollbar-scrolled-window"))) {
+        if (HINT ("hscrollbar-scrolled-window")) {
+            info->pos.height -= info->rc_style->scrollbar_border;
+        } else {
+            if (!info->ltr)
+                info->pos.x += info->rc_style->scrollbar_border;
+            info->pos.width -= info->rc_style->scrollbar_border;
+        }
+    } else if (trough && (HINT ("vscrollbar-scrolled-window") ||
+                          HINT ("hscrollbar-scrolled-window"))) {
+        if (HINT ("hscrollbar-scrolled-window")) {
+            info->pos.x -= info->rc_style->scrollbar_border;
+            info->pos.width += 2*info->rc_style->scrollbar_border;
+        } else {
+            info->pos.y -= info->rc_style->scrollbar_border;
+            info->pos.height += 2*info->rc_style->scrollbar_border;
+        }
     }
 }
 

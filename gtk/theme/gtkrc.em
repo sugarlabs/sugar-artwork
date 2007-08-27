@@ -189,8 +189,8 @@ style "menu"
     GtkMenu::horizontal-padding = 0
     GtkMenu::vertical-padding   = 0
 
-    xthickness = 0
-    ythickness = 0
+    xthickness = $thickness
+    ythickness = $thickness
 }
 
 # Can this all be moved in the menuitem style?
@@ -221,6 +221,14 @@ style "menu-child"
 #########################################################
 
 
+style "textview"
+{
+    # We always use white here
+    base[NORMAL]      = $white
+    
+    GtkTextView::interior-focus = 1
+}
+
 style "scrollbar"
 {
     GtkScrollbar::slider-width = $subcell_size
@@ -244,7 +252,6 @@ style "hscrollbar" = "scrollbar"
 {
     engine "sugar" {
         hint = "hscrollbar"
-        # Rounded, not floating point value. maybe change this?
         scrollbar_border = $thickness
     }
 }
@@ -254,6 +261,32 @@ style "vscrollbar" = "scrollbar"
     engine "sugar" {
         hint = "vscrollbar"
         scrollbar_border = $thickness
+    }
+}
+
+style "hscrollbar-scrolled-window"
+{
+    GtkScrollbar::slider-width = $(subcell_size - thickness)
+    GtkScrollbar::stepper-spacing = $thickness
+    GtkScrollbar::has-forward-stepper = 1
+    GtkScrollbar::has-backward-stepper = 1
+    GtkScrollbar::stepper-size = 0
+
+    engine "sugar" {
+        hint = "hscrollbar-scrolled-window"
+    }
+}
+
+style "vscrollbar-scrolled-window"
+{
+    GtkScrollbar::slider-width = $(subcell_size - thickness)
+    GtkScrollbar::stepper-spacing = $thickness
+    GtkScrollbar::has-forward-stepper = 1
+    GtkScrollbar::has-backward-stepper = 1
+    GtkScrollbar::stepper-size = 0
+
+    engine "sugar" {
+        hint = "vscrollbar-scrolled-window"
     }
 }
 
@@ -523,6 +556,7 @@ widget_class "*<GtkCheckButton>*"      style "checkbutton"
 # Entries
 widget_class "*<GtkEntry>"       style "entry"
 widget_class "*<GtkSpinButton>"  style "spinbutton"
+widget_class "*<GtkTextView>"    style "textview"
 
 
 # Misc widgets
@@ -532,6 +566,10 @@ widget_class "*<GtkVScrollbar>"  style "vscrollbar"
 widget_class "*<GtkHScale>"      style "hscale"
 widget_class "*<GtkVScale>"      style "vscale"
 widget_class "*<GtkProgressBar>" style "progressbar"
+
+# Scrolled window scrollbars
+widget_class "*<GtkScrolledWindow>.<GtkVScrollbar>" style "vscrollbar-scrolled-window"
+widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-window"
 
 # Toolbar
 widget_class "*<GtkToolButton>*"          style "toolbutton"
