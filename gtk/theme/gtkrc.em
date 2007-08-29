@@ -20,7 +20,7 @@ if theme == "sugar-xo":
     bullet_size = 9.5
     font_height = 24
     default_padding = 7
-    toolbutton_padding = 10
+    toolbutton_padding = 9
 else: # About 50% smaller
     xo = False
     line_width = 1.0
@@ -29,7 +29,7 @@ else: # About 50% smaller
     bullet_size = 5
     font_height = 12
     default_padding = 3
-    toolbutton_padding = 7
+    toolbutton_padding = 6
 
 
 radio_size = my_floor(subcell_size + bullet_size + line_width)
@@ -391,6 +391,12 @@ style "separatortoolbutton"
     bg[NORMAL] = $button_grey
 }
 
+style "toolbar"
+{
+    xthickness = 0
+    ythickness = 0
+}
+
 style "toolbox"
 {
     fg[NORMAL] = $white
@@ -586,4 +592,4 @@ widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-w
 # Toolbar
 widget_class "*<GtkToolButton>*"          style "toolbutton"
 widget_class "*<GtkSeparatorToolItem>*"   style "separatortoolbutton"
-
+widget_class "*<GtkToolbar>*"             style "toolbar"
