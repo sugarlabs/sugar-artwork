@@ -20,6 +20,7 @@ if theme == "sugar-xo":
     bullet_size = 9.5
     font_height = 24
     default_padding = 7
+    toolbutton_padding = 10
 else: # About 50% smaller
     xo = False
     line_width = 1.0
@@ -28,6 +29,7 @@ else: # About 50% smaller
     bullet_size = 5
     font_height = 12
     default_padding = 3
+    toolbutton_padding = 7
 
 
 radio_size = my_floor(subcell_size + bullet_size + line_width)
@@ -91,7 +93,6 @@ style "default"
     GtkWidget::separator-width = $thickness
 
     GtkRange::activate-slider = 1
-    GtkButton::inner-border = { 6, 6, 6, 6 }           # ??
 
     GtkButton::default-border = { 1, 1, 1, 1 }         # line_width - focus-line-width
     GtkButton::default-outside-border = { 2, 2, 2, 2 } # focus-line-width
@@ -365,6 +366,11 @@ style "notebook"
 
 style "toolbutton"
 {
+    GtkButton::inner-border = { $toolbutton_padding,
+                                $toolbutton_padding,
+                                $toolbutton_padding,
+                                $toolbutton_padding }
+
     bg[PRELIGHT] = $black
     bg[ACTIVE] = $button_grey
     bg[NORMAL] = $black
