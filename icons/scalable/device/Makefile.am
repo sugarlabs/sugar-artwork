@@ -34,11 +34,17 @@ icon_DATA =				\
 	network-mesh.svg		\
 	network-wired.svg		\
 	network-wireless-000.svg	\
+	network-wireless-000.icon	\
 	network-wireless-020.svg	\
+	network-wireless-020.icon	\
 	network-wireless-040.svg	\
+	network-wireless-040.icon	\
 	network-wireless-060.svg	\
+	network-wireless-060.icon	\
 	network-wireless-080.svg	\
+	network-wireless-080.icon	\
 	network-wireless-100.svg	\
+	network-wireless-100.icon	\
 	media-flash-sd-mmc.svg		\
 	media-flash-usb.svg
 
