@@ -507,6 +507,12 @@ style "separatormenuitem"
     xthickness = 0
 }
 
+style "trayicon"
+{
+    bg[PRELIGHT] = $black
+    bg[ACTIVE] = $button_grey
+}
+
 ####################################################################
 # Default style, setting some generic options and style properties
 ####################################################################
@@ -593,3 +599,6 @@ widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-w
 widget_class "*<GtkToolButton>*"          style "toolbutton"
 widget_class "*<GtkSeparatorToolItem>*"   style "separatortoolbutton"
 widget_class "*<GtkToolbar>*"             style "toolbar"
+
+# Tray
+widget_class "*<SugarTrayIcon>*" style "trayicon"
