@@ -614,7 +614,8 @@ sugar_style_draw_arrow (GtkStyle       *style,
     if (arrow_type == GTK_ARROW_NONE)
         return;
 
-    SANITIZE_SIZE
+    if (width < 0 || height < 0)
+        return;
     
     cr = sugar_cairo_create (window, area);
 

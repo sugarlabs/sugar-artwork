@@ -476,7 +476,9 @@ style "progressbar"
 
 style "menuitem"
 {
-    GtkCheckMenuItem::indicator-size = $radio_size
+    GtkMenuItem::horizontal-padding = 0
+    GtkMenuItem::arrow-spacing = $subcell_size
+    GtkMenuItem::toggle-spacing = $subcell_size
 
     bg[PRELIGHT] = $button_grey
 
@@ -484,14 +486,20 @@ style "menuitem"
     text[NORMAL]      = $white
     text[ACTIVE]      = $white
 
-    GtkMenuItem::horizontal-padding = $line_width
-    xthickness = $(my_ceil(line_width * 2))
-    ythickness = $thickness
+    # The menu already has a padding of $thickness
+    # So use $subcell_size - $thickness here
+    xthickness = $subcell_size
+    ythickness = $((subcell_size * 3 - font_height) / 2)
 }
 
 style "checkmenuitem"
 {
-    # This style is only there because of bug #382646 ...
+    GtkCheckMenuItem::indicator-size = $radio_size
+    GtkMenuItem::toggle-spacing = $(subcell_size * 2 / 3)
+
+    ythickness = $((subcell_size * 3 - max(font_height, subcell_size * 2 / 3)) / 2)
+
+    # This is only there because of bug #382646 ...
     base[NORMAL]      = $white
     base[PRELIGHT]    = $white
     base[ACTIVE]      = $text_field_grey
@@ -501,10 +509,15 @@ style "checkmenuitem"
     text[ACTIVE]      = $toolbar_grey
 }
 
+style "imagemenuitem"
+{
+    # With a 45px image, we don't want any ythickness
+    ythickness = 0
+}
+
 style "separatormenuitem"
 {
-    GtkMenuItem::horizontal-padding = 0
-    xthickness = 0
+    ythickness = $(subcell_size + thickness / 2)
 }
 
 style "trayicon"
@@ -568,6 +581,7 @@ widget_class "*<GtkMenuShell>"            style "menu"               # Why is th
 widget_class "*<GtkMenuShell>.*"          style "menu-child"         # Why is this menu shell?
 widget_class "*<GtkMenuItem>*"            style "menuitem"
 widget_class "*<GtkCheckMenuItem>"        style "checkmenuitem"
+widget_class "*<GtkImageMenuItem>"        style "imagemenuitem"
 widget_class "*<GtkSeparatorMenuItem>*"   style "separatormenuitem"
 
 # Buttons and Combos
