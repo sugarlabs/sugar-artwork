@@ -190,6 +190,8 @@ style "groupbox-palette-child"
 style "menu"
 {
     bg[NORMAL] = $black
+    # Used for the arrow colour
+    fg[NORMAL] = $button_grey
     bg[ACTIVE] = $button_grey
 
     # This is just the exact reverse of what is going on inside GTK+ ...
