@@ -412,6 +412,10 @@ style "toolbox"
     bg[NORMAL] = $toolbar_grey
     bg[INSENSITIVE] = $toolbar_grey
     base[INSENSITIVE] = $toolbar_grey
+
+    engine "sugar" {
+        label_fg_color = $white
+    }
 }
 
 style "panel"
