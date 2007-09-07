@@ -373,6 +373,8 @@ style "notebook"
 
 style "toolbutton"
 {
+    xthickness = 0
+    ythickness = 0
     GtkButton::inner-border = { $toolbutton_padding,
                                 $toolbutton_padding,
                                 $toolbutton_padding,
@@ -623,7 +625,7 @@ widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-w
 # Toolbar
 widget_class "*<GtkToolButton>*"          style "toolbutton"
 widget_class "*<GtkSeparatorToolItem>*"   style "separatortoolbutton"
-widget_class "*<GtkToolbar>*"             style "toolbar"
+widget_class "*<GtkToolbar>"              style "toolbar"
 
 # Tray
 widget_class "*<SugarTrayIcon>*" style "trayicon"
