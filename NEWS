@@ -1,3 +1,9 @@
+* Make mesh icon match AP icons (dcbw)
+* Add .icon file for mesh icon (dcbw)
+* Add temporary badges for mesh channels (dcbw)
+
+Snapshot f89f6e00cc
+
 * Define TrayIcon style. (marco)
 
 Snapshot d2120f79b7
