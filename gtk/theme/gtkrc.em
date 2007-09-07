@@ -91,6 +91,9 @@ style "default"
     GtkWidget::wide-separators = 0
     GtkWidget::separator-height = $thickness
     GtkWidget::separator-width = $thickness
+    
+    GtkWidget::scroll-arrow-hlength = $subcell_size
+    GtkWidget::scroll-arrow-vlength = $subcell_size
 
     GtkRange::activate-slider = 1
 
@@ -189,6 +192,8 @@ style "menu"
     bg[NORMAL] = $black
     bg[ACTIVE] = $button_grey
 
+    # This is just the exact reverse of what is going on inside GTK+ ...
+    GtkMenu::scroll-arrow-vlength = $(my_floor(subcell_size/0.7 + 2*thickness))
     GtkMenu::horizontal-padding = 0
     GtkMenu::vertical-padding   = 0
 
