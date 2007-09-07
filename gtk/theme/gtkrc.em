@@ -530,7 +530,11 @@ style "imagemenuitem"
 
 style "separatormenuitem"
 {
-    ythickness = $(subcell_size + thickness / 2)
+    GtkWidget::wide-separators = 1
+    GtkWidget::separator-height = $(2*subcell_size)
+
+    ythickness = 0
+    xthickness = 0
 }
 
 style "trayicon"
