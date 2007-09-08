@@ -1,3 +1,4 @@
+* #3026 Set the correct background color on GtkLayout (benzea)
 * Make mesh icon match AP icons (dcbw)
 * Add .icon file for mesh icon (dcbw)
 * Add temporary badges for mesh channels (dcbw)

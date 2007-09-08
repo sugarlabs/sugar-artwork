@@ -556,12 +556,14 @@ class "GtkWidget" style "default"
 # This one should probably be the default (ie. no window-child style)
 widget_class "<GtkWindow>"               style "window"
 widget_class "<GtkWindow>*<GtkEventBox>" style "window"
+widget_class "<GtkWindow>*<GtkLayout>"   style "window"
 widget_class "<GtkWindow>*"              style "window-child"
 
 # SugarToolbox
 #widget_class "*<SugarToolbox>" style "toolbox"
 #widget_class "*<SugarToolbox>*" style "toolbox-child"
 #widget_class "*<SugarToolbox>*<GtkEventBox>" style "toolbox"
+#widget_class "*<SugarToolbox>*<GtkLayout>"   style "toolbox"
 widget_class "*<SugarToolbox>*"        style "toolbox"
 widget_class "*<GtkToolbar>*"          style "toolbox"
 
@@ -577,11 +579,13 @@ widget_class "*<SugarPanel>*"          style "panel"
 
 
 # GroupBoxes (don't set bg[NORMAL] on the widget itself)
-widget_class "<GtkWindow>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-panel"
 widget_class "<GtkWindow>*<SugarGroupBox>*"   style "groupbox-panel-child"
+widget_class "<GtkWindow>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-panel"
+widget_class "<GtkWindow>*<SugarGroupBox>*<GtkLayout>"   style "groupbox-panel"
 
-widget_class "<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
 widget_class "<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
+widget_class "<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
+widget_class "<SugarPalette>*<SugarGroupBox>*<GtkLayout>" style "groupbox-palette"
 
 
 
