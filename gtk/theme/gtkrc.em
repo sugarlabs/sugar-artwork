@@ -91,6 +91,9 @@ style "default"
     GtkWidget::wide-separators = 0
     GtkWidget::separator-height = $thickness
     GtkWidget::separator-width = $thickness
+    
+    GtkWidget::scroll-arrow-hlength = $subcell_size
+    GtkWidget::scroll-arrow-vlength = $subcell_size
 
     GtkRange::activate-slider = 1
 
@@ -187,8 +190,12 @@ style "groupbox-palette-child"
 style "menu"
 {
     bg[NORMAL] = $black
+    # Used for the arrow colour
+    fg[NORMAL] = $button_grey
     bg[ACTIVE] = $button_grey
 
+    # This is just the exact reverse of what is going on inside GTK+ ...
+    GtkMenu::scroll-arrow-vlength = $(my_floor(subcell_size/0.7 + 2*thickness))
     GtkMenu::horizontal-padding = 0
     GtkMenu::vertical-padding   = 0
 
@@ -366,6 +373,8 @@ style "notebook"
 
 style "toolbutton"
 {
+    xthickness = 0
+    ythickness = 0
     GtkButton::inner-border = { $toolbutton_padding,
                                 $toolbutton_padding,
                                 $toolbutton_padding,
@@ -405,6 +414,10 @@ style "toolbox"
     bg[NORMAL] = $toolbar_grey
     bg[INSENSITIVE] = $toolbar_grey
     base[INSENSITIVE] = $toolbar_grey
+
+    engine "sugar" {
+        label_fg_color = $white
+    }
 }
 
 style "panel"
@@ -476,7 +489,9 @@ style "progressbar"
 
 style "menuitem"
 {
-    GtkCheckMenuItem::indicator-size = $radio_size
+    GtkMenuItem::horizontal-padding = 0
+    GtkMenuItem::arrow-spacing = $subcell_size
+    GtkMenuItem::toggle-spacing = $subcell_size
 
     bg[PRELIGHT] = $button_grey
 
@@ -484,14 +499,20 @@ style "menuitem"
     text[NORMAL]      = $white
     text[ACTIVE]      = $white
 
-    GtkMenuItem::horizontal-padding = $line_width
-    xthickness = $(my_ceil(line_width * 2))
-    ythickness = $thickness
+    # The menu already has a padding of $thickness
+    # So use $subcell_size - $thickness here
+    xthickness = $subcell_size
+    ythickness = $((subcell_size * 3 - font_height) / 2)
 }
 
 style "checkmenuitem"
 {
-    # This style is only there because of bug #382646 ...
+    GtkCheckMenuItem::indicator-size = $radio_size
+    GtkMenuItem::toggle-spacing = $(subcell_size * 2 / 3)
+
+    ythickness = $((subcell_size * 3 - max(font_height, subcell_size * 2 / 3)) / 2)
+
+    # This is only there because of bug #382646 ...
     base[NORMAL]      = $white
     base[PRELIGHT]    = $white
     base[ACTIVE]      = $text_field_grey
@@ -501,9 +522,18 @@ style "checkmenuitem"
     text[ACTIVE]      = $toolbar_grey
 }
 
+style "imagemenuitem"
+{
+    # With a 45px image, we don't want any ythickness
+    ythickness = 0
+}
+
 style "separatormenuitem"
 {
-    GtkMenuItem::horizontal-padding = 0
+    GtkWidget::wide-separators = 1
+    GtkWidget::separator-height = $(2*subcell_size)
+
+    ythickness = 0
     xthickness = 0
 }
 
@@ -526,12 +556,14 @@ class "GtkWidget" style "default"
 # This one should probably be the default (ie. no window-child style)
 widget_class "<GtkWindow>"               style "window"
 widget_class "<GtkWindow>*<GtkEventBox>" style "window"
+widget_class "<GtkWindow>*<GtkLayout>"   style "window"
 widget_class "<GtkWindow>*"              style "window-child"
 
 # SugarToolbox
 #widget_class "*<SugarToolbox>" style "toolbox"
 #widget_class "*<SugarToolbox>*" style "toolbox-child"
 #widget_class "*<SugarToolbox>*<GtkEventBox>" style "toolbox"
+#widget_class "*<SugarToolbox>*<GtkLayout>"   style "toolbox"
 widget_class "*<SugarToolbox>*"        style "toolbox"
 widget_class "*<GtkToolbar>*"          style "toolbox"
 
@@ -547,11 +579,13 @@ widget_class "*<SugarPanel>*"          style "panel"
 
 
 # GroupBoxes (don't set bg[NORMAL] on the widget itself)
-widget_class "<GtkWindow>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-panel"
 widget_class "<GtkWindow>*<SugarGroupBox>*"   style "groupbox-panel-child"
+widget_class "<GtkWindow>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-panel"
+widget_class "<GtkWindow>*<SugarGroupBox>*<GtkLayout>"   style "groupbox-panel"
 
-widget_class "<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
 widget_class "<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
+widget_class "<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
+widget_class "<SugarPalette>*<SugarGroupBox>*<GtkLayout>" style "groupbox-palette"
 
 
 
@@ -568,6 +602,7 @@ widget_class "*<GtkMenuShell>"            style "menu"               # Why is th
 widget_class "*<GtkMenuShell>.*"          style "menu-child"         # Why is this menu shell?
 widget_class "*<GtkMenuItem>*"            style "menuitem"
 widget_class "*<GtkCheckMenuItem>"        style "checkmenuitem"
+widget_class "*<GtkImageMenuItem>"        style "imagemenuitem"
 widget_class "*<GtkSeparatorMenuItem>*"   style "separatormenuitem"
 
 # Buttons and Combos
@@ -598,7 +633,7 @@ widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-w
 # Toolbar
 widget_class "*<GtkToolButton>*"          style "toolbutton"
 widget_class "*<GtkSeparatorToolItem>*"   style "separatortoolbutton"
-widget_class "*<GtkToolbar>*"             style "toolbar"
+widget_class "*<GtkToolbar>"              style "toolbar"
 
 # Tray
 widget_class "*<SugarTrayIcon>*" style "trayicon"

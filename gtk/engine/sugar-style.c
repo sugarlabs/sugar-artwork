@@ -427,11 +427,16 @@ sugar_style_draw_box (GtkStyle       *style,
             }
             
             sugar_draw_progressbar_bar (cr, &info, orientation);
-    } else if (DETAIL ("hseparator") || DETAIL ("vseparator")) {
-            /* just fill the separator with bg[state] */
-            gdk_cairo_set_source_color (cr, &style->bg[state_type]);
-            cairo_rectangle (cr, x, y, width, height);
-            cairo_fill (cr);
+    } else if (DETAIL ("hseparator")) {
+            /* Draw a normal separator centered in the area */
+            gtk_paint_hline (style, window, state_type, area, widget, "separator",
+                             x, x + width - 1,
+                             y + (height - SUGAR_RC_STYLE (style->rc_style)->line_width) / 2);
+    } else if (DETAIL ("vseparator")) {
+            /* Draw a normal separator centered in the area */
+            gtk_paint_vline (style, window, state_type, area, widget, "separator",
+                             y, y + height - 1,
+                             x + (width - SUGAR_RC_STYLE (style->rc_style)->line_width) / 2);
     } else if (DETAIL ("menu") || DETAIL ("palette")) {
         SugarInfo info;
 
@@ -614,7 +619,8 @@ sugar_style_draw_arrow (GtkStyle       *style,
     if (arrow_type == GTK_ARROW_NONE)
         return;
 
-    SANITIZE_SIZE
+    if (width < 0 || height < 0)
+        return;
     
     cr = sugar_cairo_create (window, area);
 

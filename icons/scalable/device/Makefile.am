@@ -4,6 +4,9 @@ icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
 	badge-busy.svg			\
+	badge-channel-1.svg		\
+	badge-channel-6.svg		\
+	badge-channel-11.svg	\
 	badge-charging.svg		\
 	badge-locked.svg		\
 	badge-outofrange.svg		\
@@ -32,6 +35,7 @@ icon_DATA =				\
 	battery-100.svg			\
 	computer-xo.svg			\
 	network-mesh.svg		\
+	network-mesh.icon		\
 	network-wired.svg		\
 	network-wireless-000.svg	\
 	network-wireless-000.icon	\
