@@ -458,7 +458,7 @@ style "entry"
 
     # This tries to get a height of exactly 45 pixel for the entry.
     GtkEntry::inner-border = { $(max(subcell_size - entry_thickness, 0)), $(max(subcell_size - entry_thickness, 0)),
-                               $(max(my_floor((3*subcell_size - font_height - entry_thickness*2)/2),0)), $(max(my_ceil((3*subcell_size - font_height - entry_thickness*2)/2), 0)) }
+                               $(max(my_floor((3*subcell_size - font_height - entry_thickness*2)/2.0),0)), $(max(my_ceil((3*subcell_size - font_height - entry_thickness*2)/2.0), 0)) }
 
     GtkWidget::focus-line-width = 0
 }
@@ -520,8 +520,6 @@ style "menuitem"
     text[NORMAL]      = $white
     text[ACTIVE]      = $white
 
-    # The menu already has a padding of $thickness
-    # So use $subcell_size - $thickness here
     xthickness = $subcell_size
     ythickness = $((subcell_size * 3 - font_height) / 2)
 }
