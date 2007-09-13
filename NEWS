@@ -1,3 +1,4 @@
+* Set the gtk icon sizes to better values. (benzea)
 * #3186 Reset the focus-padding on toolbuttons to 0 (benzea)
 
 Snapshot e4fd20770c

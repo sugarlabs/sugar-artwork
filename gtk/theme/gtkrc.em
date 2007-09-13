@@ -17,6 +17,7 @@ if theme == "sugar-xo":
     line_width = 2.0        # 2.25px, rounded down
     thick_line_width = 3.5  # 3.5
     subcell_size = 15
+    icon_base = 11
     bullet_size = 9.5
     font_height = 24
     default_padding = 7
@@ -26,6 +27,7 @@ else: # About 50% smaller
     line_width = 1.0
     thick_line_width = 1.75
     subcell_size = 7
+    icon_base = 5
     bullet_size = 5
     font_height = 12
     default_padding = 3
@@ -49,6 +51,24 @@ white = '"#FFFFFF"'
 
 
 }
+${
+icon_small = icon_base * 3
+icon_large = icon_base * 5
+
+small_icons = [ "gtk-menu", "gtk-dnd", "gtk-small-toolbar", "gtk-button" ]
+large_icons = [ "gtk-large-toolbar" ]
+
+icon_sizes = []
+for icon in small_icons:
+    icon_sizes += [icon + "=" + str(icon_small) + ',' + str(icon_small)]
+for icon in large_icons:
+    icon_sizes += [icon + "=" + str(icon_large) + ',' + str(icon_large)]
+
+icon_sizes = ":".join(icon_sizes)
+
+}
+gtk-icon-sizes="$icon_sizes"
+
 style "default"
 {
     # Will be overriden in some widgets
@@ -525,8 +545,8 @@ style "checkmenuitem"
 
 style "imagemenuitem"
 {
-    # With a 45px image, we don't want any ythickness
-    ythickness = 0
+    # Assume a $(icon_small)px image and height of $(4*subcell_size)
+    ythickness = $((3*subcell_size - icon_small) / 2)
 }
 
 style "separatormenuitem"
