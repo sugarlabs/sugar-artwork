@@ -27,7 +27,7 @@ else: # About 50% smaller
     line_width = 1.0
     thick_line_width = 1.75
     subcell_size = 7
-    icon_base = 5
+    icon_base = 8
     bullet_size = 5
     font_height = 12
     default_padding = 3
