@@ -544,7 +544,7 @@ style "checkmenuitem"
 style "imagemenuitem"
 {
     # Assume a $(icon_small)px image and height of $(4*subcell_size)
-    ythickness = $((3*subcell_size - icon_small) / 2)
+    ythickness = $(max(0, (3*subcell_size - icon_small) / 2))
 }
 
 style "separatormenuitem"
