@@ -62,7 +62,6 @@ icon_DATA =					\
 	media-seek-forward.svg			\
 	row-insert.svg				\
 	row-remove.svg				\
-	stop.svg				\
 	system-search.svg			\
 	view-refresh.svg			\
 	zoom-activity.svg 			\
@@ -71,9 +70,11 @@ icon_DATA =					\
 	zoom-friends.svg			\
 	zoom-home.svg				\
 	zoom-home-mini.svg			\
+	zoom-groups.svg			\
 	zoom-groups-mini.svg			\
 	zoom-in.svg				\
 	zoom-mesh.svg				\
+	zoom-neighborhood.svg		\
 	zoom-neighborhood-mini.svg		\
 	zoom-out.svg
 
