@@ -379,6 +379,7 @@ style "toolbutton"
                                 $toolbutton_padding,
                                 $toolbutton_padding,
                                 $toolbutton_padding }
+    GtkWidget::focus-padding = 0
 
     bg[PRELIGHT] = $black
     bg[ACTIVE] = $button_grey

@@ -1,3 +1,5 @@
+* #3186 Reset the focus-padding on toolbuttons to 0 (benzea)
+
 Snapshot e4fd20770c
 
 * fixed padding on zoom icons
