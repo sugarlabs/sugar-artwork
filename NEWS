@@ -1,3 +1,5 @@
+Snapshot 2aac89b4fe
+
 * Created outlines for proper rendering of text-format icons (eben)
 * Fixed bloated .svg files (eben)
 * Set the gtk icon sizes to better values. (benzea)
