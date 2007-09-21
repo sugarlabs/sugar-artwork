@@ -223,6 +223,13 @@ style "menu"
     ythickness = $thickness
 }
 
+# Base this style on "menu" to get the correct colors
+style "palette-menu" = "menu"
+{
+    xthickness = 0
+    ythickness = $subcell_size
+}
+
 # Can this all be moved in the menuitem style?
 style "menu-child"
 {
@@ -586,9 +593,12 @@ widget_class "<GtkWindow>*"              style "window-child"
 widget_class "*<SugarToolbox>*"        style "toolbox"
 widget_class "*<GtkToolbar>*"          style "toolbox"
 
-# SugarPalette
-widget_class "<SugarPalette>"          style "menu"
-widget_class "<SugarPalette>.*"        style "menu-child"
+# SugarPalette and Menu
+widget_class "*<GtkMenu>"               style "menu"
+widget_class "<SugarPalette>"           style "menu"
+widget_class "<SugarPalette>.*"         style "menu-child"
+widget_class "<SugarPalette>*<GtkMenu>" style "palette-menu"
+widget_class "*<GtkMenuShell>.*"        style "menu-child"
 
 # SugarFrameWindow
 widget_class "*<SugarFrameWindow>*"    style "frame"
@@ -616,9 +626,6 @@ widget_class "<SugarPalette>*<SugarGroupBox>*<GtkLayout>" style "groupbox-palett
 # right. An alternative would be to lower the priority of the
 # background matches (which need widget_class) to eg. "application"
 
-# Menu
-widget_class "*<GtkMenuShell>"            style "menu"               # Why is this menu shell?
-widget_class "*<GtkMenuShell>.*"          style "menu-child"         # Why is this menu shell?
 widget_class "*<GtkMenuItem>*"            style "menuitem"
 widget_class "*<GtkCheckMenuItem>"        style "checkmenuitem"
 widget_class "*<GtkImageMenuItem>"        style "imagemenuitem"
