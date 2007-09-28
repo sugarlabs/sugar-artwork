@@ -219,14 +219,11 @@ sugar_style_draw_focus (GtkStyle       *style,
     if (!interior_focus) {
         cr = sugar_cairo_create (window, area);
 
-        if (HINT ("comboboxentry")) {
-            if (DETAIL ("button")) {
-                sugar_remove_corners (&info.corners, info.ltr ? EDGE_LEFT : EDGE_RIGHT);
-            } else {
-                sugar_remove_corners (&info.corners, info.ltr ? EDGE_RIGHT : EDGE_LEFT);
-            }
-        } else if (DETAIL ("entry") && HINT ("spinbutton")) {
-            /* We need to fake the focus on the button separately. */
+        if (DETAIL ("button") && HINT ("comboboxentry")) {
+            sugar_remove_corners (&info.corners, info.ltr ? EDGE_LEFT : EDGE_RIGHT);
+        } else if (DETAIL ("entry") && (HINT ("spinbutton") || HINT ("comboboxentry"))) {
+            /* Focus for the entry of the combobox and spinbutton. The Combobox
+             * focus just disappears into nothingness ... */
             info.cont_edges |= info.ltr ? EDGE_RIGHT : EDGE_LEFT;
 
             sugar_remove_corners (&info.corners, info.cont_edges);

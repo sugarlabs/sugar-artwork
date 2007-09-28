@@ -457,18 +457,18 @@ style "panel"
 
 style "entry"
 {
+    color["focus_line"] = $text_field_grey
     ${ entry_thickness = my_ceil(0.3 * (subcell_size*3.0/2.0 - thickness) + thickness) }
 
     # small inner border and a large x/ythickness for entries
     # to reduce the number of hacks needed :-)
-    xthickness = $entry_thickness
-    ythickness = $entry_thickness
+    xthickness = $(entry_thickness)
+    ythickness = $(entry_thickness)
+    GtkWidget::focus-line-width = 0
 
     # This tries to get a height of exactly 45 pixel for the entry.
     GtkEntry::inner-border = { $(max(subcell_size - entry_thickness, 0)), $(max(subcell_size - entry_thickness, 0)),
                                $(max(my_floor((3*subcell_size - font_height - entry_thickness*2)/2.0),0)), $(max(my_ceil((3*subcell_size - font_height - entry_thickness*2)/2.0), 0)) }
-
-    GtkWidget::focus-line-width = 0
 }
 
 style "button"
