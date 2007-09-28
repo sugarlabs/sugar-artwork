@@ -211,10 +211,11 @@ style "menu"
 {
     bg[NORMAL] = $black
     # Used for the arrow colour
-    fg[NORMAL] = $button_grey
+    fg[NORMAL]   = $white
+    fg[PRELIGHT] = $white
     bg[ACTIVE] = $button_grey
 
-    # This is just the exact reverse of what is going on inside GTK+ ...
+    ${# This is just the exact reverse of what is going on inside GTK+ ...}
     GtkMenu::scroll-arrow-vlength = $(my_floor(subcell_size/0.7 + 2*thickness))
     GtkMenu::horizontal-padding = 0
     GtkMenu::vertical-padding   = 0

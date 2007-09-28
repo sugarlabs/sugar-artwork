@@ -439,8 +439,29 @@ sugar_style_draw_box (GtkStyle       *style,
                              x + (width - SUGAR_RC_STYLE (style->rc_style)->line_width) / 2);
     } else if (DETAIL ("menu") || DETAIL ("palette")) {
         SugarInfo info;
-
         sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+        
+        /* This code is to detect the up/down arrow buttons, as GTK+ unfortunately
+         * does not have any special detail string :-/
+         * The reason we need this hack is that there is no other way to get the
+         * correct padding on the top/bottom menu item. */
+        if (widget && widget->allocation.x == 0) {
+            /* Just make the area larger, it does not matter really how
+             * we do this ... note that this ignores GtkMenu::horizontal-padding
+             * and GtkMenu::vertical-padding ... */
+            if (y == style->ythickness) {
+                info.pos.x -= style->xthickness;
+                info.pos.width += 2*style->xthickness;
+                info.pos.y -= style->ythickness;
+                info.pos.height += style->ythickness;
+            }
+            if (y + height == widget->allocation.height - style->ythickness) {
+                info.pos.x -= style->xthickness;
+                info.pos.width += 2*style->xthickness;
+                info.pos.height += style->ythickness;
+            }
+        }
+
         sugar_draw_menu (cr, &info, NULL);
     } else if (DETAIL ("palette-invoker") || DETAIL ("toolbutton-prelight")) {
         SugarInfo info;
