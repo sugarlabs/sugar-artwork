@@ -1,6 +1,6 @@
 [Icon Theme]
-_Name=OLPC
-_Comment=Default OLPC Theme
+Name=OLPC
+Comment=Default OLPC Theme
 
 Directories=scalable/mimetypes,scalable/device,scalable/control,scalable/actions,scalable/status
 
