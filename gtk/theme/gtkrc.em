@@ -480,6 +480,10 @@ style "button"
 
 style "combobox"
 {
+    # "Disable" the ACTIVE state of the button, it only creates problems :-(
+    bg[ACTIVE] = $button_grey
+    fg[ACTIVE] = $white
+
     # Work around GTK+ bug #382646
     text[NORMAL]      = $white
     text[ACTIVE]      = $white
