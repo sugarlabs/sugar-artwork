@@ -9,7 +9,6 @@ AM_DISABLE_STATIC
 AC_PROG_CC
 AC_HEADER_STDC
 AC_PROG_LIBTOOL
-AC_PROG_INTLTOOL
 
 PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0,,
 	          AC_MSG_ERROR([GTK+-2.0 is required to compile redhat-artwork]))
@@ -24,8 +23,6 @@ PKG_CHECK_MODULES(ENGINE, gtk+-2.0 >= 2.0 gobject-2.0 >= 2.0 cairo >= 0.1.1)
 GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
 AC_SUBST(GTK_VERSION)
 
-AM_GLIB_GNU_GETTEXT
-	
 AC_OUTPUT([
 Makefile
 cursor/Makefile
@@ -42,5 +39,4 @@ gtk/Makefile
 gtk/engine/Makefile
 gtk/theme/Makefile
 matchbox/Makefile
-po/Makefile.in
 ])

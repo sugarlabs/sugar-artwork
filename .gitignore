@@ -22,14 +22,10 @@ ltmain.sh
 missing
 mkinstalldirs
 Makefile.in.in
-po/POTFILES
-po/stamp-it
 cursor/cursorthemegen/cursorthemegen
 cursor/sugar/theme
-icons/index.theme
 .deps
 .libs
-po/.intltool-merge-cache
 stamp-h1
 *~
 gtk/theme/sugar.gtkrc
