@@ -474,7 +474,8 @@ style "entry"
 
 style "button"
 {
-    fg[NORMAL]  = $white
+    fg[NORMAL] = $white
+    fg[ACTIVE] = $black
 
     bg[NORMAL] = $button_grey
 }
@@ -638,11 +639,11 @@ widget_class "*<GtkImageMenuItem>"        style "imagemenuitem"
 widget_class "*<GtkSeparatorMenuItem>*"   style "separatormenuitem"
 
 # Buttons and Combos
+widget_class "*<GtkButton>*"           style "button"
+widget_class "*<GtkCheckButton>*"      style "checkbutton"
 widget_class "*<GtkComboBox>*"         style "combobox"
 widget_class "*<GtkComboBoxEntry>*"    style "comboboxentry"
 widget_class "*<GtkCombo>*"            style "comboboxentry"
-widget_class "*<GtkButton>*"           style "button"
-widget_class "*<GtkCheckButton>*"      style "checkbutton"
 
 # Entries
 widget_class "*<GtkEntry>"       style "entry"
