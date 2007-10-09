@@ -173,6 +173,24 @@ style "window-child"
     }
 }
 
+style "black-bg"
+{
+    bg[NORMAL] = $black
+}
+
+style "black-bg-child"
+{
+    bg[INSENSITIVE] = $black
+    base[INSENSITIVE] = $black
+
+    fg[NORMAL] = $white
+    
+    engine "sugar" {
+        label_fg_color = $white
+    }
+}
+
+
 style "groupbox-panel"
 {
     bg[NORMAL] = $selection_grey
@@ -604,6 +622,11 @@ widget_class "<GtkWindow>"               style "window"
 widget_class "<GtkWindow>*<GtkEventBox>" style "window"
 widget_class "<GtkWindow>*<GtkLayout>"   style "window"
 widget_class "<GtkWindow>*"              style "window-child"
+
+widget_class "*<SugarAlert>"               style "black-bg"
+widget_class "*<SugarAlert>*<GtkEventBox>" style "black-bg"
+widget_class "*<SugarAlert>*<GtkLayout>"   style "black-bg"
+widget_class "*<SugarAlert>*"              style "black-bg-child"
 
 # SugarToolbox
 #widget_class "*<SugarToolbox>" style "toolbox"
