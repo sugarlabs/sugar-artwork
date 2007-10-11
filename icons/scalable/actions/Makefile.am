@@ -11,6 +11,8 @@ icon_DATA =					\
 	column-insert.svg			\
 	column-remove.svg			\
 	document-save.svg			\
+	dialog-cancel.svg			\
+	dialog-ok.svg				\
 	edit-copy.svg				\
 	edit-paste.svg				\
 	edit-redo.svg				\
