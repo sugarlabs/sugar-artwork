@@ -70,6 +70,8 @@ def cmd_build_snapshot():
     if retcode:
         sys.exit(0)
 
+    if 'JOYBUILD_PATH' in os.environ:
+        tarball = os.path.join(os.environ['JOYBUILD_PATH'], 'source', tarball)
     os.rename('%s-%s.tar.bz2' % (name, version), tarball)
 
     print 'Update NEWS.sugar...'
