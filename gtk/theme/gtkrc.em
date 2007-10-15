@@ -247,9 +247,10 @@ style "menu"
     ythickness = $thickness
 }
 
-# Base this style on "menu" to get the correct colors
 style "palette-menu" = "menu"
 {
+    # The colors are copied here, instead of basing it on
+    # the menu style
     xthickness = 0
     ythickness = $subcell_size
 }
@@ -262,10 +263,6 @@ style "menu-child"
     fg[NORMAL]   = $white
     fg[PRELIGHT] = $white
     
-    # Work around bug #382646
-    text[NORMAL]   = $white
-    text[PRELIGHT] = $white
-
     bg[NORMAL] = $button_grey
 
     bg[INSENSITIVE] = $black
@@ -481,6 +478,7 @@ style "panel"
 style "entry"
 {
     color["focus_line"] = $text_field_grey
+
     ${ entry_ythickness = my_ceil(0.2 * (subcell_size*3.0/2.0 - thickness) + thickness) }
     ${ entry_xthickness = my_ceil(0.32 * (subcell_size*3.0/2.0 - thickness) + thickness) }
 
@@ -582,6 +580,7 @@ style "menuitem"
 
     bg[PRELIGHT] = $button_grey
 
+    # Work around bug #382646
     text[PRELIGHT]    = $white
     text[NORMAL]      = $white
     text[ACTIVE]      = $white
