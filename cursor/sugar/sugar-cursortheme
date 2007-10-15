@@ -1,0 +1,167 @@
+<theme name="Sugar">
+	<source size="48" gridsize="48">
+		<image file="sugar-00.png" use="0"/>
+		<image file="sugar-01.png" use="1"/>
+		<image file="sugar-02.png" use="2"/>
+		<image file="sugar-03.png" use="3"/>
+		<image file="sugar-04.png" use="4"/>
+		<image file="sugar-05.png" use="5"/>
+		<image file="sugar-06.png" use="6"/>
+		<image file="sugar-07.png" use="7"/>
+		<image file="sugar-08.png" use="8"/>
+		<image file="sugar-09.png" use="9"/>
+		<image file="sugar-10.png" use="10"/>
+		<image file="sugar-11.png" use="11"/>
+		
+		<image file="sugar-hotspots.png" use="hotspot"/>
+	</source>
+	
+	<layout>
+		<row>
+			<cursor name="left_ptr"/>
+			<cursor name="center_ptr"/>
+			<cursor name="right_ptr"/>
+			<cursor name="exchange"/>
+			<cursor name="plus"/>
+			<cursor name="minus"/>
+		</row><row>
+			<cursor name="question_arrow"/>
+			<cursor name="link"/>
+			<cursor name="forbidden"/>
+			<cursor name="close"/>
+			<cursor name="left_ptr_watch">
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+			</cursor>
+			<cursor name="left_ptr_modify"/>
+		</row><row>
+			<cursor name="busy">
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+				<frame delay="60"/>
+			</cursor>
+			<cursor name="circle"/>
+			<cursor name="hand1"/>
+			<cursor name="hand2"/>
+			<cursor name="hand_open"/>
+			<cursor name="hand_closed"/>
+		</row><row>
+			<cursor name="sb_left_arrow"/>
+			<cursor name="sb_right_arrow"/>
+			<cursor name="sb_up_arrow"/>
+			<cursor name="sb_down_arrow"/>
+			<cursor name="hidden"/>
+			<cursor name="crosshair"/>
+		</row><row>
+			<cursor name="bottom_right_corner"/>
+			<cursor name="bottom_left_corner"/>
+			<cursor name="top_side"/>
+			<cursor name="right_side"/>
+			<cursor name="fleur"/>
+			<cursor name="xterm"/>		
+		</row><row>
+			<cursor name="based_arrow_left"/>
+			<cursor name="based_arrow_right"/>
+			<cursor name="based_arrow_up"/>
+			<cursor name="based_arrow_down"/>
+			<cursor name="sb_v_double_arrow"/>
+			<cursor name="sb_h_double_arrow"/>
+		</row><row>
+			<cursor name="pencil"/>
+			<cursor name="paintbrush"/>
+			<cursor name="eyedropper"/>
+			<cursor name="base(d)_arrow_down"/>
+			<cursor name="sb_v_double_arrow"/>
+			<cursor name="sb_h_double_arrow"/>
+		</row><row>
+			<cursor name="pencil"/>
+			<cursor name="brush"/>
+			<cursor name="eraser"/>
+			<cursor name="bucket"/>
+			<cursor name="color-picker"/>
+			<cursor name="hidden"/>
+		</row>
+	</layout>
+	
+	<alias name="default" target="left_ptr">
+	<alias name="top_left_arrow" target="left_ptr"/>
+	<alias name="top_right_arrow" target="right_ptr"/>
+	<alias name="arrow" target="right_ptr"/>
+	<alias name="draft_small" target="right_ptr"/>
+	<alias name="draft_large" target="right_ptr"/>
+	
+	<alias name="right_side" target="left_side"/>
+	<alias name="bottom_side" target="top_side"/>
+	<alias name="double_arrow" target="top_side"/>
+	<alias name="top_right_corner" target="bottom_left_corner"/>
+	<alias name="top_left_corner" target="bottom_right_corner"/>
+	
+	<alias name="dnd_none" target="forbidden"/>
+	<alias name="unavailable" target="forbidden"/>
+	
+	<alias name="dnd_none" target="forbidden"/>
+	<alias name="dnd_copy" target="plus"/>
+	<alias name="dnd_move" target="plus"/>
+	<alias name="dnd_ask" target="question_arrow"/>
+	<alias name="dnd_none" target="left_ptr_modify"/>
+	
+	<alias name="copy" target="plus"/>
+	<alias name="add" target="plus"/>
+	<alias name="remove" target="minus"/>
+	
+	<alias name="pirate" target="close"/>
+	<alias name="destroy" target="close"/>
+	
+	<alias name="cross" target="crosshair"/>
+	
+	<-- Mozilla cursors -->
+	
+	<!-- moz_spinning -->
+	<alias name="08e8e1c95fe2fc01f976f1e063a24ccd" target="left_ptr_watch"/>
+  	<!-- moz_question_arrow -->
+	<alias name="5c6cd98b3f3ebcb1f9c7f1c204630408" target="question_arrow"/>
+	<!-- moz_hand_grabbing -->
+	<alias name="208530c400c041818281048008011002" target="hand_closed"/>
+	<!-- moz_hand_grab -->
+	<alias name="5aca4d189052212118709018842178c0" target="hand_open"/>
+	<!-- moz_question_arrow -->
+	<alias name="5c6cd98b3f3ebcb1f9c7f1c204630408" target="question_arrow"/>
+	<!-- moz_copy -->
+	<alias name="08ffe1cb5fe6fc01f906f1c063814ccf" target="plus"/>
+	
+	<!--
+	moz_alias 0876e1c15ff2fc01f906f1c363074c0f (left_ptr with small arrow) 
+	moz_menu 08ffe1e65f80fcfdf9fff11263e74c48 (left_ptr with menu) */
+	-->
+	
+	<-- GTK+ toolkit cursors -->
+
+	<alias name="1081e37283d90000800003c07f3ef6bf" target="dnd_copy"/>
+	<alias name="9081237383d90e509aa00f00170e968f" target="dnd_move"/>
+	<alias name="3085a0e285430894940527032f8b26df" target="dnd_link"/>
+	<alias name="1001208387f90000800003000700f6ff" target="dnd_none"/>
+
+	<alias name="90b3018312820b127e5a0b7c8034a301" target="color-picker"/>
+
+	<alias name="watch" target="left_ptr_watch"/>
+	
+</theme>

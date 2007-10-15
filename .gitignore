@@ -37,3 +37,4 @@ test/valgrind-logs
 test/torturetest
 test/torture_*
 test/exported_*
+.DS_Store
