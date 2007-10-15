@@ -52,7 +52,8 @@ white = '"#FFFFFF"'
 
 }
 ${
-icon_small = icon_base * 3
+# This is broken, just doing it for eben so he can see the difference
+icon_small = icon_base * 3 + 4
 icon_large = icon_base * 5
 
 small_icons = [ "gtk-menu", "gtk-dnd", "gtk-small-toolbar", "gtk-button" ]
@@ -496,7 +497,7 @@ style "entry"
 
 style "button"
 {
-    ${ border = (3*subcell_size - icon_small) / 2 - thickness - 1 }
+    ${ border = max(0, (3*subcell_size - icon_small) / 2 - thickness - 1) }
     # It would be nicer to just set the inner-border, but that does not work
     # for combo boxes ... The combobox ignores it, so set it to 0px
     # See http://bugzilla.gnome.org/show_bug.cgi?id=485762
