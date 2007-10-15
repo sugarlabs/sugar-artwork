@@ -89,7 +89,7 @@
 			<cursor name="pencil"/>
 			<cursor name="paintbrush"/>
 			<cursor name="eyedropper"/>
-			<cursor name="base(d)_arrow_down"/>
+			<cursor name="based_arrow_down"/>
 			<cursor name="sb_v_double_arrow"/>
 			<cursor name="sb_h_double_arrow"/>
 		</row><row>
@@ -102,7 +102,7 @@
 		</row>
 	</layout>
 	
-	<alias name="default" target="left_ptr">
+	<alias name="default" target="left_ptr"/>
 	<alias name="top_left_arrow" target="left_ptr"/>
 	<alias name="top_right_arrow" target="right_ptr"/>
 	<alias name="arrow" target="right_ptr"/>
@@ -133,7 +133,7 @@
 	
 	<alias name="cross" target="crosshair"/>
 	
-	<-- Mozilla cursors -->
+	<!-- Mozilla cursors -->
 	
 	<!-- moz_spinning -->
 	<alias name="08e8e1c95fe2fc01f976f1e063a24ccd" target="left_ptr_watch"/>
@@ -153,7 +153,7 @@
 	moz_menu 08ffe1e65f80fcfdf9fff11263e74c48 (left_ptr with menu) */
 	-->
 	
-	<-- GTK+ toolkit cursors -->
+	<!-- GTK+ toolkit cursors -->
 
 	<alias name="1081e37283d90000800003c07f3ef6bf" target="dnd_copy"/>
 	<alias name="9081237383d90e509aa00f00170e968f" target="dnd_move"/>
