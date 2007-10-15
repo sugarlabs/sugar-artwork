@@ -109,7 +109,7 @@
 	<alias name="draft_small" target="right_ptr"/>
 	<alias name="draft_large" target="right_ptr"/>
 	
-	<alias name="right_side" target="left_side"/>
+	<alias name="left_side" target="right_side"/>
 	<alias name="bottom_side" target="top_side"/>
 	<alias name="double_arrow" target="top_side"/>
 	<alias name="top_right_corner" target="bottom_left_corner"/>
@@ -157,7 +157,7 @@
 
 	<alias name="1081e37283d90000800003c07f3ef6bf" target="dnd_copy"/>
 	<alias name="9081237383d90e509aa00f00170e968f" target="dnd_move"/>
-	<alias name="3085a0e285430894940527032f8b26df" target="dnd_link"/>
+	<!--alias name="3085a0e285430894940527032f8b26df" target="dnd_link"/-->
 	<alias name="1001208387f90000800003000700f6ff" target="dnd_none"/>
 
 	<alias name="90b3018312820b127e5a0b7c8034a301" target="color-picker"/>
