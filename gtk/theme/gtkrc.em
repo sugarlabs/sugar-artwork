@@ -103,7 +103,7 @@ style "default"
     # A lot of these will probably need to be changed, but this has to
     # be done when the exact sizes are known
     GtkWidget::interior-focus = 0
-    GtkWidget::focus-line-width = 1   # This does not do anything really
+    GtkWidget::focus-line-width = 1   # Prevents some drawing glitches
     GtkWidget::focus-padding = 0
     # 0.05 works good for both the sugar and sugar-xo themes
     GtkWidget::cursor-aspect-ratio = 0.05
@@ -117,8 +117,9 @@ style "default"
 
     GtkRange::activate-slider = 1
 
-    GtkButton::default-border = { 1, 1, 1, 1 }         # line_width - focus-line-width
-    GtkButton::default-outside-border = { 2, 2, 2, 2 } # focus-line-width
+    # We fake the default border in the theme
+    GtkButton::default-border = { 0, 0, 0, 0 }
+    GtkButton::default-outside-border = { 0, 0, 0, 0 }
 
     GtkScrolledWindow::scrollbar-spacing = 0
 
@@ -134,6 +135,9 @@ style "default"
 
     GtkProgressBar::min-horizontal-bar-height = $subcell_size
     GtkProgressBar::min-vertical-bar-width = $subcell_size
+
+    GtkButtonBox::child-min-height = $(3*subcell_size)
+    GtkButtonBox::child-internal-pad-x = 0
 
     engine "sugar" {
         line_width = $line_width
@@ -383,34 +387,21 @@ style "spinbutton"
     fg[NORMAL]  = $white
     fg[ACTIVE]  = $black
 
-    ${ entry_ythickness = my_ceil(0.2 * (subcell_size*3.0/2.0 - thickness) + thickness) }
-    ${ entry_xthickness = subcell_size }
+    ${ spin_ythickness = my_ceil(0.2 * (subcell_size*3.0/2.0 - thickness) + thickness) }
+    ${ spin_xthickness = subcell_size }
 
     # small inner border and a large x/ythickness for entries
     # to reduce the number of hacks needed :-)
-    xthickness = $entry_xthickness
-    ythickness = $entry_ythickness
+    xthickness = $spin_xthickness
+    ythickness = $spin_ythickness
     GtkWidget::focus-line-width = 0
 
     # This tries to get a height of exactly 45 pixel for the entry.
-    GtkEntry::inner-border = { $(max(subcell_size - entry_xthickness, 0)), $(max(subcell_size - entry_xthickness, 0)),
-                               $(max(my_ceil((3*subcell_size - font_height - entry_ythickness*2)/2.0),0)), $(max(my_floor((3*subcell_size - font_height - entry_ythickness*2)/2.0), 0)) }
+    GtkEntry::inner-border = { $(max(subcell_size - spin_xthickness, 0)), $(max(subcell_size - spin_xthickness, 0)),
+                               $(max(my_ceil((3*subcell_size - font_height - spin_ythickness*2)/2.0),0)), $(max(my_floor((3*subcell_size - font_height - spin_ythickness*2)/2.0), 0)) }
 
     engine "sugar" {
         hint = "spinbutton"
-    }
-}
-
-style "comboboxentry"
-{
-    # Copied from the "default" style. Part of the workaround for bug #382646.
-    text[NORMAL] = $black
-    text[ACTIVE] = $black
-    text[SELECTED] = $black
-    text[PRELIGHT] = $black
-
-    engine "sugar" {
-        hint = "comboboxentry"
     }
 }
 
@@ -505,6 +496,18 @@ style "entry"
 
 style "button"
 {
+    ${ border = (3*subcell_size - icon_small) / 2 - thickness - 1 }
+    # It would be nicer to just set the inner-border, but that does not work
+    # for combo boxes ... The combobox ignores it, so set it to 0px
+    # See http://bugzilla.gnome.org/show_bug.cgi?id=485762
+
+    GtkButton::inner-border = { 0, 0, 0, 0 }
+
+    # So set the x/ythickness; y-padding is $subcell_size overall
+    xthickness = $(subcell_size - 1)
+    ythickness = $(border + thickness)
+
+
     fg[NORMAL] = $white
     fg[ACTIVE] = $black
 
@@ -521,6 +524,23 @@ style "combobox"
     text[NORMAL]      = $white
     text[ACTIVE]      = $white
     text[PRELIGHT]    = $white
+}
+
+style "comboboxentry"
+{
+    # Copied from the "default" style. Part of the workaround for bug #382646.
+    text[NORMAL] = $black
+    text[ACTIVE] = $black
+    text[SELECTED] = $black
+    text[PRELIGHT] = $black
+
+    # It just happens that the entry xthickness works good for the button,
+    # which simplefies matters a bit.
+    xthickness = $entry_xthickness
+
+    engine "sugar" {
+        hint = "comboboxentry"
+    }
 }
 
 style "checkbutton"
