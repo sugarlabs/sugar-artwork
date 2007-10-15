@@ -87,13 +87,6 @@
 			<cursor name="sb_h_double_arrow"/>
 		</row><row>
 			<cursor name="pencil"/>
-			<cursor name="paintbrush"/>
-			<cursor name="eyedropper"/>
-			<cursor name="based_arrow_down"/>
-			<cursor name="sb_v_double_arrow"/>
-			<cursor name="sb_h_double_arrow"/>
-		</row><row>
-			<cursor name="pencil"/>
 			<cursor name="brush"/>
 			<cursor name="eraser"/>
 			<cursor name="bucket"/>
