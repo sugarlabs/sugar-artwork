@@ -87,9 +87,9 @@
 			<cursor name="sb_h_double_arrow"/>
 		</row><row>
 			<cursor name="pencil"/>
-			<cursor name="brush"/>
+			<cursor name="paintbrush"/>
 			<cursor name="eraser"/>
-			<cursor name="bucket"/>
+			<cursor name="paint-bucket"/>
 			<cursor name="color-picker"/>
 			<cursor name="hidden"/>
 		</row>
@@ -125,6 +125,7 @@
 	<alias name="destroy" target="close"/>
 	
 	<alias name="cross" target="crosshair"/>
+	<alias name="eyedropper" target="color-picker"/>
 	
 	<!-- Mozilla cursors -->
 	
