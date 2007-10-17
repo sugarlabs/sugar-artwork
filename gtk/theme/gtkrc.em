@@ -52,8 +52,7 @@ white = '"#FFFFFF"'
 
 }
 ${
-# This is broken, just doing it for eben so he can see the difference
-icon_small = icon_base * 3 + 4
+icon_small = icon_base * 3
 icon_large = icon_base * 5
 
 small_icons = [ "gtk-menu", "gtk-dnd", "gtk-small-toolbar", "gtk-button" ]
@@ -121,6 +120,7 @@ style "default"
     # We fake the default border in the theme
     GtkButton::default-border = { 0, 0, 0, 0 }
     GtkButton::default-outside-border = { 0, 0, 0, 0 }
+    GtkButton::image-spacing = $subcell_size
 
     GtkScrolledWindow::scrollbar-spacing = 0
 
@@ -138,7 +138,9 @@ style "default"
     GtkProgressBar::min-vertical-bar-width = $subcell_size
 
     GtkButtonBox::child-min-height = $(3*subcell_size)
+    GtkButtonBox::child-min-width = $(3*subcell_size)
     GtkButtonBox::child-internal-pad-x = 0
+    GtkButtonBox::child-internal-pad-y = 0
 
     engine "sugar" {
         line_width = $line_width
@@ -495,7 +497,7 @@ style "entry"
 
 style "button"
 {
-    ${ border = max(0, (3*subcell_size - icon_small) / 2 - thickness - 1) }
+    ${ border = max(0, my_ceil((3*subcell_size/2.0 - icon_small / 2.0))) }
     # It would be nicer to just set the inner-border, but that does not work
     # for combo boxes ... The combobox ignores it, so set it to 0px
     # See http://bugzilla.gnome.org/show_bug.cgi?id=485762
@@ -503,8 +505,8 @@ style "button"
     GtkButton::inner-border = { 0, 0, 0, 0 }
 
     # So set the x/ythickness; y-padding is $subcell_size overall
-    xthickness = $(subcell_size - 1)
-    ythickness = $(border + thickness)
+    xthickness = $(border)
+    ythickness = $(border)
 
 
     fg[NORMAL] = $white
