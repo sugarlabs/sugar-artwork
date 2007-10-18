@@ -32,8 +32,9 @@ icon_DATA =					\
 	go-left.svg				\
 	go-right.svg				\
 	go-next.svg				\
+	go-next-paired.svg			\
 	go-previous.svg				\
-	go-previous-mini.svg			\
+	go-previous-paired.svg			\
 	insert-image.svg			\
 	insert-table.svg			\
 	invite.svg				\
@@ -72,11 +73,11 @@ icon_DATA =					\
 	zoom-friends.svg			\
 	zoom-home.svg				\
 	zoom-home-mini.svg			\
-	zoom-groups.svg			\
+	zoom-groups.svg				\
 	zoom-groups-mini.svg			\
 	zoom-in.svg				\
 	zoom-mesh.svg				\
-	zoom-neighborhood.svg		\
+	zoom-neighborhood.svg			\
 	zoom-neighborhood-mini.svg		\
 	zoom-out.svg
 
