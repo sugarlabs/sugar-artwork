@@ -33,6 +33,7 @@ icons/scalable/Makefile
 icons/scalable/actions/Makefile
 icons/scalable/control/Makefile
 icons/scalable/device/Makefile
+icons/scalable/emblems/Makefile
 icons/scalable/mimetypes/Makefile
 icons/scalable/status/Makefile
 gtk/Makefile
