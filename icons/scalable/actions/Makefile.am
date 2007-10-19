@@ -32,8 +32,9 @@ icon_DATA =					\
 	go-left.svg				\
 	go-right.svg				\
 	go-next.svg				\
+	go-next-paired.svg			\
 	go-previous.svg				\
-	go-previous-mini.svg			\
+	go-previous-paired.svg			\
 	insert-image.svg			\
 	insert-table.svg			\
 	invite.svg				\
