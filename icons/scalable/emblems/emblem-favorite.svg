@@ -1,0 +1,6 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-favorite">
+	<polygon fill="&fill_color;" points="27.5,5.265 34.723,19.905    50.877,22.251 39.189,33.647 41.949,49.734 27.5,42.138 13.052,49.734 15.812,33.647 4.122,22.251 20.275,19.905  " stroke="&stroke_color;" stroke-linecap="round" stroke-width="3.5"/>
+</g></svg>

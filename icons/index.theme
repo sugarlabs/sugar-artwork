@@ -2,7 +2,7 @@
 Name=OLPC
 Comment=Default OLPC Theme
 
-Directories=scalable/mimetypes,scalable/device,scalable/control,scalable/actions,scalable/status
+Directories=scalable/mimetypes,scalable/device,scalable/control,scalable/actions,scalable/status,scalable/emblems
 
 [scalable/actions]
 Size=55
@@ -12,30 +12,36 @@ Context=Actions
 Type=Scalable
 
 [scalable/mimetypes]
-Size=50
+Size=55
 MinSize=32
 MaxSize=256
 Context=MimeTypes
 Type=Scalable
 
 [scalable/device]
-Size=50
+Size=55
 MinSize=32
 MaxSize=256
 Context=Device
 Type=Scalable
 
 [scalable/control]
-Size=50
+Size=55
 MinSize=32
 MaxSize=256
 Context=Control
 Type=Scalable
 
 [scalable/status]
-Size=50
+Size=55
 MinSize=32
 MaxSize=256
 Context=Status
 Type=Scalable
 
+[scalable/emblems]
+Size=55
+MinSize=32
+MaxSize=256
+Context=Emblems
+Type=Scalable

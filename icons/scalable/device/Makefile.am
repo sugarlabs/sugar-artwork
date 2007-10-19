@@ -2,15 +2,7 @@ iconsize=scalable
 category=device
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
-icon_DATA =				\
-	badge-busy.svg			\
-	badge-channel-1.svg		\
-	badge-channel-6.svg		\
-	badge-channel-11.svg	\
-	badge-charging.svg		\
-	badge-locked.svg		\
-	badge-outofrange.svg		\
-	badge-star.svg			\
+icon_DATA =					\
 	battery-000.icon		\
 	battery-000.svg			\
 	battery-010.icon		\

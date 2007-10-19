@@ -1,1 +1,1 @@
-SUBDIRS = actions control device mimetypes status
+SUBDIRS = actions control device mimetypes status emblems
