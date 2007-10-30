@@ -1,3 +1,5 @@
+* Just log a warning instead of aborting when sizes are negative (benzea)
+
 Snapshot 811b41812a
 
 * updated emblems, zoom icons (eben)

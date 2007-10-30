@@ -26,7 +26,7 @@
 #include "sugar-info.h"
 #include "sugar-drawing.h"
 
-#define SANITIZE_SIZE g_assert (width >= -1 && height >= -1);    \
+#define SANITIZE_SIZE g_return_if_fail (width >= -1 && height >= -1);    \
     if (width == -1 && height == -1) {                          \
         gdk_drawable_get_size (GDK_DRAWABLE (window), &width, &height);          \
     } else if (width == -1) {                                   \
