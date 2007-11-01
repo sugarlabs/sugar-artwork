@@ -1,5 +1,12 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-seek-forward-inactive">
-	<path d="M44.875,27.5c0,9.665-7.836,17.5-17.5,17.5   s-17.5-7.835-17.5-17.5c0-9.664,7.836-17.5,17.5-17.5S44.875,17.836,44.875,27.5" display="inline" fill="none" stroke="#808284" stroke-width="2.25"/>
-	<path d="M19.026,22.722c0,10.434,0,10.434,0,10.434l10.436-5.55L19.026,22.722z" display="inline" fill="#808284" id="path2825_8_"/>
-	<path d="M28.991,22.722c0,10.434,0,10.434,0,10.434l10.434-5.55L28.991,22.722z" display="inline" fill="#808284" id="path2825_7_"/>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-seek-forward-insensitive">
+	<g display="inline">
+		<g>
+			<path d="M27.501,5C39.925,5.019,49.979,15.074,50,27.5C49.979,39.926,39.925,49.98,27.501,50     C15.073,49.98,5.02,39.926,5,27.5C5.02,15.074,15.073,5.019,27.501,5 M27.504,7.25c-0.001,0-0.002,0-0.003,0s-0.002,0-0.003,0     c0,0,0.001,0,0.002,0C16.351,7.27,7.268,16.354,7.25,27.504c0.018,11.144,9.104,20.229,20.254,20.246     c11.141-0.018,20.226-9.104,20.246-20.253C47.73,16.354,38.648,7.27,27.502,7.25C27.503,7.25,27.504,7.25,27.504,7.25     L27.504,7.25z" fill="#808284"/>
+		</g>
+		<path d="M29.256,27.518l-13.415,7.136c0,0,0,0,0-13.417L29.256,27.518z" fill="#808284" id="path2825_2_"/>
+		<path d="M42.066,27.518l-13.417,7.136c0,0,0,0,0-13.417L42.066,27.518z" fill="#808284" id="path2825_1_"/>
+	</g>
 </g></svg>

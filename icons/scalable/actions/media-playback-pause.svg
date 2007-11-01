@@ -1,12 +1,9 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-playback-pause">
-	<circle cx="27.5" cy="27.5" display="inline" fill="#808284" r="17.5"/>
-	<path d="M27.374,5C14.948,5,4.875,15.074,4.875,27.5S14.948,50,27.374,50   s22.501-10.074,22.501-22.5S39.8,5,27.374,5z M27.373,47.392c-10.937,0-19.8-8.865-19.802-19.799   C7.572,16.656,16.436,7.79,27.373,7.788c10.936,0.002,19.801,8.868,19.804,19.804C47.174,38.526,38.309,47.392,27.373,47.392z" display="inline" fill="#808284"/>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-playback-pause">
 	<g display="inline">
-		<g>
-			<rect fill="#FFFFFF" height="12.213" width="4.512" x="21.776" y="21.465"/>
-		</g>
-		<g>
-			<rect fill="#FFFFFF" height="12.213" width="4.514" x="28.71" y="21.465"/>
-		</g>
+		<path d="M27.499,0C12.311,0,0,12.313,0,27.5C0,42.688,12.311,55,27.499,55C42.686,55,55,42.688,55,27.5    C55,12.313,42.686,0,27.499,0z M27.497,52.646c-13.826,0-25.033-11.209-25.035-25.033C2.463,13.787,13.67,2.577,27.497,2.574    c13.826,0.003,25.035,11.213,25.039,25.038C52.531,41.437,41.322,52.646,27.497,52.646z" fill="&fill_color;"/>
+		<path d="M27.496,5C15.068,5,4.997,15.076,4.997,27.5c0,12.427,10.071,22.5,22.499,22.5    c12.428,0,22.5-10.073,22.5-22.5C49.996,15.076,39.924,5,27.496,5z M25.938,35.443h-5.801V19.741h5.801V35.443z M34.855,35.443    h-5.803V19.741h5.803V35.443z" fill="&fill_color;"/>
 	</g>
 </g></svg>

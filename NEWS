@@ -1,3 +1,8 @@
+* Added a zoom-original button for returning to actual size (eben)
+* Updated the full media button set to the new design spec (eben)
+* Added fullscreen (and return) buttons (eben)
+* #4595 Fixed the "wiggle" in the busy cursor (eben)
+
 Snapshot 320c350df2
 
 * Just log a warning instead of aborting when sizes are negative (benzea)

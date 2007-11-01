@@ -1,7 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-seek-forward">
-	<g display="inline">
-		<path d="M44.875,27.5c0,9.665-7.836,17.5-17.5,17.5s-17.5-7.835-17.5-17.5c0-9.664,7.836-17.5,17.5-17.5    S44.875,17.836,44.875,27.5" fill="#808284"/>
-		<path d="M19.026,22.722c0,10.434,0,10.434,0,10.434l10.436-5.55L19.026,22.722z" fill="#FFFFFF" id="path2825_23_"/>
-		<path d="M28.991,22.722c0,10.434,0,10.434,0,10.434l10.434-5.55L28.991,22.722z" fill="#FFFFFF" id="path2825_35_"/>
-	</g>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-seek-forward">
+	<path d="M27.5,5C15.074,5,5,15.075,5,27.5S15.074,50,27.5,50S50,39.925,50,27.5S39.926,5,27.5,5z    M28.57,34.771c0,0,0-0.008,0-6.813l-12.809,6.813c0,0,0,0,0-13.416l12.809,5.996c0-1.621,0-3.589,0-5.996l13.416,6.28   L28.57,34.771z" display="inline" fill="&fill_color;"/>
 </g></svg>
