@@ -61,6 +61,8 @@ icon_DATA =						\
 	row-insert.svg				\
 	row-remove.svg				\
 	system-search.svg			\
+	tray-hide.svg				\
+	tray-show.svg				\
 	view-fullscreen.svg			\
 	view-refresh.svg			\
 	view-return.svg				\
