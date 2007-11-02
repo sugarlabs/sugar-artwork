@@ -1,3 +1,5 @@
+Snapshot 9bc8be4d48
+
 * #4568 Implement a better effect for insensitive icons [may need more tweaking] (benzea)
 * Added tray-hide/show icons (eben)
 * Added a zoom-original button for returning to actual size (eben)
