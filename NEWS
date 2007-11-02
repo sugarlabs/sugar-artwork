@@ -1,3 +1,5 @@
+* #4610 Prevent a division by zero while making icons insensitive. (benzea)
+
 Snapshot 9bc8be4d48
 
 * #4568 Implement a better effect for insensitive icons [may need more tweaking] (benzea)

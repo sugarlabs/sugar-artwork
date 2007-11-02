@@ -81,9 +81,17 @@ sugar_get_insensitive_icon (GdkPixbuf *icon,
         }
     }
 
-    /* Shift the base value, to whatever we really need to adjust to. */
-    base = base - range / 2;
-    mult = (range << 8) / (max_color_value - min_color_value);
+    /* Shift the base value to the lower side of the range */
+
+    if (max_color_value - min_color_value > 0) {
+        base = base - range / 2;
+        mult = (range << 8) / (max_color_value - min_color_value);
+    } else {
+        /* There is only one color, just fill everything with base.
+         * Se setting mult to 0 means that the old pixel value will just
+         * be discarted. */
+        mult = 0;
+    }
 
     for (y = 0; y < height; y++) {
         pixel = pixels + y*rowstride;
