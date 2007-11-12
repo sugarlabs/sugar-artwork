@@ -25,6 +25,7 @@
 #include "sugar-rc-style.h"
 #include "sugar-info.h"
 #include "sugar-drawing.h"
+#include "sugar-utils.h"
 
 #define SANITIZE_SIZE g_return_if_fail (width >= -1 && height >= -1);    \
     if (width == -1 && height == -1) {                          \
@@ -776,6 +777,81 @@ sugar_style_draw_layout(GtkStyle        *style,
         gdk_gc_set_clip_rectangle (gc, NULL);
 }
 
+/* Based on the GTK+ implementation. */
+static GdkPixbuf*
+sugar_style_render_icon (GtkStyle               *style,
+                         const GtkIconSource    *source,
+                         GtkTextDirection        direction,
+                         GtkStateType            state,
+                         GtkIconSize             size,
+                         GtkWidget              *widget,
+                         const gchar            *detail)
+{
+    gint width = 1;
+    gint height = 1;
+    GdkPixbuf *scaled;
+    GdkPixbuf *stated;
+    GdkPixbuf *base_pixbuf;
+    GdkScreen *screen;
+    GtkSettings *settings;
+
+    /* Oddly, style can be NULL in this function, because
+     * GtkIconSet can be used without a style and if so
+     * it uses this function.
+     */
+
+    base_pixbuf = gtk_icon_source_get_pixbuf (source);
+
+    g_return_val_if_fail (base_pixbuf != NULL, NULL);
+
+    if (widget && gtk_widget_has_screen (widget)) {
+        screen = gtk_widget_get_screen (widget);
+        settings = gtk_settings_get_for_screen (screen);
+    } else if (style && style->colormap) {
+        screen = gdk_colormap_get_screen (style->colormap);
+        settings = gtk_settings_get_for_screen (screen);
+    } else {
+        settings = gtk_settings_get_default ();
+        g_warning ("Using the default screen to get the icon sizes");
+    }
+  
+    if (size != (GtkIconSize) -1 && !gtk_icon_size_lookup_for_settings (settings, size, &width, &height)) {
+        g_warning (G_STRLOC ": invalid icon size '%d'", size);
+        return NULL;
+    }
+
+    /* If the size was wildcarded, and we're allowed to scale, then scale; otherwise,
+     * leave it alone.
+     */
+    if (size != (GtkIconSize)-1 && gtk_icon_source_get_size_wildcarded (source))
+        scaled = sugar_pixbuf_scale_or_ref (base_pixbuf, width, height);
+    else
+        scaled = g_object_ref (base_pixbuf);
+
+    /* If the state was wildcarded, then generate a state. */
+    if (gtk_icon_source_get_state_wildcarded (source)) {
+        if (state == GTK_STATE_INSENSITIVE) {
+            guint base = 127;
+
+            if (style) {
+                GdkColor *color = &style->bg[GTK_STATE_INSENSITIVE];
+                base = (color->red >> 8) + (color->green >> 8) + (color->blue >> 8);
+                base = base / 3;
+            }
+
+            stated = sugar_get_insensitive_icon (scaled, 25, 127);  
+
+            /* Unref the scaled one. */
+            g_object_unref (scaled);
+        } else {
+            stated = scaled;
+        }
+    } else
+      stated = scaled;
+
+    return stated;
+}
+
 static void
 sugar_style_class_init (SugarStyleClass *klass)
 {
@@ -798,6 +874,8 @@ sugar_style_class_init (SugarStyleClass *klass)
     style_class->draw_option = sugar_style_draw_option;
     style_class->draw_check = sugar_style_draw_check;
     style_class->draw_layout = sugar_style_draw_layout;
+
+    style_class->render_icon = sugar_style_render_icon;
 }
 
 

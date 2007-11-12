@@ -15,6 +15,8 @@ libsugar_la_SOURCES =		\
 	sugar-style.c		\
 	sugar-info.h		\
 	sugar-info.c		\
+	sugar-utils.h		\
+	sugar-utils.c		\
 	sugar-drawing.h		\
 	sugar-drawing.c
 
