@@ -3,6 +3,7 @@ category=actions
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =						\
+	activity-start.svg			\
 	activity-stop.svg			\
 	cell-format.svg				\
 	cell-height.svg				\
