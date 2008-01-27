@@ -845,7 +845,7 @@ sugar_style_render_icon (GtkStyle               *style,
                 base = base / 3;
             }
 
-            stated = sugar_get_insensitive_icon (scaled, 25, 127);  
+            stated = sugar_get_insensitive_icon (scaled, 25, base);
 
             /* Unref the scaled one. */
             g_object_unref (scaled);
