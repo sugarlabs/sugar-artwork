@@ -647,8 +647,7 @@ sugar_style_draw_arrow (GtkStyle       *style,
     cr = sugar_cairo_create (window, area);
 
     sugar_fill_generic_info (info, style, state_type, shadow_type, widget, detail, x, y, width, height);
-
-    arrow_info.dir = arrow_type;
+    sugar_fill_arrow_info (&arrow_info, arrow_type);
 
     sugar_draw_arrow (cr, &arrow_info);
 

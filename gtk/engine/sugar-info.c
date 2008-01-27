@@ -181,6 +181,22 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
 }
 
 void
+sugar_fill_arrow_info (SugarArrowInfo *arrow_info,
+                       GtkArrowType    arrow_type)
+{
+    SugarInfo *info = &arrow_info->info;
+    GdkColor *color;
+
+    arrow_info->dir = arrow_type;
+    arrow_info->filled_triangle = FALSE;
+
+    /* If the background is black, then we draw a solid triangle. */
+    color = &info->style->bg[GTK_STATE_NORMAL];
+    if (color->red == 0 && color->green == 0 && color->blue == 0)
+        arrow_info->filled_triangle = TRUE;
+}
+
+void
 sugar_fill_generic_info (SugarInfo     *info,
                          GtkStyle      *style,
                          GtkStateType   state_type,

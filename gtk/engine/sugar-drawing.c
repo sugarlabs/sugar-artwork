@@ -325,8 +325,8 @@ sugar_draw_button_default (cairo_t *cr, SugarInfo *info)
     sugar_rounded_inner_stroke (cr, pos, line_width, info->max_radius, info->corners, info->cont_edges);
 }
 
-void
-sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
+static void
+sugar_draw_rounded_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
 {
     SugarInfo *info = &arrow_info->info;
     SugarRectangle *pos = &info->pos;
@@ -352,7 +352,7 @@ sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
             break;
         case GTK_ARROW_RIGHT:
             cairo_rotate (cr, -G_PI_2);
-            run_length = MIN (pos->width, pos->height / 2.0);
+            run_length = MIN ((pos->width - line_width), (pos->height - line_width) / 2.0);
             break;
         default:
             g_assert_not_reached ();
@@ -370,6 +370,59 @@ sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
     cairo_stroke (cr);
 
     cairo_restore (cr);
+}
+
+static void
+sugar_draw_filled_triangle_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
+{
+    SugarInfo *info = &arrow_info->info;
+    SugarRectangle *pos = &info->pos;
+    gdouble height;
+
+    cairo_save (cr);
+
+    /* Center, so that rotation, etc. is easier. */
+    cairo_translate (cr, pos->x + pos->width / 2.0, pos->y + pos->height / 2.0);
+
+    switch (arrow_info->dir) {
+        case GTK_ARROW_DOWN:
+            height = MIN (pos->width / 2.0, pos->height);
+            break;
+        case GTK_ARROW_UP:
+            cairo_rotate (cr, G_PI);
+            height = MIN (pos->width / 2.0, pos->height);
+            break;
+        case GTK_ARROW_LEFT:
+            cairo_rotate (cr, G_PI_2);
+            height = MIN (pos->width, pos->height / 2.0);
+            break;
+        case GTK_ARROW_RIGHT:
+            cairo_rotate (cr, -G_PI_2);
+            height = MIN (pos->width, pos->height / 2.0);
+            break;
+        default:
+            g_assert_not_reached ();
+    }
+
+    gdk_cairo_set_source_color (cr, &info->style->fg[info->state]);
+
+    cairo_move_to (cr, -height, -height / 2.0);
+    cairo_line_to (cr, 0, height / 2.0);
+    cairo_line_to (cr, height, -height / 2.0);
+    cairo_close_path (cr);
+
+    cairo_fill (cr);
+
+    cairo_restore (cr);
+}
+
+void
+sugar_draw_arrow (cairo_t *cr, SugarArrowInfo *arrow_info)
+{
+    if (!arrow_info->filled_triangle)
+        sugar_draw_rounded_arrow (cr, arrow_info);
+    else
+        sugar_draw_filled_triangle_arrow (cr, arrow_info);
 }
 
 void

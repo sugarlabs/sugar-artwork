@@ -82,9 +82,11 @@ typedef struct {
 typedef struct {
     SugarInfo info;
     GtkArrowType dir;
+    gboolean filled_triangle;
 } SugarArrowInfo;
 
 G_GNUC_INTERNAL void sugar_info_get_style_property (SugarInfo *info, const gchar *property, gpointer dest);
+G_GNUC_INTERNAL void sugar_fill_arrow_info (SugarArrowInfo *arrow_info, GtkArrowType arrow_type);
 G_GNUC_INTERNAL void sugar_fill_generic_info (SugarInfo *info, GtkStyle *style, GtkStateType state_type, GtkShadowType shadow_type, GtkWidget *widget, const gchar *detail, gint x, gint y, gint width, gint height);
 G_GNUC_INTERNAL void sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough);
 G_GNUC_INTERNAL void sugar_remove_corners (SugarCorners *corners, SugarEdges edge);
