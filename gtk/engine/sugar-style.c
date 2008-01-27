@@ -517,6 +517,9 @@ sugar_style_draw_box_gap (GtkStyle       *style,
         gap.size = gap_width;
 
         sugar_draw_menu (cr, &info, &gap);
+    } else if (DETAIL ("notebook")) {
+    	/* Just a plain fill. */
+    	gtk_paint_flat_box (style, window, state_type, shadow_type, area, widget, detail, x, y, width, height);
     } else {
         parent_class->draw_box_gap (style, window, state_type, shadow_type, area, widget, detail, x, y, width, height, gap_side, gap_x, gap_width);
     }

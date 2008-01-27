@@ -208,10 +208,10 @@ style "groupbox-panel-child"
     bg[INSENSITIVE] = $selection_grey
     base[INSENSITIVE] = $selection_grey
     
-    fg[NORMAL] = $white
+    fg[NORMAL] = $black
     
     engine "sugar" {
-        label_fg_color = $white
+        label_fg_color = $black
     }
 }
 
@@ -359,7 +359,7 @@ style "scale"
     # "square" slider (really round of course)
     # Same as indicator-size?
     GtkRange::slider-width = $scale_slider_width
-    GtkScale::slider-length = $scale_slider_width
+    GtkScale::slider-toolbox-notebooklength = $scale_slider_width
     GtkRange::trough-border = 0
     GtkRange::stepper-spacing = 0
     GtkRange::trough-side-details = 1
@@ -411,14 +411,29 @@ style "frame"
     bg[NORMAL] = $toolbar_grey
 }
 
-style "notebook"
+style "notebook-tab"
+{
+    bg[ACTIVE] = $button_grey
+    fg[ACTIVE] = $white
+}
+
+style "notebook-panel"
+{
+    GtkNotebook::tab-overlap = -2
+    GtkNotebook::tab-curvature = $default_padding
+    
+    xthickness = 0
+    ythickness = 0
+    
+    bg[NORMAL] = $selection_grey
+}
+
+style "toolbox-notebook"
 {
     GtkNotebook::tab-overlap = -2
     
     xthickness = 0
     ythickness = 0
-
-    bg[ACTIVE] = $button_grey
 }
 
 style "toolbutton"
@@ -650,13 +665,12 @@ widget_class "*<SugarAlert>*<GtkEventBox>" style "black-bg"
 widget_class "*<SugarAlert>*<GtkLayout>"   style "black-bg"
 widget_class "*<SugarAlert>*"              style "black-bg-child"
 
-# SugarToolbox
-#widget_class "*<SugarToolbox>" style "toolbox"
-#widget_class "*<SugarToolbox>*" style "toolbox-child"
-#widget_class "*<SugarToolbox>*<GtkEventBox>" style "toolbox"
-#widget_class "*<SugarToolbox>*<GtkLayout>"   style "toolbox"
-widget_class "*<SugarToolbox>*"        style "toolbox"
-widget_class "*<GtkToolbar>*"          style "toolbox"
+
+# The notebook is very high, so that everything is overriden
+# Only the color of the tab labels needs to be modified inside the
+# notebooks in this style (and the widget itself).
+widget_class "*<GtkNotebook>*"    style "notebook-tab"
+
 
 # SugarPalette and Menu
 widget_class "*<GtkMenu>"               style "menu"
@@ -677,11 +691,25 @@ widget_class "<GtkWindow>*<SugarGroupBox>*"   style "groupbox-panel-child"
 widget_class "<GtkWindow>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-panel"
 widget_class "<GtkWindow>*<SugarGroupBox>*<GtkLayout>"   style "groupbox-panel"
 
+widget_class "<GtkWindow>*<GtkNotebook>*"   style "groupbox-panel-child"
+widget_class "<GtkWindow>*<GtkNotebook>"    style "notebook-panel"
+widget_class "<GtkWindow>*<GtkNotebook>*<GtkEventBox>" style "groupbox-panel"
+widget_class "<GtkWindow>*<GtkNotebook>*<GtkLayout>"   style "groupbox-panel"
+
+
 widget_class "<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
 widget_class "<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
 widget_class "<SugarPalette>*<SugarGroupBox>*<GtkLayout>" style "groupbox-palette"
 
 
+# SugarToolbox
+#widget_class "*<SugarToolbox>" style "toolbox"
+#widget_class "*<SugarToolbox>*" style "toolbox-child"
+#widget_class "*<SugarToolbox>*<GtkEventBox>" style "toolbox"
+#widget_class "*<SugarToolbox>*<GtkLayout>"   style "toolbox"
+widget_class "*<SugarToolbox>*"        style "toolbox"
+widget_class "*<GtkToolbar>*"          style "toolbox"
+widget_class "*<SugarToolbox>.<GtkNotebook>" style "toolbox-notebook"
 
 
 ####################################################################
@@ -710,7 +738,6 @@ widget_class "*<GtkTextView>"    style "textview"
 
 
 # Misc widgets
-widget_class "*<GtkNotebook>"    style "notebook"
 widget_class "*<GtkHScrollbar>"  style "hscrollbar"
 widget_class "*<GtkVScrollbar>"  style "vscrollbar"
 widget_class "*<GtkHScale>"      style "hscale"

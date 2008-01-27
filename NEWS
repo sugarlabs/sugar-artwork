@@ -1,3 +1,4 @@
+* Improved non-toolbox notebooks.
 * Fixed "bloated" icons with unnecessary <pattern> tags (eben)
 * Added a view-return that will work on all backgrounds (eben)
 * Made clearer activity-start, activity-stop icons (eben)
