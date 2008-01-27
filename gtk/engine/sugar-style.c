@@ -754,9 +754,15 @@ sugar_style_draw_layout(GtkStyle        *style,
         btn = widget->parent;
     
     if (btn && !GTK_IS_BUTTON (btn)) {
+        /* A button with a label and an image has the following layout:
+         *   button(alignment(box(image, label)))
+         * So try to walk up the widget hirachy far enough for this layout. */
         if (btn->parent && GTK_IS_BUTTON (btn->parent))
             btn = btn->parent;
-        else
+        else if (btn->parent && btn->parent->parent &&
+                 GTK_IS_BUTTON (btn->parent->parent))
+            btn = btn->parent->parent;
+        else /* It appears, that this is not a label inside a button. */
             btn = NULL;
     }
     if (state_type != GTK_STATE_INSENSITIVE && btn) {
