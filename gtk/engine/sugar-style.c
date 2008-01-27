@@ -840,7 +840,7 @@ sugar_style_render_icon (GtkStyle               *style,
             guint base = 127;
 
             if (style) {
-                GdkColor *color = &style->bg[GTK_STATE_INSENSITIVE];
+                GdkColor *color = &style->fg[GTK_STATE_INSENSITIVE];
                 base = (color->red >> 8) + (color->green >> 8) + (color->blue >> 8);
                 base = base / 3;
             }
