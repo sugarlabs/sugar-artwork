@@ -168,7 +168,7 @@ def check_licenses(path, license, missing):
 
 def cmd_check_licenses():
     missing = {}
-    check_licenses(os.getcwd(), 'GPL', missing)
+    check_licenses(os.getcwd(), 'LGPL', missing)
 
     for item in missing.keys():
         print '%s:\n' % item
