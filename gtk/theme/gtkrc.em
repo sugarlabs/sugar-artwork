@@ -244,6 +244,10 @@ style "menu"
     GtkMenu::scroll-arrow-vlength = $(my_floor(subcell_size/0.7 + 2*thickness))
     GtkMenu::horizontal-padding = 0
     GtkMenu::vertical-padding   = 0
+    # This means the outline of the submenu overlaps with a palette.
+    # However in the case of two normal menus, they are next to each other.
+    # It is not possible to be smarter about this, because the style comes from
+    # the submenu.
     GtkMenu::horizontal-offset  = 0
     GtkMenu::vertical-offset    = 0
 
@@ -253,8 +257,6 @@ style "menu"
 
 style "palette-menu" = "menu"
 {
-    # The colors are copied here, instead of basing it on
-    # the menu style
     xthickness = 0
     ythickness = $subcell_size
 }
