@@ -244,6 +244,8 @@ style "menu"
     GtkMenu::scroll-arrow-vlength = $(my_floor(subcell_size/0.7 + 2*thickness))
     GtkMenu::horizontal-padding = 0
     GtkMenu::vertical-padding   = 0
+    GtkMenu::horizontal-offset  = 0
+    GtkMenu::vertical-offset    = 0
 
     xthickness = $thickness
     ythickness = $thickness
