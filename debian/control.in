@@ -1,0 +1,20 @@
+Source: sugar-artwork
+Section: x11
+Priority: optional
+Maintainer: Jonas Smedegaard <dr@jones.dk>
+Build-Depends: @cdbs@
+Standards-Version: 3.7.3
+Vcs-Git: git://git.debian.org/git/collab-maint/sugar-artwork.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/sugar-artwork.git;a=summary
+Homepage: http://wiki.laptop.org/go/Sugar
+
+Package: sugar-artwork
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Sugar graphical shell - artwork
+ Sugar is a graphical user interface aimed at children.
+ .
+ Sugar is mainly used as the interface for One Laptop Per Child (OLPC)
+ XO machines.
+ .
+ This package contains the artwork for Sugar.

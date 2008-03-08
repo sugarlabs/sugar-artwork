@@ -1,0 +1,5 @@
+sugar-artwork (0.79.0-1) unstable; urgency=low
+
+  * Initial release. Closes: bug#444021.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 08 Mar 2008 02:30:18 +0100
