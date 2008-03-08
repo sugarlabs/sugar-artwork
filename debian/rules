@@ -19,7 +19,7 @@ DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
 
 # Workaround: can't pass --install to autotools through CDBS
 pre-build::
-	[ -e py-compile ] || autoreconf -i
+	[ -e configure ] || autoreconf -i
 
 # Cleanup automade files
 clean::
