@@ -1,6 +1,7 @@
 sugar-artwork (0.79.0-2) UNRELEASED; urgency=low
 
   * Add watch file.
+  * Recommend sugar.
 
  -- Jonas Smedegaard <dr@jones.dk>  Sat, 08 Mar 2008 09:16:26 +0100
 
