@@ -2,8 +2,9 @@ sugar-artwork (0.79.0-3) UNRELEASED; urgency=low
 
   * Pass over maintenance of the package to the OLPC team: Change
     Maintainer, and add myself to Uploaders.
+  * Fix README.packaging to use "pull; fetch --tags" (not "pull -t").
 
- -- Jonas Smedegaard <dr@jones.dk>  Tue, 11 Mar 2008 03:50:45 +0100
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 11 Mar 2008 09:41:46 +0100
 
 sugar-artwork (0.79.0-2) unstable; urgency=low
 
