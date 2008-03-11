@@ -133,7 +133,8 @@ sugar_style_draw_hline(GtkStyle       *style,
 
     gdk_cairo_set_source_color (cr, &style->bg[state_type]);
 
-    g_assert (x1 < x2);
+    if (x1 > x2)
+        return;
 
     width = x2 - x1 + 1;
     height = SUGAR_RC_STYLE (style->rc_style)->line_width;
@@ -175,7 +176,8 @@ sugar_style_draw_vline(GtkStyle       *style,
 
     gdk_cairo_set_source_color (cr, &style->bg[state_type]);
 
-    g_assert (y1 < y2);
+    if (y1 > y2)
+        return;
 
     height = y2 - y1 + 1;
     width = SUGAR_RC_STYLE (style->rc_style)->line_width;
