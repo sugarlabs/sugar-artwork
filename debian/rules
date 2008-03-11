@@ -13,7 +13,9 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include debian/cdbs/1/rules/copyright-check.mk
 include debian/cdbs/1/rules/buildinfo.mk
 
-DEB_UPSTREAM_URL = http://dev.laptop.org/pub/sugar/sources/sugar-artwork
+pkg = sugar-artwork
+
+DEB_UPSTREAM_URL = http://dev.laptop.org/pub/sugar/sources/$(pkg)
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
 #DEB_UPSTREAM_TARBALL_MD5 = e10b794279af18fc4fd0d7de04c76bc8
 
