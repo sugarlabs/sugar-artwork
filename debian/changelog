@@ -3,6 +3,7 @@ sugar-artwork (0.79.0-2) unstable; urgency=low
   * Add watch file.
   * Depend on ttf-dejavu-core.
   * Recommend sugar and ttf-dejavu-extra.
+  * Remove config.h.in in build clean.
   * Update CDBS tweaks:
     + Replace virtual automake1.10 build-dependency with automake
     + Build-depend on xbase-clients as fallback for x11-apps, to support

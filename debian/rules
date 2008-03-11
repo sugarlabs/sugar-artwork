@@ -23,7 +23,7 @@ pre-build::
 
 # Cleanup automade files
 clean::
-	rm -f aclocal.m4 compile config.guess config.sub configure depcomp install-sh ltmain.sh missing
+	rm -f aclocal.m4 compile config.guess config.sub configure depcomp install-sh ltmain.sh missing config.h.in
 	find -name Makefile.in -exec rm '{}' ';'
 
 # Needed by upstream build process
