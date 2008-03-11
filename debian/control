@@ -1,7 +1,8 @@
 Source: sugar-artwork
 Section: x11
 Priority: optional
-Maintainer: Jonas Smedegaard <dr@jones.dk>
+Maintainer: Debian OLPC <pkg-olpc-devel@lists.alioth.debian.org>
+Uploaders: Jonas Smedegaard <dr@jones.dk>
 Build-Depends: cdbs (>= 0.4.39), libtool, automake, autoconf, debhelper (>= 5), devscripts (>= 2.10.7), dh-buildinfo, libgtk2.0-dev, libglib2.0-dev, libcairo2-dev, python-empy, x11-apps | xbase-clients
 Standards-Version: 3.7.3
 Vcs-Git: git://git.debian.org/git/collab-maint/sugar-artwork.git
