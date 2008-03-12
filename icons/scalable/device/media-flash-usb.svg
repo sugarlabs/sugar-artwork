@@ -1,16 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-
-	<!ENTITY stroke_color "#00FF00">
- 	<!ENTITY fill_color "#0000FF">
-
-]>
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px"
-	 height="55px" viewBox="0 0 55 55" enable-background="new 0 0 55 55" xml:space="preserve">
-
-	<path fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" d="M42.302,15.153H15.043v0.001c-0.005,0-0.009-0.001-0.013-0.001
-		c-6.642,0-12.024,5.384-12.024,12.025c0,6.639,5.383,12.023,12.024,12.023h0.013h27.259V15.153z"/>
-	<rect x="42.866" y="20.161" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" width="9.14" height="14.182"/>
-</svg>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg enable-background="new 0 0 75 75" height="75px" version="1.1" viewBox="0 0 75 75" width="75px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-flash-usb">
+	<g display="inline">
+		<path d="M26.011,26.723c-6.641,0-12.023,5.385-12.023,12.025    c0,6.639,5.383,12.023,12.023,12.023h0.014h27.259V26.723H26.024" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5"/>
+		<rect fill="&fill_color;" height="14.182" stroke="&stroke_color;" stroke-width="3.5" width="9.14" x="53.848" y="31.731"/>
+	</g>
+</g></svg>
