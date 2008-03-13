@@ -1,0 +1,13 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg enable-background="new 0 0 75 75" height="75px" version="1.1" viewBox="0 0 75 75" width="75px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="printer">
+	<g display="inline">
+		<polyline fill="&fill_color;" points="23.2,28.477 23.2,16.469 52,16.469 52,28.477   " stroke="&stroke_color;" stroke-width="3.5"/>
+		<polyline fill="&fill_color;" points="    23.102,49.268 13.5,49.268 13.5,28.469 61.5,28.469 61.5,49.268 51.9,49.268   " stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+		<polyline fill="&fill_color;" points="51.9,40.468 51.9,58.531 23.102,58.531 23.102,40.468   " stroke="&stroke_color;" stroke-width="3.5"/>
+		<line fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5" x1="18.302" x2="56.7" y1="40.468" y2="40.468"/>
+		
+			<line fill="&fill_color;" stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" x1="18.302" x2="56.7" y1="40.468" y2="40.468"/>
+	</g>
+</g></svg>
