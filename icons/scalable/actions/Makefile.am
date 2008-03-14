@@ -61,7 +61,9 @@ icon_DATA =						\
 	media-seek-forward.svg		\
 	row-insert.svg				\
 	row-remove.svg				\
+	system-restart.svg			\
 	system-search.svg			\
+	system-shutdown.svg			\
 	tray-hide.svg				\
 	tray-show.svg				\
 	view-fullscreen.svg			\
