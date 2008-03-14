@@ -67,6 +67,8 @@ icon_DATA =						\
 	tray-hide.svg				\
 	tray-show.svg				\
 	view-fullscreen.svg			\
+	view-list.svg				\
+	view-radial.svg				\
 	view-refresh.svg			\
 	view-return.svg				\
 	zoom-activity.svg 			\
