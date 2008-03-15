@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007, Red Hat, Inc.
+ * Copyright (C) 2008, Benjamin Berg
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -41,12 +42,18 @@ typedef enum {
 } SugarRcStyleOptions;
 
 typedef struct {
-    guint8 fg;
-    guint8 bg;
-    guint8 base;
-    guint8 text;
-} SugarColorBitfield;
+    guint8 fg[5];
+    guint8 bg[5];
+    guint8 base[5];
+    guint8 text[5];
+} SugarColorMapping;
 
+typedef enum {
+    SUGAR_COLOR_ORIGINAL = 0xff,
+    SUGAR_COLOR_FG       = 0,
+    SUGAR_COLOR_BG       = 1,
+} SugarRCColor;
+#define SUGAR_COLOR_COUNT 2
 
 #define SUGAR_TYPE_RC_STYLE              sugar_type_rc_style
 #define SUGAR_RC_STYLE(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), SUGAR_TYPE_RC_STYLE, SugarRcStyle))
@@ -71,8 +78,9 @@ struct _SugarRcStyle {
     /* The purpose of this color is to be able to apply a color from
      * a different style at merge time. This cannot be done with symbolic
      * colors. */
-    GdkColor label_fg_color;
-    SugarColorBitfield apply_label_color;
+    guint color_flags;
+    GdkColor colors[SUGAR_COLOR_COUNT];
+    SugarColorMapping color_mapping;
 };
 
 struct _SugarRcStyleClass {

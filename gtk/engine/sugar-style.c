@@ -83,18 +83,40 @@ sugar_style_init_from_rc (GtkStyle *style, GtkRcStyle *rc_style)
 
     parent_class->init_from_rc(GTK_STYLE (style), GTK_RC_STYLE (rc_style));
 
-    /* Copy the label fg color. */
-    if (sugar_rc_style->flags & OPTION_LABEL_FG_COLOR) {
-        /* Now copy colors around if wanted. If any color has been set. */
-        for (state = 0; state < 5; state++) {
-            if (sugar_rc_style->apply_label_color.bg & (1 << state))
-                style->bg[state] = sugar_rc_style->label_fg_color;
-            if (sugar_rc_style->apply_label_color.fg & (1 << state))
-                style->fg[state] = sugar_rc_style->label_fg_color;
-            if (sugar_rc_style->apply_label_color.base & (1 << state))
-                style->base[state] = sugar_rc_style->label_fg_color;
-            if (sugar_rc_style->apply_label_color.text & (1 << state))
-                style->text[state] = sugar_rc_style->label_fg_color;
+    /* Copy the sugar engines colors. */
+    for (state = 0; state < 5; state++) {
+        SugarRCColor color;
+
+        if (sugar_rc_style->color_mapping.fg[state] != SUGAR_COLOR_ORIGINAL) {
+            color = sugar_rc_style->color_mapping.fg[state];
+            if (sugar_rc_style->color_flags & (1 << color))
+                style->fg[state] = sugar_rc_style->colors[color];
+            else
+                g_warning("Trying to use an uninitilized color.\n");
+        }
+
+        if (sugar_rc_style->color_mapping.bg[state] != SUGAR_COLOR_ORIGINAL) {
+            color = sugar_rc_style->color_mapping.bg[state];
+            if (sugar_rc_style->color_flags & (1 << color))
+                style->bg[state] = sugar_rc_style->colors[color];
+            else
+                g_warning("Trying to use an uninitilized color.\n");
+        }
+
+        if (sugar_rc_style->color_mapping.text[state] != SUGAR_COLOR_ORIGINAL) {
+            color = sugar_rc_style->color_mapping.text[state];
+            if (sugar_rc_style->color_flags & (1 << color))
+                style->text[state] = sugar_rc_style->colors[color];
+            else
+                g_warning("Trying to use an uninitilized color.\n");
+        }
+
+        if (sugar_rc_style->color_mapping.base[state] != SUGAR_COLOR_ORIGINAL) {
+            color = sugar_rc_style->color_mapping.base[state];
+            if (sugar_rc_style->color_flags & (1 << color))
+                style->base[state] = sugar_rc_style->colors[color];
+            else
+                g_warning("Trying to use an uninitilized color.\n");
         }
     }
 }
