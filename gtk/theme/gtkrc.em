@@ -417,6 +417,11 @@ style "spinbutton"
 style "frame"
 {
     bg[NORMAL] = $toolbar_grey
+
+    engine "sugar" {
+        parent_bg_color = $toolbar_grey
+        parent_fg_color = $white
+    }
 }
 
 style "notebook-tab"
@@ -478,6 +483,15 @@ style "toolbar"
 {
     xthickness = 0
     ythickness = 0
+
+    bg[NORMAL] = $toolbar_grey
+    bg[INSENSITIVE] = $toolbar_grey
+    base[INSENSITIVE] = $toolbar_grey
+
+    engine "sugar" {
+        parent_fg_color = $white
+        parent_bg_color = $toolbar_grey
+    }
 }
 
 style "toolbox"
@@ -764,8 +778,9 @@ widget_class "*<GtkToolbar>"              style "toolbar"
 widget_class "*<SugarTrayIcon>*" style "trayicon"
 
 # Widgets that should get the background color from the parent
-widget_class "*<GtkEventBox>"     style "parent-bg"
-widget_class "*<GtkLayout>"       style "parent-bg"
-widget_class "*<GtkViewport>"     style "parent-bg"
-widget_class "*<GtkDrawingArea>"  style "parent-bg"
+widget_class "*<GtkEventBox>"        style "parent-bg"
+widget_class "*<GtkLayout>"          style "parent-bg"
+widget_class "*<GtkViewport>"        style "parent-bg"
+widget_class "*<GtkDrawingArea>"     style "parent-bg"
+widget_class "*<GtkScrolledWindow>"  style "parent-bg"
 
