@@ -355,27 +355,23 @@ sugar_rc_style_merge (GtkRcStyle *dest,
 
     for (i = 0; i < 5; i++) {
         if ((sugar_dest->color_mapping.bg[i] == SUGAR_COLOR_ORIGINAL) &&
-            !(dest->color_flags[i] & GTK_RC_BG) && src->color_flags[i] & GTK_RC_BG) {
+            !(dest->color_flags[i] & GTK_RC_BG)) {
             sugar_dest->color_mapping.bg[i] = sugar_src->color_mapping.bg[i];
-            dest->color_flags[i] |= GTK_RC_BG;
         }
 
         if ((sugar_dest->color_mapping.fg[i] == SUGAR_COLOR_ORIGINAL) &&
-            !(dest->color_flags[i] & GTK_RC_FG) && src->color_flags[i] & GTK_RC_FG) {
+            !(dest->color_flags[i] & GTK_RC_FG)) {
             sugar_dest->color_mapping.fg[i] = sugar_src->color_mapping.fg[i];
-            dest->color_flags[i] |= GTK_RC_FG;
         }
 
         if ((sugar_dest->color_mapping.base[i] == SUGAR_COLOR_ORIGINAL) &&
-            !(dest->color_flags[i] & GTK_RC_BASE) && src->color_flags[i] & GTK_RC_BASE) {
+            !(dest->color_flags[i] & GTK_RC_BASE)) {
             sugar_dest->color_mapping.base[i] = sugar_src->color_mapping.base[i];
-            dest->color_flags[i] |= GTK_RC_BASE;
         }
 
         if ((sugar_dest->color_mapping.text[i] == SUGAR_COLOR_ORIGINAL) &&
-            !(dest->color_flags[i] & GTK_RC_TEXT) && src->color_flags[i] & GTK_RC_TEXT) {
+            !(dest->color_flags[i] & GTK_RC_TEXT)) {
             sugar_dest->color_mapping.text[i] = sugar_src->color_mapping.text[i];
-            dest->color_flags[i] |= GTK_RC_TEXT;
         }
     }
 }
