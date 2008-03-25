@@ -42,7 +42,7 @@ thickness = my_ceil(line_width)
 # Colors:
 
 black = '"#000000"'
-toolbar_grey = '"#404040"'
+toolbar_grey = '"#282828"'
 button_grey = '"#808080"'
 selection_grey = '"#A6A6A6"'
 panel_grey = '"#C0C0C0"'
