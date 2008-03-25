@@ -147,7 +147,6 @@ style "default"
         thick_line_width = $thick_line_width
         subcell_size = $subcell_size
 
-        # Not sure about this one, but it is not that important
         max_radius = $( 2*subcell_size )
     }
 }
@@ -176,7 +175,8 @@ style "window-child"
     fg[NORMAL] = $black
     
     engine "sugar" {
-        label_fg_color = $black
+        parent_fg_color = $black
+        parent_bg_color = $panel_grey
     }
 }
 
@@ -193,7 +193,8 @@ style "black-bg-child"
     fg[NORMAL] = $white
     
     engine "sugar" {
-        label_fg_color = $white
+        parent_fg_color = $white
+        parent_bg_color = $black
     }
 }
 
@@ -211,7 +212,8 @@ style "groupbox-panel-child"
     fg[NORMAL] = $black
     
     engine "sugar" {
-        label_fg_color = $black
+        parent_fg_color = $black
+        parent_bg_color = $selection_grey
     }
 }
 
@@ -228,7 +230,8 @@ style "groupbox-palette-child"
     fg[NORMAL] = $white
     
     engine "sugar" {
-        label_fg_color = $white
+        parent_fg_color = $white
+        parent_bg_color = $toolbar_grey
     }
 }
 
@@ -275,7 +278,8 @@ style "menu-child"
     base[INSENSITIVE] = $black
     
     engine "sugar" {
-        label_fg_color = $white
+        parent_fg_color = $white
+        parent_bg_color = $black
     }
 }
 
@@ -358,7 +362,7 @@ style "scale"
 {
     GtkWidget::focus-line-width = 0
 
-    bg[NORMAL] = "#808080"
+    bg[NORMAL] = $button_grey
 
     # "square" slider (really round of course)
     # Same as indicator-size?
@@ -413,6 +417,11 @@ style "spinbutton"
 style "frame"
 {
     bg[NORMAL] = $toolbar_grey
+
+    engine "sugar" {
+        parent_bg_color = $toolbar_grey
+        parent_fg_color = $white
+    }
 }
 
 style "notebook-tab"
@@ -474,6 +483,15 @@ style "toolbar"
 {
     xthickness = 0
     ythickness = 0
+
+    bg[NORMAL] = $toolbar_grey
+    bg[INSENSITIVE] = $toolbar_grey
+    base[INSENSITIVE] = $toolbar_grey
+
+    engine "sugar" {
+        parent_fg_color = $white
+        parent_bg_color = $toolbar_grey
+    }
 }
 
 style "toolbox"
@@ -486,7 +504,8 @@ style "toolbox"
     base[INSENSITIVE] = $toolbar_grey
 
     engine "sugar" {
-        label_fg_color = $white
+        parent_fg_color = $white
+        parent_bg_color = $toolbar_grey
     }
 }
 
@@ -581,9 +600,9 @@ style "checkbutton"
     engine "sugar" {
         # Reset the colors to the normal color again
         # as they were overriden by the button style
-        fg[NORMAL]        = label_fg_color
-        fg[PRELIGHT]      = label_fg_color
-        fg[ACTIVE]        = label_fg_color
+        fg[NORMAL]        = parent_fg_color
+        fg[PRELIGHT]      = parent_fg_color
+        fg[ACTIVE]        = parent_fg_color
     }
 }
 
@@ -648,6 +667,14 @@ style "trayicon"
     bg[ACTIVE] = $button_grey
 }
 
+style "parent-bg"
+{
+    engine "sugar" {
+        bg[NORMAL] = parent_bg_color
+        bg[INSENSITIVE] = parent_bg_color
+    }
+}
+
 ####################################################################
 # Default style, setting some generic options and style properties
 ####################################################################
@@ -660,13 +687,9 @@ class "GtkWidget" style "default"
 
 # This one should probably be the default (ie. no window-child style)
 widget_class "<GtkWindow>"               style "window"
-widget_class "<GtkWindow>*<GtkEventBox>" style "window"
-widget_class "<GtkWindow>*<GtkLayout>"   style "window"
 widget_class "<GtkWindow>*"              style "window-child"
 
 widget_class "*<SugarAlert>"               style "black-bg"
-widget_class "*<SugarAlert>*<GtkEventBox>" style "black-bg"
-widget_class "*<SugarAlert>*<GtkLayout>"   style "black-bg"
 widget_class "*<SugarAlert>*"              style "black-bg-child"
 
 
@@ -692,18 +715,12 @@ widget_class "*<SugarPanel>*"          style "panel"
 
 # GroupBoxes (don't set bg[NORMAL] on the widget itself)
 widget_class "<GtkWindow>*<SugarGroupBox>*"   style "groupbox-panel-child"
-widget_class "<GtkWindow>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-panel"
-widget_class "<GtkWindow>*<SugarGroupBox>*<GtkLayout>"   style "groupbox-panel"
 
 widget_class "<GtkWindow>*<GtkNotebook>*"   style "groupbox-panel-child"
 widget_class "<GtkWindow>*<GtkNotebook>"    style "notebook-panel"
-widget_class "<GtkWindow>*<GtkNotebook>*<GtkEventBox>" style "groupbox-panel"
-widget_class "<GtkWindow>*<GtkNotebook>*<GtkLayout>"   style "groupbox-panel"
 
 
 widget_class "<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
-widget_class "<SugarPalette>*<SugarGroupBox>*<GtkEventBox>" style "groupbox-palette"
-widget_class "<SugarPalette>*<SugarGroupBox>*<GtkLayout>" style "groupbox-palette"
 
 
 # SugarToolbox
@@ -759,3 +776,11 @@ widget_class "*<GtkToolbar>"              style "toolbar"
 
 # Tray
 widget_class "*<SugarTrayIcon>*" style "trayicon"
+
+# Widgets that should get the background color from the parent
+widget_class "*<GtkEventBox>"        style "parent-bg"
+widget_class "*<GtkLayout>"          style "parent-bg"
+widget_class "*<GtkViewport>"        style "parent-bg"
+widget_class "*<GtkDrawingArea>"     style "parent-bg"
+widget_class "*<GtkScrolledWindow>"  style "parent-bg"
+
