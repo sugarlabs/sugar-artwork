@@ -1,3 +1,12 @@
+sugar-artwork (0.79.0-4) unstable; urgency=low
+
+  * Sync with upstream Git as of today.
+    Main changes:
+    + Added view-list and view-radial icons
+    + Updated device icons
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 26 Mar 2008 10:00:43 +0100
+
 sugar-artwork (0.79.0-3) unstable; urgency=low
 
   * Pass over maintenance of the package to the OLPC team: Change
