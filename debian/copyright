@@ -11,8 +11,16 @@ Copyright: © 2008 Jonas Smedegaard <dr@jones.dk>
 License: GPL-2+
  The Debian packaging information is under the GPL, version 2 or later.
 
-Files: gtk/engine/sugar-rc-style.[ch], gtk/engine/sugar-style.h,
- gtk/engine/sugar.c
+Files: gtk/engine/sugar-rc-style.[ch]
+Copyright: © 2008, Benjamin Berg
+	   © 2007, Red Hat, Inc.
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+
+Files: gtk/engine/sugar-style.h, gtk/engine/sugar.c
 Copyright: © 2007, Red Hat, Inc.
 License: LGPL-2+
  This library is free software; you can redistribute it and/or
