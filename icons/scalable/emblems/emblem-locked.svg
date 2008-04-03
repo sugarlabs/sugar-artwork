@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="27.25px" height="27.25px" viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
-<g>
-	<rect x="1.125" y="1.125" fill="#010101" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
-	<g>
-		<rect x="8.055" y="11.891" fill="#FFFFFF" width="11.141" height="8.787"/>
-		<path fill="none" stroke="#FFFFFF" stroke-width="2.25" d="M10.51,11.891V9.617c0-1.682,1.362-3.043,3.042-3.043
-			c1.681,0,3.042,1.363,3.042,3.043v2.273"/>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#666666">
+	<!ENTITY fill_color "#ffffff">
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-locked">
+	<g display="inline">
+		<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
+		<g>
+			<rect fill="&stroke_color;" height="14.06" width="17.824" x="18.589" y="24.725"/>
+			<path d="M22.515,24.725v-3.637c0-2.692,2.18-4.869,4.868-4.869     c2.688,0,4.867,2.181,4.867,4.869v3.637" fill="none" stroke="&stroke_color;" stroke-width="3.5"/>
+		</g>
 	</g>
-</g>
-</svg>
+</g></svg>
