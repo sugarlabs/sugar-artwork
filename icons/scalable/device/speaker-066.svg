@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg enable-background="new 0 0 139.875 75" height="75px" version="1.1" viewBox="0 0 139.875 75" width="139.875px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="device-speaker-066">
+	<g display="inline">
+		<g>
+			<polygon fill="&fill_color;" points="40.938,60.606 40.934,13.91 17.889,28.751 7.104,28.751 7.104,45.765 17.971,45.765    "/>
+		</g>
+		<g>
+			<polygon fill="none" points="40.938,60.606 40.934,13.91      17.889,28.751 7.104,28.751 7.104,45.765 17.971,45.765    " stroke="&stroke_color;" stroke-linejoin="round" stroke-width="3.5"/>
+		</g>
+	</g>
+	<polygon display="inline" fill="&stroke_color;" points="40.934,13.91 32.742,19.186 32.742,55.31 40.938,60.606  "/>
+</g></svg>

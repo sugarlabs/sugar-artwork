@@ -1,8 +1,9 @@
 <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
 	<!ENTITY stroke_color "#010101">
 	<!ENTITY fill_color "#FFFFFF">
-]><svg enable-background="new 0 0 55 55" height="55px" id="Layer_1" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="device-battery-010">
-	<rect display="inline" fill="&fill_color;" height="22.175" width="4.5" x="45.162" y="16.339"/>
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="device-battery-010_1_">
+	<polygon display="inline" fill="&stroke_color;" points="4.663,38.329 45.192,38.329 45.192,33.604 49.662,33.604 49.662,21.066    45.192,21.066 45.192,16.339 4.663,16.339  "/>
+	<rect display="inline" fill="&fill_color;" height="22.175" width="4.5" x="4.663" y="16.339"/>
 	
-		<polygon display="inline" fill="none" points="   49.662,16.339 9.133,16.339 9.133,21.066 4.663,21.066 4.663,33.604 9.133,33.604 9.133,38.329 49.662,38.329  " stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+		<polygon display="inline" fill="none" points="   4.663,38.329 45.192,38.329 45.192,33.604 49.662,33.604 49.662,21.066 45.192,21.066 45.192,16.339 4.663,16.339  " stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
 </g></svg>

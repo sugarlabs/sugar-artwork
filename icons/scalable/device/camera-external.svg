@@ -1,0 +1,15 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg enable-background="new 0 0 75 75" height="75px" version="1.1" viewBox="0 0 75 75" width="75px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="camera-external">
+	<g display="inline">
+		<g>
+			<polygon fill="&fill_color;" points="48.657,24.52 45.029,19.862 28.908,19.862 25.28,24.52 16.415,24.52 16.415,48.973      58.335,48.973 58.335,24.52    "/>
+		</g>
+		<g>
+			<polygon fill="none" points="48.657,24.52 45.029,19.862 28.908,19.862 25.28,24.52      16.415,24.52 16.415,48.973 58.335,48.973 58.335,24.52    " stroke="&stroke_color;" stroke-width="3.5"/>
+		</g>
+	</g>
+	<path d="M30.727,36.441c0,3.67,2.979,6.648,6.65,6.648   c3.667,0,6.646-2.979,6.646-6.648c0-3.668-2.979-6.652-6.646-6.652C33.706,29.789,30.727,32.775,30.727,36.441z" display="inline" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5"/>
+	<rect display="inline" fill="&stroke_color;" height="4.193" width="6.287" x="48.225" y="28.418"/>
+</g></svg>
