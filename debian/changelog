@@ -13,6 +13,7 @@ sugar-artwork (0.79.1-1) unstable; urgency=low
     + Drop wget options broken with recent versions of wget in
       update-tarball.mk.
     + Update README.cdbs-tweaks.
+  * No longer reconfigure autotools.
 
  -- Jonas Smedegaard <dr@jones.dk>  Tue, 08 Apr 2008 03:39:32 +0200
 

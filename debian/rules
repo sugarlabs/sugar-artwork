@@ -3,10 +3,6 @@
 # Copyright © 2008 Jonas Smedegaard <dr@jones.dk>
 
 # NB! Local CDBS tweaks in use. More info in README.cdbs-tweaks
-DEB_AUTO_UPDATE_ACLOCAL = 1.10
-DEB_AUTO_UPDATE_AUTOMAKE = 1.10
-DEB_AUTO_UPDATE_AUTOCONF = 2.61
-DEB_AUTO_UPDATE_LIBTOOL = pre
 include debian/cdbs/1/rules/upstream-tarball.mk
 include debian/cdbs/1/rules/copyright-check.mk
 include /usr/share/cdbs/1/rules/patchsys-quilt.mk
@@ -14,28 +10,14 @@ include /usr/share/cdbs/1/class/autotools.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 include debian/cdbs/1/rules/buildinfo.mk
 
-pkg = sugar-artwork
-
 DEB_UPSTREAM_URL = http://dev.laptop.org/pub/sugar/sources/$(DEB_UPSTREAM_PACKAGE)
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
 DEB_UPSTREAM_TARBALL_MD5 = cf0dac67c78af8f4dd8985a64653c92c
-
-# Workaround: can't pass --install to autotools through CDBS
-pre-build::
-	[ -e configure ] || autoreconf -i
-
-# Cleanup automade files
-clean::
-	rm -f aclocal.m4 compile config.guess config.sub configure depcomp install-sh ltmain.sh missing config.h.in
-	find -name Makefile.in -exec rm '{}' ';'
 
 # Needed by upstream build process
 #  x11-apps is needed for xcursorgen
 #  xbase-clients is needed for xcursorgen for etch backport
 CDBS_BUILD_DEPENDS := $(CDBS_BUILD_DEPENDS), libgtk2.0-dev, libglib2.0-dev, libcairo2-dev, python-empy, x11-apps | xbase-clients
-
-# Replace virtual automake1.10 build-dependency with automake
-CDBS_BUILD_DEPENDS := $(shell echo '$(CDBS_BUILD_DEPENDS)' | sed -e 's/\bautomake1\.10\b/automake/')
 
 # Merge duplicate build-dependencies
 CDBS_BUILD_DEPENDS := $(shell echo '$(CDBS_BUILD_DEPENDS)' | sed -e '/\bcdbs (>= 0.4.39)/ s/ *,* *\bcdbs (>= \(0.4.23-1.1\|0.4.27-1\)) *,* */, /g' -e 's/^ *, *//' -e 's/ *, *$$//')
