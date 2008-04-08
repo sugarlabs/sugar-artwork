@@ -1,3 +1,14 @@
+sugar-artwork (0.79.0-5) unstable; urgency=low
+
+  * Update local cdbs snippets:
+    + Update copyright-check cdbs snippet to store newline-delimited
+      hints.  Update hints.
+    + Drop wget options broken with recent versions of wget in
+      update-tarball.mk.
+    + Update README.cdbs-tweaks.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 08 Apr 2008 03:39:32 +0200
+
 sugar-artwork (0.79.0-4) unstable; urgency=low
 
   * Sync with upstream Git as of today.
