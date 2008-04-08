@@ -8,6 +8,8 @@ sugar-artwork (0.79.1-1) unstable; urgency=low
     + Add battery-100.svg
     + Fix emblem icons
   * Add patch 2991 updating autotools to match above patch 0001.
+  * Add patch 2992 reverting part of patch 2991 (nattery-100.svg is
+    missing).
   * Update local cdbs snippets:
     + Update copyright-check cdbs snippet to store newline-delimited
       hints.  Update hints.
