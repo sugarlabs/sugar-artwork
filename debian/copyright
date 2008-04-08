@@ -80,6 +80,13 @@ License: BSD-3
  suitability of this software for any purpose.  It is provided "as is"
  without express or implied warranty.
 
+Files: Makefile.in
+Copyright © 1994-2002  Free Software Foundation, Inc.
+License: GAP
+ This Makefile.in is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+
 On Debian systems, the complete text of the GNU General Public License
 can be found in file "/usr/share/common-licenses/GPL", and the complete
 text of the GNU Lesser General Public License can be found in file

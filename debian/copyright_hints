@@ -3,7 +3,7 @@
 	Makefile.am
 	NEWS
 	README
-	autogen.sh
+	config.h.in
 	configure.ac
 	cursor/Makefile.am
 	cursor/cursorthemegen/ChangeLog
@@ -45,7 +45,6 @@
 	icons/scalable/actions/dialog-ok.svg
 	icons/scalable/actions/document-save.svg
 	icons/scalable/actions/edit-copy.svg
-	icons/scalable/actions/edit-delete.svg
 	icons/scalable/actions/edit-paste.svg
 	icons/scalable/actions/edit-redo.svg
 	icons/scalable/actions/edit-undo.svg
@@ -61,14 +60,12 @@
 	icons/scalable/actions/format-text-leading.svg
 	icons/scalable/actions/format-text-size.svg
 	icons/scalable/actions/format-text-underline.svg
-	icons/scalable/actions/go-down.svg
 	icons/scalable/actions/go-left.svg
 	icons/scalable/actions/go-next-paired.svg
 	icons/scalable/actions/go-next.svg
 	icons/scalable/actions/go-previous-paired.svg
 	icons/scalable/actions/go-previous.svg
 	icons/scalable/actions/go-right.svg
-	icons/scalable/actions/go-up.svg
 	icons/scalable/actions/insert-image.svg
 	icons/scalable/actions/insert-table.svg
 	icons/scalable/actions/invite.svg
@@ -100,6 +97,8 @@
 	icons/scalable/actions/tray-hide.svg
 	icons/scalable/actions/tray-show.svg
 	icons/scalable/actions/view-fullscreen.svg
+	icons/scalable/actions/view-list.svg
+	icons/scalable/actions/view-radial.svg
 	icons/scalable/actions/view-refresh.svg
 	icons/scalable/actions/view-return.svg
 	icons/scalable/actions/zoom-activity.svg
@@ -134,10 +133,24 @@
 	icons/scalable/device/battery-090.icon
 	icons/scalable/device/battery-090.svg
 	icons/scalable/device/battery-100.icon
-	icons/scalable/device/battery-100.svg
+	icons/scalable/device/battery-charging-000.svg
+	icons/scalable/device/battery-charging-010.svg
+	icons/scalable/device/battery-charging-020.svg
+	icons/scalable/device/battery-charging-030.svg
+	icons/scalable/device/battery-charging-040.svg
+	icons/scalable/device/battery-charging-050.svg
+	icons/scalable/device/battery-charging-060.svg
+	icons/scalable/device/battery-charging-070.svg
+	icons/scalable/device/battery-charging-080.svg
+	icons/scalable/device/battery-charging-090.svg
+	icons/scalable/device/battery-charging-100.svg
+	icons/scalable/device/camera-external.svg
+	icons/scalable/device/camera.svg
 	icons/scalable/device/computer-xo.svg
+	icons/scalable/device/media-disk.svg
 	icons/scalable/device/media-flash-sd-mmc.svg
 	icons/scalable/device/media-flash-usb.svg
+	icons/scalable/device/microphone.svg
 	icons/scalable/device/network-mesh.icon
 	icons/scalable/device/network-mesh.svg
 	icons/scalable/device/network-wired.svg
@@ -153,6 +166,15 @@
 	icons/scalable/device/network-wireless-080.svg
 	icons/scalable/device/network-wireless-100.icon
 	icons/scalable/device/network-wireless-100.svg
+	icons/scalable/device/printer.svg
+	icons/scalable/device/speaker-000.svg
+	icons/scalable/device/speaker-033.svg
+	icons/scalable/device/speaker-066.svg
+	icons/scalable/device/speaker-100.svg
+	icons/scalable/device/speaker-muted-000.svg
+	icons/scalable/device/speaker-muted-033.svg
+	icons/scalable/device/speaker-muted-066.svg
+	icons/scalable/device/speaker-muted-100.svg
 	icons/scalable/emblems/Makefile.am
 	icons/scalable/emblems/emblem-busy.svg
 	icons/scalable/emblems/emblem-channel-1.svg
@@ -175,28 +197,41 @@
 	matchbox/Makefile.am
 	matchbox/closebutton.xpm
 	matchbox/theme.xml
-	test/Makefile.am
-	test/exported
-	test/gtkrcs/buildin
-	test/gtkrcs/sugar
-	test/torture
-	test/valgrind-suppressions
+GENERATED FILE [1994-2002]: Makefile.in
+	cursor/Makefile.in
+	cursor/cursorthemegen/Makefile.in
+	cursor/sugar/Makefile.in
+	gtk/Makefile.in
+	gtk/engine/Makefile.in
+	gtk/theme/Makefile.in
+	icons/Makefile.in
+	icons/scalable/Makefile.in
+	icons/scalable/actions/Makefile.in
+	icons/scalable/control/Makefile.in
+	icons/scalable/device/Makefile.in
+	icons/scalable/emblems/Makefile.in
+	icons/scalable/mimetypes/Makefile.in
+	icons/scalable/status/Makefile.in
+	matchbox/Makefile.in
 LGPL-2+ [2007, Benjamin Berg]: gtk/engine/sugar-drawing.c
 	gtk/engine/sugar-drawing.h
 	gtk/engine/sugar-info.c
 	gtk/engine/sugar-info.h
 	gtk/engine/sugar-utils.c
 	gtk/engine/sugar-utils.h
-LGPL-2+ [2007, Red Hat, Inc]: gtk/engine/sugar-rc-style.c
-	gtk/engine/sugar-rc-style.h
-	gtk/engine/sugar-style.h
-	gtk/engine/sugar.c
 UNKNOWN [notice appear in all copies and that both that / 2003 Red Hat, Inc / notice and this permission notice appear in supporting]: cursor/cursorthemegen/cursortheme.h
 	cursor/cursorthemegen/main.c
 	cursor/cursorthemegen/themefile.c
-GPL-2+ [2006, Red Hat, Inc]: icons/import-icon
-GPL-2+ [[path]: maint-helper.py
+LGPL-2+ [2007, Red Hat, Inc / 2008, Benjamin Berg]: gtk/engine/sugar-rc-style.c
+	gtk/engine/sugar-rc-style.h
+LGPL-2+ [2007, Red Hat, Inc]: gtk/engine/sugar-style.h
+	gtk/engine/sugar.c
+GENERATED FILE [1992-1996, 1998-2001]: configure
+GPL GENERATED FILE [1996-1997, 1999-2000, 2002-2006]: missing
+GPL GENERATED FILE [1999-2000, 2003-2006 Free Software]: depcomp
+GPL-2+ GENERATED FILE [1996-2001, 2003-2006]: ltmain.sh
 LGPL-2+ [2007, Red Hat, Inc / 2007, Benjamin Berg]: gtk/engine/sugar-style.c
-LGPL-2+ [Benjamin Berg 2007]: test/torturetest.c
+MIT/X11 (BSD like) [and license / notice and this permission notice shall be included in / 1994 X Consortium]: install-sh
+UNKNOWN [1996-2004]: aclocal.m4
 UNKNOWN [2002-2003 Erik Max Francis']: gtk/theme/em.py
 UNKNOWN [the / 1991, 1999 Free Software Foundation, Inc]: COPYING
