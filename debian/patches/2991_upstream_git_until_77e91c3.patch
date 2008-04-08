@@ -1,0 +1,37 @@
+diff --git a/icons/scalable/device/Makefile.in b/icons/scalable/device/Makefile.in
+index 6cf306f..17bb98b 100644
+--- a/icons/scalable/device/Makefile.in
++++ b/icons/scalable/device/Makefile.in
+@@ -192,6 +192,7 @@ icon_DATA = \
+ 	battery-090.icon		\
+ 	battery-090.svg			\
+ 	battery-100.icon		\
++	battery-100.svg			\
+ 	battery-charging-100.svg	\
+ 	battery-charging-000.svg	\
+ 	battery-charging-010.svg	\
+diff --git a/icons/scalable/emblems/Makefile.in b/icons/scalable/emblems/Makefile.in
+index 2cc6dbc..7fefb5a 100644
+--- a/icons/scalable/emblems/Makefile.in
++++ b/icons/scalable/emblems/Makefile.in
+@@ -172,13 +172,16 @@ category = emblems
+ icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
+ icon_DATA = \
+ 	emblem-busy.svg		\
+-	emblem-channel-1.svg	\
+-	emblem-channel-6.svg	\
+-	emblem-channel-11.svg	\
+ 	emblem-charging.svg	\
+ 	emblem-locked.svg	\
+ 	emblem-outofrange.svg	\
+-	emblem-favorite.svg
++	emblem-charging.svg	\
++	emblem-favorite.svg	\
++	emblem-locked.svg	\
++	emblem-notification.svg	\
++	emblem-outofrange.svg	\
++	emblem-question.svg	\
++	emblem-warning.svg
+ 
+ EXTRA_DIST = $(icon_DATA)
+ all: all-am
