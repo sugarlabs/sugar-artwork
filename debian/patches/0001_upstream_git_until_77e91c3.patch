@@ -1,0 +1,326 @@
+diff --git a/NEWS b/NEWS
+index ea5d7a0..a77ae3a 100644
+--- a/NEWS
++++ b/NEWS
+@@ -1,3 +1,4 @@
++* Updated emblem icons (eben)
+ * Added view-list and view-radial icons (eben)
+ * Updated device icons (eben)
+ * #2041 Draw filled and triangular arrows on black background (benzea)
+diff --git a/icons/scalable/device/Makefile.am b/icons/scalable/device/Makefile.am
+index 8fabc89..26881d2 100644
+--- a/icons/scalable/device/Makefile.am
++++ b/icons/scalable/device/Makefile.am
+@@ -24,6 +24,7 @@ icon_DATA =				\
+ 	battery-090.icon		\
+ 	battery-090.svg			\
+ 	battery-100.icon		\
++	battery-100.svg			\
+ 	battery-charging-100.svg	\
+ 	battery-charging-000.svg	\
+ 	battery-charging-010.svg	\
+diff --git a/icons/scalable/emblems/Makefile.am b/icons/scalable/emblems/Makefile.am
+index cede6c1..3517fa6 100644
+--- a/icons/scalable/emblems/Makefile.am
++++ b/icons/scalable/emblems/Makefile.am
+@@ -4,12 +4,12 @@ icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
+ 
+ icon_DATA =			\
+ 	emblem-busy.svg		\
+-	emblem-channel-1.svg	\
+-	emblem-channel-6.svg	\
+-	emblem-channel-11.svg	\
+ 	emblem-charging.svg	\
++	emblem-favorite.svg	\
+ 	emblem-locked.svg	\
++	emblem-notification.svg	\
+ 	emblem-outofrange.svg	\
+-	emblem-favorite.svg
++	emblem-question.svg	\
++	emblem-warning.svg
+ 	
+ EXTRA_DIST = $(icon_DATA)
+diff --git a/icons/scalable/emblems/emblem-busy.svg b/icons/scalable/emblems/emblem-busy.svg
+index fca1b44..615115b 100644
+--- a/icons/scalable/emblems/emblem-busy.svg
++++ b/icons/scalable/emblems/emblem-busy.svg
+@@ -1,15 +1,10 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<!-- Generator: Adobe Illustrator 13.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+-	 width="27.25px" height="27.25px" viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
+-<g>
+-	<path stroke="#FFFFFF" stroke-width="2.25" d="M13.725,28.068c-7.457,0-13.5-6.045-13.5-13.5c0-7.456,6.043-13.5,13.5-13.5
+-		c7.458,0,13.5,6.046,13.5,13.5C27.225,22.023,21.182,28.068,13.725,28.068z"/>
+-	<path fill="none" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" d="M14.984,8.238
+-		c2.927,0.584,5.133,3.169,5.133,6.267c0,3.531-2.863,6.394-6.393,6.394c-3.532,0-6.394-2.861-6.394-6.394
+-		c0-2.656,1.62-4.934,3.928-5.899"/>
+-	<polyline fill="none" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" points="
+-		16.523,12.087 14.984,8.238 19.037,7.371 	"/>
+-</g>
+-</svg>
++<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
++	<!ENTITY stroke_color "#666666">
++	<!ENTITY fill_color "#ffffff">
++]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-busy">
++	<g display="inline">
++		<path d="M27.5,50C15.072,50,5,39.925,5,27.5C5,15.073,15.072,5,27.5,5    C39.932,5,50,15.077,50,27.5C50,39.925,39.929,50,27.5,50z" fill="&fill_color;" stroke="&stroke_color;" stroke-width="3.5"/>
++		<path d="M29.6,16.95    c4.878,0.973,8.555,5.281,8.555,10.444c0,5.885-4.771,10.657-10.654,10.657c-5.889,0-10.658-4.768-10.658-10.657    c0-4.425,2.701-8.223,6.546-9.831" fill="none" stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
++		<polyline fill="none" points="    32.164,23.364 29.6,16.95 36.354,15.505   " stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
++	</g>
++</g></svg>
+\ No newline at end of file
+diff --git a/icons/scalable/emblems/emblem-channel-1.svg b/icons/scalable/emblems/emblem-channel-1.svg
+deleted file mode 100644
+index 7fd2488..0000000
+--- a/icons/scalable/emblems/emblem-channel-1.svg
++++ /dev/null
+@@ -1,16 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+-<svg version="1.1"
+-	 id="Layer_1" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:version="0.32" inkscape:version="0.45.1" sodipodi:docname="badge-channel-1.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" sodipodi:docbase="/home/dcbw/Development/olpc/sugar-jhbuild/source/artwork/icons/scalable/device" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://web.resource.org/cc/" xmlns:svg="http://www.w3.org/2000/svg"
+-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="27.25px" height="27.25px"
+-	 viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
+-<sodipodi:namedview  id="base" inkscape:window-width="872" inkscape:pageshadow="2" inkscape:window-height="619" inkscape:current-layer="g3223" inkscape:cx="13.625" pagecolor="#ffffff" inkscape:cy="12.928786" inkscape:window-x="0" inkscape:zoom="14.93578" inkscape:window-y="25" gridtolerance="10.0" borderopacity="1.0" objecttolerance="10.0" inkscape:pageopacity="0.0" guidetolerance="10.0" bordercolor="#666666">
+-	</sodipodi:namedview>
+-<g id="g3223">
+-	<rect id="rect3225" x="1.125" y="1.125" fill="#010101" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
+-	<g enable-background="new    ">
+-		<path fill="#FFFFFF" d="M9.999,19.655h3.062V9.088L9.73,9.756V8.049l3.312-0.668h1.874v12.274h3.062v1.577H9.999V19.655z"/>
+-	</g>
+-</g>
+-</svg>
+diff --git a/icons/scalable/emblems/emblem-channel-11.svg b/icons/scalable/emblems/emblem-channel-11.svg
+deleted file mode 100644
+index 90ee334..0000000
+--- a/icons/scalable/emblems/emblem-channel-11.svg
++++ /dev/null
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+-<svg version="1.1"
+-	 id="Layer_1" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:version="0.32" inkscape:version="0.45.1" sodipodi:docname="badge-channel-11.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" sodipodi:docbase="/home/dcbw/Development/olpc/sugar-jhbuild/source/artwork/icons/scalable/device" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://web.resource.org/cc/" xmlns:svg="http://www.w3.org/2000/svg"
+-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="27.25px" height="27.25px"
+-	 viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
+-<sodipodi:namedview  id="base" inkscape:window-width="872" inkscape:pageshadow="2" inkscape:window-height="619" inkscape:current-layer="g3223" inkscape:cx="13.625" pagecolor="#ffffff" inkscape:cy="12.928786" inkscape:window-x="10" inkscape:zoom="14.93578" inkscape:window-y="69" gridtolerance="10.0" borderopacity="1.0" objecttolerance="10.0" inkscape:pageopacity="0.0" guidetolerance="10.0" bordercolor="#666666">
+-	</sodipodi:namedview>
+-<g id="g3223">
+-	<rect id="rect3225" x="1.125" y="1.125" fill="#010101" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
+-	<g enable-background="new    ">
+-		<path fill="#FFFFFF" d="M5.754,18.723h3.062V8.155L5.485,8.823V7.116l3.312-0.668h1.874v12.274h3.062V20.3H5.754V18.723z"/>
+-	</g>
+-	<g enable-background="new    ">
+-		<path fill="#FFFFFF" d="M15.112,18.72h3.062V8.152l-3.33,0.668V7.113l3.312-0.668h1.874V18.72h3.062v1.577h-7.979V18.72z"/>
+-	</g>
+-</g>
+-</svg>
+diff --git a/icons/scalable/emblems/emblem-channel-6.svg b/icons/scalable/emblems/emblem-channel-6.svg
+deleted file mode 100644
+index e8f6ce0..0000000
+--- a/icons/scalable/emblems/emblem-channel-6.svg
++++ /dev/null
+@@ -1,23 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+-<svg version="1.1"
+-	 id="Layer_1" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:version="0.32" inkscape:version="0.45.1" sodipodi:docname="badge-channel-6.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" sodipodi:docbase="/home/dcbw/Development/olpc/sugar-jhbuild/source/artwork/icons/scalable/device" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://web.resource.org/cc/" xmlns:svg="http://www.w3.org/2000/svg"
+-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="27.25px" height="27.25px"
+-	 viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
+-<sodipodi:namedview  id="base" inkscape:window-width="872" inkscape:pageshadow="2" inkscape:window-height="619" inkscape:current-layer="g3223" inkscape:cx="13.625" pagecolor="#ffffff" inkscape:cy="12.928786" inkscape:window-x="5" inkscape:zoom="14.93578" inkscape:window-y="47" gridtolerance="10.0" borderopacity="1.0" objecttolerance="10.0" inkscape:pageopacity="0.0" guidetolerance="10.0" bordercolor="#666666">
+-	</sodipodi:namedview>
+-<g id="g3223">
+-	<rect id="rect3225" x="1.125" y="1.125" fill="#010101" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
+-	<g enable-background="new    ">
+-		<path fill="#FFFFFF" d="M17.301,7.688v1.707c-0.471-0.223-0.945-0.393-1.424-0.51c-0.479-0.118-0.955-0.177-1.424-0.177
+-			c-1.238,0-2.182,0.417-2.834,1.253c-0.653,0.834-1.025,2.096-1.118,3.785c0.365-0.539,0.822-0.951,1.373-1.239
+-			c0.55-0.287,1.156-0.431,1.818-0.431c1.392,0,2.492,0.422,3.298,1.266c0.807,0.845,1.211,1.993,1.211,3.447
+-			c0,1.422-0.422,2.563-1.262,3.423c-0.842,0.859-1.961,1.29-3.359,1.29c-1.602,0-2.827-0.614-3.674-1.842
+-			c-0.848-1.228-1.271-3.008-1.271-5.34c0-2.189,0.52-3.935,1.559-5.236s2.434-1.953,4.185-1.953c0.469,0,0.944,0.047,1.424,0.139
+-			C16.281,7.363,16.781,7.502,17.301,7.688z M13.581,13.561c-0.841,0-1.508,0.287-1.999,0.862c-0.492,0.575-0.738,1.364-0.738,2.366
+-			c0,0.995,0.246,1.782,0.738,2.36c0.491,0.579,1.158,0.868,1.999,0.868s1.507-0.289,2-0.868c0.492-0.578,0.737-1.365,0.737-2.36
+-			c0-1.002-0.245-1.791-0.737-2.366S14.422,13.561,13.581,13.561z"/>
+-	</g>
+-</g>
+-</svg>
+diff --git a/icons/scalable/emblems/emblem-charging.svg b/icons/scalable/emblems/emblem-charging.svg
+index 4cbcb8e..9bd626f 100644
+--- a/icons/scalable/emblems/emblem-charging.svg
++++ b/icons/scalable/emblems/emblem-charging.svg
+@@ -1,13 +1,11 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<!-- Generator: Adobe Illustrator 13.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+-	 width="27.25px" height="27.25px" viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
+-<g>
+-	<g>
+-		<rect x="1.125" y="1.125" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
+-	</g>
+-	<polyline fill="none" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round" points="16.263,7.369 10.99,13.625 
+-		16.263,13.625 10.99,19.881 	"/>
+-</g>
+-</svg>
++<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
++	<!ENTITY stroke_color "#666666">
++	<!ENTITY fill_color "#ffffff">
++]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-charging">
++	<g display="inline">
++		<g>
++			<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
++		</g>
++		<polyline fill="&fill_color;" points="32.594,15.42 22.412,27.5     32.594,27.5 22.412,39.579   " stroke="&stroke_color;" stroke-linecap="round" stroke-width="5"/>
++	</g>
++</g></svg>
+\ No newline at end of file
+diff --git a/icons/scalable/emblems/emblem-favorite.svg b/icons/scalable/emblems/emblem-favorite.svg
+index 027942f..d89dd8b 100644
+--- a/icons/scalable/emblems/emblem-favorite.svg
++++ b/icons/scalable/emblems/emblem-favorite.svg
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+-	<!ENTITY stroke_color "#010101">
+-	<!ENTITY fill_color "#FFFFFF">
++	<!ENTITY stroke_color "#666666">
++	<!ENTITY fill_color "#ffffff">
+ ]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-favorite">
+-	<polygon fill="&fill_color;" points="27.5,5.265 34.723,19.905    50.877,22.251 39.189,33.647 41.949,49.734 27.5,42.138 13.052,49.734 15.812,33.647 4.122,22.251 20.275,19.905  " stroke="&stroke_color;" stroke-linecap="round" stroke-width="3.5"/>
++	<polygon fill="&fill_color;" points="27.5,5.149 34.76,19.865 51,22.224    39.251,33.68 42.025,49.852 27.5,42.215 12.976,49.852 15.75,33.68 4,22.224 20.237,19.865  " stroke="&stroke_color;" stroke-linecap="round" stroke-width="3.5"/>
+ </g></svg>
+\ No newline at end of file
+diff --git a/icons/scalable/emblems/emblem-locked.svg b/icons/scalable/emblems/emblem-locked.svg
+index 9a46645..53f137b 100644
+--- a/icons/scalable/emblems/emblem-locked.svg
++++ b/icons/scalable/emblems/emblem-locked.svg
+@@ -1,14 +1,12 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+-	 width="27.25px" height="27.25px" viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
+-<g>
+-	<rect x="1.125" y="1.125" fill="#010101" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
+-	<g>
+-		<rect x="8.055" y="11.891" fill="#FFFFFF" width="11.141" height="8.787"/>
+-		<path fill="none" stroke="#FFFFFF" stroke-width="2.25" d="M10.51,11.891V9.617c0-1.682,1.362-3.043,3.042-3.043
+-			c1.681,0,3.042,1.363,3.042,3.043v2.273"/>
+-	</g>
+-</g>
+-</svg>
++<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
++	<!ENTITY stroke_color "#666666">
++	<!ENTITY fill_color "#ffffff">
++]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-locked">
++	<g display="inline">
++		<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
++		<g>
++			<rect fill="&stroke_color;" height="14.06" width="17.824" x="18.589" y="24.725"/>
++			<path d="M22.515,24.725v-3.637c0-2.692,2.18-4.869,4.868-4.869     c2.688,0,4.867,2.181,4.867,4.869v3.637" fill="none" stroke="&stroke_color;" stroke-width="3.5"/>
++		</g>
++	</g>
++</g></svg>
+\ No newline at end of file
+diff --git a/icons/scalable/emblems/emblem-notification.svg b/icons/scalable/emblems/emblem-notification.svg
+new file mode 100644
+index 0000000..b28b266
+--- /dev/null
++++ b/icons/scalable/emblems/emblem-notification.svg
+@@ -0,0 +1,13 @@
++<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
++	<!ENTITY stroke_color "#666666">
++	<!ENTITY fill_color "#ffffff">
++]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-notification">
++	<g display="inline">
++		<g>
++			<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
++		</g>
++		<g enable-background="new    ">
++			<path d="M24.563,37.676c0-1.547,1.26-2.807,2.808-2.807c1.547,0,2.808,1.26,2.808,2.807     c0,1.549-1.261,2.809-2.808,2.809C25.823,40.484,24.563,39.225,24.563,37.676z M24.779,16.439c0-1.512,1.116-2.447,2.592-2.447     c1.44,0,2.591,0.972,2.591,2.447v13.858c0,1.477-1.151,2.449-2.591,2.449c-1.476,0-2.592-0.938-2.592-2.449V16.439z" fill="&stroke_color;"/>
++		</g>
++	</g>
++</g></svg>
+\ No newline at end of file
+diff --git a/icons/scalable/emblems/emblem-outofrange.svg b/icons/scalable/emblems/emblem-outofrange.svg
+index 2d962c6..1a39557 100644
+--- a/icons/scalable/emblems/emblem-outofrange.svg
++++ b/icons/scalable/emblems/emblem-outofrange.svg
+@@ -1,17 +1,19 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+-	 width="27.25px" height="27.25px" viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
+-<g>
+-	<g>
+-		<g>
+-			<rect x="1.125" y="1.125" fill="#010101" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
+-		</g>
+-		<g>
+-			<circle fill="none" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round" cx="13.625" cy="13.624" r="6.579"/>
+-		</g>
+-	</g>
+-	<circle fill="#FFFFFF" cx="13.625" cy="13.625" r="2.014"/>
+-</g>
+-</svg>
++<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
++	<!ENTITY stroke_color "#666666">
++	<!ENTITY fill_color "#ffffff">
++]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-outofrange">
++	<g display="inline">
++		<g>
++			<g>
++				<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
++			</g>
++			<g>
++				<circle cx="27.5" cy="27.498" fill="none" r="7.249" stroke="&stroke_color;" stroke-width="2.25"/>
++			</g>
++			<g>
++				<circle cx="27.5" cy="27.499" fill="none" r="13.001" stroke="&stroke_color;" stroke-width="2.25"/>
++			</g>
++			<circle cx="27.5" cy="27.499" fill="&stroke_color;" r="2.411"/>
++		</g>
++	</g>
++</g></svg>
+\ No newline at end of file
+diff --git a/icons/scalable/emblems/emblem-question.svg b/icons/scalable/emblems/emblem-question.svg
+new file mode 100644
+index 0000000..21751ef
+--- /dev/null
++++ b/icons/scalable/emblems/emblem-question.svg
+@@ -0,0 +1,13 @@
++<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
++	<!ENTITY stroke_color "#666666">
++	<!ENTITY fill_color "#ffffff">
++]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-question">
++	<g display="inline" id="_x3F__x3F__x3F__x3F__x3F__1_">
++		<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
++		<g>
++			<g>
++				<path d="M24.825,26.918c0-1.271,1.413-1.483,2.862-1.87c1.412-0.39,2.824-0.954,2.824-3.003      c0-1.554-1.447-2.687-2.931-2.687c-2.969,0-3.428,3.497-5.688,3.497c-1.273,0-2.156-0.987-2.156-2.542      c0-3.709,4.664-5.829,7.843-5.829c4.556,0,8.441,2.827,8.441,7.559c0,3.922-2.471,6.217-6.109,7.135v1.273      c0,1.413-1.059,2.438-2.542,2.438c-1.591,0-2.545-1.024-2.545-2.438V26.918z M24.615,37.729c0-1.52,1.236-2.755,2.756-2.755      s2.754,1.235,2.754,2.755c0,1.518-1.234,2.755-2.754,2.755S24.615,39.247,24.615,37.729z" fill="&stroke_color;"/>
++			</g>
++		</g>
++	</g>
++</g></svg>
+\ No newline at end of file
+diff --git a/icons/scalable/emblems/emblem-warning.svg b/icons/scalable/emblems/emblem-warning.svg
+new file mode 100644
+index 0000000..0eca92e
+--- /dev/null
++++ b/icons/scalable/emblems/emblem-warning.svg
+@@ -0,0 +1,11 @@
++<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
++	<!ENTITY stroke_color "#666666">
++	<!ENTITY fill_color "#ffffff">
++]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-warning">
++	<g display="inline">
++		<polygon fill="&fill_color;" points="4,46.343 27.5,5.639 51,46.343   " stroke="&stroke_color;" stroke-width="3.5"/>
++		<g enable-background="new    ">
++			<path d="M25.066,38.688c0-1.271,1.036-2.307,2.308-2.307s2.308,1.035,2.308,2.307c0,1.273-1.036,2.31-2.308,2.31     S25.066,39.962,25.066,38.688z M25.244,21.232c0-1.243,0.917-2.012,2.13-2.012c1.184,0,2.13,0.799,2.13,2.012v11.391     c0,1.214-0.946,2.014-2.13,2.014c-1.213,0-2.13-0.771-2.13-2.014V21.232z" fill="&stroke_color;"/>
++		</g>
++	</g>
++</g></svg>
+\ No newline at end of file

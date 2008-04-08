@@ -18,7 +18,7 @@ pkg = sugar-artwork
 
 DEB_UPSTREAM_URL = http://dev.laptop.org/pub/sugar/sources/$(DEB_UPSTREAM_PACKAGE)
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
-#DEB_UPSTREAM_TARBALL_MD5 = e10b794279af18fc4fd0d7de04c76bc8
+DEB_UPSTREAM_TARBALL_MD5 = cf0dac67c78af8f4dd8985a64653c92c
 
 # Workaround: can't pass --install to autotools through CDBS
 pre-build::
