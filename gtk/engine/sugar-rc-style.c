@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007, Red Hat, Inc.
+ * Copyright (C) 2008, Benjamin Berg
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -35,7 +36,8 @@ static gchar symbols[] =
     "scrollbar_border\0"
     "fake_padding\0"
     "subcell_size\0"
-    "label_fg_color\0"
+    "parent_fg_color\0"
+    "parent_bg_color\0"
     "bg\0"
     "fg\0"
     "base\0"
@@ -50,7 +52,8 @@ typedef enum {
     TOKEN_SCROLLBAR_BORDER,
     TOKEN_FAKE_PADDING,
     TOKEN_SUBCELL_SIZE,
-    TOKEN_LABEL_FG_COLOR,
+    TOKEN_PARENT_FG_COLOR,
+    TOKEN_PARENT_BG_COLOR,
     TOKEN_BG,
     TOKEN_FG,
     TOKEN_BASE,
@@ -84,6 +87,8 @@ sugar_rc_style_register_type (GTypeModule *module)
 static void
 sugar_rc_style_init (SugarRcStyle *rc_style)
 {
+    gint i;
+
     /* Initilize the RC style. */
     rc_style->line_width = 3;
     rc_style->thick_line_width = 4;
@@ -92,10 +97,15 @@ sugar_rc_style_init (SugarRcStyle *rc_style)
     rc_style->fake_padding = 0;
     rc_style->subcell_size = 15;
     rc_style->hint = NULL;
-    rc_style->apply_label_color.bg = 0;
-    rc_style->apply_label_color.fg = 0;
-    rc_style->apply_label_color.base = 0;
-    rc_style->apply_label_color.text = 0;
+
+    rc_style->color_flags = 0;
+
+    for (i = 0; i < 5; i++) {
+        rc_style->color_mapping.fg[i] = SUGAR_COLOR_ORIGINAL;
+        rc_style->color_mapping.bg[i] = SUGAR_COLOR_ORIGINAL;
+        rc_style->color_mapping.base[i] = SUGAR_COLOR_ORIGINAL;
+        rc_style->color_mapping.text[i] = SUGAR_COLOR_ORIGINAL;
+    }
 }
 
 
@@ -156,7 +166,7 @@ sugar_rc_parse_color_assignment (GScanner *scanner, SugarRcStyle *rc_style)
     GTokenType type;
     GTokenType token;
     GtkStateType state;
-    guint8 *bitfield;
+    SugarRCColor color;
 
     type = g_scanner_cur_token(scanner);
     
@@ -172,26 +182,29 @@ sugar_rc_parse_color_assignment (GScanner *scanner, SugarRcStyle *rc_style)
         return G_TOKEN_EQUAL_SIGN;
 
     token = g_scanner_get_next_token(scanner);
-    if (token != TOKEN_LABEL_FG_COLOR)
-        return TOKEN_LABEL_FG_COLOR;
+    if (token == TOKEN_PARENT_FG_COLOR)
+        color = SUGAR_COLOR_FG;
+    else if (token == TOKEN_PARENT_BG_COLOR)
+        color = SUGAR_COLOR_BG;
+    else
+        return TOKEN_PARENT_FG_COLOR;
 
     switch (type) {
         case TOKEN_BG:
-            bitfield = &rc_style->apply_label_color.bg;
+            rc_style->color_mapping.bg[state] = color;
         break;
         case TOKEN_FG:
-            bitfield = &rc_style->apply_label_color.fg;
+            rc_style->color_mapping.fg[state] = color;
         break;
         case TOKEN_BASE:
-            bitfield = &rc_style->apply_label_color.base;
+            rc_style->color_mapping.base[state] = color;
         break;
         case TOKEN_TEXT:
-            bitfield = &rc_style->apply_label_color.text;
+            rc_style->color_mapping.text[state] = color;
         break;
         default:
             return G_TOKEN_IDENTIFIER;
     }
-    *bitfield |= 1 << state;
     
     return G_TOKEN_NONE;
 }
@@ -259,9 +272,13 @@ sugar_rc_style_parse (GtkRcStyle   *rc_style,
                 token = sugar_rc_parse_string(scanner, &sugar_rc_style->hint);
                 sugar_rc_style->flags |= OPTION_HINT;
                 break;
-            case TOKEN_LABEL_FG_COLOR:
-                token = sugar_rc_parse_color(scanner, &sugar_rc_style->label_fg_color);
-                sugar_rc_style->flags |= OPTION_LABEL_FG_COLOR;
+            case TOKEN_PARENT_FG_COLOR:
+                token = sugar_rc_parse_color(scanner, &sugar_rc_style->colors[SUGAR_COLOR_FG]);
+                sugar_rc_style->color_flags |= 1 << SUGAR_COLOR_FG;
+                break;
+            case TOKEN_PARENT_BG_COLOR:
+                token = sugar_rc_parse_color(scanner, &sugar_rc_style->colors[SUGAR_COLOR_BG]);
+                sugar_rc_style->color_flags |= 1 << SUGAR_COLOR_BG;
                 break;
 
             case TOKEN_FG:
@@ -295,6 +312,7 @@ sugar_rc_style_merge (GtkRcStyle *dest,
     SugarRcStyle *sugar_src;
     SugarRcStyleOptions flags;
     GtkStateType state;
+    gint i;
 
     parent_class->merge (dest, src);
 
@@ -319,18 +337,43 @@ sugar_rc_style_merge (GtkRcStyle *dest,
         sugar_dest->fake_padding = sugar_src->fake_padding;
     if (flags & OPTION_SUBCELL_SIZE)
         sugar_dest->subcell_size = sugar_src->subcell_size;
-    if (flags & OPTION_LABEL_FG_COLOR)
-        sugar_dest->label_fg_color = sugar_src->label_fg_color;
     if (flags & OPTION_HINT) {
         g_free (sugar_dest->hint);
         sugar_dest->hint = g_strdup (sugar_src->hint);
     }
 
     sugar_dest->flags |= flags;
-    sugar_dest->apply_label_color.bg |= sugar_src->apply_label_color.bg;
-    sugar_dest->apply_label_color.fg |= sugar_src->apply_label_color.fg;
-    sugar_dest->apply_label_color.base |= sugar_src->apply_label_color.base;
-    sugar_dest->apply_label_color.text |= sugar_src->apply_label_color.text;
+
+
+    flags = (~sugar_dest->color_flags) & sugar_src->color_flags;
+    for (i = 0; i < SUGAR_COLOR_COUNT; i++) {
+        if (flags & (1 << i))
+            sugar_dest->colors[i] = sugar_src->colors[i];
+        
+    }
+    sugar_dest->color_flags |= flags;
+
+    for (i = 0; i < 5; i++) {
+        if ((sugar_dest->color_mapping.bg[i] == SUGAR_COLOR_ORIGINAL) &&
+            !(dest->color_flags[i] & GTK_RC_BG)) {
+            sugar_dest->color_mapping.bg[i] = sugar_src->color_mapping.bg[i];
+        }
+
+        if ((sugar_dest->color_mapping.fg[i] == SUGAR_COLOR_ORIGINAL) &&
+            !(dest->color_flags[i] & GTK_RC_FG)) {
+            sugar_dest->color_mapping.fg[i] = sugar_src->color_mapping.fg[i];
+        }
+
+        if ((sugar_dest->color_mapping.base[i] == SUGAR_COLOR_ORIGINAL) &&
+            !(dest->color_flags[i] & GTK_RC_BASE)) {
+            sugar_dest->color_mapping.base[i] = sugar_src->color_mapping.base[i];
+        }
+
+        if ((sugar_dest->color_mapping.text[i] == SUGAR_COLOR_ORIGINAL) &&
+            !(dest->color_flags[i] & GTK_RC_TEXT)) {
+            sugar_dest->color_mapping.text[i] = sugar_src->color_mapping.text[i];
+        }
+    }
 }
 
 

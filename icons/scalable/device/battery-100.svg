@@ -1,8 +1,0 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
-	<!ENTITY stroke_color "#010101">
-	<!ENTITY fill_color "#FFFFFF">
-]><svg enable-background="new 0 0 55 55" height="55px" id="Layer_1" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="device-battery-100">
-	<rect fill="&fill_color;" height="22.175" width="40.507" x="9.155" y="16.339"/>
-	<rect fill="&fill_color;" height="12.562" width="5.401" x="4.663" y="21.089"/>
-	<polygon fill="none" points="49.662,16.339    9.133,16.339 9.133,21.066 4.663,21.066 4.663,33.604 9.133,33.604 9.133,38.329 49.662,38.329  " stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
-</g></svg>

@@ -1,28 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
 	<!ENTITY stroke_color "#010101">
 	<!ENTITY fill_color "#FFFFFF">
-]>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="55px"
-	 height="55px" viewBox="0 0 55 55" enable-background="new 0 0 55 55" xml:space="preserve">
-
-<g id="Copy" >
-	<g display="inline">
-		<polygon fill="#B1B4B6" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			14.721,30.32 14.721,47.924 35.444,47.924 35.444,20.938 24.108,20.938 		"/>
-		<polyline fill="none" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			14.721,30.32 24.108,30.32 24.108,20.938 		"/>
-		<polygon fill="&fill_color;" points="21.727,18.311 21.727,35.914 42.449,35.914 42.449,8.928 31.113,8.928 		"/>
-		<polygon fill="none" stroke="&stroke_color;" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			21.727,18.311 21.727,35.914 42.449,35.914 42.449,8.928 31.113,8.928 		"/>
-		<polyline fill="none" stroke="&stroke_color;" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			21.727,18.311 31.113,18.311 31.113,8.928 		"/>
-		
-			<line fill="none" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" x1="15.713" y1="6" x2="15.713" y2="18.164"/>
-		<polyline fill="none" stroke="#FFFFFF" stroke-width="2.9867" stroke-linecap="round" stroke-linejoin="round" points="
-			10.583,12.083 15.713,6 20.843,12.083 		"/>
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="edit-copy">
+	<g id="Copy_2_">
+		<g>
+			<g>
+				<polygon fill="#FFFFFF" points="23.614,20.318 15.101,28.826 23.614,28.824     "/>
+				<polygon fill="#FFFFFF" points="26.601,19.444 26.601,31.812 14.227,31.812 14.227,49.417 37.936,49.417 37.936,19.444     "/>
+			</g>
+			<polygon fill="&fill_color;" points="22.727,18.311 22.727,35.914 43.449,35.914 43.449,8.928      32.113,8.928    " stroke="&stroke_color;" stroke-width="3"/>
+			<polyline fill="none" points="22.727,18.311 32.113,18.311 32.113,8.928    " stroke="&stroke_color;" stroke-width="2.9867"/>
+			
+				<line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.9867" x1="16.713" x2="16.713" y1="6" y2="18.164"/>
+			<polyline fill="none" points="     11.583,12.083 16.713,6 21.843,12.083    " stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.9867"/>
+		</g>
 	</g>
-</g>
-
-</svg>
+</g></svg>
