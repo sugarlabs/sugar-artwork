@@ -133,6 +133,7 @@
 	icons/scalable/device/battery-090.icon
 	icons/scalable/device/battery-090.svg
 	icons/scalable/device/battery-100.icon
+	icons/scalable/device/battery-100.svg
 	icons/scalable/device/battery-charging-000.svg
 	icons/scalable/device/battery-charging-010.svg
 	icons/scalable/device/battery-charging-020.svg
@@ -177,13 +178,13 @@
 	icons/scalable/device/speaker-muted-100.svg
 	icons/scalable/emblems/Makefile.am
 	icons/scalable/emblems/emblem-busy.svg
-	icons/scalable/emblems/emblem-channel-1.svg
-	icons/scalable/emblems/emblem-channel-11.svg
-	icons/scalable/emblems/emblem-channel-6.svg
 	icons/scalable/emblems/emblem-charging.svg
 	icons/scalable/emblems/emblem-favorite.svg
 	icons/scalable/emblems/emblem-locked.svg
+	icons/scalable/emblems/emblem-notification.svg
 	icons/scalable/emblems/emblem-outofrange.svg
+	icons/scalable/emblems/emblem-question.svg
+	icons/scalable/emblems/emblem-warning.svg
 	icons/scalable/mimetypes/Makefile.am
 	icons/scalable/mimetypes/application-octet-stream.svg
 	icons/scalable/mimetypes/application-x-squeak-project.svg
@@ -222,14 +223,15 @@ LGPL-2+ [2007, Benjamin Berg]: gtk/engine/sugar-drawing.c
 UNKNOWN [notice appear in all copies and that both that / 2003 Red Hat, Inc / notice and this permission notice appear in supporting]: cursor/cursorthemegen/cursortheme.h
 	cursor/cursorthemegen/main.c
 	cursor/cursorthemegen/themefile.c
+GPL GENERATED FILE [1999-2000, 2003-2005 Free Software Foundation, Inc]: compile
+	depcomp
 LGPL-2+ [2007, Red Hat, Inc / 2008, Benjamin Berg]: gtk/engine/sugar-rc-style.c
 	gtk/engine/sugar-rc-style.h
 LGPL-2+ [2007, Red Hat, Inc]: gtk/engine/sugar-style.h
 	gtk/engine/sugar.c
 GENERATED FILE [1992-1996, 1998-2001]: configure
-GPL GENERATED FILE [1996-1997, 1999-2000, 2002-2006]: missing
-GPL GENERATED FILE [1999-2000, 2003-2006 Free Software]: depcomp
-GPL-2+ GENERATED FILE [1996-2001, 2003-2006]: ltmain.sh
+GPL GENERATED FILE [1996-1997, 1999-2000, 2002-2005]: missing
+GPL-2+ GENERATED FILE [1996-2001, 2003-2005]: ltmain.sh
 LGPL-2+ [2007, Red Hat, Inc / 2007, Benjamin Berg]: gtk/engine/sugar-style.c
 MIT/X11 (BSD like) [and license / notice and this permission notice shall be included in / 1994 X Consortium]: install-sh
 UNKNOWN [1996-2004]: aclocal.m4
