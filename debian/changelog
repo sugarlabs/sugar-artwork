@@ -11,6 +11,8 @@ sugar-artwork (0.79.2-1) unstable; urgency=low
     + Add battery-100.svg to makefile
   * Drop patch 0001, now applied upstream.
   * Drop patches 2991 and 2992, now fixed upstream.
+  * Add new patch 2991 applying patch 1001 (noexec cursor files) to
+    automade files.
 
  -- Jonas Smedegaard <dr@jones.dk>  Mon, 14 Apr 2008 00:54:39 +0200
 
