@@ -4,12 +4,12 @@ icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =			\
 	emblem-busy.svg		\
-	emblem-channel-1.svg	\
-	emblem-channel-6.svg	\
-	emblem-channel-11.svg	\
 	emblem-charging.svg	\
+	emblem-favorite.svg	\
 	emblem-locked.svg	\
+	emblem-notification.svg	\
 	emblem-outofrange.svg	\
-	emblem-favorite.svg
+	emblem-question.svg	\
+	emblem-warning.svg
 	
 EXTRA_DIST = $(icon_DATA)
