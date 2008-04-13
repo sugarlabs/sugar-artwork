@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="27.25px" height="27.25px" viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
-<g>
-	<g>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#666666">
+	<!ENTITY fill_color "#ffffff">
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-outofrange">
+	<g display="inline">
 		<g>
-			<rect x="1.125" y="1.125" fill="#010101" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
-		</g>
-		<g>
-			<circle fill="none" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round" cx="13.625" cy="13.624" r="6.579"/>
+			<g>
+				<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
+			</g>
+			<g>
+				<circle cx="27.5" cy="27.498" fill="none" r="7.249" stroke="&stroke_color;" stroke-width="2.25"/>
+			</g>
+			<g>
+				<circle cx="27.5" cy="27.499" fill="none" r="13.001" stroke="&stroke_color;" stroke-width="2.25"/>
+			</g>
+			<circle cx="27.5" cy="27.499" fill="&stroke_color;" r="2.411"/>
 		</g>
 	</g>
-	<circle fill="#FFFFFF" cx="13.625" cy="13.625" r="2.014"/>
-</g>
-</svg>
+</g></svg>

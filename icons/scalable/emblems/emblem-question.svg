@@ -1,0 +1,13 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#666666">
+	<!ENTITY fill_color "#ffffff">
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-question">
+	<g display="inline" id="_x3F__x3F__x3F__x3F__x3F__1_">
+		<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
+		<g>
+			<g>
+				<path d="M24.825,26.918c0-1.271,1.413-1.483,2.862-1.87c1.412-0.39,2.824-0.954,2.824-3.003      c0-1.554-1.447-2.687-2.931-2.687c-2.969,0-3.428,3.497-5.688,3.497c-1.273,0-2.156-0.987-2.156-2.542      c0-3.709,4.664-5.829,7.843-5.829c4.556,0,8.441,2.827,8.441,7.559c0,3.922-2.471,6.217-6.109,7.135v1.273      c0,1.413-1.059,2.438-2.542,2.438c-1.591,0-2.545-1.024-2.545-2.438V26.918z M24.615,37.729c0-1.52,1.236-2.755,2.756-2.755      s2.754,1.235,2.754,2.755c0,1.518-1.234,2.755-2.754,2.755S24.615,39.247,24.615,37.729z" fill="&stroke_color;"/>
+			</g>
+		</g>
+	</g>
+</g></svg>

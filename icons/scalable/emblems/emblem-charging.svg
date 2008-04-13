@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 13.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="27.25px" height="27.25px" viewBox="0 0 27.25 27.25" enable-background="new 0 0 27.25 27.25" xml:space="preserve">
-<g>
-	<g>
-		<rect x="1.125" y="1.125" stroke="#FFFFFF" stroke-width="2.25" width="25" height="25"/>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#666666">
+	<!ENTITY fill_color "#ffffff">
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="emblem-charging">
+	<g display="inline">
+		<g>
+			<rect fill="&fill_color;" height="40" stroke="&stroke_color;" stroke-width="3.5" width="40" x="7.5" y="7.5"/>
+		</g>
+		<polyline fill="&fill_color;" points="32.594,15.42 22.412,27.5     32.594,27.5 22.412,39.579   " stroke="&stroke_color;" stroke-linecap="round" stroke-width="5"/>
 	</g>
-	<polyline fill="none" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round" points="16.263,7.369 10.99,13.625 
-		16.263,13.625 10.99,19.881 	"/>
-</g>
-</svg>
+</g></svg>
