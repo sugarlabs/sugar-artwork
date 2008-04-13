@@ -9,6 +9,7 @@ sugar-artwork (0.79.2-1) unstable; urgency=low
     + Fix the build. Evil designer...
     + Fixed up the emblem icons
     + Add battery-100.svg to makefile
+  * Drop patch 0001, now applied upstream.
 
  -- Jonas Smedegaard <dr@jones.dk>  Mon, 14 Apr 2008 00:54:39 +0200
 
