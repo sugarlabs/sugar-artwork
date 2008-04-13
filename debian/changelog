@@ -1,3 +1,17 @@
+sugar-artwork (0.79.2-1) unstable; urgency=low
+
+  * New Upstream release.
+    Highlights:
+    + Fix the appearance of the speaker device
+    + Increase the size of the battery icon slightly
+    + Fixed canvas sizes of a number of device icons
+    + Fixed the makefile for emblem icons
+    + Fix the build. Evil designer...
+    + Fixed up the emblem icons
+    + Add battery-100.svg to makefile
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 14 Apr 2008 00:54:39 +0200
+
 sugar-artwork (0.79.1-1) unstable; urgency=low
 
   * New upstream release.
