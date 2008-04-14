@@ -1,3 +1,4 @@
 1001_cursorfiles_noexec.patch
+1002_skip_none-arow_only_if_supported.patch
 2001_empy_from_system.patch
 2991_cursorfiles_noexec.patch

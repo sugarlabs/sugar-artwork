@@ -1,3 +1,10 @@
+sugar-artwork (0.79.2-2~1) UNRELEASED; urgency=low
+
+  * Add patch 1002 to only skip none-arrow if supported (got implemented
+    around GTK+ 2.10).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 14 Apr 2008 02:45:41 +0200
+
 sugar-artwork (0.79.2-1) unstable; urgency=low
 
   * New Upstream release.
