@@ -9,7 +9,7 @@ sugar-artwork (0.79.2-2) unstable; urgency=low
   * Semi-auto-update debian/control due to above changes:
       DEB_AUTO_UPDATE_DEBIAN_CONTROL=yes fakeroot debian/rules clean
 
- -- Jonas Smedegaard <dr@jones.dk>  Wed, 23 Apr 2008 10:04:53 +0200
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 23 Apr 2008 16:01:09 +0200
 
 sugar-artwork (0.79.2-1) unstable; urgency=low
 
