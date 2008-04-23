@@ -2,6 +2,9 @@ sugar-artwork (0.79.2-2) unstable; urgency=low
 
   * Add patch 1002 to only skip none-arrow if supported (got implemented
     around GTK+ 2.10).
+  * Update cdbs tweaks:
+    + Strip any non-printable characters in copyright-check.mk.  Update
+      copyright-hints.
 
  -- Jonas Smedegaard <dr@jones.dk>  Wed, 23 Apr 2008 10:04:53 +0200
 

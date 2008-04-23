@@ -220,7 +220,7 @@ LGPL-2+ [2007, Benjamin Berg]: gtk/engine/sugar-drawing.c
 	gtk/engine/sugar-info.h
 	gtk/engine/sugar-utils.c
 	gtk/engine/sugar-utils.h
-UNKNOWN [notice appear in all copies and that both that / 2003 Red Hat, Inc / notice and this permission notice appear in supporting]: cursor/cursorthemegen/cursortheme.h
+UNKNOWN [notice appear in all copies and that both that /  2003 Red Hat, Inc / notice and this permission notice appear in supporting]: cursor/cursorthemegen/cursortheme.h
 	cursor/cursorthemegen/main.c
 	cursor/cursorthemegen/themefile.c
 GPL GENERATED FILE [1999-2000, 2003-2005 Free Software Foundation, Inc]: compile
