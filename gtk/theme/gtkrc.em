@@ -696,7 +696,11 @@ widget_class "*<SugarAlert>*"              style "black-bg-child"
 # The notebook is very high, so that everything is overriden
 # Only the color of the tab labels needs to be modified inside the
 # notebooks in this style (and the widget itself).
-widget_class "*<GtkNotebook>*"    style "notebook-tab"
+# Assume that there is either just a normal label in the notebook tab, or
+# it is inside a GtkBox (H- or VBox) together with eg. a close button.
+widget_class "*<GtkNotebook>"                        style "notebook-tab"
+widget_class "*<GtkNotebook>.<GtkLabel>"             style "notebook-tab"
+widget_class "*<GtkNotebook>.<GtkBox>.<GtkLabel>"    style "notebook-tab"
 
 
 # SugarPalette and Menu
