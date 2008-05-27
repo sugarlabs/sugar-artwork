@@ -368,7 +368,7 @@ style "scale"
     # "square" slider (really round of course)
     # Same as indicator-size?
     GtkRange::slider-width = $scale_slider_width
-    GtkScale::slider-toolbox-notebooklength = $scale_slider_width
+    GtkScale::slider-length = $scale_slider_width
     GtkRange::trough-border = 0
     GtkRange::stepper-spacing = 0
     GtkRange::trough-side-details = 1
