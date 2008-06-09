@@ -1,4 +1,4 @@
-AC_INIT([sugar-artwork],[0.79.2],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.79.3],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
