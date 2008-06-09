@@ -1,3 +1,10 @@
+sugar-artwork (0.79.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Reorganize debian/copyright to only mention each license once.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 09 Jun 2008 12:07:26 +0200
+
 sugar-artwork (0.79.2-2) unstable; urgency=low
 
   * Add patch 1002 to only skip none-arrow if supported (got implemented

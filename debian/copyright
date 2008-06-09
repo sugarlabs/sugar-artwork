@@ -9,66 +9,61 @@ Upstream author: Red Hat, Inc.
 Files: debian/*
 Copyright: © 2008 Jonas Smedegaard <dr@jones.dk>
 License: GPL-2+
- The Debian packaging information is under the GPL, version 2 or later.
 
 Files: gtk/engine/sugar-rc-style.[ch]
 Copyright: © 2008, Benjamin Berg
 	   © 2007, Red Hat, Inc.
 License: LGPL-2+
- This library is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2 of the License, or (at your option) any later version.
 
 Files: gtk/engine/sugar-style.h, gtk/engine/sugar.c
 Copyright: © 2007, Red Hat, Inc.
 License: LGPL-2+
- This library is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2 of the License, or (at your option) any later version.
 
 Files: gtk/engine/sugar-style.c
 Copyright: © 2007, Red Hat, Inc.
 	   © 2007, Benjamin Berg
 License: LGPL-2+
- This library is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2 of the License, or (at your option) any later version.
 
 Files: gtk/engine/sugar-drawing.[ch], gtk/engine/sugar-info.[ch],
  gtk/engine/sugar-utils.[ch], test/torturetest.c
 Copyright: © 2007, Benjamin Berg
+License: LGPL-2+
+
+Files: gtk/theme/em.py
+Copyright: © 2002-2003, Erik Max Francis <max@alcyone.com>
+License: LGPL-any
+
+Files: maint-helper.py
+Copyright: © 2007, Red Hat, Inc.
+License: GPL-2+
+
+Files: icons/import-icon
+Copyright: © 2006, Red Hat, Inc.
+License: GPL-2+
+
+Files: cursor/cursorthemegen/*
+Copyright: © 2003, Red Hat, Inc.
+License: BSD-3
+
+Files: Makefile.in
+Copyright © 1994-2002  Free Software Foundation, Inc.
+License: GAP
+
 License: LGPL-2+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
  License as published by the Free Software Foundation; either
  version 2 of the License, or (at your option) any later version.
 
-Files: gtk/theme/em.py
-Copyright: © 2002-2003, Erik Max Francis <max@alcyone.com>
 License: LGPL-any
  __license__ = 'LGPL'
 
-Files: maint-helper.py
-Copyright: © 2007, Red Hat, Inc.
 License: GPL-2+
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; either version 2 of the License, or
  (at your option) any later version.
 
-Files: icons/import-icon
-Copyright: © 2006, Red Hat, Inc.
-License: GPL-2+
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
-
-Files: cursor/cursorthemegen/*
-Copyright: © 2003, Red Hat, Inc.
 License: BSD-3
  Permission to use, copy, modify, distribute, and sell this software and its
  documentation for any purpose is hereby granted without fee, provided that
@@ -80,8 +75,6 @@ License: BSD-3
  suitability of this software for any purpose.  It is provided "as is"
  without express or implied warranty.
 
-Files: Makefile.in
-Copyright © 1994-2002  Free Software Foundation, Inc.
 License: GAP
  This Makefile.in is free software; the Free Software Foundation
  gives unlimited permission to copy and/or distribute it,
