@@ -1,3 +1,14 @@
+sugar-artwork (0.81.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update local cdbs snippets:
+    + Relax copyright-check to only warn about its discoveries.  Closes:
+      bug#487012.
+    + Update dependency cleanup to strip cdbs 0.4.27 (not 0.4.27-1).
+  * Update debian/copyright-hints.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 20 Jun 2008 22:00:57 +0200
+
 sugar-artwork (0.79.3-1) unstable; urgency=low
 
   * New upstream release.
