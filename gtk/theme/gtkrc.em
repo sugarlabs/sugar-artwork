@@ -20,18 +20,19 @@ if theme == "sugar-xo":
     icon_base = 11
     bullet_size = 9.5
     font_height = 24
-    default_padding = 7
+    default_padding = 6
     toolbutton_padding = 9
-else: # About 50% smaller
+else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     xo = False
-    line_width = 1.0
-    thick_line_width = 1.75
-    subcell_size = 7
-    icon_base = 8
-    bullet_size = 5
-    font_height = 12
-    default_padding = 3
-    toolbutton_padding = 6
+    line_width = 2.0            # 1.62 rounded up
+    thick_line_width = 3.0      # 2.52
+    subcell_size = 11           # 10.8
+    icon_base = 8               # 7.92
+    bullet_size = 6.5           # 6.84
+    # This is a guess on the font size (Sans 10 at 96 DPI)
+    font_height = 17
+    default_padding = 4         # 4.32
+    toolbutton_padding = 6      # 7.68
 
 
 radio_size = my_floor(subcell_size + bullet_size + line_width)
@@ -367,7 +368,7 @@ style "scale"
     # "square" slider (really round of course)
     # Same as indicator-size?
     GtkRange::slider-width = $scale_slider_width
-    GtkScale::slider-toolbox-notebooklength = $scale_slider_width
+    GtkScale::slider-length = $scale_slider_width
     GtkRange::trough-border = 0
     GtkRange::stepper-spacing = 0
     GtkRange::trough-side-details = 1
@@ -696,7 +697,11 @@ widget_class "*<SugarAlert>*"              style "black-bg-child"
 # The notebook is very high, so that everything is overriden
 # Only the color of the tab labels needs to be modified inside the
 # notebooks in this style (and the widget itself).
-widget_class "*<GtkNotebook>*"    style "notebook-tab"
+# Assume that there is either just a normal label in the notebook tab, or
+# it is inside a GtkBox (H- or VBox) together with eg. a close button.
+widget_class "*<GtkNotebook>"                        style "notebook-tab"
+widget_class "*<GtkNotebook>.<GtkLabel>"             style "notebook-tab"
+widget_class "*<GtkNotebook>.<GtkBox>.<GtkLabel>"    style "notebook-tab"
 
 
 # SugarPalette and Menu
