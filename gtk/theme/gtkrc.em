@@ -192,7 +192,7 @@ style "white-bg-child"
     bg[INSENSITIVE] = $white
     base[INSENSITIVE] = $white
 
-    fg[NORMAL] = $white
+    fg[NORMAL] = $black
     
     engine "sugar" {
         parent_fg_color = $black
