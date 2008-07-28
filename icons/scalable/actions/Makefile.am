@@ -70,6 +70,7 @@ icon_DATA =					\
 	system-shutdown.svg			\
 	tray-hide.svg				\
 	tray-show.svg				\
+	view-box.svg				\
 	view-details.svg			\
 	view-freeform.svg			\
 	view-fullscreen.svg			\
@@ -77,6 +78,8 @@ icon_DATA =					\
 	view-radial.svg				\
 	view-refresh.svg			\
 	view-return.svg				\
+	view-spiral.svg				\
+	view-triangle.svg			\
 	zoom-activity.svg 			\
 	zoom-best-fit.svg			\
 	zoom-groups.svg				\
