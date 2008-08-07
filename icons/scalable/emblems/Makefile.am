@@ -5,6 +5,7 @@ icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 icon_DATA =			\
 	emblem-busy.svg		\
 	emblem-charging.svg	\
+	emblem-downloads.svg	\
 	emblem-favorite.svg	\
 	emblem-locked.svg	\
 	emblem-notification.svg	\

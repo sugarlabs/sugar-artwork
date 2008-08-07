@@ -181,6 +181,25 @@ style "window-child"
     }
 }
 
+
+style "white-bg"
+{
+    bg[NORMAL] = $white
+}
+
+style "white-bg-child"
+{
+    bg[INSENSITIVE] = $white
+    base[INSENSITIVE] = $white
+
+    fg[NORMAL] = $black
+    
+    engine "sugar" {
+        parent_fg_color = $black
+        parent_bg_color = $white
+    }
+}
+
 style "black-bg"
 {
     bg[NORMAL] = $black
@@ -692,6 +711,9 @@ widget_class "<GtkWindow>*"              style "window-child"
 
 widget_class "*<SugarAlert>"               style "black-bg"
 widget_class "*<SugarAlert>*"              style "black-bg-child"
+
+widget_class "*<SugarSectionView>"       style "white-bg"
+widget_class "*<SugarSectionView>*"      style "white-bg-child"
 
 
 # The notebook is very high, so that everything is overriden

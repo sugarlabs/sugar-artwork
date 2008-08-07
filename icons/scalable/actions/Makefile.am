@@ -66,6 +66,7 @@ icon_DATA =						\
 	system-shutdown.svg			\
 	tray-hide.svg				\
 	tray-show.svg				\
+	view-freeform.svg			\
 	view-fullscreen.svg			\
 	view-list.svg				\
 	view-radial.svg				\
