@@ -12,3 +12,6 @@ icon_DATA =					\
 	video-x-generic.svg
 
 EXTRA_DIST = $(icon_DATA)
+
+install-data-local: install-iconDATA
+	(cd $(DESTDIR)$(icondir)/.. && $(ICONMAP) -c $(category))
