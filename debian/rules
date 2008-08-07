@@ -17,7 +17,7 @@ include debian/cdbs/1/rules/buildinfo.mk
 
 DEB_UPSTREAM_URL = http://dev.laptop.org/pub/sugar/sources/$(DEB_UPSTREAM_PACKAGE)
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
-DEB_UPSTREAM_TARBALL_MD5 = a9bbaed3f8307ec8be4662fedcb7fddf
+DEB_UPSTREAM_TARBALL_MD5 = 3d271bf9f0d412afb9a5618ba5496fb8
 
 # Needed by upstream build process
 #  x11-apps is needed for xcursorgen
