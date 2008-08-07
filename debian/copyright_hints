@@ -11,7 +11,6 @@
 	cursor/cursorthemegen/README
 	cursor/cursorthemegen/sample.cursortheme
 	cursor/sugar/Makefile.am
-	cursor/sugar/sugar-00.png
 	cursor/sugar/sugar-03.png
 	cursor/sugar/sugar-06.png
 	cursor/sugar/sugar-07.png
@@ -90,6 +89,7 @@
 	icons/scalable/actions/system-shutdown.svg
 	icons/scalable/actions/tray-hide.svg
 	icons/scalable/actions/tray-show.svg
+	icons/scalable/actions/view-freeform.svg
 	icons/scalable/actions/view-fullscreen.svg
 	icons/scalable/actions/view-list.svg
 	icons/scalable/actions/view-radial.svg
@@ -173,6 +173,7 @@
 	icons/scalable/emblems/Makefile.am
 	icons/scalable/emblems/emblem-busy.svg
 	icons/scalable/emblems/emblem-charging.svg
+	icons/scalable/emblems/emblem-downloads.svg
 	icons/scalable/emblems/emblem-favorite.svg
 	icons/scalable/emblems/emblem-locked.svg
 	icons/scalable/emblems/emblem-notification.svg
@@ -227,6 +228,7 @@ GPL GENERATED FILE [1999-2000, 2003-2007 Free Software]: depcomp
 GPL-2+ GENERATED FILE [1996-2001, 2003-2006]: ltmain.sh
 LGPL-2+ [2007, Red Hat, Inc / 2007, Benjamin Berg]: gtk/engine/sugar-style.c
 MIT/X11 (BSD like) [1994 X Consortium]: install-sh
+UNKNOWN ["<0zKj]: cursor/sugar/sugar-00.png
 UNKNOWN [1996-2004]: aclocal.m4
 UNKNOWN [2002-2003 Erik Max Francis']: gtk/theme/em.py
 UNKNOWN [?YrE,dTviz1kyubyy<L`IQ.WbtTLQO&jkqd;n]: cursor/sugar/sugar-11.png
