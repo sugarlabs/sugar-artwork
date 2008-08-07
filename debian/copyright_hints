@@ -1,4 +1,7 @@
-*No copyright* UNKNOWN []: AUTHORS
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=XXX
+Upstream-Name: Untrusted draft - double-check copyrights yourself!
+
+Files: AUTHORS
 	ChangeLog
 	Makefile.am
 	NEWS
@@ -193,7 +196,10 @@
 	matchbox/Makefile.am
 	matchbox/closebutton.xpm
 	matchbox/theme.xml
-GENERATED FILE [1994-2002]: Makefile.in
+Copyright: *No copyright*
+License: UNKNOWN
+
+Files: Makefile.in
 	cursor/Makefile.in
 	cursor/cursorthemegen/Makefile.in
 	cursor/sugar/Makefile.in
@@ -209,32 +215,100 @@ GENERATED FILE [1994-2002]: Makefile.in
 	icons/scalable/mimetypes/Makefile.in
 	icons/scalable/status/Makefile.in
 	matchbox/Makefile.in
-LGPL-2+ [2007, Benjamin Berg]: gtk/engine/sugar-drawing.c
+Copyright: 1994-2002
+License: UNKNOWN (GENERATED FILE)
+
+Files: gtk/engine/sugar-drawing.c
 	gtk/engine/sugar-drawing.h
 	gtk/engine/sugar-info.c
 	gtk/engine/sugar-info.h
 	gtk/engine/sugar-utils.c
 	gtk/engine/sugar-utils.h
-UNKNOWN [2003 Red Hat, Inc]: cursor/cursorthemegen/cursortheme.h
+Copyright: 2007, Benjamin Berg
+License: LGPL-2+
+
+Files: cursor/cursorthemegen/cursortheme.h
 	cursor/cursorthemegen/main.c
 	cursor/cursorthemegen/themefile.c
-LGPL-2+ [2007, Red Hat, Inc / 2008, Benjamin Berg]: gtk/engine/sugar-rc-style.c
+Copyright: 2003, Red Hat, Inc
+License: UNKNOWN
+
+Files: gtk/engine/sugar-rc-style.c
 	gtk/engine/sugar-rc-style.h
-LGPL-2+ [2007, Red Hat, Inc]: gtk/engine/sugar-style.h
+Copyright: 2007, Red Hat, Inc
+	2008, Benjamin Berg
+License: LGPL-2+
+
+Files: gtk/engine/sugar-style.h
 	gtk/engine/sugar.c
-GENERATED FILE [1992-1996, 1998-2001]: configure
-GPL GENERATED FILE [1996-1997, 1999-2000, 2002-2006]: missing
-GPL GENERATED FILE [1999-2000, 2003-2007 Free Software]: depcomp
-GPL-2+ GENERATED FILE [1996-2001, 2003-2006]: ltmain.sh
-LGPL-2+ [2007, Red Hat, Inc / 2007, Benjamin Berg]: gtk/engine/sugar-style.c
-MIT/X11 (BSD like) [1994 X Consortium]: install-sh
-UNKNOWN ["<0zKj]: cursor/sugar/sugar-00.png
-UNKNOWN [1996-2004]: aclocal.m4
-UNKNOWN [2002-2003 Erik Max Francis']: gtk/theme/em.py
-UNKNOWN [?YrE,dTviz1kyubyy<L`IQ.WbtTLQO&jkqd;n]: cursor/sugar/sugar-11.png
-UNKNOWN [?ZrlE*_ESN@,/t_L>)*?dVilS"su8r3Wo]: cursor/sugar/sugar-10.png
-UNKNOWN [Oo;=UvemZ\O7-pt[BkT"<qnSCd_<o|&j|V:fe]: cursor/sugar/sugar-04.png
-UNKNOWN [m`@Q]: cursor/sugar/sugar-01.png
-UNKNOWN [the / 1991, 1999 Free Software Foundation, Inc]: COPYING
-UNKNOWN [w1jGaM!84~J8humuu13|JtE|L^A?JHC|g3Wt}!AtxH<e2\e}?3oMMj72>yC_m$k`,AZDTYg#z"5*>\#<.\'{q@PE4Y5 / ?ZrlYc&wn&E/v-?`X^Ry(|&Uc]: cursor/sugar/sugar-02.png
-UNKNOWN [~\dh?IuMw8Lhi\+iHmwW__G>M/+R\q0||XiEkc<%C31Jp5_X> 9$G-<0eXuf~.GL~=3YzU['L@<&\O1o / ?ZrlE*`hbRbj+5R0/L>)AaDDhqfzn["VnqgCF|>)IMy?J+|.)"!Iy*es)mg.8\)&k(>\__VX(od]: cursor/sugar/sugar-05.png
+Copyright: 2007, Red Hat, Inc
+License: LGPL-2+
+
+Files: missing
+Copyright: 1996-1997, 1999-2000, 2002-2006
+License: GPL (GENERATED FILE)
+
+Files: depcomp
+Copyright: 1999-2000, 2003-2007, Free Software
+License: GPL (GENERATED FILE)
+
+Files: ltmain.sh
+Copyright: 1996-2001, 2003-2006
+License: GPL-2+ (GENERATED FILE)
+
+Files: gtk/engine/sugar-style.c
+Copyright: 2007, Red Hat, Inc
+	2007, Benjamin Berg
+License: LGPL-2+
+
+Files: install-sh
+Copyright: 1994, X Consortium
+License: MIT/X11 (BSD like)
+
+Files: configure
+Copyright: 1992-1996, 1998-2001
+License: UNKNOWN (GENERATED FILE)
+
+Files: cursor/sugar/sugar-00.png
+Copyright: "<0zKj
+License: UNKNOWN
+
+Files: aclocal.m4
+Copyright: 1996-2004
+License: UNKNOWN
+
+Files: gtk/theme/em.py
+Copyright: 2002-2003, Erik Max Francis'
+License: UNKNOWN
+
+Files: cursor/sugar/sugar-11.png
+Copyright: ?YrE,dTviz1kyubyy<L`IQ.WbtTLQO&jkqd;n
+License: UNKNOWN
+
+Files: cursor/sugar/sugar-10.png
+Copyright: ?ZrlE*_ESN@,/t_L>)*?dVilS"su8r3Wo
+License: UNKNOWN
+
+Files: cursor/sugar/sugar-04.png
+Copyright: Oo;=UvemZ\O7-pt[BkT"<qnSCd_<o|&j|V:fe
+License: UNKNOWN
+
+Files: cursor/sugar/sugar-01.png
+Copyright: m`@Q
+License: UNKNOWN
+
+Files: COPYING
+Copyright: the
+	1991, 1999, Free Software Foundation, Inc
+License: UNKNOWN
+
+Files: cursor/sugar/sugar-02.png
+Copyright: w1jGaM!84~J8humuu13|JtE|L^A?JHC|g3Wt}!AtxH<e2\e}?3oMMj72>yC_m$k`,AZDTYg#z"5*>\#<.\'{q@PE4Y5
+	?ZrlYc&wn&E/v-?`X^Ry(|&Uc
+License: UNKNOWN
+
+Files: cursor/sugar/sugar-05.png
+Copyright: ~\dh?IuMw8Lhi\+iHmwW__G>M/+R\q0||XiEkc<%C31Jp5_X> 9$G-<0eXuf~.GL~=3YzU['L@<&\O1o
+	?ZrlE*`hbRbj+5R0/L>)AaDDhqfzn["VnqgCF|>)IMy?J+|.)"!Iy*es)mg.8\)&k(>\__VX(od
+License: UNKNOWN
+
