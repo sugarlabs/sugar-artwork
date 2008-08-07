@@ -1,3 +1,10 @@
+sugar-artwork (0.81.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Unfuzz patch 2991.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 07 Aug 2008 05:51:17 +0200
+
 sugar-artwork (0.81.1-1) unstable; urgency=low
 
   * New upstream release.
