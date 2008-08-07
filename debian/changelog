@@ -8,6 +8,7 @@ sugar-artwork (0.81.3-1) unstable; urgency=low
       build-dependencies and more.
     + Update README.cdbs-tweaks.
   * Update copyright hints.
+  * Add DEB_MAINTAINER_MODE in debian/rules (thanks to Romain Beauxis).
 
  -- Jonas Smedegaard <dr@jones.dk>  Thu, 07 Aug 2008 05:51:17 +0200
 
