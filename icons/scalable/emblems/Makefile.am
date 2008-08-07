@@ -12,5 +12,8 @@ icon_DATA =			\
 	emblem-outofrange.svg	\
 	emblem-question.svg	\
 	emblem-warning.svg
-	
+
 EXTRA_DIST = $(icon_DATA)
+
+install-data-local: install-iconDATA
+	(cd $(DESTDIR)$(icondir)/.. && $(ICONMAP) -c $(category))
