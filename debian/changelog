@@ -1,6 +1,7 @@
 sugar-artwork (0.82.0-1) unstable; urgency=low
 
   * New upstream release.
+  * Build-depend on icon-naming-utils.
 
  -- Jonas Smedegaard <dr@jones.dk>  Thu, 07 Aug 2008 21:54:43 +0200
 
