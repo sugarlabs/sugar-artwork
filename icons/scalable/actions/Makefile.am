@@ -32,6 +32,7 @@ icon_DATA =						\
 	format-text-size.svg		\
 	format-text-underline.svg	\
 	go-down.svg			\
+	go-home.svg			\
 	go-left.svg					\
 	go-next-paired.svg			\
 	go-next.svg					\

@@ -1,0 +1,10 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#4C4D4F">
+	<!ENTITY fill_color "#fff">
+]><svg height="55px" viewBox="0 0 55 55" width="55px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" stroke="&stroke_color;" fill="&fill_color;">
+ <g id="go-home">
+   <path d="M 27.5 2.96256 L 1.4755 30.4005 L 7.48131 30.4005 L 7.55256 52.0374 L 48.59 51.9662 L 48.4221 30.2792 L 53.5245 30.3293 L 42.8832 19.1246 L 42.8936 5.27163 L 34.8637 5.26122 L 34.8997 10.5775 L 27.5 2.96256 Z " stroke="none" stroke-width="2.25" />
+   <path d="M 15.8232 32.9243 L 25.2899 32.9243 L 25.2899 52.0052 L 15.8232 52.0052 Z " fill="&stroke_color;" stroke="none" stroke-width="2.25" />
+   <path d="M 31.6038 32.5574 L 41.6199 32.5574 L 41.6199 42.3946 L 31.6038 42.3946 Z " fill="&stroke_color;" stroke="none" stroke-width="2.25" />
+ </g>
+</svg>
