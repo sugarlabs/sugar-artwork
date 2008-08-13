@@ -11,10 +11,11 @@ icon_DATA =						\
 	cell-width.svg				\
 	column-insert.svg			\
 	column-remove.svg			\
-	document-save.svg			\
 	dialog-cancel.svg			\
 	dialog-ok.svg				\
+	document-save.svg			\
 	edit-copy.svg				\
+	edit-delete.svg				\
 	edit-paste.svg				\
 	edit-redo.svg				\
 	edit-undo.svg				\
@@ -30,12 +31,14 @@ icon_DATA =						\
 	format-text-leading.svg		\
 	format-text-size.svg		\
 	format-text-underline.svg	\
+	go-down.svg			\
 	go-left.svg					\
-	go-right.svg				\
-	go-next.svg					\
 	go-next-paired.svg			\
-	go-previous.svg				\
+	go-next.svg					\
 	go-previous-paired.svg		\
+	go-previous.svg				\
+	go-right.svg				\
+	go-up.svg			\
 	insert-image.svg			\
 	insert-table.svg			\
 	invite.svg					\
@@ -49,10 +52,10 @@ icon_DATA =						\
 	media-playback-start.svg				\
 	media-playback-stop-insensitive.svg		\
 	media-playback-stop.svg					\
-	media-playlist-repeat.svg				\
 	media-playlist-repeat-insensitive.svg	\
-	media-playlist-shuffle.svg				\
+	media-playlist-repeat.svg				\
 	media-playlist-shuffle-insensitive.svg	\
+	media-playlist-shuffle.svg				\
 	media-record-insensitive.svg			\
 	media-record.svg						\
 	media-seek-backward-insensitive.svg		\
@@ -74,8 +77,8 @@ icon_DATA =						\
 	view-return.svg				\
 	zoom-activity.svg 			\
 	zoom-best-fit.svg			\
-	zoom-home.svg				\
 	zoom-groups.svg				\
+	zoom-home.svg				\
 	zoom-in.svg					\
 	zoom-neighborhood.svg		\
 	zoom-original.svg			\
