@@ -1,0 +1,8 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#ffffff">
+]><svg enable-background="new 0 0 56.167 55" height="55px" version="1.1" viewBox="0 0 56.167 55" width="56.167px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="computer">
+	<g id="module-about_x5F_my_x5F_xo_1_">
+		<path d="    M52.832,41.602h0.002l-0.025-0.017c-0.151-0.11-12.687-7.907-12.687-7.907V9.667c0-1.624-1.315-2.943-2.94-2.943H6.166    c-1.625,0-2.942,1.319-2.942,2.943V36.08c0,1.1,0.61,2.045,1.503,2.551l-0.019,0.004l14.657,9.135    c0.694,0.437,1.534,0.691,2.438,0.691h28.319c2.362,0,4.296-1.74,4.296-3.865C54.417,43.391,53.797,42.312,52.832,41.602z     M8.946,13.392c0-0.619,0.506-1.124,1.124-1.124h23.205c0.617,0,1.123,0.505,1.123,1.124v16.561c0,0.617-0.506,1.126-1.123,1.126    H10.07c-0.617,0-1.124-0.509-1.124-1.126V13.392z" fill="&fill_color;" id="module-about_x5F_my_x5F_xo" stroke="&stroke_color;" stroke-linejoin="round" stroke-width="3.5"/>
+	</g>
+</g></svg>

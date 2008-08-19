@@ -39,6 +39,7 @@ icon_DATA =				\
 	battery-charging-100.svg	\
 	camera-external.svg		\
 	camera.svg			\
+	computer.svg			\
 	computer-xo.svg			\
 	media-disk.svg			\
 	media-flash-sd-mmc.svg		\
