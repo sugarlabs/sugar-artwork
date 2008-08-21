@@ -1,1 +1,1 @@
-SUBDIRS = cursorthemegen sugar
+SUBDIRS = sugar

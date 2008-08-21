@@ -22,8 +22,6 @@ ltmain.sh
 missing
 mkinstalldirs
 Makefile.in.in
-cursor/cursorthemegen/cursorthemegen
-cursor/sugar/theme
 .deps
 .libs
 stamp-h1

@@ -14,6 +14,8 @@ AC_PROG_CC
 AC_HEADER_STDC
 AC_PROG_LIBTOOL
 
+AC_PATH_PROG([ICON_SLICER], [icon-slicer])
+
 PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0,,
 	          AC_MSG_ERROR([GTK+-2.0 is required to compile redhat-artwork]))
 
@@ -46,7 +48,6 @@ fi
 AC_OUTPUT([
 Makefile
 cursor/Makefile
-cursor/cursorthemegen/Makefile
 cursor/sugar/Makefile
 icons/Makefile
 icons/scalable/Makefile
