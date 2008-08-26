@@ -628,8 +628,29 @@ style "checkbutton"
 
 style "progressbar"
 {
-    xthickness = 0
-    ythickness = 0
+    # text[PRELIGHT] is used for the bar in the sugar engine
+    text[PRELIGHT] = $white
+
+    # Text on top of the bar
+    fg[PRELIGHT] = $black
+    xthickness = $thickness
+    ythickness = $thickness
+
+    engine "sugar" {
+        # Someone seems to have decided, that the background fill of a progress
+        # bar should be done with bg[ACTIVE].
+        bg[ACTIVE] = parent_bg_color
+
+        # Color to fill the progress bar ("transparent" usually, except for the
+        # white background case)
+        bg[NORMAL] = parent_bg_color
+        fg[NORMAL] = parent_fg_color
+    }
+}
+
+style "progressbar-on-white" {
+    bg[NORMAL] = $panel_grey
+    fg[NORMAL] = $black
 }
 
 style "menuitem"
@@ -791,6 +812,9 @@ widget_class "*<GtkVScrollbar>"  style "vscrollbar"
 widget_class "*<GtkHScale>"      style "hscale"
 widget_class "*<GtkVScale>"      style "vscale"
 widget_class "*<GtkProgressBar>" style "progressbar"
+
+widget_class "*<SugarSectionView>*<GtkProgress>"  style "progressbar-on-white"
+
 
 # Scrolled window scrollbars
 widget_class "*<GtkScrolledWindow>.<GtkVScrollbar>" style "vscrollbar-scrolled-window"
