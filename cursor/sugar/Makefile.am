@@ -15,8 +15,12 @@ sugar_images =			\
 	sugar-11.png            \
 	sugar-hotspots.png
 
+IMAGE_DIR = $(top_srcdir)/cursor/sugar
+OUTPUT_DIR = $(top_builddir)/cursor/sugar
+CURSORS_DIR = $(OUTPUT_DIR)/cursor
+
 sugar.stamp: $(sugar_images) $(THEMEGEN) sugar.cursortheme
-	$(ICON_SLICER) --image-dir=$(srcdir) --output-dir=$(top_builddir)/cursor/sugar $(srcdir)/sugar.cursortheme
+	$(ICON_SLICER) --image-dir=$(IMAGE_DIR) --output-dir=$(OUTPUT_DIR) $(IMAGE_DIR)/sugar.cursortheme
 	touch sugar.stamp
 
 clean-local:
@@ -25,8 +29,8 @@ clean-local:
 
 install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/sugar/cursors/
-	for i in `cd $(srcdir)/cursors && echo *` ; do						\
-	  $(INSTALL) $(srcdir)/cursors/$$i $(DESTDIR)$(datadir)/icons/sugar/cursors/$$i ;	\
+	for i in `cd $(CURSORS_DIR) && echo *` ; do						\
+		$(INSTALL) $(CURSORS_DIR)/$$i $(DESTDIR)$(datadir)/icons/sugar/cursors/$$i ;	\
 	done
 
 uninstall-local:
