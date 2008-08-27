@@ -56,6 +56,7 @@ icons/scalable/device/Makefile
 icons/scalable/emblems/Makefile
 icons/scalable/mimetypes/Makefile
 icons/scalable/status/Makefile
+icons/scalable/categories/Makefile
 gtk/Makefile
 gtk/engine/Makefile
 gtk/theme/Makefile
