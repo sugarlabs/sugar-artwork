@@ -17,7 +17,7 @@ sugar_images =			\
 
 IMAGE_DIR = $(top_srcdir)/cursor/sugar
 OUTPUT_DIR = $(top_builddir)/cursor/sugar
-CURSORS_DIR = $(OUTPUT_DIR)/cursor
+CURSORS_DIR = $(OUTPUT_DIR)/cursors
 
 sugar.stamp: $(sugar_images) $(THEMEGEN) sugar.cursortheme
 	$(ICON_SLICER) --image-dir=$(IMAGE_DIR) --output-dir=$(OUTPUT_DIR) $(IMAGE_DIR)/sugar.cursortheme
