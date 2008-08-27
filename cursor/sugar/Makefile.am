@@ -16,7 +16,7 @@ sugar_images =			\
 	sugar-hotspots.png
 
 sugar.stamp: $(sugar_images) $(THEMEGEN) sugar.cursortheme
-	$(ICON_SLICER) --image-dir=$(srcdir) --output-dir=$(builddir) $(srcdir)/sugar.cursortheme
+	$(ICON_SLICER) --image-dir=$(srcdir) --output-dir=$(top_builddir)/cursor/sugar $(srcdir)/sugar.cursortheme
 	touch sugar.stamp
 
 clean-local:
