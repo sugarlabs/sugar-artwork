@@ -1,17 +1,26 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
-	<!ENTITY stroke_color "#010101">
-	<!ENTITY fill_color "#FFFFFF">
-]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="device-network-wireless-60">
-	<g display="inline">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="55px" height="55px" viewBox="0 0 55 55" enable-background="new 0 0 55 55" xml:space="preserve">
+<g id="network-wireless-060">
+	<path fill="#010101" d="M46.375,27.498c0,10.494-8.507,19.002-19,19.002s-19-8.508-19-19.002c0-10.49,8.507-18.998,19-18.998
+		S46.375,17.003,46.375,27.498z"/>
+	<g>
 		<g>
-			<defs>
-				<rect height="24" id="SVGID_5_" width="40" x="7.375" y="23.5"/>
-			</defs>
-			<clipPath id="SVGID_6_">
-				<use overflow="visible" xlink:href="#SVGID_5_"/>
-			</clipPath>
-			<path clip-path="url(#SVGID_6_)" d="M46.375,27.498c0,10.494-8.507,19.002-19,19.002s-19-8.508-19-19.002     c0-10.49,8.507-18.998,19-18.998S46.375,17.003,46.375,27.498z" fill="&fill_color;"/>
+			<g>
+				<defs>
+					<rect id="SVGID_1_" x="7.375" y="23.5" width="40" height="24"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  overflow="visible"/>
+				</clipPath>
+				<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M46.375,27.498c0,10.494-8.507,19.002-19,19.002s-19-8.508-19-19.002
+					c0-10.49,8.507-18.998,19-18.998S46.375,17.003,46.375,27.498z"/>
+			</g>
 		</g>
-		<path d="M46.375,27.498    c0,10.494-8.507,19.002-19,19.002s-19-8.508-19-19.002c0-10.49,8.507-18.998,19-18.998S46.375,17.003,46.375,27.498z" fill="none" stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
 	</g>
-</g></svg>
+	<path fill="none" stroke="#010101" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M46.375,27.498
+		c0,10.494-8.507,19.002-19,19.002s-19-8.508-19-19.002c0-10.49,8.507-18.998,19-18.998S46.375,17.003,46.375,27.498z"/>
+</g>
+</svg>
