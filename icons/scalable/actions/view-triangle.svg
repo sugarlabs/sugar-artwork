@@ -1,13 +1,7 @@
 <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
-	<!ENTITY stroke_color "#fff">
+	<!ENTITY stroke_color "#ffffff">
 	<!ENTITY fill_color "none">
-]><svg height="55px" viewBox="0 0 55 55" width="55px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" stroke="&stroke_color;" fill="&fill_color;">
- <g>
-  <path d="M 27.5 5 L 37.2428 21.875 L 46.9856 38.75 L 27.5 38.75 L 8.01443 38.75 L 17.7572 21.875 L 27.5 5 Z " />
- </g>
- <g>
-  <g>
-   <path d="M 27.499 32.994 C 24.469 32.994 22.007 30.534 22.007 27.501 C 22.007 24.465 24.469 22.006 27.5 22.006 C 30.537 22.006 32.993 24.465 32.993 27.501 C 32.99 30.539 30.534 32.994 27.499 32.994 Z " fill="&stroke_color;" stroke="none" />
-  </g>
- </g>
-</svg>
+]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="view-triangle">
+	<polygon fill="&fill_color;" points="   2.5,46.901 27.5,3.599 52.5,46.901  " stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.0415"/>
+	<circle cx="27.5" cy="31.5" fill="&stroke_color;" r="5"/>
+</g></svg>
