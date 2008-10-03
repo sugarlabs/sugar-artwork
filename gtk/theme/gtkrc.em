@@ -12,7 +12,7 @@ def my_ceil(num):
 # Are these already the correct sizes for the XO?
 
 # These sizes need to be sanity checked ...
-if theme == "sugar-xo":
+if scaling == "100":
     xo = True
     line_width = 2.0        # 2.25px, rounded down
     thick_line_width = 3.5  # 3.5
