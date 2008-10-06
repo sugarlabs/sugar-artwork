@@ -30,7 +30,7 @@ clean-local:
 install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/sugar/cursors/
 	for i in `cd $(CURSORS_DIR) && echo *` ; do						\
-		$(INSTALL) $(CURSORS_DIR)/$$i $(DESTDIR)$(datadir)/icons/sugar/cursors/$$i ;	\
+		$(INSTALL) -m u=rw,go=r $(CURSORS_DIR)/$$i $(DESTDIR)$(datadir)/icons/sugar/cursors/$$i ;	\
 	done
 
 uninstall-local:
