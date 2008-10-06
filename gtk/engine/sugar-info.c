@@ -234,7 +234,9 @@ sugar_fill_generic_info (SugarInfo     *info,
     }
 
     /* Ignore the prelight state in some cases. */
-    if (info->state == GTK_STATE_PRELIGHT) {
+    if (info->state == GTK_STATE_PRELIGHT &&
+	gdk_color_equal(&style->bg[GTK_STATE_PRELIGHT],
+			&style->bg[GTK_STATE_NORMAL])) {
         if (DETAIL ("button") || DETAIL ("buttondefault") ||
             DETAIL ("spinbutton_down") || DETAIL ("spinbutton_up")) {
 

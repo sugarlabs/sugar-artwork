@@ -788,7 +788,9 @@ sugar_style_draw_layout(GtkStyle        *style,
         else /* It appears, that this is not a label inside a button. */
             btn = NULL;
     }
-    if (state_type != GTK_STATE_INSENSITIVE && btn) {
+    if (state_type != GTK_STATE_INSENSITIVE && btn &&
+	gdk_color_equal(&btn->style->bg[GTK_STATE_PRELIGHT],
+			&btn->style->bg[GTK_STATE_NORMAL])) {
         /* Access private information ... */
         sugar_state = GTK_BUTTON (btn)->depressed ? GTK_STATE_ACTIVE : GTK_STATE_NORMAL;
     }
