@@ -1,3 +1,9 @@
+sugar-artwork (0.82.0-2) UNRELEASED; urgency=low
+
+  * Depend on ${misc:Depends}.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 07 Oct 2008 12:00:05 +0200
+
 sugar-artwork (0.82.0-1) unstable; urgency=low
 
   * New upstream release.
