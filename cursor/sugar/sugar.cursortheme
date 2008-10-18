@@ -111,11 +111,17 @@
 	<alias name="dnd_none" target="forbidden"/>
 	<alias name="unavailable" target="forbidden"/>
 	
-	<alias name="dnd_none" target="forbidden"/>
 	<alias name="dnd_copy" target="plus"/>
-	<alias name="dnd_move" target="plus"/>
+	<alias name="dnd_move" target="left_ptr"/>
 	<alias name="dnd_ask" target="question_arrow"/>
-	<alias name="dnd_none" target="left_ptr_modify"/>
+	<alias name="dnd_link" target="left_ptr"/>
+	<alias name="dnd_none" target="left_ptr"/>
+
+	<alias name="dnd-copy" target="plus"/>
+	<alias name="dnd-move" target="left_ptr"/>
+	<alias name="dnd-ask" target="question_arrow"/>
+	<alias name="dnd-link" target="left_ptr"/>
+	<alias name="dnd-none" target="left_ptr"/>
 	
 	<alias name="copy" target="plus"/>
 	<alias name="add" target="plus"/>
