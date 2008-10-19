@@ -41,6 +41,7 @@ Files: AUTHORS
 	icons/scalable/actions/dialog-ok.svg
 	icons/scalable/actions/document-save.svg
 	icons/scalable/actions/edit-copy.svg
+	icons/scalable/actions/edit-delete.svg
 	icons/scalable/actions/edit-paste.svg
 	icons/scalable/actions/edit-redo.svg
 	icons/scalable/actions/edit-undo.svg
@@ -56,12 +57,15 @@ Files: AUTHORS
 	icons/scalable/actions/format-text-leading.svg
 	icons/scalable/actions/format-text-size.svg
 	icons/scalable/actions/format-text-underline.svg
+	icons/scalable/actions/go-down.svg
+	icons/scalable/actions/go-home.svg
 	icons/scalable/actions/go-left.svg
 	icons/scalable/actions/go-next-paired.svg
 	icons/scalable/actions/go-next.svg
 	icons/scalable/actions/go-previous-paired.svg
 	icons/scalable/actions/go-previous.svg
 	icons/scalable/actions/go-right.svg
+	icons/scalable/actions/go-up.svg
 	icons/scalable/actions/insert-image.svg
 	icons/scalable/actions/insert-table.svg
 	icons/scalable/actions/invite.svg
@@ -92,12 +96,15 @@ Files: AUTHORS
 	icons/scalable/actions/system-shutdown.svg
 	icons/scalable/actions/tray-hide.svg
 	icons/scalable/actions/tray-show.svg
+	icons/scalable/actions/view-box.svg
 	icons/scalable/actions/view-freeform.svg
 	icons/scalable/actions/view-fullscreen.svg
 	icons/scalable/actions/view-list.svg
 	icons/scalable/actions/view-radial.svg
 	icons/scalable/actions/view-refresh.svg
 	icons/scalable/actions/view-return.svg
+	icons/scalable/actions/view-spiral.svg
+	icons/scalable/actions/view-triangle.svg
 	icons/scalable/actions/zoom-activity.svg
 	icons/scalable/actions/zoom-best-fit.svg
 	icons/scalable/actions/zoom-groups.svg
@@ -106,6 +113,8 @@ Files: AUTHORS
 	icons/scalable/actions/zoom-neighborhood.svg
 	icons/scalable/actions/zoom-original.svg
 	icons/scalable/actions/zoom-out.svg
+	icons/scalable/categories/Makefile.am
+	icons/scalable/categories/preferences-system.svg
 	icons/scalable/control/Makefile.am
 	icons/scalable/control/control-popup-arrow.svg
 	icons/scalable/device/Makefile.am
@@ -164,6 +173,18 @@ Files: AUTHORS
 	icons/scalable/device/network-wireless-080.svg
 	icons/scalable/device/network-wireless-100.icon
 	icons/scalable/device/network-wireless-100.svg
+	icons/scalable/device/network-wireless-connected-000.icon
+	icons/scalable/device/network-wireless-connected-000.svg
+	icons/scalable/device/network-wireless-connected-020.icon
+	icons/scalable/device/network-wireless-connected-020.svg
+	icons/scalable/device/network-wireless-connected-040.icon
+	icons/scalable/device/network-wireless-connected-040.svg
+	icons/scalable/device/network-wireless-connected-060.icon
+	icons/scalable/device/network-wireless-connected-060.svg
+	icons/scalable/device/network-wireless-connected-080.icon
+	icons/scalable/device/network-wireless-connected-080.svg
+	icons/scalable/device/network-wireless-connected-100.icon
+	icons/scalable/device/network-wireless-connected-100.svg
 	icons/scalable/device/printer.svg
 	icons/scalable/device/speaker-000.svg
 	icons/scalable/device/speaker-033.svg
@@ -192,6 +213,10 @@ Files: AUTHORS
 	icons/scalable/mimetypes/text-x-generic.svg
 	icons/scalable/mimetypes/video-x-generic.svg
 	icons/scalable/status/Makefile.am
+	icons/scalable/status/audio-volume-high.svg
+	icons/scalable/status/audio-volume-low.svg
+	icons/scalable/status/audio-volume-medium.svg
+	icons/scalable/status/audio-volume-muted.svg
 	icons/scalable/status/image-missing.svg
 	matchbox/Makefile.am
 	matchbox/closebutton.xpm
@@ -209,6 +234,7 @@ Files: Makefile.in
 	icons/Makefile.in
 	icons/scalable/Makefile.in
 	icons/scalable/actions/Makefile.in
+	icons/scalable/categories/Makefile.in
 	icons/scalable/control/Makefile.in
 	icons/scalable/device/Makefile.in
 	icons/scalable/emblems/Makefile.in
