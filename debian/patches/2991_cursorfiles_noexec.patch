@@ -1,8 +1,7 @@
 diff --git a/cursor/sugar/Makefile.in b/cursor/sugar/Makefile.in
-index bd69229..4f761f5 100644
 --- a/cursor/sugar/Makefile.in
 +++ b/cursor/sugar/Makefile.in
-@@ -359,7 +359,7 @@ clean-local:
+@@ -360,7 +360,7 @@ clean-local:
  install-data-local:
  	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/sugar/cursors/
  	for i in `cd $(THEME_DIR) && echo *` ; do					\
