@@ -170,7 +170,7 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = actions control device mimetypes status emblems
+SUBDIRS = actions control device mimetypes status emblems categories
 all: all-recursive
 
 .SUFFIXES:
