@@ -1,4 +1,4 @@
-sugar-artwork (0.82.3-1) UNRELEASED; urgency=low
+sugar-artwork (0.82.3-1) unstable; urgency=low
 
   * New upstream release.
   * Unfuzz patch 2991.
@@ -7,7 +7,7 @@ sugar-artwork (0.82.3-1) UNRELEASED; urgency=low
     + Several minor improvements to upstream-tarball.mk.
   * Update copyright hints (no new copyrights or licenses).
 
- -- Jonas Smedegaard <dr@jones.dk>  Tue, 07 Oct 2008 12:00:05 +0200
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 19 Oct 2008 21:29:37 +0200
 
 sugar-artwork (0.82.0-1) unstable; urgency=low
 
