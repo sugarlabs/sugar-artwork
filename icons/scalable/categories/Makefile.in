@@ -32,7 +32,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = icons/scalable/status
+subdir = icons/scalable/categories
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -169,14 +169,10 @@ target_alias = @target_alias@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 iconsize = scalable
-category = status
+category = categories
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 icon_DATA = \
-	audio-volume-high.svg	\
-	audio-volume-low.svg	\
-	audio-volume-medium.svg	\
-	audio-volume-muted.svg	\
-	image-missing.svg
+	preferences-system.svg
 
 EXTRA_DIST = $(icon_DATA)
 all: all-am
@@ -191,9 +187,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  icons/scalable/status/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  icons/scalable/categories/Makefile'; \
 	cd $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign  icons/scalable/status/Makefile
+	  $(AUTOMAKE) --foreign  icons/scalable/categories/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \

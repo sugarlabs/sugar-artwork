@@ -228,6 +228,18 @@ icon_DATA = \
 	network-wireless-080.icon	\
 	network-wireless-100.svg	\
 	network-wireless-100.icon	\
+	network-wireless-connected-000.svg	\
+	network-wireless-connected-000.icon	\
+	network-wireless-connected-020.svg	\
+	network-wireless-connected-020.icon	\
+	network-wireless-connected-040.svg	\
+	network-wireless-connected-040.icon	\
+	network-wireless-connected-060.svg	\
+	network-wireless-connected-060.icon	\
+	network-wireless-connected-080.svg	\
+	network-wireless-connected-080.icon	\
+	network-wireless-connected-100.svg	\
+	network-wireless-connected-100.icon	\
 	printer.svg			\
 	speaker-000.svg			\
 	speaker-033.svg			\
