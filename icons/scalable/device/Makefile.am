@@ -41,9 +41,9 @@ icon_DATA =				\
 	camera.svg			\
 	computer.svg			\
 	computer-xo.svg			\
-	drive-removable-media-flash-sd.svg	\
-	drive-removable-media-usb.svg	\
+	drive-harddisk-usb.svg		\
 	media-disk.svg			\
+	media-flash-sd.svg		\
 	microphone.svg			\
 	network-mesh.svg		\
 	network-mesh.icon		\
