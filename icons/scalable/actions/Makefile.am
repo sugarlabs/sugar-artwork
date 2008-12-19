@@ -68,6 +68,20 @@ icon_DATA =					\
 	system-restart.svg			\
 	system-search.svg			\
 	system-shutdown.svg			\
+	transfer-from-application-octet-stream	\
+	transfer-from-audio-x-generic		\
+	transfer-from-image-x-generic		\
+	transfer-from-text-uri-list		\
+	transfer-from-text-x-generic		\
+	transfer-from-video-x-generic		\
+	transfer-from				\
+	transfer-to-application-octet-stream	\
+	transfer-to-audio-x-generic		\
+	transfer-to-image-x-generic		\
+	transfer-to-text-uri-list		\
+	transfer-to-text-x-generic		\
+	transfer-to-video-x-generic		\
+	transfer-to				\
 	tray-hide.svg				\
 	tray-show.svg				\
 	view-box.svg				\

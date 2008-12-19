@@ -1,0 +1,16 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#666666">
+]><svg enable-background="new 0 0 58.5 55" height="55px" version="1.1" viewBox="0 0 58.5 55" width="58.5px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="transfer-from-image">
+	<g display="inline">
+		<polygon fill="&fill_color;" points="50.056,32.715 50.056,2 8.433,2     8.433,32.715 1.75,34.542 29.252,52.581 56.75,34.543   " stroke="&stroke_color;" stroke-linejoin="round" stroke-width="3.5"/>
+	</g>
+	<g display="inline">
+		<g>
+			<polygon fill="#ffffff" points="43.041,35.189 43.041,21.577 35.281,13.812      15.204,13.812 15.204,35.189    " stroke="&fill_color;" stroke-width="2.275"/>
+			<polyline fill="none" points="35.281,13.812 35.281,21.577 43.041,21.577    " stroke="&fill_color;" stroke-width="2.275"/>
+		</g>
+	</g>
+	<path d="M29.206,21.798c-4.067,0-7.456,4.056-7.456,4.056s3.389,4.076,7.456,4.074   c4.069-0.004,7.458-4.078,7.458-4.078S33.275,21.795,29.206,21.798z M29.206,28.715c-1.575,0-2.852-1.277-2.852-2.853   c0-1.572,1.277-2.852,2.852-2.852c1.573,0,2.85,1.28,2.85,2.852C32.056,27.438,30.779,28.715,29.206,28.715z" display="inline" fill="&fill_color;"/>
+	<circle cx="29.207" cy="25.863" display="inline" fill="&fill_color;" r="1.294"/>
+</g></svg>
