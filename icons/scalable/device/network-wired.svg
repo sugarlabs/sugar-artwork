@@ -1,29 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
-	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
-]>
-
-<svg  version="1.1" id="Layer_1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="25" height="25" viewBox="25 25 25 25"
-	 overflow="visible" enable-background="new 0 0 75 75" xml:space="preserve">
-
-<line fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" x1="26.492" y1="42.207" x2="26.491" y2="34.641"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" x1="32.099" y1="42.164" x2="32.097" y2="34.639"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" x1="37.706" y1="42.123" x2="37.704" y2="34.639"/>
-
-<rect x="46.709" y="35.125" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="6.5" height="6.5"/>
-<rect x="49.709" y="36.486" fill="none" stroke="#FFFFFF" stroke-width="1.5248" stroke-linecap="round" stroke-linejoin="round" width="6.5" height="3.778"/>
-
-<path fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M32.097,34.641
-	c0-1.549-1.255-2.803-2.803-2.803s-2.803,1.254-2.803,2.803"/>
-<path fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M43.311,34.639
-	c0-1.548-1.256-2.803-2.804-2.803s-2.803,1.255-2.803,2.803"/>
-<path fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M37.704,42.164
-	c0,1.549-1.255,2.803-2.803,2.803c-1.548,0-2.803-1.254-2.803-2.803"/>
-<path fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M26.492,42.207
-	c0,1.547-1.255,2.803-2.803,2.803s-2.803-1.256-2.803-2.803"/>
-<path fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M46.111,37.441
-	c-1.547,0-2.803-1.255-2.803-2.803"/>
-
-</svg>
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#ffffff">
+]><svg enable-background="new 0 0 55 55" height="55px" id="Layer_1" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="network-wired_1_">
+	<g id="network-wired">
+		<line fill="none" stroke="&stroke_color;" stroke-linecap="round" stroke-width="3.5" x1="16.967" x2="16.967" y1="32.439" y2="23.993"/>
+		<line fill="none" stroke="&stroke_color;" stroke-linecap="round" stroke-width="3.5" x1="29.637" x2="34.938" y1="28.215" y2="28.215"/>
+		
+			<rect fill="&fill_color;" height="7.599" stroke="&stroke_color;" stroke-linecap="round" stroke-width="2.25" width="9.794" x="42.157" y="24.312"/>
+		<path d="M16.967,23.993    c0-2.334-1.892-4.224-4.224-4.224S8.52,21.658,8.52,23.993" fill="none" stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+		<path d="M25.413,32.439    c0,2.334-1.891,4.224-4.224,4.224c-2.332,0-4.223-1.89-4.223-4.224" fill="none" stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+		<path d="M25.413,32.439    c0-2.332,1.893-4.226,4.224-4.226" fill="none" stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+		<path d="M8.52,23.993    c0,2.332-1.892,4.222-4.223,4.222" fill="none" stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+		
+			<rect fill="&fill_color;" height="11.35" stroke="&stroke_color;" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" width="14.477" x="31.945" y="22.438"/>
+	</g>
+</g></svg>
