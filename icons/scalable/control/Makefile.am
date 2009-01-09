@@ -3,8 +3,7 @@ category=control
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
-	control-popup-arrow.svg		\
-	color-preview.svg
+	control-popup-arrow.svg
 
 EXTRA_DIST = $(icon_DATA)
 

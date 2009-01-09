@@ -822,7 +822,6 @@ widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-w
 
 # Toolbar
 widget_class "*<GtkToolButton>*"          style "toolbutton"
-widget_class "*<SugarColorToolButton>*"   style "toolbutton"
 widget_class "*<GtkSeparatorToolItem>*"   style "separatortoolbutton"
 widget_class "*<GtkToolbar>"              style "toolbar"
 
