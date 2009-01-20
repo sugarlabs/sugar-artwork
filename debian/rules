@@ -15,17 +15,26 @@ include /usr/share/cdbs/1/class/autotools.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 include debian/cdbs/1/rules/buildinfo.mk
 
+pkg = sugar-artwork
+
 DEB_UPSTREAM_URL = http://dev.laptop.org/pub/sugar/sources/$(DEB_UPSTREAM_PACKAGE)
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
 DEB_UPSTREAM_TARBALL_MD5 = cb0083f640835d34e07000c32819752e
+
+# Strip hardcoded rpath
+binary-strip/$(pkg)::
+	find $(DEB_DESTDIR)/usr/lib -type f -name '*.so' -exec chrpath -d '{}' ';'
 
 # Needed by upstream build process
 #  x11-apps is needed for xcursorgen
 #  xbase-clients is needed for xcursorgen for etch backport
 CDBS_BUILD_DEPENDS := $(CDBS_BUILD_DEPENDS), libgtk2.0-dev, libglib2.0-dev, libcairo2-dev, python-empy, x11-apps | xbase-clients, icon-naming-utils (>= 0.8.2)
 
+# Needed for our packaging
+CDBS_BUILD_DEPENDS := $(CDBS_BUILD_DEPENDS), chrpath
+
 # Needed at runtime
-CDBS_DEPENDS_sugar-artwork := ttf-dejavu-core
+CDBS_DEPENDS_$(pkg) := ttf-dejavu-core
 
 # Merge duplicate build-dependencies
 include debian/cdbs/1/rules/package-relations.mk
