@@ -1,3 +1,17 @@
+sugar-artwork (0.82.3-2) unstable; urgency=low
+
+  * Update CDBS snippet copyright-check.mk: Compact simple licenses
+    (those without ' or later').
+  * Track only stable 0.82 branch in watch file, and add (not yet used)
+    sugarlabs URL.
+  * Declare dependencies in debian/rules (not debian/control{,in}), and
+    drop old superfluous build-dependency cleanup.
+  * Add git-buildpackage configfile.
+  * Semi-auto-update debian/control to update dependencies:
+    DEB_MAINTAINER_MODE=1 fakeroot debian/rules clean
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 20 Jan 2009 04:03:27 +0100
+
 sugar-artwork (0.82.3-1) unstable; urgency=low
 
   * New upstream release.
