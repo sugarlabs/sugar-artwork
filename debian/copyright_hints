@@ -21,6 +21,19 @@ Files: AUTHORS
 	cursor/sugar/sugar-09.png
 	cursor/sugar/sugar-hotspots.png
 	cursor/sugar/sugar.cursortheme
+	debian/README.cdbs-tweaks
+	debian/README.packaging
+	debian/compat
+	debian/control
+	debian/control.in
+	debian/gbp.conf
+	debian/patches/1001_cursorfiles_noexec.patch
+	debian/patches/1002_skip_none-arow_only_if_supported.patch
+	debian/patches/2001_empy_from_system.patch
+	debian/patches/2991_cursorfiles_noexec.patch
+	debian/patches/README
+	debian/patches/series
+	debian/watch
 	gtk/Makefile.am
 	gtk/engine/Makefile.am
 	gtk/theme/Makefile.am
@@ -278,6 +291,31 @@ Files: depcomp
 Copyright: 1999-2000, 2003-2007, Free Software
 License: GPL (GENERATED FILE)
 
+Files: debian/cdbs/1/rules/buildinfo.mk
+Copyright: 2004-2007, Jonas Smedegaard <dr@jones.dk>
+License: GPL
+
+Files: debian/cdbs/1/rules/upstream-tarball.mk
+Copyright: 2007-2008, Jonas Smedegaard <dr@jones.dk>
+License: GPL
+
+Files: debian/cdbs/1/rules/package-relations.mk
+Copyright: 2008, Jonas Smedegaard <dr@jones.dk>
+License: GPL
+
+Files: debian/cdbs/1/rules/copyright-check.mk
+Copyright: \s*(\S.*?)\s*\
+License: GPL
+
+Files: config.guess
+Copyright: 1992-1999,
+	1992-2005
+License: GPL-2+ (GENERATED FILE)
+
+Files: config.sub
+Copyright: 1992-1999
+License: GPL-2+ (GENERATED FILE)
+
 Files: ltmain.sh
 Copyright: 1996-2001, 2003-2006
 License: GPL-2+ (GENERATED FILE)
@@ -305,6 +343,10 @@ License: UNKNOWN
 
 Files: gtk/theme/em.py
 Copyright: 2002-2003, Erik Max Francis'
+License: UNKNOWN
+
+Files: debian/rules
+Copyright: 2008, Jonas Smedegaard <dr@jones.dk>
 License: UNKNOWN
 
 Files: cursor/sugar/sugar-11.png

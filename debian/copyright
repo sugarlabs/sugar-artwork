@@ -1,68 +1,105 @@
-This is sugar artwork packaged for Debian GNU systems.
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=428
+Upstream-Name: sugar artwork
+Upstream-Maintainer: Sugarlabs <sugar-devel@lists.sugarlabs.org>
+	http://lists.sugarlabs.org/listinfo/sugar-devel
+Upstream-Source: http://dev.laptop.org/pub/sugar/sources/sugar-artwork/
+	git://dev.laptop.org/sugar-artwork
+	http://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork
+	git://git.sugarlabs.org/sugar-artwork/mainline.git
 
-Upstream source: http://dev.laptop.org/pub/sugar/sources/sugar-artwork/
-
-Upstream Git source: git://dev.laptop.org
-
-Upstream author: Red Hat, Inc.
-
-Files: debian/*
-Copyright: © 2008 Jonas Smedegaard <dr@jones.dk>
-License: GPL-2+
-
-Files: gtk/engine/sugar-rc-style.[ch]
-Copyright: © 2008, Benjamin Berg
-	   © 2007, Red Hat, Inc.
+Files: *
+Copyright: 2007, Red Hat, Inc
+	2007-2008, Benjamin Berg
 License: LGPL-2+
-
-Files: gtk/engine/sugar-style.h, gtk/engine/sugar.c
-Copyright: © 2007, Red Hat, Inc.
-License: LGPL-2+
-
-Files: gtk/engine/sugar-style.c
-Copyright: © 2007, Red Hat, Inc.
-	   © 2007, Benjamin Berg
-License: LGPL-2+
-
-Files: gtk/engine/sugar-drawing.[ch], gtk/engine/sugar-info.[ch],
- gtk/engine/sugar-utils.[ch], test/torturetest.c
-Copyright: © 2007, Benjamin Berg
-License: LGPL-2+
-
-Files: gtk/theme/em.py
-Copyright: © 2002-2003, Erik Max Francis <max@alcyone.com>
-License: LGPL-any
-
-Files: maint-helper.py
-Copyright: © 2007, Red Hat, Inc.
-License: GPL-2+
-
-Files: icons/import-icon
-Copyright: © 2006, Red Hat, Inc.
-License: GPL-2+
-
-Files: cursor/cursorthemegen/*
-Copyright: © 2003, Red Hat, Inc.
-License: BSD-3
 
 Files: Makefile.in
-Copyright © 1994-2002  Free Software Foundation, Inc.
+Copyright: 1994-2008, Free Software Foundation, Inc.
 License: GAP
+ This Makefile.in is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+
+Files: cursor/cursorthemegen/*
+Copyright: 2003, Red Hat, Inc.
+License: BSD-3
+
+Files: ./config.*
+	./depcomp
+	./ltmain.sh
+	./missing
+Copyright: 1992-2007, Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: ./install-sh
+Copyright: 1994, X Consortium
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to
+ deal in the Software without restriction, including without limitation the
+ rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+ X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+ AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
+ TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ .
+ Except as contained in this notice, the name of the X Consortium shall not
+ be used in advertising or otherwise to promote the sale, use or other deal-
+ ings in this Software without prior written authorization from the X Consor-
+ tium.
+
+Files: ./configure
+Copyright: 1992-1996, 1998-2006, Free Software Foundation, Inc.
+License: GAP
+ This configure script is free software; the Free Software Foundation
+ gives unlimited permission to copy, distribute and modify it.
+
+Files: ./aclocal.m4
+Copyright: 1996-2008, Free Software Foundation, Inc
+License: GAP
+ This file is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+
+Files: gtk/theme/em.py
+Copyright: 2002-2003 Erik Max Francis <max@alcyone.com>
+License: LGPL-any
+ __license__ = 'LGPL'
+ .
+ On Debian systems, the complete text of the GNU Library General Public
+ License (LGPL) can be found in file "/usr/share/common-licenses/LGPL".
+
+Files: debian/*
+Copyright: 2002-2003, Colin Walters <walters@debian.org>
+	2004-2008, Jonas Smedegaard <dr@jones.dk>
+License: GPL-2+
 
 License: LGPL-2+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
  License as published by the Free Software Foundation; either
  version 2 of the License, or (at your option) any later version.
-
-License: LGPL-any
- __license__ = 'LGPL'
+ .
+ On Debian systems, the complete text of the GNU Library General Public
+ License (LGPL) version 2 can be found in file
+ "/usr/share/common-licenses/LGPL-2".
 
 License: GPL-2+
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; either version 2 of the License, or
  (at your option) any later version.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ (GPL) version 2 can be found in file
+ "/usr/share/common-licenses/GPL-2".
 
 License: BSD-3
  Permission to use, copy, modify, distribute, and sell this software and its
@@ -74,13 +111,3 @@ License: BSD-3
  written prior permission.  Red Hat makes no representations about the
  suitability of this software for any purpose.  It is provided "as is"
  without express or implied warranty.
-
-License: GAP
- This Makefile.in is free software; the Free Software Foundation
- gives unlimited permission to copy and/or distribute it,
- with or without modifications, as long as this notice is preserved.
-
-On Debian systems, the complete text of the GNU General Public License
-can be found in file "/usr/share/common-licenses/GPL", and the complete
-text of the GNU Lesser General Public License can be found in file
-"/usr/share/common-licenses/LGPL"..
