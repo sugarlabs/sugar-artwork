@@ -41,6 +41,8 @@ icon_DATA =				\
 	camera.svg			\
 	computer.svg			\
 	computer-xo.svg			\
+	drive.svg			\
+	drive-harddisk.svg		\
 	drive-harddisk-usb.svg		\
 	media-disk.svg			\
 	media-flash-sd.svg		\
