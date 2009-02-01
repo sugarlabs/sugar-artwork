@@ -36,3 +36,5 @@ test/torturetest
 test/torture_*
 test/exported_*
 .DS_Store
+gtk/theme/sugar-100.gtkrc
+gtk/theme/sugar-72.gtkrc
