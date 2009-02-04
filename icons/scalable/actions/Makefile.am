@@ -14,6 +14,7 @@ icon_DATA =					\
 	dialog-cancel.svg			\
 	dialog-ok.svg				\
 	document-save.svg			\
+	document-send.svg			\
 	edit-copy.svg				\
 	edit-delete.svg				\
 	edit-paste.svg				\
