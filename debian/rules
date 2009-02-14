@@ -21,6 +21,10 @@ DEB_UPSTREAM_URL = http://dev.laptop.org/pub/sugar/sources/$(DEB_UPSTREAM_PACKAG
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
 DEB_UPSTREAM_TARBALL_MD5 = cb0083f640835d34e07000c32819752e
 
+# Register icons for optional caching
+binary-install/$(pkg)::
+	dh_icons -p$(cdbs_curpkg)
+
 # Strip hardcoded rpath
 binary-strip/$(pkg)::
 	find $(DEB_DESTDIR)/usr/lib -type f -name '*.so' -exec chrpath -d '{}' ';'
