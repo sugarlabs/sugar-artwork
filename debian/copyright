@@ -63,11 +63,14 @@ License: GAP
  gives unlimited permission to copy, distribute and modify it.
 
 Files: ./aclocal.m4
-Copyright: 1996-2008, Free Software Foundation, Inc
-License: GAP
- This file is free software; the Free Software Foundation
- gives unlimited permission to copy and/or distribute it,
- with or without modifications, as long as this notice is preserved.
+Copyright: 1994-2008, Free Software Foundation, Inc.
+	2001-2004, Red Hat, Inc
+	2004, Scott James Remnant <scott@netsplit.com>
+License: GPL-2+ | other-Autoconf
+ Some parts of the file is not copyright protected, some parts are
+ licensed as Public Domain (PD), but one part has the more restrictive
+ licensing terms of GPLv2+ or the license of a surrounding
+ autoconf-using project.
 
 Files: gtk/theme/em.py
 Copyright: 2002-2003 Erik Max Francis <max@alcyone.com>
