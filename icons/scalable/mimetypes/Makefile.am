@@ -7,6 +7,7 @@ icon_DATA =					\
 	application-x-generic.svg		\
 	application-x-squeak-project.svg	\
 	audio-x-generic.svg			\
+	document-generic.svg			\
 	image-x-generic.svg			\
 	text-uri-list.svg			\
 	text-x-generic.svg			\
