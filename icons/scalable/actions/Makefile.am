@@ -81,6 +81,7 @@ icon_DATA =					\
 	view-refresh.svg			\
 	view-return.svg				\
 	view-spiral.svg				\
+	view-source.svg				\
 	view-triangle.svg			\
 	zoom-activity.svg 			\
 	zoom-best-fit.svg			\
