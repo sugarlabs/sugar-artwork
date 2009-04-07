@@ -1,6 +1,6 @@
 sugar-artwork-0.82 (0.82.3-5) UNRELEASED; urgency=low
 
-  * Append branch to binary package names and Sugar-specific
+  * Append branch to source and binary package names and Sugar-specific
     package relations, to support multiple branches in same distribution
     concurrently.
   * Add README.source (and drop CDBS hints and README.packaging).
