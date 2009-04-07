@@ -9,10 +9,6 @@ Files: AUTHORS
 	config.h.in
 	configure.ac
 	cursor/Makefile.am
-	cursor/cursorthemegen/ChangeLog
-	cursor/cursorthemegen/Makefile.am
-	cursor/cursorthemegen/README
-	cursor/cursorthemegen/sample.cursortheme
 	cursor/sugar/Makefile.am
 	cursor/sugar/sugar-03.png
 	cursor/sugar/sugar-06.png
@@ -21,8 +17,7 @@ Files: AUTHORS
 	cursor/sugar/sugar-09.png
 	cursor/sugar/sugar-hotspots.png
 	cursor/sugar/sugar.cursortheme
-	debian/README.cdbs-tweaks
-	debian/README.packaging
+	debian/README.source
 	debian/compat
 	debian/control
 	debian/control.in
@@ -53,6 +48,7 @@ Files: AUTHORS
 	icons/scalable/actions/dialog-cancel.svg
 	icons/scalable/actions/dialog-ok.svg
 	icons/scalable/actions/document-save.svg
+	icons/scalable/actions/document-send.svg
 	icons/scalable/actions/edit-copy.svg
 	icons/scalable/actions/edit-delete.svg
 	icons/scalable/actions/edit-paste.svg
@@ -104,18 +100,35 @@ Files: AUTHORS
 	icons/scalable/actions/media-seek-forward.svg
 	icons/scalable/actions/row-insert.svg
 	icons/scalable/actions/row-remove.svg
+	icons/scalable/actions/system-logout.svg
 	icons/scalable/actions/system-restart.svg
 	icons/scalable/actions/system-search.svg
 	icons/scalable/actions/system-shutdown.svg
+	icons/scalable/actions/transfer-from-application-octet-stream.svg
+	icons/scalable/actions/transfer-from-audio-x-generic.svg
+	icons/scalable/actions/transfer-from-image-x-generic.svg
+	icons/scalable/actions/transfer-from-text-uri-list.svg
+	icons/scalable/actions/transfer-from-text-x-generic.svg
+	icons/scalable/actions/transfer-from-video-x-generic.svg
+	icons/scalable/actions/transfer-from.svg
+	icons/scalable/actions/transfer-to-application-octet-stream.svg
+	icons/scalable/actions/transfer-to-audio-x-generic.svg
+	icons/scalable/actions/transfer-to-image-x-generic.svg
+	icons/scalable/actions/transfer-to-text-uri-list.svg
+	icons/scalable/actions/transfer-to-text-x-generic.svg
+	icons/scalable/actions/transfer-to-video-x-generic.svg
+	icons/scalable/actions/transfer-to.svg
 	icons/scalable/actions/tray-hide.svg
 	icons/scalable/actions/tray-show.svg
 	icons/scalable/actions/view-box.svg
+	icons/scalable/actions/view-details.svg
 	icons/scalable/actions/view-freeform.svg
 	icons/scalable/actions/view-fullscreen.svg
 	icons/scalable/actions/view-list.svg
 	icons/scalable/actions/view-radial.svg
 	icons/scalable/actions/view-refresh.svg
 	icons/scalable/actions/view-return.svg
+	icons/scalable/actions/view-source.svg
 	icons/scalable/actions/view-spiral.svg
 	icons/scalable/actions/view-triangle.svg
 	icons/scalable/actions/zoom-activity.svg
@@ -126,9 +139,12 @@ Files: AUTHORS
 	icons/scalable/actions/zoom-neighborhood.svg
 	icons/scalable/actions/zoom-original.svg
 	icons/scalable/actions/zoom-out.svg
+	icons/scalable/apps/Makefile.am
+	icons/scalable/apps/activity-journal.svg
 	icons/scalable/categories/Makefile.am
 	icons/scalable/categories/preferences-system.svg
 	icons/scalable/control/Makefile.am
+	icons/scalable/control/color-preview.svg
 	icons/scalable/control/control-popup-arrow.svg
 	icons/scalable/device/Makefile.am
 	icons/scalable/device/battery-000.icon
@@ -167,9 +183,12 @@ Files: AUTHORS
 	icons/scalable/device/camera-external.svg
 	icons/scalable/device/camera.svg
 	icons/scalable/device/computer-xo.svg
+	icons/scalable/device/computer.svg
+	icons/scalable/device/drive-harddisk-usb.svg
+	icons/scalable/device/drive-harddisk.svg
+	icons/scalable/device/drive.svg
 	icons/scalable/device/media-disk.svg
-	icons/scalable/device/media-flash-sd-mmc.svg
-	icons/scalable/device/media-flash-usb.svg
+	icons/scalable/device/media-flash-sd.svg
 	icons/scalable/device/microphone.svg
 	icons/scalable/device/network-mesh.icon
 	icons/scalable/device/network-mesh.svg
@@ -219,8 +238,10 @@ Files: AUTHORS
 	icons/scalable/emblems/emblem-warning.svg
 	icons/scalable/mimetypes/Makefile.am
 	icons/scalable/mimetypes/application-octet-stream.svg
+	icons/scalable/mimetypes/application-x-generic.svg
 	icons/scalable/mimetypes/application-x-squeak-project.svg
 	icons/scalable/mimetypes/audio-x-generic.svg
+	icons/scalable/mimetypes/document-generic.svg
 	icons/scalable/mimetypes/image-x-generic.svg
 	icons/scalable/mimetypes/text-uri-list.svg
 	icons/scalable/mimetypes/text-x-generic.svg
@@ -239,7 +260,6 @@ License: UNKNOWN
 
 Files: Makefile.in
 	cursor/Makefile.in
-	cursor/cursorthemegen/Makefile.in
 	cursor/sugar/Makefile.in
 	gtk/Makefile.in
 	gtk/engine/Makefile.in
@@ -247,6 +267,7 @@ Files: Makefile.in
 	icons/Makefile.in
 	icons/scalable/Makefile.in
 	icons/scalable/actions/Makefile.in
+	icons/scalable/apps/Makefile.in
 	icons/scalable/categories/Makefile.in
 	icons/scalable/control/Makefile.in
 	icons/scalable/device/Makefile.in
@@ -266,12 +287,6 @@ Files: gtk/engine/sugar-drawing.c
 Copyright: 2007, Benjamin Berg
 License: LGPL-2+
 
-Files: cursor/cursorthemegen/cursortheme.h
-	cursor/cursorthemegen/main.c
-	cursor/cursorthemegen/themefile.c
-Copyright: 2003, Red Hat, Inc
-License: UNKNOWN
-
 Files: gtk/engine/sugar-rc-style.c
 	gtk/engine/sugar-rc-style.h
 Copyright: 2007, Red Hat, Inc
@@ -284,11 +299,11 @@ Copyright: 2007, Red Hat, Inc
 License: LGPL-2+
 
 Files: missing
-Copyright: 1996-1997, 1999-2000, 2002-2006
+Copyright: 1996-1997, 1999-2000, 2002-2005
 License: GPL (GENERATED FILE)
 
 Files: depcomp
-Copyright: 1999-2000, 2003-2007, Free Software
+Copyright: 1999-2000, 2003-2005, Free Software Foundation, Inc
 License: GPL (GENERATED FILE)
 
 Files: debian/cdbs/1/rules/buildinfo.mk
@@ -303,13 +318,17 @@ Files: debian/cdbs/1/rules/package-relations.mk
 Copyright: 2008, Jonas Smedegaard <dr@jones.dk>
 License: GPL
 
+Files: debian/rules
+Copyright: 2008-2009, Jonas Smedegaard <dr@jones.dk>
+License: GPL
+
 Files: debian/cdbs/1/rules/copyright-check.mk
 Copyright: \s*(\S.*?)\s*\
 License: GPL
 
 Files: config.guess
 Copyright: 1992-1999,
-	1992-2005
+	1992-2001
 License: GPL-2+ (GENERATED FILE)
 
 Files: config.sub
@@ -317,8 +336,13 @@ Copyright: 1992-1999
 License: GPL-2+ (GENERATED FILE)
 
 Files: ltmain.sh
-Copyright: 1996-2001, 2003-2006
-License: GPL-2+ (GENERATED FILE)
+Copyright: 1996-2001, 2003-2007, 2008 Free Software Foundation, Inc
+License: GPL-2+
+
+Files: aclocal.m4
+Copyright: 1996-2004,
+	1996-2001, 2003-2005
+License: GPL-2+
 
 Files: gtk/engine/sugar-style.c
 Copyright: 2007, Red Hat, Inc
@@ -337,16 +361,8 @@ Files: cursor/sugar/sugar-00.png
 Copyright: "<0zKj
 License: UNKNOWN
 
-Files: aclocal.m4
-Copyright: 1996-2004
-License: UNKNOWN
-
 Files: gtk/theme/em.py
 Copyright: 2002-2003, Erik Max Francis'
-License: UNKNOWN
-
-Files: debian/rules
-Copyright: 2008, Jonas Smedegaard <dr@jones.dk>
 License: UNKNOWN
 
 Files: cursor/sugar/sugar-11.png

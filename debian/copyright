@@ -18,15 +18,11 @@ License: GAP
  gives unlimited permission to copy and/or distribute it,
  with or without modifications, as long as this notice is preserved.
 
-Files: cursor/cursorthemegen/*
-Copyright: 2003, Red Hat, Inc.
-License: BSD-3
-
 Files: ./config.*
 	./depcomp
 	./ltmain.sh
 	./missing
-Copyright: 1992-2007, Free Software Foundation, Inc.
+Copyright: 1992-2008, Free Software Foundation, Inc.
 License: GPL-2+
 
 Files: ./install-sh
@@ -79,8 +75,13 @@ License: LGPL-any
  License (LGPL) can be found in file "/usr/share/common-licenses/LGPL".
 
 Files: debian/*
+Copyright: 2003-2009 Jonas Smedegaard <dr@jones.dk>
+License: GPL-2+
+
+Files: debian/cdbs/1/class/autotools*
+	debian/cdbs/1/class/makefile*
 Copyright: 2002-2003, Colin Walters <walters@debian.org>
-	2004-2008, Jonas Smedegaard <dr@jones.dk>
+	2003,2008, Jonas Smedegaard <dr@jones.dk>
 License: GPL-2+
 
 License: LGPL-2+
@@ -102,14 +103,3 @@ License: GPL-2+
  On Debian systems, the complete text of the GNU General Public License
  (GPL) version 2 can be found in file
  "/usr/share/common-licenses/GPL-2".
-
-License: BSD-3
- Permission to use, copy, modify, distribute, and sell this software and its
- documentation for any purpose is hereby granted without fee, provided that
- the above copyright notice appear in all copies and that both that
- copyright notice and this permission notice appear in supporting
- documentation, and that the name of Red Hat not be used in advertising or
- publicity pertaining to distribution of the software without specific,
- written prior permission.  Red Hat makes no representations about the
- suitability of this software for any purpose.  It is provided "as is"
- without express or implied warranty.
