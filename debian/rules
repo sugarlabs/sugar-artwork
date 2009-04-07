@@ -30,7 +30,9 @@ include /usr/share/cdbs/1/class/autotools.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 include debian/cdbs/1/rules/buildinfo.mk
 
-pkg = sugar-artwork
+pkgbase = python-artwork
+pkgbranch = 0.82
+pkg = $(pkgbase)-$(pkgbranch)
 
 DEB_UPSTREAM_URL = http://download.sugarlabs.org/sources/sucrose/glucose/$(DEB_UPSTREAM_PACKAGE)
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
@@ -51,7 +53,12 @@ CDBS_BUILD_DEPENDS := $(CDBS_BUILD_DEPENDS), libgtk2.0-dev, libglib2.0-dev, libc
 
 # Needed (always/often) at runtime
 CDBS_DEPENDS := ttf-dejavu-core
-CDBS_RECOMMENDS := sugar, ttf-dejavu-extra
+CDBS_RECOMMENDS := sugar-$(pkgbranch), ttf-dejavu-extra
+
+# Ensure only one variant is installed at a time (Debian Policy 7.6.2)
+CDBS_PROVIDES := $(pkgbase)
+CDBS_CONFLICTS := $(pkgbase)
+CDBS_REPLACES := $(pkgbase)
 
 # Needed for our packaging
 CDBS_BUILD_DEPENDS := $(CDBS_BUILD_DEPENDS), chrpath
