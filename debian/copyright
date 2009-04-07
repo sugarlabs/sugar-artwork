@@ -3,9 +3,7 @@ Upstream-Name: sugar artwork
 Upstream-Maintainer: Sugarlabs <sugar-devel@lists.sugarlabs.org>
 	http://lists.sugarlabs.org/listinfo/sugar-devel
 	irc://irc.freenode.net/sugar
-Upstream-Source: http://dev.laptop.org/pub/sugar/sources/sugar-artwork/
-	git://dev.laptop.org/sugar-artwork
-	http://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork
+Upstream-Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork
 	git://git.sugarlabs.org/sugar-artwork/mainline.git
 
 Files: *

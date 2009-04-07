@@ -32,7 +32,7 @@ include debian/cdbs/1/rules/buildinfo.mk
 
 pkg = sugar-artwork
 
-DEB_UPSTREAM_URL = http://dev.laptop.org/pub/sugar/sources/$(DEB_UPSTREAM_PACKAGE)
+DEB_UPSTREAM_URL = http://download.sugarlabs.org/sources/sucrose/glucose/$(DEB_UPSTREAM_PACKAGE)
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.bz2
 DEB_UPSTREAM_TARBALL_MD5 = cb0083f640835d34e07000c32819752e
 
