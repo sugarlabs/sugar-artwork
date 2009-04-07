@@ -31,7 +31,7 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include debian/cdbs/1/rules/buildinfo.mk
 
 pkgbase = python-artwork
-pkgbranch = 0.82
+pkgbranch = 0.84
 pkg = $(pkgbase)-$(pkgbranch)
 
 DEB_UPSTREAM_PACKAGE = $(DEB_SOURCE_PACKAGE:%-$(pkgbranch)=%)
