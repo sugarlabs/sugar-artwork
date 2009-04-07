@@ -1,7 +1,10 @@
-diff --git a/gtk/theme/Makefile.am b/gtk/theme/Makefile.am
---- a/gtk/theme/Makefile.am
-+++ b/gtk/theme/Makefile.am
-@@ -1,9 +1,9 @@
+diff --git a/gtk/theme/Makefile.in b/gtk/theme/Makefile.in
+index f229d6d..caee188 100644
+--- a/gtk/theme/Makefile.in
++++ b/gtk/theme/Makefile.in
+@@ -325,11 +325,11 @@ uninstall-am: uninstall-info-am uninstall-local
+ 	uninstall uninstall-am uninstall-info-am uninstall-local
+ 
  sugar-72.gtkrc: gtkrc.em
 -	$(srcdir)/em.py -p $$ -D scaling=\'72\' $(srcdir)/gtkrc.em > \
 +	empy -p $$ -D scaling=\'72\' $(srcdir)/gtkrc.em > \
