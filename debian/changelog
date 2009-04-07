@@ -1,3 +1,12 @@
+sugar-artwork (0.82.3-5) UNRELEASED; urgency=low
+
+  * Add README.source.
+  * Enable tag signing in git-buildpackage configfile.
+  * Enhance package-relations.mk to support all binary package relations
+    (except -indep ones).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 07 Apr 2009 12:24:22 +0200
+
 sugar-artwork (0.82.3-4) unstable; urgency=low
 
   * Add IRC channel as alternate contact URL in debian/copyright.
