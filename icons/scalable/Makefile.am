@@ -1,1 +1,1 @@
-SUBDIRS = actions control device mimetypes status emblems categories
+SUBDIRS = actions apps control device mimetypes status emblems categories

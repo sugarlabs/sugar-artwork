@@ -1,10 +1,9 @@
 iconsize=scalable
-category=control
+category=apps
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
-icon_DATA =				\
-	control-popup-arrow.svg		\
-	color-preview.svg
+icon_DATA =			\
+	activity-journal.svg
 
 EXTRA_DIST = $(icon_DATA)
 

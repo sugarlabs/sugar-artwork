@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.82.3],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.84.1],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
@@ -13,6 +13,11 @@ PKG_PROG_PKG_CONFIG([0.19])
 AC_PROG_CC
 AC_HEADER_STDC
 AC_PROG_LIBTOOL
+
+AC_PATH_PROG([ICON_SLICER], [icon-slicer])
+if test -z "$ICON_SLICER"; then
+    AC_MSG_ERROR([icon-slicer is required])
+fi
 
 PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0,,
 	          AC_MSG_ERROR([GTK+-2.0 is required to compile redhat-artwork]))
@@ -46,11 +51,12 @@ fi
 AC_OUTPUT([
 Makefile
 cursor/Makefile
-cursor/cursorthemegen/Makefile
 cursor/sugar/Makefile
 icons/Makefile
 icons/scalable/Makefile
 icons/scalable/actions/Makefile
+icons/scalable/apps/Makefile
+icons/scalable/categories/Makefile
 icons/scalable/control/Makefile
 icons/scalable/device/Makefile
 icons/scalable/emblems/Makefile

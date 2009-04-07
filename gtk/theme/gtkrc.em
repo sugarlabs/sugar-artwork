@@ -12,7 +12,7 @@ def my_ceil(num):
 # Are these already the correct sizes for the XO?
 
 # These sizes need to be sanity checked ...
-if theme == "sugar-xo":
+if scaling == "100":
     xo = True
     line_width = 2.0        # 2.25px, rounded down
     thick_line_width = 3.5  # 3.5
@@ -628,8 +628,29 @@ style "checkbutton"
 
 style "progressbar"
 {
-    xthickness = 0
-    ythickness = 0
+    # text[PRELIGHT] is used for the bar in the sugar engine
+    text[PRELIGHT] = $white
+
+    # Text on top of the bar
+    fg[PRELIGHT] = $black
+    xthickness = $thickness
+    ythickness = $thickness
+
+    engine "sugar" {
+        # Someone seems to have decided, that the background fill of a progress
+        # bar should be done with bg[ACTIVE].
+        bg[ACTIVE] = parent_bg_color
+
+        # Color to fill the progress bar ("transparent" usually, except for the
+        # white background case)
+        bg[NORMAL] = parent_bg_color
+        fg[NORMAL] = parent_fg_color
+    }
+}
+
+style "progressbar-on-white" {
+    bg[NORMAL] = $panel_grey
+    fg[NORMAL] = $black
 }
 
 style "menuitem"
@@ -792,12 +813,16 @@ widget_class "*<GtkHScale>"      style "hscale"
 widget_class "*<GtkVScale>"      style "vscale"
 widget_class "*<GtkProgressBar>" style "progressbar"
 
+widget_class "*<SugarSectionView>*<GtkProgress>"  style "progressbar-on-white"
+
+
 # Scrolled window scrollbars
 widget_class "*<GtkScrolledWindow>.<GtkVScrollbar>" style "vscrollbar-scrolled-window"
 widget_class "*<GtkScrolledWindow>.<GtkHScrollbar>" style "hscrollbar-scrolled-window"
 
 # Toolbar
 widget_class "*<GtkToolButton>*"          style "toolbutton"
+widget_class "*<SugarColorToolButton>*"   style "toolbutton"
 widget_class "*<GtkSeparatorToolItem>*"   style "separatortoolbutton"
 widget_class "*<GtkToolbar>"              style "toolbar"
 

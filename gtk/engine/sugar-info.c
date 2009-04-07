@@ -191,7 +191,10 @@ sugar_fill_arrow_info (SugarArrowInfo *arrow_info,
     arrow_info->filled_triangle = FALSE;
 
     /* If the background is black, then we draw a solid triangle. */
-    color = &info->style->bg[GTK_STATE_NORMAL];
+    if (info->rc_style->color_flags & SUGAR_COLOR_BG)
+        color = &info->rc_style->colors[SUGAR_COLOR_BG];
+    else
+        color = &info->style->bg[GTK_STATE_NORMAL];
     if (color->red == 0 && color->green == 0 && color->blue == 0)
         arrow_info->filled_triangle = TRUE;
 }
@@ -234,7 +237,9 @@ sugar_fill_generic_info (SugarInfo     *info,
     }
 
     /* Ignore the prelight state in some cases. */
-    if (info->state == GTK_STATE_PRELIGHT) {
+    if (info->state == GTK_STATE_PRELIGHT &&
+	gdk_color_equal(&style->bg[GTK_STATE_PRELIGHT],
+			&style->bg[GTK_STATE_NORMAL])) {
         if (DETAIL ("button") || DETAIL ("buttondefault") ||
             DETAIL ("spinbutton_down") || DETAIL ("spinbutton_up")) {
 

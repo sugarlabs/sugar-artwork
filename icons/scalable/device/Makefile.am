@@ -39,10 +39,13 @@ icon_DATA =				\
 	battery-charging-100.svg	\
 	camera-external.svg		\
 	camera.svg			\
+	computer.svg			\
 	computer-xo.svg			\
+	drive.svg			\
+	drive-harddisk.svg		\
+	drive-harddisk-usb.svg		\
 	media-disk.svg			\
-	media-flash-sd-mmc.svg		\
-	media-flash-usb.svg		\
+	media-flash-sd.svg		\
 	microphone.svg			\
 	network-mesh.svg		\
 	network-mesh.icon		\

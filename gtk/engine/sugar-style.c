@@ -420,18 +420,15 @@ sugar_style_draw_box (GtkStyle       *style,
             sugar_draw_scrollbar_trough (cr, &range_info);
         } else { /* Progress bar trough */
             SugarInfo info;
-            gboolean fill;
 
             sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
             
             if (widget && !GTK_WIDGET_IS_SENSITIVE (widget))
                 info.state = GTK_STATE_INSENSITIVE;
 
-            fill = (gtk_progress_bar_get_fraction (GTK_PROGRESS_BAR (widget)) != 0.0);
-            
             /* Needed because the trough and bar are cached in a buffer inside GtkProgress. */
             sugar_fill_background (cr, &info);
-            sugar_draw_progressbar_trough (cr, &info, fill);
+            sugar_draw_progressbar_trough (cr, &info);
         }
     } else if (DETAIL ("bar")) {
             SugarInfo info;
@@ -791,7 +788,9 @@ sugar_style_draw_layout(GtkStyle        *style,
         else /* It appears, that this is not a label inside a button. */
             btn = NULL;
     }
-    if (state_type != GTK_STATE_INSENSITIVE && btn) {
+    if (state_type != GTK_STATE_INSENSITIVE && btn &&
+	gdk_color_equal(&btn->style->bg[GTK_STATE_PRELIGHT],
+			&btn->style->bg[GTK_STATE_NORMAL])) {
         /* Access private information ... */
         sugar_state = GTK_BUTTON (btn)->depressed ? GTK_STATE_ACTIVE : GTK_STATE_NORMAL;
     }
