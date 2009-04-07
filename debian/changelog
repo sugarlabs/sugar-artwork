@@ -1,9 +1,16 @@
 sugar-artwork (0.82.3-5) UNRELEASED; urgency=low
 
-  * Add README.source.
+  * Append branch to binary package names and Sugar-specific
+    package relations, to support multiple branches in same distribution
+    concurrently.
+  * Add README.source (and drop CDBS hints and README.packaging).
   * Enable tag signing in git-buildpackage configfile.
   * Enhance package-relations.mk to support all binary package relations
     (except -indep ones).
+  * Add proper copyright header to debian/rules.
+  * Consistently use sugarlabs.org URLs (drop laptop.org) to homepage
+    and upstream source.
+  * Maintain all package dependencies in debian/rules, with comments.
 
  -- Jonas Smedegaard <dr@jones.dk>  Tue, 07 Apr 2009 12:24:22 +0200
 

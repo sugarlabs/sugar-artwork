@@ -7,12 +7,15 @@ Build-Depends: cdbs (>= 0.4.39), autotools-dev, devscripts (>= 2.10.7), quilt, p
 Standards-Version: 3.7.3
 Vcs-Git: git://git.debian.org/git/collab-maint/sugar-artwork.git
 Vcs-Browser: http://git.debian.org/?p=collab-maint/sugar-artwork.git;a=summary
-Homepage: http://wiki.laptop.org/go/Sugar
+Homepage: http://wiki.sugarlabs.org/go/Sugar
 
-Package: sugar-artwork
+Package: sugar-artwork-0.82
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${cdbs:Depends}
-Recommends: sugar, ttf-dejavu-extra
+Recommends: ${cdbs:Recommends}
+Provides: ${cdbs:Provides}
+Conflicts: ${cdbs:Conflicts}
+Replaces: ${cdbs:Replaces}
 Description: Sugar graphical shell - artwork
  Sugar is a graphical user interface aimed at children.
  .
