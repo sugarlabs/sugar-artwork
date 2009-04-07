@@ -22,10 +22,9 @@ Files: AUTHORS
 	debian/control
 	debian/control.in
 	debian/gbp.conf
-	debian/patches/1001_cursorfiles_noexec.patch
 	debian/patches/1002_skip_none-arow_only_if_supported.patch
 	debian/patches/2001_empy_from_system.patch
-	debian/patches/2991_cursorfiles_noexec.patch
+	debian/patches/2991_empy_from_system_automade.patch
 	debian/patches/README
 	debian/patches/series
 	debian/watch

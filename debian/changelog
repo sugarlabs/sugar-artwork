@@ -1,6 +1,9 @@
-sugar-artwork-0.84 (0.84.1-0) UNRELEASED; urgency=low
+sugar-artwork-0.84 (0.84.1-1) unstable; urgency=low
 
   * New upstream release.
+  * Drop patches 1001 and 2991, now upstream.
+  * Unfuzz patches 1002 and 2001 (and fix typo in comment).
+  * Add new patch 2991 expanding patch 2001 to automade file.
   * Append branch to source and binary package names and Sugar-specific
     package relations, to support multiple branches in same distribution
     concurrently.
@@ -13,7 +16,7 @@ sugar-artwork-0.84 (0.84.1-0) UNRELEASED; urgency=low
     and upstream source.
   * Maintain all package dependencies in debian/rules, with comments.
 
- -- Jonas Smedegaard <dr@jones.dk>  Tue, 07 Apr 2009 12:24:22 +0200
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 07 Apr 2009 23:44:27 +0200
 
 sugar-artwork (0.82.3-4) unstable; urgency=low
 
