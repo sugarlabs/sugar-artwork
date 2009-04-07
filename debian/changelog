@@ -1,5 +1,6 @@
-sugar-artwork-0.84 (0.82.3-5) UNRELEASED; urgency=low
+sugar-artwork-0.84 (0.84.1-0) UNRELEASED; urgency=low
 
+  * New upstream release.
   * Append branch to source and binary package names and Sugar-specific
     package relations, to support multiple branches in same distribution
     concurrently.
