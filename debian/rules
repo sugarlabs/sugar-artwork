@@ -49,11 +49,12 @@ binary-strip/$(pkg)::
 #  xbase-clients is needed for xcursorgen for etch backport
 CDBS_BUILD_DEPENDS := $(CDBS_BUILD_DEPENDS), libgtk2.0-dev, libglib2.0-dev, libcairo2-dev, python-empy, x11-apps | xbase-clients, icon-naming-utils (>= 0.8.2)
 
+# Needed (always/often) at runtime
+CDBS_DEPENDS := ttf-dejavu-core
+CDBS_RECOMMENDS := sugar, ttf-dejavu-extra
+
 # Needed for our packaging
 CDBS_BUILD_DEPENDS := $(CDBS_BUILD_DEPENDS), chrpath
-
-# Needed at runtime
-CDBS_DEPENDS_$(pkg) := ttf-dejavu-core
 
 # Merge duplicate build-dependencies
 include debian/cdbs/1/rules/package-relations.mk

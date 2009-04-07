@@ -12,7 +12,7 @@ Homepage: http://wiki.sugarlabs.org/go/Sugar
 Package: sugar-artwork
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${cdbs:Depends}
-Recommends: sugar, ttf-dejavu-extra
+Recommends: ${cdbs:Recommends}
 Description: Sugar graphical shell - artwork
  Sugar is a graphical user interface aimed at children.
  .
