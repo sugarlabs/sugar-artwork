@@ -16,6 +16,7 @@ sugar-artwork-0.84 (0.84.1-1) unstable; urgency=low
     and upstream source.
   * Maintain all package dependencies in debian/rules, with comments.
   * Build-depend on icon-slicer (and not x11-apps).
+  * Bump standards-version to 3.8.1.
 
  -- Jonas Smedegaard <dr@jones.dk>  Wed, 08 Apr 2009 02:51:00 +0200
 
