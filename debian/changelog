@@ -15,8 +15,9 @@ sugar-artwork-0.84 (0.84.1-1) unstable; urgency=low
   * Consistently use sugarlabs.org URLs (drop laptop.org) to homepage
     and upstream source.
   * Maintain all package dependencies in debian/rules, with comments.
+  * Build-depend on icon-slicer (and not x11-apps).
 
- -- Jonas Smedegaard <dr@jones.dk>  Tue, 07 Apr 2009 23:44:27 +0200
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 08 Apr 2009 02:51:00 +0200
 
 sugar-artwork (0.82.3-4) unstable; urgency=low
 
