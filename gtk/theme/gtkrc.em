@@ -123,6 +123,8 @@ style "default"
     GtkButton::default-outside-border = { 0, 0, 0, 0 }
     GtkButton::image-spacing = $subcell_size
 
+    GtkEntry::progress-border = { $thickness, $thickness, $thickness, $thickness }
+
     GtkScrolledWindow::scrollbar-spacing = 0
 
     GtkExpander::expander-size = 24
@@ -547,6 +549,10 @@ style "entry"
     xthickness = $entry_xthickness
     ythickness = $entry_ythickness
     GtkWidget::focus-line-width = 0
+
+    # Colors for the progress bar.
+    bg[SELECTED] = $selection_grey
+    fg[SELECTED] = $black
 
     # This tries to get a height of exactly 45 pixel for the entry.
     GtkEntry::inner-border = { $(max(subcell_size - entry_xthickness, 0)), $(max(subcell_size - entry_xthickness, 0)),

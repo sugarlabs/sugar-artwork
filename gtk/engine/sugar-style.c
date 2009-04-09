@@ -367,7 +367,24 @@ sugar_style_draw_box (GtkStyle       *style,
             sugar_draw_button_default (cr, &info);
         else
             sugar_draw_button (cr, &info);
+    } else if (DETAIL ("entry-progress")) {
+        SugarInfo info;
 
+        sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
+
+        /* Corner detection. */
+        if (HINT ("comboboxentry") || HINT("spinbutton")) {
+            info.cont_edges = info.ltr ? EDGE_RIGHT : EDGE_LEFT;
+            sugar_remove_corners (&info.corners, info.cont_edges);
+
+            /* Remove the padding on one side. */
+            width += info.rc_style->thick_line_width;
+            if (!info.ltr) {
+                x -= info.rc_style->thick_line_width;
+            }
+        }
+
+        sugar_draw_entry_progress (cr, &info);
     } else if (DETAIL ("spinbutton")) {
         SugarInfo info;
         sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);

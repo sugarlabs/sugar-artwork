@@ -283,6 +283,38 @@ sugar_draw_scrollbar_trough (cairo_t       *cr,
 }
 
 void
+sugar_draw_entry_progress (cairo_t *cr, SugarInfo *info)
+{
+    GtkBorder *border;
+    SugarRectangle pos = info->pos;
+    gint max_radius = info->max_radius;
+
+    /* Try to retrieve the style property. */
+    gtk_widget_style_get (info->widget,
+                          "progress-border", &border,
+                          NULL);
+
+    if (border == NULL) {
+        max_radius = MAX (0, max_radius - info->style->ythickness * 2);
+    } else {
+    	max_radius = MAX (0, max_radius - border->top - border->bottom);
+    	gtk_border_free (border);
+    	border = NULL;
+    }
+
+    pos.width += 2*max_radius;
+    sugar_rounded_rectangle (cr, &pos, 0, max_radius, info->corners);
+    cairo_clip(cr);
+
+    pos.x -= 2*max_radius;
+    sugar_rounded_rectangle (cr, &pos, 0, max_radius, info->corners);
+    cairo_clip(cr);
+
+    gdk_cairo_set_source_color (cr, &info->style->bg[info->state]);
+    cairo_paint (cr);
+}
+
+void
 sugar_draw_entry (cairo_t *cr, SugarInfo *info)
 {
     SugarRectangle *pos = &info->pos;
