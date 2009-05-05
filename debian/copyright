@@ -1,12 +1,11 @@
-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=428
-Upstream-Name: sugar artwork
-Upstream-Maintainer: Sugarlabs <sugar-devel@lists.sugarlabs.org>
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=48
+Name: sugar artwork
+Maintainer: Sugarlabs <sugar-devel@lists.sugarlabs.org>
 	http://lists.sugarlabs.org/listinfo/sugar-devel
 	irc://irc.freenode.net/sugar
-Upstream-Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork
+Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork
 	git://git.sugarlabs.org/sugar-artwork/mainline.git
 
-Files: *
 Copyright: 2007, Red Hat, Inc
 	2007-2008, Benjamin Berg
 License: LGPL-2+
@@ -60,14 +59,14 @@ Files: ./aclocal.m4
 Copyright: 1994-2008, Free Software Foundation, Inc.
 	2001-2004, Red Hat, Inc
 	2004, Scott James Remnant <scott@netsplit.com>
-License: GPL-2+ | other-Autoconf
+License: GPL-2+ or Autoconf
  Some parts of the file is not copyright protected, some parts are
  licensed as Public Domain (PD), but one part has the more restrictive
  licensing terms of GPLv2+ or the license of a surrounding
  autoconf-using project.
 
 Files: gtk/theme/em.py
-Copyright: 2002-2003 Erik Max Francis <max@alcyone.com>
+Copyright: 2002-2003, Erik Max Francis <max@alcyone.com>
 License: LGPL-any
  __license__ = 'LGPL'
  .
@@ -75,7 +74,7 @@ License: LGPL-any
  License (LGPL) can be found in file "/usr/share/common-licenses/LGPL".
 
 Files: debian/*
-Copyright: 2003-2009 Jonas Smedegaard <dr@jones.dk>
+Copyright: 2003-2009, Jonas Smedegaard <dr@jones.dk>
 License: GPL-2+
 
 Files: debian/cdbs/1/class/autotools*
