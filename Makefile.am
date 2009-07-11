@@ -1,1 +1,1 @@
-SUBDIRS = cursor icons gtk matchbox
+SUBDIRS = cursor icons gtk

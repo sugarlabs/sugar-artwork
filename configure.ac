@@ -65,5 +65,4 @@ icons/scalable/status/Makefile
 gtk/Makefile
 gtk/engine/Makefile
 gtk/theme/Makefile
-matchbox/Makefile
 ])
