@@ -70,6 +70,9 @@ icon_DATA =						\
 	system-restart.svg				\
 	system-search.svg				\
 	system-shutdown.svg				\
+	toolbar-colors.svg				\
+	toolbar-edit.svg				\
+	toolbar-view.svg				\
 	tray-hide.svg					\
 	tray-show.svg					\
 	transfer-from-application-octet-stream.svg	\
