@@ -131,6 +131,10 @@ style "default"
     GtkExpander::expander-spacing = 2     # XXX
 
     GtkTreeView::expander-size = 24
+
+    # we have to disable focus border for GtkTreeView, see #1261
+    GtkTreeView::interior-focus = 1
+    GtkTreeView::focus-line-width = 0
     
     GtkArrow::arrow-size = 1.0
 
