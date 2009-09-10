@@ -1,3 +1,20 @@
+sugar-artwork-0.84 (0.84.1-3) unstable; urgency=low
+
+  * Update CDBS snippets:
+    + Enhance package-relations.mk to support all binary package
+      relations (except -indep ones).
+    + Improve package-relation.mk cleanup to cover debhelper 6 and 7,
+      strip more whitespace and cover mixture of unversioned+versioned
+      dependencies.
+    + Silence applying dependencies in package-relation.mk.
+    + Implement fail-source-not-repackaged rule in upstream-tarball.mk.
+    + Update URL to draft DEP5 format in copyright-check.mk output.
+  * Update DEP5 to rev54 and fix libtool licensing in debian/copyright
+    (No new authors, ltmain.sh alternate GAP-like license added).
+  * Bump up policy compliance to standards version 3.8.3.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 10 Sep 2009 22:08:22 +0200
+
 sugar-artwork-0.84 (0.84.1-2) unstable; urgency=low
 
   * Fix typo in debian/control (python-artwork → sugar-artwork).
