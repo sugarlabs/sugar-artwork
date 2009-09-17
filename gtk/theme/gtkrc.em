@@ -271,8 +271,8 @@ style "menu"
 
     ${# This is just the exact reverse of what is going on inside GTK+ ...}
     GtkMenu::scroll-arrow-vlength = $(my_floor(subcell_size/0.7 + 2*thickness))
-    GtkMenu::horizontal-padding = 0
-    GtkMenu::vertical-padding   = 0
+    GtkMenu::horizontal-padding = $thickness
+    GtkMenu::vertical-padding   = $thickness
     # This means the outline of the submenu overlaps with a palette.
     # However in the case of two normal menus, they are next to each other.
     # It is not possible to be smarter about this, because the style comes from
@@ -280,12 +280,21 @@ style "menu"
     GtkMenu::horizontal-offset  = 0
     GtkMenu::vertical-offset    = 0
 
+    xthickness = 0
+    ythickness = 0
+}
+
+style "palette" = "menu"
+{
     xthickness = $thickness
     ythickness = $thickness
 }
 
 style "palette-menu" = "menu"
 {
+    GtkMenu::horizontal-padding = 0
+    GtkMenu::vertical-padding   = 0
+
     xthickness = 0
     ythickness = $subcell_size
 }
@@ -759,9 +768,9 @@ widget_class "*<GtkNotebook>.<GtkBox>.<GtkLabel>"    style "notebook-tab"
 
 # SugarPalette and Menu
 widget_class "*<GtkMenu>"               style "menu"
-widget_class "<SugarPalette>"           style "menu"
-widget_class "<SugarPalette>.*"         style "menu-child"
-widget_class "<SugarPalette>*<GtkMenu>" style "palette-menu"
+widget_class "<SugarPaletteWindow>"           style "palette"
+widget_class "<SugarPaletteWindow>.*"         style "menu-child"
+widget_class "<SugarPaletteWindow>*<GtkMenu>" style "palette-menu"
 widget_class "*<GtkMenuShell>.*"        style "menu-child"
 
 # SugarFrameWindow
@@ -778,7 +787,7 @@ widget_class "<GtkWindow>*<GtkNotebook>*"   style "groupbox-panel-child"
 widget_class "<GtkWindow>*<GtkNotebook>"    style "notebook-panel"
 
 
-widget_class "<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
+widget_class "<SugarPaletteWindow>*<SugarGroupBox>*"   style "groupbox-palette-child"
 
 
 # SugarToolbox
