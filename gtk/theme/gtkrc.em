@@ -123,12 +123,18 @@ style "default"
     GtkButton::default-outside-border = { 0, 0, 0, 0 }
     GtkButton::image-spacing = $subcell_size
 
+    GtkEntry::progress-border = { $thickness, $thickness, $thickness, $thickness }
+
     GtkScrolledWindow::scrollbar-spacing = 0
 
     GtkExpander::expander-size = 24
     GtkExpander::expander-spacing = 2     # XXX
 
     GtkTreeView::expander-size = 24
+
+    # we have to disable focus border for GtkTreeView, see #1261
+    GtkTreeView::interior-focus = 1
+    GtkTreeView::focus-line-width = 0
     
     GtkArrow::arrow-size = 1.0
 
@@ -265,8 +271,8 @@ style "menu"
 
     ${# This is just the exact reverse of what is going on inside GTK+ ...}
     GtkMenu::scroll-arrow-vlength = $(my_floor(subcell_size/0.7 + 2*thickness))
-    GtkMenu::horizontal-padding = 0
-    GtkMenu::vertical-padding   = 0
+    GtkMenu::horizontal-padding = $thickness
+    GtkMenu::vertical-padding   = $thickness
     # This means the outline of the submenu overlaps with a palette.
     # However in the case of two normal menus, they are next to each other.
     # It is not possible to be smarter about this, because the style comes from
@@ -274,12 +280,21 @@ style "menu"
     GtkMenu::horizontal-offset  = 0
     GtkMenu::vertical-offset    = 0
 
+    xthickness = 0
+    ythickness = 0
+}
+
+style "palette" = "menu"
+{
     xthickness = $thickness
     ythickness = $thickness
 }
 
 style "palette-menu" = "menu"
 {
+    GtkMenu::horizontal-padding = 0
+    GtkMenu::vertical-padding   = 0
+
     xthickness = 0
     ythickness = $subcell_size
 }
@@ -548,6 +563,10 @@ style "entry"
     ythickness = $entry_ythickness
     GtkWidget::focus-line-width = 0
 
+    # Colors for the progress bar.
+    bg[SELECTED] = $selection_grey
+    fg[SELECTED] = $black
+
     # This tries to get a height of exactly 45 pixel for the entry.
     GtkEntry::inner-border = { $(max(subcell_size - entry_xthickness, 0)), $(max(subcell_size - entry_xthickness, 0)),
                                $(max(my_ceil((3*subcell_size - font_height - entry_ythickness*2)/2.0),0)), $(max(my_floor((3*subcell_size - font_height - entry_ythickness*2)/2.0), 0)) }
@@ -749,9 +768,9 @@ widget_class "*<GtkNotebook>.<GtkBox>.<GtkLabel>"    style "notebook-tab"
 
 # SugarPalette and Menu
 widget_class "*<GtkMenu>"               style "menu"
-widget_class "<SugarPalette>"           style "menu"
-widget_class "<SugarPalette>.*"         style "menu-child"
-widget_class "<SugarPalette>*<GtkMenu>" style "palette-menu"
+widget_class "<SugarPaletteWindow>"           style "palette"
+widget_class "<SugarPaletteWindow>.*"         style "menu-child"
+widget_class "<SugarPaletteWindow>*<GtkMenu>" style "palette-menu"
 widget_class "*<GtkMenuShell>.*"        style "menu-child"
 
 # SugarFrameWindow
@@ -768,7 +787,7 @@ widget_class "<GtkWindow>*<GtkNotebook>*"   style "groupbox-panel-child"
 widget_class "<GtkWindow>*<GtkNotebook>"    style "notebook-panel"
 
 
-widget_class "<SugarPalette>*<SugarGroupBox>*"   style "groupbox-palette-child"
+widget_class "<SugarPaletteWindow>*<SugarGroupBox>*"   style "groupbox-palette-child"
 
 
 # SugarToolbox

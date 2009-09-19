@@ -1,0 +1,50 @@
+
+style "default"
+{
+	GtkWidget::interior-focus = 0
+	engine "sugar" { }
+}
+
+
+style "comboboxentry"
+{
+	engine "sugar" {
+		hint = "comboboxentry"
+	}
+}
+
+style "vscale"
+{
+	engine "sugar" {
+		hint = "vscale"
+	}
+}
+
+style "hscale"
+{
+	engine "sugar" {
+		hint = "hscale"
+	}
+}
+
+style "scrollbar"
+{
+	engine "sugar" {
+		hint = "scrollbar"
+	}
+}
+
+style "spinbutton"
+{
+    engine "sugar" {
+        hint = "spinbutton"
+    }
+}
+
+
+class "GtkWidget" style "default"
+class "GtkScrollBar" style "scrollbar"
+class "GtkHScale" style "hscale"
+class "GtkVScale" style "vscale"
+class "GtkSpinButton" style "spinbutton"
+widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"

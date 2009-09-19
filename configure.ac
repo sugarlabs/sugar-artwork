@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.84.1],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.85.4],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
@@ -65,5 +65,4 @@ icons/scalable/status/Makefile
 gtk/Makefile
 gtk/engine/Makefile
 gtk/theme/Makefile
-matchbox/Makefile
 ])

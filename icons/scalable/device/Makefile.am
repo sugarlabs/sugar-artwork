@@ -25,7 +25,6 @@ icon_DATA =				\
 	battery-090.svg			\
 	battery-100.icon		\
 	battery-100.svg			\
-	battery-charging-100.svg	\
 	battery-charging-000.svg	\
 	battery-charging-010.svg	\
 	battery-charging-020.svg	\

@@ -1,0 +1,61 @@
+#! /bin/sh
+
+ENGINE="`basename $0 | cut -d '_' -f 2`"
+
+# Do the test for every file starting with the prefix
+
+FAILED="0"
+
+for RC_FILE in $srcdir/gtkrcs/$ENGINE*; do
+	test -f $RC_FILE || continue
+	something_tested="1"
+	
+	export GTK2_RC_FILES=$RC_FILE
+	RC_FILE_BASENAME="`basename $RC_FILE`"
+	MY_EXEC_WRAPPER="`echo "$EXEC_WRAPPER" | sed s/THEME/$RC_FILE_BASENAME/`"
+	
+	$MY_EXEC_WRAPPER ./torturetest 2>/dev/null
+
+	if [ "$?" != "0" ]; then
+		FAILED=1;
+	fi
+done
+
+if [ "x$something_tested" = "x" ]; then
+	echo "Failed to run test for \"$ENGINE\" because no gtkrc files were found"
+	exit 77;
+fi
+
+if [ "$FAILED" != "0" ]; then
+	# This is pretty stupid, but I don't know of a better way to handle it
+	# We need to make sure that if buildin failes, all other failures don't
+	# cause an overall test failure (ie. exit 77). I know this is stupid ...
+	# Otherwise "make check" will _always_ fail with a broken GTK+.
+	if [ "$ENGINE" = "buildin" ]; then
+		echo "WARNING: The GTK+ buildin theme failed the torture test!"
+		echo "WARNING: "
+		echo "WARNING: As the other engines may fall back to the buildin theme, other tests"
+		echo "WARNING: may fail in the buildin theme that we don't control."
+		echo "WARNING: The other tests will be run, but in case of failure SKIP instead of FAIL."
+		echo "WARNING: This way 'make check' will not fail even with a broken GTK+."
+		echo "WARNING:"
+		echo "WARNING: It may also mean that there is just no X server to run the test on."
+		echo
+		touch torture_buildin-failed
+		exit 77
+	else
+		# If buildin-failed, then exit with status 77
+		if [ -f torture_buildin-failed ]; then
+			exit 77
+		else
+			exit 1
+		fi
+	fi
+else
+	# Remove the torture_buildin-failed file on success
+	if [ "$ENGINE" = "buildin" ]; then
+		test -f torture_buildin-failed && rm -f torture_buildin-failed
+	fi
+
+	exit 0
+fi
