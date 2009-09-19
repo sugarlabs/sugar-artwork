@@ -103,6 +103,9 @@ Files: AUTHORS
 	icons/scalable/actions/system-restart.svg
 	icons/scalable/actions/system-search.svg
 	icons/scalable/actions/system-shutdown.svg
+	icons/scalable/actions/toolbar-colors.svg
+	icons/scalable/actions/toolbar-edit.svg
+	icons/scalable/actions/toolbar-view.svg
 	icons/scalable/actions/transfer-from-application-octet-stream.svg
 	icons/scalable/actions/transfer-from-audio-x-generic.svg
 	icons/scalable/actions/transfer-from-image-x-generic.svg
@@ -251,9 +254,6 @@ Files: AUTHORS
 	icons/scalable/status/audio-volume-medium.svg
 	icons/scalable/status/audio-volume-muted.svg
 	icons/scalable/status/image-missing.svg
-	matchbox/Makefile.am
-	matchbox/closebutton.xpm
-	matchbox/theme.xml
 Copyright: *No copyright*
 License: UNKNOWN
 
@@ -273,7 +273,6 @@ Files: Makefile.in
 	icons/scalable/emblems/Makefile.in
 	icons/scalable/mimetypes/Makefile.in
 	icons/scalable/status/Makefile.in
-	matchbox/Makefile.in
 Copyright: 1994-2002
 License: UNKNOWN (GENERATED FILE)
 
@@ -298,11 +297,11 @@ Copyright: 2007, Red Hat, Inc
 License: LGPL-2+
 
 Files: missing
-Copyright: 1996-1997, 1999-2000, 2002-2005
+Copyright: 1996-1997, 1999-2000, 2002-2006
 License: GPL (GENERATED FILE)
 
 Files: depcomp
-Copyright: 1999-2000, 2003-2005, Free Software Foundation, Inc
+Copyright: 1999-2000, 2003-2007, Free Software
 License: GPL (GENERATED FILE)
 
 Files: debian/cdbs/1/rules/buildinfo.mk

@@ -1,12 +1,12 @@
-sugar-artwork-0.86 (0.85.4-1) UNRELEASED; urgency=low
+sugar-artwork-0.86 (0.85.4-1) unstable; urgency=low
 
-  * New upstream development Git snapshot.
+  * New upstream development release.
   * Update OLPC relation (now historic) in long description.
   * Drop versioned upstream branch in gbp.conf.
   * Simplify watch file (we want to watch too new files too).
   * Bump major version to 0.86 for binary and source package.
 
- -- Jonas Smedegaard <dr@jones.dk>  Sat, 19 Sep 2009 10:25:11 +0200
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 19 Sep 2009 10:33:10 +0200
 
 sugar-artwork-0.84 (0.84.1-3) unstable; urgency=low
 
