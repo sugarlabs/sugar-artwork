@@ -43,6 +43,7 @@ icon_DATA =				\
 	drive.svg			\
 	drive-harddisk.svg		\
 	drive-harddisk-usb.svg		\
+	media.svg			\
 	media-optical.svg		\
 	media-disk.svg			\
 	media-flash-sd.svg		\
