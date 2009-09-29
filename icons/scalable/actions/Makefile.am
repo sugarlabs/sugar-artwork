@@ -39,7 +39,7 @@ icon_DATA =						\
 	go-next.svg					\
 	go-previous-paired.svg				\
 	go-previous.svg					\
-	go-right.svg					\	
+	go-right.svg					\
 	go-up.svg					\
 	insert-image.svg				\
 	insert-table.svg				\
@@ -88,7 +88,7 @@ icon_DATA =						\
 	transfer-to.svg					\
 	transfer-to-text-uri-list.svg			\
 	transfer-to-text-x-generic.svg			\
-	transfer-to-video-x-generic.svg			\		
+	transfer-to-video-x-generic.svg			\
 	view-box.svg					\
 	view-details.svg				\
 	view-freeform.svg				\
