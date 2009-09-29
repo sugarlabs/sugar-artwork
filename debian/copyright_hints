@@ -191,6 +191,8 @@ Files: AUTHORS
 	icons/scalable/device/drive.svg
 	icons/scalable/device/media-disk.svg
 	icons/scalable/device/media-flash-sd.svg
+	icons/scalable/device/media-optical.svg
+	icons/scalable/device/media.svg
 	icons/scalable/device/microphone.svg
 	icons/scalable/device/network-mesh.icon
 	icons/scalable/device/network-mesh.svg

@@ -1,3 +1,9 @@
+sugar-artwork-0.86 (0.86.0-1) UNRELEASED; urgency=low
+
+  * New upstream stable release.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 29 Sep 2009 22:15:52 +0200
+
 sugar-artwork-0.86 (0.85.4-1) unstable; urgency=low
 
   * New upstream development release.
