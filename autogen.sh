@@ -1,3 +1,3 @@
 #!/bin/sh
 autoreconf -i
-./configure "$@"
+./configure --enable-maintainer-mode "$@"
