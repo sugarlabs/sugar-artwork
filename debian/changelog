@@ -1,3 +1,11 @@
+sugar-artwork-0.86 (0.86.0-2) unstable; urgency=medium
+
+  * Build-depend versioned on icon-slicer. Closes: bug#555963, thanks to
+    Sascha Silbe.
+  * Set urgency=medium as this fixes a bug also in testing.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 13 Nov 2009 20:13:10 +0100
+
 sugar-artwork-0.86 (0.86.0-1) unstable; urgency=low
 
   * New upstream stable release.
