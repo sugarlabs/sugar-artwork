@@ -31,7 +31,7 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include debian/cdbs/1/rules/buildinfo.mk
 
 pkgbase = sugar-artwork
-pkgbranch = 0.86
+pkgbranch = 0.88
 pkg = $(pkgbase)-$(pkgbranch)
 
 DEB_UPSTREAM_PACKAGE = $(DEB_SOURCE_PACKAGE:%-$(pkgbranch)=%)
