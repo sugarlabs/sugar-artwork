@@ -1,3 +1,9 @@
+sugar-artwork-0.88 (0.86.0-3) UNRELEASED; urgency=low
+
+  * Switch packaging to branch 0.88.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 05 Dec 2009 18:29:32 +0100
+
 sugar-artwork-0.86 (0.86.0-2) unstable; urgency=medium
 
   * Build-depend versioned on icon-slicer. Closes: bug#555963, thanks to
