@@ -48,6 +48,7 @@ icon_DATA =				\
 	media-disk.svg			\
 	media-flash-sd.svg		\
 	microphone.svg			\
+	network-gsm.svg			\
 	network-mesh.svg		\
 	network-mesh.icon		\
 	network-wired.svg		\
