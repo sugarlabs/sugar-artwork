@@ -149,6 +149,11 @@ style "default"
     GtkButtonBox::child-internal-pad-x = 0
     GtkButtonBox::child-internal-pad-y = 0
 
+    # The following line hints to gecko (and possibly other appliations)
+    # that the entry should be drawn transparently on the canvas.
+    # Without this, gecko will fill in the background of the entry.
+    GtkEntry::honors-transparent-bg-hint = 1
+
     engine "sugar" {
         line_width = $line_width
         thick_line_width = $thick_line_width
