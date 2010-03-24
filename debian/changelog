@@ -1,3 +1,16 @@
+sugar-artwork-0.88 (0.87.1-2) UNRELEASED; urgency=low
+
+  * Drop all local CDBS snippets: included with main cdbs package now.
+  * Switch to source format "3.0 (quilt)".
+  * Drop patchsys-quilt.mk snippet: superfluous with source format "3.0
+    (quilt)".
+  * Refresh and unfuzz patches.
+  * Drop build-dependencies on quilt and patchutils.
+  * Relax build-dependency on devscripts slightly, to ease backporting.
+  * Tighten build-dependency on cdbs.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 24 Mar 2010 10:10:39 +0100
+
 sugar-artwork-0.88 (0.87.1-1) unstable; urgency=low
 
   * New upstream development release.
