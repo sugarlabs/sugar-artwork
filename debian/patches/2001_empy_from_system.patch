@@ -1,4 +1,3 @@
-diff --git a/gtk/theme/Makefile.am b/gtk/theme/Makefile.am
 --- a/gtk/theme/Makefile.am
 +++ b/gtk/theme/Makefile.am
 @@ -1,9 +1,9 @@
