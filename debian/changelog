@@ -1,5 +1,6 @@
-sugar-artwork-0.88 (0.87.1-2) UNRELEASED; urgency=low
+sugar-artwork-0.88 (0.88.0-1) unstable; urgency=low
 
+  * New upstream stable release.
   * Drop all local CDBS snippets: included with main cdbs package now.
   * Switch to source format "3.0 (quilt)".
   * Drop patchsys-quilt.mk snippet: superfluous with source format "3.0
@@ -8,8 +9,14 @@ sugar-artwork-0.88 (0.87.1-2) UNRELEASED; urgency=low
   * Drop build-dependencies on quilt and patchutils.
   * Relax build-dependency on devscripts slightly, to ease backporting.
   * Tighten build-dependency on cdbs.
+  * Add git-buildpackage hint about use of bzip2-compressed tarballs.
+  * Bump standards-version to 3.8.4.
+  * Update debian/copyright:
+    + Reformat to conform to draft DEP5 rev. 135.
+    + Add GPL disclaimers.
+    + Adjust years for debian/*.
 
- -- Jonas Smedegaard <dr@jones.dk>  Wed, 24 Mar 2010 10:10:39 +0100
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 30 Mar 2010 15:54:45 +0200
 
 sugar-artwork-0.88 (0.87.1-1) unstable; urgency=low
 
