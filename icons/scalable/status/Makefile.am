@@ -7,6 +7,8 @@ icon_DATA =			\
 	audio-volume-low.svg	\
 	audio-volume-medium.svg	\
 	audio-volume-muted.svg	\
+	data-download.svg	\
+	data-upload.svg		\
 	image-missing.svg
 
 EXTRA_DIST = $(icon_DATA)

@@ -389,8 +389,12 @@ sugar_style_draw_box (GtkStyle       *style,
         SugarInfo info;
         sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
 
-        /* Fill the background with bg_color. */
-        sugar_fill_background (cr, &info);
+        /* Fill the background as it is initilized to base[NORMAL].
+         * Relevant GTK+ bug: http://bugzilla.gnome.org/show_bug.cgi?id=513471
+         * The fill only happens if no hint has been added by some application
+         * that is faking GTK+ widgets. */
+        if (!widget || !g_object_get_data(G_OBJECT (widget), "transparent-bg-hint"))
+            sugar_fill_background (cr, &info);
 
         info.cont_edges = info.ltr ? EDGE_LEFT : EDGE_RIGHT;
         sugar_remove_corners (&info.corners, info.cont_edges);
@@ -444,7 +448,8 @@ sugar_style_draw_box (GtkStyle       *style,
                 info.state = GTK_STATE_INSENSITIVE;
 
             /* Needed because the trough and bar are cached in a buffer inside GtkProgress. */
-            sugar_fill_background (cr, &info);
+            if (!widget || !g_object_get_data(G_OBJECT (widget), "transparent-bg-hint"))
+                sugar_fill_background (cr, &info);
             sugar_draw_progressbar_trough (cr, &info);
         }
     } else if (DETAIL ("bar")) {
@@ -641,7 +646,8 @@ sugar_style_draw_shadow (GtkStyle       *style,
         }
 
         /* Fill the background with bg_color. */
-        sugar_fill_background (cr, &info);
+        if (!widget || !g_object_get_data(G_OBJECT (widget), "transparent-bg-hint"))
+            sugar_fill_background (cr, &info);
         sugar_draw_entry (cr, &info);
     } else {
         gdouble line_width;
