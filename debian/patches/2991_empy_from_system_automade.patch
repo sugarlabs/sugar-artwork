@@ -1,6 +1,6 @@
 --- a/gtk/theme/Makefile.in
 +++ b/gtk/theme/Makefile.in
-@@ -357,11 +357,11 @@
+@@ -358,11 +358,11 @@
  	uninstall uninstall-am uninstall-local
  
  sugar-72.gtkrc: gtkrc.em

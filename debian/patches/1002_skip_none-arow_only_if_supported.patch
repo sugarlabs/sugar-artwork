@@ -1,6 +1,6 @@
 --- a/gtk/engine/sugar-style.c
 +++ b/gtk/engine/sugar-style.c
-@@ -676,8 +676,11 @@
+@@ -682,8 +682,11 @@
      SugarInfo *info = &arrow_info.info;
      cairo_t *cr;
  
