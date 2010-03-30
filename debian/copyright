@@ -1,6 +1,6 @@
-Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=54
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=135
 Name: sugar artwork
-Contact: Sugarlabs <sugar-devel@lists.sugarlabs.org>
+Maintainer: Sugarlabs <sugar-devel@lists.sugarlabs.org>
 	http://lists.sugarlabs.org/listinfo/sugar-devel
 	irc://irc.freenode.net/sugar
 Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork
@@ -12,52 +12,26 @@ License: LGPL-2+
 
 Files: Makefile.in
 Copyright: 1994-2008, Free Software Foundation, Inc.
-License: other-GAP
- This Makefile.in is free software; the Free Software Foundation
- gives unlimited permission to copy and/or distribute it,
- with or without modifications, as long as this notice is preserved.
+License: other-GAP-FSF
 
-Files: ./config.guess
-	./config.sub
-	./depcomp
+Files: ./config.guess,
+	./config.sub,
+	./depcomp,
 	./missing
 Copyright: 1992-2008, Free Software Foundation, Inc.
-License: GPL-2+ or other-Autoconf
+License: GPL-2+ or other-SA-Autoconf
 
 Files: ./ltmain.sh
 Copyright: 1992-2008, Free Software Foundation, Inc.
-License: GPL-2+ or other-Libtool
+License: GPL-2+ or other-SA-Libtool
 
 Files: ./install-sh
 Copyright: 1994, X Consortium
 License: MIT
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to
- deal in the Software without restriction, including without limitation the
- rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
- sell copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- .
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
- .
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
- X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
- AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
- TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- .
- Except as contained in this notice, the name of the X Consortium shall not
- be used in advertising or otherwise to promote the sale, use or other deal-
- ings in this Software without prior written authorization from the X Consor-
- tium.
 
 Files: ./configure
 Copyright: 1992-1996, 1998-2006, Free Software Foundation, Inc.
-License: other-GAP
- This configure script is free software; the Free Software Foundation
- gives unlimited permission to copy, distribute and modify it.
+License: other-GAP-configure
 
 Files: ./aclocal.m4
 Copyright: 1994-2008, Free Software Foundation, Inc.
@@ -69,52 +43,99 @@ License: GPL-2+ or other-Autoconf
  licensing terms of GPLv2+ or the license of a surrounding
  autoconf-using project.
 
-Files: gtk/theme/em.py
+Files: ./gtk/theme/em.py
 Copyright: 2002-2003, Erik Max Francis <max@alcyone.com>
-License: LGPL-any
- __license__ = 'LGPL'
- .
- On Debian systems, the complete text of the GNU Library General Public
- License (LGPL) can be found in file "/usr/share/common-licenses/LGPL".
+License: other-LGPL
 
-Files: debian/*
-Copyright: 2003-2009, Jonas Smedegaard <dr@jones.dk>
-License: GPL-2+
-
-Files: debian/cdbs/1/class/autotools*
-	debian/cdbs/1/class/makefile*
-Copyright: 2002-2003, Colin Walters <walters@debian.org>
-	2003,2008, Jonas Smedegaard <dr@jones.dk>
+Files: ./debian/*
+Copyright: 2008-2010, Jonas Smedegaard <dr@jones.dk>
 License: GPL-2+
 
 License: LGPL-2+
- This library is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2 of the License, or (at your option) any later version.
- .
- On Debian systems, the complete text of the GNU Library General Public
- License (LGPL) version 2 can be found in file
- "/usr/share/common-licenses/LGPL-2".
-
-License: GPL-2+
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
+ This library is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Lesser General Public License as published
+ by the Free Software Foundation; either version 2 of the License, or
  (at your option) any later version.
  .
- On Debian systems, the complete text of the GNU General Public License
- (GPL) version 2 can be found in file
- "/usr/share/common-licenses/GPL-2".
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of a recent release of the GNU
+ Library General Public License (LGPL) can be found in file
+ "/usr/share/common-licenses/LGPL".
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this program.  If not, see
+ <http://www.gnu.org/licenses/>.
 
-License: other-Autoconf
+License: other-LGPL
+ __license__ = 'LGPL'
+ .
+ It is assumed that the actual licensing is "GNU Library General Public
+ License" version 2 or newer, the common licensing of this project.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation; either version 2 of the License, or (at your
+ option) any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ On Debian systems, the complete text of a recent release of the GNU
+ General Public License (GPL) can be found in file
+ "/usr/share/common-licenses/GPL".
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+License: other-GAP-FSF
+ This Makefile.in is free software; the Free Software Foundation gives
+ unlimited permission to copy and/or distribute it, with or without
+ modifications, as long as this notice is preserved.
+
+License: other-GAP-configure
+ This configure script is free software; the Free Software Foundation
+ gives unlimited permission to copy, distribute and modify it.
+
+License: other-SA-Autoconf
  As a special exception to the GNU General Public License, if you
- distribute this file as part of a program that contains a
- configuration script generated by Autoconf, you may include it under
- the same distribution terms that you use for the rest of that program.
+ distribute this file as part of a program that contains a configuration
+ script generated by Autoconf, you may include it under the same
+ distribution terms that you use for the rest of that program.
 
-License: other-Libtool
- As a special exception to the GNU General Public License,
- if you distribute this file as part of a program or library that
- is built using GNU Libtool, you may include this file under the
- same distribution terms that you use for the rest of that program.
+License: other-SA-Libtool
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program or library that is built
+ using GNU Libtool, you may include this file under the same
+ distribution terms that you use for the rest of that program.
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ OTHER DEALINGS IN THE SOFTWARE.
+ .
+ Except as contained in this notice, the name of the X Consortium shall
+ not be used in advertising or otherwise to promote the sale, use or
+ other dealings in this Software without prior written authorization
+ from the X Consortium.
