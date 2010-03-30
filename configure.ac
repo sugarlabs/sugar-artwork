@@ -1,11 +1,12 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.87.1],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.88.0],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
 AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip])
 
+AM_MAINTAINER_MODE
 AM_DISABLE_STATIC
 
 PKG_PROG_PKG_CONFIG([0.19])
