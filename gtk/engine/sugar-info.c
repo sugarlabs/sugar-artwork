@@ -71,7 +71,7 @@ sugar_fill_range_info (SugarRangeInfo *range_info, gboolean trough)
     gdouble line_width = info->rc_style->line_width;
 
     if (info->widget) {
-        range_info->focused = GTK_WIDGET_HAS_FOCUS (info->widget);
+        range_info->focused = gtk_widget_has_focus (info->widget);
     } else {
         /* Fall back to unfocused and orientation from the width/height. */
         range_info->focused = FALSE;
