@@ -415,7 +415,7 @@ sugar_style_draw_box (GtkStyle       *style,
         sugar_draw_button (cr, &info);
 
         /* Spinbutton focus hack. */
-        if (widget && gtk_widget_has_focus (widget)) {
+        if (widget && GTK_WIDGET_HAS_FOCUS (widget)) {
             /* Draw a focus for the spinbutton */
             sugar_style_draw_focus (style, window, GTK_STATE_NORMAL, area, widget, detail, x, y, width, height);
         }
@@ -585,7 +585,7 @@ sugar_style_draw_flat_box (GtkStyle       *style,
 {
     /* Hack to change the entries background when it has the focus. */
     if (DETAIL ("entry_bg")) {
-        if (widget && gtk_widget_has_focus (widget)) {
+        if (widget && GTK_WIDGET_HAS_FOCUS (widget)) {
             state_type = GTK_STATE_ACTIVE;
         }
     } else if (DETAIL ("radiobutton") || DETAIL ("checkbutton")) {
@@ -638,7 +638,7 @@ sugar_style_draw_shadow (GtkStyle       *style,
         /* XXX: This fakes an ACTIVE state for the focused entry.
          *      Getting this changed in GTK+ with a style property would be cleaner
          *      as that also works for the font colors. (see also draw_flat_box) */
-        if (widget && gtk_widget_has_focus (widget)) {
+        if (widget && GTK_WIDGET_HAS_FOCUS (widget)) {
             info.state = GTK_STATE_ACTIVE;
         }
         if (widget && !gtk_widget_is_sensitive (widget)) {
