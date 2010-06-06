@@ -44,7 +44,7 @@ binary-strip/$(pkg)::
 #  * x11-apps needed only indirectly by icon-slicer. Can be dropped when
 #    icon-slicer is in Debian stable, or if depending on icon-slicer
 #    version 03-5
-CDBS_BUILD_DEPENDS += , libgtk2.0-dev, libglib2.0-dev, libcairo2-dev, python-empy, icon-slicer, icon-naming-utils (>= 0.8.2), x11-apps
+CDBS_BUILD_DEPENDS += , libgtk2.0-dev (>= 2.16), libglib2.0-dev, libcairo2-dev, python-empy, icon-slicer, icon-naming-utils (>= 0.8.2), x11-apps
 
 # Needed (always/often) at runtime
 CDBS_DEPENDS = ttf-dejavu-core
