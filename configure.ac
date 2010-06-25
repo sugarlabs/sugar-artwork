@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.88.0],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.88.1],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
@@ -10,6 +10,10 @@ AM_MAINTAINER_MODE
 AM_DISABLE_STATIC
 
 PKG_PROG_PKG_CONFIG([0.19])
+
+dnl These catch plenty of subtle bugs and miscompilation problems
+WARN_CFLAGS="-Wall -W -Werror=implicit-function-declaration"
+AC_SUBST(WARN_CFLAGS)
 
 AC_PROG_CC
 AC_HEADER_STDC
@@ -21,7 +25,7 @@ if test -z "$ICON_SLICER"; then
 fi
 
 PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0,,
-	          AC_MSG_ERROR([GTK+-2.0 is required to compile redhat-artwork]))
+	          AC_MSG_ERROR([GTK+-2.0 is required to compile sugar-artwork]))
 
 GDK_PIXBUF2_CFLAGS=`$PKG_CONFIG --cflags gdk-pixbuf-2.0`
 GDK_PIXBUF2_LIBS=`$PKG_CONFIG --libs gdk-pixbuf-2.0`
