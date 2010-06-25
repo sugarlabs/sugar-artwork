@@ -1,3 +1,20 @@
+sugar-artwork-0.88 (0.88.1-1) unstable; urgency=low
+
+  * New upstream maintenance release.
+    + Fixes undefined symbol: GTK_WIDGET_HAS_FOCUS.
+      Closes: bug#583578.
+  * Refresh patches.
+  * Improve copyright file:
+    + Tidy copyright sections.
+    + Fix replace license section MIT with Expat and other-X.
+  * Drop patch 1002 (workaround for older GTK+) as it causes other
+    errors. Instead tighten build-dependency on libgtk2.0-dev to at
+    least 2.16.
+    Closes: bug#584717, thanks to Sascha Silbe.
+  * Refer to FSF website (not postal address) in rules file header.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 25 Jun 2010 16:28:11 +0200
+
 sugar-artwork-0.88 (0.88.0-1) unstable; urgency=low
 
   * New upstream stable release.
