@@ -444,7 +444,7 @@ sugar_style_draw_box (GtkStyle       *style,
 
             sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
             
-            if (widget && !gtk_widget_is_sensitive (widget))
+            if (widget && !GTK_WIDGET_IS_SENSITIVE (widget))
                 info.state = GTK_STATE_INSENSITIVE;
 
             /* Needed because the trough and bar are cached in a buffer inside GtkProgress. */
@@ -458,7 +458,7 @@ sugar_style_draw_box (GtkStyle       *style,
 
             sugar_fill_generic_info (&info, style, state_type, shadow_type, widget, detail, x, y, width, height);
             
-            if (widget && !gtk_widget_is_sensitive (widget))
+            if (widget && !GTK_WIDGET_IS_SENSITIVE (widget))
                 info.state = GTK_STATE_INSENSITIVE;
             
             if (widget && GTK_IS_PROGRESS_BAR (widget)) {
@@ -641,7 +641,7 @@ sugar_style_draw_shadow (GtkStyle       *style,
         if (widget && GTK_WIDGET_HAS_FOCUS (widget)) {
             info.state = GTK_STATE_ACTIVE;
         }
-        if (widget && !gtk_widget_is_sensitive (widget)) {
+        if (widget && !GTK_WIDGET_IS_SENSITIVE (widget)) {
             info.state = GTK_STATE_INSENSITIVE;
         }
 
