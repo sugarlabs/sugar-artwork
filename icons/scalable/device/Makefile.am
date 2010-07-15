@@ -48,12 +48,6 @@ icon_DATA =				\
 	media-disk.svg			\
 	media-flash-sd.svg		\
 	microphone.svg			\
-	network-adhoc-1-connected.svg	\
-	network-adhoc-1.svg		\
-	network-adhoc-6-connected.svg	\
-	network-adhoc-6.svg		\
-	network-adhoc-11-connected.svg	\
-	network-adhoc-11.svg		\
 	network-gsm.svg			\
 	network-mesh.svg		\
 	network-mesh.icon		\
