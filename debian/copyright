@@ -30,7 +30,7 @@ Copyright: 1994, X Consortium
 License: Expat and other-X
 
 Files: ./configure
-Copyright: 1992-1996, 1998-2006, Free Software Foundation, Inc.
+Copyright: 1992-1996, 1998-2009, Free Software Foundation, Inc.
 License: other-GAP-configure
 
 Files: ./aclocal.m4
