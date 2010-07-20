@@ -22,7 +22,6 @@ Files: ./AUTHORS,
 	./debian/control,
 	./debian/control.in,
 	./debian/gbp.conf,
-	./debian/patches/1002_skip_none-arow_only_if_supported.patch,
 	./debian/patches/2001_empy_from_system.patch,
 	./debian/patches/2991_empy_from_system_automade.patch,
 	./debian/patches/README,
@@ -336,7 +335,7 @@ Copyright: (ISLOWER ? 'A' + ( - 'a') : )
 	(ISLOWER ? ( | 0x40) : )
 	1992-1996, 1998-2001,
 	1996-2001, 2003-2005
-	2008, Free Software Foundation, Inc
+	2009, Free Software Foundation, Inc
 License: GPL-2+
  FIXME
 

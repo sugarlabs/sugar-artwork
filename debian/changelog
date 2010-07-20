@@ -1,8 +1,12 @@
-sugar-artwork-0.90 (0.88.1-2) UNRELEASED; urgency=low
+sugar-artwork-0.90 (0.89.2-1) experimental; urgency=low
 
+  * New upstream development release.
+  * Unfuzz patches.
   * Switch packaging to upstream branch 0.90.
+  * Update copyright file: Extend some copyright years.
+  * Bump Policy compliance to standards-version to 3.9.0.
 
- -- Jonas Smedegaard <dr@jones.dk>  Wed, 21 Jul 2010 01:41:28 +0200
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 21 Jul 2010 01:47:49 +0200
 
 sugar-artwork-0.88 (0.88.1-1) unstable; urgency=low
 
