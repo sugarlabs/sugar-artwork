@@ -1,3 +1,9 @@
+sugar-artwork-0.90 (0.88.1-2) UNRELEASED; urgency=low
+
+  * Switch packaging to upstream branch 0.90.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 21 Jul 2010 01:41:28 +0200
+
 sugar-artwork-0.88 (0.88.1-1) unstable; urgency=low
 
   * New upstream maintenance release.
