@@ -90,7 +90,9 @@ icon_DATA =				\
 	speaker-muted-000.svg		\
 	speaker-muted-033.svg		\
 	speaker-muted-066.svg		\
-	speaker-muted-100.svg		
+	speaker-muted-100.svg		\
+	touchpad-capacitive.svg		\
+	touchpad-resistive.svg
 
 EXTRA_DIST = $(icon_DATA)
 
