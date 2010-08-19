@@ -11,9 +11,7 @@ AM_DISABLE_STATIC
 
 PKG_PROG_PKG_CONFIG([0.19])
 
-dnl These catch plenty of subtle bugs and miscompilation problems
-WARN_CFLAGS="-Wall -W -Werror=implicit-function-declaration"
-AC_SUBST(WARN_CFLAGS)
+GNOME_COMPILE_WARNINGS(maximum)
 
 AC_PROG_CC
 AC_HEADER_STDC
