@@ -45,13 +45,13 @@ binary-strip/$(pkg)::
 CDBS_BUILD_DEPENDS += , libgtk2.0-dev (>= 2.16), libglib2.0-dev, libcairo2-dev, python-empy, icon-slicer, icon-naming-utils (>= 0.8.2), x11-apps
 
 # Needed (always/often) at runtime
-CDBS_DEPENDS = ttf-dejavu-core
-CDBS_RECOMMENDS = sugar-$(pkgbranch), ttf-dejavu-extra
+CDBS_DEPENDS_DEFAULT = ttf-dejavu-core
+CDBS_RECOMMENDS_DEFAULT = sugar-$(pkgbranch), ttf-dejavu-extra
 
 # Ensure only one variant is installed at a time (Debian Policy 7.6.2)
-CDBS_PROVIDES = $(pkgbase)
-CDBS_CONFLICTS = $(pkgbase)
-CDBS_REPLACES = $(pkgbase)
+CDBS_PROVIDES_DEFAULT = $(pkgbase)
+CDBS_CONFLICTS_DEFAULT = $(pkgbase)
+CDBS_REPLACES_DEFAULT = $(pkgbase)
 
 # Needed for our packaging
 CDBS_BUILD_DEPENDS += , chrpath
