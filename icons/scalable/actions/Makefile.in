@@ -284,13 +284,16 @@ icon_DATA = \
 	transfer-to-text-x-generic.svg			\
 	transfer-to-video-x-generic.svg			\
 	view-box.svg					\
+	view-created.svg				\
 	view-details.svg				\
 	view-freeform.svg				\
 	view-fullscreen.svg				\
+	view-lastedit.svg				\
 	view-list.svg					\
 	view-radial.svg					\
 	view-refresh.svg				\
 	view-return.svg					\
+	view-size.svg					\
 	view-spiral.svg					\
 	view-source.svg					\
 	view-triangle.svg				\
