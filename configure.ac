@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.89.2],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.90.0],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
@@ -11,9 +11,7 @@ AM_DISABLE_STATIC
 
 PKG_PROG_PKG_CONFIG([0.19])
 
-dnl These catch plenty of subtle bugs and miscompilation problems
-WARN_CFLAGS="-Wall -W -Werror=implicit-function-declaration"
-AC_SUBST(WARN_CFLAGS)
+GNOME_COMPILE_WARNINGS(maximum)
 
 AC_PROG_CC
 AC_HEADER_STDC
