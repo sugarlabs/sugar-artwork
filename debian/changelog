@@ -1,3 +1,11 @@
+sugar-artwork-0.90 (0.90.0-1) unstable; urgency=low
+
+  * New upstream stable release.
+  * Bump Policy compliance to standards-version 3.9.1.
+  * Append _DEFAULT to deprecated CDBS variables in rules file.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 12 Oct 2010 13:54:13 +0200
+
 sugar-artwork-0.90 (0.89.2-1) experimental; urgency=low
 
   * New upstream development release.
