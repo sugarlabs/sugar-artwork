@@ -242,6 +242,12 @@ icon_DATA = \
 	media-disk.svg			\
 	media-flash-sd.svg		\
 	microphone.svg			\
+	network-adhoc-1-connected.svg	\
+	network-adhoc-1.svg		\
+	network-adhoc-6-connected.svg	\
+	network-adhoc-6.svg		\
+	network-adhoc-11-connected.svg	\
+	network-adhoc-11.svg		\
 	network-gsm.svg			\
 	network-mesh.svg		\
 	network-mesh.icon		\
@@ -278,7 +284,9 @@ icon_DATA = \
 	speaker-muted-000.svg		\
 	speaker-muted-033.svg		\
 	speaker-muted-066.svg		\
-	speaker-muted-100.svg		
+	speaker-muted-100.svg		\
+	touchpad-capacitive.svg		\
+	touchpad-resistive.svg
 
 EXTRA_DIST = $(icon_DATA)
 all: all-am
