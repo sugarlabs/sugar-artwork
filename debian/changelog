@@ -1,12 +1,13 @@
-sugar-artwork-0.90 (0.90.0-2) unstable; urgency=low
+sugar-artwork-0.92 (0.90.0-2) UNRELEASED; urgency=low
 
   * Shorten Vcs-* stanzas.
-  * Update README.source to not mention quilt: Source format 3.0 use it
-    internally, but there it is standard and thus need no mention here.
+  * Update README.source to not mention quilt: Still implicitly used but
+    not unusual for source format 3.0 and thus need no mention here.
   * Update copyright file:
     + Bump file format to draft 174 of DEP-5.
     + Fix consistently refer to GNU Lesser GPL (not Library).
   * Bump policy compliance to standards-version 3.9.2.
+  * Switch packaging to upstream branch 0.92.
 
  -- Jonas Smedegaard <dr@jones.dk>  Tue, 19 Apr 2011 17:58:08 +0200
 
