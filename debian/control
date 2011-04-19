@@ -16,9 +16,9 @@ Build-Depends: cdbs (>= 0.4.70~),
  icon-naming-utils (>= 0.8.2),
  x11-apps,
  chrpath
-Standards-Version: 3.9.1
-Vcs-Git: git://git.debian.org/git/collab-maint/sugar-artwork.git
-Vcs-Browser: http://git.debian.org/?p=collab-maint/sugar-artwork.git;a=summary
+Standards-Version: 3.9.2
+Vcs-Git: git://git.debian.org/git/collab-maint/sugar-artwork
+Vcs-Browser: http://git.debian.org/?p=collab-maint/sugar-artwork.git
 Homepage: http://wiki.sugarlabs.org/go/Sugar
 
 Package: sugar-artwork-0.90
