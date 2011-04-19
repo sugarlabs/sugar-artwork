@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.90.0],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.92.0],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
@@ -24,11 +24,6 @@ fi
 
 PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0,,
 	          AC_MSG_ERROR([GTK+-2.0 is required to compile sugar-artwork]))
-
-GDK_PIXBUF2_CFLAGS=`$PKG_CONFIG --cflags gdk-pixbuf-2.0`
-GDK_PIXBUF2_LIBS=`$PKG_CONFIG --libs gdk-pixbuf-2.0`
-AC_SUBST(GDK_PIXBUF2_CFLAGS)
-AC_SUBST(GDK_PIXBUF2_LIBS)
 
 PKG_CHECK_MODULES(ENGINE, gtk+-2.0 >= 2.0 gobject-2.0 >= 2.0 cairo >= 0.1.1)
 
