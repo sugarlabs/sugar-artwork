@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+  <!ENTITY fill_color "#FFFFFF">
+  <!ENTITY stroke_color "#010101">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" width="55" height="55">
+    <path d="M10,50 S8,50 8,48 L8,35 L27.5,24 L47,35 L47,48 S47,50 45,50 z" fill="&fill_color;" stroke="&stroke_color;" stroke-width="1.75"/>
+    <path d="M33,50 L33,39 S33,37 31,37 L24,37 S22,37 22,39 L22,50 z" fill="&stroke_color;" stroke="&stroke_color;" stroke-width="1.75"/>
+    <path d="M20,23.5 L20,10 L35,10 L35,23.5 z" fill="&stroke_color;" stroke="&stroke_color;" stroke-width="3.5"/>
+    <line x1="6" y1="33.5" x2="27.5" y2="21.5" stroke="&stroke_color;" stroke-width="6.75" stroke-linecap="round"/>
+    <line x1="49" y1="33.5" x2="27.5" y2="21.5" stroke="&stroke_color;" stroke-width="6.75" stroke-linecap="round"/>
+    <line x1="6" y1="33.5" x2="27.5" y2="21.5" stroke="&fill_color;" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="49" y1="33.5" x2="27.5" y2="21.5" stroke="&fill_color;" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M20,23.7 L20,10 L35,10 L35,23.7 z" fill="&fill_color;" stroke="none" stroke-width="2"/>
+    <path d="M18,9.25 L27.5,3.25 L37,9.25 z" fill="&stroke_color;" stroke="&stroke_color;" stroke-width="2.25"/>
+    <circle cx="27.5" cy="15.5" r="3.25" fill="&stroke_color;" stroke="none" stroke-width="2"/>
+    <path d="M24.25,19.25 L24.25,15.5 L30.75,15.5 L30.75,19.25 z" fill="&stroke_color;" stroke="none" stroke-width="2"/>
+    <line x1="24.25" y1="19" x2="30.75" y2="19" stroke="&stroke_color;" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="27.5" cy="20.5" r="1.25" fill="&stroke_color;" stroke="none" stroke-width="2"/>
+</svg>

@@ -83,6 +83,7 @@ icon_DATA =				\
 	network-wireless-connected-100.svg	\
 	network-wireless-connected-100.icon	\
 	printer.svg			\
+	school-server.svg			\
 	speaker-000.svg			\
 	speaker-033.svg			\
 	speaker-066.svg			\
