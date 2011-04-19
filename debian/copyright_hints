@@ -236,6 +236,7 @@ Files: AUTHORS
  icons/scalable/device/network-wireless-connected-100.icon
  icons/scalable/device/network-wireless-connected-100.svg
  icons/scalable/device/printer.svg
+ icons/scalable/device/school-server.svg
  icons/scalable/device/speaker-000.svg
  icons/scalable/device/speaker-033.svg
  icons/scalable/device/speaker-066.svg
@@ -350,7 +351,7 @@ Copyright: (ISLOWER ? 'A' + ( - 'a') : )
  (ISLOWER ? ( | 0x40) : )
  1992-1996, 1998-2001,
  1996-2001, 2003-2005
- 2009, Free Software Foundation, Inc
+ 2010, Free Software Foundation, Inc
 License: GPL-2+
  FIXME
 
@@ -373,16 +374,18 @@ Copyright: 1996, 1998, 2000-2005, 2008
  2003-2006, Free Software Foundation, Inc
  2004, Free Software Foundation, Inc
  2004, Scott James Remnant <scott@netsplit.com>
- 2004-2005, 2007 Free Software Foundation, Inc
+ 2004-2005, 2007, 2009, Free Software Foundation, Inc
  2004-2005, 2007-2008, Free Software Foundation, Inc
+ 2004-2005, 2007-2009, Free Software Foundation
  2004-2005, Free Software Foundation, Inc
  2006, 2008 Free Software Foundation, Inc
- 2008, Free Software Foundation, Inc
+ 2010, Free Software Foundation, Inc
 License: GPL-2+
  FIXME
 
 Files: ltmain.sh
-Copyright: 1996-2001, 2003-2007, 2008 Free Software Foundation, Inc
+Copyright: 1996-2001, 2003-2006
+ all begin with the string "--lt-"
 License: GPL-2+
  FIXME
 
