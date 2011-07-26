@@ -25,7 +25,7 @@ sugar.stamp: $(sugar_images) $(THEMEGEN) sugar.cursortheme
 
 clean-local:
 	rm -rf cursors
-	rm sugar.stamp
+	rm -f sugar.stamp
 
 install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/sugar/cursors/
