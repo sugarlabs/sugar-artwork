@@ -22,10 +22,14 @@ if test -z "$ICON_SLICER"; then
     AC_MSG_ERROR([icon-slicer is required])
 fi
 
-PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0,,
+PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.16.0,,
 	          AC_MSG_ERROR([GTK+-2.0 is required to compile sugar-artwork]))
 
-PKG_CHECK_MODULES(ENGINE, gtk+-2.0 >= 2.0 gobject-2.0 >= 2.0 cairo >= 0.1.1)
+PKG_CHECK_MODULES(GTK3, gtk+-3.0 >= 3.0.0,,
+	          AC_MSG_ERROR([GTK+-3.0 is required to compile sugar-artwork]))
+
+PKG_CHECK_MODULES(ENGINE, gtk+-2.0 >= 2.16 gobject-2.0 >= 2.0 cairo >= 0.1.1)
+PKG_CHECK_MODULES(ENGINE3, gtk+-3.0 >= 3.0 gobject-2.0 >= 2.0 cairo >= 0.1.1)
 
 GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
 AC_SUBST(GTK_VERSION)
@@ -63,4 +67,8 @@ icons/scalable/status/Makefile
 gtk/Makefile
 gtk/engine/Makefile
 gtk/theme/Makefile
+gtk3/Makefile
+gtk3/engine/Makefile
+gtk3/theme/Makefile
+gtk3/theme/assets/Makefile
 ])

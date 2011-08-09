@@ -1,0 +1,4 @@
+g_module_check_init
+theme_init
+theme_exit
+create_engine
