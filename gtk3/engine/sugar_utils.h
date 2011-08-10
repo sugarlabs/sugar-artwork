@@ -1,4 +1,4 @@
-/* Adwaita - a GTK+ engine
+/* Sugar - a GTK+ engine
  *
  * Copyright (C) 2011 Carlos Garnacho <carlosg@gnome.org>
  * Copyright (C) 2011 Red Hat, Inc.
@@ -25,8 +25,8 @@
 
 #include <gtk/gtk.h>
 
-#ifndef __ADWAITA_UTILS_H__
-#define __ADWAITA_UTILS_H__
+#ifndef __SUGAR_UTILS_H__
+#define __SUGAR_UTILS_H__
 
 enum {
   SIDE_LEFT   = 1,
@@ -38,18 +38,18 @@ enum {
 
 gboolean
 sugar_render_from_assets_common (GtkThemingEngine *engine,
-                                   cairo_t *cr,
-                                   gdouble x,
-                                   gdouble y,
-                                   gdouble width,
-                                   gdouble height);
+                                 cairo_t *cr,
+                                 gdouble x,
+                                 gdouble y,
+                                 gdouble width,
+                                 gdouble height);
 
 void
 sugar_trim_allocation_for_scale (GtkThemingEngine *engine,
-                                   gdouble *x,
-                                   gdouble *y,
-                                   gdouble *width,
-                                   gdouble *height);
+                                 gdouble *x,
+                                 gdouble *y,
+                                 gdouble *width,
+                                 gdouble *height);
 
 void
 style_pattern_set_matrix (cairo_pattern_t *pattern,
@@ -77,4 +77,4 @@ _cairo_round_rectangle_sides (cairo_t          *cr,
                               guint             sides,
                               GtkJunctionSides  junction);
 
-#endif /* __ADWAITA_UTILS_H__ */
+#endif /* __SUGAR_UTILS_H__ */

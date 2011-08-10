@@ -1,4 +1,4 @@
-/* Adwaita - a GTK+ engine
+/* Sugar - a GTK+ engine
  *
  * Copyright (C) 2011 Carlos Garnacho <carlosg@gnome.org>
  * Copyright (C) 2011 Red Hat, Inc.
@@ -27,10 +27,10 @@
 
 void
 sugar_trim_allocation_for_scale (GtkThemingEngine *engine,
-				   gdouble *x,
-				   gdouble *y,
-				   gdouble *width,
-				   gdouble *height)
+				 gdouble *x,
+				 gdouble *y,
+				 gdouble *width,
+				 gdouble *height)
 {
   const GtkWidgetPath *path;
 
@@ -205,11 +205,11 @@ style_pattern_set_matrix (cairo_pattern_t *pattern,
 
 gboolean
 sugar_render_from_assets_common (GtkThemingEngine *engine,
-                                   cairo_t *cr,
-                                   gdouble x,
-                                   gdouble y,
-                                   gdouble width,
-                                   gdouble height)
+                                 cairo_t *cr,
+                                 gdouble x,
+                                 gdouble y,
+                                 gdouble width,
+                                 gdouble height)
 {
   gboolean retval = FALSE;
   GtkStateFlags state;

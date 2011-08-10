@@ -1,4 +1,4 @@
-/* Adwaita - a GTK+ engine
+/* Sugar - a GTK+ engine
  *
  * Copyright (C) 2011 Carlos Garnacho <carlosg@gnome.org>
  * Copyright (C) 2011 Red Hat, Inc.
@@ -30,32 +30,32 @@
 
 #include "sugar_utils.h"
 
-#define ADWAITA_NAMESPACE "sugar"
+#define SUGAR_NAMESPACE "sugar"
 
-typedef struct _AdwaitaEngine AdwaitaEngine;
-typedef struct _AdwaitaEngineClass AdwaitaEngineClass;
+typedef struct _SugarEngine SugarEngine;
+typedef struct _SugarEngineClass SugarEngineClass;
 
-struct _AdwaitaEngine
+struct _SugarEngine
 {
   GtkThemingEngine parent_object;
 };
 
-struct _AdwaitaEngineClass
+struct _SugarEngineClass
 {
   GtkThemingEngineClass parent_class;
 };
 
-#define ADWAITA_TYPE_ENGINE		 (sugar_engine_get_type ())
-#define ADWAITA_ENGINE(object)		 (G_TYPE_CHECK_INSTANCE_CAST ((object), ADWAITA_TYPE_ENGINE, AdwaitaEngine))
-#define ADWAITA_ENGINE_CLASS(klass)	 (G_TYPE_CHECK_CLASS_CAST ((klass), ADWAITA_TYPE_ENGINE, AdwaitaEngineClass))
-#define ADWAITA_IS_ENGINE(object)	 (G_TYPE_CHECK_INSTANCE_TYPE ((object), ADWAITA_TYPE_ENGINE))
-#define ADWAITA_IS_ENGINE_CLASS(klass)	 (G_TYPE_CHECK_CLASS_TYPE ((klass), ADWAITA_TYPE_ENGINE))
-#define ADWAITA_ENGINE_GET_CLASS(obj)	 (G_TYPE_INSTANCE_GET_CLASS ((obj), ADWAITA_TYPE_ENGINE, AdwaitaEngineClass))
+#define SUGAR_TYPE_ENGINE		 (sugar_engine_get_type ())
+#define SUGAR_ENGINE(object)		 (G_TYPE_CHECK_INSTANCE_CAST ((object), SUGAR_TYPE_ENGINE, SugarEngine))
+#define SUGAR_ENGINE_CLASS(klass)	 (G_TYPE_CHECK_CLASS_CAST ((klass), SUGAR_TYPE_ENGINE, SugarEngineClass))
+#define SUGAR_IS_ENGINE(object)	 (G_TYPE_CHECK_INSTANCE_TYPE ((object), SUGAR_TYPE_ENGINE))
+#define SUGAR_IS_ENGINE_CLASS(klass)	 (G_TYPE_CHECK_CLASS_TYPE ((klass), SUGAR_TYPE_ENGINE))
+#define SUGAR_ENGINE_GET_CLASS(obj)	 (G_TYPE_INSTANCE_GET_CLASS ((obj), SUGAR_TYPE_ENGINE, SugarEngineClass))
 
 GType sugar_engine_get_type	    (void) G_GNUC_CONST;
 void  sugar_engine_register_types (GTypeModule *module);
 
-G_DEFINE_DYNAMIC_TYPE (AdwaitaEngine, sugar_engine, GTK_TYPE_THEMING_ENGINE)
+G_DEFINE_DYNAMIC_TYPE (SugarEngine, sugar_engine, GTK_TYPE_THEMING_ENGINE)
 
 void
 sugar_engine_register_types (GTypeModule *module)
@@ -64,17 +64,17 @@ sugar_engine_register_types (GTypeModule *module)
 }
 
 static void
-sugar_engine_init (AdwaitaEngine *self)
+sugar_engine_init (SugarEngine *self)
 {
 }
 
 static void
 sugar_engine_render_arrow (GtkThemingEngine *engine,
-                             cairo_t          *cr,
-                             gdouble           angle,
-                             gdouble           x,
-                             gdouble           y,
-                             gdouble           size)
+                           cairo_t          *cr,
+                           gdouble           angle,
+                           gdouble           x,
+                           gdouble           y,
+                           gdouble           size)
 {
   double line_width;
   GtkStateFlags state;
@@ -125,11 +125,11 @@ sugar_engine_render_arrow (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_focus (GtkThemingEngine *engine,
-                             cairo_t          *cr,
-                             gdouble           x,
-                             gdouble           y,
-                             gdouble           width,
-                             gdouble           height)
+                           cairo_t          *cr,
+                           gdouble           x,
+                           gdouble           y,
+                           gdouble           width,
+                           gdouble           height)
 {
   GdkRGBA *fill_color, *border_color = NULL;
   cairo_pattern_t *pattern = NULL;
@@ -249,11 +249,11 @@ render_check_menuitem (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_check (GtkThemingEngine *engine,
-                             cairo_t          *cr,
-                             gdouble           x,
-                             gdouble           y,
-                             gdouble           width,
-                             gdouble           height)
+                           cairo_t          *cr,
+                           gdouble           x,
+                           gdouble           y,
+                           gdouble           width,
+                           gdouble           height)
 {
   gboolean res;
 
@@ -311,11 +311,11 @@ render_radio_menuitem (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_option (GtkThemingEngine *engine,
-                              cairo_t          *cr,
-                              gdouble           x,
-                              gdouble           y,
-                              gdouble           width,
-                              gdouble           height)
+                            cairo_t          *cr,
+                            gdouble           x,
+                            gdouble           y,
+                            gdouble           width,
+                            gdouble           height)
 {
   gboolean res;
 
@@ -470,12 +470,12 @@ render_notebook_extension (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_extension (GtkThemingEngine *engine,
-                                 cairo_t          *cr,
-                                 gdouble           x,
-                                 gdouble           y,
-                                 gdouble           width,
-                                 gdouble           height,
-                                 GtkPositionType   gap_side)
+                               cairo_t          *cr,
+                               gdouble           x,
+                               gdouble           y,
+                               gdouble           width,
+                               gdouble           height,
+                               GtkPositionType   gap_side)
 {
   GtkStateFlags state;
 
@@ -658,16 +658,16 @@ render_frame_default (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_frame (GtkThemingEngine *engine,
-                             cairo_t          *cr,
-                             gdouble           x,
-                             gdouble           y,
-                             gdouble           width,
-                             gdouble           height)
+                           cairo_t          *cr,
+                           gdouble           x,
+                           gdouble           y,
+                           gdouble           width,
+                           gdouble           height)
 {
   const GtkWidgetPath *path;
   GtkRegionFlags flags = 0;
   gint len;
-  GtkStateFlags state;        
+  GtkStateFlags state;
 
   state = gtk_theming_engine_get_state (engine);
 
@@ -713,8 +713,8 @@ sugar_engine_render_frame (GtkThemingEngine *engine,
   else
     {
       sugar_trim_allocation_for_scale (engine,
-                                         &x, &y,
-                                         &width, &height);
+                                       &x, &y,
+                                       &width, &height);
       render_frame_default (engine, cr, x, y, width, height);
     }
 
@@ -851,11 +851,11 @@ render_inset_lines (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_background (GtkThemingEngine *engine,
-                                  cairo_t          *cr,
-                                  gdouble           x,
-                                  gdouble           y,
-                                  gdouble           width,
-                                  gdouble           height)
+                                cairo_t          *cr,
+                                gdouble           x,
+                                gdouble           y,
+                                gdouble           width,
+                                gdouble           height)
 {
   if (gtk_theming_engine_has_class (engine, GTK_STYLE_CLASS_MENUITEM) &&
       gtk_theming_engine_has_class (engine, GTK_STYLE_CLASS_MENUBAR))
@@ -865,8 +865,8 @@ sugar_engine_render_background (GtkThemingEngine *engine,
     }
 
   sugar_trim_allocation_for_scale (engine,
-                                     &x, &y,
-                                     &width, &height);
+                                   &x, &y,
+                                   &width, &height);
 
   GTK_THEMING_ENGINE_CLASS (sugar_engine_parent_class)->render_background
     (engine, cr, x, y,
@@ -877,11 +877,11 @@ sugar_engine_render_background (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_expander (GtkThemingEngine *engine,
-                                cairo_t          *cr,
-                                gdouble           x,
-                                gdouble           y,
-                                gdouble           width,
-                                gdouble           height)
+                              cairo_t          *cr,
+                              gdouble           x,
+                              gdouble           y,
+                              gdouble           width,
+                              gdouble           height)
 {
   GdkRGBA fg;
   GtkStateFlags state;
@@ -940,11 +940,11 @@ sugar_engine_render_expander (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_activity (GtkThemingEngine *engine,
-                                cairo_t          *cr,
-                                gdouble           x,
-                                gdouble           y,
-                                gdouble           width,
-                                gdouble           height)
+                              cairo_t          *cr,
+                              gdouble           x,
+                              gdouble           y,
+                              gdouble           width,
+                              gdouble           height)
 {
   GtkStateFlags state;
 
@@ -952,8 +952,8 @@ sugar_engine_render_activity (GtkThemingEngine *engine,
   state = gtk_theming_engine_get_state (engine);
 
   sugar_trim_allocation_for_scale (engine,
-                                     &x, &y,
-                                     &width, &height);
+                                   &x, &y,
+                                   &width, &height);
 
   GTK_THEMING_ENGINE_CLASS (sugar_engine_parent_class)->render_activity
     (engine, cr,
@@ -1126,12 +1126,12 @@ render_switch_lines (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_slider (GtkThemingEngine *engine,
-                              cairo_t          *cr,
-                              gdouble           x,
-                              gdouble           y,
-                              gdouble           width,
-                              gdouble           height,
-                              GtkOrientation    orientation)
+                            cairo_t          *cr,
+                            gdouble           x,
+                            gdouble           y,
+                            gdouble           width,
+                            gdouble           height,
+                            GtkOrientation    orientation)
 {
   const GtkWidgetPath *path;
 
@@ -1221,11 +1221,11 @@ sugar_engine_render_slider (GtkThemingEngine *engine,
 
 static void
 sugar_engine_render_handle (GtkThemingEngine *engine,
-                              cairo_t          *cr,
-                              gdouble           x,
-                              gdouble           y,
-                              gdouble           width,
-                              gdouble           height)
+                            cairo_t          *cr,
+                            gdouble           x,
+                            gdouble           y,
+                            gdouble           width,
+                            gdouble           height)
 {
   if (gtk_theming_engine_has_class (engine, GTK_STYLE_CLASS_GRIP))
     {
@@ -1426,8 +1426,8 @@ colorshift_pixbuf (GdkPixbuf *src,
 
 static GdkPixbuf *
 sugar_engine_render_icon_pixbuf (GtkThemingEngine    *engine,
-                                   const GtkIconSource *source,
-                                   GtkIconSize          size)
+                                 const GtkIconSource *source,
+                                 GtkIconSize          size)
 {
   GdkPixbuf *base_pixbuf;
   GdkPixbuf *scaled;
@@ -1508,11 +1508,11 @@ sugar_engine_render_icon_pixbuf (GtkThemingEngine    *engine,
 
 static void
 sugar_engine_render_line (GtkThemingEngine *engine,
-                            cairo_t *cr,
-                            gdouble x0,
-                            gdouble y0,
-                            gdouble x1,
-                            gdouble y1)
+                          cairo_t *cr,
+                          gdouble x0,
+                          gdouble y0,
+                          gdouble x1,
+                          gdouble y1)
 {
   const GtkWidgetPath *path;
 
@@ -1551,7 +1551,7 @@ sugar_engine_render_line (GtkThemingEngine *engine,
 }
 
 static void
-sugar_engine_class_init (AdwaitaEngineClass *klass)
+sugar_engine_class_init (SugarEngineClass *klass)
 {
   GtkThemingEngineClass *engine_class = GTK_THEMING_ENGINE_CLASS (klass);
 
@@ -1569,73 +1569,73 @@ sugar_engine_class_init (AdwaitaEngineClass *klass)
   engine_class->render_icon_pixbuf = sugar_engine_render_icon_pixbuf;
   engine_class->render_line = sugar_engine_render_line;
 
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("focus-border-color",
                                                             "Focus border color",
                                                             "Focus border color",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_int ("focus-border-radius",
                                                           "Focus border radius",
                                                           "Focus border radius",
                                                           0, G_MAXINT, 0,
                                                           0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("focus-border-gradient",
                                                             "Focus border gradient",
                                                             "Focus border gradient",
                                                             CAIRO_GOBJECT_TYPE_PATTERN, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("focus-fill-color",
                                                             "Focus fill color",
                                                             "Focus fill color",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("selected-tab-color",
                                                             "Selected tab color",
                                                             "Selected tab color",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("border-gradient",
                                                             "Border gradient",
                                                             "Border gradient",
                                                             CAIRO_GOBJECT_TYPE_PATTERN, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boolean ("focus-border-dashes",
                                                               "Focus border uses dashes",
                                                               "Focus border uses dashes",
                                                               FALSE, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("menuitem-arrow-color",
                                                             "Menuitem arrow color",
                                                             "Menuitem arrow color",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("switch-grip-color",
                                                             "Switch grip color",
                                                             "Switch grip color",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("inset-left",
                                                             "Inset line left",
                                                             "Inset line left",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("inset-right",
                                                             "Inset line right",
                                                             "Inset line right",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("inset-top",
                                                             "Inset line top",
                                                             "Inset line top",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("inset-bottom",
                                                             "Inset line bottom",
                                                             "Inset line bottom",
                                                             GDK_TYPE_RGBA, 0));
-  gtk_theming_engine_register_property (ADWAITA_NAMESPACE, NULL,
+  gtk_theming_engine_register_property (SUGAR_NAMESPACE, NULL,
                                         g_param_spec_boxed ("progressbar-pattern",
                                                             "Progressbar pattern",
                                                             "Progressbar pattern",
@@ -1643,7 +1643,7 @@ sugar_engine_class_init (AdwaitaEngineClass *klass)
 }
 
 static void
-sugar_engine_class_finalize (AdwaitaEngineClass *klass)
+sugar_engine_class_finalize (SugarEngineClass *klass)
 {
 }
 
@@ -1661,7 +1661,7 @@ theme_exit (void)
 G_MODULE_EXPORT GtkThemingEngine *
 create_engine (void)
 {
-  return GTK_THEMING_ENGINE (g_object_new (ADWAITA_TYPE_ENGINE,
+  return GTK_THEMING_ENGINE (g_object_new (SUGAR_TYPE_ENGINE,
                                            "name", "sugar",
                                            NULL));
 }
