@@ -740,6 +740,16 @@ style "parent-bg"
     }
 }
 
+style "sugartimeout"
+{
+    bg[NORMAL] = $white
+    fg[NORMAL] = $button_grey
+    bg[ACTIVE] = $toolbar_grey
+    fg[ACTIVE] = $white
+    bg[PRELIGHT] = $white
+    fg[PRELIGHT] = $button_grey
+}
+
 ####################################################################
 # Default style, setting some generic options and style properties
 ####################################################################
@@ -852,6 +862,9 @@ widget_class "*<GtkToolbar>"              style "toolbar"
 
 # Tray
 widget_class "*<SugarTrayIcon>*" style "trayicon"
+
+# Timeout Icon
+widget_class "*<SugarTimeoutIcon>*" style "sugartimeout"
 
 # Widgets that should get the background color from the parent
 widget_class "*<GtkEventBox>"        style "parent-bg"
