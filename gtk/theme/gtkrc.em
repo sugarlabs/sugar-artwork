@@ -813,6 +813,7 @@ widget_class "<SugarPaletteWindow>*<SugarGroupBox>*"   style "groupbox-palette-c
 widget_class "*<SugarToolbox>*"        style "toolbox"
 widget_class "*<GtkToolbar>*"          style "toolbox"
 widget_class "*<SugarToolbox>.<GtkNotebook>" style "toolbox-notebook"
+widget_class "*<BrowserNotebook>*"     style "toolbox"
 
 
 ####################################################################
