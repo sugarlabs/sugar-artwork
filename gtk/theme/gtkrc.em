@@ -770,6 +770,9 @@ widget_class "*<SugarAlert>*"              style "black-bg-child"
 widget_class "*<SugarSectionView>"       style "white-bg"
 widget_class "*<SugarSectionView>*"      style "white-bg-child"
 
+widget_class "*<SugarIntroWindow>"       style "white-bg"
+widget_class "*<SugarIntroWindow>*"      style "white-bg-child"
+
 
 # The notebook is very high, so that everything is overriden
 # Only the color of the tab labels needs to be modified inside the
