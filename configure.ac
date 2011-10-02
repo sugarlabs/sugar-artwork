@@ -70,5 +70,4 @@ gtk/theme/Makefile
 gtk3/Makefile
 gtk3/engine/Makefile
 gtk3/theme/Makefile
-gtk3/theme/assets/Makefile
 ])

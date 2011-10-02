@@ -1,3 +1,13 @@
+
+/* Sugar colors */
+@define-color black #000000;
+@define-color toolbar_grey #282828;
+@define-color button_grey /*#ff0000*/ #808080 ;
+@define-color selection_grey #A6A6A6;
+@define-color panel_grey #C0C0C0;
+@define-color text_field_grey #E5E5E5;
+@define-color white #FFFFFF;
+
 /* Default color scheme */
 @define-color base_color #ffffff;
 @define-color bg_color #ededed;
@@ -107,5 +117,5 @@
 
 @define-color expander_row_selected_color #acccee;
 
-@import url("gtk-widgets-assets.css");
 @import url("gtk-widgets.css");
+
