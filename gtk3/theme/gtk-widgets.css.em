@@ -358,14 +358,29 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
 }
 
 .scrollbar {
-    -GtkScrollbar-slider-width: $subcell_size;
-    -GtkScrollbar-trough-border: 0;
-    -GtkScrollbar-stepper-spacing: 0;
+    -GtkRange-slider-width: $subcell_size;
+    -GtkRange-trough-border: 0;
+    -GtkRange-stepper-size: 0;
     -GtkScrollbar-min-slider-length: $(3*subcell_size);
     -GtkScrollbar-has-forward-stepper: 0;
     -GtkScrollbar-has-backward-stepper: 0;
     -GtkScrollbar-has-secondary-forward-stepper: 0;
     -GtkScrollbar-has-secondary-backward-stepper: 0;
+}
+
+.scrollbar.trough {
+    background-color: @button_grey;
+    border-width: 0;
+}
+
+.scrollbar.slider {
+    background-color: @white;
+    border-radius: $(2*subcell_size);
+    border-width: 0;
+}
+
+.scrollbar.slider:active {
+    background-color: @text_field_grey;
 }
 
 /* Scrollbar padding hack? What was that about? */
