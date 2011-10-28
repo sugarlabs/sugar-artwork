@@ -385,6 +385,22 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
 
 /* Scrollbar padding hack? What was that about? */
 
+GtkProgressBar.progressbar {
+    background-color: @white;
+    border-color: @white;
+    border-radius: 10;
+    border-style: solid;
+    border-width: 0;
+}
+
+GtkProgressBar.trough {
+    background-color: alpha (@black, 0.0);
+    border-style: solid;
+    border-radius: 10;
+    border-color: @button_grey;
+    border-width: 2;
+}
+
 /*
 
 # hints for the trough padding hacks
