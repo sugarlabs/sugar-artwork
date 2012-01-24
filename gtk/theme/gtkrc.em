@@ -740,16 +740,6 @@ style "parent-bg"
     }
 }
 
-style "sugartimeout"
-{
-    bg[NORMAL] = $white
-    fg[NORMAL] = $button_grey
-    bg[ACTIVE] = $toolbar_grey
-    fg[ACTIVE] = $white
-    bg[PRELIGHT] = $white
-    fg[PRELIGHT] = $button_grey
-}
-
 ####################################################################
 # Default style, setting some generic options and style properties
 ####################################################################
@@ -769,14 +759,6 @@ widget_class "*<SugarAlert>*"              style "black-bg-child"
 
 widget_class "*<SugarSectionView>"       style "white-bg"
 widget_class "*<SugarSectionView>*"      style "white-bg-child"
-
-widget_class "*<SugarIntroWindow>"       style "white-bg"
-widget_class "*<SugarIntroWindow>*"      style "white-bg-child"
-
-# Naming alert needs white background for main window and for entry widget,
-# but other backgrounds must be left grey as they are used for drawing borders
-widget_class "*<SugarNamingAlert>"              style "white-bg"
-widget_class "*<SugarNamingAlert>*<GtkEntry>"   style "white-bg-child"
 
 
 # The notebook is very high, so that everything is overriden
@@ -821,7 +803,6 @@ widget_class "<SugarPaletteWindow>*<SugarGroupBox>*"   style "groupbox-palette-c
 widget_class "*<SugarToolbox>*"        style "toolbox"
 widget_class "*<GtkToolbar>*"          style "toolbox"
 widget_class "*<SugarToolbox>.<GtkNotebook>" style "toolbox-notebook"
-widget_class "*<BrowserNotebook>*"     style "toolbox"
 
 
 ####################################################################
@@ -871,9 +852,6 @@ widget_class "*<GtkToolbar>"              style "toolbar"
 
 # Tray
 widget_class "*<SugarTrayIcon>*" style "trayicon"
-
-# Timeout Icon
-widget_class "*<SugarTimeoutIcon>*" style "sugartimeout"
 
 # Widgets that should get the background color from the parent
 widget_class "*<GtkEventBox>"        style "parent-bg"
