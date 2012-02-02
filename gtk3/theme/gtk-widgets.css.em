@@ -334,6 +334,10 @@ SugarAlert *:insensitive {
     background-color: @black;
 }
 
+/* Tray */
+
+SugarHTray * , SugarVTray * { background-color: @toolbar_grey;}
+
 /* Menus and palettes */
 
 SugarPaletteWindowWidget.background {
