@@ -219,7 +219,7 @@ GtkToggleButton.button:active GtkLabel {
     border-style: none;
     border-radius: 0;
     padding: 0px;
-    background-color: @text_field_grey;
+    background-color: @white;
 }
 
 .entry {
@@ -344,7 +344,7 @@ SugarPaletteWindowWidget.background {
     background-color: @black;
 }
 
-SugarPaletteWindowWidget * {
+SugarPaletteWindowWidget GtkLabel {
     color: @white;
 }
 
