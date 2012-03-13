@@ -58,10 +58,10 @@ icon_large = icon_base * 5
     color: @black;
 
     border-color: none;
-    border-radius: 0;
+    border-radius: 0px;
     border-style: none;
 
-    padding: $thickness;
+    padding: $(thickness)px;
 
     /* A lot of these will probably need to be changed, but this has to
        be done when the exact sizes are known */
@@ -154,7 +154,7 @@ icon_large = icon_base * 5
     -GtkButton-inner-border: 0 0 0 0;
     padding: $(border)px $(border)px $(border)px $(border)px;
 
-    border-radius: $(2*subcell_size);
+    border-radius: $(2*subcell_size)px;
     background-color: @button_grey;
     color: @white;
 }
@@ -164,7 +164,7 @@ icon_large = icon_base * 5
 }
 
 .button:focused {
-    border-width: $(thickness);
+    border-width: $(thickness)px;
     border-color: @white;
     border-style: solid;
 }
@@ -217,14 +217,14 @@ GtkToggleButton.button:active GtkLabel {
 .view {
     border-width: 0px;
     border-style: none;
-    border-radius: 0;
+    border-radius: 0px;
     padding: 0px;
     background-color: @white;
 }
 
 .entry {
-    border-radius: $(2*subcell_size);
-    border-width: $(thickness);
+    border-radius: $(2*subcell_size)px;
+    border-width: $(thickness)px;
     border-color: @selection_grey;
     border-style: solid;
     background-color: @text_field_grey;
@@ -235,8 +235,8 @@ GtkToggleButton.button:active GtkLabel {
 }
 
 .entry.progressbar {
-    border-radius: $(2 * subcell_size);
-    border-width: $(thickness);
+    border-radius: $(2 * subcell_size)px;
+    border-width: $(thickness)px;
     background-color: @selection_grey;
 }
 
@@ -279,7 +279,7 @@ SugarPaletteWindowWidget GtkToggleButton.button:active {
 
 .notebook {
     background-color: @selection_grey;
-    border-width: 0;
+    border-width: 0px;
     -GtkNotebook-tab-overlap: -2;
     -GtkNotebook-tab-curvature: $default_padding;
 }
@@ -301,7 +301,7 @@ BrowserNotebook.notebook tab {
 }
 
 BrowserNotebook.notebook tab .button {
-    border-radius: $toolbutton_padding;
+    border-radius: $(toolbutton_padding)px;
 }
 
 BrowserNotebook.notebook tab:active {
@@ -380,8 +380,8 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     -GtkMenu-horizontal-offset : 0;
     -GtkMenu-vertical-offset   : 0;
 
-    padding: 0;
-    border-width: 2;
+    padding: 0px;
+    border-width: 2px;
     border-color: @button_grey;
     border-style: solid;
 }
@@ -410,7 +410,7 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
 }
 
 GtkMenuItem {
-    padding: $subcell_size $((subcell_size * 3 - font_height) / 2);
+    padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
 }
 
 /* Scrollbars */
@@ -428,13 +428,13 @@ GtkMenuItem {
 
 .scrollbar.trough {
     background-color: @button_grey;
-    border-width: 0;
+    border-width: 0px;
 }
 
 .scrollbar.slider {
     background-color: @white;
-    border-radius: $(2*subcell_size);
-    border-width: 0;
+    border-radius: $(2*subcell_size)px;
+    border-width: 0px;
 }
 
 .scrollbar.slider:active {
@@ -448,17 +448,17 @@ GtkMenuItem {
 GtkProgressBar.progressbar {
     background-color: @white;
     border-color: @white;
-    border-radius: 10;
+    border-radius: 10px;
     border-style: solid;
-    border-width: 0;
+    border-width: 0px;
 }
 
 GtkProgressBar.trough {
     background-color: alpha (@black, 0.0);
     border-style: solid;
-    border-radius: 10;
+    border-radius: 10px;
     border-color: @button_grey;
-    border-width: 2;
+    border-width: 2px;
 }
 
 /* Separators */
@@ -472,7 +472,7 @@ GtkVSeparator, GtkHSeparator,
 
 .toolbar GtkToolButton .button,
 SugarPaletteWindowWidget GtkToolButton .button {
-    border-radius: $toolbutton_padding;
+    border-radius: $(toolbutton_padding)px;
 }
 
 .toolbar GtkToolButton .button:prelight,
@@ -494,9 +494,9 @@ GtkScale {
 
 GtkScale.trough {
     border-style: solid;
-    border-radius: 30;
+    border-radius: 30px;
     border-color: @button_grey;
-    border-width: 2;
+    border-width: 2px;
 }
 
 GtkScale.trough:focused {
@@ -581,6 +581,6 @@ GtkCheckButton:prelight {
     color: @white;
     /* outline of the toolbarbutton when palette is expanded */
     border-style: solid;
-    border-width: 2;
+    border-width: 2px;
     border-color: @button_grey;
 }
