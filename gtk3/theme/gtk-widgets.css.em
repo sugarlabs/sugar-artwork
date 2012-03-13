@@ -57,7 +57,7 @@ icon_large = icon_base * 5
     background-color: @button_grey;
     color: @black;
 
-    border-color: none;
+    border-color: transparent;
     border-radius: 0px;
     border-style: none;
 
