@@ -223,7 +223,7 @@ GtkToggleButton.button:active GtkLabel {
 }
 
 .entry {
-    border-radius: $(2*subcell_size)px;
+    border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
     border-color: @selection_grey;
     border-style: solid;
@@ -231,7 +231,7 @@ GtkToggleButton.button:active GtkLabel {
     color: @black;
     ${ entry_ythickness = my_ceil(0.2 * (subcell_size*3.0/2.0 - thickness) + thickness) }
     ${ entry_xthickness = my_ceil(0.32 * (subcell_size*3.0/2.0 - thickness) + thickness) }
-    -GtkEntry-inner-border: $(2 * max(subcell_size - entry_xthickness, 0)), $(2 * max(subcell_size - entry_xthickness, 0)), $(2 * max(my_ceil((3*subcell_size - font_height - entry_ythickness*2)/2.0),0)), $(2 * max(my_floor((3*subcell_size - font_height - entry_ythickness*2)/2.0), 0))
+    padding: $(2 * max(my_ceil((3*subcell_size - font_height - entry_ythickness*2)/2.0),0))px $(2 * max(subcell_size - entry_xthickness, 0))px $(2 * max(my_floor((3*subcell_size - font_height - entry_ythickness*2)/2.0), 0))px $(2 * max(subcell_size - entry_xthickness, 0))px;
 }
 
 .entry.progressbar {
