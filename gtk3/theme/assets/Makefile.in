@@ -34,8 +34,9 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = icons/scalable/emblems
-DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+subdir = gtk3/theme/assets
+DIST_COMMON = $(dist_sugar100_DATA) $(dist_sugar72_DATA) \
+	$(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -67,8 +68,8 @@ am__nobase_list = $(am__nobase_strip_setup); \
 am__base_list = \
   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
-am__installdirs = "$(DESTDIR)$(icondir)"
-DATA = $(icon_DATA)
+am__installdirs = "$(DESTDIR)$(sugar100dir)" "$(DESTDIR)$(sugar72dir)"
+DATA = $(dist_sugar100_DATA) $(dist_sugar72_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -199,21 +200,22 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-iconsize = scalable
-category = emblems
-icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
-icon_DATA = \
-	emblem-busy.svg		\
-	emblem-charging.svg	\
-	emblem-downloads.svg	\
-	emblem-favorite.svg	\
-	emblem-locked.svg	\
-	emblem-notification.svg	\
-	emblem-outofrange.svg	\
-	emblem-question.svg	\
-	emblem-warning.svg
+assets = \
+	scale-slider.svg	\
+	scale-slider-active.svg \
+	radio.svg		\
+	radio-selected.svg	\
+	radio-active.svg	\
+	radio-active-selected.svg	\
+	checkbox-unchecked.svg		\
+	checkbox-unchecked-selected.svg	\
+	checkbox-checked.svg		\
+	checkbox-checked-selected.svg
 
-EXTRA_DIST = $(icon_DATA)
+sugar72dir = $(datadir)/themes/sugar-72/gtk-3.0/assets
+sugar100dir = $(datadir)/themes/sugar-100/gtk-3.0/assets
+dist_sugar72_DATA = $(assets)
+dist_sugar100_DATA = $(assets)
 all: all-am
 
 .SUFFIXES:
@@ -226,9 +228,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign icons/scalable/emblems/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign gtk3/theme/assets/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign icons/scalable/emblems/Makefile
+	  $(AUTOMAKE) --foreign gtk3/theme/assets/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -253,26 +255,46 @@ mostlyclean-libtool:
 
 clean-libtool:
 	-rm -rf .libs _libs
-install-iconDATA: $(icon_DATA)
+install-dist_sugar100DATA: $(dist_sugar100_DATA)
 	@$(NORMAL_INSTALL)
-	test -z "$(icondir)" || $(MKDIR_P) "$(DESTDIR)$(icondir)"
-	@list='$(icon_DATA)'; test -n "$(icondir)" || list=; \
+	test -z "$(sugar100dir)" || $(MKDIR_P) "$(DESTDIR)$(sugar100dir)"
+	@list='$(dist_sugar100_DATA)'; test -n "$(sugar100dir)" || list=; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(icondir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(icondir)" || exit $$?; \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sugar100dir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sugar100dir)" || exit $$?; \
 	done
 
-uninstall-iconDATA:
+uninstall-dist_sugar100DATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(icon_DATA)'; test -n "$(icondir)" || list=; \
+	@list='$(dist_sugar100_DATA)'; test -n "$(sugar100dir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	test -n "$$files" || exit 0; \
-	echo " ( cd '$(DESTDIR)$(icondir)' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(icondir)" && rm -f $$files
+	echo " ( cd '$(DESTDIR)$(sugar100dir)' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(sugar100dir)" && rm -f $$files
+install-dist_sugar72DATA: $(dist_sugar72_DATA)
+	@$(NORMAL_INSTALL)
+	test -z "$(sugar72dir)" || $(MKDIR_P) "$(DESTDIR)$(sugar72dir)"
+	@list='$(dist_sugar72_DATA)'; test -n "$(sugar72dir)" || list=; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sugar72dir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sugar72dir)" || exit $$?; \
+	done
+
+uninstall-dist_sugar72DATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(dist_sugar72_DATA)'; test -n "$(sugar72dir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	test -n "$$files" || exit 0; \
+	echo " ( cd '$(DESTDIR)$(sugar72dir)' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(sugar72dir)" && rm -f $$files
 tags: TAGS
 TAGS:
 
@@ -314,7 +336,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(icondir)"; do \
+	for dir in "$(DESTDIR)$(sugar100dir)" "$(DESTDIR)$(sugar72dir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -362,7 +384,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-data-local install-iconDATA
+install-data-am: install-dist_sugar100DATA install-dist_sugar72DATA
 
 install-dvi: install-dvi-am
 
@@ -406,25 +428,23 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-iconDATA
+uninstall-am: uninstall-dist_sugar100DATA uninstall-dist_sugar72DATA
 
 .MAKE: install-am install-strip
 
 .PHONY: all all-am check check-am clean clean-generic clean-libtool \
 	distclean distclean-generic distclean-libtool distdir dvi \
 	dvi-am html html-am info info-am install install-am \
-	install-data install-data-am install-data-local install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-iconDATA install-info install-info-am \
-	install-man install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
-	installdirs maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-generic mostlyclean-libtool pdf pdf-am \
-	ps ps-am uninstall uninstall-am uninstall-iconDATA
+	install-data install-data-am install-dist_sugar100DATA \
+	install-dist_sugar72DATA install-dvi install-dvi-am \
+	install-exec install-exec-am install-html install-html-am \
+	install-info install-info-am install-man install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am uninstall uninstall-am \
+	uninstall-dist_sugar100DATA uninstall-dist_sugar72DATA
 
-
-install-data-local: install-iconDATA
-	(cd $(DESTDIR)$(icondir)/.. && $(ICONMAP) -c $(category))
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
