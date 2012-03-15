@@ -82,7 +82,7 @@ Comment:
  License' along with this program.  If not, see
  <http://www.gnu.org/licenses/>.
 
-License: other-LGPL
+License: LGPL~
  __license__ = 'LGPL'
 Comment:
  It is assumed that the actual licensing is 'GNU Lesser General Public
