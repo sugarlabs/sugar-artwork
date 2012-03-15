@@ -18,6 +18,7 @@
 
 include /usr/share/cdbs/1/rules/upstream-tarball.mk
 include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/cdbs/1/rules/autoreconf.mk
 include /usr/share/cdbs/1/class/autotools.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 
@@ -54,4 +55,4 @@ CDBS_CONFLICTS_DEFAULT = $(pkgbase)
 CDBS_REPLACES_DEFAULT = $(pkgbase)
 
 # Needed for our packaging
-CDBS_BUILD_DEPENDS += , chrpath
+CDBS_BUILD_DEPENDS += , chrpath, dh-autoreconf
