@@ -6,6 +6,7 @@ Upstream-Contact: Sugarlabs <sugar-devel@lists.sugarlabs.org>
 Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork
  git://git.sugarlabs.org/sugar-artwork/mainline.git
 
+Files: *
 Copyright: 2007, Red Hat, Inc
  2007-2008, Benjamin Berg
 License: LGPL-2+
