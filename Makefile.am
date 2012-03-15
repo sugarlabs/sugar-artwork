@@ -1,1 +1,1 @@
-SUBDIRS = cursor icons gtk
+SUBDIRS = cursor icons gtk gtk3

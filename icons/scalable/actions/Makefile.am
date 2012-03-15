@@ -17,6 +17,7 @@ icon_DATA =						\
 	document-send.svg				\
 	edit-copy.svg					\
 	edit-delete.svg					\
+	edit-description.svg				\
 	edit-paste.svg					\
 	edit-redo.svg					\
 	edit-undo.svg					\
