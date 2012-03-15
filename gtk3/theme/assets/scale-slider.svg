@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+  <!ENTITY fill_color "#e5e5e5">
+  <!ENTITY stroke_color "#808080">
+]>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="32"
+   height="32"
+   id="svg5980">
+  <g
+     id="layer1">
+    <g
+       transform="matrix(1.9661528,0,0,1.9661528,0.27077716,-27.255355)"
+       id="g5104">
+      <path
+         d="m 319.25,290.25 a 6.875,6.875 0 1 1 -13.75,0 6.875,6.875 0 1 1 13.75,0 z"
+         transform="matrix(1.0909091,0,0,1.0909091,-332.77273,-294.63637)"
+         id="path5387"
+         style="color:#000000;fill:&fill_color;;fill-opacity:1;fill-rule:nonzero;stroke:&stroke_color;;stroke-width:0.91666669;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <path
+         d="m 319.25,290.25 a 6.875,6.875 0 1 1 -13.75,0 6.875,6.875 0 1 1 13.75,0 z"
+         transform="matrix(0.6088795,0,0,0.6088795,-182.19873,-154.72728)"
+         id="path5102"
+         style="color:#000000;fill:&stroke_color;;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.91666669;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    </g>
+  </g>
+</svg>
