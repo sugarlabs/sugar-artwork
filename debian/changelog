@@ -1,3 +1,9 @@
+sugar-artwork-0.96 (0.95.2-1) UNRELEASED; urgency=low
+
+  * New upstream development release.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 15 Mar 2012 15:33:46 +0100
+
 sugar-artwork-0.92 (0.92.0-1) unstable; urgency=low
 
   * Shorten Vcs-* stanzas.

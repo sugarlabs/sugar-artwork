@@ -1,4 +1,4 @@
-Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=174
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: FIXME
 Upstream-Contact: FIXME
 Source: FIXME
@@ -309,20 +309,22 @@ Copyright: 2007, Benjamin Berg
 License: LGPL-2+
  FIXME
 
+Files: config.guess
+ config.sub
+ missing
+Copyright: 1992-1999,
+  1992-2001
+  1996-1997, 1999-2000, 2002-2006
+License: GPL-2+
+ FIXME
+
 Files: gtk/engine/sugar-rc-style.c
  gtk/engine/sugar-rc-style.h
  gtk/engine/sugar-style.c
 Copyright: 2007, Benjamin Berg
- 2007, Red Hat, Inc
- 2008, Benjamin Berg
+  2007, Red Hat, Inc
+  2008, Benjamin Berg
 License: LGPL-2+
- FIXME
-
-Files: config.guess
- config.sub
-Copyright: 1992-1999,
- 1992-2001
-License: GPL-2+
  FIXME
 
 Files: gtk/engine/sugar-style.h
@@ -331,76 +333,71 @@ Copyright: 2007, Red Hat, Inc
 License: LGPL-2+
  FIXME
 
-Files: missing
-Copyright: 1996-1997, 1999-2000, 2002-2006
-License: GPL
- FIXME
-
-Files: depcomp
-Copyright: 1999-2000, 2003-2007, 2009 Free
-License: GPL
- FIXME
-
-Files: debian/rules
-Copyright: 2008-2010, Jonas Smedegaard <dr@jones.dk>
-License: GPL
- FIXME
-
 Files: configure
 Copyright: (ISLOWER ? 'A' + ( - 'a') : )
- (ISLOWER ? ( | 0x40) : )
- 1992-1996, 1998-2001,
- 1996-2001, 2003-2005
- 2010, Free Software Foundation, Inc
+  (ISLOWER ? ( | 0x40) : )
+  1992-1996, 1998-2001,
+  1996-2001, 2003-2005
+  2010, Free Software Foundation, Inc
 License: GPL-2+
  FIXME
 
 Files: aclocal.m4
 Copyright: 1996, 1998, 2000-2005, 2008
- 1996-1997, 2000-2001, 2003, 2005,
- 1996-1997, 2000-2001, 2003, 2005, 2008
- 1996-2001, 2003-2005
- 1996-2004,
- 1997, 1999-2001, 2003-2005, 2008
- 1997, 2000-2001, 2003-2006, 2008
- 1999-2005, 2008
- 1999-2006, 2009
- 2001, 2003, 2005, 2008 Free Software Foundation, Inc
- 2001, 2003, 2005, Free Software Foundation, Inc
- 2001-2003, 2005, 2008, Free Software Foundation, Inc
- 2001-2003, 2005, 2009, Free Software Foundation, Inc
- 2002-2003, 2005-2008, Free Software Foundation, Inc
- 2003, 2005 Free Software Foundation, Inc
- 2003-2006, Free Software Foundation, Inc
- 2004, Free Software Foundation, Inc
- 2004, Scott James Remnant <scott@netsplit.com>
- 2004-2005, 2007, 2009, Free Software Foundation, Inc
- 2004-2005, 2007-2008, Free Software Foundation, Inc
- 2004-2005, 2007-2009, Free Software Foundation
- 2004-2005, Free Software Foundation, Inc
- 2006, 2008 Free Software Foundation, Inc
- 2010, Free Software Foundation, Inc
+  1996-1997, 2000-2001, 2003, 2005,
+  1996-1997, 2000-2001, 2003, 2005, 2008
+  1996-2001, 2003-2005
+  1996-2004,
+  1997, 1999-2001, 2003-2005, 2008
+  1997, 2000-2001, 2003-2006, 2008
+  1999-2005, 2008
+  1999-2006, 2009
+  2001, 2003, 2005, 2008 Free Software Foundation, Inc
+  2001, 2003, 2005, Free Software Foundation, Inc
+  2001-2003, 2005, 2008, Free Software Foundation, Inc
+  2001-2003, 2005, 2009, Free Software Foundation, Inc
+  2002-2003, 2005-2008, Free Software Foundation, Inc
+  2003, 2005 Free Software Foundation, Inc
+  2003-2006, Free Software Foundation, Inc
+  2004, Free Software Foundation, Inc
+  2004, Scott James Remnant <scott@netsplit.com>
+  2004-2005, 2007, 2009, Free Software Foundation, Inc
+  2004-2005, 2007-2008, Free Software Foundation, Inc
+  2004-2005, 2007-2009, Free Software Foundation
+  2004-2005, Free Software Foundation, Inc
+  2006, 2008 Free Software Foundation, Inc
+  2010, Free Software Foundation, Inc
 License: GPL-2+
  FIXME
 
 Files: ltmain.sh
 Copyright: 1996-2001, 2003-2006
- all begin with the string "--lt-"
+  all begin with the string "--lt-"
+License: GPL-2+
+ FIXME
+
+Files: depcomp
+Copyright: 1999-2000, 2003-2007, 2009 Free
+License: GPL-2+
+ FIXME
+
+Files: debian/rules
+Copyright: 2008-2010, Jonas Smedegaard <dr@jones.dk>
 License: GPL-2+
  FIXME
 
 Files: COPYING
 Copyright: 1991, 1999 Free Software Foundation, Inc
- <year> <name of author>
- HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY
- HOLDERS AND/OR
- disclaimer" for the library, if
- holder or
- holder who places the Library under this License may add
- interest in the
- law: that is to say, a work containing the Library or a
- notices, you must include the
- the
+  <year> <name of author>
+  HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY
+  HOLDERS AND/OR
+  disclaimer" for the library, if
+  holder or
+  holder who places the Library under this License may add
+  interest in the
+  law: that is to say, a work containing the Library or a
+  notices, you must include the
+  the
 License: LGPL-2.1+
  FIXME
 
@@ -436,7 +433,7 @@ License: UNKNOWN
 
 Files: cursor/sugar/sugar-02.png
 Copyright: ï?öZról€ä‚YÄc&wønâ&E/¶v-?œ`¸ùÄX^û…RìüÄÈøúôy§(óñ™¸|â	Å&íUü®cÀü
- õw1¥â∞jË¶Âóº°‹GaMÀ”!Á8§Å4¯§~¥	äõJÍ8‰Â⁄ÆÁh‰≥“um€uu13èòÄ|‹ÊﬂˆπJ“tàŒñ˘ñ–πùEÒÒùÔ|Lı^”•Añüæ™œ≈?ıûJH∫§™C|g˘´3Wtπ˜ü˛}!ùA˙ˆÌõıÔtË˙˙⁄xHúª™Œ˘éÙÖ<≥ıÛÁÈ£íÁe»È2´∞…\e∞è}ÏíΩô∆ã‘?ø∆ˇÌ3oîMMÜ–jö7£ÄÍ÷2ﬂ∏>yˇí∆êCÉ_m$æÛ™k`ê,AÉ†ZDTY	™g®û#…zó"	5ÅˇØø˛*>˛\˝„#¯∆<.\ﬁÊ'{•q@∫ßÑ‚PÓ«¡Eı¿åƒ·Ú4ë‹ü˛Y5ï
+  õw1¥â∞jË¶Âóº°‹GaMÀ”!Á8§Å4¯§~¥	äõJÍ8‰Â⁄ÆÁh‰≥“um€uu13èòÄ|‹ÊﬂˆπJ“tàŒñ˘ñ–πùEÒÒùÔ|Lı^”•Añüæ™œ≈?ıûJH∫§™C|g˘´3Wtπ˜ü˛}!ùA˙ˆÌõıÔtË˙˙⁄xHúª™Œ˘éÙÖ<≥ıÛÁÈ£íÁe»È2´∞…\e∞è}ÏíΩô∆ã‘?ø∆ˇÌ3oîMMÜ–jö7£ÄÍ÷2ﬂ∏>yˇí∆êCÉ_m$æÛ™k`ê,AÉ†ZDTY	™g®û#…zó"	5ÅˇØø˛*>˛\˝„#¯∆<.\ﬁÊ'{•q@∫ßÑ‚PÓ«¡Eı¿åƒ·Ú4ë‹ü˛Y5ï
 License: UNKNOWN
  FIXME
 
