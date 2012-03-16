@@ -294,23 +294,33 @@ SugarPaletteWindowWidget GtkToggleButton.button:active {
     background-color: @selection_grey;
 }
 
-/* Browser notebook */
+/* Browse notebook */
 
-BrowserNotebook.notebook tab {
+BrowseNotebook.notebook tab {
     background-color: @selection_grey;
 }
 
-BrowserNotebook.notebook tab .button {
+BrowseNotebook.notebook tab .button {
     border-radius: $(toolbutton_padding)px;
 }
 
-BrowserNotebook.notebook tab:active {
+BrowseNotebook.notebook tab:active {
     background-color: @toolbar_grey;
 }
 
-BrowserNotebook.notebook tab:active *:active {
+BrowseNotebook.notebook tab:active *:active {
     color: @white;
 }
+
+BrowseLinkInfo {
+    color: @white;
+}
+
+BrowseTabPage {
+    background-color: @black;
+}
+
+
 
 /* Control panel */
 
