@@ -340,8 +340,23 @@ SugarAlert {
     color: @white;
 }
 
+SugarAlert GtkLabel {
+    color: @white;
+}
+
 SugarAlert *:insensitive {
     background-color: @black;
+}
+
+.button SugarTimeoutIcon GtkLabel,
+.button SugarTimeoutIcon GtkLabel:prelight {
+    background-color: @white;
+    color: @button_grey;
+}
+
+.button SugarTimeoutIcon GtkLabel:active {
+    background-color: @toolbar_grey;
+    color: @white;
 }
 
 /* Tray */
