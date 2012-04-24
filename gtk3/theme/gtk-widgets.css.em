@@ -279,7 +279,7 @@ SugarPaletteWindowWidget GtkToggleButton.button:active {
 
 .notebook {
     background-color: @selection_grey;
-    border-width: 0px;
+    padding: 0px;
     -GtkNotebook-tab-overlap: -2;
     -GtkNotebook-tab-curvature: $default_padding;
 }
