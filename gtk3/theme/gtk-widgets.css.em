@@ -499,6 +499,10 @@ GtkVSeparator, GtkHSeparator,
 padding: 0px;
 }
 
+.toolbar GtkLabel {
+    color: @white;
+}
+
 .toolbar GtkToolButton .button,
 SugarPaletteWindowWidget GtkToolButton .button {
     border-radius: $(toolbutton_padding)px;
