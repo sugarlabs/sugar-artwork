@@ -270,11 +270,6 @@ GtkComboBox .separator {
     color: alpha(@theme_base_color, 0.0);
 }
 
-.toolbar GtkToggleButton.button:active,
-SugarPaletteWindowWidget GtkToggleButton.button:active {
-    background-color: @button_grey;
-}
-
 /* Notebooks */
 
 .notebook {
@@ -504,7 +499,9 @@ padding: 0px;
 }
 
 .toolbar GtkToolButton .button,
-SugarPaletteWindowWidget GtkToolButton .button {
+SugarPaletteWindowWidget SugarRadioToolButton *,
+SugarPaletteWindowWidget GtkToolButton .button{
+    background-color: transparent;
     border-radius: $(toolbutton_padding)px;
     padding: $(default_padding)px;
 }
@@ -512,22 +509,20 @@ SugarPaletteWindowWidget GtkToolButton .button {
 .toolbar GtkToolButton .button:prelight,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
-    border-radius: 0px;
-    border-width: 0px;
 }
 
-.toolbar GtkToolButton .button:active,
-SugarPaletteWindowWidget GtkToolButton .button:active {
-    background-color: @black;
-    border-radius: 0px;
-}
-
-.toolbar GtkToolButton .button:active:prelight,
-SugarPaletteWindowWidget GtkToolButton .button:active:prelight {
+SugarPaletteWindowWidget SugarRadioToolButton *:active {
     background-color: @button_grey;
-    border-radius: $(subcell_size)px;
-    border-width: $(default_padding)px;
-    border-color: transparent;
+    border-radius: $(toolbutton_padding)px;
+}
+
+SugarPaletteWindowWidget GtkToolButton .button:active {
+    background-color: @transparent;
+}
+
+.toolbar GtkToolButton .button:active {
+    background-color: @button_grey;
+    border-radius: $(toolbutton_padding)px;
 }
 
 /* Scales */
