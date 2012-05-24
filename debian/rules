@@ -55,4 +55,4 @@ CDBS_CONFLICTS_DEFAULT = $(pkgbase)
 CDBS_REPLACES_DEFAULT = $(pkgbase)
 
 # Needed for our packaging
-CDBS_BUILD_DEPENDS += , chrpath, dh-autoreconf
+CDBS_BUILD_DEPENDS += , chrpath, dh-autoreconf, gnome-common
