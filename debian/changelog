@@ -1,6 +1,6 @@
-sugar-artwork-0.96 (0.95.2-1) UNRELEASED; urgency=low
+sugar-artwork-0.96 (0.96.2-1) unstable; urgency=low
 
-  * New upstream development release.
+  * New upstream stable release.
 
   [ Luke Faraone ]
   * clean: Don't fail when sugar.stamp is missing
@@ -9,7 +9,7 @@ sugar-artwork-0.96 (0.95.2-1) UNRELEASED; urgency=low
   * Build-depend on libgtk-3-dev.
   * Extend patch 2001 to cover gtk3 theme sources, and add DEP3 header.
   * (Re)generate autotools:
-    + Build-depend on dh-autoreconf.
+    + Build-depend on dh-autoreconf and gnome-common.
     + Include autoreconf snippet.
     + Drop patch 2991.
   * Update copyright file:
@@ -20,8 +20,12 @@ sugar-artwork-0.96 (0.95.2-1) UNRELEASED; urgency=low
     + Quote license strings in comments.
     + Include disclaimer in license paragraph GAP~Makefile.in.
     + Fix consistently use License name LGPL~ (not other-LGPL).
+  * Bump standards-version to 3.9.3.
+  * Use anonscm.debian.org for Vcs-Browser field.
+  * Fix typo in long description.
+  * Avoid .la files.
 
- -- Jonas Smedegaard <dr@jones.dk>  Thu, 15 Mar 2012 15:33:46 +0100
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 24 May 2012 20:26:12 +0200
 
 sugar-artwork-0.92 (0.92.0-1) unstable; urgency=low
 

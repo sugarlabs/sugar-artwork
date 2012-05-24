@@ -70,6 +70,7 @@ Files: AUTHORS
  icons/scalable/actions/edit-copy.svg
  icons/scalable/actions/edit-delete.svg
  icons/scalable/actions/edit-description.svg
+ icons/scalable/actions/edit-duplicate.svg
  icons/scalable/actions/edit-paste.svg
  icons/scalable/actions/edit-redo.svg
  icons/scalable/actions/edit-undo.svg
@@ -263,6 +264,7 @@ Files: AUTHORS
  icons/scalable/device/speaker-muted-100.svg
  icons/scalable/device/touchpad-capacitive.svg
  icons/scalable/device/touchpad-resistive.svg
+ icons/scalable/device/user-documents.svg
  icons/scalable/emblems/Makefile.am
  icons/scalable/emblems/emblem-busy.svg
  icons/scalable/emblems/emblem-charging.svg
@@ -272,6 +274,7 @@ Files: AUTHORS
  icons/scalable/emblems/emblem-notification.svg
  icons/scalable/emblems/emblem-outofrange.svg
  icons/scalable/emblems/emblem-question.svg
+ icons/scalable/emblems/emblem-view-source.svg
  icons/scalable/emblems/emblem-warning.svg
  icons/scalable/mimetypes/Makefile.am
  icons/scalable/mimetypes/application-octet-stream.svg
