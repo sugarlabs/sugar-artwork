@@ -18,6 +18,7 @@ icon_DATA =						\
 	edit-copy.svg					\
 	edit-delete.svg					\
 	edit-description.svg				\
+	edit-duplicate.svg				\
 	edit-paste.svg					\
 	edit-redo.svg					\
 	edit-undo.svg					\

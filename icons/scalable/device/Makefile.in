@@ -293,7 +293,8 @@ icon_DATA = \
 	speaker-muted-066.svg		\
 	speaker-muted-100.svg		\
 	touchpad-capacitive.svg		\
-	touchpad-resistive.svg
+	touchpad-resistive.svg		\
+	user-documents.svg
 
 EXTRA_DIST = $(icon_DATA)
 all: all-am

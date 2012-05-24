@@ -57,11 +57,11 @@ icon_large = icon_base * 5
     background-color: @button_grey;
     color: @black;
 
-    border-color: none;
-    border-radius: 0;
+    border-color: transparent;
+    border-radius: 0px;
     border-style: none;
 
-    padding: $thickness;
+    padding: $(thickness)px;
 
     /* A lot of these will probably need to be changed, but this has to
        be done when the exact sizes are known */
@@ -154,7 +154,7 @@ icon_large = icon_base * 5
     -GtkButton-inner-border: 0 0 0 0;
     padding: $(border)px $(border)px $(border)px $(border)px;
 
-    border-radius: $(2*subcell_size);
+    border-radius: $(2*subcell_size)px;
     background-color: @button_grey;
     color: @white;
 }
@@ -164,7 +164,7 @@ icon_large = icon_base * 5
 }
 
 .button:focused {
-    border-width: $(thickness);
+    border-width: $(thickness)px;
     border-color: @white;
     border-style: solid;
 }
@@ -217,26 +217,26 @@ GtkToggleButton.button:active GtkLabel {
 .view {
     border-width: 0px;
     border-style: none;
-    border-radius: 0;
+    border-radius: 0px;
     padding: 0px;
     background-color: @white;
 }
 
 .entry {
-    border-radius: $(2*subcell_size);
-    border-width: $(thickness);
+    border-radius: $(2 * subcell_size)px;
+    border-width: $(thickness)px;
     border-color: @selection_grey;
     border-style: solid;
     background-color: @text_field_grey;
     color: @black;
     ${ entry_ythickness = my_ceil(0.2 * (subcell_size*3.0/2.0 - thickness) + thickness) }
     ${ entry_xthickness = my_ceil(0.32 * (subcell_size*3.0/2.0 - thickness) + thickness) }
-    -GtkEntry-inner-border: $(2 * max(subcell_size - entry_xthickness, 0)), $(2 * max(subcell_size - entry_xthickness, 0)), $(2 * max(my_ceil((3*subcell_size - font_height - entry_ythickness*2)/2.0),0)), $(2 * max(my_floor((3*subcell_size - font_height - entry_ythickness*2)/2.0), 0))
+    padding: $(2 * max(my_ceil((3*subcell_size - font_height - entry_ythickness*2)/2.0),0))px $(2 * max(subcell_size - entry_xthickness, 0))px $(2 * max(my_floor((3*subcell_size - font_height - entry_ythickness*2)/2.0), 0))px $(2 * max(subcell_size - entry_xthickness, 0))px;
 }
 
 .entry.progressbar {
-    border-radius: $(2 * subcell_size);
-    border-width: $(thickness);
+    border-radius: $(2 * subcell_size)px;
+    border-width: $(thickness)px;
     background-color: @selection_grey;
 }
 
@@ -279,7 +279,7 @@ SugarPaletteWindowWidget GtkToggleButton.button:active {
 
 .notebook {
     background-color: @selection_grey;
-    border-width: 0;
+    padding: 0px;
     -GtkNotebook-tab-overlap: -2;
     -GtkNotebook-tab-curvature: $default_padding;
 }
@@ -294,23 +294,33 @@ SugarPaletteWindowWidget GtkToggleButton.button:active {
     background-color: @selection_grey;
 }
 
-/* Browser notebook */
+/* Browse notebook */
 
-BrowserNotebook.notebook tab {
+BrowseNotebook.notebook tab {
     background-color: @selection_grey;
 }
 
-BrowserNotebook.notebook tab .button {
-    border-radius: $toolbutton_padding;
+BrowseNotebook.notebook tab .button {
+    border-radius: $(toolbutton_padding)px;
 }
 
-BrowserNotebook.notebook tab:active {
+BrowseNotebook.notebook tab:active {
     background-color: @toolbar_grey;
 }
 
-BrowserNotebook.notebook tab:active *:active {
+BrowseNotebook.notebook tab:active *:active {
     color: @white;
 }
+
+BrowseLinkInfo {
+    color: @white;
+}
+
+BrowseTabPage {
+    background-color: @black;
+}
+
+
 
 /* Control panel */
 
@@ -330,8 +340,23 @@ SugarAlert {
     color: @white;
 }
 
+SugarAlert GtkLabel {
+    color: @white;
+}
+
 SugarAlert *:insensitive {
     background-color: @black;
+}
+
+.button SugarTimeoutIcon GtkLabel,
+.button SugarTimeoutIcon GtkLabel:prelight {
+    background-color: @white;
+    color: @button_grey;
+}
+
+.button SugarTimeoutIcon GtkLabel:active {
+    background-color: @toolbar_grey;
+    color: @white;
 }
 
 /* Tray */
@@ -380,8 +405,8 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     -GtkMenu-horizontal-offset : 0;
     -GtkMenu-vertical-offset   : 0;
 
-    padding: 0;
-    border-width: 2;
+    padding: 0px;
+    border-width: 2px;
     border-color: @button_grey;
     border-style: solid;
 }
@@ -410,7 +435,7 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
 }
 
 GtkMenuItem {
-    padding: $subcell_size $((subcell_size * 3 - font_height) / 2);
+    padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
 }
 
 /* Scrollbars */
@@ -428,13 +453,13 @@ GtkMenuItem {
 
 .scrollbar.trough {
     background-color: @button_grey;
-    border-width: 0;
+    border-width: 0px;
 }
 
 .scrollbar.slider {
     background-color: @white;
-    border-radius: $(2*subcell_size);
-    border-width: 0;
+    border-radius: $(2*subcell_size)px;
+    border-width: 0px;
 }
 
 .scrollbar.slider:active {
@@ -448,17 +473,17 @@ GtkMenuItem {
 GtkProgressBar.progressbar {
     background-color: @white;
     border-color: @white;
-    border-radius: 10;
+    border-radius: 10px;
     border-style: solid;
-    border-width: 0;
+    border-width: 0px;
 }
 
 GtkProgressBar.trough {
     background-color: alpha (@black, 0.0);
     border-style: solid;
-    border-radius: 10;
+    border-radius: 10px;
     border-color: @button_grey;
-    border-width: 2;
+    border-width: 2px;
 }
 
 /* Separators */
@@ -470,19 +495,39 @@ GtkVSeparator, GtkHSeparator,
 
 /* Tool buttons */
 
+.toolbar {
+padding: 0px;
+}
+
+.toolbar GtkLabel {
+    color: @white;
+}
+
 .toolbar GtkToolButton .button,
 SugarPaletteWindowWidget GtkToolButton .button {
-    border-radius: $toolbutton_padding;
+    border-radius: $(toolbutton_padding)px;
+    padding: $(default_padding)px;
 }
 
 .toolbar GtkToolButton .button:prelight,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+.toolbar GtkToolButton .button:active,
+SugarPaletteWindowWidget GtkToolButton .button:active {
+    background-color: @black;
+    border-radius: 0px;
 }
 
 .toolbar GtkToolButton .button:active:prelight,
 SugarPaletteWindowWidget GtkToolButton .button:active:prelight {
     background-color: @button_grey;
+    border-radius: $(subcell_size)px;
+    border-width: $(default_padding)px;
+    border-color: transparent;
 }
 
 /* Scales */
@@ -494,9 +539,9 @@ GtkScale {
 
 GtkScale.trough {
     border-style: solid;
-    border-radius: 30;
+    border-radius: 30px;
     border-color: @button_grey;
-    border-width: 2;
+    border-width: 2px;
 }
 
 GtkScale.trough:focused {
@@ -581,6 +626,6 @@ GtkCheckButton:prelight {
     color: @white;
     /* outline of the toolbarbutton when palette is expanded */
     border-style: solid;
-    border-width: 2;
+    border-width: 2px;
     border-color: @button_grey;
 }
