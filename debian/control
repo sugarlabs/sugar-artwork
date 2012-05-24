@@ -9,13 +9,15 @@ Build-Depends: cdbs (>= 0.4.70~),
  debhelper,
  dh-buildinfo,
  libgtk2.0-dev (>= 2.16),
+ libgtk-3-dev,
  libglib2.0-dev,
  libcairo2-dev,
  python-empy,
  icon-slicer,
  icon-naming-utils (>= 0.8.2),
  x11-apps,
- chrpath
+ chrpath,
+ dh-autoreconf
 Standards-Version: 3.9.2
 Vcs-Git: git://git.debian.org/git/collab-maint/sugar-artwork
 Vcs-Browser: http://git.debian.org/?p=collab-maint/sugar-artwork.git

@@ -2,6 +2,25 @@ sugar-artwork-0.96 (0.95.2-1) UNRELEASED; urgency=low
 
   * New upstream development release.
 
+  [ Luke Faraone ]
+  * clean: Don't fail when sugar.stamp is missing
+
+  [ Jonas Smedegaard ]
+  * Build-depend on libgtk-3-dev.
+  * Extend patch 2001 to cover gtk3 theme sources, and add DEP3 header.
+  * (Re)generate autotools:
+    + Build-depend on dh-autoreconf.
+    + Include autoreconf snippet.
+    + Drop patch 2991.
+  * Update copyright file:
+    + Bump format to 1.0.
+    + Fix turn second paragraph into a proper format 1.0 catch-all Files
+      paragraph.
+    + Fix double-indent in Copyright fields as per Policy §5.6.13.
+    + Quote license strings in comments.
+    + Include disclaimer in license paragraph GAP~Makefile.in.
+    + Fix consistently use License name LGPL~ (not other-LGPL).
+
  -- Jonas Smedegaard <dr@jones.dk>  Thu, 15 Mar 2012 15:33:46 +0100
 
 sugar-artwork-0.92 (0.92.0-1) unstable; urgency=low

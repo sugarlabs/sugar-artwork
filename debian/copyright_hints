@@ -26,7 +26,6 @@ Files: AUTHORS
  debian/control.in
  debian/gbp.conf
  debian/patches/2001_empy_from_system.patch
- debian/patches/2991_empy_from_system_automade.patch
  debian/patches/README
  debian/patches/series
  debian/source/format
@@ -36,6 +35,22 @@ Files: AUTHORS
  gtk/engine/Makefile.am
  gtk/theme/Makefile.am
  gtk/theme/gtkrc.em
+ gtk3/Makefile.am
+ gtk3/theme/Makefile.am
+ gtk3/theme/assets/Makefile.am
+ gtk3/theme/assets/checkbox-checked-selected.svg
+ gtk3/theme/assets/checkbox-checked.svg
+ gtk3/theme/assets/checkbox-unchecked-selected.svg
+ gtk3/theme/assets/checkbox-unchecked.svg
+ gtk3/theme/assets/radio-active-selected.svg
+ gtk3/theme/assets/radio-active.svg
+ gtk3/theme/assets/radio-selected.svg
+ gtk3/theme/assets/radio.svg
+ gtk3/theme/assets/scale-slider-active.svg
+ gtk3/theme/assets/scale-slider.svg
+ gtk3/theme/gtk-widgets.css.em
+ gtk3/theme/gtk.css
+ gtk3/theme/settings.ini.em
  icons/Makefile.am
  icons/index.theme
  icons/scalable/Makefile.am
@@ -54,6 +69,7 @@ Files: AUTHORS
  icons/scalable/actions/document-send.svg
  icons/scalable/actions/edit-copy.svg
  icons/scalable/actions/edit-delete.svg
+ icons/scalable/actions/edit-description.svg
  icons/scalable/actions/edit-paste.svg
  icons/scalable/actions/edit-redo.svg
  icons/scalable/actions/edit-undo.svg
@@ -285,6 +301,9 @@ Files: Makefile.in
  gtk/Makefile.in
  gtk/engine/Makefile.in
  gtk/theme/Makefile.in
+ gtk3/Makefile.in
+ gtk3/theme/Makefile.in
+ gtk3/theme/assets/Makefile.in
  icons/Makefile.in
  icons/scalable/Makefile.in
  icons/scalable/actions/Makefile.in
@@ -331,6 +350,12 @@ Files: gtk/engine/sugar-style.h
  gtk/engine/sugar.c
 Copyright: 2007, Red Hat, Inc
 License: LGPL-2+
+ FIXME
+
+Files: gtk/theme/em.py
+ gtk3/theme/em.py
+Copyright: 2002-2003, Erik Max Francis'
+License: UNKNOWN
  FIXME
 
 Files: configure
@@ -408,11 +433,6 @@ License: MIT/X11 (BSD like)
 
 Files: cursor/sugar/sugar-01.png
 Copyright: 
-License: UNKNOWN
- FIXME
-
-Files: gtk/theme/em.py
-Copyright: 2002-2003, Erik Max Francis'
 License: UNKNOWN
  FIXME
 
