@@ -56,3 +56,7 @@ CDBS_REPLACES_DEFAULT = $(pkgbase)
 
 # Needed for our packaging
 CDBS_BUILD_DEPENDS += , chrpath, dh-autoreconf, gnome-common
+
+# Avoid .la files - see http://wiki.debian.org/ReleaseGoals/LAFileRemoval
+common-binary-post-install-arch::
+	find '$(cdbs_curdestdir)' -name '*.la' -delete
