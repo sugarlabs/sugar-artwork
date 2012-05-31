@@ -433,6 +433,17 @@ GtkMenuItem {
     padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
 }
 
+.tooltip {
+    background-color: @black;
+    border-style: solid;
+    border-width: $(thickness)px;
+    border-color: @button_grey;
+}
+
+.tooltip * {
+    color: @white;
+}
+
 /* Scrollbars */
 
 .scrollbar {
