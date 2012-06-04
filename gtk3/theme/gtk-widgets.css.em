@@ -171,35 +171,28 @@ icon_large = icon_base * 5
 
 /* Spin buttons */
 
-${ spin_ythickness = my_ceil(3*subcell_size - font_height) }
-${ spin_xthickness = subcell_size }
-${ spin_btn_ythickness = spin_ythickness }
-${ spin_btn_xthickness = subcell_size * 2 }
-
-.spinbutton.button,
-.spinbutton.button:focused,
-.spinbutton.button:active {
-    padding: $(spin_ythickness)px $(spin_xthickness)px;
-    border-color: @button_grey;
-    border-width: $(thickness)px;
+.spinbutton.button {
+    border-radius: 0px;
+    border-width: 0px;
+    border-style: solid;
     background-color: @button_grey;
     color: @white;
 }
 
+.spinbutton.button:last-child {
+    border-radius: 0px $(2*subcell_size)px $(2*subcell_size)px 0px;
+    border-width: 0px 0px 0px $(thickness)px;
+    border-style: solid;
+    border-color: @selection_grey;
+}
+
+
 .spinbutton.button:active {
-    background-color: @white;
-    color: @black;
-    border-color: @white;
+    background-color: @black;
 }
 
 .spinbutton.button:insensitive {
     background-color: @selection_grey;
-}
-
-.spinbutton.button:focused,
-.spinbutton.button:focused:prelight,
-.spinbutton.button:focused:insensitive {
-    border-color: @white;
 }
 
 /* Toggle buttons */
