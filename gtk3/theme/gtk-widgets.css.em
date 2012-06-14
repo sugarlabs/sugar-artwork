@@ -252,6 +252,16 @@ GtkToggleButton.button:active GtkLabel {
     color: @black;
 }
 
+/* Frames */
+
+GtkScrolledWindow.frame {
+    border-style: solid;
+    border-color: @selection_grey;
+    border-width: $(thickness)px;
+    border-radius: 0;
+    padding: $(default_padding)px;
+}
+
 /* Combo boxes */
 
 GtkComboBox * {
