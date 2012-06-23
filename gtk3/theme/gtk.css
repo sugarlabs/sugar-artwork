@@ -6,6 +6,8 @@
 @define-color selection_grey #A6A6A6;
 @define-color panel_grey #C0C0C0;
 @define-color text_field_grey #E5E5E5;
+@define-color row_even #E5E5E5;
+@define-color row_odd #D5D5D5;
 @define-color white #FFFFFF;
 
 /* Default color scheme */
