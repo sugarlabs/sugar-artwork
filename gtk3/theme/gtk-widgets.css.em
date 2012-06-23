@@ -639,3 +639,9 @@ GtkCheckButton:prelight {
     border-width: 2px;
     border-color: @button_grey;
 }
+
+/* GtkImage */
+
+GtkImage {
+    background-color: transparent;
+}
