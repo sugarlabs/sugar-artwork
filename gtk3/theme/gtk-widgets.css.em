@@ -215,6 +215,13 @@ GtkToggleButton.button:active GtkLabel {
     background-color: @white;
 }
 
+GtkTreeView row:nth-child(even) {
+    background-color: @row_even;
+}
+GtkTreeView row:nth-child(odd) {
+    background-color: @row_odd;
+}
+
 .entry {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
