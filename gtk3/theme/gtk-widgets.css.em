@@ -521,6 +521,7 @@ background-color: @black;
 }
 
 .toolbar GtkToolButton .button,
+.toolbar SugarRadioToolButton *,
 SugarPaletteWindowWidget SugarRadioToolButton *,
 SugarPaletteWindowWidget GtkToolButton .button{
     background-color: transparent;
@@ -533,6 +534,7 @@ SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
 }
 
+.toolbar SugarRadioToolButton *:active,
 SugarPaletteWindowWidget SugarRadioToolButton *:active {
     background-color: @button_grey;
     border-radius: $(toolbutton_padding)px;
