@@ -592,6 +592,11 @@ GtkCheckButton:prelight {
     background-color: alpha(@theme_base_color, 0.0);
 }
 
+.toolbar GtkCheckButton *:active,
+SugarPaletteWindowWidget GtkCheckButton *:active {
+    color: @theme_base_color;
+}
+
 .radio,
 .radio row:selected,
 .radio row:selected:focused {
