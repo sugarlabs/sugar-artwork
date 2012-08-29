@@ -138,6 +138,10 @@ icon_large = icon_base * 5
     color: @black;
 }
 
+GtkLabel, GtkLabel:insensitive {
+    background-color: transparent;
+}
+
 /* Handle this differently? */
 .window *:insensitive {
     background-color: @panel_grey;
