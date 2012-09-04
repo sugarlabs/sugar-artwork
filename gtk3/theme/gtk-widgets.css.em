@@ -21,7 +21,7 @@ if scaling == "100":
     bullet_size = 9.5
     font_height = 24
     default_padding = 6
-    toolbutton_padding = 9
+    toolbutton_padding = 10
 else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     xo = False
     line_width = 2.0            # 1.62 rounded up
@@ -32,7 +32,7 @@ else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     # This is a guess on the font size (Sans 10 at 96 DPI)
     font_height = 17
     default_padding = 4         # 4.32
-    toolbutton_padding = 6      # 7.68
+    toolbutton_padding = 7      # 7.68
 
 
 # Radio size used to be:
@@ -77,7 +77,7 @@ icon_large = icon_base * 5
     -GtkEntry-focus-line-width: 0;
     -GtkScale-focus-line-width: 0;
     -GtkScale-focus-line-width: 0;
-    -GtkWidget-focus-padding: 3;
+    -GtkWidget-focus-padding: 0;
     /* 0.05 works good for both the sugar and sugar-xo themes */
     -GtkWidget-cursor-aspect-ratio: 0.05;
 
@@ -527,10 +527,10 @@ background-color: @black;
 .toolbar GtkToolButton .button,
 .toolbar SugarRadioToolButton *,
 SugarPaletteWindowWidget SugarRadioToolButton *,
-SugarPaletteWindowWidget GtkToolButton .button{
+SugarPaletteWindowWidget GtkToolButton .button {
     background-color: transparent;
     border-radius: $(toolbutton_padding)px;
-    padding: $(default_padding)px;
+    padding: $(toolbutton_padding)px;
 }
 
 .toolbar GtkToolButton .button:prelight,
