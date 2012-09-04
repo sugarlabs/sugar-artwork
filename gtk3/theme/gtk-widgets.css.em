@@ -54,15 +54,6 @@ icon_large = icon_base * 5
 * {
     -sugar-focus-line: @white;
 
-    background-color: @button_grey;
-    color: @black;
-
-    border-color: transparent;
-    border-radius: 0px;
-    border-style: none;
-
-    padding: $(thickness)px;
-
     /* A lot of these will probably need to be changed, but this has to
        be done when the exact sizes are known */
     -GtkWidget-interior-focus: 0;
@@ -120,11 +111,6 @@ icon_large = icon_base * 5
     -GtkCheckButton-indicator-spacing: 3;
 }
 
-*:active {
-    background-color: @white;
-    color: @black;
-}
-
 /* Backgrounds and windows */
 
 .background {
@@ -158,19 +144,25 @@ GtkLabel, GtkLabel:insensitive {
     -GtkButton-inner-border: 0 0 0 0;
     padding: $(border)px $(border)px $(border)px $(border)px;
 
+    border-width: $(thickness)px;
+    border-color: @button_grey;
+    border-style: solid;
     border-radius: $(2*subcell_size)px;
     background-color: @button_grey;
     color: @white;
 }
 
-.button * {
-    color: @white;
+.button:focused,
+.button:active {
+    border-color: @white;
 }
 
-.button:focused {
-    border-width: $(thickness)px;
-    border-color: @white;
-    border-style: solid;
+.button:active {
+    background-color: @white;
+}
+
+.button:active:focused {
+    color: @black;
 }
 
 /* Spin buttons */
@@ -180,7 +172,6 @@ GtkLabel, GtkLabel:insensitive {
     border-width: 0px;
     border-style: solid;
     background-color: @button_grey;
-    color: @white;
 }
 
 .spinbutton.button:last-child {
@@ -203,9 +194,6 @@ GtkLabel, GtkLabel:insensitive {
 
 GtkToggleButton.button:active {
     background-color: @white;
-}
-
-GtkToggleButton.button:active GtkLabel {
     color: @black;
 }
 
@@ -217,6 +205,7 @@ GtkToggleButton.button:active GtkLabel {
     border-radius: 0px;
     padding: 0px;
     background-color: @white;
+    color: @black;
 }
 
 GtkTreeView row:nth-child(even) {
@@ -275,7 +264,7 @@ GtkScrolledWindow.frame {
 
 /* Combo boxes */
 
-GtkComboBox * {
+GtkComboBox {
     color: @white;
 }
 
@@ -288,13 +277,13 @@ GtkComboBox .separator {
 
 .notebook {
     background-color: @selection_grey;
+    color: @black;
     padding: 0px;
     -GtkNotebook-tab-overlap: -2;
     -GtkNotebook-tab-curvature: $default_padding;
 }
 
-.notebook tab,
-.notebook tab GtkLabel {
+.notebook tab {
     background-color: @button_grey;
     color: @white;
 }
@@ -307,6 +296,10 @@ GtkComboBox .separator {
 
 BrowseNotebook.notebook tab {
     background-color: @selection_grey;
+}
+
+BrowseNotebook.notebook tab GtkLabel {
+    color: @white;
 }
 
 BrowseNotebook.notebook tab .button {
@@ -443,8 +436,12 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     color: @white;
 }
 
-GtkMenuItem {
+.menuitem {
     padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
+}
+
+.menuitem:prelight {
+    background-color: @button_grey;
 }
 
 .tooltip {
@@ -524,6 +521,13 @@ background-color: @black;
     color: @white;
 }
 
+.toolbar .button,
+SugarPaletteWindowWidget SugarRadioToolButton .button {
+    border-color: transparent;
+    border-radius: 0px;
+    border-style: none;
+}
+
 .toolbar GtkToolButton .button,
 .toolbar SugarRadioToolButton *,
 SugarPaletteWindowWidget SugarRadioToolButton *,
@@ -557,6 +561,10 @@ SugarPaletteWindowWidget GtkScrolledWindow * {
     background-color: @black;
 }
 
+.toolbar GtkComboBox .button {
+    border-radius: $(2*subcell_size)px;
+}
+
 /* Scales */
 
 GtkScale {
@@ -565,6 +573,7 @@ GtkScale {
 }
 
 GtkScale.trough {
+    background-color: @button_grey;
     border-style: solid;
     border-radius: 30px;
     border-color: @button_grey;
@@ -591,6 +600,10 @@ GtkScale.slider:active {
 }
 
 /* Radio and check buttons */
+
+GtkCheckButton {
+    color: @black;
+}
 
 GtkCheckButton:prelight {
     background-color: alpha(@theme_base_color, 0.0);
