@@ -218,7 +218,7 @@ GtkTreeView row:nth-child(odd) {
 .entry {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
-    border-color: @selection_grey;
+    border-color: @text_field_grey;
     border-style: solid;
     background-color: @text_field_grey;
     color: @black;
@@ -237,8 +237,16 @@ GtkTreeView row:nth-child(odd) {
     background-color: @white;
 }
 
+.toolbar .entry:focused {
+    border-color: @white;
+}
+
 .entry:insensitive, .view:insensitive {
     background-color: @button_grey;
+}
+
+.entry:insensitive {
+    border-color: @button_grey;
 }
 
 .view:selected {
@@ -250,6 +258,10 @@ GtkTreeView row:nth-child(odd) {
 .view:selected:focused {
     background-color: @selection_grey;
     color: @black;
+}
+
+.entry:selected, .entry:selected:focused {
+    border-color: @selection_grey;
 }
 
 /* Frames */
