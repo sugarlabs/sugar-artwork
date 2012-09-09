@@ -692,3 +692,9 @@ SugarPaletteWindowWidget GtkCheckButton *:active {
 GtkImage {
     background-color: transparent;
 }
+
+/* Sugar Frame Window */
+
+SugarFrameWindow.background {
+    background-color: @toolbar_grey;
+}
