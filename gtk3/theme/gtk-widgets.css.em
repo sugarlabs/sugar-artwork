@@ -526,7 +526,7 @@ GtkVSeparator, GtkHSeparator,
 
 .toolbar {
 padding: 0px;
-background-color: @black;
+background-color: @toolbar_grey;
 }
 
 .toolbar GtkLabel {
