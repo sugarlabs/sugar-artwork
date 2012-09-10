@@ -98,6 +98,7 @@ icon_large = icon_base * 5
     -GtkArrow-arrow-size: 1.0;
 
     -GtkToolbar-space-size: $(2*subcell_size);
+    -GtkToolbar-shadow-type: none;
 
     -GtkProgressBar-min-horizontal-bar-height: $subcell_size;
     -GtkProgressBar-min-vertical-bar-width: $subcell_size;
