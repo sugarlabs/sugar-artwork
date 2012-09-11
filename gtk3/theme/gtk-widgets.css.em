@@ -405,8 +405,7 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     background-color: @toolbar_grey;
 }
 
-.menu,
-.palette {
+.menu {
     background-color: @black;
     color: @white;
 
@@ -426,27 +425,8 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     border-style: solid;
 }
 
-.menu :prelight, palette :prelight {
-    color: @white
-}
-
-.menu :active, palette :active {
+.menu :active {
     background-color: @button_grey;
-}
-
-.palette {
-    padding: $(thickness)px;
-}
-
-.palette .menu {
-    -GtkMenu-horizontal-padding: 0;
-    -GtkMenu-vertical-padding: 0;
-
-    padding: 0px $(subcell_size)px;
-}
-
-.menu * {
-    color: @white;
 }
 
 .menuitem {
