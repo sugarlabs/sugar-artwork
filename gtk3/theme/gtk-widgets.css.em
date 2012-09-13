@@ -419,7 +419,7 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     -GtkMenu-horizontal-offset : 0;
     -GtkMenu-vertical-offset   : 0;
 
-    padding: 0px;
+    padding: 0px 0px $(subcell_size)px 0px;
     border-width: 2px;
     border-color: @button_grey;
     border-style: solid;
@@ -435,6 +435,23 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
 
 .menuitem:prelight {
     background-color: @button_grey;
+}
+
+.menuitem.separator {
+    padding: $(subcell_size)px 0px;
+    color: @button_grey;
+}
+
+SugarPaletteHeader.menuitem {
+    padding: 0px $((subcell_size * 3 - font_height) / 2)px;
+}
+
+SugarPaletteHeader.menuitem:prelight {
+    background-color: @black;
+}
+
+SugarPaletteHeaderSeparator.menuitem.separator {
+    padding: 0px 0px $(subcell_size)px 0px;
 }
 
 .tooltip {
