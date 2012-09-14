@@ -125,6 +125,14 @@ icon_large = icon_base * 5
     color: @black;
 }
 
+SugarIntroWindow.background {
+    background-color: @white;
+}
+
+SugarIntroWindow {
+    color: @black;
+}
+
 GtkLabel, GtkLabel:insensitive {
     background-color: transparent;
 }
