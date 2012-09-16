@@ -297,45 +297,27 @@ GtkComboBox .separator {
 }
 
 .notebook tab {
-    background-color: @button_grey;
+    background-color: @selection_grey;
+    color: @white;
+}
+
+.notebook tab GtkLabel {
     color: @white;
 }
 
 .notebook tab:active {
-    background-color: @selection_grey;
-}
-
-/* Browse notebook */
-
-BrowseNotebook.notebook tab {
-    background-color: @selection_grey;
-}
-
-BrowseNotebook.notebook tab GtkLabel {
-    color: @white;
-}
-
-BrowseNotebook.notebook tab .button {
-    border-radius: $(toolbutton_padding)px;
-}
-
-BrowseNotebook.notebook tab:active {
     background-color: @toolbar_grey;
 }
 
-BrowseNotebook.notebook tab:active *:active {
-    color: @white;
+.notebook tab .button {
+    border-radius: $(toolbutton_padding)px;
 }
 
-BrowseLinkInfo {
-    color: @white;
-}
+/* Browse Widgets */
 
 BrowseTabPage {
     background-color: @black;
 }
-
-
 
 /* Control panel */
 
