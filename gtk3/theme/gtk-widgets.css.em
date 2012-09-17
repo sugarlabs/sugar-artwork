@@ -110,6 +110,9 @@ icon_large = icon_base * 5
 
     -GtkCheckButton-indicator-size: $radio_size;
     -GtkCheckButton-indicator-spacing: 3;
+
+    -GtkWidget-text-handle-width: 84px;
+    -GtkWidget-text-handle-height: 84px;
 }
 
 /* Backgrounds and windows */
@@ -685,4 +688,28 @@ GtkImage {
 
 SugarFrameWindow.background {
     background-color: @toolbar_grey;
+}
+
+/* Text cursor handles */
+
+.cursor-handle.top,
+.cursor-handle.bottom {
+    background-color: transparent;
+    box-shadow: none;
+    border-style: none;
+    border-image: none;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+.cursor-handle.bottom {
+    background-image: url("assets/cursor-handle-bottom.svg");
+}
+
+.cursor-handle.top {
+    background-image: url("assets/cursor-handle-top.svg");
+}
+
+.cursor-handle.insert-cursor {
+    background-image: url("assets/cursor-handle-insert.svg");
 }

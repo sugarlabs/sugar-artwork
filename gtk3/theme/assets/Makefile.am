@@ -8,7 +8,11 @@ assets =			\
 	checkbox-unchecked.svg		\
 	checkbox-unchecked-selected.svg	\
 	checkbox-checked.svg		\
-	checkbox-checked-selected.svg
+	checkbox-checked-selected.svg   \
+	cursor-handle-insert.svg	\
+	cursor-handle-bottom.svg	\
+	cursor-handle-top.svg
+
 
 sugar72dir = $(datadir)/themes/sugar-72/gtk-3.0/assets
 sugar100dir = $(datadir)/themes/sugar-100/gtk-3.0/assets
