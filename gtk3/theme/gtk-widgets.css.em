@@ -566,6 +566,7 @@ SugarPaletteWindowWidget GtkToolButton .button {
 .toolbar GtkToolButton .button:prelight,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
+    border-radius: 0px;
 }
 
 .toolbar SugarRadioToolButton *:active,
