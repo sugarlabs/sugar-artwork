@@ -117,18 +117,12 @@ icon_large = icon_base * 5
 
 /* Backgrounds and windows */
 
-.background {
-    padding: 0px;
-    border-width: 0px;
-    background-color: @panel_grey;
-}
-
-.window {
+GtkWindow {
     background-color: @panel_grey;
     color: @black;
 }
 
-SugarIntroWindow.background {
+SugarIntroWindow {
     background-color: @white;
 }
 
@@ -373,7 +367,7 @@ SugarHTray * , SugarVTray * { background-color: @toolbar_grey;}
 
 /* Menus and palettes */
 
-SugarPaletteWindowWidget.background {
+SugarPaletteWindowWidget {
     background-color: @black;
 }
 
@@ -381,7 +375,7 @@ SugarPaletteWindowWidget GtkLabel {
     color: @white;
 }
 
-SugarPaletteMenuWidget.background {
+SugarPaletteMenuWidget {
     background-color: @black;
 }
 
@@ -686,7 +680,7 @@ GtkImage {
 
 /* Sugar Frame Window */
 
-SugarFrameWindow.background {
+SugarFrameWindow {
     background-color: @toolbar_grey;
 }
 
