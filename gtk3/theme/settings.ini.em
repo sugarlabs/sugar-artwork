@@ -14,6 +14,7 @@ icon_large = icon_base * 5
 [Settings]
 gtk-auto-mnemonics = 1
 gtk-menu-images = 1
+gtk-button-images = 1
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
 gtk-cursor-theme-name = sugar
 
