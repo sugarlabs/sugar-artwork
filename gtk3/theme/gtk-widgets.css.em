@@ -214,6 +214,10 @@ GtkToggleButton.button:active {
     color: @black;
 }
 
+GtkTreeView {
+    background-color: @button_grey;
+}
+
 GtkTreeView row:nth-child(even) {
     background-color: @row_even;
 }
