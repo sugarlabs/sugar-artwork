@@ -79,6 +79,7 @@ icon_DATA =						\
 	toolbar-help.svg				\
 	tray-hide.svg					\
 	tray-show.svg					\
+	tray-favourite.svg				\
 	transfer-from-application-octet-stream.svg	\
 	transfer-from-audio-x-generic.svg		\
 	transfer-from-image-x-generic.svg		\
