@@ -358,6 +358,7 @@ SugarAlert *:insensitive {
 .button SugarTimeoutIcon GtkLabel:prelight {
     background-color: @white;
     color: @button_grey;
+    border-radius: $(2 * subcell_size)px;
 }
 
 .button SugarTimeoutIcon GtkLabel:active {
