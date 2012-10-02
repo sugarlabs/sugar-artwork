@@ -307,11 +307,17 @@ GtkComboBox .separator {
 
 .notebook tab {
     background-color: @selection_grey;
+}
+
+/* Setting white color to the tab labels using only the previous rule */
+/* doesn't work, so we have to set white color to the GtkLabel, and make */
+/* sure the buttons get black color in the next two rules: */
+.notebook tab GtkLabel {
     color: @white;
 }
 
-.notebook tab GtkLabel {
-    color: @white;
+.notebook tab .button GtkLabel {
+    color: @black;
 }
 
 .notebook tab:active {
@@ -346,10 +352,6 @@ SugarAlert {
     color: @white;
 }
 
-SugarAlert GtkLabel {
-    color: @white;
-}
-
 SugarAlert *:insensitive {
     background-color: @black;
 }
@@ -374,9 +376,6 @@ SugarHTray * , SugarVTray * { background-color: @toolbar_grey;}
 
 SugarPaletteWindowWidget {
     background-color: @black;
-}
-
-SugarPaletteWindowWidget GtkLabel {
     color: @white;
 }
 
@@ -517,10 +516,7 @@ GtkVSeparator, GtkHSeparator,
 .toolbar {
 padding: 0px;
 background-color: @toolbar_grey;
-}
-
-.toolbar GtkLabel {
-    color: @white;
+color: @white;
 }
 
 .toolbar .button,
