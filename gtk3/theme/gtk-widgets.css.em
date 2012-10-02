@@ -689,6 +689,15 @@ SugarFrameWindow {
     background-color: @toolbar_grey;
 }
 
+/* Sugar Favorite Activity icon */
+
+SugarFavoriteActivityIcon:prelight {
+    border-color: @selection_grey;
+    border-radius: $(2 * thickness)px;
+    border-width: $(thickness)px;
+    border-style: solid;
+}
+
 /* Text cursor handles */
 
 .cursor-handle.top,
