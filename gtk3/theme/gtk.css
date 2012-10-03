@@ -9,6 +9,8 @@
 @define-color row_even #E5E5E5;
 @define-color row_odd #D5D5D5;
 @define-color white #FFFFFF;
+@define-color zoom_views_prelight #E8E8E8;
+@define-color zoom_views_active #B3B3B3;
 
 /* Default color scheme */
 @define-color base_color #ffffff;
