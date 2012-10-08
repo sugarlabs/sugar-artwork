@@ -122,6 +122,11 @@ GtkWindow {
     color: @black;
 }
 
+GtkDialog {
+    background-color: @black;
+    color: @white;
+}
+
 SugarIntroWindow {
     background-color: @white;
 }
