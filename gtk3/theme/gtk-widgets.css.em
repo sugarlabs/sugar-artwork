@@ -67,7 +67,6 @@ icon_large = icon_base * 5
     -GtkWidget-focus-line-width: 0;  /* Prevents some drawing glitches */
     -GtkEntry-focus-line-width: 0;
     -GtkScale-focus-line-width: 0;
-    -GtkScale-focus-line-width: 0;
     -GtkWidget-focus-padding: 0;
     /* 0.05 works good for both the sugar and sugar-xo themes */
     -GtkWidget-cursor-aspect-ratio: 0.05;
@@ -570,35 +569,38 @@ SugarPaletteWindowWidget GtkScrolledWindow * {
 
 /* Scales */
 
-GtkScale {
+.scale {
     -GtkScale-slider-length: $scale_slider_width;
     -GtkRange-slider-width: $scale_slider_width;
 }
 
-GtkScale.trough {
+.scale.trough {
     background-color: @button_grey;
     border-style: solid;
-    border-radius: 30px;
+    border-radius: $(2*subcell_size)px;
     border-color: @button_grey;
-    border-width: 2px;
+    border-width: $(thickness)px;
 }
 
-GtkScale.trough:focused {
+.scale.trough:focused {
     border-color: @white;
 }
 
-GtkScale.trough.top, GtkScale.trough.left {
+.scale.trough.top,
+.scale.trough.left {
     background-color: @white;
 }
 
-GtkScale.slider {
-    color: alpha(@theme_base_color, 0.0);
-    background-color: alpha(@theme_base_color, 0.0);
+.scale.slider,
+.scale.slider:active {
+    background-color: transparent;
+}
+
+.scale.slider {
     background-image: url("assets/scale-slider.svg");
 }
 
-GtkScale.slider:active {
-    color: alpha(@theme_base_color, 0.0);
+.scale.slider:active {
     background-image: url("assets/scale-slider-active.svg");
 }
 
