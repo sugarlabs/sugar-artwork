@@ -690,21 +690,21 @@ SugarFrameWindow {
     background-color: @toolbar_grey;
 }
 
-/* Sugar Favorite Activity icon */
+/* Sugar Canvas icon */
 
-SugarFavoriteActivityIcon {
+SugarCanvasIcon {
     border-color: transparent;
     border-radius: $(4 * thickness)px;
     border-width: 2px;
     border-style: solid;
 }
 
-SugarFavoriteActivityIcon:prelight {
+SugarCanvasIcon:prelight {
     border-color: @zoom_views_prelight;
     background-color: @zoom_views_prelight;
 }
 
-SugarFavoriteActivityIcon:active {
+SugarCanvasIcon:active {
     border-color: @zoom_views_active;
     background-color: @zoom_views_active;
 }
