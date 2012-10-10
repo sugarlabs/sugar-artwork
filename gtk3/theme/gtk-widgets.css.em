@@ -577,7 +577,6 @@ SugarPaletteWindowWidget GtkScrolledWindow * {
 .scale.trough {
     background-color: @button_grey;
     border-style: solid;
-    border-radius: $(2*subcell_size)px;
     border-color: @button_grey;
     border-width: $(thickness)px;
 }
@@ -594,6 +593,22 @@ SugarPaletteWindowWidget GtkScrolledWindow * {
 .scale.trough.top:focused,
 .scale.trough.left:focused {
     border-color: @selection_grey;
+}
+
+.scale.trough {
+    border-radius: 0px $(2*subcell_size)px $(2*subcell_size)px 0px;
+}
+
+.scale.trough.vertical {
+    border-radius: 0px 0px $(2*subcell_size)px $(2*subcell_size)px;
+}
+
+.scale.trough.top {
+    border-radius: $(2*subcell_size)px $(2*subcell_size)px 0px 0px;
+}
+
+.scale.trough.left {
+    border-radius: $(2*subcell_size)px 0px 0px $(2*subcell_size)px;
 }
 
 .scale.slider,
