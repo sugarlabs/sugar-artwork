@@ -43,6 +43,11 @@ else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
 # so the SVG displays at the correct size.
 # FIXME this only works for 100, has not been tested in 75 resolution
 radio_size = 26
+
+# FIXME this should be calculated with the radio size and the bullet
+# size:
+scale_trough_margin = 8
+
 scale_slider_width = my_floor(2 * subcell_size + line_width)
 thickness = my_ceil(line_width)
 
@@ -579,6 +584,11 @@ SugarPaletteWindowWidget GtkScrolledWindow * {
     border-style: solid;
     border-color: @button_grey;
     border-width: $(thickness)px;
+    margin: $(scale_trough_margin)px 0;
+}
+
+.scale.trough.vertical {
+    margin: 0 $(scale_trough_margin)px;
 }
 
 .scale.trough:focused {
