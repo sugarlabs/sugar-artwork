@@ -591,6 +591,11 @@ SugarPaletteWindowWidget GtkScrolledWindow * {
     background-color: @white;
 }
 
+.scale.trough.top:focused,
+.scale.trough.left:focused {
+    border-color: @selection_grey;
+}
+
 .scale.slider,
 .scale.slider:active {
     background-color: transparent;
