@@ -111,8 +111,8 @@ icon_large = icon_base * 5
     -GtkCheckButton-indicator-size: $radio_size;
     -GtkCheckButton-indicator-spacing: 3;
 
-    -GtkWidget-text-handle-width: 84px;
-    -GtkWidget-text-handle-height: 84px;
+    -GtkWidget-text-handle-width: 55px;
+    -GtkWidget-text-handle-height: 55px;
 }
 
 /* Backgrounds and windows */
