@@ -758,6 +758,24 @@ SugarCanvasIcon:active {
     background-color: @zoom_views_active;
 }
 
+/* Sugar CellRenderer Icons */
+
+.cell.sugar-icon-cell {
+    background-color: transparent;
+    border-radius: $(4 * thickness)px;
+    border-color: @white;
+    border-width: $(thickness)px;
+    border-style: solid;
+}
+
+.cell.sugar-icon-cell:prelight {
+    background-color: @zoom_views_prelight;
+}
+
+.cell.sugar-icon-cell:active {
+    background-color: @zoom_views_active;
+}
+
 /* Text cursor handles */
 
 .cursor-handle.top,
