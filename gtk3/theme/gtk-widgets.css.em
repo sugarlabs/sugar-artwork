@@ -273,13 +273,15 @@ GtkTreeView row:nth-child(odd) {
     color: @black;
 }
 
-.entry:selected, .entry:selected:focused, 
+.entry:selected,
+.entry:selected:focused,
 .view:selected:focused {
     background-color: @selection_grey;
     color: @black;
 }
 
-.entry:selected, .entry:selected:focused {
+.entry:selected,
+.entry:selected:focused {
     border-color: @selection_grey;
 }
 
@@ -763,4 +765,15 @@ SugarCanvasIcon:active {
 
 .cursor-handle.insert-cursor {
     background-image: url("assets/cursor-handle-insert.svg");
+}
+
+/* Application specific properties */
+
+EvView {
+    background-color: @panel_grey;
+}
+
+EvView:selected,
+ApDocView:selected {
+    background-color: @selection_grey;
 }
