@@ -167,8 +167,7 @@ GtkLabel, GtkLabel:insensitive {
     color: @white;
 }
 
-.button:focused,
-.button:active {
+.button:focused {
     border-color: @white;
 }
 
@@ -178,6 +177,7 @@ GtkLabel, GtkLabel:insensitive {
 
 .button:active:focused {
     color: @black;
+    border-color: @button_grey;
 }
 
 /* Spin buttons */
