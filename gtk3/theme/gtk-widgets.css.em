@@ -581,6 +581,13 @@ SugarPaletteWindowWidget GtkScrolledWindow * {
     -GtkRange-slider-width: $scale_slider_width;
 }
 
+/* We have to override the color of the scale, otherwise the slider
+   background image is invisible or not set for this palettes.
+   Upstream bug: https://bugzilla.gnome.org/show_bug.cgi?id=686703 */
+SugarPaletteWindowWidget .scale {
+    color: transparent;
+}
+
 .scale.trough {
     background-color: @button_grey;
     border-style: solid;
