@@ -345,6 +345,14 @@ BrowseTabPage {
     background-color: @black;
 }
 
+BrowseSearchWindow .view {
+    background-color: @black;
+    color: @white;
+    border-color: @button_grey;
+    border-width: 0 $(thickness)px $(thickness)px $(thickness)px;
+    border-style: solid;
+}
+
 /* Control panel */
 
 SugarSectionView {
