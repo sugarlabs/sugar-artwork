@@ -298,6 +298,12 @@ GtkScrolledWindow.frame {
     padding: $(default_padding)px;
 }
 
+GtkFrame.frame.journal-preview-box {
+    border-style: solid;
+    border-color: @button_grey;
+    border-width: $(thickness)px;
+}
+
 /* Combo boxes */
 
 GtkComboBox {
