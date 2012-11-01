@@ -119,6 +119,10 @@ icon_large = icon_base * 5
     -GtkWidget-text-handle-height: 55px;
 }
 
+*:insensitive {
+    color: @button_grey;
+}
+
 /* Backgrounds and windows */
 
 GtkWindow {
@@ -220,7 +224,6 @@ GtkToggleButton.button:active {
     border-radius: 0px;
     padding: 0px;
     background-color: @white;
-    color: @black;
 }
 
 GtkTreeView {
