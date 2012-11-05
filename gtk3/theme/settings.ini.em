@@ -17,6 +17,7 @@ gtk-menu-images = 1
 gtk-button-images = 1
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
 gtk-cursor-theme-name = sugar
+gtk-primary-button-warps-slider = 0
 
 ${
 icon_small = icon_base * 3
