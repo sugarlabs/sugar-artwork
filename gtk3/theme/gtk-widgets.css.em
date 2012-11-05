@@ -663,16 +663,12 @@ SugarPaletteWindowWidget .scale {
 
 /* Radio and check buttons */
 
-GtkCheckButton {
-    color: @black;
-}
-
 GtkCheckButton:prelight {
     background-color: alpha(@theme_base_color, 0.0);
 }
 
-.toolbar GtkCheckButton *:active,
-SugarPaletteWindowWidget GtkCheckButton *:active {
+.toolbar GtkCheckButton,
+SugarPaletteWindowWidget GtkCheckButton {
     color: @theme_base_color;
 }
 
