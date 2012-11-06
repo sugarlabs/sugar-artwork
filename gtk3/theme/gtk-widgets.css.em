@@ -407,6 +407,10 @@ SugarPaletteWindowWidget {
     color: @white;
 }
 
+SugarPaletteWindowWidget .view {
+    color: @black;
+}
+
 SugarPaletteMenuWidget {
     background-color: @black;
 }
