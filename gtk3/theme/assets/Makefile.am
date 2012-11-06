@@ -9,7 +9,7 @@ assets =			\
 	checkbox-unchecked-selected.svg	\
 	checkbox-checked.svg		\
 	checkbox-checked-selected.svg   \
-	cursor-handle-insert.svg	\
+	cursor-handle-insertion.svg	\
 	cursor-handle-bottom.svg	\
 	cursor-handle-top.svg
 
