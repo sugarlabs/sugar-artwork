@@ -806,8 +806,8 @@ SugarCanvasIcon:active {
     background-image: url("assets/cursor-handle-top.svg");
 }
 
-.cursor-handle.insertion-cursor {
-    background-image: url("assets/cursor-handle-insertion.svg");
+.cursor-handle.insert-cursor {
+    background-image: url("assets/cursor-handle-insert.svg");
 }
 
 /* Application specific properties */
