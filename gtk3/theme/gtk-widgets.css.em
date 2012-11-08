@@ -174,6 +174,10 @@ GtkLabel, GtkLabel:insensitive {
     background-color: @white;
 }
 
+.button:insensitive {
+    background-color: transparent;
+}
+
 .button:active:focused {
     color: @black;
     border-color: @button_grey;
