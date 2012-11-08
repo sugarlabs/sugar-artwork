@@ -76,7 +76,7 @@ icon_large = icon_base * 5
     /* 0.05 works good for both the sugar and sugar-xo themes */
     -GtkWidget-cursor-aspect-ratio: 0.05;
 
-    -GtkWidget-wide-separators: false;
+    -GtkWidget-wide-separators: true;
     -GtkWidget-separator-height: $thickness;
     -GtkWidget-separator-width: $thickness;
 
@@ -462,7 +462,6 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
 
 .menuitem.separator {
     padding: $(subcell_size)px 0px;
-    color: @button_grey;
 }
 
 SugarPaletteHeader.menuitem {
@@ -538,9 +537,10 @@ GtkProgressBar.trough {
 
 /* Separators */
 
-GtkVSeparator, GtkHSeparator,
-.toolbar GtkSeparatorToolItem {
-    color: @button_grey;
+.separator {
+    border-style: solid;
+    border-color: @button_grey;
+    border-width: $thickness;
 }
 
 /* Tool buttons */
