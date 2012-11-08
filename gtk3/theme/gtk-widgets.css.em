@@ -147,11 +147,6 @@ GtkLabel, GtkLabel:insensitive {
     background-color: transparent;
 }
 
-/* Handle this differently? */
-.window *:insensitive {
-    background-color: @panel_grey;
-}
-
 /* Buttons */
 
 .button {
