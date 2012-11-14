@@ -558,6 +558,10 @@ SugarPaletteWindowWidget SugarRadioToolButton .button {
     border-style: none;
 }
 
+.toolbar .button #gtk-toolbar-arrow {
+    padding: 0 $(subcell_size + default_padding)px;
+}
+
 .toolbar GtkToolButton .button,
 .toolbar SugarRadioToolButton *,
 SugarPaletteWindowWidget SugarRadioToolButton *,
