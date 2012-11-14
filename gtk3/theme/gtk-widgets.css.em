@@ -333,6 +333,7 @@ GtkComboBox .separator {
 /* sure the buttons get black color in the next two rules: */
 .notebook tab GtkLabel {
     color: @white;
+    padding: $(subcell_size)px 0;
 }
 
 .notebook tab .button GtkLabel {
