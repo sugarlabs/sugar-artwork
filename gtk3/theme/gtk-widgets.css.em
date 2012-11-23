@@ -540,7 +540,7 @@ GtkProgressBar.trough {
 .separator {
     border-style: solid;
     border-color: @button_grey;
-    border-width: $thickness;
+    border-width: $(thickness)px;
 }
 
 /* Tool buttons */
