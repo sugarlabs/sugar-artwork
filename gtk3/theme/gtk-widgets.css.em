@@ -398,6 +398,10 @@ SugarAlert *:insensitive {
 
 /* Tray */
 
+SugarHTray, SugarVTray {
+    background-color: @toolbar_grey;
+}
+
 SugarHTray * , SugarVTray * { background-color: @toolbar_grey;}
 
 /* Menus and palettes */
