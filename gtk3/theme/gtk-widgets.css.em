@@ -525,18 +525,23 @@ SugarPaletteHeaderSeparator.menuitem.separator {
 
 GtkProgressBar.progressbar {
     background-color: @white;
-    border-color: @white;
-    border-radius: 10px;
+    border-color: @button_grey;
+    border-radius: $(subcell_size)px;
     border-style: solid;
-    border-width: 0px;
+    border-width: $(thickness)px;
 }
 
 GtkProgressBar.trough {
-    background-color: alpha (@black, 0.0);
+    background-color: @selection_grey;
     border-style: solid;
-    border-radius: 10px;
+    border-radius: $(subcell_size)px;
     border-color: @button_grey;
-    border-width: 2px;
+    border-width: $(thickness)px;
+}
+
+.toolbar GtkProgressBar.trough,
+SugarPaletteWindowWidget GtkProgressBar.trough {
+    background-color: @black;
 }
 
 /* Separators */
