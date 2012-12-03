@@ -580,10 +580,17 @@ SugarPaletteWindowWidget GtkToolButton .button {
     padding: $(toolbutton_padding)px;
 }
 
+.toolbar GtkToolButton .button,
+SugarPaletteWindowWidget GtkToolButton .button:prelight {
+    padding: $(toolbutton_padding - default_padding)px;
+    border-width: $(default_padding)px;
+    border-style: solid;
+    background-clip: padding-box;
+}
+
 .toolbar GtkToolButton .button:prelight,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
-    border-radius: 0px;
 }
 
 .toolbar SugarRadioToolButton *:active,
