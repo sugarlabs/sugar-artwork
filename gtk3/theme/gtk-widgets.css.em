@@ -774,19 +774,22 @@ SugarFrameWindow {
 
 /* Sugar Canvas icon */
 
-SugarCanvasIcon {
+SugarCanvasIcon,
+SugarKeepIcon.button {
     border-color: transparent;
     border-radius: $(4 * thickness)px;
     border-width: 2px;
     border-style: solid;
 }
 
-SugarCanvasIcon:prelight {
+SugarCanvasIcon:prelight,
+SugarKeepIcon.button:prelight {
     border-color: @zoom_views_prelight;
     background-color: @zoom_views_prelight;
 }
 
-SugarCanvasIcon:active {
+SugarCanvasIcon:active,
+SugarKeepIcon.button.toggle-press {
     border-color: @zoom_views_active;
     background-color: @zoom_views_active;
 }
