@@ -407,6 +407,9 @@ SugarHTray * , SugarVTray * { background-color: @toolbar_grey;}
 /* Menus and palettes */
 
 SugarPaletteWindowWidget {
+    border-width: $(thickness)px;
+    border-color: @button_grey;
+    border-style: solid;
     background-color: @black;
     color: @white;
 }
