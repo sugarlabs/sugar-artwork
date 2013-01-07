@@ -812,6 +812,23 @@ SugarKeepIcon.button.toggle-press {
     background-color: @zoom_views_active;
 }
 
+/* CellRendererProgress */
+
+.cell.progressbar, .cell.trough {
+    border-style: solid;
+    border-width: $(thickness)px;
+    border-color: @selection_grey;
+    border-radius: $(2*subcell_size)px;
+}
+
+.cell.progressbar {
+    background-color: @white;
+}
+
+.cell.trough {
+    background-color: @text_field_grey;
+}
+
 /* Text cursor handles */
 
 .cursor-handle.top,
