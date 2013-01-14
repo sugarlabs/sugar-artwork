@@ -326,6 +326,10 @@ GtkComboBox .separator {
     -GtkWidget-scroll-arrow-vlength: $(my_floor(2.5 * subcell_size));
 }
 
+.notebook.arrow {
+    color: @white;
+}
+
 .notebook tab {
     background-color: @selection_grey;
 }
