@@ -322,6 +322,8 @@ GtkComboBox .separator {
     padding: 0px;
     -GtkNotebook-tab-overlap: -2;
     -GtkNotebook-tab-curvature: $default_padding;
+    -GtkWidget-scroll-arrow-hlength: $(my_floor(2.5 * subcell_size));
+    -GtkWidget-scroll-arrow-vlength: $(my_floor(2.5 * subcell_size));
 }
 
 .notebook tab {
