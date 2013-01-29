@@ -503,7 +503,7 @@ SugarPaletteHeaderSeparator.menuitem.separator {
 /* Scrollbars */
 
 .scrollbar {
-    -GtkRange-slider-width: $subcell_size;
+    -GtkRange-slider-width: $(subcell_size + 2*thickness);
     -GtkRange-trough-border: 0;
     -GtkRange-stepper-size: 0;
     -GtkScrollbar-min-slider-length: $(3*subcell_size);
@@ -521,7 +521,9 @@ SugarPaletteHeaderSeparator.menuitem.separator {
 .scrollbar.slider {
     background-color: @white;
     border-radius: $(2*subcell_size)px;
-    border-width: 0px;
+    border-width: $(thickness)px;
+    border-color: @button_grey;
+    border-style: solid;
 }
 
 .scrollbar.slider:active {
