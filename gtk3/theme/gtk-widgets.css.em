@@ -151,13 +151,7 @@ GtkLabel, GtkLabel:insensitive {
 
 .button {
     ${ border = max(0, my_ceil((3*subcell_size/2.0 - icon_small / 2.0))) }
-    /* It would be nicer to just set the inner-border, but that does not work
-       for combo boxes ... The combobox ignores it, so set it to 0px
-       See http://bugzilla.gnome.org/show_bug.cgi?id=485762 */
-
-    -GtkButton-inner-border: 0 0 0 0;
     padding: $(border)px $(border)px $(border)px $(border)px;
-
     border-width: $(thickness)px;
     border-color: @button_grey;
     border-style: solid;
