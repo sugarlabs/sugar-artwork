@@ -358,10 +358,6 @@ GtkComboBox .menu {
 
 /* Browse Widgets */
 
-BrowseTabPage {
-    background-color: @black;
-}
-
 BrowseSearchWindow .view {
     background-color: @black;
     color: @white;
