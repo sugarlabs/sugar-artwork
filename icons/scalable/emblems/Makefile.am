@@ -12,7 +12,9 @@ icon_DATA =			\
 	emblem-outofrange.svg	\
 	emblem-question.svg	\
 	emblem-view-source.svg  \
-	emblem-warning.svg
+	emblem-warning.svg	\
+	emblem-checked.svg	\
+	emblem-unchecked.svg
 
 EXTRA_DIST = $(icon_DATA)
 
