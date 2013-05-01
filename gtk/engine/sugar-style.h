@@ -44,6 +44,11 @@ struct _SugarStyleClass
   GtkStyleClass parent_class;
 };
 
-G_GNUC_INTERNAL void sugar_style_register_type (GTypeModule *module);
+G_GNUC_INTERNAL 
+void         sugar_style_register_type  (GTypeModule *module);
+
+void         theme_init                 (GTypeModule *module);
+void         theme_exit                 (void);
+GtkRcStyle * theme_create_rc_style      (void);
 
 #endif /* __SUGAR_STYLE_H */
