@@ -108,6 +108,7 @@ icon_DATA =						\
 	view-spiral.svg					\
 	view-source.svg					\
 	view-triangle.svg				\
+	web-refresh.svg					\
 	zoom-activity.svg 				\
 	zoom-best-fit.svg				\
 	zoom-groups.svg					\

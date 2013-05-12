@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Emacs -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="55"
+   height="55"
+   viewBox="0 0 55 55"
+   xml:space="preserve">
+  <g transform="translate(-2.0448251,-0.25332512)">
+    <g transform="matrix(0.69274466,0,0,0.69274466,19.036115,16.949522)"
+       style="display:block">
+      <circle
+          cx="27.375"
+          cy="27.5"
+          r="19.903"
+          style="fill:#ffffff;stroke:#010101;stroke-width:3.5;display:inline" />
+      <g>
+	<path
+            d="m 27.376,7.598 c 0,0 -11.205,8.394 -11.205,19.976 0,11.583 11.205,19.829 11.205,19.829"
+            style="fill:#ffffff;stroke:#010101;stroke-width:3.5" />
+	<path
+            d="m 27.376,7.598 c 0,0 11.066,9.141 11.066,19.976 0,10.839 -11.066,19.829 -11.066,19.829"
+            style="fill:#ffffff;stroke:#010101;stroke-width:3.5" />
+	<line
+            style="fill:#ffffff;stroke:#010101;stroke-width:3.5"
+            x1="27.375999"
+            x2="27.375999"
+            y1="7.598"
+            y2="47.402" />
+	<line
+            style="fill:#ffffff;stroke:#010101;stroke-width:3.5"
+            x1="27.375999"
+            x2="27.375999"
+            y1="7.598"
+            y2="47.402" />
+	<line
+            style="fill:#ffffff;stroke:#010101;stroke-width:3.5"
+            x1="27.375999"
+            x2="27.375999"
+            y1="7.598"
+            y2="47.402" />
+	<line
+            style="fill:#ffffff;stroke:#010101;stroke-width:3.5"
+            x1="7.4720001"
+            x2="47.278"
+            y1="27.5"
+           y2="27.5" />
+      </g>
+    </g>
+    <polygon
+	points="22.727,35.914 43.449,35.914 43.449,8.928 32.113,8.928 22.727,18.311 "
+	transform="translate(-15.13735,0)"
+	style="fill:#ffffff;stroke:#010101;stroke-width:3" />
+    <polyline
+	transform="translate(-15.13735,0)"
+	points="22.727,18.311 32.113,18.311 32.113,8.928    "
+	style="fill:none;stroke:#010101;stroke-width:2.98670006" />
+    <g transform="translate(-0.3256499,0)">
+      <line
+          style="fill:none;stroke:#ffffff;stroke-width:2.98670006;stroke-linecap:round;stroke-linejoin:round"
+          y2="18.164"
+          y1="6"
+          x2="38.325649"
+          x1="38.325649" />
+      <polyline
+          style="fill:none;stroke:#ffffff;stroke-width:2.98670006;stroke-linecap:round;stroke-linejoin:round"
+          points="11.583,12.083 16.713,6 21.843,12.083    "
+          transform="matrix(-1,0,0,1,55.03865,0)" />
+    </g>
+  </g>
+</svg>
