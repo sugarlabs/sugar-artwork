@@ -1,9 +1,0 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
-	<!ENTITY stroke_color "none">
-	<!ENTITY fill_color "#ffffff">
-]><svg enable-background="new 0 0 55 55" height="55px" style="" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="toolbar_x5F_view" style="">
-	<g style="">
-		<path d="M21.937,27.499c0,3.07,2.492,5.562,5.562,5.562c3.067,0,5.559-2.492,5.559-5.562    c0-3.067-2.491-5.564-5.559-5.564C24.429,21.935,21.937,24.432,21.937,27.499z" fill="&fill_color;" style=""/>
-		<path d="M27.499,13.037c-14.476,0-26.531,14.432-26.531,14.432s12.056,14.504,26.531,14.494    c14.474-0.01,26.533-14.513,26.533-14.513S41.973,13.025,27.499,13.037z M27.5,36.562c-5.003,0-9.063-4.061-9.063-9.063    c0-4.998,4.061-9.066,9.063-9.066c4.997,0,9.058,4.068,9.058,9.066C36.558,32.502,32.497,36.562,27.5,36.562z" fill="&fill_color;" style=""/>
-	</g>
-</g></svg>

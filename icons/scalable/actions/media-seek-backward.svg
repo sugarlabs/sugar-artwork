@@ -1,6 +1,0 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
-	<!ENTITY stroke_color "#010101">
-	<!ENTITY fill_color "#FFFFFF">
-]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-seek-backward">
-	<path d="M27.5,5C15.074,5,5,15.075,5,27.5S15.074,50,27.5,50S50,39.925,50,27.5S39.926,5,27.5,5z    M39.238,34.771L26.43,27.958c0,6.805,0,6.813,0,6.813l-13.416-7.136l13.416-6.28c0,2.407,0,4.375,0,5.996l12.809-5.996   C39.238,34.771,39.238,34.771,39.238,34.771z" display="inline" fill="&fill_color;"/>
-</g></svg>
