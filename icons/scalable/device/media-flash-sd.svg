@@ -1,9 +1,0 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
-	<!ENTITY stroke_color "#010101">
-	<!ENTITY fill_color "#ffffff">
-]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="media-flash-sd-mmc">
-	<g display="inline">
-		<polygon fill="&fill_color;" points="35.914,3.5 8.913,3.5 8.913,19.251 10.992,19.251     10.992,28.77 8.913,28.77 8.913,51.5 45.836,51.5 45.836,22.051 44.119,22.051 44.119,19.368 45.836,19.368 45.836,13.423   " stroke="&stroke_color;" stroke-width="3.5"/>
-		<path d="M39.571,28.728c0,3.281-2.685,5.965-5.966,5.965H20.68c-3.28,0-5.965-2.684-5.965-5.965V15.733    c0-3.281,2.684-5.965,5.965-5.965h12.925c3.281,0,5.966,2.685,5.966,5.965V28.728z" fill="&stroke_color;"/>
-	</g>
-</g></svg>

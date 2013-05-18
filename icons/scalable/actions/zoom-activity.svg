@@ -1,6 +1,0 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
-	<!ENTITY stroke_color "#010101">
-	<!ENTITY fill_color "#FFFFFF">
-]><svg enable-background="new 0 0 55 55" height="55px" version="1.1" viewBox="0 0 55 55" width="55px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g display="block" id="zoom-activity_1_">
-	<path d="M27.5,5C15.074,5,5,15.074,5,27.5S15.074,50,27.5,50   S50,39.928,50,27.5C50,15.073,39.926,5,27.5,5z M39.305,36.943H15.695V18.055h23.609V36.943z" display="inline" fill="&fill_color;" id="zoom-activity"/>
-</g></svg>
