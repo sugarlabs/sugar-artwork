@@ -67,6 +67,7 @@ icon_DATA =						\
 	media-seek-backward.svg				\
 	media-seek-forward-insensitive.svg		\
 	media-seek-forward.svg				\
+	refresh-web-account-menu.svg			\
 	row-insert.svg					\
 	row-remove.svg					\
 	system-logout.svg				\
