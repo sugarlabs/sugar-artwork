@@ -269,6 +269,11 @@ GtkTreeView row:nth-child(odd) {
     color: @black;
 }
 
+.view:insensitive {
+	background-color: @white;
+	color: @black;
+}
+
 .entry:selected,
 .entry:selected:focused,
 .view:selected:focused {
