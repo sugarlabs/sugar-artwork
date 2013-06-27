@@ -4,7 +4,7 @@ AC_INIT([sugar-artwork],[0.98.2],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
-AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip])
+AM_INIT_AUTOMAKE([1.9 foreign dist-xz no-dist-gzip])
 
 AM_MAINTAINER_MODE
 AM_DISABLE_STATIC
