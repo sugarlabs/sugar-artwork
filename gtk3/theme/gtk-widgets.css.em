@@ -256,7 +256,7 @@ GtkTreeView row:nth-child(odd) {
     border-color: @white;
 }
 
-.entry:insensitive, .view:insensitive {
+.entry:insensitive {
     background-color: @button_grey;
 }
 
