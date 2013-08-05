@@ -352,10 +352,6 @@ GtkComboBox .menu {
     background-color: @toolbar_grey;
 }
 
-.notebook tab .button {
-    border-radius: $(toolbutton_padding)px;
-}
-
 /* Browse Widgets */
 
 BrowseSearchWindow .view {
@@ -570,6 +566,7 @@ color: @white;
 }
 
 .toolbar .button,
+.notebook tab .button,
 SugarPaletteWindowWidget SugarRadioToolButton .button {
     border-color: transparent;
     border-radius: 0px;
@@ -582,6 +579,7 @@ SugarPaletteWindowWidget SugarRadioToolButton .button {
 
 .toolbar GtkToolButton .button,
 .toolbar SugarRadioToolButton *,
+.notebook tab .button,
 SugarPaletteWindowWidget SugarRadioToolButton *,
 SugarPaletteWindowWidget GtkToolButton .button {
     background-color: transparent;
@@ -590,6 +588,7 @@ SugarPaletteWindowWidget GtkToolButton .button {
 }
 
 .toolbar GtkToolButton .button,
+.notebook tab .button,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     padding: $(toolbutton_padding - default_padding)px;
     border-width: $(default_padding)px;
@@ -598,6 +597,7 @@ SugarPaletteWindowWidget GtkToolButton .button:prelight {
 }
 
 .toolbar GtkToolButton .button:prelight,
+.notebook tab .button:prelight,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
 }
@@ -612,6 +612,7 @@ SugarPaletteWindowWidget GtkToolButton .button:active {
     background-color: @transparent;
 }
 
+.notebook tab .button:active,
 .toolbar GtkToolButton .button:active {
     background-color: @button_grey;
     border-radius: $(toolbutton_padding)px;
