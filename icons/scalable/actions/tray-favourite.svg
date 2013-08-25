@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+  <!ENTITY fill_color "#FFFFFF">
+  <!ENTITY stroke_color "#010101">
+]>
+
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="55.125"
+   height="55"
+   viewBox="0 0 55.125 55"
+   id="Layer_1"
+   xml:space="preserve">
+<path
+   d="M 5,35 V 50 H 50 V 35 H 5 z M 17,47 H 8 v -9 h 9 v 9 z m 15,0 h -9 v -9 h 9 v 9 z m 15,0 h -9 v -9 h 9 v 9 z"
+   id="path3637"
+   style="fill:&fill_color;" />
+<g
+   transform="matrix(0.55924658,0,0,0.55924658,12.12072,2.1204394)"
+   id="emblem-favorite"
+   style="stroke:none;display:block"><polygon
+     points="20.237,19.865 27.5,5.149 34.76,19.865 51,22.224 39.251,33.68 42.025,49.852 27.5,42.215 12.976,49.852 15.75,33.68 4,22.224 "
+     id="polygon10339"
+     style="fill:&fill_color;;stroke:none" /></g></svg>
