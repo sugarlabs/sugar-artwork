@@ -1,3 +1,9 @@
+sugar-artwork-0.98 (0.98.4-1~1) UNRELEASED; urgency=low
+
+  * New upstream release. 
+
+ -- Santiago Ruano Rincón <santiago@debian.org>  Mon, 26 Aug 2013 00:07:52 +0200
+
 sugar-artwork-0.96 (0.96.2-1) unstable; urgency=low
 
   * New upstream stable release.

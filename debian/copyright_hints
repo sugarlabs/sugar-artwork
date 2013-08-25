@@ -361,6 +361,11 @@ Copyright: 2002-2003, Erik Max Francis'
 License: UNKNOWN
  FIXME
 
+Files: install-sh
+Copyright: 1994, X Consortium
+License: Expat
+ FIXME
+
 Files: configure
 Copyright: (ISLOWER ? 'A' + ( - 'a') : )
   (ISLOWER ? ( | 0x40) : )
@@ -426,12 +431,7 @@ Copyright: 1991, 1999 Free Software Foundation, Inc
   law: that is to say, a work containing the Library or a
   notices, you must include the
   the
-License: LGPL-2.1+
- FIXME
-
-Files: install-sh
-Copyright: 1994, X Consortium
-License: MIT/X11 (BSD like)
+License: LGPL-ever
  FIXME
 
 Files: cursor/sugar/sugar-01.png
