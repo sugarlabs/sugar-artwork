@@ -37,7 +37,7 @@ install-data-local: $(GEN_FILES)
 	$(INSTALL_DATA) $(srcdir)/gtk.css \
 		$(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.0/gtk.css
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0
-	$(INSTALL_DATA) $(top_builddir)/gtk3/theme/gtk-widgets-72.css \
+	$(INSTALL_DATA) $(top_builddir)/gtk3/theme/gtk-widgets-100.css \
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/gtk-widgets.css
 	$(INSTALL_DATA) $(top_builddir)/gtk3/theme/settings-100.ini \
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/settings.ini
