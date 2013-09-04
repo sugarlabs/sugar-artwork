@@ -28,6 +28,7 @@ Files: AUTHORS
  debian/patches/2001_empy_from_system.patch
  debian/patches/README
  debian/patches/series
+ debian/patches/sugar-style-h-prototypes.patch
  debian/source/format
  debian/source/local-options
  debian/watch
@@ -361,6 +362,11 @@ Copyright: 2002-2003, Erik Max Francis'
 License: UNKNOWN
  FIXME
 
+Files: install-sh
+Copyright: 1994, X Consortium
+License: Expat
+ FIXME
+
 Files: configure
 Copyright: (ISLOWER ? 'A' + ( - 'a') : )
   (ISLOWER ? ( | 0x40) : )
@@ -417,21 +423,11 @@ License: GPL-2+
 Files: COPYING
 Copyright: 1991, 1999 Free Software Foundation, Inc
   <year> <name of author>
-  HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY
-  HOLDERS AND/OR
   disclaimer" for the library, if
-  holder or
-  holder who places the Library under this License may add
   interest in the
   law: that is to say, a work containing the Library or a
-  notices, you must include the
   the
-License: LGPL-2.1+
- FIXME
-
-Files: install-sh
-Copyright: 1994, X Consortium
-License: MIT/X11 (BSD like)
+License: LGPL-ever
  FIXME
 
 Files: cursor/sugar/sugar-01.png

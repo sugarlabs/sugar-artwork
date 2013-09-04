@@ -22,7 +22,6 @@ icon_DATA =						\
 	edit-paste.svg					\
 	edit-redo.svg					\
 	edit-undo.svg					\
-	edit-clear.svg					\
 	format-columns-double.svg			\
 	format-columns-single.svg			\
 	format-columns-triple.svg			\
@@ -76,10 +75,8 @@ icon_DATA =						\
 	toolbar-colors.svg				\
 	toolbar-edit.svg				\
 	toolbar-view.svg				\
-	toolbar-help.svg				\
 	tray-hide.svg					\
 	tray-show.svg					\
-	tray-favourite.svg				\
 	transfer-from-application-octet-stream.svg	\
 	transfer-from-audio-x-generic.svg		\
 	transfer-from-image-x-generic.svg		\
@@ -115,9 +112,7 @@ icon_DATA =						\
 	zoom-in.svg					\
 	zoom-neighborhood.svg				\
 	zoom-original.svg				\
-	zoom-out.svg					\
-	zoom-to-width.svg				\
-	entry-cancel.svg
+	zoom-out.svg
 
 EXTRA_DIST = $(icon_DATA)
 

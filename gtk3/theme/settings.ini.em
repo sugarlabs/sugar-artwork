@@ -13,11 +13,9 @@ icon_large = icon_base * 5
 
 [Settings]
 gtk-auto-mnemonics = 1
-gtk-menu-images = 1
-gtk-button-images = 1
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
-gtk-cursor-theme-name = sugar
-gtk-primary-button-warps-slider = 0
+gtk-cursor-theme-name =sugar
+
 
 ${
 icon_small = icon_base * 3
@@ -35,5 +33,5 @@ for icon in large_icons:
 icon_sizes = ":".join(icon_sizes)
 
 }
+gtk-icon-sizes=$icon_sizes
 
-gtk-icon-sizes = $icon_sizes

@@ -21,7 +21,7 @@ if scaling == "100":
     bullet_size = 9.5
     font_height = 24
     default_padding = 6
-    toolbutton_padding = 10
+    toolbutton_padding = 9
 else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     xo = False
     line_width = 2.0            # 1.62 rounded up
@@ -32,7 +32,7 @@ else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     # This is a guess on the font size (Sans 10 at 96 DPI)
     font_height = 17
     default_padding = 4         # 4.32
-    toolbutton_padding = 7      # 7.68
+    toolbutton_padding = 6      # 7.68
 
 
 # Radio size used to be:
@@ -43,11 +43,6 @@ else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
 # so the SVG displays at the correct size.
 # FIXME this only works for 100, has not been tested in 75 resolution
 radio_size = 26
-
-# FIXME this should be calculated with the radio size and the bullet
-# size:
-scale_trough_margin = 8
-
 scale_slider_width = my_floor(2 * subcell_size + line_width)
 thickness = my_ceil(line_width)
 
@@ -58,6 +53,15 @@ icon_large = icon_base * 5
 
 * {
     -sugar-focus-line: @white;
+
+    background-color: @button_grey;
+    color: @black;
+
+    border-color: transparent;
+    border-radius: 0px;
+    border-style: none;
+
+    padding: $(thickness)px;
 
     /* A lot of these will probably need to be changed, but this has to
        be done when the exact sizes are known */
@@ -72,11 +76,12 @@ icon_large = icon_base * 5
     -GtkWidget-focus-line-width: 0;  /* Prevents some drawing glitches */
     -GtkEntry-focus-line-width: 0;
     -GtkScale-focus-line-width: 0;
-    -GtkWidget-focus-padding: 0;
+    -GtkScale-focus-line-width: 0;
+    -GtkWidget-focus-padding: 3;
     /* 0.05 works good for both the sugar and sugar-xo themes */
     -GtkWidget-cursor-aspect-ratio: 0.05;
 
-    -GtkWidget-wide-separators: true;
+    -GtkWidget-wide-separators: false;
     -GtkWidget-separator-height: $thickness;
     -GtkWidget-separator-width: $thickness;
 
@@ -102,7 +107,6 @@ icon_large = icon_base * 5
     -GtkArrow-arrow-size: 1.0;
 
     -GtkToolbar-space-size: $(2*subcell_size);
-    -GtkToolbar-shadow-type: none;
 
     -GtkProgressBar-min-horizontal-bar-height: $subcell_size;
     -GtkProgressBar-min-vertical-bar-width: $subcell_size;
@@ -114,37 +118,29 @@ icon_large = icon_base * 5
 
     -GtkCheckButton-indicator-size: $radio_size;
     -GtkCheckButton-indicator-spacing: 3;
-
-    -GtkWidget-text-handle-width: 110px;
-    -GtkWidget-text-handle-height: 110px;
 }
 
-*:insensitive {
-    color: @button_grey;
+*:active {
+    background-color: @white;
+    color: @black;
 }
 
 /* Backgrounds and windows */
 
-GtkWindow {
+.background {
+    padding: 0px;
+    border-width: 0px;
+    background-color: @panel_grey;
+}
+
+.window {
     background-color: @panel_grey;
     color: @black;
 }
 
-GtkDialog {
-    background-color: @black;
-    color: @white;
-}
-
-SugarIntroWindow {
-    background-color: @white;
-}
-
-SugarIntroWindow {
-    color: @black;
-}
-
-GtkLabel, GtkLabel:insensitive {
-    background-color: transparent;
+/* Handle this differently? */
+.window *:insensitive {
+    background-color: @panel_grey;
 }
 
 /* Buttons */
@@ -158,60 +154,61 @@ GtkLabel, GtkLabel:insensitive {
     -GtkButton-inner-border: 0 0 0 0;
     padding: $(border)px $(border)px $(border)px $(border)px;
 
-    border-width: $(thickness)px;
-    border-color: @button_grey;
-    border-style: solid;
     border-radius: $(2*subcell_size)px;
     background-color: @button_grey;
     color: @white;
 }
 
+.button * {
+    color: @white;
+}
+
 .button:focused {
+    border-width: $(thickness)px;
     border-color: @white;
-}
-
-.button:active {
-    background-color: @white;
-}
-
-.button:insensitive {
-    background-color: transparent;
-}
-
-.button:active:focused {
-    color: @black;
-    border-color: @button_grey;
+    border-style: solid;
 }
 
 /* Spin buttons */
 
-.spinbutton.button {
-    border-radius: 0px;
-    border-width: 0px;
-    border-style: solid;
+${ spin_ythickness = my_ceil(3*subcell_size - font_height) }
+${ spin_xthickness = subcell_size }
+${ spin_btn_ythickness = spin_ythickness }
+${ spin_btn_xthickness = subcell_size * 2 }
+
+.spinbutton.button,
+.spinbutton.button:focused,
+.spinbutton.button:active {
+    padding: $(spin_ythickness)px $(spin_xthickness)px;
+    border-color: @button_grey;
+    border-width: $(thickness)px;
     background-color: @button_grey;
+    color: @white;
 }
-
-.spinbutton.button:last-child {
-    border-radius: 0px $(2*subcell_size)px $(2*subcell_size)px 0px;
-    border-width: 0px 0px 0px $(thickness)px;
-    border-style: solid;
-    border-color: @selection_grey;
-}
-
 
 .spinbutton.button:active {
-    background-color: @black;
+    background-color: @white;
+    color: @black;
+    border-color: @white;
 }
 
 .spinbutton.button:insensitive {
     background-color: @selection_grey;
 }
 
+.spinbutton.button:focused,
+.spinbutton.button:focused:prelight,
+.spinbutton.button:focused:insensitive {
+    border-color: @white;
+}
+
 /* Toggle buttons */
 
 GtkToggleButton.button:active {
     background-color: @white;
+}
+
+GtkToggleButton.button:active GtkLabel {
     color: @black;
 }
 
@@ -225,21 +222,10 @@ GtkToggleButton.button:active {
     background-color: @white;
 }
 
-GtkTreeView {
-    background-color: @button_grey;
-}
-
-GtkTreeView row:nth-child(even) {
-    background-color: @row_even;
-}
-GtkTreeView row:nth-child(odd) {
-    background-color: @row_odd;
-}
-
 .entry {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
-    border-color: @text_field_grey;
+    border-color: @selection_grey;
     border-style: solid;
     background-color: @text_field_grey;
     color: @black;
@@ -258,16 +244,8 @@ GtkTreeView row:nth-child(odd) {
     background-color: @white;
 }
 
-.toolbar .entry:focused {
-    border-color: @white;
-}
-
 .entry:insensitive, .view:insensitive {
     background-color: @button_grey;
-}
-
-.entry:insensitive {
-    border-color: @button_grey;
 }
 
 .view:selected {
@@ -275,106 +253,74 @@ GtkTreeView row:nth-child(odd) {
     color: @black;
 }
 
-.entry:selected,
-.entry:selected:focused,
+.entry:selected, .entry:selected:focused, 
 .view:selected:focused {
     background-color: @selection_grey;
     color: @black;
 }
 
-.entry:selected,
-.entry:selected:focused {
-    border-color: @selection_grey;
-}
-
-/* Frames */
-
-GtkScrolledWindow.frame {
-    border-style: solid;
-    border-color: @selection_grey;
-    border-width: $(thickness)px;
-    border-radius: 0;
-    padding: $(default_padding)px;
-}
-
-GtkFrame.frame.journal-preview-box {
-    border-style: solid;
-    border-color: @button_grey;
-    border-width: $(thickness)px;
-}
-
 /* Combo boxes */
 
-GtkComboBox {
+GtkComboBox * {
     color: @white;
 }
 
-GtkComboBox .menu.button {
-    border-color: transparent;
-    border-radius: 0px;
-    border-style: none;
-    background-color: transparent;
-    color: @white;
+GtkComboBox .separator {
+    /* Remove the separator turning it transparent */
+    color: alpha(@theme_base_color, 0.0);
 }
 
-GtkComboBox .menu {
-    -GtkWidget-scroll-arrow-hlength: $(my_floor(2.5 * subcell_size));
-    -GtkWidget-scroll-arrow-vlength: $(my_floor(2.5 * subcell_size));
+.toolbar GtkToggleButton.button:active,
+SugarPaletteWindowWidget GtkToggleButton.button:active {
+    background-color: @button_grey;
 }
 
 /* Notebooks */
 
 .notebook {
     background-color: @selection_grey;
-    color: @black;
     padding: 0px;
     -GtkNotebook-tab-overlap: -2;
     -GtkNotebook-tab-curvature: $default_padding;
-    -GtkWidget-scroll-arrow-hlength: $(my_floor(2.5 * subcell_size));
-    -GtkWidget-scroll-arrow-vlength: $(my_floor(2.5 * subcell_size));
 }
 
-.notebook.arrow {
-    color: @white;
-}
-
-.notebook tab {
-    background-color: @selection_grey;
-}
-
-/* Setting white color to the tab labels using only the previous rule */
-/* doesn't work, so we have to set white color to the GtkLabel, and make */
-/* sure the buttons get black color in the next two rules: */
+.notebook tab,
 .notebook tab GtkLabel {
+    background-color: @button_grey;
     color: @white;
-    padding: $(subcell_size)px 0;
-}
-
-.notebook tab .button GtkLabel {
-    color: @black;
 }
 
 .notebook tab:active {
-    background-color: @toolbar_grey;
+    background-color: @selection_grey;
 }
 
-.notebook tab .button {
+/* Browse notebook */
+
+BrowseNotebook.notebook tab {
+    background-color: @selection_grey;
+}
+
+BrowseNotebook.notebook tab .button {
     border-radius: $(toolbutton_padding)px;
 }
 
-/* Browse Widgets */
+BrowseNotebook.notebook tab:active {
+    background-color: @toolbar_grey;
+}
+
+BrowseNotebook.notebook tab:active *:active {
+    color: @white;
+}
+
+BrowseLinkInfo {
+    color: @white;
+}
 
 BrowseTabPage {
     background-color: @black;
 }
 
-BrowseSearchWindow .view {
-    background-color: @black;
-    color: @white;
-    border-color: @button_grey;
-    border-width: 0 $(thickness)px $(thickness)px $(thickness)px;
-    border-style: solid;
-}
+
 
 /* Control panel */
 
@@ -394,6 +340,10 @@ SugarAlert {
     color: @white;
 }
 
+SugarAlert GtkLabel {
+    color: @white;
+}
+
 SugarAlert *:insensitive {
     background-color: @black;
 }
@@ -402,7 +352,6 @@ SugarAlert *:insensitive {
 .button SugarTimeoutIcon GtkLabel:prelight {
     background-color: @white;
     color: @button_grey;
-    border-radius: $(2 * subcell_size)px;
 }
 
 .button SugarTimeoutIcon GtkLabel:active {
@@ -412,27 +361,19 @@ SugarAlert *:insensitive {
 
 /* Tray */
 
-SugarHTray, SugarVTray {
-    background-color: @toolbar_grey;
-}
-
 SugarHTray * , SugarVTray * { background-color: @toolbar_grey;}
 
 /* Menus and palettes */
 
-SugarPaletteWindowWidget {
-    border-width: $(thickness)px;
-    border-color: @button_grey;
-    border-style: solid;
+SugarPaletteWindowWidget.background {
     background-color: @black;
+}
+
+SugarPaletteWindowWidget GtkLabel {
     color: @white;
 }
 
-SugarPaletteWindowWidget .view {
-    color: @black;
-}
-
-SugarPaletteMenuWidget {
+SugarPaletteMenuWidget.background {
     background-color: @black;
 }
 
@@ -449,7 +390,8 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     background-color: @toolbar_grey;
 }
 
-.menu {
+.menu,
+.palette {
     background-color: @black;
     color: @white;
 
@@ -463,49 +405,37 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     -GtkMenu-horizontal-offset : 0;
     -GtkMenu-vertical-offset   : 0;
 
-    padding: 0px 0px $(subcell_size)px 0px;
+    padding: 0px;
     border-width: 2px;
     border-color: @button_grey;
     border-style: solid;
 }
 
-.menu :active {
+.menu :prelight, palette :prelight {
+    color: @white
+}
+
+.menu :active, palette :active {
     background-color: @button_grey;
 }
 
-.menuitem {
-    padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
+.palette {
+    padding: $(thickness)px;
 }
 
-.menuitem:prelight {
-    background-color: @button_grey;
+.palette .menu {
+    -GtkMenu-horizontal-padding: 0;
+    -GtkMenu-vertical-padding: 0;
+
+    padding: 0px $(subcell_size)px;
 }
 
-.menuitem.separator {
-    padding: $(subcell_size)px 0px;
-}
-
-SugarPaletteHeader.menuitem {
-    padding: 0px $((subcell_size * 3 - font_height) / 2)px;
-}
-
-SugarPaletteHeader.menuitem:prelight {
-    background-color: @black;
-}
-
-SugarPaletteHeaderSeparator.menuitem.separator {
-    padding: 0px 0px $(subcell_size)px 0px;
-}
-
-.tooltip {
-    background-color: @black;
-    border-style: solid;
-    border-width: $(thickness)px;
-    border-color: @button_grey;
-}
-
-.tooltip * {
+.menu * {
     color: @white;
+}
+
+GtkMenuItem {
+    padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
 }
 
 /* Scrollbars */
@@ -542,163 +472,94 @@ SugarPaletteHeaderSeparator.menuitem.separator {
 
 GtkProgressBar.progressbar {
     background-color: @white;
-    border-color: @button_grey;
-    border-radius: $(subcell_size)px;
+    border-color: @white;
+    border-radius: 10px;
     border-style: solid;
-    border-width: $(thickness)px;
+    border-width: 0px;
 }
 
 GtkProgressBar.trough {
-    background-color: @selection_grey;
+    background-color: alpha (@black, 0.0);
     border-style: solid;
-    border-radius: $(subcell_size)px;
+    border-radius: 10px;
     border-color: @button_grey;
-    border-width: $(thickness)px;
-}
-
-.toolbar GtkProgressBar.trough,
-SugarPaletteWindowWidget GtkProgressBar.trough {
-    background-color: @black;
+    border-width: 2px;
 }
 
 /* Separators */
 
-.separator {
-    border-style: solid;
-    border-color: @button_grey;
-    border-width: $(thickness)px;
+GtkVSeparator, GtkHSeparator,
+.toolbar GtkSeparatorToolItem {
+    color: @button_grey;
 }
 
 /* Tool buttons */
 
 .toolbar {
 padding: 0px;
-background-color: @toolbar_grey;
-color: @white;
 }
 
-.toolbar .button,
-SugarPaletteWindowWidget SugarRadioToolButton .button {
-    border-color: transparent;
-    border-radius: 0px;
-    border-style: none;
-}
-
-.toolbar .button #gtk-toolbar-arrow {
-    padding: 0 $(subcell_size + default_padding)px;
+.toolbar GtkLabel {
+    color: @white;
 }
 
 .toolbar GtkToolButton .button,
-.toolbar SugarRadioToolButton *,
-SugarPaletteWindowWidget SugarRadioToolButton *,
 SugarPaletteWindowWidget GtkToolButton .button {
-    background-color: transparent;
     border-radius: $(toolbutton_padding)px;
-    padding: $(toolbutton_padding)px;
-}
-
-.toolbar GtkToolButton .button,
-SugarPaletteWindowWidget GtkToolButton .button:prelight {
-    padding: $(toolbutton_padding - default_padding)px;
-    border-width: $(default_padding)px;
-    border-style: solid;
-    background-clip: padding-box;
+    padding: $(default_padding)px;
 }
 
 .toolbar GtkToolButton .button:prelight,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
+    border-radius: 0px;
+    border-width: 0px;
 }
 
-.toolbar SugarRadioToolButton *:active,
-SugarPaletteWindowWidget SugarRadioToolButton *:active {
-    background-color: @button_grey;
-    border-radius: $(toolbutton_padding)px;
-}
-
+.toolbar GtkToolButton .button:active,
 SugarPaletteWindowWidget GtkToolButton .button:active {
-    background-color: @transparent;
-}
-
-.toolbar GtkToolButton .button:active {
-    background-color: @button_grey;
-    border-radius: $(toolbutton_padding)px;
-}
-
-SugarPaletteWindowWidget GtkScrolledWindow * {
     background-color: @black;
+    border-radius: 0px;
 }
 
-.toolbar GtkComboBox .button {
-    border-radius: $(2*subcell_size)px;
+.toolbar GtkToolButton .button:active:prelight,
+SugarPaletteWindowWidget GtkToolButton .button:active:prelight {
+    background-color: @button_grey;
+    border-radius: $(subcell_size)px;
+    border-width: $(default_padding)px;
+    border-color: transparent;
 }
 
 /* Scales */
 
-.scale {
+GtkScale {
     -GtkScale-slider-length: $scale_slider_width;
     -GtkRange-slider-width: $scale_slider_width;
 }
 
-/* We have to override the color of the scale, otherwise the slider
-   background image is invisible or not set for this palettes.
-   Upstream bug: https://bugzilla.gnome.org/show_bug.cgi?id=686703 */
-SugarPaletteWindowWidget .scale {
-    color: transparent;
-}
-
-.scale.trough {
-    background-color: @button_grey;
+GtkScale.trough {
     border-style: solid;
+    border-radius: 30px;
     border-color: @button_grey;
-    border-width: $(thickness)px;
-    margin: $(scale_trough_margin)px 0;
+    border-width: 2px;
 }
 
-.scale.trough.vertical {
-    margin: 0 $(scale_trough_margin)px;
-}
-
-.scale.trough:focused {
+GtkScale.trough:focused {
     border-color: @white;
 }
 
-.scale.trough.top,
-.scale.trough.left {
+GtkScale.trough.top, GtkScale.trough.left {
     background-color: @white;
 }
 
-.scale.trough.top:focused,
-.scale.trough.left:focused {
-    border-color: @selection_grey;
-}
-
-.scale.trough {
-    border-radius: 0px $(2*subcell_size)px $(2*subcell_size)px 0px;
-}
-
-.scale.trough.vertical {
-    border-radius: 0px 0px $(2*subcell_size)px $(2*subcell_size)px;
-}
-
-.scale.trough.top {
-    border-radius: $(2*subcell_size)px $(2*subcell_size)px 0px 0px;
-}
-
-.scale.trough.left {
-    border-radius: $(2*subcell_size)px 0px 0px $(2*subcell_size)px;
-}
-
-.scale.slider,
-.scale.slider:active {
-    background-color: transparent;
-}
-
-.scale.slider {
+GtkScale.slider {
+    color: alpha(@theme_base_color, 0.0);
+    background-color: alpha(@theme_base_color, 0.0);
     background-image: url("assets/scale-slider.svg");
 }
 
-.scale.slider:active {
+GtkScale.slider:active {
+    color: alpha(@theme_base_color, 0.0);
     background-image: url("assets/scale-slider-active.svg");
 }
 
@@ -706,11 +567,6 @@ SugarPaletteWindowWidget .scale {
 
 GtkCheckButton:prelight {
     background-color: alpha(@theme_base_color, 0.0);
-}
-
-.toolbar GtkCheckButton,
-SugarPaletteWindowWidget GtkCheckButton {
-    color: @theme_base_color;
 }
 
 .radio,
@@ -772,91 +628,4 @@ SugarPaletteWindowWidget GtkCheckButton {
     border-style: solid;
     border-width: 2px;
     border-color: @button_grey;
-}
-
-/* GtkImage */
-
-GtkImage {
-    background-color: transparent;
-}
-
-/* Sugar Frame Window */
-
-SugarFrameWindow {
-    background-color: @toolbar_grey;
-}
-
-/* Sugar Canvas icon */
-
-SugarCanvasIcon,
-SugarKeepIcon.button {
-    border-color: transparent;
-    border-radius: $(4 * thickness)px;
-    border-width: 2px;
-    border-style: solid;
-}
-
-SugarCanvasIcon:prelight,
-SugarKeepIcon.button:prelight {
-    border-color: @zoom_views_prelight;
-    background-color: @zoom_views_prelight;
-}
-
-SugarCanvasIcon:active,
-SugarKeepIcon.button.toggle-press {
-    border-color: @zoom_views_active;
-    background-color: @zoom_views_active;
-}
-
-/* Sugar CellRenderer Icons */
-
-.cell.sugar-icon-cell {
-    background-color: transparent;
-    border-radius: $(4 * thickness)px;
-    border-color: @white;
-    border-width: $(thickness)px;
-    border-style: solid;
-}
-
-.cell.sugar-icon-cell:prelight {
-    background-color: @zoom_views_prelight;
-}
-
-.cell.sugar-icon-cell:active {
-    background-color: @zoom_views_active;
-}
-
-/* Text cursor handles */
-
-.cursor-handle.top,
-.cursor-handle.bottom {
-    background-color: transparent;
-    box-shadow: none;
-    border-style: none;
-    border-image: none;
-    border-radius: 0px;
-    border-width: 0px;
-}
-
-.cursor-handle.bottom {
-    background-image: url("assets/cursor-handle-bottom.svg");
-}
-
-.cursor-handle.top {
-    background-image: url("assets/cursor-handle-top.svg");
-}
-
-.cursor-handle.insertion-cursor {
-    background-image: url("assets/cursor-handle-insertion.svg");
-}
-
-/* Application specific properties */
-
-EvView {
-    background-color: @panel_grey;
-}
-
-EvView:selected,
-ApDocView:selected {
-    background-color: @selection_grey;
 }

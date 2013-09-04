@@ -6,11 +6,7 @@
 @define-color selection_grey #A6A6A6;
 @define-color panel_grey #C0C0C0;
 @define-color text_field_grey #E5E5E5;
-@define-color row_even #E5E5E5;
-@define-color row_odd #D5D5D5;
 @define-color white #FFFFFF;
-@define-color zoom_views_prelight #E8E8E8;
-@define-color zoom_views_active #B3B3B3;
 
 /* Default color scheme */
 @define-color base_color #ffffff;
