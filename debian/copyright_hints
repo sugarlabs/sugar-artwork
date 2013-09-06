@@ -28,6 +28,7 @@ Files: AUTHORS
  debian/patches/2001_empy_from_system.patch
  debian/patches/README
  debian/patches/series
+ debian/patches/sugar-style-h-prototypes.patch
  debian/source/format
  debian/source/local-options
  debian/watch
@@ -42,6 +43,9 @@ Files: AUTHORS
  gtk3/theme/assets/checkbox-checked.svg
  gtk3/theme/assets/checkbox-unchecked-selected.svg
  gtk3/theme/assets/checkbox-unchecked.svg
+ gtk3/theme/assets/cursor-handle-bottom.svg
+ gtk3/theme/assets/cursor-handle-insertion.svg
+ gtk3/theme/assets/cursor-handle-top.svg
  gtk3/theme/assets/radio-active-selected.svg
  gtk3/theme/assets/radio-active.svg
  gtk3/theme/assets/radio-selected.svg
@@ -67,6 +71,7 @@ Files: AUTHORS
  icons/scalable/actions/dialog-ok.svg
  icons/scalable/actions/document-save.svg
  icons/scalable/actions/document-send.svg
+ icons/scalable/actions/edit-clear.svg
  icons/scalable/actions/edit-copy.svg
  icons/scalable/actions/edit-delete.svg
  icons/scalable/actions/edit-description.svg
@@ -74,6 +79,7 @@ Files: AUTHORS
  icons/scalable/actions/edit-paste.svg
  icons/scalable/actions/edit-redo.svg
  icons/scalable/actions/edit-undo.svg
+ icons/scalable/actions/entry-cancel.svg
  icons/scalable/actions/format-columns-double.svg
  icons/scalable/actions/format-columns-single.svg
  icons/scalable/actions/format-columns-triple.svg
@@ -126,6 +132,7 @@ Files: AUTHORS
  icons/scalable/actions/system-shutdown.svg
  icons/scalable/actions/toolbar-colors.svg
  icons/scalable/actions/toolbar-edit.svg
+ icons/scalable/actions/toolbar-help.svg
  icons/scalable/actions/toolbar-view.svg
  icons/scalable/actions/transfer-from-application-octet-stream.svg
  icons/scalable/actions/transfer-from-audio-x-generic.svg
@@ -141,6 +148,7 @@ Files: AUTHORS
  icons/scalable/actions/transfer-to-text-x-generic.svg
  icons/scalable/actions/transfer-to-video-x-generic.svg
  icons/scalable/actions/transfer-to.svg
+ icons/scalable/actions/tray-favourite.svg
  icons/scalable/actions/tray-hide.svg
  icons/scalable/actions/tray-show.svg
  icons/scalable/actions/view-box.svg
@@ -165,6 +173,7 @@ Files: AUTHORS
  icons/scalable/actions/zoom-neighborhood.svg
  icons/scalable/actions/zoom-original.svg
  icons/scalable/actions/zoom-out.svg
+ icons/scalable/actions/zoom-to-width.svg
  icons/scalable/apps/Makefile.am
  icons/scalable/apps/activity-journal.svg
  icons/scalable/categories/Makefile.am
@@ -317,7 +326,7 @@ Files: Makefile.in
  icons/scalable/emblems/Makefile.in
  icons/scalable/mimetypes/Makefile.in
  icons/scalable/status/Makefile.in
-Copyright: 1994-2002
+Copyright: 1994-2012, Free Software Foundation, Inc
 License: UNKNOWN
  FIXME
 
@@ -333,10 +342,12 @@ License: LGPL-2+
 
 Files: config.guess
  config.sub
+ depcomp
  missing
-Copyright: 1992-1999,
-  1992-2001
+Copyright: 1992-1999
+  1992-2000,
   1996-1997, 1999-2000, 2002-2006
+  1999-2000, 2003-2007, 2009-2010
 License: GPL-2+
  FIXME
 
@@ -369,48 +380,34 @@ License: Expat
 Files: configure
 Copyright: (ISLOWER ? 'A' + ( - 'a') : )
   (ISLOWER ? ( | 0x40) : )
-  1992-1996, 1998-2001,
+  1992-1996, 1998-2012, Free Software Foundation, Inc
   1996-2001, 2003-2005
-  2010, Free Software Foundation, Inc
+  2012, Free Software Foundation, Inc
 License: GPL-2+
  FIXME
 
 Files: aclocal.m4
-Copyright: 1996, 1998, 2000-2005, 2008
-  1996-1997, 2000-2001, 2003, 2005,
-  1996-1997, 2000-2001, 2003, 2005, 2008
-  1996-2001, 2003-2005
-  1996-2004,
-  1997, 1999-2001, 2003-2005, 2008
-  1997, 2000-2001, 2003-2006, 2008
-  1999-2005, 2008
-  1999-2006, 2009
-  2001, 2003, 2005, 2008 Free Software Foundation, Inc
-  2001, 2003, 2005, Free Software Foundation, Inc
-  2001-2003, 2005, 2008, Free Software Foundation, Inc
-  2001-2003, 2005, 2009, Free Software Foundation, Inc
-  2002-2003, 2005-2008, Free Software Foundation, Inc
-  2003, 2005 Free Software Foundation, Inc
-  2003-2006, Free Software Foundation, Inc
+Copyright: 1996-2001, 2003-2005
+  1996-2012, Free Software Foundation, Inc
+  1997-2012, Free Software Foundation, Inc
+  1999-2012, Free Software Foundation, Inc
+  2001-2012, Free Software Foundation, Inc
+  2002-2012, Free Software Foundation, Inc
+  2003-2012, Free Software Foundation, Inc
   2004, Free Software Foundation, Inc
   2004, Scott James Remnant <scott@netsplit.com>
   2004-2005, 2007, 2009, Free Software Foundation, Inc
   2004-2005, 2007-2008, Free Software Foundation, Inc
   2004-2005, 2007-2009, Free Software Foundation
-  2004-2005, Free Software Foundation, Inc
-  2006, 2008 Free Software Foundation, Inc
-  2010, Free Software Foundation, Inc
+  2004-2012, Free Software Foundation, Inc
+  2006-2012, Free Software Foundation, Inc
+  2011, Free Software Foundation, Inc
 License: GPL-2+
  FIXME
 
 Files: ltmain.sh
 Copyright: 1996-2001, 2003-2006
   all begin with the string "--lt-"
-License: GPL-2+
- FIXME
-
-Files: depcomp
-Copyright: 1999-2000, 2003-2007, 2009 Free
 License: GPL-2+
  FIXME
 
@@ -422,14 +419,9 @@ License: GPL-2+
 Files: COPYING
 Copyright: 1991, 1999 Free Software Foundation, Inc
   <year> <name of author>
-  HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY
-  HOLDERS AND/OR
   disclaimer" for the library, if
-  holder or
-  holder who places the Library under this License may add
   interest in the
   law: that is to say, a work containing the Library or a
-  notices, you must include the
   the
 License: LGPL-ever
  FIXME

@@ -2,7 +2,7 @@ Source: sugar-artwork-0.98
 Section: x11
 Priority: optional
 Maintainer: Debian OLPC <debian-olpc-devel@lists.alioth.debian.org>
-Uploaders: Jonas Smedegaard <dr@jones.dk>
+Uploaders: Jonas Smedegaard <dr@jones.dk>, Santiago Ruano Rincón <santiago@debian.org>
 Build-Depends: cdbs,
  autotools-dev,
  devscripts,
