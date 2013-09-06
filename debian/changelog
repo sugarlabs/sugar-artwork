@@ -1,10 +1,12 @@
-sugar-artwork-0.96 (0.96.2-2) unstable; urgency=low
+sugar-artwork-0.98 (0.98.4-1) unstable; urgency=low
 
-  * Added sugar-style-h-prototypes.patch to specify missing prototypes.
-    (Closes: #713581)
-  * Adding myself in Uploaders
+  * New upstream release. 
+  * Adds debian/patches/sugar-style-h-prototypes.patch to specify missing
+    prototypes.
+  * Added myself to Uploaders
+  * Bump Standars-Version to 3.9.4 
 
- -- Santiago Ruano Rincón <santiago@debian.org>  Wed, 04 Sep 2013 23:39:12 +0200
+ -- Santiago Ruano Rincón <santiago@debian.org>  Sat, 07 Sep 2013 00:51:43 +0200
 
 sugar-artwork-0.96 (0.96.2-1) unstable; urgency=low
 
