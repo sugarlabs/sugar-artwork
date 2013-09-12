@@ -3,6 +3,10 @@ assets_DATA =				\
 	checkbox-unchecked-selected.svg \
 	checkbox-checked.svg		\
 	checkbox-checked-selected.svg	\
+	radio.svg			\
+	radio-selected.svg		\
+	radio-active.svg		\
+	radio-active-selected.svg	\
 	scale-slider.svg		\
 	scale-slider-active.svg
 

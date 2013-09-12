@@ -1,10 +1,6 @@
 SUBDIRS = 100 72
 
 assets =			\
-	radio.svg		\
-	radio-selected.svg	\
-	radio-active.svg	\
-	radio-active-selected.svg	\
 	cursor-handle-insertion.svg	\
 	cursor-handle-bottom.svg	\
 	cursor-handle-top.svg
