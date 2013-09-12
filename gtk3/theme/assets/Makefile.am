@@ -1,8 +1,6 @@
 SUBDIRS = 100 72
 
 assets =			\
-	scale-slider.svg	\
-	scale-slider-active.svg \
 	radio.svg		\
 	radio-selected.svg	\
 	radio-active.svg	\
