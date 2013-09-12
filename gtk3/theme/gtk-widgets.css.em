@@ -22,6 +22,7 @@ if scaling == "100":
     font_height = 24
     default_padding = 6
     toolbutton_padding = 10
+    radio_size = 26
 else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     xo = False
     line_width = 2.0            # 1.62 rounded up
@@ -33,16 +34,8 @@ else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     font_height = 17
     default_padding = 4         # 4.32
     toolbutton_padding = 7      # 7.68
+    radio_size = 18             # 18.72
 
-
-# Radio size used to be:
-#
-# radio_size = my_floor(subcell_size + bullet_size + line_width)
-#
-# But a screenshot shows that the graphic was actually rendered at 26px
-# so the SVG displays at the correct size.
-# FIXME this only works for 100, has not been tested in 75 resolution
-radio_size = 26
 
 # FIXME this should be calculated with the radio size and the bullet
 # size:
