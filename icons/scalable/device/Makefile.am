@@ -94,6 +94,8 @@ icon_DATA =				\
 	speaker-muted-100.svg		\
 	touchpad-capacitive.svg		\
 	touchpad-resistive.svg		\
+	backup.svg	\
+	restore.svg	\
 	user-documents.svg
 
 EXTRA_DIST = $(icon_DATA)
