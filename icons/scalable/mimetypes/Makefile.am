@@ -11,8 +11,8 @@ icon_DATA =					\
 	image-x-generic.svg			\
 	text-uri-list.svg			\
 	text-x-generic.svg			\
-	video-x-generic.svg			\
-	text-x-python.svg
+	text-x-python.svg			\
+	video-x-generic.svg
 
 EXTRA_DIST = $(icon_DATA)
 
