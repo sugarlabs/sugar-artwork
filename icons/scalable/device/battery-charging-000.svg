@@ -7,14 +7,13 @@
      id="battery-000">
 <polygon
    display="inline"
-   fill="&stroke_color;"
-   points="   2.29,39.721 47.994,39.721 47.994,34.393 53.037,34.393 53.037,20.253 47.994,20.253 47.994,14.923 2.29,14.923  "
+   fill= "none"   points="   2.29,39.721 47.994,39.721 47.994,34.393 53.037,34.393 53.037,20.253 47.994,20.253 47.994,14.923 2.29,14.923  "
    stroke="&stroke_color;"
    stroke-linecap="round"
    stroke-linejoin="round"
    stroke-width="3.5" />
 </g>
 <path
-     style="fill:&fill_color;;fill-opacity:1;stroke:&fill_color;;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     style="fill:&stroke_color;;fill-opacity:1;stroke:&stroke_color;;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="M 29.806191,19.142629 19.201,28.132445 l 7.423634,0 L 19.201,35.838 l 11.66571,-8.989814 -8.484153,0 z" />
 </svg>
