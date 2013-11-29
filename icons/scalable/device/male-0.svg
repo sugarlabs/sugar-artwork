@@ -1,0 +1,52 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#ffffff">
+]>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="55"
+   height="55"
+   viewBox="0 0 55 55"
+   id="Layer_1"
+   xml:space="preserve"><metadata
+     id="metadata29"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs27" /><g
+     transform="matrix(0.86974167,0,0,0.86974167,-5.2458283,-8.0406157)"
+     id="g5900"><g
+       id="g5874"><path
+         d="m 48.525,55.271 -6.014,-6.012 c -0.354,-0.353 -0.829,-0.5 -1.289,-0.456 h -7.144 c -0.46,-0.044 -0.936,0.104 -1.29,0.456 l -6.013,6.012 c -0.626,0.627 -0.626,1.642 0,2.269 0.313,0.312 0.724,0.469 1.134,0.469 0.41,0 0.821,-0.156 1.134,-0.469 l 4.771,-4.771 v 4.087 H 41.5 v -4.074 l 4.758,4.758 c 0.313,0.312 0.724,0.469 1.134,0.469 0.409,0 0.82,-0.156 1.134,-0.469 0.625,-0.627 0.625,-1.642 -0.001,-2.269 z"
+         id="path5876"
+         style="fill:&fill_color;;stroke:&stroke_color;;stroke-width:4.25199986;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /><path
+         d="m 43.462,60.163 c -0.627,-0.626 -1.642,-0.627 -2.269,0 -0.626,0.626 -0.626,1.641 0.001,2.267 l 1.461,1.46 -3.157,3.844 c -0.562,0.686 -0.462,1.696 0.223,2.258 0.299,0.245 0.658,0.364 1.016,0.364 0.463,0 0.924,-0.2 1.24,-0.587 l 4.08,-4.968 c 0.522,-0.638 0.478,-1.569 -0.106,-2.151 l -2.489,-2.487 z"
+         id="path5878"
+         style="fill:&fill_color;;stroke:&stroke_color;;stroke-width:4.25199986;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /><path
+         d="m 33.277,63.89 1.461,-1.46 c 0.627,-0.626 0.627,-1.641 10e-4,-2.267 -0.626,-0.627 -1.642,-0.627 -2.268,0 l -2.489,2.486 C 29.4,63.231 29.353,64.163 29.878,64.8 l 4.078,4.968 c 0.317,0.387 0.777,0.587 1.239,0.587 0.358,0 0.719,-0.119 1.017,-0.364 0.685,-0.562 0.783,-1.572 0.222,-2.258 L 33.277,63.89 z"
+         id="path5880"
+         style="fill:&fill_color;;stroke:&stroke_color;;stroke-width:4.25199986;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /><circle
+         cx="37.691002"
+         cy="43.577999"
+         r="3.4630001"
+         id="circle5882"
+         style="fill:&fill_color;;stroke:&stroke_color;;stroke-width:4.25199986;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></g><g
+       id="g5884"><path
+         d="m 48.525,55.271 -6.014,-6.012 c -0.354,-0.353 -0.829,-0.5 -1.289,-0.456 h -7.144 c -0.46,-0.044 -0.936,0.104 -1.29,0.456 l -6.013,6.012 c -0.626,0.627 -0.626,1.642 0,2.269 0.313,0.312 0.724,0.469 1.134,0.469 0.41,0 0.821,-0.156 1.134,-0.469 l 4.771,-4.771 v 4.087 H 41.5 v -4.074 l 4.758,4.758 c 0.313,0.312 0.724,0.469 1.134,0.469 0.409,0 0.82,-0.156 1.134,-0.469 0.625,-0.627 0.625,-1.642 -0.001,-2.269 z"
+         id="path5886"
+         style="fill:&fill_color;" /><path
+         d="m 43.462,60.163 c -0.627,-0.626 -1.642,-0.627 -2.269,0 -0.626,0.626 -0.626,1.641 0.001,2.267 l 1.461,1.46 -3.157,3.844 c -0.562,0.686 -0.462,1.696 0.223,2.258 0.299,0.245 0.658,0.364 1.016,0.364 0.463,0 0.924,-0.2 1.24,-0.587 l 4.08,-4.968 c 0.522,-0.638 0.478,-1.569 -0.106,-2.151 l -2.489,-2.487 z"
+         id="path5888"
+         style="fill:&fill_color;" /><path
+         d="m 33.277,63.89 1.461,-1.46 c 0.627,-0.626 0.627,-1.641 10e-4,-2.267 -0.626,-0.627 -1.642,-0.627 -2.268,0 l -2.489,2.486 C 29.4,63.231 29.353,64.163 29.878,64.8 l 4.078,4.968 c 0.317,0.387 0.777,0.587 1.239,0.587 0.358,0 0.719,-0.119 1.017,-0.364 0.685,-0.562 0.783,-1.572 0.222,-2.258 L 33.277,63.89 z"
+         id="path5890"
+         style="fill:&fill_color;" /><circle
+         cx="37.691002"
+         cy="43.577999"
+         r="3.4630001"
+         id="circle5892"
+         style="fill:&fill_color;" /></g></g></svg>
