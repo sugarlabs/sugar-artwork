@@ -43,6 +43,22 @@ icon_DATA =				\
 	drive.svg			\
 	drive-harddisk.svg		\
 	drive-harddisk-usb.svg		\
+	female-0.svg			\
+	female-1.svg			\
+	female-2.svg			\
+	female-3.svg			\
+	female-4.svg			\
+	female-5.svg			\
+	female-6.svg			\
+	female-7.svg			\
+	male-0.svg			\
+	male-1.svg			\
+	male-2.svg			\
+	male-3.svg			\
+	male-4.svg			\
+	male-5.svg			\
+	male-6.svg			\
+	male-7.svg			\
 	media.svg			\
 	media-optical.svg		\
 	media-disk.svg			\
