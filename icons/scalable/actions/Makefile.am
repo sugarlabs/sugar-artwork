@@ -15,6 +15,7 @@ icon_DATA =						\
 	dialog-ok.svg					\
 	document-save.svg				\
 	document-send.svg				\
+	document-open.svg				\
 	edit-copy.svg					\
 	edit-delete.svg					\
 	edit-description.svg				\
