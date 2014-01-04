@@ -1,6 +1,6 @@
 <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
-	<!ENTITY stroke_color "#000000">
-	<!ENTITY fill_color "#ffffff">
+	<!ENTITY stroke_color "#FFFFFF">
+	<!ENTITY fill_color "none">
 ]><svg enable-background="new 0 0 55 55"
     height="55px" id="svg2"
     inkscape:version="0.48.4 r9939"
