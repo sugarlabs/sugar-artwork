@@ -608,7 +608,7 @@ SugarPaletteWindowWidget GtkToolButton .button:active {
     border-radius: $(toolbutton_padding)px;
 }
 
-SugarPaletteWindowWidget GtkScrolledWindow * {
+SugarPaletteWindowWidget GtkScrolledWindow {
     background-color: @black;
 }
 
