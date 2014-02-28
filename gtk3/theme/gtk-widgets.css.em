@@ -463,7 +463,7 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
 }
 
 .menuitem.separator {
-    padding: $(subcell_size)px 0px;
+    padding: 0;
 }
 
 SugarPaletteHeader.menuitem {
@@ -475,7 +475,7 @@ SugarPaletteHeader.menuitem:prelight {
 }
 
 SugarPaletteHeaderSeparator.menuitem.separator {
-    padding: 0px 0px $(subcell_size)px 0px;
+    padding: 0;
 }
 
 .tooltip {
