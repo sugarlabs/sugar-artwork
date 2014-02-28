@@ -15,7 +15,7 @@ icon_large = icon_base * 5
 gtk-auto-mnemonics = 1
 gtk-menu-images = 1
 gtk-button-images = 1
-gtk-toolbar-style = GTK_TOOLBAR_ICONS
+gtk-toolbar-style = GTK_TOOLBAR_BOTH_HORIZ
 gtk-cursor-theme-name = sugar
 gtk-primary-button-warps-slider = 0
 
