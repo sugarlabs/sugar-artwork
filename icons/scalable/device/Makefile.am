@@ -3,6 +3,7 @@ category=device
 icondir = $(datadir)/icons/sugar/$(iconsize)/$(category)
 
 icon_DATA =				\
+	backup.svg			\
 	backup-backup.svg		\
 	backup-restore.svg		\
 	battery-000.icon		\
