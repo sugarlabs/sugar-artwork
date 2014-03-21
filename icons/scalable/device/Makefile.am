@@ -62,6 +62,7 @@ icon_DATA =				\
 	male-6.svg			\
 	male-7.svg			\
 	media.svg			\
+	media-audio-input.svg		\
 	media-optical.svg		\
 	media-disk.svg			\
 	media-flash-sd.svg		\
