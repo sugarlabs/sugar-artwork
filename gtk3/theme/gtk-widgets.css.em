@@ -572,8 +572,8 @@ SugarPaletteWindowWidget SugarRadioToolButton .button {
 }
 
 .toolbar GtkToolButton .button,
-.toolbar SugarRadioToolButton *,
-SugarPaletteWindowWidget SugarRadioToolButton *,
+.toolbar SugarRadioToolButton .button,
+SugarPaletteWindowWidget SugarRadioToolButton .button,
 SugarPaletteWindowWidget GtkToolButton .button {
     background-color: transparent;
     border-radius: $(toolbutton_padding)px;
