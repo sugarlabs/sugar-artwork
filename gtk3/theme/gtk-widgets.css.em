@@ -850,6 +850,12 @@ SugarKeepIcon.button.toggle-press {
     background-image: url("assets/cursor-handle-insertion.svg");
 }
 
+/* Notifications */
+
+SugarNotificationWindow {
+	color: @white;
+}
+
 /* Application specific properties */
 
 EvView {
