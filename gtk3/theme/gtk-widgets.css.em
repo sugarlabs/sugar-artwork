@@ -600,7 +600,7 @@ SugarPaletteWindowWidget SugarRadioToolButton *:active {
 }
 
 SugarPaletteWindowWidget GtkToolButton .button:active {
-    background-color: @transparent;
+    background-color: @button_grey;
 }
 
 .toolbar GtkToolButton .button:active {
