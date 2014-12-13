@@ -210,7 +210,7 @@ GtkToggleButton.button:active {
     background-color: @white;
 }
 
-GtkTreeView {
+GtkTreeView.view {
     background-color: @button_grey;
 }
 
