@@ -214,6 +214,11 @@ GtkTreeView {
     background-color: @button_grey;
 }
 
+column-header.button,
+column-header .button{
+    border-radius:0px;
+}
+
 GtkTreeView row:nth-child(even) {
     background-color: @row_even;
 }
