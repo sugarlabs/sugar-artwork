@@ -108,6 +108,7 @@ icon_large = icon_base * 5
 
     -GtkWidget-text-handle-width: 110px;
     -GtkWidget-text-handle-height: 110px;
+    -GtkPaned-handle-size: 20;
 }
 
 *:insensitive {
@@ -859,4 +860,22 @@ EvView {
 EvView:selected,
 ApDocView:selected {
     background-color: @selection_grey;
+}
+
+.pane-separator {
+    background-image: url("assets/pane-separator-grip-dark.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pane-separator:hover {
+    background-image: url("assets/pane-separator-grip-prelight-dark.svg");
+}
+
+.pane-separator.vertical {
+    background-image: url("assets/pane-separator-grip-vertical-dark.svg");
+}
+
+.pane-separator.vertical:hover {
+    background-image: url("assets/pane-separator-grip-vertical-prelight-dark.svg");
 }
