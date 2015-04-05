@@ -32,20 +32,32 @@ Files: AUTHORS
  gtk/theme/gtkrc.em
  gtk3/Makefile.am
  gtk3/theme/Makefile.am
+ gtk3/theme/assets/100/Makefile.am
+ gtk3/theme/assets/100/checkbox-checked-selected.svg
+ gtk3/theme/assets/100/checkbox-checked.svg
+ gtk3/theme/assets/100/checkbox-unchecked-selected.svg
+ gtk3/theme/assets/100/checkbox-unchecked.svg
+ gtk3/theme/assets/100/radio-active-selected.svg
+ gtk3/theme/assets/100/radio-active.svg
+ gtk3/theme/assets/100/radio-selected.svg
+ gtk3/theme/assets/100/radio.svg
+ gtk3/theme/assets/100/scale-slider-active.svg
+ gtk3/theme/assets/100/scale-slider.svg
+ gtk3/theme/assets/72/Makefile.am
+ gtk3/theme/assets/72/checkbox-checked-selected.svg
+ gtk3/theme/assets/72/checkbox-checked.svg
+ gtk3/theme/assets/72/checkbox-unchecked-selected.svg
+ gtk3/theme/assets/72/checkbox-unchecked.svg
+ gtk3/theme/assets/72/radio-active-selected.svg
+ gtk3/theme/assets/72/radio-active.svg
+ gtk3/theme/assets/72/radio-selected.svg
+ gtk3/theme/assets/72/radio.svg
+ gtk3/theme/assets/72/scale-slider-active.svg
+ gtk3/theme/assets/72/scale-slider.svg
  gtk3/theme/assets/Makefile.am
- gtk3/theme/assets/checkbox-checked-selected.svg
- gtk3/theme/assets/checkbox-checked.svg
- gtk3/theme/assets/checkbox-unchecked-selected.svg
- gtk3/theme/assets/checkbox-unchecked.svg
  gtk3/theme/assets/cursor-handle-bottom.svg
  gtk3/theme/assets/cursor-handle-insertion.svg
  gtk3/theme/assets/cursor-handle-top.svg
- gtk3/theme/assets/radio-active-selected.svg
- gtk3/theme/assets/radio-active.svg
- gtk3/theme/assets/radio-selected.svg
- gtk3/theme/assets/radio.svg
- gtk3/theme/assets/scale-slider-active.svg
- gtk3/theme/assets/scale-slider.svg
  gtk3/theme/gtk-widgets.css.em
  gtk3/theme/gtk.css
  gtk3/theme/settings.ini.em
@@ -63,6 +75,7 @@ Files: AUTHORS
  icons/scalable/actions/column-remove.svg
  icons/scalable/actions/dialog-cancel.svg
  icons/scalable/actions/dialog-ok.svg
+ icons/scalable/actions/document-open.svg
  icons/scalable/actions/document-save.svg
  icons/scalable/actions/document-send.svg
  icons/scalable/actions/edit-clear.svg
@@ -74,6 +87,9 @@ Files: AUTHORS
  icons/scalable/actions/edit-redo.svg
  icons/scalable/actions/edit-undo.svg
  icons/scalable/actions/entry-cancel.svg
+ icons/scalable/actions/entry-refresh.svg
+ icons/scalable/actions/entry-search.svg
+ icons/scalable/actions/entry-stop.svg
  icons/scalable/actions/format-columns-double.svg
  icons/scalable/actions/format-columns-single.svg
  icons/scalable/actions/format-columns-triple.svg
@@ -120,6 +136,8 @@ Files: AUTHORS
  icons/scalable/actions/media-seek-forward.svg
  icons/scalable/actions/row-insert.svg
  icons/scalable/actions/row-remove.svg
+ icons/scalable/actions/select-all.svg
+ icons/scalable/actions/select-none.svg
  icons/scalable/actions/system-logout.svg
  icons/scalable/actions/system-restart.svg
  icons/scalable/actions/system-search.svg
@@ -159,6 +177,7 @@ Files: AUTHORS
  icons/scalable/actions/view-source.svg
  icons/scalable/actions/view-spiral.svg
  icons/scalable/actions/view-triangle.svg
+ icons/scalable/actions/view-type.svg
  icons/scalable/actions/zoom-activity.svg
  icons/scalable/actions/zoom-best-fit.svg
  icons/scalable/actions/zoom-groups.svg
@@ -176,6 +195,9 @@ Files: AUTHORS
  icons/scalable/control/color-preview.svg
  icons/scalable/control/control-popup-arrow.svg
  icons/scalable/device/Makefile.am
+ icons/scalable/device/backup-backup.svg
+ icons/scalable/device/backup-restore.svg
+ icons/scalable/device/backup.svg
  icons/scalable/device/battery-000.icon
  icons/scalable/device/battery-000.svg
  icons/scalable/device/battery-010.icon
@@ -216,6 +238,23 @@ Files: AUTHORS
  icons/scalable/device/drive-harddisk-usb.svg
  icons/scalable/device/drive-harddisk.svg
  icons/scalable/device/drive.svg
+ icons/scalable/device/female-0.svg
+ icons/scalable/device/female-1.svg
+ icons/scalable/device/female-2.svg
+ icons/scalable/device/female-3.svg
+ icons/scalable/device/female-4.svg
+ icons/scalable/device/female-5.svg
+ icons/scalable/device/female-6.svg
+ icons/scalable/device/female-7.svg
+ icons/scalable/device/male-0.svg
+ icons/scalable/device/male-1.svg
+ icons/scalable/device/male-2.svg
+ icons/scalable/device/male-3.svg
+ icons/scalable/device/male-4.svg
+ icons/scalable/device/male-5.svg
+ icons/scalable/device/male-6.svg
+ icons/scalable/device/male-7.svg
+ icons/scalable/device/media-audio-input.svg
  icons/scalable/device/media-disk.svg
  icons/scalable/device/media-flash-sd.svg
  icons/scalable/device/media-optical.svg
@@ -288,6 +327,7 @@ Files: AUTHORS
  icons/scalable/mimetypes/image-x-generic.svg
  icons/scalable/mimetypes/text-uri-list.svg
  icons/scalable/mimetypes/text-x-generic.svg
+ icons/scalable/mimetypes/text-x-python.svg
  icons/scalable/mimetypes/video-x-generic.svg
  icons/scalable/status/Makefile.am
  icons/scalable/status/audio-volume-high.svg
@@ -309,6 +349,8 @@ Files: Makefile.in
  gtk/theme/Makefile.in
  gtk3/Makefile.in
  gtk3/theme/Makefile.in
+ gtk3/theme/assets/100/Makefile.in
+ gtk3/theme/assets/72/Makefile.in
  gtk3/theme/assets/Makefile.in
  icons/Makefile.in
  icons/scalable/Makefile.in
@@ -320,7 +362,7 @@ Files: Makefile.in
  icons/scalable/emblems/Makefile.in
  icons/scalable/mimetypes/Makefile.in
  icons/scalable/status/Makefile.in
-Copyright: 1994-2012, Free Software Foundation, Inc
+Copyright: 1994-2013, Free Software Foundation, Inc
 License: UNKNOWN
  FIXME
 
@@ -334,17 +376,6 @@ Copyright: 2007, Benjamin Berg
 License: LGPL-2+
  FIXME
 
-Files: config.guess
- config.sub
- depcomp
- missing
-Copyright: 1992-1999
-  1992-2000,
-  1996-1997, 1999-2000, 2002-2006
-  1999-2000, 2003-2007, 2009-2010
-License: GPL-2+
- FIXME
-
 Files: gtk/engine/sugar-rc-style.c
  gtk/engine/sugar-rc-style.h
  gtk/engine/sugar-style.c
@@ -352,6 +383,19 @@ Copyright: 2007, Benjamin Berg
   2007, Red Hat, Inc
   2008, Benjamin Berg
 License: LGPL-2+
+ FIXME
+
+Files: config.guess
+ config.sub
+Copyright: 1992-2013, Free Software Foundation, Inc
+License: GPL GPL-3
+ FIXME
+
+Files: depcomp
+ missing
+Copyright: 1996-2013, Free Software Foundation, Inc
+  1999-2013, Free Software Foundation, Inc
+License: GPL-2+
  FIXME
 
 Files: gtk/engine/sugar-style.h
@@ -382,19 +426,20 @@ License: GPL-2+
 
 Files: aclocal.m4
 Copyright: 1996-2001, 2003-2005,
-  1996-2012, Free Software Foundation, Inc
-  1997-2012, Free Software Foundation, Inc
-  1999-2012, Free Software Foundation, Inc
-  2001-2012, Free Software Foundation, Inc
-  2002-2012, Free Software Foundation, Inc
-  2003-2012, Free Software Foundation, Inc
+  1996-2013, Free Software Foundation, Inc
+  1997-2013, Free Software Foundation, Inc
+  1999-2013, Free Software Foundation, Inc
+  2001-2013, Free Software Foundation, Inc
+  2002-2013, Free Software Foundation, Inc
+  2003-2013, Free Software Foundation, Inc
   2004, Free Software Foundation, Inc
   2004, Scott James Remnant <scott@netsplit.com>
   2004-2005, 2007, 2009, Free Software Foundation, Inc
   2004-2005, 2007-2008, Free Software Foundation, Inc
   2004-2005, 2007-2009, Free Software Foundation
-  2004-2012, Free Software Foundation, Inc
-  2006-2012, Free Software Foundation, Inc
+  2004-2013, Free Software Foundation, Inc
+  2006-2013, Free Software Foundation, Inc
+  2009-2013, Free Software Foundation, Inc
   2011, Free Software Foundation, Inc
 License: GPL-2+
  FIXME

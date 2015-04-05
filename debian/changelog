@@ -1,8 +1,12 @@
-sugar-artwork-0.104 (0.98.4-3) UNRELEASED; urgency=medium
+sugar-artwork-0.104 (0.104.1-1) experimental; urgency=medium
 
-  * Bump major version.
+  [ upstream ]
+  * New release(s).
 
- -- Jonas Smedegaard <dr@jones.dk>  Sun, 05 Apr 2015 15:33:19 +0200
+  [ Jonas Smedegaard ]
+  * Bump major version in source and binary package names.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 05 Apr 2015 15:42:54 +0200
 
 sugar-artwork-0.98 (0.98.4-2) unstable; urgency=medium
 
