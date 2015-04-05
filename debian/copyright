@@ -12,14 +12,14 @@ Copyright: 2007, Red Hat, Inc
 License: LGPL-2+
 
 Files: */Makefile.in
-Copyright: 1994-2012, Free Software Foundation, Inc.
+Copyright: 1994-2013, Free Software Foundation, Inc.
 License: GAP~Makefile.in
 
 Files: config.guess
  config.sub
  depcomp
  missing
-Copyright: 1992-2012, Free Software Foundation, Inc.
+Copyright: 1992-2013, Free Software Foundation, Inc.
 License: GPL-2+ with Autoconf exception
  As a special exception to the GNU General Public License, if you
  distribute this file as part of a program that contains a configuration
@@ -43,7 +43,7 @@ Copyright: 1992-1996, 1998-2012, Free Software Foundation, Inc.
 License: GAP~configure
 
 Files: aclocal.m4
-Copyright: 1996-2012, Free Software Foundation, Inc.
+Copyright: 1996-2013, Free Software Foundation, Inc.
   2001-2004, Red Hat, Inc
   2004, Scott James Remnant <scott@netsplit.com>
 License: GPL-2+ with Autoconf exception
