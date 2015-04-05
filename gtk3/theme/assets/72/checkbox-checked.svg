@@ -1,0 +1,8 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+  <!ENTITY fill_color "#FFFFFF">
+  <!ENTITY stroke_color "#010101">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+    <rect width="16" height="16" x="1" y="1" color="&stroke_color;" fill="&fill_color;" stroke="#808080" stroke-width="2" stroke-linecap="round" overflow="visible" enable-background="accumulate"/>
+    <path d="M4.115 8.915l3.314 3.317 6.456-6.463" stroke="&stroke_color;" stroke-width="2" stroke-linecap="round" fill="none"/>
+</svg>

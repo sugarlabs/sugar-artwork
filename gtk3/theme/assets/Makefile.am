@@ -1,14 +1,6 @@
+SUBDIRS = 100 72
+
 assets =			\
-	scale-slider.svg	\
-	scale-slider-active.svg \
-	radio.svg		\
-	radio-selected.svg	\
-	radio-active.svg	\
-	radio-active-selected.svg	\
-	checkbox-unchecked.svg		\
-	checkbox-unchecked-selected.svg	\
-	checkbox-checked.svg		\
-	checkbox-checked-selected.svg   \
 	cursor-handle-insertion.svg	\
 	cursor-handle-bottom.svg	\
 	cursor-handle-top.svg

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+  <!ENTITY fill_color "#E5E5E5">
+  <!ENTITY stroke_color "#010101">
+]>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="18"
+   height="18"
+   id="svg27352">
+  <path
+     d="m -12.928177,-10.441989 a 11.20442,11.20442 0 1 1 -22.40884,0 11.20442,11.20442 0 1 1 22.40884,0 z"
+     transform="matrix(0.75863092,0,0,0.75863092,27.307382,16.921967)"
+     id="path4787"
+     style="color:#010101;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#808080;stroke-width:1.31816399;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+</svg>

@@ -22,6 +22,8 @@ if scaling == "100":
     font_height = 24
     default_padding = 6
     toolbutton_padding = 10
+    radio_size = 26
+    scale_trough_margin = 8
 else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     xo = False
     line_width = 2.0            # 1.62 rounded up
@@ -33,20 +35,9 @@ else: # About 72% of the XO size, adjusted so that eg. toolbuttons work
     font_height = 17
     default_padding = 4         # 4.32
     toolbutton_padding = 7      # 7.68
+    radio_size = 18             # 18.72
+    scale_trough_margin = 6     # 5.76
 
-
-# Radio size used to be:
-#
-# radio_size = my_floor(subcell_size + bullet_size + line_width)
-#
-# But a screenshot shows that the graphic was actually rendered at 26px
-# so the SVG displays at the correct size.
-# FIXME this only works for 100, has not been tested in 75 resolution
-radio_size = 26
-
-# FIXME this should be calculated with the radio size and the bullet
-# size:
-scale_trough_margin = 8
 
 scale_slider_width = my_floor(2 * subcell_size + line_width)
 thickness = my_ceil(line_width)
@@ -151,13 +142,7 @@ GtkLabel, GtkLabel:insensitive {
 
 .button {
     ${ border = max(0, my_ceil((3*subcell_size/2.0 - icon_small / 2.0))) }
-    /* It would be nicer to just set the inner-border, but that does not work
-       for combo boxes ... The combobox ignores it, so set it to 0px
-       See http://bugzilla.gnome.org/show_bug.cgi?id=485762 */
-
-    -GtkButton-inner-border: 0 0 0 0;
     padding: $(border)px $(border)px $(border)px $(border)px;
-
     border-width: $(thickness)px;
     border-color: @button_grey;
     border-style: solid;
@@ -229,6 +214,13 @@ GtkTreeView {
     background-color: @button_grey;
 }
 
+column-header .button,
+column-header .button:hover:active {
+    border-radius: 0px;
+    background-color: @button_grey;
+    border-width: 0px;
+}
+
 GtkTreeView row:nth-child(even) {
     background-color: @row_even;
 }
@@ -262,7 +254,7 @@ GtkTreeView row:nth-child(odd) {
     border-color: @white;
 }
 
-.entry:insensitive, .view:insensitive {
+.entry:insensitive {
     background-color: @button_grey;
 }
 
@@ -363,10 +355,6 @@ GtkComboBox .menu {
 }
 
 /* Browse Widgets */
-
-BrowseTabPage {
-    background-color: @black;
-}
 
 BrowseSearchWindow .view {
     background-color: @black;
@@ -482,7 +470,7 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
 }
 
 .menuitem.separator {
-    padding: $(subcell_size)px 0px;
+    padding: 0;
 }
 
 SugarPaletteHeader.menuitem {
@@ -494,7 +482,7 @@ SugarPaletteHeader.menuitem:prelight {
 }
 
 SugarPaletteHeaderSeparator.menuitem.separator {
-    padding: 0px 0px $(subcell_size)px 0px;
+    padding: 0;
 }
 
 .tooltip {
@@ -511,7 +499,7 @@ SugarPaletteHeaderSeparator.menuitem.separator {
 /* Scrollbars */
 
 .scrollbar {
-    -GtkRange-slider-width: $subcell_size;
+    -GtkRange-slider-width: $(subcell_size + 2*thickness);
     -GtkRange-trough-border: 0;
     -GtkRange-stepper-size: 0;
     -GtkScrollbar-min-slider-length: $(3*subcell_size);
@@ -529,7 +517,9 @@ SugarPaletteHeaderSeparator.menuitem.separator {
 .scrollbar.slider {
     background-color: @white;
     border-radius: $(2*subcell_size)px;
-    border-width: 0px;
+    border-width: $(thickness)px;
+    border-color: @button_grey;
+    border-style: solid;
 }
 
 .scrollbar.slider:active {
@@ -589,8 +579,8 @@ SugarPaletteWindowWidget SugarRadioToolButton .button {
 }
 
 .toolbar GtkToolButton .button,
-.toolbar SugarRadioToolButton *,
-SugarPaletteWindowWidget SugarRadioToolButton *,
+.toolbar SugarRadioToolButton .button,
+SugarPaletteWindowWidget SugarRadioToolButton .button,
 SugarPaletteWindowWidget GtkToolButton .button {
     background-color: transparent;
     border-radius: $(toolbutton_padding)px;
@@ -617,7 +607,7 @@ SugarPaletteWindowWidget SugarRadioToolButton *:active {
 }
 
 SugarPaletteWindowWidget GtkToolButton .button:active {
-    background-color: @transparent;
+    background-color: @button_grey;
 }
 
 .toolbar GtkToolButton .button:active {
@@ -625,7 +615,7 @@ SugarPaletteWindowWidget GtkToolButton .button:active {
     border-radius: $(toolbutton_padding)px;
 }
 
-SugarPaletteWindowWidget GtkScrolledWindow * {
+SugarPaletteWindowWidget GtkScrolledWindow {
     background-color: @black;
 }
 
@@ -824,6 +814,23 @@ SugarKeepIcon.button.toggle-press {
 
 .cell.sugar-icon-cell:active {
     background-color: @zoom_views_active;
+}
+
+/* CellRendererProgress */
+
+.cell.progressbar, .cell.trough {
+    border-style: solid;
+    border-width: $(thickness)px;
+    border-color: @selection_grey;
+    border-radius: $(2*subcell_size)px;
+}
+
+.cell.progressbar {
+    background-color: @white;
+}
+
+.cell.trough {
+    background-color: @text_field_grey;
 }
 
 /* Text cursor handles */

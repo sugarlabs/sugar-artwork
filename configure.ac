@@ -1,17 +1,15 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.98.4],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.104.1],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
-AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip])
+AM_INIT_AUTOMAKE([1.9 foreign dist-xz no-dist-gzip])
 
 AM_MAINTAINER_MODE
 AM_DISABLE_STATIC
 
 PKG_PROG_PKG_CONFIG([0.19])
-
-GNOME_COMPILE_WARNINGS(maximum)
 
 AC_PROG_CC
 AC_HEADER_STDC
@@ -70,4 +68,6 @@ gtk/theme/Makefile
 gtk3/Makefile
 gtk3/theme/Makefile
 gtk3/theme/assets/Makefile
+gtk3/theme/assets/72/Makefile
+gtk3/theme/assets/100/Makefile
 ])
