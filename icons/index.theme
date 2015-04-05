@@ -1,6 +1,6 @@
 [Icon Theme]
-Name=OLPC
-Comment=Default OLPC Theme
+Name=Sugar
+Comment=Default Sugar Theme
 
 Directories=scalable/mimetypes,scalable/device,scalable/control,scalable/actions,scalable/status,scalable/emblems,scalable/categories
 

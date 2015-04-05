@@ -15,6 +15,7 @@ icon_DATA =						\
 	dialog-ok.svg					\
 	document-save.svg				\
 	document-send.svg				\
+	document-open.svg				\
 	edit-copy.svg					\
 	edit-delete.svg					\
 	edit-description.svg				\
@@ -69,6 +70,8 @@ icon_DATA =						\
 	media-seek-forward.svg				\
 	row-insert.svg					\
 	row-remove.svg					\
+	select-all.svg					\
+	select-none.svg					\
 	system-logout.svg				\
 	system-restart.svg				\
 	system-search.svg				\
@@ -108,6 +111,7 @@ icon_DATA =						\
 	view-spiral.svg					\
 	view-source.svg					\
 	view-triangle.svg				\
+	view-type.svg					\
 	zoom-activity.svg 				\
 	zoom-best-fit.svg				\
 	zoom-groups.svg					\
@@ -117,7 +121,11 @@ icon_DATA =						\
 	zoom-original.svg				\
 	zoom-out.svg					\
 	zoom-to-width.svg				\
-	entry-cancel.svg
+	entry-cancel.svg				\
+	entry-search.svg				\
+	entry-stop.svg					\
+	entry-refresh.svg
+
 
 EXTRA_DIST = $(icon_DATA)
 
@@ -127,5 +135,6 @@ install-data-local: install-iconDATA
 	ln -sf activity-start.svg $(DESTDIR)$(icondir)/document-open.svg
 	ln -sf activity-stop.svg $(DESTDIR)$(icondir)/application-exit.svg
 	ln -sf dialog-ok.svg $(DESTDIR)$(icondir)/dialog-apply.svg
+	ln -sf dialog-ok.svg $(DESTDIR)$(icondir)/gtk-ok.svg
 	ln -sf media-playback-stop.svg $(DESTDIR)$(icondir)/process-stop.svg
 	(cd $(DESTDIR)$(icondir)/.. && $(ICONMAP) -c $(category))
