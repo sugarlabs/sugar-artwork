@@ -1,8 +1,6 @@
-diff --git a/gtk/engine/sugar-style.h b/gtk/engine/sugar-style.h
-index acf1341..a710dae 100644
 --- a/gtk/engine/sugar-style.h
 +++ b/gtk/engine/sugar-style.h
-@@ -44,6 +44,11 @@ struct _SugarStyleClass
+@@ -44,6 +44,11 @@
    GtkStyleClass parent_class;
  };
  
