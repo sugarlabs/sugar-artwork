@@ -36,6 +36,9 @@ DEB_UPSTREAM_PACKAGE = $(DEB_SOURCE_PACKAGE:%-$(pkgbranch)=%)
 DEB_UPSTREAM_URL = http://download.sugarlabs.org/sources/sucrose/glucose/$(DEB_UPSTREAM_PACKAGE)
 DEB_UPSTREAM_TARBALL_EXTENSION = tar.xz
 
+# Suppress copyright check of PNG files (in addition to defaults)
+DEB_COPYRIGHT_CHECK_IGNORE_REGEX = ^(cursor/sugar/.*\.png|debian/(changelog|copyright(|_hints|_newhints)))$
+
 # Register icons for optional caching
 binary-install/$(pkg)::
 	dh_icons -p$(cdbs_curpkg)
