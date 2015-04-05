@@ -1,3 +1,9 @@
+sugar-artwork-0.104 (0.98.4-3) UNRELEASED; urgency=medium
+
+  * Bump major version.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 05 Apr 2015 15:33:19 +0200
+
 sugar-artwork-0.98 (0.98.4-2) unstable; urgency=medium
 
   * Track xz compressed upstream tarballs (favored over bzip2).

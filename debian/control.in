@@ -1,4 +1,4 @@
-Source: sugar-artwork-0.98
+Source: sugar-artwork-0.104
 Section: x11
 Priority: optional
 Maintainer: Debian OLPC <debian-olpc-devel@lists.alioth.debian.org>
@@ -10,7 +10,7 @@ Vcs-Git: git://git.debian.org/collab-maint/sugar-artwork
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/sugar-artwork.git
 Homepage: http://wiki.sugarlabs.org/go/Sugar
 
-Package: sugar-artwork-0.98
+Package: sugar-artwork-0.104
 Architecture: any
 Depends: ${cdbs:Depends},
  ${misc:Depends},
