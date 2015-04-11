@@ -80,6 +80,7 @@ icon_DATA =						\
 	toolbar-edit.svg				\
 	toolbar-view.svg				\
 	toolbar-help.svg				\
+	toolbar-social-help.svg				\
 	tray-hide.svg					\
 	tray-show.svg					\
 	tray-favourite.svg				\
