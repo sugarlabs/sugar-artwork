@@ -694,6 +694,10 @@ SugarPaletteWindowWidget .scale {
 
 /* Radio and check buttons */
 
+GtkCheckButton {
+    border: 1px solid @black;
+}
+
 GtkCheckButton:prelight {
     background-color: alpha(@theme_base_color, 0.0);
 }
