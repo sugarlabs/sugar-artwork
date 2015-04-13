@@ -702,9 +702,10 @@ GtkCheckButton:prelight {
     background-color: alpha(@theme_base_color, 0.0);
 }
 
-.toolbar GtkCheckButton,
-SugarPaletteWindowWidget GtkCheckButton {
+.toolbar GtkCheckButton,.toolbar .check,
+SugarPaletteWindowWidget .check {
     color: @theme_base_color;
+    border: 1px solid @theme_base_color;
 }
 
 .radio,
