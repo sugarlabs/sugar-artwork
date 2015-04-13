@@ -737,6 +737,7 @@ SugarPaletteWindowWidget GtkCheckButton {
 .check row:selected:focused {
     background-image: url("assets/checkbox-unchecked.svg");
     background-color: alpha(@theme_base_color, 0.0);
+    border: 1px solid @black;
 }
 
 .check:selected,
