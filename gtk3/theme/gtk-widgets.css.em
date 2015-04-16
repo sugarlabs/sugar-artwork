@@ -366,6 +366,10 @@ BrowseSearchWindow .view {
 
 /* Control panel */
 
+SugarSectionIcon.disabled {
+    opacity: 0.33;
+}
+
 SugarSectionView {
     background-color: @white;
     color: @black;
