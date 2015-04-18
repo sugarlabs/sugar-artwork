@@ -51,12 +51,12 @@ bdeps +=, dh-autoreconf, gnome-common
 recommends = ttf-dejavu-core, librsvg2-common
 
 CDBS_BUILD_DEPENDS +=, $(bdeps)
-CDBS_RECOMMENDS_DEFAULT = $(recommends)
+CDBS_RECOMMENDS_$(pkg) = $(recommends)
 
 # Ensure only one variant is installed at a time (Debian Policy 7.6.2)
-CDBS_PROVIDES_DEFAULT = $(pkgbase)
-CDBS_CONFLICTS_DEFAULT = $(pkgbase)
-CDBS_REPLACES_DEFAULT = $(pkgbase)
+CDBS_PROVIDES_$(pkg) = $(pkgbase)
+CDBS_CONFLICTS_$(pkg) = $(pkgbase)
+CDBS_REPLACES_$(pkg) = $(pkgbase)
 
 # Register icons for optional caching
 binary-install/$(pkg)::
@@ -65,7 +65,7 @@ binary-install/$(pkg)::
 # Strip hardcoded rpath
 CDBS_BUILD_DEPENDS +=, chrpath
 binary-strip/$(pkg)::
-	find $(DEB_DESTDIR)/usr/lib -type f -name '*.so' -exec chrpath -d '{}' ';'
+	find $(cdbs_curdestdir)/usr/lib -type f -name '*.so' -exec chrpath -d '{}' ';'
 
 # Avoid .la files - see http://wiki.debian.org/ReleaseGoals/LAFileRemoval
 common-binary-post-install-arch::
