@@ -19,11 +19,10 @@ Recommends: ${cdbs:Recommends}
 Provides: ${cdbs:Provides}
 Conflicts: ${cdbs:Conflicts}
 Replaces: ${cdbs:Replaces}
-Description: Sugar graphical shell - artwork
- Sugar is a graphical user interface aimed at children.
- .
- Originating as integral part of the OLPC "XO" a.k.a. the $100 laptop,
- Sugar has since grown into a more widely usable low-ressource desktop
- environment for kids.
+Description: Sugar Learning Platform - artwork
+ Sugar Learning Platform promotes collaborative learning through Sugar
+ Activities that encourage critical thinking, the heart of a quality
+ education.  Designed from the ground up especially for children, Sugar
+ offers an alternative to traditional “office-desktop” software.
  .
  This package contains the artwork for Sugar.
