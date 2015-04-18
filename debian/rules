@@ -47,10 +47,9 @@ bdeps +=, python-empy, icon-slicer, icon-naming-utils
 bdeps +=, dh-autoreconf, gnome-common
 
 # Needed (always/often) at runtime
-#  * gtk2-engines-pixbuf used with GTK2
 #  * librsvg2-common used with GTK3
 depends = ttf-dejavu-core
-recommends = sugar-$(pkgbranch), ttf-dejavu-extra, gtk2-engines-pixbuf
+recommends = sugar-$(pkgbranch), ttf-dejavu-extra
 recommends +=, librsvg2-common
 
 CDBS_BUILD_DEPENDS +=, $(bdeps)
