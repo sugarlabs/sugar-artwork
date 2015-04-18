@@ -48,12 +48,9 @@ bdeps +=, dh-autoreconf, gnome-common
 
 # Needed (always/often) at runtime
 #  * librsvg2-common used with GTK3
-depends = ttf-dejavu-core
-recommends = ttf-dejavu-extra
-recommends +=, librsvg2-common
+recommends = ttf-dejavu-core, librsvg2-common
 
 CDBS_BUILD_DEPENDS +=, $(bdeps)
-CDBS_DEPENDS_DEFAULT = $(depends)
 CDBS_RECOMMENDS_DEFAULT = $(recommends)
 
 # Ensure only one variant is installed at a time (Debian Policy 7.6.2)
