@@ -39,14 +39,6 @@ DEB_UPSTREAM_TARBALL_EXTENSION = tar.xz
 # Suppress copyright check of PNG files (in addition to defaults)
 DEB_COPYRIGHT_CHECK_IGNORE_REGEX = ^(cursor/sugar/.*\.png|debian/(changelog|copyright(|_hints|_newhints)))$
 
-# Register icons for optional caching
-binary-install/$(pkg)::
-	dh_icons -p$(cdbs_curpkg)
-
-# Strip hardcoded rpath
-binary-strip/$(pkg)::
-	find $(DEB_DESTDIR)/usr/lib -type f -name '*.so' -exec chrpath -d '{}' ';'
-
 # Needed by upstream build process
 CDBS_BUILD_DEPENDS += , libgtk2.0-dev, libgtk-3-dev, libglib2.0-dev, libcairo2-dev, python-empy, icon-slicer, icon-naming-utils
 
@@ -63,6 +55,14 @@ CDBS_REPLACES_DEFAULT = $(pkgbase)
 
 # Needed for our packaging
 CDBS_BUILD_DEPENDS += , chrpath, dh-autoreconf, gnome-common
+
+# Register icons for optional caching
+binary-install/$(pkg)::
+	dh_icons -p$(cdbs_curpkg)
+
+# Strip hardcoded rpath
+binary-strip/$(pkg)::
+	find $(DEB_DESTDIR)/usr/lib -type f -name '*.so' -exec chrpath -d '{}' ';'
 
 # Avoid .la files - see http://wiki.debian.org/ReleaseGoals/LAFileRemoval
 common-binary-post-install-arch::
