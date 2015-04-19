@@ -29,8 +29,9 @@ include /usr/share/cdbs/1/rules/autoreconf.mk
 include /usr/share/cdbs/1/class/autotools.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-pkgbase = sugar-artwork
-pkg = $(pkgbase)-$(pkgbranch)
+pkg = sugar-$(pkgbranch)-themes
+pkg-icon = sugar-$(pkgbranch)-icon-theme
+pkg-gtk2 = gtk2-engines-sugar-$(pkgbranch)
 
 DEB_UPSTREAM_PACKAGE = $(DEB_SOURCE_PACKAGE:%-$(pkgbranch)=%)
 DEB_UPSTREAM_URL = http://download.sugarlabs.org/sources/sucrose/glucose/$(DEB_UPSTREAM_PACKAGE)
@@ -48,25 +49,47 @@ bdeps +=, dh-autoreconf, gnome-common
 
 # Needed (always/often) at runtime
 #  * librsvg2-common used with GTK3
+depends = $(pkg-icon)
 recommends = ttf-dejavu-core, librsvg2-common
+suggests = $(pkg-gtk2)
+
+# Transitional quirk: split into engine and theme packages
+#  * needed only until Wheezy. TODO: Drop when Wheezy no longer supported
+obsoletes = sugar-artwork-0.84 (<= 0.84.4-3)
+obsoletes +=, sugar-artwork-0.88 (<= 0.88.1-4)
+obsoletes +=, sugar-artwork-0.96 (<= 0.96.2-2)
+obsoletes +=, sugar-artwork-0.98 (<= 0.98.4-2)
+obsoletes +=, sugar-artwork-0.104 (<= 0.104.1-1)
 
 CDBS_BUILD_DEPENDS +=, $(bdeps)
 CDBS_RECOMMENDS_$(pkg) = $(recommends)
+CDBS_SUGGESTS_$(pkg) = $(suggests)
+
+define sugar-relations
 
 # Ensure only one variant is installed at a time (Debian Policy 7.6.2)
-CDBS_PROVIDES_$(pkg) = $(pkgbase)
-CDBS_CONFLICTS_$(pkg) = $(pkgbase)
-CDBS_REPLACES_$(pkg) = $(pkgbase)
+CDBS_PROVIDES_$($1) = $(subst -$(pkgbranch),,$($1))
+CDBS_CONFLICTS_$($1) = $(subst -$(pkgbranch),,$($1))
+CDBS_REPLACES_$($1) = $(subst -$(pkgbranch),,$($1))
+
+# Transitional quirk: split into engine and theme packages
+#  * needed only until Wheezy. TODO: Drop when Wheezy no longer supported
+CDBS_REPLACES_$($1) +=, $(obsoletes)
+CDBS_BREAKS_$($1) +=, $(obsoletes)
+
+endef
+$(foreach p,pkg pkg-icon pkg-gtk2,$(eval $(call sugar-relations,$(value p))))
+
+DEB_DH_INSTALL_ARGS_ALL = --autodest
+DEB_DH_INSTALL_ARGS_$(pkg) = /usr/share/themes
+DEB_DH_INSTALL_ARGS_$(pkg-icon) = usr/share/icons
+DEB_DH_INSTALL_ARGS_$(pkg-gtk2) = usr/lib/gtk-2.0/*/engines/*.so
 
 # Register icons for optional caching
-binary-install/$(pkg)::
+binary-post-install/$(pkg-icon)::
 	dh_icons -p$(cdbs_curpkg)
 
 # Strip hardcoded rpath
 CDBS_BUILD_DEPENDS +=, chrpath
-binary-strip/$(pkg)::
+binary-strip/$(pkg-gtk2)::
 	find $(cdbs_curdestdir)/usr/lib -type f -name '*.so' -exec chrpath -d '{}' ';'
-
-# Avoid .la files - see http://wiki.debian.org/ReleaseGoals/LAFileRemoval
-common-binary-post-install-arch::
-	find '$(cdbs_curdestdir)' -name '*.la' -delete
