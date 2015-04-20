@@ -30,6 +30,7 @@ Depends: ${cdbs:Depends},
  ${misc:Depends},
  ${shlibs:Depends}
 Recommends: ${cdbs:Recommends}
+Suggests: ${cdbs:Suggests}
 Provides: ${cdbs:Provides}
 Conflicts: ${cdbs:Conflicts}
 Replaces: ${cdbs:Replaces}

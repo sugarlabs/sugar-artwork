@@ -1,3 +1,10 @@
+sugar-artwork-0.104 (0.104.1-4) unstable; urgency=medium
+
+  * Fix really have sugar-*-themes depend on sugar-*-icon-theme and
+    suggest gtk2-engines-sugar-* (as intended in 0.104.1-2).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 20 Apr 2015 12:25:32 +0200
+
 sugar-artwork-0.104 (0.104.1-3) unstable; urgency=medium
 
   * Release for unstable.
