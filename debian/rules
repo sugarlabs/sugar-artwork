@@ -62,6 +62,7 @@ obsoletes +=, sugar-artwork-0.98 (<= 0.98.4-2)
 obsoletes +=, sugar-artwork-0.104 (<= 0.104.1-1)
 
 CDBS_BUILD_DEPENDS +=, $(bdeps)
+CDBS_DEPENDS_$(pkg) +=, $(depends)
 CDBS_RECOMMENDS_$(pkg) = $(recommends)
 CDBS_SUGGESTS_$(pkg) = $(suggests)
 
