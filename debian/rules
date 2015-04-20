@@ -80,10 +80,12 @@ CDBS_BREAKS_$($1) +=, $(obsoletes)
 endef
 $(foreach p,pkg pkg-icon pkg-gtk2,$(eval $(call sugar-relations,$(value p))))
 
+DEB_CONFIGURE_EXTRA_FLAGS += --libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
+
 DEB_DH_INSTALL_ARGS_ALL = --autodest
 DEB_DH_INSTALL_ARGS_$(pkg) = /usr/share/themes
 DEB_DH_INSTALL_ARGS_$(pkg-icon) = usr/share/icons
-DEB_DH_INSTALL_ARGS_$(pkg-gtk2) = usr/lib/gtk-2.0/*/engines/*.so
+DEB_DH_INSTALL_ARGS_$(pkg-gtk2) = usr/lib/$(DEB_HOST_MULTIARCH)/gtk-2.0/*/engines/*.so
 
 # Register icons for optional caching
 binary-post-install/$(pkg-icon)::

@@ -12,6 +12,7 @@ Homepage: http://wiki.sugarlabs.org/go/Sugar
 
 Package: sugar-__BRANCH__-themes
 Architecture: all
+Multi-Arch: foreign
 Depends: ${cdbs:Depends},
  ${misc:Depends},
  ${shlibs:Depends}
@@ -29,6 +30,7 @@ Description: Sugar Learning Platform - artwork
 
 Package: sugar-__BRANCH__-icon-theme
 Architecture: all
+Multi-Arch: foreign
 Depends: ${cdbs:Depends},
  ${misc:Depends},
  ${shlibs:Depends}
@@ -46,7 +48,9 @@ Description: Sugar Learning Platform - icon theme
  This package contains the icon theme used with Sugar.
 
 Package: gtk2-engines-sugar-__BRANCH__
+Section: oldlibs
 Architecture: any
+Multi-Arch: same
 Depends: ${cdbs:Depends},
  ${misc:Depends},
  ${shlibs:Depends}
