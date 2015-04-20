@@ -80,6 +80,9 @@ CDBS_BREAKS_$($1) +=, $(obsoletes)
 endef
 $(foreach p,pkg pkg-icon pkg-gtk2,$(eval $(call sugar-relations,$(value p))))
 
+# Multiarch quirks
+#  * TODO: Stop depend on multiarch-support when Wheezy no longer supported
+CDBS_PREDEPENDS_$(pkg-lib) = $(if $(DEB_HOST_MULTIARCH),multiarch-support)
 DEB_CONFIGURE_EXTRA_FLAGS += --libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
 
 DEB_DH_INSTALL_ARGS_ALL = --autodest
