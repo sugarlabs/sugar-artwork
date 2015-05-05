@@ -81,6 +81,7 @@ icon_DATA =						\
 	toolbar-view.svg				\
 	toolbar-help.svg				\
 	toolbar-social-help.svg				\
+	toolbar-social-help-animated.svg		\
 	tray-hide.svg					\
 	tray-show.svg					\
 	tray-favourite.svg				\
