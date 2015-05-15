@@ -731,14 +731,20 @@ SugarPaletteWindowWidget .check {
 
 .radio:active,
 .radio row:selected:active,
-.radio row:selected:focused:active {
+.radio row:selected:focused:active,
+.radio:checked,
+.radio row:selected:checked,
+.radio row:selected:focused:checked {
     background-image: url("assets/radio-active.svg");
     -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 .radio:active:selected,
 .radio:selected row:selected:active,
-.radio:selected row:selected:focused:active {
+.radio:selected row:selected:focused:active,
+.radio:checked:selected,
+.radio:selected row:selected:checked,
+.radio:selected row:selected:focused:checked {
     background-image: url("assets/radio-active-selected.svg");
     -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
@@ -760,14 +766,20 @@ SugarPaletteWindowWidget .check {
 
 .check:active,
 .check row:selected:active,
-.check row:selected:focused:active {
+.check row:selected:focused:active,
+.check:checked,
+.check row:selected:checked,
+.check row:selected:focused:checked {
     background-image: url("assets/checkbox-checked.svg");
     -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 .check:active:selected,
 .check:selected row:selected:active,
-.check:selected row:selected:focused:active {
+.check:selected row:selected:focused:active,
+.check:checked:selected,
+.check:selected row:selected:checked,
+.check:selected row:selected:focused:checked {
     background-image: url("assets/checkbox-checked-selected.svg");
     -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
