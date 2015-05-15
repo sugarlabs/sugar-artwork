@@ -408,7 +408,8 @@ SugarHTray * , SugarVTray * { background-color: @toolbar_grey;}
 
 /* Menus and palettes */
 
-SugarPaletteWindowWidget {
+SugarPaletteWindowWidget,
+GtkPopover {
     border-width: $(thickness)px;
     border-color: @button_grey;
     border-style: solid;
