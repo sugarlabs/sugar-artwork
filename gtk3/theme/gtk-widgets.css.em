@@ -716,6 +716,9 @@ SugarPaletteWindowWidget .check {
 .radio row:selected,
 .radio row:selected:focused {
     background-image: url("assets/radio.svg");
+    /* Gtk 3.14+ expect these to be included in icon theme however we want to
+       override that */
+    -gtk-icon-source: url("assets/radio.svg");
     background-color: alpha(@theme_base_color, 0.0);
 }
 
@@ -723,44 +726,50 @@ SugarPaletteWindowWidget .check {
 .radio:selected row:selected,
 .radio:selected row:selected:focused {
     background-image: url("assets/radio-selected.svg");
+    -gtk-icon-source: url("assets/radio-selected.svg");
 }
 
 .radio:active,
 .radio row:selected:active,
 .radio row:selected:focused:active {
     background-image: url("assets/radio-active.svg");
+    -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 .radio:active:selected,
 .radio:selected row:selected:active,
 .radio:selected row:selected:focused:active {
     background-image: url("assets/radio-active-selected.svg");
+    -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
 
 .check,
 .check row:selected,
 .check row:selected:focused {
     background-image: url("assets/checkbox-unchecked.svg");
+    -gtk-icon-source: url("assets/checkbox-unchecked.svg");
     background-color: alpha(@theme_base_color, 0.0);
-    border: 1px solid @black;
 }
 
 .check:selected,
 .check:selected row:selected,
 .check:selected row:selected:focused {
     background-image: url("assets/checkbox-unchecked-selected.svg");
+    -gtk-icon-source: url("assets/checkbox-unchecked-selected.svg");
 }
 
 .check:active,
 .check row:selected:active,
 .check row:selected:focused:active {
     background-image: url("assets/checkbox-checked.svg");
+    -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 .check:active:selected,
 .check:selected row:selected:active,
 .check:selected row:selected:focused:active {
     background-image: url("assets/checkbox-checked-selected.svg");
+    -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
 
 /* Tool items */
