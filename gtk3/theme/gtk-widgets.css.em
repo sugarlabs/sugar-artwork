@@ -816,6 +816,7 @@ SugarKeepIcon.button {
     border-radius: $(4 * thickness)px;
     border-width: 2px;
     border-style: solid;
+    background-color: transparent;
 }
 
 SugarCanvasIcon:prelight,
