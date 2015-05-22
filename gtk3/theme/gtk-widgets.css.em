@@ -597,15 +597,19 @@ SugarPaletteWindowWidget GtkToolButton .button:prelight {
 }
 
 .toolbar GtkToolButton .button:prelight,
+.toolbar GtkToolButton .button:prelight GtkBox,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
 }
 
 .toolbar SugarRadioToolButton *:active,
 SugarPaletteWindowWidget SugarRadioToolButton *:active,
+.toolbar SugarRadioToolButton *:active GtkBox,
 .toolbar SugarRadioToolButton *:checked,
+.toolbar SugarRadioToolButton *:checked GtkBox,
 SugarPaletteWindowWidget SugarRadioToolButton *:checked,
 .toolbar SugarToggleToolButton *:checked,
+.toolbar SugarToggleToolButton *:checked GtkBox,
 SugarPaletteWindowWidget SugarToggleToolButton *:checked {
     background-color: @button_grey;
     border-radius: $(toolbutton_padding)px;
