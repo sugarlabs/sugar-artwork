@@ -221,10 +221,10 @@ column-header .button:hover:active {
     border-width: 0px;
 }
 
-GtkTreeView row:nth-child(even) {
+GtkTreeView row:even {
     background-color: @row_even;
 }
-GtkTreeView row:nth-child(odd) {
+GtkTreeView row:odd {
     background-color: @row_odd;
 }
 
