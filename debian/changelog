@@ -1,3 +1,17 @@
+sugar-artwork-0.104 (0.104.1-5) unstable; urgency=medium
+
+  * Modernize git-buildpackage config: Avoid "git-" prefix.
+  * Adapt packaging in maintainer mode when targeting experimental:
+    + Switch git packaging branch.
+    + Track any release (else only current branch).
+  * Update copyright info:
+    + Use License-Grant and License-Reference fields.
+      Thanks to Ben Finney.
+  * Add lintian overrides regarding license in License-Reference field.
+    See bug#786450.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 14 Jun 2015 18:47:06 -0500
+
 sugar-artwork-0.104 (0.104.1-4) unstable; urgency=medium
 
   * Fix really have sugar-*-themes depend on sugar-*-icon-theme and

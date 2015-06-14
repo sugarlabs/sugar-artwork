@@ -23,8 +23,8 @@ Files: AUTHORS
  debian/patches/2001_empy_from_system.patch
  debian/patches/README
  debian/patches/series
- debian/patches/sugar-style-h-prototypes.patch
  debian/source/format
+ debian/source/lintian-overrides
  debian/watch
  gtk/Makefile.am
  gtk/engine/Makefile.am
@@ -385,17 +385,17 @@ Copyright: 2007, Benjamin Berg
 License: LGPL-2+
  FIXME
 
-Files: config.guess
- config.sub
-Copyright: 1992-2013, Free Software Foundation, Inc
-License: GPL GPL-3
- FIXME
-
 Files: depcomp
  missing
 Copyright: 1996-2013, Free Software Foundation, Inc
   1999-2013, Free Software Foundation, Inc
 License: GPL-2+
+ FIXME
+
+Files: config.guess
+ config.sub
+Copyright: 1992-2013, Free Software Foundation, Inc
+License: GPL-3
  FIXME
 
 Files: gtk/engine/sugar-style.h
@@ -412,7 +412,13 @@ License: UNKNOWN
 
 Files: install-sh
 Copyright: 1994, X Consortium
+  and license
 License: Expat
+ FIXME
+
+Files: ltmain.sh
+Copyright: 1996-2001, 2003-2006
+License: GPL-2+
  FIXME
 
 Files: configure
@@ -425,7 +431,7 @@ License: GPL-2+
  FIXME
 
 Files: aclocal.m4
-Copyright: 1996-2001, 2003-2005,
+Copyright: 1996-2001, 2003-2005
   1996-2013, Free Software Foundation, Inc
   1997-2013, Free Software Foundation, Inc
   1999-2013, Free Software Foundation, Inc
@@ -433,7 +439,6 @@ Copyright: 1996-2001, 2003-2005,
   2002-2013, Free Software Foundation, Inc
   2003-2013, Free Software Foundation, Inc
   2004, Free Software Foundation, Inc
-  2004, Scott James Remnant <scott@netsplit.com>
   2004-2005, 2007, 2009, Free Software Foundation, Inc
   2004-2005, 2007-2008, Free Software Foundation, Inc
   2004-2005, 2007-2009, Free Software Foundation
@@ -441,18 +446,12 @@ Copyright: 1996-2001, 2003-2005,
   2006-2013, Free Software Foundation, Inc
   2009-2013, Free Software Foundation, Inc
   2011, Free Software Foundation, Inc
-License: GPL-2+
- FIXME
-
-Files: ltmain.sh
-Copyright: 1996-2001, 2003-2006,
-  all begin with the string "--lt-"
+  �� 2004, Scott James Remnant <scott@netsplit.com>
 License: GPL-2+
  FIXME
 
 Files: debian/rules
 Copyright: 2008-2012, 2015 Jonas Smedegaard <dr@jones.dk>
-  check of PNG files (in addition to defaults)
 License: GPL-3+
  FIXME
 
@@ -460,8 +459,6 @@ Files: COPYING
 Copyright: 1991, 1999 Free Software Foundation, Inc
   <year> <name of author>
   disclaimer" for the library, if
-  interest in the
-  law: that is to say, a work containing the Library or a
   the
 License: LGPL-ever
  FIXME
