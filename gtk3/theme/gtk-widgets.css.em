@@ -408,7 +408,8 @@ SugarHTray * , SugarVTray * { background-color: @toolbar_grey;}
 
 /* Menus and palettes */
 
-SugarPaletteWindowWidget {
+SugarPaletteWindowWidget,
+GtkPopover {
     border-width: $(thickness)px;
     border-color: @button_grey;
     border-style: solid;
@@ -596,14 +597,36 @@ SugarPaletteWindowWidget GtkToolButton .button:prelight {
 }
 
 .toolbar GtkToolButton .button:prelight,
+.toolbar GtkToolButton .button:prelight GtkBox,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-color: @black;
 }
 
 .toolbar SugarRadioToolButton *:active,
-SugarPaletteWindowWidget SugarRadioToolButton *:active {
+SugarPaletteWindowWidget SugarRadioToolButton *:active,
+.toolbar SugarRadioToolButton *:active GtkBox,
+.toolbar SugarRadioToolButton *:checked,
+.toolbar SugarRadioToolButton *:checked GtkBox,
+SugarPaletteWindowWidget SugarRadioToolButton *:checked,
+.toolbar SugarToggleToolButton *:checked,
+.toolbar SugarToggleToolButton *:checked GtkBox,
+SugarPaletteWindowWidget SugarToggleToolButton *:checked {
     background-color: @button_grey;
     border-radius: $(toolbutton_padding)px;
+}
+
+.toolbar SugarRadioToolButton *:checked:prelight,
+.toolbar SugarRadioToolButton *:checked:prelight GtkBox,
+SugarPaletteWindowWidget SugarRadioToolButton *:checked:prelight,
+.toolbar SugarToggleToolButton *:checked:prelight,
+.toolbar SugarToggleToolButton *:checked:prelight GtkBox,
+SugarPaletteWindowWidget SugarToggleToolButton *:checked:prelight {
+    background-color: @button_grey;
+}
+
+SugarPaletteWindowWidget SugarRadioToolButton *:checked:prelight,
+SugarPaletteWindowWidget SugarToggleToolButton *:checked:prelight {
+    border-color: @button_grey;
 }
 
 SugarPaletteWindowWidget GtkToolButton .button:active {
@@ -694,19 +717,27 @@ SugarPaletteWindowWidget .scale {
 
 /* Radio and check buttons */
 
+GtkCheckButton {
+    border: 1px solid @black;
+}
+
 GtkCheckButton:prelight {
     background-color: alpha(@theme_base_color, 0.0);
 }
 
-.toolbar GtkCheckButton,
-SugarPaletteWindowWidget GtkCheckButton {
+.toolbar GtkCheckButton,.toolbar .check,
+SugarPaletteWindowWidget .check {
     color: @theme_base_color;
+    border: 1px solid @theme_base_color;
 }
 
 .radio,
 .radio row:selected,
 .radio row:selected:focused {
     background-image: url("assets/radio.svg");
+    /* Gtk 3.14+ expect these to be included in icon theme however we want to
+       override that */
+    -gtk-icon-source: url("assets/radio.svg");
     background-color: alpha(@theme_base_color, 0.0);
 }
 
@@ -714,24 +745,42 @@ SugarPaletteWindowWidget GtkCheckButton {
 .radio:selected row:selected,
 .radio:selected row:selected:focused {
     background-image: url("assets/radio-selected.svg");
+    -gtk-icon-source: url("assets/radio-selected.svg");
 }
 
 .radio:active,
 .radio row:selected:active,
 .radio row:selected:focused:active {
     background-image: url("assets/radio-active.svg");
+    -gtk-icon-source: url("assets/radio-active.svg");
+}
+
+.radio:checked,
+.radio row:selected:checked,
+.radio row:selected:focused:checked {
+    background-image: url("assets/radio-active.svg");
+    -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 .radio:active:selected,
 .radio:selected row:selected:active,
 .radio:selected row:selected:focused:active {
     background-image: url("assets/radio-active-selected.svg");
+    -gtk-icon-source: url("assets/radio-active-selected.svg");
+}
+
+.radio:checked:selected,
+.radio:selected row:selected:checked,
+.radio:selected row:selected:focused:checked {
+    background-image: url("assets/radio-active-selected.svg");
+    -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
 
 .check,
 .check row:selected,
 .check row:selected:focused {
     background-image: url("assets/checkbox-unchecked.svg");
+    -gtk-icon-source: url("assets/checkbox-unchecked.svg");
     background-color: alpha(@theme_base_color, 0.0);
 }
 
@@ -739,18 +788,35 @@ SugarPaletteWindowWidget GtkCheckButton {
 .check:selected row:selected,
 .check:selected row:selected:focused {
     background-image: url("assets/checkbox-unchecked-selected.svg");
+    -gtk-icon-source: url("assets/checkbox-unchecked-selected.svg");
 }
 
 .check:active,
 .check row:selected:active,
 .check row:selected:focused:active {
     background-image: url("assets/checkbox-checked.svg");
+    -gtk-icon-source: url("assets/checkbox-checked.svg");
+}
+
+.check:checked,
+.check row:selected:checked,
+.check row:selected:focused:checked {
+    background-image: url("assets/checkbox-checked.svg");
+    -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 .check:active:selected,
 .check:selected row:selected:active,
 .check:selected row:selected:focused:active {
     background-image: url("assets/checkbox-checked-selected.svg");
+    -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
+}
+
+.check:checked:selected,
+.check:selected row:selected:checked,
+.check:selected row:selected:focused:checked {
+    background-image: url("assets/checkbox-checked-selected.svg");
+    -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
 
 /* Tool items */
@@ -784,6 +850,7 @@ SugarKeepIcon.button {
     border-radius: $(4 * thickness)px;
     border-width: 2px;
     border-style: solid;
+    background-color: transparent;
 }
 
 SugarCanvasIcon:prelight,
