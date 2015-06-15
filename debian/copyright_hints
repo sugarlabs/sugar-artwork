@@ -18,7 +18,6 @@ Files: AUTHORS
  debian/compat
  debian/control
  debian/control.in
- debian/control.in.in
  debian/gbp.conf
  debian/patches/2001_empy_from_system.patch
  debian/patches/README
