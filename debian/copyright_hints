@@ -144,6 +144,8 @@ Files: AUTHORS
  icons/scalable/actions/toolbar-colors.svg
  icons/scalable/actions/toolbar-edit.svg
  icons/scalable/actions/toolbar-help.svg
+ icons/scalable/actions/toolbar-social-help-animated.svg
+ icons/scalable/actions/toolbar-social-help.svg
  icons/scalable/actions/toolbar-view.svg
  icons/scalable/actions/transfer-from-application-octet-stream.svg
  icons/scalable/actions/transfer-from-audio-x-generic.svg
@@ -230,6 +232,10 @@ Files: AUTHORS
  icons/scalable/device/battery-charging-080.svg
  icons/scalable/device/battery-charging-090.svg
  icons/scalable/device/battery-charging-100.svg
+ icons/scalable/device/brightness-000.svg
+ icons/scalable/device/brightness-033.svg
+ icons/scalable/device/brightness-066.svg
+ icons/scalable/device/brightness-100.svg
  icons/scalable/device/camera-external.svg
  icons/scalable/device/camera.svg
  icons/scalable/device/computer-xo.svg
