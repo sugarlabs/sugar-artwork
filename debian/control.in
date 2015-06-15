@@ -1,4 +1,4 @@
-Source: sugar-artwork-0.104
+Source: sugar-artwork
 Section: x11
 Priority: optional
 Maintainer: Debian Sugar Team <pkg-sugar-devel@lists.alioth.debian.org>
@@ -10,7 +10,7 @@ Vcs-Git: git://anonscm.debian.org/pkg-sugar/sugar-artwork
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-sugar/sugar-artwork.git
 Homepage: http://wiki.sugarlabs.org/go/Sugar
 
-Package: sugar-0.104-themes
+Package: sugar-themes
 Architecture: all
 Multi-Arch: foreign
 Depends: ${cdbs:Depends},
@@ -29,7 +29,7 @@ Description: Sugar Learning Platform - artwork
  .
  This package contains the artwork for Sugar.
 
-Package: sugar-0.104-icon-theme
+Package: sugar-icon-theme
 Architecture: all
 Multi-Arch: foreign
 Depends: ${cdbs:Depends},
@@ -48,7 +48,7 @@ Description: Sugar Learning Platform - icon theme
  .
  This package contains the icon theme used with Sugar.
 
-Package: gtk2-engines-sugar-0.104
+Package: gtk2-engines-sugar
 Section: oldlibs
 Architecture: any
 Multi-Arch: same
