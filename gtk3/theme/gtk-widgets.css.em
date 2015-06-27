@@ -495,6 +495,14 @@ SugarPaletteHeader.menuitem:prelight {
     background-color: @black;
 }
 
+/* The SugarPaletteHeaderSeparator is not shown in GtkMenu palettes,
+   it is just used for spacing */
+.menu SugarPaletteHeader.menuitem {
+    border-width: 2px;
+    border-color: @button_grey;
+    border-style: solid;
+}
+
 SugarPaletteHeaderSeparator.menuitem.separator {
     padding: 0;
 }
