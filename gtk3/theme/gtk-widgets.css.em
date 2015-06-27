@@ -5,6 +5,7 @@ from gi.repository import Gtk
 gtk_major = int(Gtk.get_major_version())
 gtk_minor = int(Gtk.get_minor_version())
 treeview_pseudo_element = gtk_major >= 3 and gtk_minor > 8
+menu_padding_needed = gtk_major <= 3 and gtk_minor < 16
 
 def my_floor(num):
     return int(math.floor(num))
@@ -461,7 +462,10 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     -GtkMenu-horizontal-offset : 0;
     -GtkMenu-vertical-offset   : 0;
 
-    padding: 0px 0px $(subcell_size)px 0px;
+    $[if menu_padding_needed] padding: 0px 0px $(subcell_size)px 0px;
+    $[else] padding: 0px;
+    $[end if]
+
     border-width: 2px;
     border-color: @button_grey;
     border-style: solid;
@@ -489,6 +493,14 @@ SugarPaletteHeader.menuitem {
 
 SugarPaletteHeader.menuitem:prelight {
     background-color: @black;
+}
+
+/* The SugarPaletteHeaderSeparator is not shown in GtkMenu palettes,
+   it is just used for spacing */
+.menu SugarPaletteHeader.menuitem {
+    border-width: 2px;
+    border-color: @button_grey;
+    border-style: solid;
 }
 
 SugarPaletteHeaderSeparator.menuitem.separator {
