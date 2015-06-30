@@ -458,40 +458,25 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
      * However in the case of two normal menus, they are next to each other.
      * It is not possible to be smarter about this, because the style comes from
      * the submenu. */
-    -GtkMenu-horizontal-offset : 0;
+    -GtkMenu-horizontal-offset :  -$(line_width)px;
     -GtkMenu-vertical-offset   : 0;
 
-    padding: 0px 0px $(subcell_size)px 0px;
+    padding: 0px;
+
     border-width: 2px;
     border-color: @button_grey;
     border-style: solid;
-}
-
-.menu :active {
-    background-color: @button_grey;
 }
 
 .menuitem {
     padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
 }
 
-.menuitem:prelight {
+.menuitem:prelight, .menuitem:hover {
     background-color: @button_grey;
 }
 
 .menuitem.separator {
-    padding: 0;
-}
-
-SugarPaletteHeader.menuitem {
-    padding: 0px $((subcell_size * 3 - font_height) / 2)px;
-}
-
-SugarPaletteHeader.menuitem:prelight {
-    background-color: @black;
-}
-
-SugarPaletteHeaderSeparator.menuitem.separator {
     padding: 0;
 }
 
