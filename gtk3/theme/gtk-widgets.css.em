@@ -221,6 +221,13 @@ column-header .button:hover:active {
     border-width: 0px;
 }
 
+GtkTreeView row:even {
+    background-color: @row_even;
+}
+GtkTreeView row:odd {
+    background-color: @row_odd;
+}
+
 GtkTreeView row:nth-child(even) {
     background-color: @row_even;
 }
