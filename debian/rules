@@ -51,6 +51,10 @@ DEB_UPSTREAM_TARBALL_EXTENSION = tar.xz
 # Suppress copyright check of PNG files (in addition to defaults)
 DEB_COPYRIGHT_CHECK_IGNORE_REGEX = ^(cursor/sugar/.*\.png|debian/(changelog|copyright(|_hints|_newhints)))$
 
+# Build-depend unversioned on debhelper
+#  TODO: Drop when adopted in cdbs
+CDBS_BUILD_DEPENDS_rules_debhelper_v9 = debhelper
+
 # Needed by upstream build process
 bdeps = libgtk2.0-dev, libgtk-3-dev, libglib2.0-dev, libcairo2-dev
 bdeps +=, python-empy, icon-slicer, icon-naming-utils
