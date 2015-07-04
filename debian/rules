@@ -65,7 +65,7 @@ bdeps +=, dh-autoreconf, gnome-common
 # Needed (always/often) at runtime
 #  * librsvg2-common used with GTK3
 depends = $(pkg-icon)
-recommends = ttf-dejavu-core, librsvg2-common
+recommends = fonts-dejavu-core, librsvg2-common
 suggests = $(pkg-gtk2)
 
 # Transitional quirk: split into engine and theme packages
