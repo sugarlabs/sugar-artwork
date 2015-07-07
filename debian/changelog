@@ -1,10 +1,15 @@
-sugar-artwork (0.105.3-2) UNRELEASED; urgency=medium
+sugar-artwork (0.106.0-1) unstable; urgency=medium
 
+  [ upstream ]
+  * New release.
+
+  [ Jonas Smedegaard ]
   * Update package relations:
     + Fix have sugar-themes recommend fonts-dejavu-core (not
       transitional ttf-dejavu-core).
+  * Drop patches cherry-picked upstream: Applied upstream.
 
- -- Jonas Smedegaard <dr@jones.dk>  Sat, 04 Jul 2015 14:10:11 -0500
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 06 Jul 2015 20:24:32 -0500
 
 sugar-artwork (0.105.3-1) experimental; urgency=medium
 
