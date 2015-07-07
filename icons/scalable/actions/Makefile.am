@@ -68,6 +68,7 @@ icon_DATA =						\
 	media-seek-backward.svg				\
 	media-seek-forward-insensitive.svg		\
 	media-seek-forward.svg				\
+	palette-modal.svg				\
 	row-insert.svg					\
 	row-remove.svg					\
 	select-all.svg					\
