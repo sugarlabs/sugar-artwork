@@ -1,10 +1,5 @@
 ${
 import math
-from gi.repository import Gtk
-
-gtk_major = int(Gtk.get_major_version())
-gtk_minor = int(Gtk.get_minor_version())
-treeview_pseudo_element = gtk_major >= 3 and gtk_minor > 8
 
 def my_floor(num):
     return int(math.floor(num))
@@ -226,14 +221,17 @@ column-header .button:hover:active {
     border-width: 0px;
 }
 
-$[if treeview_pseudo_element] GtkTreeView row:even
-$[else] GtkTreeView row:nth-child(even)
-$[end if] {
+GtkTreeView row:even {
     background-color: @row_even;
 }
-$[if treeview_pseudo_element] GtkTreeView row:odd
-$[else] GtkTreeView row:nth-child(odd)
-$[end if] {
+GtkTreeView row:odd {
+    background-color: @row_odd;
+}
+
+GtkTreeView row:nth-child(even) {
+    background-color: @row_even;
+}
+GtkTreeView row:nth-child(odd) {
     background-color: @row_odd;
 }
 
