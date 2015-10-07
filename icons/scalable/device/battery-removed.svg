@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'
+[
+  <!ENTITY stroke_color "#010101">
+  <!ENTITY fill_color "#FFFFFF">
+]
+>
+<svg xmlns="http://www.w3.org/2000/svg" height="55" viewBox="0 0 55 55" width="55">
+    <g fill="&fill_color;" stroke="&stroke_color;">
+        <path fill="&fill_color;" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M47.994 34.393h5.043v-14.14h-5.043v-5.33H2.29V39.72h45.704z" display="block"/>
+        <path fill="&stroke_color;" d="M32.807 33.083c.526.526.526 1.38 0 1.905-.262.263-.608.395-.952.395s-.688-.13-.95-.395l-5.845-5.845-5.846 5.845c-.263.263-.608.395-.95.395-.345 0-.69-.13-.953-.395-.52-.525-.52-1.38 0-1.904l5.85-5.844-5.84-5.845c-.528-.526-.528-1.376 0-1.902.523-.526 1.375-.526 1.9 0l5.846 5.844 5.845-5.844c.526-.526 1.38-.526 1.904 0 .526.525.526 1.376 0 1.902l-5.846 5.845z" display="block" stroke-width=".769"/>
+    </g>
+</svg>
