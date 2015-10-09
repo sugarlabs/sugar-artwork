@@ -32,6 +32,9 @@ PKG_CHECK_MODULES(ENGINE3, gtk+-3.0 >= 3.0 gobject-2.0 >= 2.0 cairo >= 0.1.1)
 GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
 AC_SUBST(GTK_VERSION)
 
+GTK3_VERSION=`$PKG_CONFIG --modversion gtk+-3.0`
+AC_SUBST(GTK3_VERSION)
+
 ICON_NAMING_UTILS_REQUIRED=0.8.2
 
 AC_MSG_CHECKING([icon-naming-utils >= $ICON_NAMING_UTILS_REQUIRED])
