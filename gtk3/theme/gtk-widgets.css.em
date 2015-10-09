@@ -1,5 +1,9 @@
 ${
+import os
 import math
+
+gtk_major, gtk_minor, gtk_patch = map(int, gtk.split('.'))
+treeview_pseudo_element = gtk_major >= 3 and gtk_minor > 8
 
 def my_floor(num):
     return int(math.floor(num))
@@ -221,17 +225,15 @@ column-header .button:hover:active {
     border-width: 0px;
 }
 
-GtkTreeView row:even {
+$[if treeview_pseudo_element] GtkTreeView row:even
+$[else] GtkTreeView row:nth-child(even)
+$[end if] {
     background-color: @row_even;
-}
-GtkTreeView row:odd {
-    background-color: @row_odd;
 }
 
-GtkTreeView row:nth-child(even) {
-    background-color: @row_even;
-}
-GtkTreeView row:nth-child(odd) {
+$[if treeview_pseudo_element] GtkTreeView row:odd
+$[else] GtkTreeView row:nth-child(odd)
+$[end if] {
     background-color: @row_odd;
 }
 
