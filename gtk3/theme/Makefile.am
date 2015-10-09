@@ -1,11 +1,13 @@
 SUBDIRS = assets
 
 gtk-widgets-72.css: gtk-widgets.css.em
-	$(srcdir)/em.py -p $$ -D scaling=\'72\' $(srcdir)/gtk-widgets.css.em > \
+	$(srcdir)/em.py -p $$ -D scaling=\'72\' -D gtk=\'$(GTK3_VERSION)\' \
+		$(srcdir)/gtk-widgets.css.em > \
 		$(top_builddir)/gtk3/theme/gtk-widgets-72.css
 
 gtk-widgets-100.css: gtk-widgets.css.em
-	$(srcdir)/em.py -p $$ -D scaling=\'100\' $(srcdir)/gtk-widgets.css.em > \
+	$(srcdir)/em.py -p $$ -D scaling=\'100\' -D gtk=\'$(GTK3_VERSION)\' \
+		$(srcdir)/gtk-widgets.css.em > \
 		$(top_builddir)/gtk3/theme/gtk-widgets-100.css
 
 settings-72.ini: settings.ini.em
