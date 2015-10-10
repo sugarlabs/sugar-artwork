@@ -49,6 +49,8 @@ thickness = my_ceil(line_width)
 icon_small = icon_base * 3
 icon_large = icon_base * 5
 
+disabled_opacity = 0.5
+
 }
 
 * {
@@ -581,6 +583,11 @@ SugarPaletteWindowWidget GtkToolButton .button {
     background-color: transparent;
     border-radius: $(toolbutton_padding)px;
     padding: $(toolbutton_padding)px;
+}
+
+GtkToolButton .button:insensitive,
+SugarRadioToolButton .button:insensitive {
+    opacity: $(disabled_opacity);
 }
 
 .toolbar GtkToolButton .button,
