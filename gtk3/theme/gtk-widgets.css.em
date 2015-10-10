@@ -554,10 +554,11 @@ SugarPaletteWindowWidget GtkProgressBar.trough {
 
 /* Tool buttons */
 
+SugarToolbarBox,
 .toolbar {
-padding: 0px;
-background-color: @toolbar_grey;
-color: @white;
+    padding: 0px;
+    background-color: @toolbar_grey;
+    color: @white;
 }
 
 .toolbar .button,
