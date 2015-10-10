@@ -591,9 +591,9 @@ SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-clip: padding-box;
 }
 
-.toolbar GtkToolButton .button:prelight,
-.toolbar GtkToolButton .button:prelight GtkBox,
-SugarPaletteWindowWidget GtkToolButton .button:prelight {
+.toolbar GtkToolButton .button:prelight:not(:active):not(:checked),
+.toolbar GtkToolButton .button:prelight:not(:active):not(:checked) GtkBox,
+SugarPaletteWindowWidget GtkToolButton .button:prelight:not(:active):not(:checked) {
     background-color: @black;
 }
 
