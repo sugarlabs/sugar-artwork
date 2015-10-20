@@ -4,6 +4,7 @@ import math
 
 gtk_major, gtk_minor, gtk_patch = map(int, gtk.split('.'))
 treeview_pseudo_element = gtk_major >= 3 and gtk_minor >= 16
+new_separator_style = gtk_major >= 3 and gtk_minor >= 16
 
 def my_floor(num):
     return int(math.floor(num))
@@ -73,7 +74,12 @@ disabled_opacity = 0.5
     /* 0.05 works good for both the sugar and sugar-xo themes */
     -GtkWidget-cursor-aspect-ratio: 0.05;
 
-    -GtkWidget-wide-separators: true;
+    $[if new_separator_style]
+        -GtkWidget-wide-separators: false;
+    $[else]
+        -GtkWidget-wide-separators: true;
+    $[end if]
+
     -GtkWidget-separator-height: $thickness;
     -GtkWidget-separator-width: $thickness;
 
@@ -551,6 +557,9 @@ SugarPaletteWindowWidget GtkProgressBar.trough {
 /* Separators */
 
 .separator {
+    $[if new_separator_style]
+        color: @button_grey;
+    $[end if]
     border-style: solid;
     border-color: @button_grey;
     border-width: $(thickness)px;
