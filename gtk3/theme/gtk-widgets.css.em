@@ -176,6 +176,7 @@ GtkLabel, GtkLabel:insensitive {
 
 /* Spin buttons */
 
+spinbutton button,
 .spinbutton.button {
     border-radius: 0px;
     border-width: 0px;
@@ -183,6 +184,7 @@ GtkLabel, GtkLabel:insensitive {
     background-color: @button_grey;
 }
 
+spinbutton button:last-child,
 .spinbutton.button:last-child {
     border-radius: 0px $(2*subcell_size)px $(2*subcell_size)px 0px;
     border-width: 0px 0px 0px $(thickness)px;
@@ -191,10 +193,12 @@ GtkLabel, GtkLabel:insensitive {
 }
 
 
+spinbutton button:active,
 .spinbutton.button:active {
     background-color: @black;
 }
 
+spinbutton button:insensitive,
 .spinbutton.button:insensitive {
     background-color: @selection_grey;
 }
@@ -239,6 +243,7 @@ $[end if] {
     background-color: @row_odd;
 }
 
+entry,
 .entry {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
@@ -251,25 +256,26 @@ $[end if] {
     padding: $(2 * max(my_ceil((3*subcell_size - font_height - entry_ythickness*2)/2.0),0))px $(2 * max(subcell_size - entry_xthickness, 0))px $(2 * max(my_floor((3*subcell_size - font_height - entry_ythickness*2)/2.0), 0))px $(2 * max(subcell_size - entry_xthickness, 0))px;
 }
 
+entry progress,
 .entry.progressbar {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
     background-color: @selection_grey;
 }
 
+entry:focused,
 .entry:focused {
     background-color: @white;
 }
 
+.toolbar entry:focused,
 .toolbar .entry:focused {
     border-color: @white;
 }
 
+entry:insensitive,
 .entry:insensitive {
     background-color: @button_grey;
-}
-
-.entry:insensitive {
     border-color: @button_grey;
 }
 
@@ -278,6 +284,8 @@ $[end if] {
     color: @black;
 }
 
+entry:selected,
+entry:selected:focused,
 .entry:selected,
 .entry:selected:focused,
 .view:selected:focused {
@@ -285,6 +293,8 @@ $[end if] {
     color: @black;
 }
 
+entry:selected,
+entry:selected:focused
 .entry:selected,
 .entry:selected:focused {
     border-color: @selection_grey;
