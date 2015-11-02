@@ -488,6 +488,7 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     background-color: @button_grey;
 }
 
+.menuitem separator,
 .menuitem.separator {
     padding: 0;
 }
@@ -560,6 +561,7 @@ SugarPaletteWindowWidget GtkProgressBar.trough {
 
 /* Separators */
 
+separator,
 .separator {
     border-style: solid;
     border-color: @button_grey;
