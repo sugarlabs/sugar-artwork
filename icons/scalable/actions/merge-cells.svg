@@ -1,0 +1,16 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#010101">
+	<!ENTITY fill_color "#FFFFFF">
+]><svg width="60" height="65" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><g>
+  <rect id="svg_21" height="42" width="40" y="9.690555" x="11.378113" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#999999" fill="#999999"/>
+  <line id="svg_44" y2="7.690555" x2="54.378113" y1="7.690555" x1="10.378113" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_44" y2="52.690555" x2="54.378113" y1="52.690555" x1="10.378113" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_44" y2="52.690555" x2="10.378113" y1="7.690555" x1="10.378113" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_44" y2="52.690555" x2="53.378113" y1="8.690555" x1="53.378113" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_45" y2="17.165239" x2="53.85282" y1="17.165239" x1="8.903453" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_46" y2="54.37409" x2="18.140771" y1="7.136745" x1="18.140771" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_47" y2="30.114606" x2="17.958814" y1="30.114606" x1="8.903429" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_49" y2="43.639922" x2="16.903429" y1="43.639922" x1="8.903429" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_51" y2="17.028406" x2="30.903429" y1="6.97853" x1="30.903429" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+  <line id="svg_52" y2="15.741188" x2="43.852796" y1="6.741188" x1="43.852796" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#ffffff" fill="none"/>
+ </g></svg>
