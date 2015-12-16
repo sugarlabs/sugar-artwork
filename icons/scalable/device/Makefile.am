@@ -58,6 +58,10 @@ icon_DATA =				\
 	female-5.svg			\
 	female-6.svg			\
 	female-7.svg			\
+	headphone-full.svg		\
+	headphone-low.svg		\
+	headphone-muted.svg		\
+	headphone-no.svg		\
 	male-0.svg			\
 	male-1.svg			\
 	male-2.svg			\
