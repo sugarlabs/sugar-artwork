@@ -272,7 +272,9 @@ entry:focused,
 }
 
 .toolbar entry:focused,
-.toolbar .entry:focused {
+.toolbar .entry:focused,
+toolbar entry:focused,
+toolbar .entry:focused {
     border-color: @white;
 }
 
@@ -574,6 +576,7 @@ separator,
 /* Tool buttons */
 
 SugarToolbarBox,
+toolbar,
 .toolbar {
     padding: 0px;
     background-color: @toolbar_grey;
@@ -581,18 +584,22 @@ SugarToolbarBox,
 }
 
 .toolbar .button,
+toolbar .button,
 SugarPaletteWindowWidget SugarRadioToolButton .button {
     border-color: transparent;
     border-radius: 0px;
     border-style: none;
 }
 
-.toolbar .button #gtk-toolbar-arrow {
+.toolbar .button #gtk-toolbar-arrow,
+toolbar .button #gtk-toolbar-arrow {
     padding: 0 $(subcell_size + default_padding)px;
 }
 
 .toolbar GtkToolButton .button,
 .toolbar SugarRadioToolButton .button,
+toolbar GtkToolButton .button,
+toolbar SugarRadioToolButton .button,
 SugarPaletteWindowWidget SugarRadioToolButton .button,
 SugarPaletteWindowWidget GtkToolButton .button {
     background-color: transparent;
@@ -606,6 +613,7 @@ SugarRadioToolButton .button:insensitive {
 }
 
 .toolbar GtkToolButton .button,
+toolbar GtkToolButton .button,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     padding: $(toolbutton_padding - default_padding)px;
     border-width: $(default_padding)px;
@@ -615,18 +623,26 @@ SugarPaletteWindowWidget GtkToolButton .button:prelight {
 
 .toolbar GtkToolButton .button:prelight:not(:active):not(:checked),
 .toolbar GtkToolButton .button:prelight:not(:active):not(:checked) GtkBox,
+toolbar GtkToolButton .button:prelight:not(:active):not(:checked),
+toolbar GtkToolButton .button:prelight:not(:active):not(:checked) GtkBox,
 SugarPaletteWindowWidget GtkToolButton .button:prelight:not(:active):not(:checked) {
     background-color: @black;
 }
 
 .toolbar SugarRadioToolButton *:active,
+toolbar SugarRadioToolButton *:active,
 SugarPaletteWindowWidget SugarRadioToolButton *:active,
 .toolbar SugarRadioToolButton *:active GtkBox,
 .toolbar SugarRadioToolButton *:checked,
 .toolbar SugarRadioToolButton *:checked GtkBox,
+toolbar SugarRadioToolButton *:active GtkBox,
+toolbar SugarRadioToolButton *:checked,
+toolbar SugarRadioToolButton *:checked GtkBox,
 SugarPaletteWindowWidget SugarRadioToolButton *:checked,
 .toolbar SugarToggleToolButton *:checked,
 .toolbar SugarToggleToolButton *:checked GtkBox,
+toolbar SugarToggleToolButton *:checked,
+toolbar SugarToggleToolButton *:checked GtkBox,
 SugarPaletteWindowWidget SugarToggleToolButton *:checked {
     background-color: @button_grey;
     border-radius: $(toolbutton_padding)px;
@@ -634,9 +650,13 @@ SugarPaletteWindowWidget SugarToggleToolButton *:checked {
 
 .toolbar SugarRadioToolButton *:checked:prelight,
 .toolbar SugarRadioToolButton *:checked:prelight GtkBox,
+toolbar SugarRadioToolButton *:checked:prelight,
+toolbar SugarRadioToolButton *:checked:prelight GtkBox,
 SugarPaletteWindowWidget SugarRadioToolButton *:checked:prelight,
 .toolbar SugarToggleToolButton *:checked:prelight,
 .toolbar SugarToggleToolButton *:checked:prelight GtkBox,
+toolbar SugarToggleToolButton *:checked:prelight,
+toolbar SugarToggleToolButton *:checked:prelight GtkBox,
 SugarPaletteWindowWidget SugarToggleToolButton *:checked:prelight {
     background-color: @button_grey;
 }
@@ -650,7 +670,8 @@ SugarPaletteWindowWidget GtkToolButton .button:active {
     background-color: @button_grey;
 }
 
-.toolbar GtkToolButton .button:active {
+.toolbar GtkToolButton .button:active,
+toolbar GtkToolButton .button:active {
     background-color: @button_grey;
     border-radius: $(toolbutton_padding)px;
 }
@@ -742,7 +763,10 @@ GtkCheckButton:prelight {
     background-color: alpha(@theme_base_color, 0.0);
 }
 
-.toolbar GtkCheckButton,.toolbar .check,
+.toolbar GtkCheckButton,
+.toolbar .check,
+toolbar GtkCheckButton,
+toolbar .check,
 SugarPaletteWindowWidget .check {
     color: @theme_base_color;
     border: 1px solid @theme_base_color;
