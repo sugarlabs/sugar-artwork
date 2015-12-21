@@ -4,6 +4,9 @@ import math
 
 gtk_major, gtk_minor, gtk_patch = map(int, gtk.split('.'))
 treeview_pseudo_element = gtk_major >= 3 and gtk_minor >= 16
+# On new gtk versions, setting the radio button icon via the background
+# image prop causes the RadioToolButtons to inherit that background
+radio_bg_image = not (gtk_major >= 3 and gtk_minor > 18)
 
 def my_floor(num):
     return int(math.floor(num))
@@ -748,7 +751,7 @@ SugarPaletteWindowWidget .check {
 .radio,
 .radio row:selected,
 .radio row:selected:focused {
-    background-image: url("assets/radio.svg");
+    $[if radio_bg_image] background-image: url("assets/radio.svg"); $[end if]
     /* Gtk 3.14+ expect these to be included in icon theme however we want to
        override that */
     -gtk-icon-source: url("assets/radio.svg");
@@ -758,42 +761,42 @@ SugarPaletteWindowWidget .check {
 .radio:selected,
 .radio:selected row:selected,
 .radio:selected row:selected:focused {
-    background-image: url("assets/radio-selected.svg");
+    $[if radio_bg_image] background-image: url("assets/radio-selected.svg"); $[end if]
     -gtk-icon-source: url("assets/radio-selected.svg");
 }
 
 .radio:active,
 .radio row:selected:active,
 .radio row:selected:focused:active {
-    background-image: url("assets/radio-active.svg");
+    $[if radio_bg_image] background-image: url("assets/radio-active.svg"); $[end if]
     -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 .radio:checked,
 .radio row:selected:checked,
 .radio row:selected:focused:checked {
-    background-image: url("assets/radio-active.svg");
+    $[if radio_bg_image] background-image: url("assets/radio-active.svg"); $[end if]
     -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 .radio:active:selected,
 .radio:selected row:selected:active,
 .radio:selected row:selected:focused:active {
-    background-image: url("assets/radio-active-selected.svg");
+    $[if radio_bg_image] background-image: url("assets/radio-active-selected.svg"); $[end if]
     -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
 
 .radio:checked:selected,
 .radio:selected row:selected:checked,
 .radio:selected row:selected:focused:checked {
-    background-image: url("assets/radio-active-selected.svg");
+    $[if radio_bg_image] background-image: url("assets/radio-active-selected.svg"); $[end if]
     -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
 
 .check,
 .check row:selected,
 .check row:selected:focused {
-    background-image: url("assets/checkbox-unchecked.svg");
+    $[if radio_bg_image] background-image: url("assets/checkbox-unchecked.svg"); $[end if]
     -gtk-icon-source: url("assets/checkbox-unchecked.svg");
     background-color: alpha(@theme_base_color, 0.0);
 }
@@ -801,35 +804,35 @@ SugarPaletteWindowWidget .check {
 .check:selected,
 .check:selected row:selected,
 .check:selected row:selected:focused {
-    background-image: url("assets/checkbox-unchecked-selected.svg");
+    $[if radio_bg_image] background-image: url("assets/checkbox-unchecked-selected.svg"); $[end if]
     -gtk-icon-source: url("assets/checkbox-unchecked-selected.svg");
 }
 
 .check:active,
 .check row:selected:active,
 .check row:selected:focused:active {
-    background-image: url("assets/checkbox-checked.svg");
+    $[if radio_bg_image] background-image: url("assets/checkbox-checked.svg"); $[end if]
     -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 .check:checked,
 .check row:selected:checked,
 .check row:selected:focused:checked {
-    background-image: url("assets/checkbox-checked.svg");
+    $[if radio_bg_image] background-image: url("assets/checkbox-checked.svg"); $[end if]
     -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 .check:active:selected,
 .check:selected row:selected:active,
 .check:selected row:selected:focused:active {
-    background-image: url("assets/checkbox-checked-selected.svg");
+    $[if radio_bg_image] background-image: url("assets/checkbox-checked-selected.svg"); $[end if]
     -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
 
 .check:checked:selected,
 .check:selected row:selected:checked,
 .check:selected row:selected:focused:checked {
-    background-image: url("assets/checkbox-checked-selected.svg");
+    $[if radio_bg_image] background-image: url("assets/checkbox-checked-selected.svg"); $[end if]
     -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
 
