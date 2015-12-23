@@ -948,3 +948,7 @@ EvView:selected,
 ApDocView:selected {
     background-color: @selection_grey;
 }
+
+SugarViewSourceImageBox {
+    background-image: url("assets/viewsource-imageBox-bg.svg");
+}
