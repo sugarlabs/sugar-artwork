@@ -381,6 +381,16 @@ Copyright: 2007, Benjamin Berg
 License: LGPL-2+
  FIXME
 
+Files: aclocal.m4
+ depcomp
+ ltmain.sh
+ missing
+Copyright: 1996-2013, Free Software Foundation, Inc
+  1996-2015, Free Software Foundation, Inc
+  1999-2013, Free Software Foundation, Inc
+License: GPL-2+
+ FIXME
+
 Files: gtk/engine/sugar-rc-style.c
  gtk/engine/sugar-rc-style.h
  gtk/engine/sugar-style.c
@@ -388,13 +398,6 @@ Copyright: 2007, Benjamin Berg
   2007, Red Hat, Inc
   2008, Benjamin Berg
 License: LGPL-2+
- FIXME
-
-Files: depcomp
- missing
-Copyright: 1996-2013, Free Software Foundation, Inc
-  1999-2013, Free Software Foundation, Inc
-License: GPL-2+
  FIXME
 
 Files: config.guess
@@ -421,38 +424,9 @@ Copyright: 1994, X Consortium
 License: Expat
  FIXME
 
-Files: ltmain.sh
-Copyright: 1996-2001, 2003-2006
-License: GPL-2+
- FIXME
-
 Files: configure
-Copyright: (ISLOWER ? 'A' + ( - 'a') : )
-  (ISLOWER ? ( | 0x40) : )
-  1992-1996, 1998-2012, Free Software Foundation, Inc
-  1996-2001, 2003-2005,
-  2012, Free Software Foundation, Inc
-License: GPL-2+
- FIXME
-
-Files: aclocal.m4
-Copyright: 1996-2001, 2003-2005
-  1996-2013, Free Software Foundation, Inc
-  1997-2013, Free Software Foundation, Inc
-  1999-2013, Free Software Foundation, Inc
-  2001-2013, Free Software Foundation, Inc
-  2002-2013, Free Software Foundation, Inc
-  2003-2013, Free Software Foundation, Inc
-  2004, Free Software Foundation, Inc
-  2004-2005, 2007, 2009, Free Software Foundation, Inc
-  2004-2005, 2007-2008, Free Software Foundation, Inc
-  2004-2005, 2007-2009, Free Software Foundation
-  2004-2013, Free Software Foundation, Inc
-  2006-2013, Free Software Foundation, Inc
-  2009-2013, Free Software Foundation, Inc
-  2011, Free Software Foundation, Inc
-  �� 2004, Scott James Remnant <scott@netsplit.com>
-License: GPL-2+
+Copyright: 1992-1996, 1998-2012, Free Software Foundation, Inc
+License: GPL
  FIXME
 
 Files: debian/rules
@@ -462,9 +436,6 @@ License: GPL-3+
 
 Files: COPYING
 Copyright: 1991, 1999 Free Software Foundation, Inc
-  <year> <name of author>
-  disclaimer" for the library, if
-  the
 License: LGPL-ever
  FIXME
 

@@ -1,3 +1,13 @@
+sugar-artwork (0.107.1-1) experimental; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+
+  [ Jonas Smedegaard ]
+  * Unfuzz patch 2001.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 29 Dec 2015 00:05:49 +0530
+
 sugar-artwork (0.106.0-1) unstable; urgency=medium
 
   [ upstream ]
