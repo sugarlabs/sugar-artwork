@@ -1,5 +1,9 @@
 ${
+import os
 import math
+
+gtk_major, gtk_minor, gtk_patch = map(int, gtk.split('.'))
+treeview_pseudo_element = gtk_major >= 3 and gtk_minor >= 16
 
 def my_floor(num):
     return int(math.floor(num))
@@ -44,6 +48,8 @@ thickness = my_ceil(line_width)
 
 icon_small = icon_base * 3
 icon_large = icon_base * 5
+
+disabled_opacity = 0.5
 
 }
 
@@ -170,6 +176,7 @@ GtkLabel, GtkLabel:insensitive {
 
 /* Spin buttons */
 
+spinbutton button,
 .spinbutton.button {
     border-radius: 0px;
     border-width: 0px;
@@ -177,6 +184,7 @@ GtkLabel, GtkLabel:insensitive {
     background-color: @button_grey;
 }
 
+spinbutton button:last-child,
 .spinbutton.button:last-child {
     border-radius: 0px $(2*subcell_size)px $(2*subcell_size)px 0px;
     border-width: 0px 0px 0px $(thickness)px;
@@ -185,10 +193,12 @@ GtkLabel, GtkLabel:insensitive {
 }
 
 
+spinbutton button:active,
 .spinbutton.button:active {
     background-color: @black;
 }
 
+spinbutton button:insensitive,
 .spinbutton.button:insensitive {
     background-color: @selection_grey;
 }
@@ -221,20 +231,19 @@ column-header .button:hover:active {
     border-width: 0px;
 }
 
-GtkTreeView row:even {
+$[if treeview_pseudo_element] GtkTreeView row:even
+$[else] GtkTreeView row:nth-child(even)
+$[end if] {
     background-color: @row_even;
 }
-GtkTreeView row:odd {
+
+$[if treeview_pseudo_element] GtkTreeView row:odd
+$[else] GtkTreeView row:nth-child(odd)
+$[end if] {
     background-color: @row_odd;
 }
 
-GtkTreeView row:nth-child(even) {
-    background-color: @row_even;
-}
-GtkTreeView row:nth-child(odd) {
-    background-color: @row_odd;
-}
-
+entry,
 .entry {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
@@ -247,25 +256,26 @@ GtkTreeView row:nth-child(odd) {
     padding: $(2 * max(my_ceil((3*subcell_size - font_height - entry_ythickness*2)/2.0),0))px $(2 * max(subcell_size - entry_xthickness, 0))px $(2 * max(my_floor((3*subcell_size - font_height - entry_ythickness*2)/2.0), 0))px $(2 * max(subcell_size - entry_xthickness, 0))px;
 }
 
+entry progress,
 .entry.progressbar {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
     background-color: @selection_grey;
 }
 
+entry:focused,
 .entry:focused {
     background-color: @white;
 }
 
+.toolbar entry:focused,
 .toolbar .entry:focused {
     border-color: @white;
 }
 
+entry:insensitive,
 .entry:insensitive {
     background-color: @button_grey;
-}
-
-.entry:insensitive {
     border-color: @button_grey;
 }
 
@@ -274,6 +284,8 @@ GtkTreeView row:nth-child(odd) {
     color: @black;
 }
 
+entry:selected,
+entry:selected:focused,
 .entry:selected,
 .entry:selected:focused,
 .view:selected:focused {
@@ -281,6 +293,8 @@ GtkTreeView row:nth-child(odd) {
     color: @black;
 }
 
+entry:selected,
+entry:selected:focused
 .entry:selected,
 .entry:selected:focused {
     border-color: @selection_grey;
@@ -474,6 +488,7 @@ SugarPaletteWindow SugarGroupBox *:insensitive {
     background-color: @button_grey;
 }
 
+.menuitem separator,
 .menuitem.separator {
     padding: 0;
 }
@@ -546,6 +561,7 @@ SugarPaletteWindowWidget GtkProgressBar.trough {
 
 /* Separators */
 
+separator,
 .separator {
     border-style: solid;
     border-color: @button_grey;
@@ -554,10 +570,11 @@ SugarPaletteWindowWidget GtkProgressBar.trough {
 
 /* Tool buttons */
 
+SugarToolbarBox,
 .toolbar {
-padding: 0px;
-background-color: @toolbar_grey;
-color: @white;
+    padding: 0px;
+    background-color: @toolbar_grey;
+    color: @white;
 }
 
 .toolbar .button,
@@ -580,6 +597,11 @@ SugarPaletteWindowWidget GtkToolButton .button {
     padding: $(toolbutton_padding)px;
 }
 
+GtkToolButton .button:insensitive,
+SugarRadioToolButton .button:insensitive {
+    opacity: $(disabled_opacity);
+}
+
 .toolbar GtkToolButton .button,
 SugarPaletteWindowWidget GtkToolButton .button:prelight {
     padding: $(toolbutton_padding - default_padding)px;
@@ -588,9 +610,9 @@ SugarPaletteWindowWidget GtkToolButton .button:prelight {
     background-clip: padding-box;
 }
 
-.toolbar GtkToolButton .button:prelight,
-.toolbar GtkToolButton .button:prelight GtkBox,
-SugarPaletteWindowWidget GtkToolButton .button:prelight {
+.toolbar GtkToolButton .button:prelight:not(:active):not(:checked),
+.toolbar GtkToolButton .button:prelight:not(:active):not(:checked) GtkBox,
+SugarPaletteWindowWidget GtkToolButton .button:prelight:not(:active):not(:checked) {
     background-color: @black;
 }
 
