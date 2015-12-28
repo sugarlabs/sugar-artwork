@@ -202,6 +202,7 @@ GTK2_CFLAGS = @GTK2_CFLAGS@
 GTK2_LIBS = @GTK2_LIBS@
 GTK3_CFLAGS = @GTK3_CFLAGS@
 GTK3_LIBS = @GTK3_LIBS@
+GTK3_VERSION = @GTK3_VERSION@
 GTK_VERSION = @GTK_VERSION@
 ICONMAP = @ICONMAP@
 ICON_SLICER = @ICON_SLICER@
@@ -218,6 +219,7 @@ LIBTOOL = @LIBTOOL@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
+LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
@@ -618,11 +620,13 @@ uninstall-am: uninstall-local
 
 
 gtk-widgets-72.css: gtk-widgets.css.em
-	$(srcdir)/em.py -p $$ -D scaling=\'72\' $(srcdir)/gtk-widgets.css.em > \
+	$(srcdir)/em.py -p $$ -D scaling=\'72\' -D gtk=\'$(GTK3_VERSION)\' \
+		$(srcdir)/gtk-widgets.css.em > \
 		$(top_builddir)/gtk3/theme/gtk-widgets-72.css
 
 gtk-widgets-100.css: gtk-widgets.css.em
-	$(srcdir)/em.py -p $$ -D scaling=\'100\' $(srcdir)/gtk-widgets.css.em > \
+	$(srcdir)/em.py -p $$ -D scaling=\'100\' -D gtk=\'$(GTK3_VERSION)\' \
+		$(srcdir)/gtk-widgets.css.em > \
 		$(top_builddir)/gtk3/theme/gtk-widgets-100.css
 
 settings-72.ini: settings.ini.em

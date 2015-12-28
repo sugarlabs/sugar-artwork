@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.106.0],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.107.1],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
@@ -31,6 +31,9 @@ PKG_CHECK_MODULES(ENGINE3, gtk+-3.0 >= 3.0 gobject-2.0 >= 2.0 cairo >= 0.1.1)
 
 GTK_VERSION=`$PKG_CONFIG --variable=gtk_binary_version gtk+-2.0`
 AC_SUBST(GTK_VERSION)
+
+GTK3_VERSION=`$PKG_CONFIG --modversion gtk+-3.0`
+AC_SUBST(GTK3_VERSION)
 
 ICON_NAMING_UTILS_REQUIRED=0.8.2
 
