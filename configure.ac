@@ -70,6 +70,7 @@ gtk/engine/Makefile
 gtk/theme/Makefile
 gtk3/Makefile
 gtk3/theme/Makefile
+gtk3/theme/3.20/Makefile
 gtk3/theme/assets/Makefile
 gtk3/theme/assets/72/Makefile
 gtk3/theme/assets/100/Makefile
