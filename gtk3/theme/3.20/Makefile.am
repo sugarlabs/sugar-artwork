@@ -24,5 +24,9 @@ install-data-local: $(GEN_FILES)
 	$(INSTALL_DATA) $(top_builddir)/gtk3/theme/3.20/gtk-widgets-100.css \
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.20/gtk-widgets.css
 
+uninstall-local:
+	rm -rf $(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.20
+	rm -rf $(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.20
+
 EXTRA_DIST = gtk-widgets.css.em
 CLEANFILES = $(GEN_FILES)
