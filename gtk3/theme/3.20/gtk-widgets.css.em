@@ -349,7 +349,7 @@ notebook tab button label {
     color: @black;
 }
 
-notebook tab:active {
+notebook tab:checked {
     background: @toolbar_grey;
 }
 
