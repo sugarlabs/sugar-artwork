@@ -89,7 +89,7 @@ disabled_opacity = 0.5
     -GtkWidget-text-handle-height: 110px;
 }
 
-*:insensitive {
+*:disabled {
     color: @panel_grey;
 }
 
@@ -110,7 +110,7 @@ introwindow {
     color: @black;
 }
 
-label, label:insensitive {
+label, label:disabled {
     background: transparent;
 }
 
@@ -127,7 +127,7 @@ button {
     color: @white;
 }
 
-button:focused {
+button:focus {
     border-color: @white;
     color: @white;
 }
@@ -137,11 +137,11 @@ button:active {
     color: @black;
 }
 
-button:insensitive {
+button:disabled {
     background: transparent;
 }
 
-button:active:focused {
+button:active:focus {
     color: @black;
     border-color: @button_grey;
 }
@@ -174,7 +174,7 @@ spinbutton button:active {
     background: @black;
 }
 
-spinbutton button:insensitive {
+spinbutton button:disabled {
     background: @selection_grey;
 }
 
@@ -242,21 +242,21 @@ toolitem entry {
     margin: $(subcell_size)px;
 }
 
-entry progressbar,
+entry progressbar {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
     background: @selection_grey;
 }
 
-entry:focused {
+entry:focus {
     background: @white;
 }
 
-toolbar entry:focused {
+toolbar entry:focus {
     border-color: @white;
 }
 
-entry:insensitive {
+entry:disabled {
     background: @button_grey;
     border-color: @button_grey;
 }
@@ -267,13 +267,13 @@ treeview:selected {
 }
 
 entry:selected,
-entry:selected:focused {
+entry:selected:focus {
     background: @selection_grey;
     color: @black;
 }
 
 entry:selected,
-entry:selected:focused {
+entry:selected:focus {
     border-color: @selection_grey;
 }
 
@@ -375,7 +375,7 @@ cpanelsectionview {
 }
 
 /* TODO:  this should only effect the control panel */
-controlpanel image:insensitive {
+controlpanel image:disabled {
     opacity: $(disabled_opacity);
 }
 
@@ -386,12 +386,12 @@ alert {
     color: @white;
 }
 
-alert *:insensitive {
+alert *:disabled {
     background: @black;
 }
 
 button timeouticon label,
-button timeouticon label:prelight {
+button timeouticon label:hover {
     background: @white;
     color: @button_grey;
     border-radius: $(2 * subcell_size)px;
@@ -436,7 +436,7 @@ SugarPaletteWindow SugarGroupBox {
     color: @white;
 }
 
-SugarPaletteWindow SugarGroupBox *:insensitive {
+SugarPaletteWindow SugarGroupBox *:disabled {
     background: @toolbar_grey;
 }
 
@@ -461,7 +461,7 @@ menuitem {
     padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
 }
 
-menuitem:prelight,
+menuitem:hover,
 menuitem:hover {
     background: @button_grey;
 }
@@ -566,19 +566,19 @@ toolbutton button #gtk-toolbar-arrow {
     padding: 0 $(subcell_size + default_padding)px;
 }
 
-toolbutton button:insensitive {
+toolbutton button:disabled {
     opacity: $(disabled_opacity);
 }
 
-toolbutton button:prelight {
+toolbutton button:hover {
     padding: $(toolbutton_padding - 2 - default_padding)px;
     border-width: 2px;
     border-style: solid;
     background-clip: padding-box;
 }
 
-toolbutton button:prelight:not(:checked),
-toolbutton button:prelight:not(:checked) * {
+toolbutton button:hover:not(:checked),
+toolbutton button:hover:not(:checked) * {
     background: @black;
 }
 
@@ -588,8 +588,8 @@ toolbutton button.radio:checked * {
     border-radius: $(toolbutton_padding)px;
 }
 
-toolbutton button.radio:checked:prelight,
-toolbutton button.radio:checked:prelight * {
+toolbutton button.radio:checked:hover,
+toolbutton button.radio:checked:hover * {
     background: @button_grey;
     border-color: @button_grey;
 }
@@ -634,7 +634,7 @@ scale.vertical trough {
     margin: 0 $(scale_trough_margin)px;
 }
 
-scale trough:focused {
+scale trough:focus {
     border-color: @white;
 }
 
@@ -658,7 +658,7 @@ scale slider:active {
 
 /* Radio and check buttons */
 
-check:prelight {
+check:hover {
     background: alpha(@theme_base_color, 0.0);
 }
 
@@ -670,75 +670,75 @@ palette check {
 
 radio,
 radio row:selected,
-radio row:selected:focused {
+radio row:selected:focus {
     -gtk-icon-source: url("assets/radio.svg");
     background: alpha(@theme_base_color, 0.0);
 }
 
 radio:selected,
 radio:selected row:selected,
-radio:selected row:selected:focused {
+radio:selected row:selected:focus {
     -gtk-icon-source: url("assets/radio-selected.svg");
 }
 
 radio:active,
 radio row:selected:active,
-radio row:selected:focused:active {
+radio row:selected:focus:active {
     -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 radio:checked,
 radio row:selected:checked,
-radio row:selected:focused:checked {
+radio row:selected:focus:checked {
    -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 radio:active:selected,
 radio:selected row:selected:active,
-radio:selected row:selected:focused:active {
+radio:selected row:selected:focus:active {
     -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
 
 radio:checked:selected,
 radio:selected row:selected:checked,
-radio:selected row:selected:focused:checked {
+radio:selected row:selected:focus:checked {
     -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
 
 check,
 check row:selected,
-check row:selected:focused {
+check row:selected:focus {
     -gtk-icon-source: url("assets/checkbox-unchecked.svg");
     background: alpha(@theme_base_color, 0.0);
 }
 
 check:selected,
 check:selected row:selected,
-check:selected row:selected:focused {
+check:selected row:selected:focus {
     -gtk-icon-source: url("assets/checkbox-unchecked-selected.svg");
 }
 
 check:active,
 check row:selected:active,
-check row:selected:focused:active {
+check row:selected:focus:active {
     -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 check:checked,
 check row:selected:checked,
-check row:selected:focused:checked {
+check row:selected:focus:checked {
     -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 check:active:selected,
 check:selected row:selected:active,
-check:selected row:selected:focused:active {
+check:selected row:selected:focus:active {
     -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
 
 check:checked:selected,
 check:selected row:selected:checked,
-check:selected row:selected:focused:checked {
+check:selected row:selected:focus:checked {
     background-image: url("assets/checkbox-checked-selected.svg");
     -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
@@ -781,7 +781,7 @@ canvasicon {
     background: transparent;
 }
 
-canvasicon:prelight {
+canvasicon:hover {
     border-color: @zoom_views_prelight;
     background: @zoom_views_prelight;
 }
@@ -801,7 +801,7 @@ canvasicon.toggle-press {
     border-style: solid;
 }
 
-.cell.sugar-icon-cell:prelight {
+.cell.sugar-icon-cell:hover {
     background: @zoom_views_prelight;
 }
 
