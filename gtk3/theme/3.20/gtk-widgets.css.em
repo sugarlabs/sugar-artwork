@@ -180,7 +180,7 @@ spinbutton button:disabled {
 
 /* Toggle buttons */
 
-button.checked {
+button:checked {
     background: @white;
     color: @black;
 }
