@@ -560,8 +560,16 @@ palette progressbar trough {
 /* Separators */
 
 separator {
-    /*border-top: $(thickness)px solid @button_grey;*/
     background-color: @button_grey;
+}
+
+/* If we set the background for these, we get about 20px high
+   separator.  But we only want a border through the middle */
+palette widget separator {
+    border-top: $(thickness)px solid @button_grey;
+    margin-top: $(subcell_size)px;
+    margin-bottom: -$(subcell_size)px;
+    background: transparent;
 }
 
 /* Tool buttons */
