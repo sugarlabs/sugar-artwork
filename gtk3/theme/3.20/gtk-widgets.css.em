@@ -318,6 +318,13 @@ combobox {
     color: @white;
 }
 
+combobox button.combo arrow {
+    -gtk-icon-source: -gtk-icontheme('control-popup-arrow');
+    -gtk-icon-transform: scale(0.3);
+    min-width: $(subcell_size)px;
+    min-height: $(subcell_size)px;
+}
+
 /* What does this do?
     combobox .menu.button {
         border-color: transparent;
