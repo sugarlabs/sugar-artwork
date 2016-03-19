@@ -258,7 +258,7 @@ toolitem entry {
     margin: $(subcell_size)px;
 }
 
-entry progressbar {
+entry progress {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
     background: @selection_grey;
