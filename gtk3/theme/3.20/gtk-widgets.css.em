@@ -146,6 +146,22 @@ button:active:focus {
     border-color: @button_grey;
 }
 
+/* Linked boxes (eg. combobox entries) */
+
+box.linked *:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+box.linked *:first-child:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+box.linked *:not(:first-child):last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 /* Spin buttons */
 
 spinbutton button {
