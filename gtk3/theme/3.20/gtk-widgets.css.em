@@ -672,11 +672,17 @@ scale slider:active {
 }
 
 scale slider {
-    background-image: url("assets/scale-slider.svg");
+    -gtk-icon-source: url("assets/scale-slider.svg");
+    margin: -$(my_floor(subcell_size/2))px;
+    min-width: $(2*subcell_size)px;
+    min-height: $(2*subcell_size)px;
 }
 
 scale slider:active {
-    background-image: url("assets/scale-slider-active.svg");
+    -gtk-icon-source: url("assets/scale-slider-active.svg");
+    margin: -$(my_floor(subcell_size/2))px;
+    min-width: $(2*subcell_size)px;
+    min-height: $(2*subcell_size)px;
 }
 
 /* Radio and check buttons */
