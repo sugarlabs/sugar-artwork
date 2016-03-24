@@ -608,6 +608,12 @@ toolbutton button:hover {
     background-clip: padding-box;
 }
 
+/* Edge case of the wifi toolbuttons in the frame */
+framewindow toolbutton button:hover {
+    padding: $(toolbutton_padding - default_padding)px;
+    border-width: 0;
+}
+
 toolbutton button:hover:not(:checked),
 toolbutton button:hover:not(:checked) * {
     background: @black;
