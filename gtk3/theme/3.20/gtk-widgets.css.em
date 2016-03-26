@@ -146,54 +146,6 @@ button:active:focus {
     border-color: @button_grey;
 }
 
-/* Linked boxes (eg. combobox entries) */
-
-box.linked *:not(:first-child):not(:last-child) {
-    border-radius: 0;
-}
-
-box.linked *:first-child:not(:last-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-box.linked *:not(:first-child):last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-/* Spin buttons */
-
-spinbutton button {
-    background: @button_grey;
-    border-style: solid;
-    border-radius: 0;
-}
-
-spinbutton.horizontal button:last-child {
-    border-radius: 0 $(2*subcell_size)px $(2*subcell_size)px 0;
-}
-
-spinbutton.vertical button:first-child {
-    border-radius: $(2*subcell_size)px $(2*subcell_size)px 0 0;
-    border-width: $(thickness)px $(thickness)px 0 $(thickness)px;
-    border-style: solid;
-}
-
-spinbutton.vertical button:last-child {
-    border-radius: 0 0 $(2*subcell_size)px $(2*subcell_size)px;
-    border-width: 0 $(thickness)px $(thickness)px $(thickness)px;
-    border-style: solid;
-}
-
-spinbutton button:active {
-    background: @black;
-}
-
-spinbutton button:disabled {
-    background: @selection_grey;
-}
-
 /* Toggle buttons */
 
 button:checked {
@@ -789,6 +741,38 @@ check:selected row:selected:focus:checked {
     background-image: url("assets/checkbox-checked-selected.svg");
     -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
+
+/* Linked boxes (eg. combobox entries, spinbuttons) */
+
+box.linked > *:not(:first-child):not(:last-child),
+spinbutton :not(entry):not(:first-child):not(:last-child),
+popover.touch-selection box.horizontal > *:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+box.horizontal.linked > *:first-child:not(:last-child),
+spinbutton.horizontal entry,
+popover.touch-selection box.horizontal > *:first-child:not(:last-child) {
+    border-radius: $(2 * subcell_size)px 0 0 $(2 * subcell_size)px;
+}
+
+box.horizontal.linked > *:not(:first-child):last-child,
+spinbutton.horizontal  button:last-child,
+popover.touch-selection box.horizontal > *:not(:first-child):last-child {
+    border-radius: 0 $(2 * subcell_size)px $(2 * subcell_size)px 0;
+}
+
+box.vertical.linked > *:first-child:not(:last-child),
+spinbutton.vertical button.up {
+    border-radius: $(2 * subcell_size)px $(2 * subcell_size)px 0 0;
+}
+
+box.vertical.linked > *:not(:first-child):last-child,
+spinbutton.vertical button.down {
+    border-radius: 0 0 $(2 * subcell_size)px $(2 * subcell_size)px;
+}
+
+
 
 /* Tool items */
 
