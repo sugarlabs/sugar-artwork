@@ -597,11 +597,13 @@ toolbutton button #gtk-toolbar-arrow {
     padding: 0 $(subcell_size + default_padding)px;
 }
 
-toolbutton button:disabled {
+toolbutton button:disabled,
+filtertoolbutton button:disabled {
     opacity: $(disabled_opacity);
 }
 
-toolbutton button:hover {
+toolbutton button:hover,
+filtertoolbutton button:hover {
     padding: $(toolbutton_padding - 2 - default_padding)px;
     border-width: 2px;
     border-style: solid;
@@ -619,21 +621,23 @@ toolbutton button:hover:not(:checked) * {
     background: @black;
 }
 
-toolbutton button.radio:checked,
-toolbutton button.radio:checked * {
+toolbutton button:checked,
+toolbutton button:checked * {
     background: @button_grey;
     border-radius: $(toolbutton_padding)px;
 }
 
-toolbutton button.radio:checked:hover,
-toolbutton button.radio:checked:hover * {
+toolbutton button:checked:hover,
+toolbutton button:checked:hover * {
     background: @button_grey;
     border-color: @button_grey;
 }
 
 toolbutton button:active,
+filtertoolbutton button:active,
 toolbutton button:active * {
     background: @button_grey;
+    color: white;
     border-radius: $(toolbutton_padding)px;
 }
 
