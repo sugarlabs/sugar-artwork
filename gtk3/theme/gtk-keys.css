@@ -1,0 +1,8 @@
+@binding-set sugar-notebook-keys {
+    bind "<ctrl>Tab" { "change-current-page" (1) }
+    bind "<ctrl><shift>Tab" { "change-current-page" (-1) }
+}
+
+notebook, GtkNotebook {
+    -gtk-binding-set sugar-notebook-keys;
+}

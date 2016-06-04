@@ -38,6 +38,8 @@ install-data-local: $(GEN_FILES)
 		$(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.0/settings.ini
 	$(INSTALL_DATA) $(srcdir)/gtk.css \
 		$(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.0/gtk.css
+	$(INSTALL_DATA) $(srcdir)/gtk-keys.css \
+		$(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.0/gtk-keys.css
 	$(mkinstalldirs) $(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0
 	$(INSTALL_DATA) $(top_builddir)/gtk3/theme/gtk-widgets-100.css \
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/gtk-widgets.css
@@ -45,10 +47,16 @@ install-data-local: $(GEN_FILES)
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/settings.ini
 	$(INSTALL_DATA) $(srcdir)/gtk.css \
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/gtk.css
+	$(INSTALL_DATA) $(srcdir)/gtk-keys.css \
+		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/gtk-keys.css
 	$(INSTALL_DATA) $(srcdir)/gtk.css \
 		$(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.20/gtk.css
+	$(INSTALL_DATA) $(srcdir)/gtk-keys.css \
+		$(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.20/gtk-keys.css
 	$(INSTALL_DATA) $(srcdir)/gtk.css \
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.20/gtk.css
+	$(INSTALL_DATA) $(srcdir)/gtk-keys.css \
+		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.20/gtk-keys.css
 	cp -r $(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/assets \
 	    $(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.20/assets
 	cp -r $(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.0/assets \
