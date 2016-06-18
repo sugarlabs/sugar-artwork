@@ -89,7 +89,7 @@ disabled_opacity = 0.5
     -GtkWidget-text-handle-height: 110px;
 }
 
-*:insensitive {
+*:disabled {
     color: @panel_grey;
 }
 
@@ -110,7 +110,7 @@ introwindow {
     color: @black;
 }
 
-label, label:insensitive {
+label, label:disabled {
     background: transparent;
 }
 
@@ -127,7 +127,7 @@ button {
     color: @white;
 }
 
-button:focused {
+button:focus {
     border-color: @white;
     color: @white;
 }
@@ -137,50 +137,18 @@ button:active {
     color: @black;
 }
 
-button:insensitive {
+button:disabled {
     background: transparent;
 }
 
-button:active:focused {
+button:active:focus {
     color: @black;
     border-color: @button_grey;
 }
 
-/* Spin buttons */
-
-spinbutton button {
-    background: @button_grey;
-    border-style: solid;
-    border-radius: 0;
-}
-
-spinbutton.horizontal button:last-child {
-    border-radius: 0 $(2*subcell_size)px $(2*subcell_size)px 0;
-}
-
-spinbutton.vertical button:first-child {
-    border-radius: $(2*subcell_size)px $(2*subcell_size)px 0 0;
-    border-width: $(thickness)px $(thickness)px 0 $(thickness)px;
-    border-style: solid;
-}
-
-spinbutton.vertical button:last-child {
-    border-radius: 0 0 $(2*subcell_size)px $(2*subcell_size)px;
-    border-width: 0 $(thickness)px $(thickness)px $(thickness)px;
-    border-style: solid;
-}
-
-spinbutton button:active {
-    background: @black;
-}
-
-spinbutton button:insensitive {
-    background: @selection_grey;
-}
-
 /* Toggle buttons */
 
-button.checked {
+button:checked {
     background: @white;
     color: @black;
 }
@@ -242,21 +210,21 @@ toolitem entry {
     margin: $(subcell_size)px;
 }
 
-entry progressbar,
+entry progress {
     border-radius: $(2 * subcell_size)px;
     border-width: $(thickness)px;
     background: @selection_grey;
 }
 
-entry:focused {
+entry:focus {
     background: @white;
 }
 
-toolbar entry:focused {
+toolbar entry:focus {
     border-color: @white;
 }
 
-entry:insensitive {
+entry:disabled {
     background: @button_grey;
     border-color: @button_grey;
 }
@@ -267,13 +235,13 @@ treeview:selected {
 }
 
 entry:selected,
-entry:selected:focused {
+entry:selected:focus {
     background: @selection_grey;
     color: @black;
 }
 
 entry:selected,
-entry:selected:focused {
+entry:selected:focus {
     border-color: @selection_grey;
 }
 
@@ -300,6 +268,13 @@ frame.journal-preview-box {
 
 combobox {
     color: @white;
+}
+
+combobox button.combo arrow {
+    -gtk-icon-source: -gtk-icontheme('control-popup-arrow');
+    -gtk-icon-transform: scale(0.3);
+    min-width: $(subcell_size)px;
+    min-height: $(subcell_size)px;
 }
 
 /* What does this do?
@@ -349,7 +324,7 @@ notebook tab button label {
     color: @black;
 }
 
-notebook tab:active {
+notebook tab:checked {
     background: @toolbar_grey;
 }
 
@@ -375,7 +350,7 @@ cpanelsectionview {
 }
 
 /* TODO:  this should only effect the control panel */
-controlpanel image:insensitive {
+controlpanel image:disabled {
     opacity: $(disabled_opacity);
 }
 
@@ -386,12 +361,12 @@ alert {
     color: @white;
 }
 
-alert *:insensitive {
+alert *:disabled {
     background: @black;
 }
 
 button timeouticon label,
-button timeouticon label:prelight {
+button timeouticon label:hover {
     background: @white;
     color: @button_grey;
     border-radius: $(2 * subcell_size)px;
@@ -436,7 +411,7 @@ SugarPaletteWindow SugarGroupBox {
     color: @white;
 }
 
-SugarPaletteWindow SugarGroupBox *:insensitive {
+SugarPaletteWindow SugarGroupBox *:disabled {
     background: @toolbar_grey;
 }
 
@@ -461,7 +436,7 @@ menuitem {
     padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
 }
 
-menuitem:prelight,
+menuitem:hover,
 menuitem:hover {
     background: @button_grey;
 }
@@ -537,8 +512,16 @@ palette progressbar trough {
 /* Separators */
 
 separator {
-    /*border-top: $(thickness)px solid @button_grey;*/
     background-color: @button_grey;
+}
+
+/* If we set the background for these, we get about 20px high
+   separator.  But we only want a border through the middle */
+palette widget separator {
+    border-top: $(thickness)px solid @button_grey;
+    margin-top: $(subcell_size)px;
+    margin-bottom: -$(subcell_size)px;
+    background: transparent;
 }
 
 /* Tool buttons */
@@ -566,37 +549,47 @@ toolbutton button #gtk-toolbar-arrow {
     padding: 0 $(subcell_size + default_padding)px;
 }
 
-toolbutton button:insensitive {
+toolbutton button:disabled,
+filtertoolbutton button:disabled {
     opacity: $(disabled_opacity);
 }
 
-toolbutton button:prelight {
+toolbutton button:hover,
+filtertoolbutton button:hover {
     padding: $(toolbutton_padding - 2 - default_padding)px;
     border-width: 2px;
     border-style: solid;
     background-clip: padding-box;
 }
 
-toolbutton button:prelight:not(:checked),
-toolbutton button:prelight:not(:checked) * {
+/* Edge case of the wifi toolbuttons in the frame */
+framewindow toolbutton button:hover {
+    padding: $(toolbutton_padding - default_padding)px;
+    border-width: 0;
+}
+
+toolbutton button:hover:not(:checked),
+toolbutton button:hover:not(:checked) * {
     background: @black;
 }
 
-toolbutton button.radio:checked,
-toolbutton button.radio:checked * {
+toolbutton button:checked,
+toolbutton button:checked * {
     background: @button_grey;
     border-radius: $(toolbutton_padding)px;
 }
 
-toolbutton button.radio:checked:prelight,
-toolbutton button.radio:checked:prelight * {
+toolbutton button:checked:hover,
+toolbutton button:checked:hover * {
     background: @button_grey;
     border-color: @button_grey;
 }
 
 toolbutton button:active,
+filtertoolbutton button:active,
 toolbutton button:active * {
     background: @button_grey;
+    color: white;
     border-radius: $(toolbutton_padding)px;
 }
 
@@ -634,7 +627,7 @@ scale.vertical trough {
     margin: 0 $(scale_trough_margin)px;
 }
 
-scale trough:focused {
+scale trough:focus {
     border-color: @white;
 }
 
@@ -649,16 +642,22 @@ scale slider:active {
 }
 
 scale slider {
-    background-image: url("assets/scale-slider.svg");
+    -gtk-icon-source: url("assets/scale-slider.svg");
+    margin: -$(my_floor(subcell_size/2))px;
+    min-width: $(2*subcell_size)px;
+    min-height: $(2*subcell_size)px;
 }
 
 scale slider:active {
-    background-image: url("assets/scale-slider-active.svg");
+    -gtk-icon-source: url("assets/scale-slider-active.svg");
+    margin: -$(my_floor(subcell_size/2))px;
+    min-width: $(2*subcell_size)px;
+    min-height: $(2*subcell_size)px;
 }
 
 /* Radio and check buttons */
 
-check:prelight {
+check:hover {
     background: alpha(@theme_base_color, 0.0);
 }
 
@@ -670,78 +669,110 @@ palette check {
 
 radio,
 radio row:selected,
-radio row:selected:focused {
+radio row:selected:focus {
     -gtk-icon-source: url("assets/radio.svg");
     background: alpha(@theme_base_color, 0.0);
 }
 
 radio:selected,
 radio:selected row:selected,
-radio:selected row:selected:focused {
+radio:selected row:selected:focus {
     -gtk-icon-source: url("assets/radio-selected.svg");
 }
 
 radio:active,
 radio row:selected:active,
-radio row:selected:focused:active {
+radio row:selected:focus:active {
     -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 radio:checked,
 radio row:selected:checked,
-radio row:selected:focused:checked {
+radio row:selected:focus:checked {
    -gtk-icon-source: url("assets/radio-active.svg");
 }
 
 radio:active:selected,
 radio:selected row:selected:active,
-radio:selected row:selected:focused:active {
+radio:selected row:selected:focus:active {
     -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
 
 radio:checked:selected,
 radio:selected row:selected:checked,
-radio:selected row:selected:focused:checked {
+radio:selected row:selected:focus:checked {
     -gtk-icon-source: url("assets/radio-active-selected.svg");
 }
 
 check,
 check row:selected,
-check row:selected:focused {
+check row:selected:focus {
     -gtk-icon-source: url("assets/checkbox-unchecked.svg");
     background: alpha(@theme_base_color, 0.0);
 }
 
 check:selected,
 check:selected row:selected,
-check:selected row:selected:focused {
+check:selected row:selected:focus {
     -gtk-icon-source: url("assets/checkbox-unchecked-selected.svg");
 }
 
 check:active,
 check row:selected:active,
-check row:selected:focused:active {
+check row:selected:focus:active {
     -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 check:checked,
 check row:selected:checked,
-check row:selected:focused:checked {
+check row:selected:focus:checked {
     -gtk-icon-source: url("assets/checkbox-checked.svg");
 }
 
 check:active:selected,
 check:selected row:selected:active,
-check:selected row:selected:focused:active {
+check:selected row:selected:focus:active {
     -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
 
 check:checked:selected,
 check:selected row:selected:checked,
-check:selected row:selected:focused:checked {
+check:selected row:selected:focus:checked {
     background-image: url("assets/checkbox-checked-selected.svg");
     -gtk-icon-source: url("assets/checkbox-checked-selected.svg");
 }
+
+/* Linked boxes (eg. combobox entries, spinbuttons) */
+
+box.linked > *:not(:first-child):not(:last-child),
+spinbutton :not(entry):not(:first-child):not(:last-child),
+popover.touch-selection box.horizontal > *:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+box.horizontal.linked > *:first-child:not(:last-child),
+spinbutton.horizontal entry,
+popover.touch-selection box.horizontal > *:first-child:not(:last-child) {
+    border-radius: $(2 * subcell_size)px 0 0 $(2 * subcell_size)px;
+}
+
+box.horizontal.linked > *:not(:first-child):last-child,
+spinbutton.horizontal  button:last-child,
+popover.touch-selection box.horizontal > *:not(:first-child):last-child {
+    border-radius: 0 $(2 * subcell_size)px $(2 * subcell_size)px 0;
+}
+
+box.vertical.linked > *:first-child:not(:last-child),
+spinbutton.vertical button.up {
+    border-radius: $(2 * subcell_size)px $(2 * subcell_size)px 0 0;
+}
+
+box.vertical.linked > *:not(:first-child):last-child,
+spinbutton.vertical button.down {
+    border-radius: 0 0 $(2 * subcell_size)px $(2 * subcell_size)px;
+}
+
+
 
 /* Tool items */
 
@@ -781,7 +812,7 @@ canvasicon {
     background: transparent;
 }
 
-canvasicon:prelight {
+canvasicon:hover {
     border-color: @zoom_views_prelight;
     background: @zoom_views_prelight;
 }
@@ -801,7 +832,7 @@ canvasicon.toggle-press {
     border-style: solid;
 }
 
-.cell.sugar-icon-cell:prelight {
+.cell.sugar-icon-cell:hover {
     background: @zoom_views_prelight;
 }
 
