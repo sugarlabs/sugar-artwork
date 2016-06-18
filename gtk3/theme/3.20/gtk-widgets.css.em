@@ -474,14 +474,28 @@ scrollbar slider {
     border-width: $(thickness)px;
     border-color: @button_grey;
     border-style: solid;
+}
+
+scrollbar.vertical slider {
     min-width: $(subcell_size)px;
     min-height: $(3*subcell_size)px;
 }
 
-scrollbar.fine-tune slider {
+scrollbar.vertical.fine-tune slider {
     min-width: $(subcell_size / 2 + thickness)px;
     margin-left: $(subcell_size / 4)px;
     margin-right: $(subcell_size / 4)px;
+}
+
+scrollbar.horizontal slider {
+    min-height: $(subcell_size)px;
+    min-width: $(3*subcell_size)px;
+}
+
+scrollbar.horizontal.fine-tune slider {
+    min-height: $(subcell_size / 2 + thickness)px;
+    margin-top: $(subcell_size / 4)px;
+    margin-bottom: $(subcell_size / 4)px;
 }
 
 scrollbar slider:active {
