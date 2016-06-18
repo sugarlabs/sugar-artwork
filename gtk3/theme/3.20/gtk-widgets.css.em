@@ -459,14 +459,8 @@ tooltip * {
 /* Scrollbars */
 
 scrollbar {
-    -GtkRange-slider-width: $(subcell_size + 2*thickness);
-    -GtkRange-trough-border: 0;
-    -GtkRange-stepper-size: 0;
-    -GtkScrollbar-min-slider-length: $(3*subcell_size);
-    -GtkScrollbar-has-forward-stepper: 0;
-    -GtkScrollbar-has-backward-stepper: 0;
-    -GtkScrollbar-has-secondary-forward-stepper: 0;
-    -GtkScrollbar-has-secondary-backward-stepper: 0;
+    -GtkScrollbar-has-forward-stepper: false;
+    -GtkScrollbar-has-backward-stepper: false;
 }
 
 scrollbar trough {
@@ -480,6 +474,14 @@ scrollbar slider {
     border-width: $(thickness)px;
     border-color: @button_grey;
     border-style: solid;
+    min-width: $(subcell_size)px;
+    min-height: $(3*subcell_size)px;
+}
+
+scrollbar.fine-tune slider {
+    min-width: $(subcell_size / 2 + thickness)px;
+    margin-left: $(subcell_size / 4)px;
+    margin-right: $(subcell_size / 4)px;
 }
 
 scrollbar slider:active {
