@@ -4,6 +4,7 @@ import math
 
 gtk_major, gtk_minor, gtk_patch = map(int, gtk.split('.'))
 treeview_pseudo_element = gtk_major >= 3 and gtk_minor >= 16
+opacity_exists = gtk_major >= 3 and gtk_minor >= 8
 
 def my_floor(num):
     return int(math.floor(num))
@@ -599,7 +600,9 @@ SugarPaletteWindowWidget GtkToolButton .button {
 
 GtkToolButton .button:insensitive,
 SugarRadioToolButton .button:insensitive {
+$[if opacity_exists]
     opacity: $(disabled_opacity);
+$[end if]
 }
 
 .toolbar GtkToolButton .button,
