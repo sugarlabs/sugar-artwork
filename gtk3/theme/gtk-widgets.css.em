@@ -119,6 +119,9 @@ disabled_opacity = 0.5
 
 *:insensitive {
     color: @button_grey;
+$[if opacity_exists]
+    opacity: 0.75;
+$[end if]
 }
 
 /* Backgrounds and windows */
