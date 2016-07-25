@@ -59,10 +59,6 @@ disabled_opacity = 0.5
     /* 0.05 works good for both the sugar and sugar-xo themes */
     -GtkWidget-cursor-aspect-ratio: 0.05;
 
-    -GtkWidget-wide-separators: true;
-    -GtkWidget-separator-height: $thickness;
-    -GtkWidget-separator-width: $thickness;
-
     -GtkWidget-scroll-arrow-hlength: $subcell_size;
     -GtkWidget-scroll-arrow-vlength: $subcell_size;
 
@@ -77,13 +73,8 @@ disabled_opacity = 0.5
 
     -GtkArrow-arrow-size: 1.0;
 
-    -GtkToolbar-space-size: $(2*subcell_size);
-
     -GtkProgressBar-min-horizontal-bar-height: $subcell_size;
     -GtkProgressBar-min-vertical-bar-width: $subcell_size;
-
-    -GtkCheckButton-indicator-size: $radio_size;
-    -GtkCheckButton-indicator-spacing: 3;
 
     -GtkWidget-text-handle-width: 110px;
     -GtkWidget-text-handle-height: 110px;
@@ -298,8 +289,6 @@ notebook {
     background: @selection_grey;
     color: @black;
     padding: 0px;
-    -GtkNotebook-tab-overlap: -2;
-    -GtkNotebook-tab-curvature: $default_padding;
     -GtkWidget-scroll-arrow-hlength: $(my_floor(2.5 * subcell_size));
     -GtkWidget-scroll-arrow-vlength: $(my_floor(2.5 * subcell_size));
 }
@@ -528,12 +517,20 @@ palette progressbar trough {
 /* Separators */
 
 separator {
-    background-color: @button_grey;
+    background: @button_grey;
+    min-width: $(thickness)px;
+    min-height: $(thickness)px;
 }
 
-/* If we set the background for these, we get about 20px high
-   separator.  But we only want a border through the middle */
-palette widget separator {
+toolbar separator {
+    border-left: $(thickness)px solid @button_grey;
+    margin-left: $(subcell_size)px;
+    margin-right: $(subcell_size)px;
+    background: transparent;
+}
+
+/* We only want a border through the middle */
+palette widget separator.horizontal {
     border-top: $(thickness)px solid @button_grey;
     margin-top: $(subcell_size)px;
     margin-bottom: -$(subcell_size)px;
@@ -619,11 +616,6 @@ toolbar combobox button {
 
 /* Scales */
 
-scale {
-    -GtkScale-slider-length: $scale_slider_width;
-    -GtkRange-slider-width: $scale_slider_width;
-}
-
 scale highlight {
     background: @white;
     border-style: solid;
@@ -672,6 +664,13 @@ scale slider:active {
 }
 
 /* Radio and check buttons */
+
+check,
+radio {
+    min-width: $(radio_size)px;
+    min-height: $(radio_size)px;
+    margin: 3px;
+}
 
 check:hover {
     background: alpha(@theme_base_color, 0.0);
