@@ -8,7 +8,8 @@ assets_DATA =				\
 	radio-active.svg		\
 	radio-active-selected.svg	\
 	scale-slider.svg		\
-	scale-slider-active.svg
+	scale-slider-active.svg		\
+	viewsource-imageBox-bg.svg
 
 assetsdir = $(datadir)/themes/sugar-72/gtk-3.0/assets
 
