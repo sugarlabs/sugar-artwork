@@ -1,4 +1,4 @@
-SUBDIRS = assets
+SUBDIRS = assets 3.20
 
 gtk-widgets-72.css: gtk-widgets.css.em
 	$(srcdir)/em.py -p $$ -D scaling=\'72\' -D gtk=\'$(GTK3_VERSION)\' \
@@ -45,6 +45,15 @@ install-data-local: $(GEN_FILES)
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/settings.ini
 	$(INSTALL_DATA) $(srcdir)/gtk.css \
 		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/gtk.css
+	$(INSTALL_DATA) $(srcdir)/gtk.css \
+		$(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.20/gtk.css
+	$(INSTALL_DATA) $(srcdir)/gtk.css \
+		$(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.20/gtk.css
+	cp -r $(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0/assets \
+	    $(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.20/assets
+	cp -r $(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.0/assets \
+	    $(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.20/assets
+
 
 uninstall-local:
 	rm -rf $(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.0

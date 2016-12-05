@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.107.1],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.110.0],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
@@ -70,6 +70,7 @@ gtk/engine/Makefile
 gtk/theme/Makefile
 gtk3/Makefile
 gtk3/theme/Makefile
+gtk3/theme/3.20/Makefile
 gtk3/theme/assets/Makefile
 gtk3/theme/assets/72/Makefile
 gtk3/theme/assets/100/Makefile
