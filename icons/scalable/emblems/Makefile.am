@@ -8,6 +8,7 @@ icon_DATA =			\
 	emblem-downloads.svg	\
 	emblem-favorite.svg	\
 	emblem-locked.svg	\
+	emblem-favorite-locked.svg	\
 	emblem-notification.svg	\
 	emblem-outofrange.svg	\
 	emblem-question.svg	\
