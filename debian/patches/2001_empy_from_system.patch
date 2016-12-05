@@ -19,7 +19,7 @@ Last-Update: 2012-03-15
 --- a/gtk3/theme/Makefile.am
 +++ b/gtk3/theme/Makefile.am
 @@ -1,21 +1,21 @@
- SUBDIRS = assets
+ SUBDIRS = assets 3.20
  
  gtk-widgets-72.css: gtk-widgets.css.em
 -	$(srcdir)/em.py -p $$ -D scaling=\'72\' -D gtk=\'$(GTK3_VERSION)\' \
