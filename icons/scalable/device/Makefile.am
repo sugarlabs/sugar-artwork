@@ -39,6 +39,7 @@ icon_DATA =				\
 	battery-charging-080.svg	\
 	battery-charging-090.svg	\
 	battery-charging-100.svg	\
+	battery-removed.svg		\
 	brightness-000.svg		\
 	brightness-033.svg		\
 	brightness-066.svg		\
