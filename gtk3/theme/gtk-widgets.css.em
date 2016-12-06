@@ -1,6 +1,15 @@
 ${
 import os
 import math
+from gi.repository import Gtk
+
+if 'GTK_MAJOR' in os.environ:
+    gtk_major = int(os.environ['GTK_MAJOR'])
+    gtk_minor = int(os.environ['GTK_MINOR'])
+else:
+    gtk_major = int(Gtk.get_major_version())
+    gtk_minor = int(Gtk.get_minor_version())
+treeview_pseudo_element = gtk_major >= 3 and gtk_minor > 8
 
 gtk_major, gtk_minor, gtk_patch = map(int, gtk.split('.'))
 treeview_pseudo_element = gtk_major >= 3 and gtk_minor >= 16
