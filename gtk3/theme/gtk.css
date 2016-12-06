@@ -26,4 +26,4 @@
 @define-color theme_base_color @base_color;
 
 @import url("gtk-widgets.css");
-
+@import url("gtk-keys.css");
