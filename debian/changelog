@@ -1,3 +1,21 @@
+sugar-artwork (0.110.0-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+
+  [ Jonas Smedegaard ]
+  * Unfuzz patch 2001.
+  * Modernize CDBS use:
+    + Build-depend on licensecheck (not devscripts).
+    + Extract (not avoid) png files for copyright checking.
+  * Avoid installing empty upstream changelog.
+  * Declare compliance with Debian Policy 3.9.8.
+  * Update copyright info: Extend coverage of Debian packaging.
+  * Track only stable 0.110 branch in watch file.
+  * Have git-buildpackage use versioned upstream branch.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 09 Dec 2016 18:59:56 +0100
+
 sugar-artwork (0.107.1-1) experimental; urgency=medium
 
   [ upstream ]

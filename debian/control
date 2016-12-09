@@ -4,9 +4,12 @@ Priority: optional
 Maintainer: Debian Sugar Team <pkg-sugar-devel@lists.alioth.debian.org>
 Uploaders: Jonas Smedegaard <dr@jones.dk>,
  Santiago Ruano Rincón <santiago@debian.org>
-Build-Depends: cdbs,
+Build-Depends: cdbs (>= 0.4.147~),
  autotools-dev,
- devscripts,
+ licensecheck,
+ libregexp-assemble-perl,
+ libimage-exiftool-perl,
+ libfont-ttf-perl,
  debhelper,
  dh-buildinfo,
  libgtk2.0-dev,
@@ -18,7 +21,7 @@ Build-Depends: cdbs,
  icon-naming-utils,
  dh-autoreconf,
  gnome-common
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Vcs-Git: git://anonscm.debian.org/pkg-sugar/sugar-artwork
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-sugar/sugar-artwork.git
 Homepage: http://wiki.sugarlabs.org/go/Sugar
