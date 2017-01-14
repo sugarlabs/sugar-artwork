@@ -524,8 +524,7 @@ separator {
 
 toolbar separator {
     border-left: $(thickness)px solid @button_grey;
-    margin-left: $(subcell_size)px;
-    margin-right: $(subcell_size)px;
+    margin: $(subcell_size)px;
     background: transparent;
 }
 
