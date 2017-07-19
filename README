@@ -1,5 +1,0 @@
-To be able to install this from the source directory,
-run the setup-user-theme.py script. It will create
-symlinks in ~/.themes and ~/.gtk-2.0 to the source
-directory module and gtkrc.
-
