@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.111],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.111-libre],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
