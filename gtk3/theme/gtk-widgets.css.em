@@ -196,6 +196,10 @@ spinbutton button:last-child,
     border-color: @selection_grey;
 }
 
+spinbutton entry,
+.spinutton.entry {
+  color: @black;
+}
 
 spinbutton button:active,
 .spinbutton.button:active {
