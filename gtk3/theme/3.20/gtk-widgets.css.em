@@ -758,6 +758,21 @@ check:selected row:selected:focus:checked {
 }
 
 /* Linked boxes (eg. combobox entries, spinbuttons) */
+spinbutton button {
+    border: none;
+    margin: $(subcell_size)px 0px;
+}
+spinbutton button:active,
+spinbutton button:focus,
+spinbutton button:active:focus {
+    border: none;
+}
+
+spinbutton entry{
+    color: #000000 !important;
+    margin: $(subcell_size)px;
+    margin-right: 0px;
+}
 
 box.linked > *:not(:first-child):not(:last-child),
 spinbutton :not(entry):not(:first-child):not(:last-child),
