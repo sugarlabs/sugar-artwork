@@ -197,7 +197,7 @@ spinbutton button:last-child,
 }
 
 spinbutton entry,
-.spinutton.entry {
+.spinbutton.entry {
   color: @black;
 }
 
