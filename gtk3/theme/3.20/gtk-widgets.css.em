@@ -769,7 +769,7 @@ spinbutton button:active:focus {
 }
 
 spinbutton entry {
-    background-color: @button_grey;;
+    background-color: @selection_grey;;
     margin: $(subcell_size)px;
     margin-right: 0px;
     border-color: @button_grey;
