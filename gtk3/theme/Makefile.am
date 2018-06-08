@@ -1,21 +1,21 @@
 SUBDIRS = assets 3.20
 
 gtk-widgets-72.css: gtk-widgets.css.em
-	$(srcdir)/em.py -p $$ -D scaling=\'72\' -D gtk=\'$(GTK3_VERSION)\' \
+	empy3 -p $$ -D scaling=\'72\' -D gtk=\'$(GTK3_VERSION)\' \
 		$(srcdir)/gtk-widgets.css.em > \
 		$(top_builddir)/gtk3/theme/gtk-widgets-72.css
 
 gtk-widgets-100.css: gtk-widgets.css.em
-	$(srcdir)/em.py -p $$ -D scaling=\'100\' -D gtk=\'$(GTK3_VERSION)\' \
+	empy3 -p $$ -D scaling=\'100\' -D gtk=\'$(GTK3_VERSION)\' \
 		$(srcdir)/gtk-widgets.css.em > \
 		$(top_builddir)/gtk3/theme/gtk-widgets-100.css
 
 settings-72.ini: settings.ini.em
-	$(srcdir)/em.py -p $$ -D scaling=\'72\' $(srcdir)/settings.ini.em > \
+	empy3 -p $$ -D scaling=\'72\' $(srcdir)/settings.ini.em > \
 		$(top_builddir)/gtk3/theme/settings-72.ini
 
 settings-100.ini: settings.ini.em
-	$(srcdir)/em.py -p $$ -D scaling=\'100\' $(srcdir)/settings.ini.em > \
+	empy3 -p $$ -D scaling=\'100\' $(srcdir)/settings.ini.em > \
 		$(top_builddir)/gtk3/theme/settings-100.ini
 
 clean:
@@ -59,5 +59,5 @@ uninstall-local:
 	rm -rf $(DESTDIR)$(datadir)/themes/sugar-72/gtk-3.0
 	rm -rf $(DESTDIR)$(datadir)/themes/sugar-100/gtk-3.0
 
-EXTRA_DIST = gtk-widgets.css.em settings.ini.em em.py gtk.css
+EXTRA_DIST = gtk-widgets.css.em settings.ini.em gtk.css
 CLEANFILES = $(GEN_FILES)

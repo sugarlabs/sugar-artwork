@@ -1,4 +1,4 @@
-INCLUDES = \
+AM_CPPFLAGS = \
 	$(ENGINE_CFLAGS) $(WARN_CFLAGS)
 
 enginedir = $(libdir)/gtk-2.0/$(GTK_VERSION)/engines

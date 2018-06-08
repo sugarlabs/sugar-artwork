@@ -20,6 +20,11 @@ if test -z "$XCURSORGEN"; then
     AC_MSG_ERROR([xcursorgen is required])
 fi
 
+AC_PATH_PROG([EMPY3], [empy3])
+if test -z "$EMPY3"; then
+    AC_MSG_ERROR([python3-empy is required])
+fi
+
 PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.16.0,,
 	          AC_MSG_ERROR([GTK+-2.0 is required to compile sugar-artwork]))
 
