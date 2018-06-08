@@ -1,9 +1,9 @@
 sugar-72.gtkrc: gtkrc.em
-	$(srcdir)/em.py -p $$ -D scaling=\'72\' $(srcdir)/gtkrc.em > \
+	empy3 -p $$ -D scaling=\'72\' $(srcdir)/gtkrc.em > \
 		$(top_builddir)/gtk/theme/sugar-72.gtkrc
 
 sugar-100.gtkrc: gtkrc.em
-	$(srcdir)/em.py -p $$ -D scaling=\'100\' $(srcdir)/gtkrc.em > \
+	empy3 -p $$ -D scaling=\'100\' $(srcdir)/gtkrc.em > \
 		$(top_builddir)/gtk/theme/sugar-100.gtkrc
 
 clean:
@@ -26,5 +26,5 @@ uninstall-local:
 	rm -rf $(DESTDIR)$(datadir)/themes/sugar-72/gtk-2.0
 	rm -rf $(DESTDIR)$(datadir)/themes/sugar-100/gtk-2.0
 
-EXTRA_DIST = em.py gtkrc.em
+EXTRA_DIST = gtkrc.em
 CLEANFILES = $(GTKRC_FILES)

@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([sugar-artwork],[0.112],[],[sugar-artwork])
+AC_INIT([sugar-artwork],[0.112+c1df512~rb],[],[sugar-artwork])
 
 AM_CONFIG_HEADER(config.h)
 
@@ -18,6 +18,11 @@ AC_PROG_LIBTOOL
 AC_PATH_PROG([ICON_SLICER], [icon-slicer])
 if test -z "$ICON_SLICER"; then
     AC_MSG_ERROR([icon-slicer is required])
+fi
+
+AC_PATH_PROG([EMPY3], [empy3])
+if test -z "$EMPY3"; then
+    AC_MSG_ERROR([python3-empy is required])
 fi
 
 PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.16.0,,
