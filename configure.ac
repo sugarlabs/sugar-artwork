@@ -15,6 +15,11 @@ AC_PROG_CC
 AC_HEADER_STDC
 AC_PROG_LIBTOOL
 
+AC_PATH_PROG([XCURSORGEN], [xcursorgen])
+if test -z "$XCURSORGEN"; then
+    AC_MSG_ERROR([xcursorgen is required])
+fi
+
 PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.16.0,,
 	          AC_MSG_ERROR([GTK+-2.0 is required to compile sugar-artwork]))
 
