@@ -1,1 +1,1 @@
-SUBDIRS = sugar
+SUBDIRS = sugar sugar-lh
