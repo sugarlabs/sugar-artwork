@@ -60,6 +60,7 @@ AC_OUTPUT([
 Makefile
 cursor/Makefile
 cursor/sugar/Makefile
+cursor/sugar-lh/Makefile
 icons/Makefile
 icons/scalable/Makefile
 icons/scalable/actions/Makefile
