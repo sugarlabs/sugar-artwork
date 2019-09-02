@@ -1,12 +1,12 @@
 gtk-widgets-72.css: gtk-widgets.css.em
-	empy3 -p $$ -D scaling=\'72\' -D gtk=\'$(GTK3_VERSION)\' \
+	$(PYTHON) - -p $$ -D scaling=\'72\' -D gtk=\'$(GTK3_VERSION)\' \
 		$(srcdir)/gtk-widgets.css.em > \
-		$(top_builddir)/gtk3/theme/3.20/gtk-widgets-72.css
+		$(top_builddir)/gtk3/theme/3.20/gtk-widgets-72.css < $(EMPY)
 
 gtk-widgets-100.css: gtk-widgets.css.em
-	empy3 -p $$ -D scaling=\'100\' -D gtk=\'$(GTK3_VERSION)\' \
+	$(PYTHON) - -p $$ -D scaling=\'100\' -D gtk=\'$(GTK3_VERSION)\' \
 		$(srcdir)/gtk-widgets.css.em > \
-		$(top_builddir)/gtk3/theme/3.20/gtk-widgets-100.css
+		$(top_builddir)/gtk3/theme/3.20/gtk-widgets-100.css < $(EMPY)
 
 clean:
 	$(RM) gtk-widgets-100.css
