@@ -112,46 +112,46 @@ CURSORS_DIR = $(OUTPUT_DIR)/cursors
 
 sugar.stamp: $(sugar_images) $(cursor_instructions) $(THEMEGEN)
 	mkdir -p $(CURSORS_DIR)
-	xcursorgen hand_closed.in $(CURSORS_DIR)/hand_closed
-	xcursorgen sb_h_double_arrow.in $(CURSORS_DIR)/sb_h_double_arrow
-	xcursorgen top_side.in $(CURSORS_DIR)/top_side
-	xcursorgen minus.in $(CURSORS_DIR)/minus
-	xcursorgen center_ptr.in $(CURSORS_DIR)/center_ptr
-	xcursorgen plus.in $(CURSORS_DIR)/plus
-	xcursorgen forbidden.in $(CURSORS_DIR)/forbidden
-	xcursorgen busy.in $(CURSORS_DIR)/busy
-	xcursorgen left_ptr_watch.in $(CURSORS_DIR)/left_ptr_watch
-	xcursorgen paintbrush.in $(CURSORS_DIR)/paintbrush
-	xcursorgen color-picker.in $(CURSORS_DIR)/color-picker
-	xcursorgen sb_up_arrow.in $(CURSORS_DIR)/sb_up_arrow
-	xcursorgen eraser.in $(CURSORS_DIR)/eraser
-	xcursorgen crosshair.in $(CURSORS_DIR)/crosshair
-	xcursorgen sb_v_double_arrow.in $(CURSORS_DIR)/sb_v_double_arrow
-	xcursorgen right_ptr.in $(CURSORS_DIR)/right_ptr
-	xcursorgen sb_down_arrow.in $(CURSORS_DIR)/sb_down_arrow
-	xcursorgen paint-bucket.in $(CURSORS_DIR)/paint-bucket
-	xcursorgen close.in $(CURSORS_DIR)/close
-	xcursorgen pencil.in $(CURSORS_DIR)/pencil
-	xcursorgen sb_left_arrow.in $(CURSORS_DIR)/sb_left_arrow
-	xcursorgen question_arrow.in $(CURSORS_DIR)/question_arrow
-	xcursorgen based_arrow_right.in $(CURSORS_DIR)/based_arrow_right
-	xcursorgen fleur.in $(CURSORS_DIR)/fleur
-	xcursorgen hand_open.in $(CURSORS_DIR)/hand_open
-	xcursorgen sb_right_arrow.in $(CURSORS_DIR)/sb_right_arrow
-	xcursorgen hand2.in $(CURSORS_DIR)/hand2
-	xcursorgen based_arrow_down.in $(CURSORS_DIR)/based_arrow_down
-	xcursorgen bottom_right_corner.in $(CURSORS_DIR)/bottom_right_corner
-	xcursorgen right_side.in $(CURSORS_DIR)/right_side
-	xcursorgen xterm.in $(CURSORS_DIR)/xterm
-	xcursorgen link.in $(CURSORS_DIR)/link
-	xcursorgen based_arrow_left.in $(CURSORS_DIR)/based_arrow_left
-	xcursorgen based_arrow_up.in $(CURSORS_DIR)/based_arrow_up
-	xcursorgen left_ptr_modify.in $(CURSORS_DIR)/left_ptr_modify
-	xcursorgen exchange.in $(CURSORS_DIR)/exchange
-	xcursorgen left_ptr.in $(CURSORS_DIR)/left_ptr
-	xcursorgen circle.in $(CURSORS_DIR)/circle
-	xcursorgen bottom_left_corner.in $(CURSORS_DIR)/bottom_left_corner
-	xcursorgen hand1.in $(CURSORS_DIR)/hand1
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/hand_closed.in $(CURSORS_DIR)/hand_closed
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/sb_h_double_arrow.in $(CURSORS_DIR)/sb_h_double_arrow
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/top_side.in $(CURSORS_DIR)/top_side
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/minus.in $(CURSORS_DIR)/minus
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/center_ptr.in $(CURSORS_DIR)/center_ptr
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/plus.in $(CURSORS_DIR)/plus
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/forbidden.in $(CURSORS_DIR)/forbidden
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/busy.in $(CURSORS_DIR)/busy
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/left_ptr_watch.in $(CURSORS_DIR)/left_ptr_watch
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/paintbrush.in $(CURSORS_DIR)/paintbrush
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/color-picker.in $(CURSORS_DIR)/color-picker
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/sb_up_arrow.in $(CURSORS_DIR)/sb_up_arrow
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/eraser.in $(CURSORS_DIR)/eraser
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/crosshair.in $(CURSORS_DIR)/crosshair
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/sb_v_double_arrow.in $(CURSORS_DIR)/sb_v_double_arrow
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/right_ptr.in $(CURSORS_DIR)/right_ptr
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/sb_down_arrow.in $(CURSORS_DIR)/sb_down_arrow
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/paint-bucket.in $(CURSORS_DIR)/paint-bucket
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/close.in $(CURSORS_DIR)/close
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/pencil.in $(CURSORS_DIR)/pencil
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/sb_left_arrow.in $(CURSORS_DIR)/sb_left_arrow
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/question_arrow.in $(CURSORS_DIR)/question_arrow
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/based_arrow_right.in $(CURSORS_DIR)/based_arrow_right
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/fleur.in $(CURSORS_DIR)/fleur
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/hand_open.in $(CURSORS_DIR)/hand_open
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/sb_right_arrow.in $(CURSORS_DIR)/sb_right_arrow
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/hand2.in $(CURSORS_DIR)/hand2
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/based_arrow_down.in $(CURSORS_DIR)/based_arrow_down
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/bottom_right_corner.in $(CURSORS_DIR)/bottom_right_corner
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/right_side.in $(CURSORS_DIR)/right_side
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/xterm.in $(CURSORS_DIR)/xterm
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/link.in $(CURSORS_DIR)/link
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/based_arrow_left.in $(CURSORS_DIR)/based_arrow_left
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/based_arrow_up.in $(CURSORS_DIR)/based_arrow_up
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/left_ptr_modify.in $(CURSORS_DIR)/left_ptr_modify
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/exchange.in $(CURSORS_DIR)/exchange
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/left_ptr.in $(CURSORS_DIR)/left_ptr
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/circle.in $(CURSORS_DIR)/circle
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/bottom_left_corner.in $(CURSORS_DIR)/bottom_left_corner
+	xcursorgen -p $(IMAGE_DIR) $(IMAGE_DIR)/hand1.in $(CURSORS_DIR)/hand1
 	ln -s left_ptr $(CURSORS_DIR)/default
 	ln -s left_ptr $(CURSORS_DIR)/top_left_arrow
 	ln -s right_ptr $(CURSORS_DIR)/top_right_arrow
