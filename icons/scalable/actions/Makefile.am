@@ -134,7 +134,6 @@ EXTRA_DIST = $(icon_DATA)
 # install aliases for icons, and the use the icon-naming-utils to install
 # further aliases for compatibility with gtk stock icon names.
 install-data-local: install-iconDATA
-	ln -sf activity-start.svg $(DESTDIR)$(icondir)/document-open.svg
 	ln -sf activity-stop.svg $(DESTDIR)$(icondir)/application-exit.svg
 	ln -sf dialog-ok.svg $(DESTDIR)$(icondir)/dialog-apply.svg
 	ln -sf dialog-ok.svg $(DESTDIR)$(icondir)/gtk-ok.svg
