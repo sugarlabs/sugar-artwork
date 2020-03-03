@@ -1,10 +1,10 @@
 sugar-72.gtkrc: gtkrc.em
-	$(PYTHON) - -p $$ -D scaling=\'72\' $(srcdir)/gtkrc.em > \
-		$(top_builddir)/gtk/theme/sugar-72.gtkrc < $(EMPY)
+	$(PYTHON) -m em -p $$ -D scaling=\'72\' $(srcdir)/gtkrc.em > \
+		$(top_builddir)/gtk/theme/sugar-72.gtkrc
 
 sugar-100.gtkrc: gtkrc.em
-	$(PYTHON) - -p $$ -D scaling=\'100\' $(srcdir)/gtkrc.em > \
-		$(top_builddir)/gtk/theme/sugar-100.gtkrc < $(EMPY)
+	$(PYTHON) -m em -p $$ -D scaling=\'100\' $(srcdir)/gtkrc.em > \
+		$(top_builddir)/gtk/theme/sugar-100.gtkrc
 
 clean:
 	$(RM) sugar-72.gtkrc
