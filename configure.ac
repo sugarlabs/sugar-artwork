@@ -22,7 +22,7 @@ fi
 
 PYTHON=python3
 AM_PATH_PYTHON
-AS_IF([$PYTHON -m em >/dev/null 2>&1], AC_MSG_RESULT([empy found]), AC_MSG_ERROR([empy not found]))
+AS_IF([$PYTHON -m em </dev/null >/dev/null 2>&1], AC_MSG_RESULT([empy found]), AC_MSG_ERROR([empy not found]))
 
 PKG_CHECK_MODULES(GTK3, gtk+-3.0 >= 3.0.0,,
 	          AC_MSG_ERROR([GTK+-3.0 is required to compile sugar-artwork]))
