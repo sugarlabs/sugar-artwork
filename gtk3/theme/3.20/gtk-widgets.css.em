@@ -155,6 +155,7 @@ textview text {  /* Setting a textview to background white makes it black,
     padding: 0px;
     background: @white;
     color: @black;
+    caret-color: @black;
 }
 
 treeview header button,
