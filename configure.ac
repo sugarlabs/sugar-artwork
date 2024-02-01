@@ -1,4 +1,4 @@
-AC_PREREQ(2.53)
+AC_PREREQ([2.71])
 
 AC_INIT([sugar-artwork],[0.120],[],[sugar-artwork])
 
@@ -7,13 +7,17 @@ AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE([1.9 foreign dist-xz no-dist-gzip])
 
 AM_MAINTAINER_MODE
-AM_DISABLE_STATIC
+AC_DISABLE_STATIC([])
 
 PKG_PROG_PKG_CONFIG([0.19])
 
 AC_PROG_CC
-AC_HEADER_STDC
-AC_PROG_LIBTOOL
+# Autoupdate added the next two lines to ensure that your configure
+# script's behavior did not change.  They are probably safe to remove.
+AC_CHECK_INCLUDES_DEFAULT
+AC_PROG_EGREP
+
+LT_INIT
 
 AC_PATH_PROG([XCURSORGEN], [xcursorgen])
 if test -z "$XCURSORGEN"; then
@@ -72,7 +76,7 @@ else
                  and install the icon theme])
 fi
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 cursor/Makefile
 cursor/sugar/Makefile
@@ -94,3 +98,4 @@ gtk3/theme/assets/Makefile
 gtk3/theme/assets/72/Makefile
 gtk3/theme/assets/100/Makefile
 ])
+AC_OUTPUT
