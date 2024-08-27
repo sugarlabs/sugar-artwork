@@ -691,7 +691,7 @@ style "menuitem"
     text[ACTIVE]      = $white
 
     xthickness = $subcell_size
-    ythickness = $((subcell_size * 3 - font_height) / 2)
+    ythickness = @((subcell_size * 3 - font_height) / 2)
 }
 
 style "checkmenuitem"
@@ -699,7 +699,7 @@ style "checkmenuitem"
     GtkCheckMenuItem::indicator-size = $radio_size
     GtkMenuItem::toggle-spacing = $(subcell_size * 2 / 3)
 
-    ythickness = $((subcell_size * 3 - max(font_height, subcell_size * 2 / 3)) / 2)
+    ythickness = @((subcell_size * 3 - max(font_height, subcell_size * 2 / 3)) / 2)
 
     # This is only there because of bug #382646 ...
     base[NORMAL]      = $white
