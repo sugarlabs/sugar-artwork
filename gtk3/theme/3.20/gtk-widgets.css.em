@@ -423,7 +423,7 @@ menu {
 }
 
 menuitem {
-    padding: $(subcell_size)px $((subcell_size * 3 - font_height) / 2)px;
+    padding: $(subcell_size)px @((subcell_size * 3 - font_height) / 2)px;
 }
 
 menuitem:hover,
