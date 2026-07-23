@@ -1459,14 +1459,3 @@ searchentry entry,
 searchentry entry > text {
     color: @sugar_black;
 }
-
-/* PapersView (PDF reader) background and inverted colors */
-pps-view .document-page {
-    background-color: white;
-}
-pps-view .document-page.inverted {
-    background-color: black;
-}
-pps-view.inverted {
-    color: white;
-}
