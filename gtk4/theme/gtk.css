@@ -353,6 +353,7 @@ spinbutton button:focus {
 /* 8. TEXT ENTRIES */
 
 entry,
+.toolbar entry,
 sugariconentry,
 sugar-icon-entry {
     border-radius: 22px;         /* 2 * subcell_size */
@@ -380,10 +381,13 @@ sugar-icon-entry image {
 }
 
 toolbar entry,
+.toolbar entry,
 .sugar-toolbar entry,
 toolbar sugariconentry,
+.toolbar sugariconentry,
 .sugar-toolbar sugariconentry,
 toolbar sugar-icon-entry,
+.toolbar sugar-icon-entry,
 .sugar-toolbar sugar-icon-entry {
     margin: 11px;                /* subcell_size */
 }
@@ -395,10 +399,13 @@ sugar-icon-entry:focus {
 }
 
 toolbar entry:focus,
+.toolbar entry:focus,
 .sugar-toolbar entry:focus,
 toolbar sugariconentry:focus,
+.toolbar sugariconentry:focus,
 .sugar-toolbar sugariconentry:focus,
 toolbar sugar-icon-entry:focus,
+.toolbar sugar-icon-entry:focus,
 .sugar-toolbar sugar-icon-entry:focus {
     border-color: @sugar_white;
 }
@@ -1451,4 +1458,15 @@ searchentry text,
 searchentry entry,
 searchentry entry > text {
     color: @sugar_black;
+}
+
+/* PapersView (PDF reader) background and inverted colors */
+pps-view .document-page {
+    background-color: white;
+}
+pps-view .document-page.inverted {
+    background-color: black;
+}
+pps-view.inverted {
+    color: white;
 }
