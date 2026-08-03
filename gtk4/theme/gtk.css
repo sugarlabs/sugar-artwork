@@ -102,7 +102,13 @@ columnview > listview > row:nth-child(odd) {
 }
 
 listview > row:selected,
-columnview > listview > row:selected {
+columnview > listview > row:selected,
+treeview:selected,
+treeview.view:selected,
+treeview:selected cell,
+treeview.view:selected cell,
+treeview row:selected,
+treeview cell:selected {
     background-color: @sugar_selection_grey;
     color: @sugar_black;
 }
@@ -877,8 +883,68 @@ notebook arrow {
  *   combobox > button.combo > box > cellview
  *                                 > arrow
  * In control panels, these should be grey bg + white text,
- * matching GTK3 sugar-artwork button_grey (#808080) style. */
+ * matching GTK3 sugar-artwork { color: @white } rule for GtkComboBox. */
 
+/* Base combo button: grey bg, white text (matches GTK3 GtkComboBox) */
+combobox > button.combo {
+    background-color: @sugar_button_grey;
+    color: @sugar_white;
+    border-color: @sugar_button_grey;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 22px;             /* 2 * subcell_size */
+    padding: 5px;
+    min-height: 0;
+}
+
+combobox > button.combo:hover {
+    background-color: @sugar_black;
+    color: @sugar_white;
+    border-color: @sugar_button_grey;
+}
+
+combobox > button.combo:active {
+    background-color: @sugar_white;
+    color: @sugar_black;
+}
+
+combobox > button.combo > box {
+    color: @sugar_white;
+}
+
+combobox > button.combo > box > cellview {
+    color: @sugar_white;
+}
+
+combobox > button.combo > box > arrow {
+    color: @sugar_white;
+    -gtk-icon-size: 16px;
+}
+
+/* GTK4 Dropdown (GtkDropDown) button */
+dropdown > button {
+    background-color: @sugar_button_grey;
+    color: @sugar_white;
+    border-color: @sugar_button_grey;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 22px;
+    padding: 5px;
+}
+
+dropdown > button:hover {
+    background-color: @sugar_black;
+    color: @sugar_white;
+}
+
+dropdown > button:active {
+    background-color: @sugar_white;
+    color: @sugar_black;
+}
+
+dropdown > button > box > arrow {
+    color: @sugar_white;
+}
 
 combobox > popover,
 combobox > popover > contents,
@@ -1197,7 +1263,10 @@ textview text.source-view-text {
 
 /* 20. RADIO AND CHECK BUTTONS */
 
-checkbutton check {
+checkbutton check,
+treeview check,
+cell check,
+check {
     min-width: 18px;    /* radio_size */
     min-height: 18px;
     margin: 3px;
@@ -1208,7 +1277,10 @@ checkbutton check {
     background-repeat: no-repeat;
 }
 
-checkbutton radio {
+checkbutton radio,
+treeview radio,
+cell radio,
+radio {
     min-width: 18px;    /* radio_size */
     min-height: 18px;
     margin: 3px;
@@ -1219,12 +1291,18 @@ checkbutton radio {
     background-repeat: no-repeat;
 }
 
-checkbutton check:checked {
+checkbutton check:checked,
+treeview check:checked,
+cell check:checked,
+check:checked {
     background-image: url("assets/checkbox-checked.svg");
     background-color: @sugar_button_grey;
 }
 
-checkbutton radio:checked {
+checkbutton radio:checked,
+treeview radio:checked,
+cell radio:checked,
+radio:checked {
     background-image: url("assets/radio-active.svg");
     background-color: @sugar_button_grey;
 }
@@ -1431,13 +1509,28 @@ SugarPaletteMenuWidget label,
     color: @sugar_white;
 }
 
-/* Ensure labels inside buttons and comboboxes in Section Views inherit the button text color */
+/* Ensure labels inside buttons and comboboxes in Section Views use exact GTK3 colors per state */
 .cpanelsectionview button label,
 .cpanelsectionview combobox label,
 .cpanelsectionview dropdown label,
 .cpanelsectionview button cellview,
 .cpanelsectionview button cellview * {
-    color: inherit;
+    color: @sugar_white;
+}
+
+.cpanelsectionview button:hover label,
+.cpanelsectionview combobox:hover label,
+.cpanelsectionview dropdown:hover label {
+    color: @sugar_white;
+}
+
+.cpanelsectionview button:active label,
+.cpanelsectionview button:checked label,
+.cpanelsectionview combobox:active label,
+.cpanelsectionview dropdown:active label,
+.cpanelsectionview button:active cellview,
+.cpanelsectionview button:active cellview * {
+    color: @sugar_black;
 }
 
 /* Improve contrast of disabled text on white backgrounds */
