@@ -74,7 +74,7 @@ SugarHomeWindow,
 SugarJournalWindow,
 .home-window,
 .journal-window {
-    background-color: @sugar_white;
+    background-color: @sugar_panel_grey;
     color: @sugar_black;
 }
 
@@ -480,13 +480,23 @@ treeview:selected {
     color: @sugar_black;
 }
 
-/* Alternating row colors */
-treeview row:nth-child(even) {
+/* Alternating row colors and horizontal row separators (GTK3 spec) */
+treeview row:nth-child(even),
+treeview.view row:nth-child(even),
+treeview cell:nth-child(even) {
     background-color: @sugar_row_even;
+    border-bottom: 1px solid #D0D0D0;
 }
 
-treeview row:nth-child(odd) {
+treeview row:nth-child(odd),
+treeview.view row:nth-child(odd),
+treeview cell:nth-child(odd) {
     background-color: @sugar_row_odd;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+treeview row {
+    border-bottom: 1px solid #D0D0D0;
 }
 
 
@@ -947,9 +957,7 @@ dropdown > button > box > arrow {
 }
 
 combobox > popover,
-combobox > popover > contents,
-dropdown popover,
-dropdown popover > contents {
+dropdown popover {
     background-color: @sugar_black;
     color: @sugar_white;
     border: 2px solid @sugar_button_grey;
@@ -957,9 +965,19 @@ dropdown popover > contents {
     padding: 0;
 }
 
+combobox > popover > contents,
+dropdown popover > contents {
+    background-color: transparent;
+    color: @sugar_white;
+    border: none;
+    padding: 0;
+}
+
 combobox > popover > contents row,
 combobox > popover > contents modelbutton,
-dropdown popover > contents row {
+dropdown popover > contents row,
+dropdown popover > contents modelbutton,
+dropdown popover listview > row {
     background-color: @sugar_black;
     color: @sugar_white;
     padding: 6px 10px;
@@ -968,13 +986,17 @@ dropdown popover > contents row {
 
 combobox > popover > contents row:hover,
 combobox > popover > contents modelbutton:hover,
-dropdown popover > contents row:hover {
+dropdown popover > contents row:hover,
+dropdown popover > contents modelbutton:hover,
+dropdown popover listview > row:hover {
     background-color: @sugar_button_grey;
     color: @sugar_white;
 }
 
 combobox > popover > contents row:selected,
-combobox > popover > contents modelbutton:checked {
+combobox > popover > contents modelbutton:checked,
+dropdown popover > contents row:selected,
+dropdown popover listview > row:selected {
     background-color: @sugar_selection_grey;
     color: @sugar_black;
 }
@@ -1071,16 +1093,27 @@ button.flat:checked {
     color: @sugar_black;
 }
 
+/* Control Panel section labels, text, treeviews, and list items */
 .cpanelsectionview label,
 .cpanelsectionview text,
 .cpanelsectionview .view,
-.cpanelsectionview label:disabled,
-.cpanelsectionview text:disabled,
-.cpanelsectionview .view:disabled {
+.cpanelsectionview treeview,
+.cpanelsectionview treeview cell,
+.cpanelsectionview treeview row {
     color: @sugar_black;
     opacity: 1.0;
-    background-color: transparent;
 }
+
+/* TreeView Header buttons in Section Views must have white text on grey header background */
+.cpanelsectionview treeview header button,
+.cpanelsectionview treeview header button *,
+treeview header button,
+treeview header button * {
+    background-color: @sugar_button_grey;
+    color: @sugar_white;
+    opacity: 1.0;
+}
+
 
 .cpanelsectionview .dim-label {
     opacity: 0.6;
@@ -1094,10 +1127,21 @@ button.flat:checked {
     border-radius: 22px;
 }
 
-/* CONTROL PANEL BUTTONS AND COMBOBOXES */
-
+/* Outer combobox and dropdown containers must be transparent */
 .cpanelsectionview combobox,
 .cpanelsectionview dropdown {
+    background: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Control Panel section buttons, comboboxes, and dropdowns */
+.cpanelsectionview button,
+.cpanelsectionview dropdown > button,
+.cpanelsectionview combobox > button.combo {
     background-image: none;
     background-color: @sugar_button_grey;
     color: @sugar_white;
@@ -1108,102 +1152,49 @@ button.flat:checked {
     padding: 4px 12px;
 }
 
-.cpanelsectionview combobox:hover,
-.cpanelsectionview dropdown:hover {
+.cpanelsectionview button:hover,
+.cpanelsectionview dropdown > button:hover,
+.cpanelsectionview combobox > button.combo:hover {
     border-color: @sugar_white;
-}
-
-.cpanelsectionview combobox:active,
-.cpanelsectionview combobox:focus,
-.cpanelsectionview dropdown:active,
-.cpanelsectionview dropdown:focus {
-    border-color: @sugar_white;
-    background-color: @sugar_white;
-    color: @sugar_black;
-}
-
-.cpanelsectionview button {
-    background-image: none;
     background-color: @sugar_button_grey;
     color: @sugar_white;
-    border: 2px solid @sugar_button_grey;
-    border-radius: 22px;
-    box-shadow: none;
-    min-height: 28px;
-    padding: 4px 12px;
 }
 
-.cpanelsectionview button:hover {
+.cpanelsectionview button:focus,
+.cpanelsectionview dropdown > button:focus,
+.cpanelsectionview combobox > button.combo:focus {
     border-color: @sugar_white;
     background-color: @sugar_button_grey;
     color: @sugar_white;
 }
 
 .cpanelsectionview button:active,
-.cpanelsectionview button:focus {
-    border-color: @sugar_white;
+.cpanelsectionview button:checked,
+.cpanelsectionview dropdown > button:active,
+.cpanelsectionview dropdown > button:checked,
+.cpanelsectionview combobox > button.combo:active,
+.cpanelsectionview combobox > button.combo:checked {
+    border-color: @sugar_button_grey;
     background-color: @sugar_white;
     color: @sugar_black;
 }
 
-.cpanelsectionview combobox button,
-.cpanelsectionview dropdown button {
-    background-color: transparent;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-}
-
-.cpanelsectionview combobox *,
-.cpanelsectionview dropdown * {
-    color: @sugar_white;
+.cpanelsectionview button *,
+.cpanelsectionview dropdown > button *,
+.cpanelsectionview combobox > button.combo * {
+    color: inherit;
     opacity: 1.0;
 }
 
-.cpanelsectionview combobox:active *,
-.cpanelsectionview combobox:focus *,
-.cpanelsectionview dropdown:active *,
-.cpanelsectionview dropdown:focus * {
+.cpanelsectionview button:active *,
+.cpanelsectionview button:checked *,
+.cpanelsectionview dropdown > button:active *,
+.cpanelsectionview dropdown > button:checked *,
+.cpanelsectionview combobox > button.combo:active * {
     color: @sugar_black;
     opacity: 1.0;
 }
 
-.cpanelsectionview button cellview,
-.cpanelsectionview button cellview *,
-.cpanelsectionview button image,
-.cpanelsectionview button label {
-    background-color: transparent;
-    color: @sugar_white;
-    opacity: 1.0;
-}
-
-.cpanelsectionview button:active cellview,
-.cpanelsectionview button:active cellview *,
-.cpanelsectionview button:active image,
-.cpanelsectionview button:active label,
-.cpanelsectionview button:checked cellview,
-.cpanelsectionview button:checked cellview *,
-.cpanelsectionview button:checked image,
-.cpanelsectionview button:checked label {
-    color: @sugar_black;
-    opacity: 1.0;
-}
-
-.cpanelsectionview button:focus cellview,
-.cpanelsectionview button:focus cellview *,
-.cpanelsectionview button:focus image,
-.cpanelsectionview button:focus label {
-    color: @sugar_white;
-    opacity: 1.0;
-}
-
-.cpanelsectionview button arrow,
-.cpanelsectionview combobox arrow,
-.cpanelsectionview dropdown arrow {
-    color: @sugar_white;
-    opacity: 1.0;
-}
 
 
 
@@ -1509,29 +1500,6 @@ SugarPaletteMenuWidget label,
     color: @sugar_white;
 }
 
-/* Ensure labels inside buttons and comboboxes in Section Views use exact GTK3 colors per state */
-.cpanelsectionview button label,
-.cpanelsectionview combobox label,
-.cpanelsectionview dropdown label,
-.cpanelsectionview button cellview,
-.cpanelsectionview button cellview * {
-    color: @sugar_white;
-}
-
-.cpanelsectionview button:hover label,
-.cpanelsectionview combobox:hover label,
-.cpanelsectionview dropdown:hover label {
-    color: @sugar_white;
-}
-
-.cpanelsectionview button:active label,
-.cpanelsectionview button:checked label,
-.cpanelsectionview combobox:active label,
-.cpanelsectionview dropdown:active label,
-.cpanelsectionview button:active cellview,
-.cpanelsectionview button:active cellview * {
-    color: @sugar_black;
-}
 
 /* Improve contrast of disabled text on white backgrounds */
 .cpanelsectionview *:disabled,
