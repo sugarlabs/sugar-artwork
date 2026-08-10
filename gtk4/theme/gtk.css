@@ -1268,6 +1268,14 @@ check {
     background-repeat: no-repeat;
 }
 
+/* Unchecked box when row is selected (GTK3: checkbox-unchecked-selected.svg) */
+treeview check:selected,
+cell check:selected,
+check:selected {
+    background-image: url("assets/checkbox-unchecked-selected.svg");
+    background-color: transparent;
+}
+
 checkbutton radio,
 treeview radio,
 cell radio,
@@ -1282,6 +1290,14 @@ radio {
     background-repeat: no-repeat;
 }
 
+/* Radio when row is selected (GTK3: radio-selected.svg) */
+treeview radio:selected,
+cell radio:selected,
+radio:selected {
+    background-image: url("assets/radio-selected.svg");
+    background-color: transparent;
+}
+
 checkbutton check:checked,
 treeview check:checked,
 cell check:checked,
@@ -1290,12 +1306,28 @@ check:checked {
     background-color: @sugar_button_grey;
 }
 
+/* Checked box when row is also selected (GTK3: checkbox-checked-selected.svg) */
+treeview check:checked:selected,
+cell check:checked:selected,
+check:checked:selected {
+    background-image: url("assets/checkbox-checked-selected.svg");
+    background-color: @sugar_selection_grey;
+}
+
 checkbutton radio:checked,
 treeview radio:checked,
 cell radio:checked,
 radio:checked {
     background-image: url("assets/radio-active.svg");
     background-color: @sugar_button_grey;
+}
+
+/* Active radio when row is selected (GTK3: radio-active-selected.svg) */
+treeview radio:checked:selected,
+cell radio:checked:selected,
+radio:checked:selected {
+    background-image: url("assets/radio-active-selected.svg");
+    background-color: @sugar_selection_grey;
 }
 
 checkbutton:hover check,
